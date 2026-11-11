@@ -37,3 +37,5 @@
 `column-gallery`، `process-phases`، `media-stretch`، `sticky-cards` و `text-marquee` ماژول مستقل‌اند؛ فقط lifecycle/scroll-state/refresh/observer/vendor و sticky واقعی را از مالکان موجود می‌گیرند. تصاویر attachment محلی هستند و فیلتر data هر ماژول به مشتری مقصد قابل جایگزینی است. مقادیر حرکت، fallback و منشأ در [reference-sections.md](reference-sections.md)؛ فایل‌های انتقال در module-map.json.
 
 مالک مشترک نوار متن: inc/ui/text-marquee.php، src/css/ui/text-marquee.css و src/js/ui/text-marquee.js؛ text-loop نمونهٔ مستقل و text-marquee مصرف‌کنندهٔ ترکیبی همان مالک‌اند. کارت فهرست فقط icon محلی samples.json را رندر می‌کند؛ thumbnail یا عکس نمایشی در فهرست درخواست نمی‌شود.
+
+رنگ و کارت‌های رابط فهرست فقط در `assets/shell.css` و توکن‌های `--rdl-*` نگهداری شوند؛ ظاهر نمونه‌های مشتری تغییر نکند. سایدبار فهرست sticky بومی CSS با فاصلهٔ admin bar، ارتفاع محدود به viewport و اسکرول داخلی دسته‌های بلند است؛ زیر ۹۰۰ پیکسل جریان عادی دارد. برای آن pin، GSAP، listener اسکرول یا مالک موازی نسازید؛ جایگزینی AJAX همان کلاس‌ها را حفظ می‌کند.

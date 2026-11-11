@@ -617,7 +617,7 @@
     "isEntry": true
   },
   "modules/sticky-cards/script.js": {
-    "file": "js/sample-62-D__GnNtS.min.js",
+    "file": "js/sample-62-Bp-bLZYQ.min.js",
     "name": "sample-62",
     "src": "modules/sticky-cards/script.js",
     "isEntry": true,
@@ -629,12 +629,32 @@
     ]
   },
   "modules/sticky-cards/style.css": {
-    "file": "css/css-sticky-cards-D6hfyCyy.min.css",
+    "file": "css/css-sticky-cards-CZKptQKx.min.css",
     "name": "css-sticky-cards",
     "names": [
       "css-sticky-cards.css"
     ],
     "src": "modules/sticky-cards/style.css",
+    "isEntry": true
+  },
+  "modules/text-3d/script.js": {
+    "file": "js/sample-70-Cs-v9jIV.min.js",
+    "name": "sample-70",
+    "src": "modules/text-3d/script.js",
+    "isEntry": true,
+    "imports": [
+      "_motion-BDGS3Mx2.min.js",
+      "_scroll-ievP5wp_.min.js",
+      "_motion-view-aC_4bNO8.min.js"
+    ]
+  },
+  "modules/text-3d/style.css": {
+    "file": "css/css-text-3d-HVJyvuWn.min.css",
+    "name": "css-text-3d",
+    "names": [
+      "css-text-3d.css"
+    ],
+    "src": "modules/text-3d/style.css",
     "isEntry": true
   },
   "modules/text-fill/script.js": {

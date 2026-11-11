@@ -61,7 +61,7 @@
 
 ## ستون معرفی ثابت — `sticky-cards`
 
-مرجع: [Willows Jane، What we do](https://preview.treethemes.com/elementor/willows/jane/). در نسخهٔ فارسی معرفی در راست و کارت‌های تصویری در چپ‌اند؛ گاتر با هدر مشترک تراز است. خط میانی طبق درخواست کارگاه نقطهٔ پیشرفت اسکرولی دارد و زیر 768px مخفی است. خط میانی و فاصله‌ها scoped هستند؛ عنوان با Hafez محلی و باقی متن با Peyda است. `initializeSticky` موجود، معرفی را با فاصلهٔ 100px تا پایان فهرست پین می‌کند؛ روی موبایل/کاهش حرکت خوانایی بدون پین حفظ می‌شود. تصاویر با scale 1.5 و opacity صفر به 1، مدت 1.5s، تأخیر .3s و power2.out وارد می‌شوند. تصویر و متن/لیست هر کارت در data.php و فیلتر `rdl/sticky-cards/data` مستقل‌اند. SVG تزئینی فقط به شکل img از رسانهٔ محلی مصرف می‌شود؛ اجازهٔ MIME آن فقط در installer CLI است و سیاست آپلود سایت تغییر نمی‌کند.
+مرجع: [Willows Jane، What we do](https://preview.treethemes.com/elementor/willows/jane/). در نسخهٔ فارسی معرفی در راست و کارت‌های تصویری در چپ‌اند؛ گاتر با هدر مشترک تراز است. مرجع رفتار تکمیلی: Willows jane-dark/services. نقطه روی خط همراه header ثابت می‌ماند؛ نشانگر درصد پیشرفت نیست و tween وابسته به scrub ندارد. زیر 768px مخفی است. خط میانی و فاصله‌ها scoped هستند؛ عنوان با Hafez محلی و باقی متن با Peyda است. `initializeSticky` موجود، معرفی را با فاصلهٔ 100px تا پایان فهرست پین می‌کند؛ روی موبایل/کاهش حرکت خوانایی بدون پین حفظ می‌شود. تصاویر با scale 1.5 و opacity صفر به 1، مدت 1.5s، تأخیر .3s و power2.out وارد می‌شوند. تصویر و متن/لیست هر کارت در data.php و فیلتر `rdl/sticky-cards/data` مستقل‌اند. SVG تزئینی فقط به شکل img از رسانهٔ محلی مصرف می‌شود؛ اجازهٔ MIME آن فقط در installer CLI است و سیاست آپلود سایت تغییر نمی‌کند.
 
 ## نوار متن و قاب تصویر — `text-marquee`
 
@@ -72,3 +72,12 @@
 ## نوار متن مستقل و مشترک
 
 text-loop نمونهٔ مستقل است؛ text-marquee همان renderer/CSS/JS مشترک inc/ui/text-marquee.php و src/css/ui/text-marquee.css و src/js/ui/text-marquee.js را مصرف می‌کند. دادهٔ هر مصرف‌کننده فیلتر مستقل دارد. هیچ ماژولی از ماژول دیگر import نمی‌کند. مالک نوار H1 اضافه نمی‌کند؛ توقف، visibility، focus، clone inert و fallback خوانا را یک‌جا نگه می‌دارد. عکس‌های خود نمونه‌ها باقی‌اند؛ کارت‌های فهرست فقط SVG مرتبط با نوع طرح دارند و thumbnail رندر نمی‌کنند.
+
+
+## ورود سه‌بعدی متن — `text-3d`
+
+مرجع: [Willows Jane Dark](https://preview.treethemes.com/elementor/willows/jane-dark/)؛ متن Evolution / Through / Design. کد عمومی text-3d.css و text-3d-trigger.js بررسی شد: افکت اصلی flip دووجهی CSS است، نه پرشدن اسکرولی. perspective برابر 1000px، hinge پایینِ وجه اول و بالای وجه دوم؛ وجه اول y=-100% و rotateX=90، وجه دوم از y=100% و rotateX=-90 به صفر. جابه‌جایی قاب 3.25rem، مدت 1.25s، منحنی cubic-bezier(.8,0,.2,1)، تأخیرهای .05/.25/.45 و IntersectionObserver با threshold=.2 و حاشیهٔ پایین -8%؛ خروج از دید آن را برای ورود بعدی آماده می‌کند.
+
+ماژول مستقل modules/text-3d با data/view/style/script؛ فیلتر rdl/text-3d/data مالک lines/duration/delay/stagger/pointer است. یک H1 با Hafez و متن فارسی دست‌نخورده؛ هر وجه دوم aria-hidden و شماره‌ها تزئینی‌اند. JS/کاهش حرکت غیرفعال باشد، متن اصلی خواناست. نامگذاری کاتالوگ Radman، دستهٔ text/text-3d، سطح section؛ به Three.js وابسته نیست.
+
+درخواست ماوس به‌صورت قابلیت جدا افزوده شده؛ در افکت flip مرجع، pointer handler پیدا نشد. با pointer=false خاموش می‌شود. wrapper ماوس از wrapper چرخش جداست؛ GSAP quickTo موجود با duration=.7، power3.out و سقف 20px افقی/10px عمودی/1.5deg کار می‌کند. روی لمس فعال نیست؛ هیچ حلقهٔ RAF یا ticker دائمی ندارد. توقف/بازگشت هنگام خروج، blur، تب مخفی و cleanup lifecycle موجود انجام می‌شود. داده و CSS ماژول همراه گراف انتخابی مشتری منتقل شوند؛ Elementor/jQuery/فونت یا موتور مرجع کپی نشوند.

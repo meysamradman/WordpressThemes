@@ -1833,5 +1833,55 @@
     "build_tools": [
       "tools/build-robot.mjs"
     ]
+  },
+  "text-3d": {
+    "kind": "section",
+    "family": "text",
+    "effects": [
+      "gsap",
+      "entrance",
+      "pointer",
+      "smooth"
+    ],
+    "entries": [
+      "modules/text-3d/data.php",
+      "modules/text-3d/script.js",
+      "modules/text-3d/style.css",
+      "modules/text-3d/view.php"
+    ],
+    "source_files": [
+      "modules/text-3d/data.php",
+      "modules/text-3d/script.js",
+      "modules/text-3d/style.css",
+      "modules/text-3d/view.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   }
 }

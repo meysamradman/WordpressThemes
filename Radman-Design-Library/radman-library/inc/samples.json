@@ -468,7 +468,7 @@
     "kind": "section",
     "source": "reference/sticky-cards",
     "reference": "https://preview.treethemes.com/elementor/willows/jane/",
-    "motion": "معرفی ثابت در راست، کارت‌ها در چپ، خط و نقطهٔ پیشرفت اسکرول",
+    "motion": "معرفی ثابت در راست با نقطهٔ ثابت روی خط؛ کارت‌های تصویری در چپ با اسکرول عبور می‌کنند",
     "effects": [
       "gsap",
       "scrolltrigger",
@@ -535,5 +535,24 @@
     "scroll_gap": false,
     "surface": "dark",
     "icon": "robot"
+  },
+  "text-3d": {
+    "slug": "text-3d",
+    "title": "ورود سه‌بعدی متن و حرکت نشانگر · Radman",
+    "group": "text",
+    "kind": "section",
+    "source": "reference/text-3d",
+    "reference": "https://preview.treethemes.com/elementor/willows/jane-dark/",
+    "motion": "ورود چرخشی دووجهی متن با دید پرسپکتیو؛ تکرار با ورود به دید و پارالاکس اختیاری نشانگر، بدون شکستن حروف فارسی",
+    "effects": [
+      "gsap",
+      "entrance",
+      "pointer",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "surface": "dark",
+    "icon": "layers"
   }
 }
