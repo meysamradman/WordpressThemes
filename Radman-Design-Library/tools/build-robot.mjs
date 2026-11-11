@@ -28,7 +28,6 @@ box(pivot,'Head_Rim',2.29,1.33,.12,.18,rim,0,.7,.333);
 box(pivot,'Face_Glass',2.17,1.22,.14,.16,black,0,.7,.39);
 sphere(pivot,'Left_Eye',.185,eye,-.5,.84,.51);
 sphere(pivot,'Right_Eye',.185,eye,.5,.84,.51);
-const mouth=new T.Mesh(new T.TorusGeometry(.155,.013,8,40),rim);mouth.name='Mouth';mouth.position.set(0,.4,.48);pivot.add(mouth);
 // Flush circular joints follow the rounded shell; no projecting ears.
 for(const side of [-1,1]){
  const joint=new T.Mesh(new T.TorusGeometry(.17,.016,6,28),dark);

@@ -5,7 +5,7 @@
 .rdl-t3:dir(ltr) .rdl-t3__row:first-child{--t3-origin:0%}.rdl-t3:dir(ltr) .rdl-t3__row:nth-child(3){--t3-origin:100%}
 .rdl-t3__ptr{display:inline-block;min-inline-size:0;max-inline-size:calc(100% - 3rem)}
 .rdl-t3__flip{position:relative;display:inline-block;max-inline-size:100%;perspective:1000px;perspective-origin:var(--t3-origin) 50%;transform-style:preserve-3d}
-.rdl-t3__fr,.rdl-t3__bk{display:block;backface-visibility:hidden;transform-style:preserve-3d;white-space:nowrap}
+.rdl-t3__fr,.rdl-t3__bk{display:block;backface-visibility:hidden;transform-style:preserve-3d;white-space:nowrap;padding-inline:var(--rdc-dsp-ink-sp)}
 .rdl-t3__fr{position:relative;transform-origin:50% 100%}.rdl-t3__bk{display:none;position:absolute;inset:0;pointer-events:none;transform-origin:50% 0}
 .rdl-t3__num{font:400 clamp(.65rem,1vw,.9rem)/1.5 var(--rdc-font-body);margin-block-start:1.4em;flex-shrink:0;font-variant-numeric:tabular-nums}
 @media(prefers-reduced-motion:no-preference){
