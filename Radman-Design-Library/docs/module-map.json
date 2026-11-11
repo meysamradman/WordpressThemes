@@ -1784,5 +1784,50 @@
       "assets/bar.css"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "robot": {
+    "kind": "section",
+    "family": "interactive-3d",
+    "effects": [
+      "three",
+      "pointer"
+    ],
+    "entries": [
+      "modules/robot/data.php",
+      "modules/robot/script.js",
+      "modules/robot/style.css",
+      "modules/robot/view.php",
+      "modules/robot/viewer.js"
+    ],
+    "source_files": [
+      "modules/robot/data.php",
+      "modules/robot/script.js",
+      "modules/robot/style.css",
+      "modules/robot/view.php",
+      "modules/robot/viewer.js",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "src/css/client-base.css"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   }
 }

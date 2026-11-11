@@ -1,0 +1,11 @@
+# ربات سه‌بعدی Radman
+
+نمونهٔ مستقل `/design/robot/` زیر «سه‌بعدی تعاملی»، سطح سکشن و فناوری Three.js / دنبال‌کردن نشانگر است. مدل فعلی **prototype هندسی مستقل** است؛ فایل Spline مرجع استخراج یا تبدیل نشده و بازسازی دقیق مدل اصلی ادعا نمی‌شود. مرجع رفتار: https://azizkhaldi.com/ . ورود Spline Runtime، React، Elementor یا jQuery به این ماژول مجاز نیست.
+
+مالک قابل‌انتقال: `modules/robot/` شامل view/data/CSS، bootstrap، viewer، مدل محلی GLB و poster. `script.js` از lifecycle کوچک موجود استفاده می‌کند؛ viewer و Three.js فقط نزدیک viewport و با pointer مناسب بارگذاری می‌شوند. فهرست/صفحهٔ اطلاعات فایل ربات ندارند. ماژول GSAP یا موتور اسکرول دیگری اضافه نمی‌کند. `npm run build -- --modules=robot` خروجی مشتری را در dist-selected می‌سازد؛ view/data، models و poster همراه helperهای نقشه منتقل شوند. Node فقط برای build است.
+
+`rdl_robot_data` تنظیمات PHP هر مشتری را دریافت می‌کند: URL محلی model/poster، نام pivot، camera سه‌عضوی، scale، rotation رادیان، yaw/pitch درجه، follow/return برحسب نرخ همگرایی ثانیه، dpr (سقف ۲)، transparent، interaction و mobileFallback. اندازه با CSS مالک `.rdl-bot__md` کنترل می‌شود. مدل باید Robot_Root / Robot_Body / Head_Pivot و سر/چشم‌های زیر pivot داشته باشد؛ بدن ثابت است. برای GLB دیگر نام pivot و مقیاس/دوربین را تنظیم کنید؛ فایل دارای Draco/KTX2 به loader و decoder محلی صریح نیاز دارد، decoder/CDN خودکار نداریم.
+
+حرکت سر با Quaternion و ضریب `1-exp(-speed*dt)` مستقل از نرخ فریم است؛ yaw پیش‌فرض ۲۰ و pitch ۱۲ درجه. Pointer کل صفحه، بازگشت هنگام خروج از پنجره/blur، توقف frame هنگام رسیدن به مقصد، خروج از viewport و تب مخفی؛ DPR محدود، بدون سایهٔ realtime/postprocessing/idle loop. ResizeObserver مالک اندازه است. خروج ریشه از DOM، pagehide غیر BFCache یا تغییر reduced-motion منابع GPU و listenerها را آزاد می‌کند؛ BFCache برگشت صحیح دارد. موبایل/coarse و reduced-motion پیش‌فرض فقط poster؛ خطای مدل/WebGL/context loss نیز poster را حفظ می‌کند. هیچ درخواست runtime خارجی لازم نیست.
+
+بازسازی مدل اولیه: `node tools/build-robot.mjs`؛ GLB تولیدشده خودکفا و بدون texture خارجی است. این ابزار صرفاً توسعه است، نه وابستگی مشتری یا Blender. مدل نهایی Blender/GLB را بعداً با همان قرارداد جایگزین کنید و poster را مطابق آن تغییر دهید. Three.js و مجوز MIT آن در package-lock و docs/licenses نگهداری می‌شوند. تصویر SVG جایگزین مستقل است و جزو thumbnail فهرست نیست.

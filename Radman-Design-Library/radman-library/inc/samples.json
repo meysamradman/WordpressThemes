@@ -518,5 +518,22 @@
     "image": "none",
     "scroll_gap": false,
     "icon": "loop"
+  },
+  "robot": {
+    "slug": "robot",
+    "title": "ربات سه‌بعدی تعاملی · Radman",
+    "group": "interactive-3d",
+    "kind": "section",
+    "source": "independent/robot",
+    "reference": "https://azizkhaldi.com/",
+    "motion": "مدل اولیهٔ مستقل GLB؛ نگاه نرم سر به نشانگر با Three.js، رندر درخواستی و تصویر جایگزین موبایل",
+    "effects": [
+      "three",
+      "pointer"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "surface": "dark",
+    "icon": "layers"
   }
 }
