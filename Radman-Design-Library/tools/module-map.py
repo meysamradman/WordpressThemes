@@ -35,7 +35,9 @@ for slug,module in registry.items():
     if slug in ['header-radman','footer-radman','page-home','page-services']:helpers+=['shared/radmanct/inc/brand.php','shared/radmanct/inc/navigation.php']
     if slug in ['services-cover','services-strip','page-services','wellness-scroll','project-marquee']:helpers+=['shared/radmanct/inc/page-title.php']
     if slug in ['home-hero','home-services','services-cover','page-home','page-services']:helpers+=['shared/radmanct/inc/assets.php']
-    helpers+=['shared/radmanct/inc/ui/button.php','shared/radmanct/inc/icons.php','shared/radmanct/inc/icons/catalog.php']
+    if slug!='robot':helpers+=['shared/radmanct/inc/ui/button.php','shared/radmanct/inc/icons.php','shared/radmanct/inc/icons/catalog.php']
     out[slug]={'kind':module.get('kind','section'),'family':module['group'],'effects':module.get('effects',[]),'entries':entries,'source_files':relative_graph(entries+helpers+['src/css/client-base.css']),'css_base':'src/css/client-base.css','php_contracts':['Native WordPress APIs','Use existing RadmanCT helpers once; replace workshop fixture adapters with client data'],'preview_only':['inc/samples.php','inc/portfolio.php','preview.php','assets/bar.css'],'vendor':'local GSAP 3.15.0 only if consumed; never one vendor copy per sample'}
+    if slug=='robot':
+        out[slug].update(vendor='Local Three.js (exact version in package-lock.json); dynamic viewer only, no GSAP or Spline',assets=['modules/robot/models/robot.glb','modules/robot/poster.svg'],build_tools=['tools/build-robot.mjs'],php_contracts=['Native WordPress APIs','rdl_robot_data supplies per-client config; no workshop data required'])
 (root/'docs/module-map.json').write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8')
 print(f'{len(out)} source maps generated; workshop glue is labeled separately.')

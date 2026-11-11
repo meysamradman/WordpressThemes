@@ -4,13 +4,15 @@ import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 
 function disposeModel(model){const geometries=new Set(),materials=new Set(),textures=new Set();model?.traverse(node=>{if(node.geometry)geometries.add(node.geometry);for(const mat of Array.isArray(node.material)?node.material:node.material?[node.material]:[]){materials.add(mat);for(const value of Object.values(mat))if(value?.isTexture)textures.add(value);}});textures.forEach(t=>t.dispose());materials.forEach(m=>m.dispose());geometries.forEach(g=>g.dispose());}
 
-export async function mountRobot(root,cfg,isAlive){
+export async function mountRobot(root,cfg,isAlive,signal){
+ if(signal.aborted)return()=>{};
  const host=root.querySelector('.rdl-bot__md'),canvas=root.querySelector('canvas');
  let renderer,model,environment,pmrem,room,raf=0,dead=false,visible=false,rect,last=0,returning=true;
  const events=new AbortController(),scene=new T.Scene(),target=new T.Quaternion(),initial=new T.Quaternion(),offset=new T.Quaternion(),euler=new T.Euler(0,0,0,'YXZ');
  let pivot,resizeObserver,visibilityObserver;
  const stop=()=>{cancelAnimationFrame(raf);raf=0;last=0;};
- const destroy=()=>{if(dead)return;dead=true;stop();events.abort();resizeObserver?.disconnect();visibilityObserver?.disconnect();disposeModel(model);environment?.dispose();room?.dispose();pmrem?.dispose();renderer?.dispose();renderer?.forceContextLoss();root.removeAttribute('data-rdl-bot-rdy');};
+ const destroy=()=>{if(dead)return;dead=true;stop();signal.removeEventListener('abort',destroy);events.abort();resizeObserver?.disconnect();visibilityObserver?.disconnect();disposeModel(model);environment?.dispose();room?.dispose();pmrem?.dispose();renderer?.dispose();renderer?.forceContextLoss();root.removeAttribute('data-rdl-bot-rdy');};
+ signal.addEventListener('abort',destroy,{once:true});
  try{
   renderer=new T.WebGLRenderer({canvas,alpha:cfg.transparent!==false,antialias:true,powerPreference:'low-power'});
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,Math.max(1,Math.min(2,Number(cfg.dpr)||1.5))));
@@ -21,7 +23,11 @@ export async function mountRobot(root,cfg,isAlive){
   scene.add(new T.HemisphereLight(0xe6f4dc,0x24301e,2));
   const key=new T.DirectionalLight(0xfff5dc,3.5);key.position.set(-3,4,5);scene.add(key);
   const fill=new T.DirectionalLight(0xc5edaf,1.6);fill.position.set(3,1,-2);scene.add(fill);
-  model=(await new GLTFLoader().loadAsync(root.dataset.rdlBotModel)).scene;
+  const url=new URL(root.dataset.rdlBotModel,document.baseURI),response=await fetch(url,{signal:events.signal,credentials:'same-origin'});
+  if(!response.ok)throw new Error('Robot model unavailable.');
+  const buffer=await response.arrayBuffer();
+  if(dead||!isAlive()){destroy();return()=>{};}
+  model=(await new GLTFLoader().parseAsync(buffer,new URL('.',url).href)).scene;
   if(dead||!isAlive()){if(dead)disposeModel(model);else destroy();return()=>{};}
   model.scale.setScalar(Number(cfg.scale)||1);model.rotation.fromArray([...(cfg.rotation||[0,0,0]),'XYZ']);scene.add(model);
   pivot=model.getObjectByName(cfg.pivot||'Head_Pivot');if(!pivot)throw new Error('Robot head pivot missing.');
