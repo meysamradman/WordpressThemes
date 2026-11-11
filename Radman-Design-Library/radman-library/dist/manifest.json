@@ -521,7 +521,7 @@
     "isEntry": true
   },
   "modules/robot/script.js": {
-    "file": "js/sample-68-BgYepYZX.min.js",
+    "file": "js/sample-68-BY9rk_4h.min.js",
     "name": "sample-68",
     "src": "modules/robot/script.js",
     "isEntry": true,
@@ -542,7 +542,7 @@
     "isEntry": true
   },
   "modules/robot/viewer.js": {
-    "file": "js/viewer-Cmzqkn4C.min.js",
+    "file": "js/viewer-CniDYPRg.min.js",
     "name": "viewer",
     "src": "modules/robot/viewer.js",
     "isDynamicEntry": true

@@ -36,4 +36,5 @@ return array(
  'accordion'=>'<rect x="3" y="3" width="18" height="5" rx="1"/><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M6 5.5h7m3-1 1 1 1-1M6 15h8m-8 3h5"/>',
  'wave'=>'<path d="M2 12c3-8 5-8 8 0s5 8 8 0 3-8 4-6M3 20h18"/>',
  'loop'=>'<path d="M20 7H7a4 4 0 0 0 0 8h1m12-8-4-4m4 4-4 4M4 17h13a4 4 0 0 0 0-8h-1M4 17l4-4m-4 4 4 4"/>',
- 'cursor'=>'<path d="m4 3 6 18 3-7 7-3L4 3Zm9 11 6 6"/>');
+ 'cursor'=>'<path d="m4 3 6 18 3-7 7-3L4 3Zm9 11 6 6"/>',
+ 'robot'=>'<rect x="4" y="5" width="16" height="12" rx="3"/><path d="M12 2v3M2 10v3m20-3v3M9 21h6l-1-4h-4l-1 4Z"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M10 14h4"/>');
