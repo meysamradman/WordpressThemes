@@ -1,0 +1,230 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct-child 1.1.1\nLanguage: \nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Current article cover"
+msgstr ""
+
+msgid "Articles"
+msgstr ""
+
+msgid "Featured articles"
+msgstr ""
+
+msgid "Sidebar widgets"
+msgstr ""
+
+msgid "Latest from the journal"
+msgstr ""
+
+msgid "Latest articles"
+msgstr ""
+
+msgid "Video article"
+msgstr ""
+
+msgid "Articles with thumbnails"
+msgstr ""
+
+msgid "Site navigation"
+msgstr ""
+
+msgid "WordPress design and development"
+msgstr ""
+
+msgid "WordPress websites"
+msgstr ""
+
+msgid "Professional WordPress solutions: custom themes and plugins, easy content management, performance and security built for growth."
+msgstr ""
+
+msgid "Management panel design"
+msgstr ""
+
+msgid "Application design and development"
+msgstr ""
+
+msgid "Mobile applications"
+msgstr ""
+
+msgid "Custom Android and iOS applications with a smooth user experience, reliable performance and seamless connections to your business systems."
+msgstr ""
+
+msgid "and web applications"
+msgstr ""
+
+msgid "Custom management panels and powerful web applications, built around your business with a scalable, modular architecture."
+msgstr ""
+
+msgid "Security and access control"
+msgstr ""
+
+msgid "Performance and scalability"
+msgstr ""
+
+msgid "Custom development"
+msgstr ""
+
+msgid "Multisite network"
+msgstr ""
+
+msgid "Our services"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Responsive layout"
+msgstr ""
+
+msgid "Performance"
+msgstr ""
+
+msgid "Custom website design"
+msgstr ""
+
+msgid "Tailored"
+msgstr ""
+
+msgid "We design and develop modern, fast websites that fit your brand. From the first idea to launch, we are with you."
+msgstr ""
+
+msgid "Security and stability"
+msgstr ""
+
+msgid "Responsive design"
+msgstr ""
+
+msgid "Speed and performance"
+msgstr ""
+
+msgid "More information"
+msgstr ""
+
+msgid "What we build"
+msgstr ""
+
+msgid "From idea to product"
+msgstr ""
+
+msgid "Website"
+msgstr ""
+
+msgid "development"
+msgstr ""
+
+msgid "Management"
+msgstr ""
+
+msgid "platforms"
+msgstr ""
+
+msgid "Mobile"
+msgstr ""
+
+msgid "applications"
+msgstr ""
+
+msgid "Software"
+msgstr ""
+
+msgid "engineering"
+msgstr ""
+
+msgid "A distinctive website, built around your business. From the first interaction to the final detail, clear, fast and ready to grow."
+msgstr ""
+
+msgid "Bring your processes, people and information together. We turn complex workflows into practical tools your team enjoys using."
+msgstr ""
+
+msgid "Your product, wherever your users are. A consistent experience that feels natural on every screen."
+msgstr ""
+
+msgid "From an ambitious idea to a dependable product. We design, build and improve the systems behind your next step."
+msgstr ""
+
+msgid "Responsive interfaces"
+msgstr ""
+
+msgid "Speed and accessibility"
+msgstr ""
+
+msgid "Business automation"
+msgstr ""
+
+msgid "Reports and analytics"
+msgstr ""
+
+msgid "Connected systems"
+msgstr ""
+
+msgid "Android and iOS"
+msgstr ""
+
+msgid "User experience"
+msgstr ""
+
+msgid "Scalable architecture"
+msgstr ""
+
+msgid "APIs and integrations"
+msgstr ""
+
+msgid "Security and reliability"
+msgstr ""
+
+msgid "Continuous improvement"
+msgstr ""
+
+msgid "Choose the hero image in this page's Featured image panel. Manage its sizes and media details in the Media Library."
+msgstr ""
+
+msgid "Custom client home"
+msgstr ""
+
+msgid "Home introduction"
+msgstr ""
+
+msgid "Main heading"
+msgstr ""
+
+msgid "Supporting heading"
+msgstr ""
+
+msgid "Gold heading"
+msgstr ""
+
+msgid "Rotating heading (one phrase per line)"
+msgstr ""
+
+msgid "Introduction"
+msgstr ""
+
+msgid "Consultation label"
+msgstr ""
+
+msgid "Consultation URL"
+msgstr ""
+
+msgid "Consultation"
+msgstr ""
+
+msgid "Nilgoon Tejarat Deniz"
+msgstr ""
+
+msgid "Supplier of chemical raw materials"
+msgstr ""
+
+msgid "Industrial equipment"
+msgstr ""
+
+msgid "Chemical raw materials"
+msgstr ""
+
+msgid "Custom client page"
+msgstr ""
+
+msgid "Load more"
+msgstr ""
+
+msgid "More projects loaded."
+msgstr ""

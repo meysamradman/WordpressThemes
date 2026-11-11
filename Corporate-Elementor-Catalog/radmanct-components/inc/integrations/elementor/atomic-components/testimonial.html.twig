@@ -1,0 +1,4 @@
+{% import 'radmanct/attributes' as rdct_attributes %}
+<div class="{{ settings.classes | default([]) | join(' ') | e('html_attr') }}" data-interaction-id="{{ interaction_id | e('html_attr') }}" {{ rdct_attributes.render(settings) }}>
+  <div data-rdct-atomic-testimonial data-options="{{ settings | json_encode | e('html_attr') }}"></div>
+</div>

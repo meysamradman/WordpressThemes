@@ -1,0 +1,8 @@
+.rdc-svc-strip { overflow-x:auto; padding-block-end:clamp(3rem,6vw,6rem); direction:ltr; scrollbar-width:thin; scroll-snap-type:x mandatory; }
+.rdc-svc-strip__inr { display:flex; gap:30px; list-style:none; }
+.rdc-svc-strip__inr > li { flex:0 0 100%; min-inline-size:0; scroll-snap-align:start; }
+.rdc-svc-strip__inr img { display:block; inline-size:100%; block-size:auto; aspect-ratio:770 / 560; object-fit:cover; border-radius:1rem; }
+.rdc-svc-strip.is-enh { overflow:clip; touch-action:pan-y pinch-zoom; cursor:grab; }
+.rdc-svc-strip.is-enh:active { cursor:grabbing; }
+.rdc-svc-strip:focus-visible { outline-offset:-3px; }
+@media(min-width:992px) { .rdc-svc-strip__inr > li { flex-basis:calc((100% - 30px) / 2); } }

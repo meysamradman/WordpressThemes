@@ -1,0 +1,7 @@
+.rdct-tst--s18 { text-align:center;border-start-start-radius:3px;border-start-end-radius:3px;box-shadow:0 12px 28px rgb(0 0 0 / 6%); }
+.rdct-tst--s18::before { content:"";position:absolute;inset-inline:0;inset-block-start:0;block-size:7px;border-radius:5px;background:linear-gradient(60deg,transparent 35%,var(--rdct-tst-accent-color,var(--rdct-tst-rating-color,#348ef5)) 40%); }
+.rdct-tst--s18 .rdct-tst__rating { align-self:center;padding:.4rem .75rem;border:1px solid currentColor;border-radius:.25rem; }
+.rdct-tst--s18 .rdct-tst__info { justify-content:center; }
+.rdct-tst--s18 .rdct-tst__avatar { inline-size:68px;block-size:68px; }
+.rdct-tst--s18 .rdct-tst__logo { margin-inline:auto;padding-block-end:1rem;border-block-end:1px solid var(--rdct-tst-border-color,var(--rdct-border,#e6ecef)); }
+.rdct-tst--s18 .rdct-tst__quote { font-size:1.125rem; }

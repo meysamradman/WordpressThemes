@@ -1,0 +1,16 @@
+@media (min-width: 48rem) {
+  .rdct-menu > li.rdct-submenu--mega > .sub-menu { display: grid; grid-template-columns: repeat(var(--rdct-mega-columns, 3), minmax(0, 1fr)); inline-size: min(var(--rdct-mega-width, 960px), calc(100vw - 2rem)); gap: 1.25rem; padding: 1.5rem; }
+  .rdct-menu > li.rdct-submenu--mega > .sub-menu > li > a { font-weight: 700; margin-block-end: .5rem; }
+  .rdct-nav .rdct-menu > li.rdct-submenu--mega > .sub-menu .sub-menu { position: static; inline-size: auto; min-inline-size: 0; max-inline-size: 100%; margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+  .rdct-menu > li.rdct-submenu--mega > .sub-menu .sub-menu a { display: block; }
+}
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .rdct-menu > li.rdct-submenu--mega > .sub-menu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.rdct-mob-drawer .rdct-menu > li.rdct-submenu--mega > .sub-menu { display: block; inline-size: auto; }
+.rdct-mob-drawer .rdct-menu > li.rdct-submenu--mega > .sub-menu[hidden] { display: none; }
+.rdct-bld-menu--vertical .rdct-menu > li.rdct-submenu--mega > .sub-menu { inline-size: 100%; min-inline-size: 0; grid-template-columns: minmax(0, 1fr); margin-inline-start: 0; }
+.rdct-menu > li.rdct-submenu--mega > .sub-menu[hidden] { display: none; }
+.rdct-menu > li.rdct-submenu--mega > .rdct-mega-content { display: block; padding: 1.5rem; }
+.rdct-mega-content :where(img,video) { max-inline-size: 100%; block-size: auto; }
+.rdct-mega-content :where(a,p,h2,h3,h4) { overflow-wrap: anywhere; }

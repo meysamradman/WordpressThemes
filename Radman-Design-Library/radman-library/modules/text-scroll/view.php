@@ -1,0 +1,2 @@
+<?php defined('ABSPATH')||exit; ?>
+<div class="rdl-tx-lead"><p>برای دیدن حرکت متن، صفحه را اسکرول کنید ↓</p></div><section class="rdl-tx-demo" data-rdl-tx-demo><p class="rdl-tx-demo__lbl" data-rdc-en>نمونهٔ مستقل موشن متن</p><h1 data-rdc-en="heading">هر کلمه، یک شروع تازه.</h1><p data-rdc-en="paragraph">همان تایپوگرافی و حرکت قالب؛ با اتصال درست حروف فارسی، بدون شکستن کلمه‌ها به حرف‌های جدا.</p></section>

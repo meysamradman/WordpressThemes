@@ -1,0 +1,7 @@
+.rdct-cnt-detail { padding-block: var(--rdct-space); }
+.rdct-cnt-detail__header { max-inline-size: var(--rdct-reading); margin: 0 auto 2rem; }
+.rdct-cnt-detail h1 { font-size: var(--rdct-size-h1,clamp(2rem, 5vw, 3.5rem)); line-height: var(--rdct-line-height-h1,1.3); text-wrap: balance; }
+.rdct-cnt-detail__intro { color: var(--rdct-muted); font-size: var(--rdct-size-body,1.125rem); }
+.rdct-cnt-detail__image { max-inline-size: var(--rdct-reading); margin: 0 auto 2rem; }
+.rdct-cnt-detail__image img { display: block; border-radius: var(--rdct-radius); }
+.rdct-cnt-detail__inquiry { margin-block: 2rem 0; }

@@ -1,0 +1,9 @@
+.rdct-tr { color: var(--rdct-text-active, #172b3a); overflow-wrap: anywhere; white-space: pre-wrap; }
+.rdct-tr[data-rdct-text-reveal="hover"] { color: var(--rdct-text-idle, #667085); transition: color .3s ease; }
+.rdct-tr[data-rdct-text-reveal="hover"]:focus { color: var(--rdct-text-active, #172b3a); }
+.rdct-tr:focus-visible { outline: 2px solid currentColor; outline-offset: .2em; }
+.rdct-tr__accessible { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.rdct-tr__lines { display: block; }
+.rdct-tr__line, .rdct-tr__line-mask { display: block; position: relative; }
+@media (hover: hover) { .rdct-tr[data-rdct-text-reveal="hover"]:hover { color: var(--rdct-text-active, #172b3a); } }
+@media (hover: none), (prefers-reduced-motion: reduce) { .rdct-tr[data-rdct-text-reveal="hover"] { color: var(--rdct-text-active, #172b3a); transition: none; } }

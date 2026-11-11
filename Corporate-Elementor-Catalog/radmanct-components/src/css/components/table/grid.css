@@ -1,0 +1,1 @@
+.rdct-tb--grid :is(th,td) { border:1px solid var(--rdct-tb-line,#e6ecef); }

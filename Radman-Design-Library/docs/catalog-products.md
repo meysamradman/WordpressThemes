@@ -1,0 +1,9 @@
+# کاتالوگ محصول بدون فروش
+
+- مالک: `inc/catalog.php` و `inc/catalog/`. CPT اصلی `radman_product` با مسیر `/products/`؛ taxonomyهای `radman_product_cat`، `radman_product_brand`، `radman_product_feature` و `radman_product_tag` مستقل از وبلاگ، موسیقی و نمونه‌کار هستند.
+- منشأ: مدل `radmanct-content/inc/model.php` و فیلتر query از `radmanct-content/inc/catalog.php` در Corporate-Elementor-Catalog، با حفظ قرارداد داده و تغییر namespace به RadmanLibrary. منبع فقط خوانده شده؛ کد/دادهٔ آن تغییر نکرده. نمایش overview/media و محدودیت‌های همان ساختار مبنا بوده، بدون واردکردن تنظیمات، بستهٔ Components، Content یا Elementor. مجوز GPL پروژهٔ اصلی حفظ شود.
+- کلید `_radman_content_data` و شکل version/code/gallery/specifications/pricing حفظ شده است؛ اطلاعات هیچ مشتری/دیتابیس منبعی منتقل نشده. هر مشخصه id/label/value/unit دارد؛ حداکثر ۴۰ مشخصه و ۲۰ تصویر. نام و متن/خلاصه/تصویر اصلی و طبقه‌بندی با ویرایشگر بومی مدیریت می‌شود.
+- فیلد قیمت صرفاً متن اختیاری هر محصول است؛ سبد، پرداخت، موجودی یا تنظیمات سراسری وجود ندارد. حالت پیش‌فرض بدون قیمت است. لینک تماس فقط با فیلتر دادهٔ `rdl/catalog/contact_url` در مشتری مقصد تعیین می‌شود؛ لینک ساختگی تولید نمی‌شود.
+- `modules/catalog-archive` و `modules/catalog-single` + helperهای نقشهٔ `module-map.json` قابل انتقال‌اند. CSS مالک `src/css/catalog.css`، گالری همان مالک موجود ui/gallery و اسکرول یک مالک محلی دارد. فایل مدیریت فقط در ویرایش محصول بارگذاری می‌شود.
+- نمونه‌های کتابخانه با `tools/seed-catalog.php` و تصاویر موجود ساخته می‌شوند؛ نمونهٔ محتوایی‌اند و مشخصات/تصاویر واقعی محصول محسوب نمی‌شوند. اجرا محدود به 8097 و idempotent است؛ اطلاعات دستی بازنویسی نمی‌شود.
+- دادهٔ خصوصی/رمزدار، رسانهٔ والد خصوصی، nonce/capability و escaping حفظ شوند. در انتقال، attachment IDها در رسانهٔ مقصد نگاشت شوند. ساخت انتخابی: `npm run build -- --modules=catalog-archive,catalog-single`؛ این خروجی نصب‌کننده نیست.

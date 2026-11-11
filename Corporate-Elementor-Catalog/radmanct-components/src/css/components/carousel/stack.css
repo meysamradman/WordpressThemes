@@ -1,0 +1,5 @@
+@import 'swiper/css/effect-creative';
+.rdct-crs.is-stack{overflow:clip}
+.rdct-crs.is-stack .rdct-crs__viewport{overflow:visible;perspective:1200px;perspective-origin:50% 200%}
+.rdct-crs.is-stack .swiper-slide{transform-origin:50% -10%;transition-timing-function:cubic-bezier(.23,1,.32,1)}
+.rdct-crs.is-stack .rdct-crs__frame{margin-block-end:2rem}

@@ -1,0 +1,5 @@
+:is(.post-type-radman_product, .post-type-radman_portfolio) .column-rdct_image { width: 64px; }
+:is(.post-type-radman_product, .post-type-radman_portfolio) .column-rdct_image img { display: block; width: 56px; height: 56px; object-fit: contain; }
+:is(.post-type-radman_product, .post-type-radman_portfolio) :is(.column-rdct_code, .column-rdct_pricing) { width: 12%; overflow-wrap: anywhere; }
+.post-type-radman_product .tablenav select[id^="rdct-filter-"] { max-width: 12rem; }
+@media (max-width: 782px) { .post-type-radman_product .tablenav select[id^="rdct-filter-"] { max-width: 100%; } }

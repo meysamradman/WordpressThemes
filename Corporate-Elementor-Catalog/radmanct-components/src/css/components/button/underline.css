@@ -1,0 +1,2 @@
+.rdct-button--underline { padding:var(--rdct-button-padding-y,14px) 0; border:0; border-radius:0; border-block-end:var(--rdct-button-border-width,1px) solid var(--rdct-button-border-color,currentColor); color:var(--rdct-button-color,var(--rdct-accent,#235a50)); background-color:var(--rdct-button-background,transparent); }
+.rdct-button--underline:is(:hover,:focus-visible) { color:var(--rdct-button-hover-color,#143d35); border-color:var(--rdct-button-hover-border-color,currentColor); background-color:var(--rdct-button-hover-background,transparent); }

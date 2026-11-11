@@ -1,0 +1,4 @@
+<?php defined('ABSPATH')||exit;$preview=$args['preview']??false; ?>
+<header class="rdl-bar"><a class="rdl-brd" href="<?php echo esc_url(home_url('/')); ?>"><span class="rdl-mark" aria-hidden="true">R.</span><span>Radman <small>کتابخانهٔ طراحی</small></span></a>
+<?php if($preview): ?><p class="rdl-bar__ttl"><?php echo esc_html($args['title']??get_the_title()); ?></p><?php endif; ?>
+<nav aria-label="کتابخانه"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo $preview?'→ همهٔ طراحی‌ها':'همهٔ طراحی‌ها'; ?></a><?php if($preview): ?><a href="<?php echo esc_url(add_query_arg('rdl_info','1',get_permalink())); ?>">اطلاعات طرح</a><?php elseif(current_user_can('edit_posts')): ?><a href="<?php echo esc_url(admin_url('edit.php?post_type=rdl_design')); ?>">مدیریت طراحی‌ها ↗</a><?php endif; ?></nav></header>

@@ -1,0 +1,25 @@
+.rdct-blog-journal { margin-block:0 2rem; }
+.rdct-blog-journal__title { position:relative; margin:0 0 1.75rem; padding-block-end:.7rem; border-block-end:2px solid var(--rdct-line); font-size:1.125rem; line-height:1.5; }
+.rdct-blog-journal__title::after { content:''; position:absolute; inset-inline-start:0; inset-block-end:-2px; inline-size:2.5rem; border-block-end:2px solid var(--rdct-accent); }
+.rdct-blog-journal__list { display:grid; gap:2rem; }
+.rdct-blog-journal-card { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1fr); gap:clamp(1rem,2.5vw,2rem); min-inline-size:0; }
+.rdct-blog-journal-card + .rdct-blog-journal-card { padding-block-start:2rem; border-block-start:1px solid var(--rdct-line); }
+.rdct-blog-journal-card__image { border-radius:calc(var(--rdct-radius) / 2); aspect-ratio:3 / 2; }
+.rdct-blog-journal-card__body { min-inline-size:0; }
+.rdct-blog-journal-card__body:only-child { grid-column:1 / -1; }
+.rdct-blog-journal-card h4 { margin:.65rem 0; font-size:1.25rem; line-height:1.5; }
+.rdct-blog-journal-card h4 a { color:var(--rdct-ink); text-decoration:none; }
+.rdct-blog-journal-card h4 a:is(:hover,:focus-visible) { color:var(--rdct-accent); }
+.rdct-blog-journal-card .rdct-post-categories > :is(a,span) { padding:0; background:none; color:var(--rdct-accent); }
+.rdct-blog-journal-card .rdct-post-meta > span { order:-1; padding-inline-end:1rem; border-inline-end:1px solid var(--rdct-line); }
+.rdct-blog-journal-card__excerpt::before { content:''; display:block; inline-size:3rem; margin-block-end:1rem; border-block-start:1px solid var(--rdct-accent); }
+.rdct-blog-journal-card__excerpt { margin-block:1rem 1.25rem; color:var(--rdct-muted); }
+.rdct-blog-journal-card__excerpt p { margin:0; }
+.rdct-blog-journal-card__more { font-size:.8125rem; }
+.rdct-client-blog-archive .pagination .nav-links { align-items:center; }
+.rdct-client-blog-archive .pagination .page-numbers { display:inline-flex; align-items:center; justify-content:center; min-inline-size:2.75rem; min-block-size:2.75rem; padding:.4rem .8rem; border:1px solid var(--rdct-line); border-radius:calc(var(--rdct-radius) / 2); text-decoration:none; }
+.rdct-client-blog-archive .pagination :is(.current,a:hover,a:focus-visible) { border-color:var(--rdct-accent); background:var(--rdct-accent); color:var(--rdct-on-accent,#fff); }
+.rdct-client-blog-archive .pagination .dots { border-color:transparent; }
+@media (max-width:47.99rem) {
+  .rdct-blog-journal-card { grid-template-columns:minmax(0,1fr); }
+}

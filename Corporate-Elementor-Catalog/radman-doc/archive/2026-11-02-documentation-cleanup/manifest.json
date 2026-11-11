@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-02",
+  "purpose": "Historical originals before documentation cleanup; not current instructions",
+  "files": [
+    {
+      "source": "AGENTS.md",
+      "original_utf8_sha256": "4354a36d6964073c4b7a4a17902fd0cfb32e0b36b1bbee03690b8afe964b483e",
+      "snapshot": "AGENTS.md"
+    },
+    {
+      "source": "radman-doc/README.md",
+      "original_utf8_sha256": "0e8af671cd48a40a90563fa2f867246e1e19ee9cc6b841d6622e1ee85625a8c4",
+      "snapshot": "radman-doc--README.md"
+    },
+    {
+      "source": "radman-doc/implementation/foundation.md",
+      "original_utf8_sha256": "79446428351335f94ff30bdfdbb84d20f7fa050c40fdf6d3076cbd5f6fb1afa9",
+      "snapshot": "radman-doc--implementation--foundation.md"
+    },
+    {
+      "source": "radman-doc/product/roadmap.md",
+      "original_utf8_sha256": "6abc8cbb889d2076f2a07d3aac7e7cd52513621793c3bcdd95d66d6f18377df2",
+      "snapshot": "radman-doc--product--roadmap.md"
+    },
+    {
+      "source": ".agents/skills/radman-documentation/SKILL.md",
+      "original_utf8_sha256": "5ffa497a6ade1bf91de9b2eb4515a19554c51888a2517c1e12907e904a1cc809",
+      "snapshot": ".agents--skills--radman-documentation--SKILL.md"
+    },
+    {
+      "source": ".agents/skills/radman-theme-work/SKILL.md",
+      "original_utf8_sha256": "4d6b14e6a05384d756c6c9996b36b8f6c33fa397112cdb78202c8b42cdea5d3f",
+      "snapshot": ".agents--skills--radman-theme-work--SKILL.md"
+    },
+    {
+      "source": "radman-doc/product/essentials.md",
+      "original_utf8_sha256": "c5c1da9353a49d702e9b47e29b32cf6a504674630c5dd074a5af60cca3c17c0f",
+      "snapshot": "radman-doc--product--essentials.md"
+    },
+    {
+      "source": "radman-doc/engineering/assets.md",
+      "original_utf8_sha256": "60cb4f308569ab52efb36dc904ba42318112533e1d7d1767e8c51d0f2b48c2ea",
+      "snapshot": "radman-doc--engineering--assets.md"
+    },
+    {
+      "source": "radman-doc/engineering/typography.md",
+      "original_utf8_sha256": "f6696ccd336a048832e9117425aa34e2b3a3eec21250492aa4a1786268a22df9",
+      "snapshot": "radman-doc--engineering--typography.md"
+    },
+    {
+      "source": "radman-doc/engineering/client-customization.md",
+      "original_utf8_sha256": "aea43a42edcda252af0122c33c871fbcc9068d28284af8f0383bb01142f440e7",
+      "snapshot": "radman-doc--engineering--client-customization.md"
+    }
+  ]
+}

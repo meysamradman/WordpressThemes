@@ -1,0 +1,7 @@
+.rdct-tst--s17 { background:var(--rdct-tst-background-color,transparent);padding:0;text-align:center; }
+.rdct-tst--s17 .rdct-tst__review { position:relative;padding:var(--rdct-tst-padding,28px);background:var(--rdct-tst-background-color,#f3f6fa);border-radius:var(--rdct-tst-radius,12px); }
+.rdct-tst--s17 .rdct-tst__review::after { content:"";position:absolute;inset-block-end:-10px;inset-inline-start:calc(50% - 10px);inline-size:20px;block-size:20px;background:inherit;transform:rotate(45deg); }
+.rdct-tst--s17 .rdct-tst__info { justify-content:center;flex-direction:column;padding:var(--rdct-tst-padding,28px); }
+.rdct-tst--s17 .rdct-tst__avatar { inline-size:85px;block-size:85px; }
+.rdct-tst--s17 .rdct-tst__quote { font-size:1rem; }
+.rdct-tst--s17 .rdct-tst__logo { margin-inline:auto; }

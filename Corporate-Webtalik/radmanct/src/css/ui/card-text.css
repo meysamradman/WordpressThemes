@@ -1,0 +1,12 @@
+.rdc-card-tx {
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  inline-size:100%;
+  min-inline-size:0;
+  min-block-size:2lh;
+  max-block-size:2lh;
+  overflow:hidden;
+  overflow-wrap:anywhere;
+}

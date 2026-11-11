@@ -1,0 +1,12 @@
+.rdct-tb { max-inline-size:100%; min-inline-size:0; overflow-x:auto; overscroll-behavior-inline:contain; color:inherit; }
+.rdct-tb table { inline-size:100%; min-inline-size:var(--rdct-tb-min,600px); border-collapse:collapse; margin:0; font:inherit; color:inherit; background:transparent; }
+.rdct-tb :is(th,td) { padding:var(--rdct-tb-pad,20px); text-align:start; vertical-align:middle; overflow-wrap:anywhere; }
+.rdct-tb th { font-weight:600; }
+.rdct-tb thead { background:var(--rdct-tb-head,#f1f7f6); }
+.rdct-tb caption { text-align:start; font-weight:600; padding-block-end:1rem; }
+.rdct-tb .rdct-tb__caption-hidden { position:absolute; inline-size:1px; block-size:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.rdct-tb--center :is(th,td) { text-align:center; }
+.rdct-tb--end :is(th,td) { text-align:end; }
+.rdct-tb small { display:block; font-size:.875em; opacity:.75; }
+.rdct-tb:focus-visible { outline:2px solid currentColor; outline-offset:-2px; }
+@media(max-width:48rem) { .rdct-tb :is(th,td) { padding:min(var(--rdct-tb-pad,20px),14px); } }

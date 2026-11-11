@@ -1,0 +1,230 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct-child 1.1.1\nLanguage: fa_IR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Current article cover"
+msgstr "تصویر شاخص نوشتهٔ جاری"
+
+msgid "Articles"
+msgstr "مقاله‌ها"
+
+msgid "Featured articles"
+msgstr "نوشته‌های ویژه"
+
+msgid "Sidebar widgets"
+msgstr "ابزارک‌های سایدبار"
+
+msgid "Latest from the journal"
+msgstr "تازه‌های وبلاگ"
+
+msgid "Latest articles"
+msgstr "تازه‌ترین نوشته‌ها"
+
+msgid "Video article"
+msgstr "نوشتهٔ ویدئویی"
+
+msgid "Articles with thumbnails"
+msgstr "نوشته‌ها با تصویر بندانگشتی"
+
+msgid "Site navigation"
+msgstr "ناوبری سایت"
+
+msgid "WordPress design and development"
+msgstr "طراحی و توسعه"
+
+msgid "WordPress websites"
+msgstr "تخصصی وردپرس"
+
+msgid "Professional WordPress solutions: custom themes and plugins, easy content management, performance and security built for growth."
+msgstr "راهکارهای حرفه‌ای وردپرس؛ از طراحی قالب و افزونهٔ اختصاصی تا مدیریت آسان محتوا، با تمرکز بر سرعت، امنیت و رشد کسب‌وکار شما."
+
+msgid "Management panel design"
+msgstr "طراحی پنل مدیریت"
+
+msgid "Application design and development"
+msgstr "طراحی و توسعه"
+
+msgid "Mobile applications"
+msgstr "اپلیکیشن موبایل"
+
+msgid "Custom Android and iOS applications with a smooth user experience, reliable performance and seamless connections to your business systems."
+msgstr "طراحی و توسعهٔ اپلیکیشن‌های اختصاصی اندروید و iOS با تجربهٔ کاربری روان، عملکرد پایدار و اتصال یکپارچه به سامانه‌های کسب‌وکار شما."
+
+msgid "and web applications"
+msgstr "و سامانه‌های تحت وب"
+
+msgid "Custom management panels and powerful web applications, built around your business with a scalable, modular architecture."
+msgstr "طراحی و توسعهٔ پنل‌های مدیریت و سامانه‌های تحت وب قدرتمند، سفارشی و متناسب با نیازهای کسب‌وکار شما؛ با معماری ماژولار و مقیاس‌پذیر."
+
+msgid "Security and access control"
+msgstr "امنیت و مدیریت دسترسی"
+
+msgid "Performance and scalability"
+msgstr "عملکرد و مقیاس‌پذیری"
+
+msgid "Custom development"
+msgstr "توسعهٔ اختصاصی"
+
+msgid "Multisite network"
+msgstr "راه‌اندازی چندسایته"
+
+msgid "Our services"
+msgstr "خدمات ما"
+
+msgid "Security"
+msgstr "امنیت"
+
+msgid "Responsive layout"
+msgstr "چیدمان واکنش‌گرا"
+
+msgid "Performance"
+msgstr "عملکرد"
+
+msgid "Custom website design"
+msgstr "طراحی وب‌سایت"
+
+msgid "Tailored"
+msgstr "اختصاصی"
+
+msgid "We design and develop modern, fast websites that fit your brand. From the first idea to launch, we are with you."
+msgstr "طراحی و توسعهٔ وب‌سایت‌های مدرن، سریع و کاملاً متناسب با هویت برند شما. از ایده تا اجرا، همراه شما هستیم."
+
+msgid "Security and stability"
+msgstr "امنیت و پایداری"
+
+msgid "Responsive design"
+msgstr "طراحی واکنش‌گرا"
+
+msgid "Speed and performance"
+msgstr "سرعت و عملکرد بالا"
+
+msgid "More information"
+msgstr "اطلاعات بیشتر"
+
+msgid "What we build"
+msgstr "آنچه می‌سازیم"
+
+msgid "From idea to product"
+msgstr "از ایده تا محصول"
+
+msgid "Website"
+msgstr "وب‌سایت"
+
+msgid "development"
+msgstr "اختصاصی"
+
+msgid "Management"
+msgstr "سامانه‌های"
+
+msgid "platforms"
+msgstr "مدیریتی"
+
+msgid "Mobile"
+msgstr "اپلیکیشن"
+
+msgid "applications"
+msgstr "موبایل"
+
+msgid "Software"
+msgstr "مهندسی"
+
+msgid "engineering"
+msgstr "نرم‌افزار"
+
+msgid "A distinctive website, built around your business. From the first interaction to the final detail, clear, fast and ready to grow."
+msgstr "وب‌سایتی متناسب با هویت و نیاز کسب‌وکار شما؛ از اولین تعامل تا آخرین جزئیات، روشن، سریع و آمادهٔ رشد."
+
+msgid "Bring your processes, people and information together. We turn complex workflows into practical tools your team enjoys using."
+msgstr "فرآیندها، تیم و اطلاعات را یکپارچه کنید. مسیرهای پیچیده را به ابزارهایی کاربردی و ساده برای کار روزمره تبدیل می‌کنیم."
+
+msgid "Your product, wherever your users are. A consistent experience that feels natural on every screen."
+msgstr "محصول شما، هرجا که کاربران حضور دارند؛ تجربه‌ای یکپارچه، روان و متناسب با هر صفحه‌نمایش."
+
+msgid "From an ambitious idea to a dependable product. We design, build and improve the systems behind your next step."
+msgstr "از یک ایدهٔ جسورانه تا محصولی قابل اتکا؛ سیستم‌هایی را طراحی و توسعه می‌دهیم که پشتوانهٔ قدم بعدی شما باشند."
+
+msgid "Responsive interfaces"
+msgstr "طراحی واکنش‌گرا"
+
+msgid "Speed and accessibility"
+msgstr "سرعت و دسترس‌پذیری"
+
+msgid "Business automation"
+msgstr "اتوماسیون کسب‌وکار"
+
+msgid "Reports and analytics"
+msgstr "گزارش و تحلیل داده"
+
+msgid "Connected systems"
+msgstr "سیستم‌های یکپارچه"
+
+msgid "Android and iOS"
+msgstr "اندروید و iOS"
+
+msgid "User experience"
+msgstr "تجربهٔ کاربری"
+
+msgid "Scalable architecture"
+msgstr "معماری مقیاس‌پذیر"
+
+msgid "APIs and integrations"
+msgstr "API و اتصال سرویس‌ها"
+
+msgid "Security and reliability"
+msgstr "امنیت و پایداری"
+
+msgid "Continuous improvement"
+msgstr "بهبود مستمر"
+
+msgid "Choose the hero image in this page's Featured image panel. Manage its sizes and media details in the Media Library."
+msgstr "تصویر اصلی را از بخش «تصویر شاخص» همین برگه انتخاب کنید. اندازه‌ها و مشخصات رسانه در کتابخانهٔ رسانه قابل مدیریت‌اند."
+
+msgid "Custom client home"
+msgstr "خانهٔ اختصاصی مشتری"
+
+msgid "Home introduction"
+msgstr "بخش اول خانه"
+
+msgid "Main heading"
+msgstr "عنوان اصلی"
+
+msgid "Supporting heading"
+msgstr "عنوان تکمیلی"
+
+msgid "Gold heading"
+msgstr "عنوان طلایی"
+
+msgid "Rotating heading (one phrase per line)"
+msgstr "عنوان چرخشی (هر جمله در یک خط)"
+
+msgid "Introduction"
+msgstr "متن معرفی"
+
+msgid "Consultation label"
+msgstr "متن دکمهٔ مشاوره"
+
+msgid "Consultation URL"
+msgstr "نشانی دکمهٔ مشاوره"
+
+msgid "Consultation"
+msgstr "مشاوره"
+
+msgid "Nilgoon Tejarat Deniz"
+msgstr "نیلگون تجارت دنیز"
+
+msgid "Supplier of chemical raw materials"
+msgstr "تأمین‌کننده مواد اولیه شیمیایی"
+
+msgid "Industrial equipment"
+msgstr "تجهیزات صنعتی"
+
+msgid "Chemical raw materials"
+msgstr "مواد اولیه شیمیایی"
+
+msgid "Custom client page"
+msgstr "صفحهٔ اختصاصی مشتری"
+
+msgid "Load more"
+msgstr "نمایش بیشتر"
+
+msgid "More projects loaded."
+msgstr "نمونه‌کارهای بیشتری نمایش داده شد."

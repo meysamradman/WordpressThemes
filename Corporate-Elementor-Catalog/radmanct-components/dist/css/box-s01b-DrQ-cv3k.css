@@ -1,0 +1,6 @@
+.rdct-box--s01b { display: grid; aspect-ratio: var(--rdct-box-ratio, 1); min-block-size: var(--rdct-box-height, 0px); overflow: clip; }
+.rdct-box--s01b > * { grid-area: 1 / 1; }
+.rdct-box--s01b .rdct-box__content { display: flex; flex-direction: column; justify-content: end; color: #fff; background: transparent; z-index: 1; }
+.rdct-box--s01b .rdct-box__label { margin-block-end: auto; background: transparent; padding-inline: 0; border-block-end: 2px solid; border-radius: 0; }
+.rdct-box--s01b .rdct-box__title { font-weight: 400; }.rdct-box--s01b .rdct-box__text { opacity: .8; }
+.rdct-box--s01b:is(:hover, :focus-within) { transform: translateY(-3px); box-shadow: 0 15px 80px #0004; }

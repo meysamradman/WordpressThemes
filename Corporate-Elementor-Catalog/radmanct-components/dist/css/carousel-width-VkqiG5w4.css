@@ -1,0 +1,4 @@
+.rdct-crs[data-variable-width=true] .swiper-slide { --rdct-crs-w: var(--rdct-crs-w-m, var(--rdct-crs-w-t, var(--rdct-crs-w-d, max-content))); width: var(--rdct-crs-w); inline-size: var(--rdct-crs-w); max-inline-size: 100%; }
+.rdct-crs[data-variable-width=true]:not(.is-enhanced) .swiper-slide { flex: 0 0 auto; }
+@media (min-width: 48rem) { .rdct-crs[data-variable-width=true] .swiper-slide { --rdct-crs-w: var(--rdct-crs-w-t, var(--rdct-crs-w-d, max-content)); } }
+@media (min-width: 64rem) { .rdct-crs[data-variable-width=true] .swiper-slide { --rdct-crs-w: var(--rdct-crs-w-d, max-content); } }

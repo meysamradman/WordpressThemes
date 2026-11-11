@@ -1,0 +1,2 @@
+.rdct-fb--rl.is-enhanced.is-flipped .rdct-fb__wrap { transform: rotateY(-180deg); }
+@media (prefers-reduced-motion: reduce) { .rdct-fb--rl.is-enhanced.is-flipped .rdct-fb__wrap { transform: none; } }

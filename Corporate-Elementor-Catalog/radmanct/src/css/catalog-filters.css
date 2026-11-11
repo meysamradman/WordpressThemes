@@ -1,0 +1,7 @@
+.rdct-cat-filter { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; padding: 1.25rem; margin-block-end: 2rem; border: 1px solid var(--rdct-line); border-radius: var(--rdct-radius); background: var(--rdct-surface); }
+.rdct-cat-filter > :where(label,.rdct-field) { display: grid; flex: 1 1 140px; gap: .4rem; font-size: .875rem; }
+.rdct-cat-tools { margin-block-end: 2rem; }
+.rdct-cat-tools .rdct-cat-filter { margin-block-end: 1rem; }
+.rdct-cat-results { color: var(--rdct-muted); }
+.rdct-cat-active { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; list-style: none; }
+.rdct-cat-active a { display: inline-flex; align-items: center; gap: .65rem; min-block-size: 2.75rem; padding: .45rem .8rem; border: 1px solid var(--rdct-line); border-radius: var(--rdct-radius); text-decoration: none; overflow-wrap: anywhere; }

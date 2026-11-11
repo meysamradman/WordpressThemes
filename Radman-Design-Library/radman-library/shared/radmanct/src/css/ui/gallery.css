@@ -1,0 +1,2 @@
+.rdc-lb{max-inline-size:95vw;max-block-size:95svh;border:0;padding:3rem 1rem 1rem;background:var(--rdc-clr-hero);color:var(--rdc-clr-wht)}.rdc-lb::backdrop{background:var(--rdc-ovl-gal)}.rdc-lb>img{display:block;max-inline-size:85vw;max-block-size:80svh;inline-size:auto;block-size:auto}
+.rdc-lb [data-rdc-lb-cls]{position:absolute;inset:0 0 auto auto;padding:.6rem 1rem;border:0;background:transparent;color:inherit;cursor:pointer}

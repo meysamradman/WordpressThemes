@@ -1,0 +1,1 @@
+<?php defined('ABSPATH')||exit; ?><h1 class="screen-reader-text">نمونهٔ فوتر قالب</h1><?php get_template_part('shared/radmanct/template-parts/layout/footer'); ?>

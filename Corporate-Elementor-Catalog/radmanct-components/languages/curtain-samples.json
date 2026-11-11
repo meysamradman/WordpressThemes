@@ -1,0 +1,12 @@
+{
+  "fa": [
+    { "title": "معرفی خدمات", "content": "<p>تصویر، لوگو و توضیح هر خدمت را در پنل خودش قرار دهید.</p>", "icon": "star" },
+    { "title": "پروژه‌های ما", "content": "<p>با انتخاب هر عنوان، محتوای همان بخش نمایش داده می‌شود.</p>", "icon": "arrow-right" },
+    { "title": "ارتباط با ما", "content": "<p>این نمونه از موتور مشترک PHP و المنتور استفاده می‌کند.</p>", "icon": "phone" }
+  ],
+  "en": [
+    { "title": "Our services", "content": "<p>Add an image, logo and description to each panel.</p>", "icon": "star" },
+    { "title": "Our projects", "content": "<p>Select a title to expand its content.</p>", "icon": "arrow-right" },
+    { "title": "Contact us", "content": "<p>This sample uses the shared PHP and Elementor component.</p>", "icon": "phone" }
+  ]
+}

@@ -1,0 +1,6 @@
+.rdl-bar{padding:1rem var(--rdl-gut,var(--rdc-gut));display:flex;justify-content:space-between;gap:1rem;align-items:center;border-bottom:1px solid #d9dcd1;background:#f5f4ef;color:#22251f;font:400 .85rem/1.7 Peyda,sans-serif;min-height:80px}
+.rdl-brd{display:flex;align-items:center;gap:.8rem;direction:ltr;font-weight:750;font-size:1.15rem;text-decoration:none;color:inherit}
+.rdl-brd small{display:block;font-weight:400;font-size:.7rem;color:#62665d;direction:rtl}
+.rdl-mark{display:grid;place-content:center;width:44px;height:44px;background:#22251f;color:#f5f4ef;border-radius:12px}
+.rdl-bar nav{display:flex;gap:1.5rem;font-size:.85rem}.rdl-bar a{color:inherit;text-decoration:none}.rdl-bar__ttl{font-size:.85rem;color:#62665d;margin:0}.rdl-bar a:focus-visible{outline:2px solid #536c28;outline-offset:5px}
+@media(max-width:650px){.rdl-bar{flex-wrap:wrap}.rdl-bar__ttl{order:3;width:100%;font-size:.75rem}.rdl-bar nav{gap:.75rem;font-size:.75rem}}

@@ -1,0 +1,4 @@
+.rdct-tst--s02 { background:var(--rdct-tst-background-color,#fff);border:1px solid var(--rdct-tst-border-color,var(--rdct-border,#e6ecef)); }
+.rdct-tst--s02::after { content:"";position:absolute;inset-block-end:-11px;inset-inline-start:44px;inline-size:20px;block-size:20px;background:inherit;border-inline-end:inherit;border-block-end:inherit;transform:rotate(45deg); }
+.rdct-tst--s02 .rdct-tst__avatar { inline-size:60px;block-size:60px; }
+.rdct-tst--s02 .rdct-tst__quote { font-size:1.125rem; }

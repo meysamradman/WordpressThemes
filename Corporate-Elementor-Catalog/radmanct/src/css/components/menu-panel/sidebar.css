@@ -1,0 +1,6 @@
+.rdct-mob-drawer[data-panel-mode="sidebar"] { inset-inline-start:0; inset-inline-end:auto; inline-size:min(var(--rdct-panel-width,22rem),calc(100% - 1rem)); }
+.rdct-mob-drawer[data-panel-mode="sidebar"]:dir(rtl) { --rdct-panel-enter:1rem; }
+[data-drawer-side="end"] > .rdct-mob-drawer[data-panel-mode="sidebar"] { --rdct-panel-enter:1rem; inset-inline-start:auto; inset-inline-end:0; }
+[data-drawer-side="end"] > .rdct-mob-drawer[data-panel-mode="sidebar"]:dir(rtl) { --rdct-panel-enter:-1rem; }
+.rdct-mob-drawer[data-drawer-side="end"][data-panel-mode="sidebar"] { --rdct-panel-enter:1rem; inset-inline-start:auto; inset-inline-end:0; }
+.rdct-mob-drawer[data-drawer-side="end"][data-panel-mode="sidebar"]:dir(rtl) { --rdct-panel-enter:-1rem; }

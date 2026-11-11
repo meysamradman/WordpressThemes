@@ -1,0 +1,49 @@
+# Dependencies, temporary tooling and local editor state.
+node_modules/
+.playwright-mcp/
+.cache/
+.vite/
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Local configuration, credentials and database state.
+.env
+.env.*
+!.env.example
+!.env.*.example
+.local-admin.txt
+wp-config.php
+auth.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.sql
+*.sql.gz
+**/wp-content/uploads/
+
+# Archives and generated maintenance / browser output, not active runtime assets.
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.js.map
+*.css.map
+artifacts/
+backups/
+releases/
+**/.github/workflows/
+/Corporate-Webtalik/output/
+/Corporate-Elementor-Catalog/themes/
+/Hub/update/incoming/
+/Radman-Design-Library/radman-library/dist-selected/
+
+# Keep required bundled vendor code, local fonts/media and consumed dist assets.

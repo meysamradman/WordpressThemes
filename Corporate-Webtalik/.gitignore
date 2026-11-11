@@ -1,0 +1,20 @@
+node_modules/
+/migration-source/
+/themes/
+/artifacts/
+.env
+.env.*
+*.log
+*.sql
+*.sql.gz
+*.zip
+.DS_Store
+Thumbs.db
+
+# Temporary browser artifacts
+.playwright-mcp/
+
+# Source archive: local-only files stay outside Git.
+!.env.example
+!.env.*.example
+.local-admin.txt

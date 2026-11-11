@@ -1,0 +1,17 @@
+import {build} from 'vite';
+import {fileURLToPath} from 'node:url';
+import {resolve} from 'node:path';
+import {readFileSync,existsSync,writeFileSync} from 'node:fs';
+const root=fileURLToPath(new URL('../radman-library/',import.meta.url));
+const registry=JSON.parse(readFileSync(resolve(root,'inc/samples.json'),'utf8'));
+const request=process.argv.find(arg=>arg.startsWith('--modules='));
+const selected=request?[...new Set(request.slice(10).split(',').filter(Boolean))]:Object.keys(registry);
+if(!selected.length||selected.some(slug=>!Object.hasOwn(registry,slug)))throw new Error('Choose existing module slugs from inc/samples.json.');
+const entries=[request?'src/css/client-base.css':'src/css/sample-base.css'];
+if(!request||selected.some(slug=>['home-hero','home-services','page-home'].includes(slug)))entries.push('shared/radmanct/src/js/gsap-vendor.js');
+if(!request)entries.push('shared/radmanct/src/js/animation-vendor.js','shared/radmanct/src/js/pages/page-title.js','shared/radmanct/src/js/admin/media-editor.js','shared/radmanct/src/css/admin/gallery.css');
+for(const slug of selected)for(const file of ['style.css','script.js'])if(existsSync(resolve(root,'modules',slug,file)))entries.push(`modules/${slug}/${file}`);
+const input=Object.fromEntries(entries.map((name,index)=>[name.endsWith('.css')?'css-'+(name.includes('modules/')?name.split('/')[1]:name.split('/').slice(-2).join('-').replace(/\.css$/,'')):'sample-'+index,resolve(root,name)]));
+const outDir=request?'dist-selected':'dist';
+await build({root,configFile:false,publicDir:resolve(root,'fonts'),base:'./',experimental:{renderBuiltUrl(filename,{type}){return type==='public'?`../../fonts/${filename}`:{relative:true};}},build:{copyPublicDir:false,outDir,emptyOutDir:true,minify:true,cssMinify:true,sourcemap:false,manifest:'manifest.json',cssCodeSplit:true,rollupOptions:{preserveEntrySignatures:'strict',input,output:{entryFileNames:'js/[name]-[hash].min.js',chunkFileNames:'js/[name]-[hash].min.js',assetFileNames:asset=>asset.names?.some(name=>name.endsWith('.css'))?'css/[name]-[hash].min[extname]':'assets/[name]-[hash][extname]'}}}});
+if(request)writeFileSync(resolve(root,outDir,'selection.json'),JSON.stringify({modules:selected.map(slug=>({slug,kind:registry[slug].kind??'section',effects:registry[slug].effects??[],data:existsSync(resolve(root,`modules/${slug}/data.php`))?`modules/${slug}/data.php`:null,source:registry[slug].source})),integration:'docs/scenario.md',assets:'manifest.json'},null,2));

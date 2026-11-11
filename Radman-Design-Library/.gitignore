@@ -1,0 +1,15 @@
+.env
+.local-admin.txt
+*.log
+node_modules/
+fixtures/media.tar
+fixtures/*.tar
+radman-library/dist-selected/
+
+# Temporary browser artifacts
+.playwright-mcp/
+
+# Source archive: local-only files stay outside Git.
+.env.*
+!.env.example
+!.env.*.example

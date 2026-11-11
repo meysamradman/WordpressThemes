@@ -1,0 +1,2 @@
+.rdct-ss[data-mode="services"] { gap: 0; }
+.rdct-ss[data-mode="services"] > .rdct-ss__item { overflow: visible; }

@@ -1,0 +1,8 @@
+.rdct-im-dialog { border:0; border-radius:12px; padding:1rem; inline-size:min(90vw,1100px); max-block-size:90vh; background:#fff; color:#172b3a; }
+.rdct-im-dialog::backdrop { background:#000c; }
+.rdct-im-dialog__controls { display:flex; gap:1rem; justify-content:center; margin-block-end:1rem; }
+.rdct-im-dialog button { font:inherit; color:inherit; padding:.5rem 1rem; cursor:pointer; }
+.rdct-im-dialog img { display:block; max-inline-size:100%; max-block-size:70vh; margin-inline:auto; object-fit:contain; touch-action:pan-y pinch-zoom; }
+.rdct-im-dialog p { text-align:center; }
+.rdct-im-dialog img[hidden] { display:none; }
+.rdct-im-dialog__status { min-block-size:1.8em; margin-block:.5rem; }

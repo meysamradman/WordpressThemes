@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wpml-config>
+  <elementor-widgets>
+    <widget name="rdct-accordion"><fields-in-item items_of="items"><field type="Accordion title" editor_type="LINE">title</field><field type="Accordion content" editor_type="VISUAL">content</field></fields-in-item></widget>
+    <widget name="rdct-atomic-accordion"><fields-in-item items_of="items&gt;value"><field type="Accordion title" editor_type="LINE">value&gt;title&gt;value</field><field type="Accordion content" editor_type="VISUAL">value&gt;content&gt;value</field></fields-in-item></widget>
+
+    <widget name="rdct-timeline"><fields-in-item items_of="items"><field type="Timeline title" editor_type="LINE">title</field><field type="Timeline date" editor_type="LINE">date</field><field type="Timeline content" editor_type="VISUAL">content</field></fields-in-item></widget>
+    <widget name="rdct-atomic-timeline"><fields-in-item items_of="items&gt;value"><field type="Timeline title" editor_type="LINE">value&gt;title&gt;value</field><field type="Timeline date" editor_type="LINE">value&gt;date&gt;value</field><field type="Timeline content" editor_type="VISUAL">value&gt;content&gt;value</field></fields-in-item></widget>
+
+    <widget name="rdct-button"><fields>
+      <field type="Radman CT button: text" editor_type="LINE">label</field>
+      <field type="Radman CT button: hover text" editor_type="LINE">secondary_label</field>
+      <field type="Radman CT button: caption" editor_type="LINE">image_caption</field>
+      <field type="Radman CT button: link" editor_type="LINK">link&gt;url</field>
+    </fields></widget>
+    <widget name="rdct-atomic-button"><fields>
+      <field type="Radman CT button: text" editor_type="LINE">label&gt;value</field>
+      <field type="Radman CT button: hover text" editor_type="LINE">secondary_label&gt;value</field>
+      <field type="Radman CT button: caption" editor_type="LINE">image_caption&gt;value</field>
+      <field type="Radman CT button: link" editor_type="LINK">link&gt;value&gt;destination&gt;value</field>
+    </fields></widget>
+    <widget name="rdct-testimonial">
+      <fields>
+        <field type="Radman CT review: title" editor_type="LINE">title</field>
+        <field type="Radman CT review: position" editor_type="LINE">position</field>
+        <field type="Radman CT review: content" editor_type="VISUAL">content</field>
+        <field type="Radman CT review: date" editor_type="LINE">date</field>
+        <field type="Radman CT review: source" editor_type="LINE">source</field>
+        <field type="Radman CT review: link" editor_type="LINK">link&gt;url</field>
+      </fields>
+    </widget>
+    <widget name="rdct-atomic-testimonial">
+      <fields>
+        <field type="Radman CT review: title" editor_type="LINE">title&gt;value</field>
+        <field type="Radman CT review: position" editor_type="LINE">position&gt;value</field>
+        <field type="Radman CT review: content" editor_type="VISUAL">content&gt;value</field>
+        <field type="Radman CT review: date" editor_type="LINE">date&gt;value</field>
+        <field type="Radman CT review: source" editor_type="LINE">source&gt;value</field>
+        <field type="Radman CT review: link" editor_type="LINK">link&gt;value&gt;destination&gt;value</field>
+      </fields>
+    </widget>
+    <widget name="rdct-carousel">
+      <fields>
+        <field type="Radman CT carousel: Accessible label" editor_type="LINE">label</field>
+      </fields>
+      <fields-in-item items_of="items">
+        <field type="Radman CT carousel: Title" editor_type="LINE">title</field>
+        <field type="Radman CT carousel: Content" editor_type="VISUAL">content</field>
+        <field type="Radman CT carousel: Link" editor_type="LINK">link</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-carousel">
+      <fields>
+        <field type="Radman CT Atomic carousel: Accessible label" editor_type="LINE">label&gt;value</field>
+      </fields>
+      <fields-in-item items_of="items&gt;value">
+        <field type="Radman CT Atomic carousel: Title" editor_type="LINE">value&gt;title&gt;value</field>
+        <field type="Radman CT Atomic carousel: Content" editor_type="VISUAL">value&gt;content&gt;value</field>
+        <field type="Radman CT Atomic carousel: Link" editor_type="LINK">value&gt;link&gt;value</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-table">
+      <fields>
+        <field type="Radman CT Table: Caption" editor_type="LINE">caption</field>
+        <field type="Radman CT Table: Column 1" editor_type="LINE">data&gt;columns&gt;0</field>
+        <field type="Radman CT Table: Column 2" editor_type="LINE">data&gt;columns&gt;1</field>
+        <field type="Radman CT Table: Column 3" editor_type="LINE">data&gt;columns&gt;2</field>
+        <field type="Radman CT Table: Column 4" editor_type="LINE">data&gt;columns&gt;3</field>
+        <field type="Radman CT Table: Column 5" editor_type="LINE">data&gt;columns&gt;4</field>
+        <field type="Radman CT Table: Column 6" editor_type="LINE">data&gt;columns&gt;5</field>
+        <field type="Radman CT Table: Column 7" editor_type="LINE">data&gt;columns&gt;6</field>
+        <field type="Radman CT Table: Column 8" editor_type="LINE">data&gt;columns&gt;7</field>
+        <field type="Radman CT Table: Column 9" editor_type="LINE">data&gt;columns&gt;8</field>
+        <field type="Radman CT Table: Column 10" editor_type="LINE">data&gt;columns&gt;9</field>
+        <field type="Radman CT Table: Column 11" editor_type="LINE">data&gt;columns&gt;10</field>
+        <field type="Radman CT Table: Column 12" editor_type="LINE">data&gt;columns&gt;11</field>
+      </fields>
+      <fields-in-item items_of="data&gt;rows">
+        <field type="Radman CT Table: Cell 1" editor_type="VISUAL">cells&gt;0</field>
+        <field type="Radman CT Table: Cell 2" editor_type="VISUAL">cells&gt;1</field>
+        <field type="Radman CT Table: Cell 3" editor_type="VISUAL">cells&gt;2</field>
+        <field type="Radman CT Table: Cell 4" editor_type="VISUAL">cells&gt;3</field>
+        <field type="Radman CT Table: Cell 5" editor_type="VISUAL">cells&gt;4</field>
+        <field type="Radman CT Table: Cell 6" editor_type="VISUAL">cells&gt;5</field>
+        <field type="Radman CT Table: Cell 7" editor_type="VISUAL">cells&gt;6</field>
+        <field type="Radman CT Table: Cell 8" editor_type="VISUAL">cells&gt;7</field>
+        <field type="Radman CT Table: Cell 9" editor_type="VISUAL">cells&gt;8</field>
+        <field type="Radman CT Table: Cell 10" editor_type="VISUAL">cells&gt;9</field>
+        <field type="Radman CT Table: Cell 11" editor_type="VISUAL">cells&gt;10</field>
+        <field type="Radman CT Table: Cell 12" editor_type="VISUAL">cells&gt;11</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-table">
+      <fields>
+        <field type="Radman CT Atomic Table: Caption" editor_type="LINE">caption&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 1" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;0&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 2" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;1&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 3" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;2&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 4" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;3&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 5" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;4&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 6" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;5&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 7" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;6&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 8" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;7&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 9" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;8&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 10" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;9&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 11" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;10&gt;value</field>
+        <field type="Radman CT Atomic Table: Column 12" editor_type="LINE">data&gt;value&gt;columns&gt;value&gt;11&gt;value</field>
+      </fields>
+      <fields-in-item items_of="data&gt;value&gt;rows&gt;value">
+        <field type="Radman CT Atomic Table: Cell 1" editor_type="VISUAL">value&gt;cells&gt;value&gt;0&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 2" editor_type="VISUAL">value&gt;cells&gt;value&gt;1&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 3" editor_type="VISUAL">value&gt;cells&gt;value&gt;2&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 4" editor_type="VISUAL">value&gt;cells&gt;value&gt;3&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 5" editor_type="VISUAL">value&gt;cells&gt;value&gt;4&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 6" editor_type="VISUAL">value&gt;cells&gt;value&gt;5&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 7" editor_type="VISUAL">value&gt;cells&gt;value&gt;6&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 8" editor_type="VISUAL">value&gt;cells&gt;value&gt;7&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 9" editor_type="VISUAL">value&gt;cells&gt;value&gt;8&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 10" editor_type="VISUAL">value&gt;cells&gt;value&gt;9&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 11" editor_type="VISUAL">value&gt;cells&gt;value&gt;10&gt;value</field>
+        <field type="Radman CT Atomic Table: Cell 12" editor_type="VISUAL">value&gt;cells&gt;value&gt;11&gt;value</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-icon-box"><fields><field type="Radman CT icon box: Title" editor_type="LINE">title</field><field type="Radman CT icon box: Text" editor_type="VISUAL">text</field><field type="Radman CT icon box: Link text" editor_type="LINE">link_text</field><field type="Radman CT icon box: Link" editor_type="LINK">url</field></fields></widget>
+    <widget name="rdct-atomic-icon-box"><fields><field type="Radman CT Atomic icon box: Title" editor_type="LINE">title&gt;value</field><field type="Radman CT Atomic icon box: Text" editor_type="VISUAL">text&gt;value</field><field type="Radman CT Atomic icon box: Link text" editor_type="LINE">link_text&gt;value</field><field type="Radman CT Atomic icon box: Link" editor_type="LINK">url&gt;value</field></fields></widget>
+    <widget name="rdct-flipbox"><fields><field type="Radman CT flip box: Front" editor_type="VISUAL">front_content</field><field type="Radman CT flip box: Back" editor_type="VISUAL">back_content</field></fields></widget>
+    <widget name="rdct-atomic-flipbox"><fields><field type="Radman CT Atomic flip box: Front" editor_type="VISUAL">front_content&gt;value</field><field type="Radman CT Atomic flip box: Back" editor_type="VISUAL">back_content&gt;value</field></fields></widget>
+    <widget name="rdct-box">
+      <fields>
+        <field type="Radman CT box: Title" editor_type="LINE">title</field>
+        <field type="Radman CT box: Label" editor_type="LINE">label</field>
+        <field type="Radman CT box: Subtitle" editor_type="LINE">subtitle</field>
+        <field type="Radman CT box: Text" editor_type="VISUAL">text</field>
+        <field type="Radman CT box: Link" editor_type="LINK">url</field>
+        <field type="Radman CT box: Button text" editor_type="LINE">button_text</field>
+        <field type="Radman CT box: Button link" editor_type="LINK">button_url</field>
+      </fields>
+    </widget>
+    <widget name="rdct-atomic-box">
+      <fields>
+        <field type="Radman CT Atomic box: Title" editor_type="LINE">title&gt;value</field>
+        <field type="Radman CT Atomic box: Label" editor_type="LINE">label&gt;value</field>
+        <field type="Radman CT Atomic box: Subtitle" editor_type="LINE">subtitle&gt;value</field>
+        <field type="Radman CT Atomic box: Text" editor_type="VISUAL">text&gt;value</field>
+        <field type="Radman CT Atomic box: Link" editor_type="LINK">url&gt;value</field>
+        <field type="Radman CT Atomic box: Button text" editor_type="LINE">button_text&gt;value</field>
+        <field type="Radman CT Atomic box: Button link" editor_type="LINK">button_url&gt;value</field>
+      </fields>
+    </widget>
+    <widget name="rdct-curtain">
+      <fields-in-item items_of="items">
+        <field type="Radman CT curtain: Title" editor_type="LINE">title</field>
+        <field type="Radman CT curtain: Content" editor_type="VISUAL">content</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-curtain">
+      <fields-in-item items_of="items&gt;value">
+        <field type="Radman CT Atomic curtain: Title" editor_type="LINE">value&gt;title&gt;value</field>
+        <field type="Radman CT Atomic curtain: Content" editor_type="VISUAL">value&gt;content&gt;value</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-text-reveal">
+      <fields>
+        <field type="Radman CT Atomic text reveal: Text" editor_type="AREA">text&gt;value</field>
+        <field type="Radman CT Atomic text: Suffix" editor_type="AREA">suffix&gt;value</field>
+      </fields>
+    <fields-in-item items_of="items&gt;value"><field type="Radman CT text: Rotating word" editor_type="LINE">value&gt;title&gt;value</field></fields-in-item>
+    <fields-in-item items_of="segments&gt;value"><field type="Radman CT text: Segment" editor_type="AREA">value&gt;title&gt;value</field></fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-icon">
+      <fields>
+        <field type="Radman CT Atomic icon: Accessible label" editor_type="LINE">label&gt;value</field>
+      </fields>
+    </widget>
+    <widget name="radman-text-reveal">
+      <fields>
+        <field type="Radman text reveal: Text" editor_type="AREA">text</field>
+        <field type="Radman CT text: Suffix" editor_type="AREA">suffix</field>
+      </fields>
+    <fields-in-item items_of="items"><field type="Radman CT text: Rotating word" editor_type="LINE">title</field></fields-in-item>
+    <fields-in-item items_of="segments"><field type="Radman CT text: Segment" editor_type="AREA">title</field></fields-in-item>
+    </widget>
+    <widget name="radman-icon">
+      <fields>
+        <field type="Radman icon: Accessible label" editor_type="LINE">label</field>
+      </fields>
+    </widget>
+    <widget name="rdct-image"><fields><field type="Radman CT Image: Label" editor_type="VISUAL">label</field><field type="Radman CT Image: Link" editor_type="LINK">url</field></fields></widget>
+    <widget name="rdct-atomic-image"><fields><field type="Radman CT Atomic Image: Label" editor_type="VISUAL">label&gt;value</field><field type="Radman CT Atomic Image: Link" editor_type="LINK">url&gt;value</field></fields></widget>
+    <widget name="rdct-carousel-cards">
+      <fields>
+        <field type="Radman CT carousel: Accessible label" editor_type="LINE">label</field>
+      </fields>
+      <fields-in-item items_of="items">
+        <field type="Radman CT carousel: Title" editor_type="LINE">title</field>
+        <field type="Radman CT carousel: Content" editor_type="VISUAL">content</field>
+        <field type="Radman CT carousel: Link" editor_type="LINK">link</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-carousel-logos">
+      <fields>
+        <field type="Radman CT carousel: Accessible label" editor_type="LINE">label</field>
+      </fields>
+      <fields-in-item items_of="items">
+        <field type="Radman CT carousel: Title" editor_type="LINE">title</field>
+        <field type="Radman CT carousel: Content" editor_type="VISUAL">content</field>
+        <field type="Radman CT carousel: Link" editor_type="LINK">link</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-carousel-slider">
+      <fields>
+        <field type="Radman CT carousel: Accessible label" editor_type="LINE">label</field>
+      </fields>
+      <fields-in-item items_of="items">
+        <field type="Radman CT carousel: Title" editor_type="LINE">title</field>
+        <field type="Radman CT carousel: Content" editor_type="VISUAL">content</field>
+        <field type="Radman CT carousel: Link" editor_type="LINK">link</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-carousel-marquee">
+      <fields>
+        <field type="Radman CT carousel: Accessible label" editor_type="LINE">label</field>
+      </fields>
+      <fields-in-item items_of="items">
+        <field type="Radman CT carousel: Title" editor_type="LINE">title</field>
+        <field type="Radman CT carousel: Content" editor_type="VISUAL">content</field>
+        <field type="Radman CT carousel: Link" editor_type="LINK">link</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-carousel-stack">
+      <fields>
+        <field type="Radman CT carousel: Accessible label" editor_type="LINE">label</field>
+      </fields>
+      <fields-in-item items_of="items">
+        <field type="Radman CT carousel: Title" editor_type="LINE">title</field>
+        <field type="Radman CT carousel: Content" editor_type="VISUAL">content</field>
+        <field type="Radman CT carousel: Link" editor_type="LINK">link</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-carousel-testimonials">
+      <fields>
+        <field type="Radman CT carousel: Accessible label" editor_type="LINE">label</field>
+      </fields>
+      <fields-in-item items_of="items">
+        <field type="Radman CT carousel: Title" editor_type="LINE">title</field>
+        <field type="Radman CT carousel: Content" editor_type="VISUAL">content</field>
+        <field type="Radman CT carousel: Link" editor_type="LINK">link</field>
+        <field type="Radman CT Testimonial: Position" editor_type="LINE">position</field>
+        <field type="Radman CT Testimonial: Date" editor_type="LINE">date</field>
+        <field type="Radman CT Testimonial: Source" editor_type="LINE">source</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-carousel-cards">
+      <fields>
+        <field type="Radman CT Atomic carousel: Accessible label" editor_type="LINE">label&gt;value</field>
+      </fields>
+      <fields-in-item items_of="items&gt;value">
+        <field type="Radman CT Atomic carousel: Title" editor_type="LINE">value&gt;title&gt;value</field>
+        <field type="Radman CT Atomic carousel: Content" editor_type="VISUAL">value&gt;content&gt;value</field>
+        <field type="Radman CT Atomic carousel: Link" editor_type="LINK">value&gt;link&gt;value</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-carousel-logos">
+      <fields>
+        <field type="Radman CT Atomic carousel: Accessible label" editor_type="LINE">label&gt;value</field>
+      </fields>
+      <fields-in-item items_of="items&gt;value">
+        <field type="Radman CT Atomic carousel: Title" editor_type="LINE">value&gt;title&gt;value</field>
+        <field type="Radman CT Atomic carousel: Content" editor_type="VISUAL">value&gt;content&gt;value</field>
+        <field type="Radman CT Atomic carousel: Link" editor_type="LINK">value&gt;link&gt;value</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-carousel-slider">
+      <fields>
+        <field type="Radman CT Atomic carousel: Accessible label" editor_type="LINE">label&gt;value</field>
+      </fields>
+      <fields-in-item items_of="items&gt;value">
+        <field type="Radman CT Atomic carousel: Title" editor_type="LINE">value&gt;title&gt;value</field>
+        <field type="Radman CT Atomic carousel: Content" editor_type="VISUAL">value&gt;content&gt;value</field>
+        <field type="Radman CT Atomic carousel: Link" editor_type="LINK">value&gt;link&gt;value</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-carousel-marquee">
+      <fields>
+        <field type="Radman CT Atomic carousel: Accessible label" editor_type="LINE">label&gt;value</field>
+      </fields>
+      <fields-in-item items_of="items&gt;value">
+        <field type="Radman CT Atomic carousel: Title" editor_type="LINE">value&gt;title&gt;value</field>
+        <field type="Radman CT Atomic carousel: Content" editor_type="VISUAL">value&gt;content&gt;value</field>
+        <field type="Radman CT Atomic carousel: Link" editor_type="LINK">value&gt;link&gt;value</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-carousel-stack">
+      <fields>
+        <field type="Radman CT Atomic carousel: Accessible label" editor_type="LINE">label&gt;value</field>
+      </fields>
+      <fields-in-item items_of="items&gt;value">
+        <field type="Radman CT Atomic carousel: Title" editor_type="LINE">value&gt;title&gt;value</field>
+        <field type="Radman CT Atomic carousel: Content" editor_type="VISUAL">value&gt;content&gt;value</field>
+        <field type="Radman CT Atomic carousel: Link" editor_type="LINK">value&gt;link&gt;value</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-atomic-carousel-testimonials">
+      <fields>
+        <field type="Radman CT Atomic carousel: Accessible label" editor_type="LINE">label&gt;value</field>
+      </fields>
+      <fields-in-item items_of="items&gt;value">
+        <field type="Radman CT Atomic carousel: Title" editor_type="LINE">value&gt;title&gt;value</field>
+        <field type="Radman CT Atomic carousel: Content" editor_type="VISUAL">value&gt;content&gt;value</field>
+        <field type="Radman CT Atomic carousel: Link" editor_type="LINK">value&gt;link&gt;value</field>
+        <field type="Radman CT Testimonial: Position" editor_type="LINE">value&gt;position&gt;value</field>
+        <field type="Radman CT Testimonial: Date" editor_type="LINE">value&gt;date&gt;value</field>
+        <field type="Radman CT Testimonial: Source" editor_type="LINE">value&gt;source&gt;value</field>
+      </fields-in-item>
+    </widget>
+    <widget name="rdct-sticky-sections"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content</field></fields><fields-in-item items_of="items"><field type="Radman CT sticky: Title" editor_type="LINE">title</field><field type="Radman CT sticky: Content" editor_type="VISUAL">content</field></fields-in-item></widget>
+    <widget name="rdct-atomic-sticky-sections"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content&gt;value</field></fields><fields-in-item items_of="items&gt;value"><field type="Radman CT sticky: Title" editor_type="LINE">value&gt;title&gt;value</field><field type="Radman CT sticky: Content" editor_type="VISUAL">value&gt;content&gt;value</field></fields-in-item></widget>
+    <widget name="rdct-sticky-stack"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content</field></fields><fields-in-item items_of="items"><field type="Radman CT sticky: Title" editor_type="LINE">title</field><field type="Radman CT sticky: Content" editor_type="VISUAL">content</field></fields-in-item></widget>
+    <widget name="rdct-atomic-sticky-stack"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content&gt;value</field></fields><fields-in-item items_of="items&gt;value"><field type="Radman CT sticky: Title" editor_type="LINE">value&gt;title&gt;value</field><field type="Radman CT sticky: Content" editor_type="VISUAL">value&gt;content&gt;value</field></fields-in-item></widget>
+    <widget name="rdct-sticky-overlap"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content</field></fields><fields-in-item items_of="items"><field type="Radman CT sticky: Title" editor_type="LINE">title</field><field type="Radman CT sticky: Content" editor_type="VISUAL">content</field></fields-in-item></widget>
+    <widget name="rdct-atomic-sticky-overlap"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content&gt;value</field></fields><fields-in-item items_of="items&gt;value"><field type="Radman CT sticky: Title" editor_type="LINE">value&gt;title&gt;value</field><field type="Radman CT sticky: Content" editor_type="VISUAL">value&gt;content&gt;value</field></fields-in-item></widget>
+    <widget name="rdct-sticky-services"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content</field></fields><fields-in-item items_of="items"><field type="Radman CT sticky: Title" editor_type="LINE">title</field><field type="Radman CT sticky: Content" editor_type="VISUAL">content</field></fields-in-item></widget>
+    <widget name="rdct-atomic-sticky-services"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content&gt;value</field></fields><fields-in-item items_of="items&gt;value"><field type="Radman CT sticky: Title" editor_type="LINE">value&gt;title&gt;value</field><field type="Radman CT sticky: Content" editor_type="VISUAL">value&gt;content&gt;value</field></fields-in-item></widget>
+    <widget name="rdct-sticky-zoom"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content</field></fields><fields-in-item items_of="items"><field type="Radman CT sticky: Title" editor_type="LINE">title</field><field type="Radman CT sticky: Content" editor_type="VISUAL">content</field></fields-in-item></widget>
+    <widget name="rdct-atomic-sticky-zoom"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content&gt;value</field></fields><fields-in-item items_of="items&gt;value"><field type="Radman CT sticky: Title" editor_type="LINE">value&gt;title&gt;value</field><field type="Radman CT sticky: Content" editor_type="VISUAL">value&gt;content&gt;value</field></fields-in-item></widget>
+    <widget name="rdct-sticky-split"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content</field></fields><fields-in-item items_of="items"><field type="Radman CT sticky: Title" editor_type="LINE">title</field><field type="Radman CT sticky: Content" editor_type="VISUAL">content</field></fields-in-item></widget>
+    <widget name="rdct-atomic-sticky-split"><fields><field type="Radman CT sticky: Fixed column" editor_type="VISUAL">aside_content&gt;value</field></fields><fields-in-item items_of="items&gt;value"><field type="Radman CT sticky: Title" editor_type="LINE">value&gt;title&gt;value</field><field type="Radman CT sticky: Content" editor_type="VISUAL">value&gt;content&gt;value</field></fields-in-item></widget>
+  </elementor-widgets>
+</wpml-config>

@@ -1,0 +1,125 @@
+# اتصال Elementor و Atomic
+
+## رفع توقف schema دکمه — ۲۰۲۶-۱۱-۰۱
+
+خطای واقعی startup در Elementor 4.3.5 محلی از ارجاع `AtomicWidgets\PropTypes\Number_Prop_Type` در `atomic-components/button.php` بود. namespace درست با سورس همان نسخه و مستندات رسمی، `AtomicWidgets\PropTypes\Primitives\Number_Prop_Type` است؛ `make()->float()` حفظ شد. ویجت، شناسه، محتوا و فایل افزونهٔ ثالث تغییر نکردند و خطا پنهان نشد. PHP lint و مقداردهی بومی ۲۸ schema Atomic رادمان و ۱۲۶ پیکربندی ویجت بدون ذخیرهٔ نوشته پاس شدند؛ این نتیجه، مشاهدهٔ کامل مرورگر نیست. جداسازی فونت UI و Gutenberg در [مالک Typography](typography.md) ثبت شده است.
+
+## دسته‌بندی پنل — CONFIRMED، ۲۰۲۶-۱۰-۳۰
+
+با تأیید مالک، دسته‌های جدا «رادمان — Atomic» و «رادمان — Classic» در همان پنل native ثبت می‌شوند؛ دستهٔ Atomic فقط با فعال‌بودن ماژول بومی و در اولویت خودش است. پسوند تکراری V3/Atomic از عنوان ویجت‌های Components و Navigation/Panel قالب حذف شد؛ name/type/schema و دادهٔ صفحه‌ها ثابت ماندند. شناسهٔ دستهٔ Classic همان radmanct-components قبلی و Atomic برابر radmanct-atomic است. در نبود Components، Navigation همان fallback native general/v4-elements را حفظ می‌کند. این فقط سازمان‌دهی رابط است؛ موتور، asset یا نسخهٔ کامپوننت تکثیر نشده است. بررسی native وردپرس، ۲۶ Classic و ۲۸ Atomic با عنوان و دستهٔ درست را تأیید کرد؛ پذیرش بصری ادیتور در این کار انجام نشد.
+
+## بررسی محدود نصب مشترک — ۲۰۲۶-۱۰-۳۰
+
+دامنهٔ تصحیح‌شدهٔ مالک فقط کنترل‌های Button/Text/Carousel و بررسی ذخیره/Undo/درج/React 130 است؛ بازطراحی صفحات محتوا و خانه در این ادامه انجام نشد. پیش‌نویس مستقل «Radman component review» با شناسهٔ ۳۰ و نشان `_rdct_component_review` ساخته شد؛ هیچ برگهٔ کاربر بازنویسی یا منتشر نشد. سایت elementor_active_kit نداشت و کنسول «Kit doesn't exist» داد؛ پس از تأیید نبود هیچ Kit، create_default_kit رسمی Elementor، Kit شمارهٔ ۳۱ را ساخت. تنظیمات موجود فونت/رنگ قالب reset نشدند.
+
+مدل‌های واقعی کتابخانه برای دکمه/Text/Carousel در Classic و Atomic از Library::model گرفته شدند و Document::save در وردپرس مشترک با Elementor 4.3.5 هر شش گروه را ذخیره کرد. بازخوانی و renderer واقعی، دو دکمه و وجود متن/کاروسل، padding=1.5rem و line-height=1.6em دکمه و font-size=2.5rem تایپ‌دار Atomic را تأیید کردند. این بررسی API واقعی ذخیره/رندر است؛ درج با کلیک در ادیتور و Undo نیست. قراردادهای source به‌طور جداگانه اجرا شدند.
+
+رابط واقعی ادیتور روی Loading باقی ماند؛ با یک مقایسهٔ موقت بدون WP Rocket و سپس Canvas بومی در همان پیش‌نویس نیز باقی بود. Rocket دوباره فعال و تنظیماتش حفظ شد؛ Canvas فقط روی پیش‌نویس آزمایشی است. پس از ترمیم Kit، خطای قبلی React 130 در کنسول این اجرای محدود بازتولید نشد، اما علت تاریخی آن بسته اعلام نمی‌شود. guard ناقص کنترل responsive اصلاح شد تا نبود exportهای بومی Button/ToggleButton باعث ثبت عنصر undefined نشود؛ قرارداد ۱۴ کنترل بومی پاس شد. بررسی Undo و درج UI هنوز به رفع Loading وابسته است؛ بدون شاهد به‌عنوان انجام‌شده گزارش نشود. بررسی طولانی/ماتریس افزونه‌ها اجرا نشد.
+
+## حفظ V3 و توسعهٔ موازی Atomic — CONFIRMED، ۲۰۲۶-۱۰-۲۷
+
+**تکمیل مالک در همین تاریخ:** Editor V4/Atomic در انتشار فعلی پایدار است، اما پوشش همهٔ امکانات/کنترل‌ها کامل فرض نمی‌شود. V3 مسیر لازمِ فعلی است و صحت آن نباید منتظر تکمیل Atomic بماند؛ Atomic فقط با API و امکانات واقعاً موجود و پشتیبانی‌شده تکمیل شود. اعلام رسمی [Developers Update 3.35](https://developers.elementor.com/elementor-editor-3-35-developers-update/) پایهٔ V4 را stable/production-ready معرفی می‌کند و [FAQ فعلی V4](https://elementor.com/products/website-builder/v4-faq/) هم‌زیستی Widgets قدیمی و Atomic Elements را تأیید می‌کند؛ این منابع اثبات برابری همهٔ امکانات نیستند. metadata داخلی `e_atomic_elements` با beta/hidden در سورس ارسالی 4.3.5، مشاهدهٔ feature flag همان بسته است و نباید به توصیف کل انتشار فعلی به‌عنوان ناپایدار تعمیم یابد. اولویت ظاهر بومی، popup و کنترل‌ها طبق [سناریوی کنترل‌ها](../scenarios/components.md#elementor-native-controls) است.
+
+مالک تأکید کرد V3/Classic فعلاً حفظ شود و Atomic به‌صورت موازی و آینده‌نگر تکمیل شود؛ آماده‌بودن Atomic جای اثبات پوشش کامل کامپوننت‌ها نیست. دادهٔ صفحات قبلی، شناسهٔ Classic و کنترل‌های آن حذف یا خودکار تبدیل نشوند. موتور PHP/دارایی‌ها مشترک و adapterهای بومی دو ویرایشگر جدا بمانند. در اصلاح همین تاریخ، وابستگی نمایش Classic به فعال‌بودن Atomic برداشته شد؛ ویجت‌های کاربردی هر دو خانواده در پنل/جست‌وجو می‌مانند. هنگام فعال‌بودن Atomic، عنوان Classic پسوند V3 دارد و عنوان اتمیک پسوند Atomic؛ منو و پنل جانبی قالب نیز همین رفتار را دارند. شناسه‌ها و انتخاب‌های بومی Element Manager تغییر نمی‌کنند. Carousel و Sticky عمومی قدیمی همچنان برای رندر دادهٔ قبلی ثبت‌اند؛ نسخه‌های کاربردی جای درج عمومیِ تکراری را می‌گیرند و این محدودیت ربطی به حذف V3 ندارد. قرارداد ثبت تمام Classicها با Atomic فعال و schema/کنترل/کتابخانهٔ اتمیک و ناوبری پاس شدند؛ سازگاری کامل V3 و پذیرش تمام فیلدهای Atomic روی میزبان تأیید نشده‌اند.
+
+## React 130 در کنترل تراز — ۲۰۲۶-۱۰-۲۵
+
+بررسی ادیتور واقعی مالک نشان داد تب Radman CT باز می‌شود و wrapper ویجت‌های Atomic، بدنه و متن‌های عمومی فونت محاسبه‌شدهٔ Radman CT Peyda دارند. این صفحه فقط دو ویجت آیکون داشت؛ همهٔ ویجت‌های متنی بررسی نشده‌اند. فونت پنل مستقل Radman CT Admin Peyda است.
+
+در آداپتور responsive، گزینه‌های ToggleControl فقط value و label داشتند؛ ToggleButtonGroupUi نسخهٔ ارسالی برای هر گزینه createElement(renderContent) اجرا می‌کند و نبود آن React 130 با undefined می‌سازد. اکنون هر گزینه renderContent معتبر برای برچسب خود دارد. آزمون قرارداد به بررسی callable بودن و خروجی گزینه‌ها گسترش یافت. اصلاح جدید هنوز روی میزبان نصب و تأیید نشده است؛ بازشدن کتابخانه اثبات رفع این خطای مستقل نبود.
+
+## مرز خروجی attributes — پیاده‌سازی‌شده، ۲۰۲۶-۱۰-۲۴
+
+در wrapperهای Atomic کامپوننت و ناوبری، `settings['attributes']` همچنان از resolver بومی می‌آید. مرز مشترک پیش از خروجی PHP و در macro هر ۱۱ preview Twig اضافه شد: فقط رشتهٔ attribute با key مجاز و value نقل‌قول‌دار، بدون HTML/کنترل خام و حداکثر ۱۶۳۸۴ پذیرفته می‌شود. کل رشتهٔ نامعتبر حذف می‌شود؛ escape کردن کل رشته و تبدیل markup به متن انجام نشده است.
+
+نام‌های مجاز: `data-*`، `aria-*`، role/title/dir/lang/tabindex/hidden/inert/translate. event، URL اجرایی، style و تغییر class/id از این رشته عبور نمی‌کنند؛ class و CSS ID از فیلدهای بومی مستقل خود می‌آیند. این محدودیت فقط wrapperهای رادمان است؛ Attributes Pro، مجوز آن و ویجت‌های ثالث تصاحب نشده‌اند. وضعیت unlicensed/null همچنان خالی می‌ماند.
+
+`shared/elementor/attributes.json` تنها منبع pattern است؛ `tools/build-elementor.mjs` در build معمول، helper PHP و macro Twig را برای دو بستهٔ نصب مستقل تولید می‌کند. alias متد shared templates، macro جدید را به config و renderer بومی می‌رساند؛ بنابراین محافظ فقط PHP سرور نیست. قرارداد کوتاه PHP، Twig واقعی ارسالی/ماکروی بومی و pattern سازگار JS برای payload اجرایی، quote injection، دادهٔ مجاز و سقف ورودی پاس شد.
+
+**OPEN:** آزمون نقش‌های واقعی و همهٔ مسیرهای save/meta/Classic/Atomic/Pro هنوز انجام نشده است؛ بستن این sink به معنی امنیت کامل محصول یا پذیرش واقعی editor نیست. [قرارداد امنیت](../scenarios/security-access.md).
+
+### توقف پس از رفع خطای رسانه — ۲۰۲۶-۱۰-۲۱
+
+مالک پس از نصب اصلاح رسانه گزارش داد کنسول خطایی ندارد ولی ادیتور همچنان Loading می‌ماند. در اجرای کامل `Editor::init(false)` خطای PHP در `inc/components/library.php` بازتولید شد: `Call to undefined method Union_Prop_Type::generate()`. فوتر کتابخانه قبل از `wp_print_footer_scripts` اجرا می‌شود؛ بنابراین fatal در ساخت نمونهٔ Atomic جلوی چاپ اسکریپت‌های اصلی را می‌گیرد، بدون الزام به خطای JS. [اصلاح schema نمونه](component-library.md) در Theme 0.1.3 است؛ افزونه‌های Content/MCP برای این اصلاح تغییری نمی‌خواهند.
+
+`tools/qa-elementor.ps1 -StartupOnly` پس از اصلاح روی WordPress 7.1.3/PHP 8.4 و Elementor 4.3.5/Pro 4.3.2 پاس شد: HTML کامل ادیتور شامل loader، اسکریپت اصلی، CSS، `ElementorConfig` و uploader است؛ هر چهار نمونه در fa/en و Classic/Atomic مدل معتبر تولید می‌کنند. آزمون سقف ۴۰ ثانیه و همان افزایش حافظهٔ استاندارد مدیریت `wp_raise_memory_limit('admin')` را دارد؛ سقف ۲۰ ثانیهٔ اولیه کافی نبود و بافر CLI در محدودیت پیش‌فرض 128MB نیز پیش از اعمال شرایط استاندارد پنل به خطای حافظه رسید. تغییر حافظهٔ runtime قالب یا پنهان‌کردن هشدارها انجام نشد. این بررسی هنوز اجرای JS مرورگر، درخواست iframe یا بازشدن ادیتور روی هاست مالک نیست.
+
+صفحهٔ عمومی «درباره ما» با درخواست read-only پاسخ 200 و metadata نسخهٔ Elementor 4.3.5 داد؛ این بررسی دسترسی به ادیتور لاگین‌شده نیست. متن Loading با اندازهٔ 10px و letter-spacing برابر 7px از `assets/css/editor.css` خود Elementor می‌آید، نه preloader قالب. ثبت CDNهای ثالث در سورس Elementor به‌تنهایی علت توقف این نصب را اثبات نمی‌کند؛ تصویر Network مالک درخواست Pending نشان نمی‌داد.
+
+نسخه‌های محلی ارسالی: Elementor **4.3.5** و Pro **4.3.2** در `themes/elementor/` و `themes/elementor-pro/`؛ مرجع و ابزار QA محلی‌اند و داخل ZIP/Git رادمان قرار نمی‌گیرند. header هر دو حداقل WordPress 6.8 را اعلام می‌کند؛ این شرط نصب افزونه است و حداقل قالبِ بدون افزونه را تغییر نمی‌دهد.
+
+## مرجع و تصمیم اجرایی
+
+### گزارش گیرکردن ادیتور و جدایی Media Library — ۲۰۲۶-۱۰-۲۰
+
+تصویر مالک ورود به `post.php?...&action=elementor` با خطای `Template not found: #tmpl-uploader-editor` و دکمهٔ زودهنگام کتابخانه را نشان می‌دهد. در کد Core، enqueue باکس native اطلاعات محصول/نمونه‌کار روی `post.php` می‌توانست `wp_enqueue_media` و وابستگی `media-views` را در درخواست Elementor هم فعال کند. این مسیر اکنون با action صریح Elementor و lifecycle `elementor/editor/init` کنار گذاشته می‌شود؛ ویرایش استاندارد WordPress همان مسیر قبلی را دارد. فایل‌های Core و بستهٔ همراه باید با Theme هماهنگ به‌روز شوند.
+
+گزارش مجدد مالک نشان داد guard قبلی برای رفع خطای نصب او کافی نبوده است. بررسی دقیق‌تر `Editor::init` مشخص کرد Elementor همهٔ actionهای `wp_footer` را پاک می‌کند؛ در مقابل `wp_enqueue_media()` وردپرس فقط یک‌بار در درخواست اجرا می‌شود. اگر رسانه قبل از init فعال شده باشد، فراخوانی بعدی templateها را دوباره به فوتر وصل نمی‌کند. نتیجه می‌تواند اسکریپت فعال و template غایب باشد؛ منبع enqueue زودهنگام روی نصب مالک هنوز شناسایی نشده است.
+
+گزارش ۲۰۲۶-۱۰-۲۱ مالک هنوز همین خطا را دارد؛ ZIP اصلی اصلاح قبلیِ اتصال دوباره به `wp_footer` را داشت. پیاده‌سازی جاری `elementor/editor-media.php` پس از enqueue ادیتور callback عمومی چاپ رسانه را کنار می‌گذارد و در `elementor/editor/footer` اولویت صفر، فقط وقتی رسانه enqueue شده و templateها چاپ نشده‌اند، `wp_print_media_templates` اصلی وردپرس را صریح اجرا می‌کند. حذف callback پیش از شروع فوتر، جلوی چاپ تکراری در یک priority مشترک را می‌گیرد. الگوی چاپ مستقیم native در اپلیکیشن Elementor نیز در `app/modules/onboarding/module.php` دیده شد. template جعلی، enqueue تکراری و بازگرداندن سایر hookهای پاک‌شده نداریم. در صفحهٔ عمومی، preview و پنل معمول اجرا نمی‌شود. چرخهٔ رسانه با Context7 و [مرجع رسمی وردپرس](https://developer.wordpress.org/reference/functions/wp_enqueue_media/) تطبیق داده شد. کتابخانهٔ قالب نیز با WoodMart `template-library/class-xts-library.php` و `assets/js/template-library.js` برای hook مستقل editor تطبیق داده شد؛ کپی کتابخانهٔ WoodMart درمان template گم‌شدهٔ وردپرس نیست.
+
+بررسی هدفمند واقعی `tools/qa-elementor.ps1 -EditorOnly` روی WordPress 7.1.3، PHP 8.4.26، Elementor 4.3.5 و Pro 4.3.2 پاس شد: در DB موقت و شبکهٔ داخلی، enqueue رسانه و حذف هوک فوتر وضعیت template غایب را بازتولید کردند؛ فوتر اختصاصی templateهای اصلی uploader/media-frame را دقیقاً یک بار چاپ کرد، حتی با اجرای دوبارهٔ hook ادیتور. این آزمون چرخهٔ رسانه است و اجرای کامل `Editor::init` یا JS مرورگر نیست. تلاش اولیهٔ تولید کامل HTML ادیتور در سقف ۲۰ ثانیه متوقف شد و پاس محسوب نمی‌شود؛ بازشدن سایت مالک همچنان تأیید نشده است. هشدارهای nullable افزونه‌های ارسالی روی PHP 8.4 همچنان دیده شدند و پنهان نشدند.
+
+bootstrap مستقل `src/js/admin/component-editor.js` پس از آماده‌بودن preview document، شناسهٔ سند و فرمان‌های Elementor، JS کامل کتابخانه را lazy وارد و دکمه را نمایان می‌کند؛ `preview:loaded` همان نقطهٔ اتصال مرجع WoodMart است. قبل از آن launcher در HTML و CSS پنهان است؛ preview iframe، سایت عمومی و پنل مستقل Components این bootstrap را نمی‌گیرند. درج همچنان با API بومی و مسیر مستقل classic/Atomic است.
+
+بخش محدود فونت در `themes/woodmart/inc/integrations/elementor/functions.php` بررسی شد: معرفی گروه فونت قالب و اتصال خانواده‌ها با `elementor/fonts/groups` و `elementor/fonts/additional_fonts`. رادمان همان الگوی API را با registry محلی خودش استفاده می‌کند؛ نام‌ها، کد و منابع کامل قالب مرجع وارد محصول نشده‌اند.
+
+در سورس Elementor ارسالی، `elementor/frontend/print_google_fonts` و `elementor/files/css/selectors` بررسی شدند؛ [فیلتر رسمی Google Fonts](https://developers.elementor.com/docs/hooks/print-google-fonts/) نیز بررسی شد. در Pro، Fonts Manager می‌تواند `@font-face` را مستقیم به stylesheet صفحه اضافه کند؛ صرف خاموش‌کردن Google Fonts برای سیاست رادمان کافی نیست.
+
+## ساخته‌شده
+
+### Atomic/V4 و انتخاب مستقل برگه — ۲۰۲۶-۱۰-۲۰
+
+#### تفاوت رابط و حالت ترکیبی؛ تصویر مالک و تحقیق رسمی
+
+تصاویر مالک پنل «فلکس‌باکس» با تب‌های عمومی/استایل/تعاملات، کلاس local و انتخاب Flexbox/Grid را در کنار پنل قدیمی «کانتینر» با چیدمان/استایل/پیشرفته نشان می‌دهند. در سورس ارسالی نوع‌های `e-flexbox` و `e-grid` از Atomic_Element_Base هستند؛ `container` در `includes/elements/container.php` مسیر کلاسیک است. طبق [راهنمای معماری رسمی V4](https://github.com/elementor/elementor/blob/main/docs/atomic-builder/getting-started/what-is-v4.md)، فعال‌شدن opt-in نوع پیش‌فرض افزودن چیدمان را به e-flexbox تغییر می‌دهد؛ دادهٔ قدیمی خودکار migrate نمی‌شود. در تصویر تازه نیز Flexbox والد و Container فرزند دیده می‌شوند؛ این شواهد حالت ترکیبی‌اند و به‌تنهایی تداخل قالب را نشان نمی‌دهند.
+
+Atomic رابط استایل مشترک، کلاس‌های محلی/عمومی، Variables، Components و Interactions دارد. badgeِ local به محدودهٔ کلاس همان عنصر مربوط است؛ شاخص اتصال اینترنتی نیست. انتخاب Container کلاسیک همان پنل کلاسیک را باز می‌کند، حتی اگر داخل Flexbox اتمیک باشد. [راهنمای رسمی فعال‌سازی](https://elementor.com/help/get-started-with-the-elementor-editor-v4/) مسیر Elementor ← Editor ← Settings ← Atomic Editor و اقدام Try out the new experience را معرفی می‌کند؛ [FAQ رسمی](https://elementor.com/products/website-builder/v4-faq/) استفادهٔ هم‌زمان عناصر قدیمی و Atomic در یک صفحه و حفظ چیدمان‌های قبلی را تأیید می‌کند. رفتار دقیق درج/پوشش خودکار عناصر بین نسخه‌ها متفاوت است؛ وجود wrapper کلاسیک نباید صرفاً از روی فعال‌بودن V4 خطا فرض شود.
+
+درخواست مالک در [سناریوی صفحات](../scenarios/pages.md) ثبت است. Native Atomic محتوا را از همان `the_content()` می‌گیرد؛ schema سند، renderer، کلاس‌های عمومی، asset loader و ویرایشگر متعلق به Elementor می‌مانند و در رادمان بازسازی نمی‌شوند. مسیر PHP اختصاصی به این کلاس‌ها وابسته نیست. برگهٔ معمولی به Elementor رایگان نیاز دارد؛ Pro صرفاً برای انتخاب‌های Theme Builder آرشیو/جزئیات لازم است.
+
+`inc/integrations/elementor/atomic.php` فقط با حضور Elementor وارد می‌شود. hook `elementor/atomic-widgets/styles/transformers/register` در اولویت ۱۰۰ فقط transformer خانوادهٔ فونت را جایگزین می‌کند؛ `atomic-font-family.php` فقط هنگام وجود API پایه بارگذاری می‌شود. خروجی font-family متغیر مشترک نقش بدنه/تیتر رادمان است؛ اندازه، رنگ، Grid/Flex و باقی transformerهای Atomic تغییر نمی‌کنند. CSS مشترک Elementor نقش H1–H6 را تعیین می‌کند و منع Google Fonts قبلی برای صف فونت frontend Atomic نیز برقرار است؛ مسیر native `Atomic_Styles_Manager::enqueue_fonts` به `frontend->enqueue_font` و چاپ فونت بررسی شد. کش CSS قدیمی و درخواست‌های واقعی مرورگر همچنان پذیرش جدا می‌خواهند.
+
+وضعیت واقعی Atomic از `AtomicWidgets\Module::is_active()` به تنظیمات داده می‌شود. در نسخهٔ ارسالی، `e_atomic_elements` به‌صورت beta/hidden ثبت است و opt-in ویرایشگر V4 قرارداد مستقل دارد؛ صرف نصب Elementor معادل فعال‌بودن Atomic نیست. دکمهٔ مدیریت «فعال‌سازی ویرایشگر اتمیک» تنها با وجود API و capability `manage_options` ارائه می‌شود و با اقدام مدیر، REST بومی `POST elementor/v1/operations/opt-in-v4` روی همان origin، با nonce وردپرس و credentials محلی را مصرف می‌کند. مسیر خارجی رد می‌شود، دوبار کلیک هم‌زمان مسدود است و خطا فعال‌شدن جعلی گزارش نمی‌کند. خود Elementor مجوز را دوباره بررسی و ویژگی‌های opt-in/container/atomic را تنظیم می‌کند؛ رادمان option خصوصی را مستقیم نمی‌نویسد و سندها را تبدیل نمی‌کند. برای ورود به editor فعال‌شده، درخواست جدید Elementor لازم است؛ تغییر این وضعیت تنظیمات ذخیره‌نشدهٔ قالب را reload نمی‌کند.
+
+`templates/custom.php` انتخاب native صریح «طراحی اختصاصی رادمان» است؛ Site Identity، هدر/فوتر، عنوان/محتوای استاندارد و چیدمان PHP را نگه می‌دارد و در Child قابل بازنویسی است. `Layout::elementor_content()` به این انتخاب اولویت می‌دهد. ماژول `elementor/pages.php` در hook بومی `elementor/frontend/builder_content_data` فقط دادهٔ Elementor همان برگهٔ اصلیِ دارای این Template را در خروجی عمومی کنار می‌گذارد؛ دادهٔ ذخیره‌شده، سندهای دیگر و بلوک/برگهٔ منتخب Elementor حذف نمی‌شوند. ویرایش/preview مجاز خود Elementor مستثناست. برگه‌های قدیمی با Template پیش‌فرض و edit mode=builder همچنان همان رفتار قبلی دارند. این انتخاب تبدیل خودکار یا تضمین یکسان‌بودن محتوای دو ویرایشگر نیست.
+
+نمونهٔ مرجع WoodMart محلی نسخهٔ 8.6.4 است؛ `inc/integrations/elementor/functions.php` برای گروه فونت/location و مرز ادغام بررسی شد. بررسی تکمیلی، سازگاری عملی Atomic را روشن کرد: [changelog رسمی WoodMart](https://woodmarttheme.com/whats-new/changelog/) در نسخهٔ 8.5.1 مورخ ۲۰۲۶-۰۶-۰۳ اصلاح بارگذاری استایل Atomic Elements را ثبت کرده است. در `helpers.php::woodmart_elementor_get_content` هوک `elementor/post/render`، فعال‌سازی assets ذخیره‌شده، `elementor/frontend/after_enqueue_post_styles` و API `get_builder_content_for_display` مصرف می‌شوند؛ Atomic_Styles_Manager نسخهٔ ارسالی نیز به همین هوک post-styles متصل است. نبود نام صریح Atomic در فایل functions شاهد نبود سازگاری نیست. این الگو اهمیت چرخهٔ کامل CSS/assets در نمایش سندهای بیرون از محتوای اصلی را نشان می‌دهد؛ کپی helper، چاپ همهٔ styles یا افزودن هوک تکراری به the_content عادی رادمان از آن نتیجه نمی‌شود.
+
+دو نمونهٔ بررسی‌شدهٔ Text_Block و Button وودمارت هنوز از Widget_Base کلاسیک ارث می‌برند. این شاهد سازگاری با محیط ترکیبی است و نشان نمی‌دهد همهٔ widgetهای WoodMart به Atomic بومی تبدیل شده‌اند. مسیرهای `modules/atomic-widgets/props-resolver/`، `styles/` و `opt-in/opt-in.php` در Elementor 4.3.5 همراه [مستند ساختار Atomic](https://github.com/elementor/elementor-developers-docs/blob/master/src/data-structure/atomic-widgets.md) و [API فعال‌سازی V4](https://github.com/elementor/elementor/blob/main/docs/atomic-builder/opt-in/activation.md) از Context7 تطبیق داده شدند. سورس/فریم‌ورک/دارایی مرجع وارد قالب نشد.
+
+**حدود:** دو widget کلاسیک آیکون و Text Reveal با شناسه‌های قبلی حفظ شده‌اند؛ معادل‌های مستقل native Atomic با props/controls/Twig نیز در ۲۰۲۶-۱۰-۲۰ اضافه شدند؛ [قرارداد و شواهد کامپوننت‌ها](components.md). گالری نیز انتخاب مستقل کلاسیک/Atomic و تولید نمونه با typed props دارد؛ [قرارداد درج](component-library.md). سند قبلی تبدیل خودکار نمی‌شود. Elementor حالت ترکیبی را پشتیبانی می‌کند؛ درج/ویرایش/پاک‌سازی و assets ویجت‌های رادمان در صفحهٔ ترکیبی همچنان پذیرش واقعی می‌خواهند. UI کلاس/استایل native برای دو ویجت تازه وجود دارد، اما بررسی قرارداد جای اجرای کامل editor و تعاملات نسخهٔ نصب‌شده را نمی‌گیرد.
+
+`tests/elementor-atomic-contract.php` از Transformer_Base و Props_Resolver_Context واقعی نسخهٔ ارسالی استفاده می‌کند؛ اختیار فونت، guard نبود API و جدایی سند اختصاصی/Elementor با سایر بخش‌های stub بررسی شده‌اند. `tests/renderer-fields.test.mjs` قابل‌انتخاب‌بودن شش ترجیح طراحی، عدم تغییر ماژول‌ها و درخواست opt-in محدود به origin/nonce را با mock می‌سنجد. قراردادهای layout/renderers/elementor نیز باقی‌اند. فعال‌سازی REST واقعی، ذخیره/بازکردن سند Atomic، undo و رندر editor، مرورگر/لمس، WPML و کش برای این بسته اجرا نشده‌اند؛ به‌عنوان پذیرش کامل Atomic گزارش نشوند.
+
+انتخاب مستقل طراحی اختصاصی/Pro برای آرشیو و جزئیات وبلاگ، محصول و نمونه‌کار نیز اضافه شده؛ قرارداد location، fallback، مالکیت هدر/فوتر و بررسی هدفمند واقعی در [روش نمایش](renderers.md) است. این کنترل، انتخاب Template یک برگه را جایگزین نمی‌کند.
+
+- `inc/integrations/elementor.php` فقط پس از حضور `elementor/loaded` بارگذاری می‌شود؛ نبود افزونه هیچ class یا ماژول آن را راه‌اندازی نمی‌کند.
+- Template قابل انتخاب «رادمان — المنتور با هدر و فوتر» مسیر استاندارد `the_content()` دارد؛ heading/padding اجباری قالب روی محتوای آن افزوده نمی‌شود و هدر/فوتر PHP رادمان باقی می‌مانند. نبود افزونه، گزینه را از فهرست انتخاب جدید حذف می‌کند؛ فایلِ Template ذخیره‌شده همچنان محتوای معمول وردپرس را بدون حذف metadata نمایش می‌دهد. Canvas مستقل تعهد این انتخاب نیست.
+- خانواده‌های منتخب پنل رادمان در گروه «فونت‌های محلی رادمان» معرفی می‌شوند؛ Google Fonts خروجی frontend با hook رسمی مسدود است. additional fonts به خانواده‌های محلی منتخب محدود می‌شوند تا مسیر چاپ Typekit/custom به‌عنوان فونت متن انتخاب نشود.
+- با تفکیک بدنه/تیترها/H1–H6، فهرست خانواده‌های محلی از `Typography::used()` گرفته می‌شود؛ محدود به دو انتخاب بدنه نیست و خانوادهٔ تکراری یا تیتر عمومیِ کاملاً overrideشده معرفی نمی‌شود. CSS هر heading و متن داخلی آن متغیر تگ را مصرف می‌کند؛ کنترل font_family همچنان به متغیر رادمان متصل است. [قرارداد نقش‌های فونت](typography.md). این افزوده با قرارداد PHP/Build بررسی شد؛ اجرای تازهٔ Elementor/Pro واقعی یا پاک‌سازی CSS cache روی سرور انجام نشده است.
+- CSS کوچک اتصال فقط از hook enqueue سبک‌های Elementor مصرف می‌شود؛ React یا کتابخانهٔ جدید وارد frontend نمی‌شود. متن‌های متداول، عنوان، فرم و دکمه خانوادهٔ محلی دارند؛ وزن/اندازه/line-height المنتور قفل نمی‌شود. آیکون‌ها از override فونت متن کنار گذاشته شده‌اند؛ زبان تو‌در‌تو فارسی/لاتین متغیر خانوادهٔ متناسب می‌گیرد.
+- هنگام تولید CSS کنترل‌های font_family، selector به متغیر خانوادهٔ رادمان متصل می‌شود. برای نسخهٔ Pro ارسالی، callbackهای Fonts Manager که فونت متن را به CSS صفحه/global یا stylesheet اضافه می‌کنند در frontend جدا می‌شوند؛ manager آیکون، دادهٔ ذخیره‌شده و ابزارهای مدیریت حذف نمی‌شوند. وضعیت manager قبلاً ایجادشده و بارگذاری دیرهنگام پوشش داده شده است.
+- preconnect/dns-prefetch دامنه‌های مشخص Google Fonts و Typekit حذف می‌شوند؛ resource hintهای نامرتبط دست‌نخورده می‌مانند. این سیاست موتور حذف همهٔ درخواست‌های افزونه یا CSS دلخواه مشتری نیست.
+
+## بررسی واقعی کوتاه
+
+اسکریپت دستی `tools/qa-elementor.ps1`، WordPress و دیتابیس کاملاً موقت در حافظه، شبکهٔ داخلی Docker و mount فقط‌خواندنی سورس ایجاد می‌کند؛ HTTP و ایمیل در QA بسته‌اند، port عمومی باز نمی‌شود و container/network همان اجرا در پایان حذف می‌شوند. اجرای عادی build/check این محیط را بالا نمی‌آورد.
+
+در ۲۰۲۶-۱۰-۱۸ با WordPress **7.1.3** تصویر موجود، PHP **8.4.26**، Elementor **4.3.5** و Pro **4.3.2** پاس شد: هدر با تنظیم ردیف بدون Elementor، فعال‌سازی افزونه‌های ارسالی، ذخیره و رندر واقعی یک سند heading، وجود Template اختیاری، فیلتر فونت محلی/Google و جداشدن callback تزریق فونت Pro. این اجرای PHP واقعی با DB بود؛ مرورگر، درخواست فونت از مرورگر، Drag & Drop و نمایش بصری تست نشده‌اند.
+
+اجرای QA هشدار ABSPATH تکراری از فایل تنظیمات موقت داشت؛ تولید همان فایل اصلاح شد. همچنین دو deprecation از `plugin-update-checker/Puc/v4p6` در Pro و یک deprecation از `Elementor/Modules/GlobalClasses/Atomic_Global_Styles` دربارهٔ پارامتر nullable روی PHP 8.4 دیده شد. سورس افزونه‌های مرجع تغییر نکرد و این هشدارها پنهان نشدند؛ نتیجه «بدون warning/deprecation در کل پشته» نیست.
+
+## باقی‌مانده
+
+گزارش تصویری ۲۰۲۶-۱۰-۲۵ همهٔ این موارد را دارد: شکست دانلود Ace/language-tools از jsDelivr، درخواست Roboto از gstatic، خطاهای `icons` و `displayPrefix` در پنجرهٔ native آیکون، React 130 با element type برابر undefined، ۴۰۴ favicon، و هشدار کندی فونت محلی eicons. فایل‌های `data:image/svg+xml` درخواست به اینترنت نیستند؛ نام `installHook.js` در stack نیز اثبات تقصیر افزونهٔ مرورگر نیست. مسیرهای منبع محلی/فونت و تعریف مجموعهٔ آیکون اصلاح شده‌اند؛ علت React 130 و پاسخ favicon میزبان و کیفیت بصری/زمان واقعی شبکه همچنان بازند. خطای JS می‌تواند modal را روی Loading نگه دارد؛ این وضعیت نباید صرفاً به کندی اینترنت نسبت داده شود. [شرح رسمی React 130](https://react.dev/errors/130).
+
+### اصلاح منابع و فونت ادیتور — ۲۰۲۶-۱۰-۲۵
+
+در Elementor ارسالی 4.3.5، Loader خود Elementor، Ace 1.43.2 و language-tools را از jsDelivr ثبت می‌کند. اتصال رادمان در `local-editor-assets.php` هر دو ثبت WordPress و Assets Manager بومی را به نسخهٔ محلی همسان در `radmanct/vendor/ace/` وصل می‌کند؛ fallback اینترنتی اضافه نشده است. mode، worker، snippet و theme لازم کنار همان فایل‌اند و برحسب نیاز Ace خوانده می‌شوند. `tools/vendor-ace.py` ابزار توسعه برای دریافت نسخهٔ pinned، بررسی integrity و تولید manifest است؛ runtime دانلود ندارد. نسخهٔ ناشناختهٔ Ace خودکار downgrade نمی‌شود و پیش از ارتقای Elementor باید دوباره تطبیق داده شود.
+
+وابستگی `google-font-roboto` از stylesheet ادیتور حذف می‌شود؛ مالکیت فونت خود رادمان/Elementor محلی است و به وضعیت سویچ عمومی قطع فونت افزونه‌های دیگر وابسته نیست. فونت محلی مدیریت از hook سبک‌های editor ثبت و متغیر بومی `--e-a-font-family` و کنترل‌های متنی Atomic به آن متصل می‌شوند؛ فونت آیکون‌ها بازنویسی نمی‌شود. این فونت رابط مدیریت است؛ فونت محتوای iframe همچنان از Typography سایت و زبان فعال می‌آید. انتخاب نمونهٔ انگلیسی در کتابخانه به‌تنهایی فونت انگلیسی سایت را فعال نمی‌کند.
+
+قرارداد PHP با Assets Manager واقعی ارسالی، مسیر محلی، ترتیب وابستگی و شرط نسخه/Google Fonts را پوشش می‌دهد. این بررسی اثبات حذف تمام درخواست‌های خارجی افزونه‌های ثالث یا Network واقعی میزبان نیست؛ Analytics اختیاریِ قبلاً تأییدشده همچنان فقط با فعال‌سازی صریح مدیر کار می‌کند.
+
+رندر بصری/فونت فارسی و لاتین و آیکون‌ها، Global Fonts و CSS قدیمی کش‌شده، Atomic Editor کامل، widget ثالث و Pro Forms/Popup/Theme Builder، WPML و WP Rocket هنوز ماتریس تست ندارند. مجوز Pro فعال نشده و قابلیت تجاری یا ارتباط updater اثبات نشده است. مالک هدر/فوتر همچنان رادمان است؛ ثبت همهٔ locationهای Theme Builder صرفاً به‌علت وجود نمونهٔ WoodMart انجام نشده است.

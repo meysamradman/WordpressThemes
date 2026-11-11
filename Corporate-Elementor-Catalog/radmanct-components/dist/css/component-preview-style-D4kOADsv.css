@@ -1,0 +1,12 @@
+.rdct-library-preview { margin:0; color:#25352f; background:#f8faf9; font:16px/1.65 system-ui,sans-serif; }
+.rdct-cmp-demo { box-sizing:border-box; display:grid; align-content:center; min-block-size:100dvh; padding:clamp(20px,5vw,48px); gap:24px; }
+.rdct-cmp-demo > * { min-inline-size:0; max-inline-size:100%; }
+.rdct-cmp-demo > .rdct-button { justify-self:center; }
+.rdct-cmp-demo > .rdct-im,.rdct-cmp-demo > .rdct-box { inline-size:min(100%,480px); justify-self:center; }
+.rdct-cmp-demo > .rdct-text { font-size:clamp(24px,4vw,48px); text-align:center; }
+.rdct-demo-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.rdct-cmp-demo .rdct-crs__caption { padding:24px; }
+.rdct-cmp-demo .rdct-crs__caption h3 { margin:0 0 12px; }
+.rdct-cmp-demo .rdct-crs__caption p { margin:0; }
+.rdct-cmp-demo > .rdct-flipbox { inline-size:min(100%,480px); justify-self:center; }
+@media(max-width:480px) { .rdct-demo-gallery { grid-template-columns:minmax(0,1fr); } }

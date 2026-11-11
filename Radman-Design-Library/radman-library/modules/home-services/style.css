@@ -1,0 +1,8 @@
+@import '../../shared/radmanct/src/css/ui/text-motion.css';
+@import '../../shared/radmanct/src/css/pages/home/offerings.css';
+
+
+
+
+.home #main-content{padding:0;background:var(--rdc-clr-hero);color:var(--rdc-tx)}.rdc-hero,.rdc-svcs{--rdc-clt-sec-gut:var(--rdc-gut)}.rdc-svcs{--rdc-tx:var(--rdc-clr-tx-warm);--rdc-ink:var(--rdc-clr-ink-warm);--rdc-ln:var(--rdc-clr-ln-warm);}.rdc-ss{position:relative;min-inline-size:0;container:rdc-svcs/inline-size;display:grid;gap:3rem;inline-size:100%}.rdc-ss__itm{position:relative;min-inline-size:0}.rdc-ss__inr{position:relative;min-inline-size:0;transform-origin:center center;border-radius:28px}
+.rdc-tx__rtr{display:inline-block;vertical-align:bottom}.rdc-tx__wds{display:grid;overflow:hidden;line-height:1.35;padding-inline:.18em;margin-inline:-.18em}.rdc-tx__wd{grid-area:1/1;transform-origin:center center;color:var(--rdc-acc);white-space:normal}.rdc-tx__wd:not(:first-child){opacity:0;visibility:hidden}.rdc-tx.is-tx-rot.has-word-motion .rdc-tx__wd{transition:none}.rdc-tx__wd[data-current=true]{opacity:1;visibility:visible}.rdc-tx__play{display:inline-flex;align-items:center;justify-content:center;min-inline-size:2rem;min-block-size:2rem;border:1px solid currentColor;border-radius:50%;background:none;color:inherit}.rdc-tx__play[hidden]{display:none}.rdc-tx__play:not(:focus-visible){position:absolute;inline-size:1px;block-size:1px;min-inline-size:0;min-block-size:0;padding:0;border:0;clip-path:inset(50%);overflow:hidden}

@@ -1,0 +1,4 @@
+.rdct-tst--s12 { background:var(--rdct-tst-background-color,transparent);padding-inline-start:calc(var(--rdct-tst-padding,28px) + 48px); }
+.rdct-tst--s12 .rdct-tst__quote-mark { position:absolute;inset-inline-start:var(--rdct-tst-padding,28px);inset-block-start:var(--rdct-tst-padding,28px);font-size:4rem;color:var(--rdct-tst-quote-color,var(--rdct-tst-rating-color,#348ef5)); }
+.rdct-tst--s12 .rdct-tst__quote { font-size:1.125rem; }
+.rdct-tst--s12 .rdct-tst__avatar { inline-size:65px;block-size:65px; }

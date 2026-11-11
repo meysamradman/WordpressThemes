@@ -1,0 +1,24 @@
+.rdc-blog-arc { --rdc-blog-lead-ttl: var(--rdc-clr-crm); --rdc-blog-lead-meta: var(--rdc-clr-lead-meta); }
+.rdc-lead-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(.75rem, 1.4vw, 1.25rem); margin-block-end: clamp(2rem, 4vw, 3.5rem); }
+.rdc-lead { min-inline-size: 0; overflow: hidden; border-radius: var(--rdc-rad); background: var(--rdc-clr-ink-warm); }
+.rdc-lead:first-of-type { grid-column: 1; grid-row: 1 / span 2; }
+.rdc-lead > a { display: grid; position: relative; isolation: isolate; block-size: 100%; min-block-size: 15rem; color: var(--rdc-blog-lead-ttl); text-decoration: none; }
+.rdc-lead > a::after { content: ''; grid-area: 1 / 1; z-index: -1; background: linear-gradient(180deg, var(--rdc-lead-ovl-st) 25%, var(--rdc-lead-ovl-mid) 55%, var(--rdc-lead-ovl-end)); }
+.rdc-lead img { position: absolute; inset: 0; z-index: -2; display: block; inline-size: 100%; block-size: 100%; object-fit: cover; transition: transform .5s ease; }
+.rdc-lead header { grid-area: 1 / 1; align-self: end; display: grid; gap: .5rem; padding: clamp(1.25rem, 2.8vw, 2.5rem); text-align: center; }
+.rdc-site .rdc-lead h3 { margin: 0; color: inherit; font-size: clamp(1.05rem, 1.3vw, 1.375rem); line-height: var(--rdc-ln-ht-hdg); text-wrap: balance; }
+.rdc-site .rdc-lead:first-of-type h3 { font-size: clamp(1.375rem, 2vw, 2rem); }
+.rdc-site .rdc-lead :is(p, time) { margin: 0; color: var(--rdc-blog-lead-meta); font-size: .8125rem; line-height: 1.6; }
+.rdc-lead > a:focus-visible { outline: 2px solid var(--rdc-acc); outline-offset: -4px; }
+.rdc-lead-grid[data-count="2"] > .rdc-lead:first-of-type { grid-row: auto; }
+.rdc-lead:only-of-type { grid-column: 1 / -1; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .rdc-lead > a:hover img { transform: scale(1.035); } }
+@media (max-width: 47.99rem) {
+  .rdc-lead-grid { grid-template-columns: minmax(0, 1fr); }
+  .rdc-lead:first-of-type { grid-column: auto; grid-row: auto; }
+  .rdc-lead > a { min-block-size: 16rem; }
+  .rdc-lead:first-of-type > a { min-block-size: 22rem; }
+}
+@media (prefers-reduced-motion: reduce) { .rdc-lead img { transition: none; } }
+
+.rdc-lead .rdc-card-pre { position:absolute;inset:0;z-index:-2; }

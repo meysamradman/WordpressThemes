@@ -1,0 +1,10 @@
+.rdct-box--cover { display: grid; aspect-ratio: var(--rdct-box-ratio, 4 / 5); min-block-size: var(--rdct-box-height, 32rem); overflow: clip; }
+.rdct-box--cover > * { grid-area: 1 / 1; }
+.rdct-box--cover .rdct-box__content { position: relative; display: flex; flex-direction: column; justify-content: end; min-block-size: 100%; padding: var(--rdct-box-padding, 3rem); padding-block-start: 7rem; color: #fff; background: transparent; z-index: 1; }
+.rdct-box--cover .rdct-box__overlay { background: linear-gradient(transparent 35%, rgb(0 0 0 / .8)); }
+.rdct-box--cover .rdct-box__icon { position: absolute; inset-block-start: 2.5rem; inset-inline-start: var(--rdct-box-padding, 3rem); color: inherit; }
+.rdct-box--cover .rdct-box__title { font-size: var(--rdct-box-title-size, 1.625rem); }
+.rdct-box--cover .rdct-box__text { opacity: 1; margin-block-start: .75rem; }
+.rdct-box--cover .rdct-box__image { transition: transform .6s; }
+@media (hover: hover) and (pointer: fine) { .rdct-box--cover:is(:hover, :focus-within) .rdct-box__image { transform: scale(1.035); } }
+@media (prefers-reduced-motion: reduce) { .rdct-box--cover .rdct-box__image { transition: none; transform: none; } }

@@ -1,0 +1,12 @@
+[
+  "hub/functions.php",
+  "hub/style.css",
+  "hub/liquid/admin/updater/liquid-register-admin.php",
+  "hub/liquid/admin/liquid-admin-dashboard.php",
+  "hub/liquid/admin/views/liquid-demos.php",
+  "hub/liquid/admin/views/liquid-plugins.php",
+  "hub/liquid/libs/merlin/class-merlin.php",
+  "hub/liquid/libs/merlin/merlin-config.php",
+  "hub-elementor-addons/elementor/template-library/template-library.php",
+  "hub/liquid/admin/updater/liquid-updater-class.php"
+]

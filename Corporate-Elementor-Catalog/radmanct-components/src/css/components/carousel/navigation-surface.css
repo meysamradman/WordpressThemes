@@ -1,0 +1,10 @@
+.rdct-crs__arrows[data-fill] button { background: var(--rdct-crs-arrow-background, transparent); border-color: var(--rdct-crs-arrow-border-color, currentColor); }
+.rdct-crs__arrows[data-fill=solid] button { background: var(--rdct-crs-arrow-background, #172b3a); border-color: var(--rdct-crs-arrow-border-color, var(--rdct-crs-arrow-background, #172b3a)); color: var(--rdct-crs-arrow-color, #fff); }
+.rdct-crs__arrows[data-fill=outline] button { background: var(--rdct-crs-arrow-background, transparent); }
+.rdct-crs__arrows[data-fill=none] button { border-color: transparent; background: var(--rdct-crs-arrow-background, transparent); }
+.rdct-crs__arrows[data-fill] button:is(:hover,:focus-visible):not(:disabled) { background: var(--rdct-crs-arrow-hover-background, var(--rdct-crs-arrow-background, transparent)); border-color: var(--rdct-crs-arrow-hover-border-color, var(--rdct-crs-arrow-border-color, currentColor)); color: var(--rdct-crs-arrow-hover-color, var(--rdct-crs-arrow-color, inherit)); }
+.rdct-crs__arrows[data-fill=solid] button:is(:hover,:focus-visible):not(:disabled) { background: var(--rdct-crs-arrow-hover-background, var(--rdct-crs-arrow-background, #172b3a)); border-color: var(--rdct-crs-arrow-hover-border-color, var(--rdct-crs-arrow-border-color, var(--rdct-crs-arrow-background, #172b3a))); color: var(--rdct-crs-arrow-hover-color, var(--rdct-crs-arrow-color, #fff)); }
+.rdct-crs__arrows[data-fill=none] button:is(:hover,:focus-visible):not(:disabled) { border-color: var(--rdct-crs-arrow-hover-border-color, transparent); }
+.rdct-crs__controls--overlay .rdct-crs__arrows[data-fill=default] button { background: var(--rdct-crs-arrow-background, var(--rdct-surface, #fff)); }
+.rdct-crs__controls--overlay .rdct-crs__arrows[data-fill=default] button:is(:hover,:focus-visible):not(:disabled) { background: var(--rdct-crs-arrow-hover-background, var(--rdct-crs-arrow-background, var(--rdct-surface, #fff))); }
+@media (forced-colors: active) { .rdct-crs__arrows[data-fill] button { forced-color-adjust: auto; border-color: ButtonText; } }

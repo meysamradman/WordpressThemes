@@ -1,0 +1,30 @@
+{
+  "fa": [
+    {
+      "title": "کارت اول",
+      "content": "محتوای این کارت را با تصویر، متن یا قالب خود جایگزین کنید."
+    },
+    {
+      "title": "کارت دوم",
+      "content": "طراحی کارت از حرکت کاروسل مستقل است."
+    },
+    {
+      "title": "کارت سوم",
+      "content": "جهت نمایش از زبان صفحه پیروی می‌کند."
+    }
+  ],
+  "en": [
+    {
+      "title": "First card",
+      "content": "Replace this card with your image, content or template."
+    },
+    {
+      "title": "Second card",
+      "content": "Card design is independent of carousel movement."
+    },
+    {
+      "title": "Third card",
+      "content": "Direction follows the page language."
+    }
+  ]
+}

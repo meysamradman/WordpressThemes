@@ -1,0 +1,16 @@
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-color] { color:var(--rdct-button-sticky-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-background] { background-color:var(--rdct-button-sticky-background); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-border-color] { border-color:var(--rdct-button-sticky-border-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-icon-color] .rdct-button__icon { color:var(--rdct-button-sticky-icon-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-icon-background] .rdct-button__icon { background-color:var(--rdct-button-sticky-icon-background); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-hover-color]:is(:hover,:focus-visible) { color:var(--rdct-button-sticky-hover-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-hover-background]:is(:hover,:focus-visible) { background-color:var(--rdct-button-sticky-hover-background); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-hover-border-color]:is(:hover,:focus-visible) { border-color:var(--rdct-button-sticky-hover-border-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-icon-border-color] .rdct-button__icon { border-color:var(--rdct-button-sticky-icon-border-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-separator-color] .rdct-button__icon[data-separator] { border-color:var(--rdct-button-sticky-separator-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-ripple-color] .rdct-button__icon[data-ripple]::before { border-color:var(--rdct-button-sticky-ripple-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-hover-icon-color]:is(:hover,:focus-visible) .rdct-button__icon { color:var(--rdct-button-sticky-hover-icon-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-hover-icon-background]:is(:hover,:focus-visible) .rdct-button__icon { background-color:var(--rdct-button-sticky-hover-icon-background); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-hover-icon-border-color]:is(:hover,:focus-visible) .rdct-button__icon { border-color:var(--rdct-button-sticky-hover-icon-border-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-hover-separator-color]:is(:hover,:focus-visible) .rdct-button__icon[data-separator] { border-color:var(--rdct-button-sticky-hover-separator-color); }
+:is(.is-sticky-active,.elementor-sticky--effects) .rdct-button[data-sticky-hover-ripple-color]:is(:hover,:focus-visible) .rdct-button__icon[data-ripple]::before { border-color:var(--rdct-button-sticky-hover-ripple-color); }

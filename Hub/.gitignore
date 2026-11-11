@@ -1,0 +1,13 @@
+.env
+.local-deps/
+backups/
+releases/
+
+# Source archive: local-only files stay outside Git.
+.playwright-mcp/
+node_modules/
+*.log
+.env.*
+!.env.example
+!.env.*.example
+.local-admin.txt

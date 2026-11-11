@@ -1,0 +1,5 @@
+{% macro render(settings) %}
+{% import 'elementor/macros' as m %}
+{% set attributes = settings.attributes | default('') %}
+{{ m.render_custom_attributes(settings | merge({'attributes': attributes matches "/^(?=[\\s\\S]{0,16384}$)(?:\\s*(?:data-[a-z][a-z0-9-]*|aria-[a-z][a-z0-9-]*|role|title|dir|lang|tabindex|hidden|inert|translate)=\"[^\"<>\\x00-\\x1f]*\")*\\s*$/" ? attributes : ''})) }}
+{% endmacro %}

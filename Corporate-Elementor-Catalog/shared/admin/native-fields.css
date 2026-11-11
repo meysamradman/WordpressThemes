@@ -1,0 +1,19 @@
+:is(.rdct-bld-editor,.rdct-stg,.rdct-clr-panel,.rdct-cor-settings,.rdct-cnt-editor) :where(select,textarea,input:not([type=checkbox],[type=radio],[type=range],[type=color],[type=hidden],[type=file],[type=submit],[type=button])) {
+  box-sizing:border-box; min-inline-size:0; max-inline-size:100%; min-block-size:var(--rdct-admin-control-height,2.5rem); margin:0;
+  padding:.5rem .7rem; border:1px solid var(--rdct-admin-border); border-radius:.4rem;
+  background-color:var(--rdct-admin-paper); color:var(--rdct-admin-ink); font:inherit; line-height:1.5; box-shadow:none;
+}
+:is(.rdct-bld-editor,.rdct-stg,.rdct-clr-panel,.rdct-cor-settings,.rdct-cnt-editor) select:not([multiple],[size]:not([size="0"],[size="1"])) {
+  appearance:none; padding-inline-end:2.25rem;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%235f6d68' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-size:1rem; background-position:var(--rdct-select-arrow-position,right .7rem center);
+}
+:is(.rdct-bld-editor,.rdct-stg,.rdct-clr-panel,.rdct-cor-settings,.rdct-cnt-editor) select:dir(rtl) { --rdct-select-arrow-position:left .7rem center; }
+:is(.rdct-bld-editor,.rdct-stg,.rdct-clr-panel,.rdct-cor-settings,.rdct-cnt-editor) :where(select[multiple],select[size]:not([size="0"],[size="1"])) { block-size:auto; background-image:none; }
+:is(.rdct-bld-editor,.rdct-stg,.rdct-clr-panel,.rdct-cor-settings,.rdct-cnt-editor) textarea { resize:vertical; }
+:is(.rdct-bld-editor,.rdct-stg,.rdct-clr-panel,.rdct-cor-settings,.rdct-cnt-editor) :where(input,select,textarea):focus-visible { outline:2px solid var(--rdct-admin-accent); outline-offset:2px; }
+:is(.rdct-bld-editor,.rdct-stg,.rdct-clr-panel,.rdct-cor-settings,.rdct-cnt-editor) :where(input,select,textarea)[aria-invalid="true"] { border-color:var(--rdct-admin-danger); }
+:is(.rdct-bld-editor,.rdct-stg,.rdct-clr-panel,.rdct-cor-settings,.rdct-cnt-editor) :where(input,select,textarea):disabled { color:var(--rdct-admin-muted); background-color:var(--rdct-admin-soft); cursor:default; }
+@media (forced-colors:active) {
+  :is(.rdct-bld-editor,.rdct-stg,.rdct-clr-panel,.rdct-cor-settings,.rdct-cnt-editor) select { appearance:auto; background-image:none; }
+}

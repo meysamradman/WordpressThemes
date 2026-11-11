@@ -1,0 +1,12 @@
+.rdct-card-preview-owner { position:relative; }
+.rdct-card-preview { position:relative; display:block; inline-size:100%; block-size:100%; overflow:hidden; }
+.rdct-card-preview > img { display:block; inline-size:100%; block-size:100%; object-fit:cover; }
+.rdct-card-preview > video { position:absolute; inset:0; display:block; inline-size:100%; block-size:100%; object-fit:cover; opacity:0; pointer-events:none; }
+.rdct-card-preview.is-playing > video { opacity:1; }
+.rdct-card-preview-control { position:absolute; inset-block-start:.5rem; inset-inline-start:.5rem; z-index:5; display:grid; place-items:center; inline-size:2.75rem; block-size:2.75rem; min-inline-size:0; padding:0; border:0; border-radius:50%; background:transparent; color:#fff; cursor:pointer; line-height:1; }
+.rdct-card-preview-control::before { content:''; position:absolute; inset:.375rem; border:1px solid #ffffffb3; border-radius:50%; background:#101511a6; }
+.rdct-card-preview-control > span { position:relative; }
+.rdct-card-preview-control[hidden],.rdct-card-preview-control [hidden] { display:none; }
+.rdct-card-preview-control svg { display:block; inline-size:1rem; block-size:1rem; }
+.rdct-card-preview-control:focus-visible { outline:2px solid var(--rdct-accent,#b98a2f); outline-offset:3px; }
+@media (forced-colors:active) { .rdct-card-preview-control { background:ButtonFace; color:ButtonText; border-color:ButtonText; } }

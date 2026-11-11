@@ -1,0 +1,6 @@
+#rdct-scroll-progress { position: fixed; inset-block-start: 0; inset-inline: 0; z-index: 9997; block-size: var(--progress-height); background: var(--progress-track); pointer-events: none; }
+#rdct-scroll-progress[hidden] { display: none; }
+#rdct-scroll-progress > span { display: block; inline-size: 100%; block-size: 100%; background: var(--progress-color); transform: scaleX(0); transform-origin: left; }
+#rdct-scroll-progress:dir(rtl) > span { transform-origin: right; }
+@media (min-width: 783px) { .admin-bar #rdct-scroll-progress { inset-block-start: 32px; } }
+@media (min-width: 601px) and (max-width: 782px) { .admin-bar #rdct-scroll-progress { inset-block-start: 46px; } }

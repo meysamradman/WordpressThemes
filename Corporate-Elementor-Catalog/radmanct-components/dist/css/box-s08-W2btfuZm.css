@@ -1,0 +1,5 @@
+.rdct-box--s08 .rdct-box__media { aspect-ratio: 4 / 3; box-shadow: 0 20px 30px #0002; }.rdct-box--s08 .rdct-box__content { inline-size: var(--rdct-box-content-width, 80%); margin-block-start: -3.75rem; margin-inline-start: 0; border-radius: inherit; z-index: 1; transition: background-color .45s, color .45s; }
+.rdct-box--s08.rdct-box--align-center .rdct-box__content { margin-inline: auto; }.rdct-box--s08.rdct-box--align-end .rdct-box__content { margin-inline-start: auto; }.rdct-box--s08.rdct-box--align-middle .rdct-box__content { position: absolute; inset-block-start: 50%; inset-inline-start: 50%; translate: -50% -50%; margin: 0; }[dir="rtl"] .rdct-box--s08.rdct-box--align-middle .rdct-box__content { translate: 50% -50%; }
+.rdct-box--s08:is(:hover, :focus-within) .rdct-box__content { background: var(--rdct-box-hover-revealer-color, var(--rdct-accent, #176a6b)); color: #fff; }@media (max-width: 47.999rem) { .rdct-box--s08 .rdct-box__content { inline-size: 100%; } }
+
+.rdct-box--s08 .rdct-box__overlay { display:none; }

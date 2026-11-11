@@ -1,0 +1,6 @@
+.rdct-tst--s19 { padding-block:38px;box-shadow:0 10px 35px rgb(0 0 0 / 5%); }
+.rdct-tst--s19 .rdct-tst__logo { margin:0; }
+.rdct-tst--s19 .rdct-tst__author { flex-direction:row;flex-wrap:wrap;align-items:baseline;column-gap:.75rem; }
+.rdct-tst--s19 .rdct-tst__author > small { flex-basis:100%; }
+.rdct-tst--s19 .rdct-tst__rating { align-self:start;padding:.35rem .6rem;background:var(--rdct-tst-rating-color,#d99b20);color:#fff;border-radius:.2rem; }
+.rdct-tst--s19 .rdct-tst__quote { font-size:1.125rem; }

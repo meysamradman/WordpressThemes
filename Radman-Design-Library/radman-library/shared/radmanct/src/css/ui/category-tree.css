@@ -1,0 +1,29 @@
+.rdc-cat-tree,.rdc-cat-tree ul { margin:0; padding:0; list-style:none; }
+.rdc-cat-tree li { margin:0; padding:0; }
+.rdc-cat-tree__row { display:grid; grid-template-columns:minmax(0,1fr) 2rem 2.25rem; align-items:center; column-gap:.375rem; padding-inline:.25rem; min-block-size:2.875rem; font-size:var(--rdc-sz-sm); color:var(--rdc-tx); }
+summary.rdc-cat-tree__row { cursor:pointer; list-style:none; }
+summary.rdc-cat-tree__row::-webkit-details-marker { display:none; }
+.rdc-cat-tree__row > svg { grid-column:3; grid-row:1; place-self:center; display:block; inline-size:20px; block-size:20px; pointer-events:none; }
+.rdc-cat-tree details[open] > summary > svg { transform:rotate(180deg); }
+.rdc-cat-tree__row > a { grid-column:1; grid-row:1; min-inline-size:0; padding-block:.75rem; color:inherit; text-decoration:none; overflow-wrap:anywhere; }
+.rdc-cat-tree__row > a:is(:hover,:focus-visible) { text-decoration:none; color:var(--rdc-acc); }
+.rdc-cat-tree__row > a[aria-current=page] { color:var(--rdc-acc); font-weight:600; }
+.rdc-cat-tree__num { grid-column:2; grid-row:1; justify-self:center; text-align:center; color:var(--rdc-mut); font-size:.8125rem; font-variant-numeric:tabular-nums; }
+.rdc-cat-tree > li + li { border-block-start:1px solid var(--rdc-ln); }
+.rdc-cat-tree ul { margin-inline-start:.5rem; padding-inline-start:1rem; border-inline-start:1px solid var(--rdc-ln); }
+.rdc-cat-tree summary:focus-visible { outline:2px solid var(--rdc-acc); outline-offset:2px; border-radius:var(--rdc-rad); }
+@media (prefers-reduced-motion:no-preference) { .rdc-cat-tree__row > svg { transition:transform .15s ease; } }
+
+.rdc-cat-tree[data-branches=false] .rdc-cat-tree__row { grid-template-columns:minmax(0,1fr) 2rem; }
+.rdc-cat-tree[data-counts=false] .rdc-cat-tree__row { grid-template-columns:minmax(0,1fr) 2.25rem; }
+.rdc-cat-tree[data-counts=false] summary.rdc-cat-tree__row > svg { grid-column:2; }
+.rdc-cat-tree[data-counts=false][data-branches=false] .rdc-cat-tree__row { grid-template-columns:minmax(0,1fr); }
+@supports (interpolate-size:allow-keywords) and selector(details::details-content) {
+  @media (prefers-reduced-motion:no-preference) {
+    .rdc-cat-tree details { interpolate-size:allow-keywords; }
+    .rdc-cat-tree details::details-content { block-size:0; overflow:clip; opacity:0; transition:block-size .22s ease,opacity .18s ease,content-visibility .22s allow-discrete; }
+    .rdc-cat-tree details[open]::details-content { block-size:auto; opacity:1; }
+  }
+}
+
+.rdc-tax .rdc-cat-tree__row { color:inherit; font-size:inherit; }

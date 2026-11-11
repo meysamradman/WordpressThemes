@@ -1,0 +1,6 @@
+.rdct-loading { display:flex; align-items:center; gap:.55em; min-block-size:1.5em; margin:0; color:inherit; line-height:1.5; }
+.rdct-loading::before { content:''; flex:0 0 1em; inline-size:1em; block-size:1em; box-sizing:border-box; color:var(--rdct-admin-accent,currentColor); border:2px solid currentColor; border-inline-end-color:transparent; border-radius:50%; animation:rdct-admin-loading .8s linear infinite; }
+.rdct-loading:empty { display:none; }
+#rdct-builder-root > .rdct-loading, #rdct-settings-root > .rdct-loading { padding:1rem; }
+@keyframes rdct-admin-loading { to { transform:rotate(360deg); } }
+@media(prefers-reduced-motion:reduce) { .rdct-loading::before { animation:none; } }

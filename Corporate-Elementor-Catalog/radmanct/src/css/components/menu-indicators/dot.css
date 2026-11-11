@@ -1,0 +1,7 @@
+[data-rdct-menu].rdct-menu--indicator-dot .rdct-menu > li > a { position: relative; }
+[data-rdct-menu].rdct-menu--indicator-dot .rdct-menu > li > a::before { content: ''; position: absolute; inline-size: 4px; block-size: 4px; border-radius: 50%; background: currentColor; inset-block-start: .35rem; inset-inline-end: 1px; transform: scale(0); transition: transform .3s ease; pointer-events: none; }
+@media (hover: hover) { [data-rdct-menu].rdct-menu--indicator-dot .rdct-menu > li > a:hover::before { transform: scale(1); } }
+[data-rdct-menu].rdct-menu--indicator-dot .rdct-menu > li > a:focus-visible::before,
+[data-rdct-menu].rdct-menu--indicator-dot .rdct-menu > li > a[aria-current="page"]::before,
+[data-rdct-menu].rdct-menu--indicator-dot .rdct-menu > .current-menu-item > a::before { transform: scale(1); }
+@media (prefers-reduced-motion: reduce) { [data-rdct-menu].rdct-menu--indicator-dot .rdct-menu > li > a::before { transition: none; } }

@@ -1,0 +1,260 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct-content 1.1.1\nLanguage: fa_IR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Specification label"
+msgstr "عنوان مشخصه"
+
+msgid "Specification value"
+msgstr "مقدار مشخصه"
+
+msgid "Specification unit"
+msgstr "واحد مشخصه"
+
+msgid "Displayed price"
+msgstr "متن قیمت نمایشی"
+
+msgid "No public contact page is available for this language. The contact button will stay hidden until a published page is selected in Core settings."
+msgstr "برای این زبان برگهٔ تماس عمومی در دسترس نیست. دکمهٔ تماس تا انتخاب یک برگهٔ منتشرشده در تنظیمات هسته نمایش داده نمی‌شود."
+
+msgid "Choose a contact page in Core settings"
+msgstr "انتخاب برگهٔ تماس در تنظیمات هسته"
+
+msgid "Image"
+msgstr "تصویر"
+
+msgid "Price not entered"
+msgstr "قیمت وارد نشده"
+
+msgid "All: %s"
+msgstr "همه: %s"
+
+msgid "Product price display"
+msgstr "نمایش قیمت محصول"
+
+msgid "Contact us"
+msgstr "تماس با ما"
+
+msgid "Price"
+msgstr "قیمت"
+
+msgid "Enter the price and currency as display text. This does not enable online purchasing."
+msgstr "قیمت و واحد پول را به‌صورت متن وارد کنید؛ این گزینه خرید اینترنتی را فعال نمی‌کند."
+
+msgid "Uses the contact page selected in Core settings. No form or request submission is created."
+msgstr "از برگهٔ تماس انتخاب‌شده در تنظیمات هسته استفاده می‌شود؛ فرم یا ارسال درخواست ساخته نمی‌شود."
+
+msgid "The product details editor could not load. Saved values were preserved."
+msgstr "ویرایشگر جزئیات محصول بارگذاری نشد؛ اطلاعات ذخیره‌شدهٔ قبلی حفظ شده‌اند."
+
+msgid "Product contact link"
+msgstr "پیوند تماس محصولات"
+
+msgid "No contact link"
+msgstr "بدون پیوند تماس"
+
+msgid "Used when a product displays Contact us instead of a price. This does not create a form or submit requests."
+msgstr "برای محصولاتی است که به‌جای قیمت «تماس با ما» نمایش می‌دهند؛ فرم یا ارسال درخواست ساخته نمی‌شود."
+
+msgid "Choose a published public contact page."
+msgstr "یک برگهٔ تماس عمومی و منتشرشده انتخاب کنید."
+
+msgid "Find a contact page"
+msgstr "جستجوی برگهٔ تماس"
+
+msgid "Save your changes before running another page search."
+msgstr "پیش از جستجوی دوبارهٔ برگه‌ها، تغییرات خود را ذخیره کنید."
+
+msgid "Products, categories, brands, features, galleries and technical specifications. No cart or checkout."
+msgstr "محصولات، دسته‌ها، برندها، ویژگی‌ها، گالری و مشخصات فنی؛ بدون سبد خرید و پرداخت."
+
+msgid "Projects, categories and image galleries. Independent of the product catalog."
+msgstr "نمونه‌کارها، دسته‌ها و گالری تصاویر؛ مستقل از کاتالوگ محصول."
+
+msgid "Enabled"
+msgstr "فعال"
+
+msgid "Disabled"
+msgstr "غیرفعال"
+
+msgid "Enable this module"
+msgstr "فعال‌کردن این ماژول"
+
+msgid "Manage items"
+msgstr "مدیریت موارد"
+
+msgid "Add item"
+msgstr "افزودن مورد"
+
+msgid "View archive"
+msgstr "مشاهدهٔ آرشیو"
+
+msgid "Enable only the modules used by this project. After saving, each enabled module provides its own management menu and archive."
+msgstr "فقط ماژول‌های مورد نیاز پروژه را فعال کنید. پس از ذخیره، هر ماژول فعال منوی مدیریت و آرشیو خودش را دارد."
+
+msgid "Find an inquiry destination page"
+msgstr "جستجوی برگهٔ مقصد استعلام"
+
+msgid "Search pages"
+msgstr "جستجوی برگه‌ها"
+
+msgid "Untitled page"
+msgstr "برگهٔ بدون عنوان"
+
+msgid "Shows up to 20 matching public pages and the saved selection. Use the page search above to find another destination."
+msgstr "حداکثر ۲۰ برگهٔ عمومی مطابق جستجو و انتخاب ذخیره‌شده نمایش داده می‌شود. برای یافتن مقصد دیگر، از جستجوی برگه‌ها در بالا استفاده کنید."
+
+msgid "No matching public pages. Search again or publish a contact page first."
+msgstr "برگهٔ عمومی مطابق جستجو پیدا نشد. دوباره جستجو کنید یا ابتدا برگهٔ تماس را منتشر کنید."
+
+msgid "Add %s"
+msgstr "افزودن %s"
+
+msgid "Add specification"
+msgstr "افزودن مشخصه"
+
+msgid "Brands"
+msgstr "برندها"
+
+msgid "Choose a published public page for inquiries."
+msgstr "برای استعلام یک برگهٔ عمومی منتشرشده انتخاب کنید."
+
+msgid "Choose images"
+msgstr "انتخاب تصاویر"
+
+msgid "Contact page"
+msgstr "برگهٔ تماس"
+
+msgid "Content details were invalid. Previously saved details were preserved."
+msgstr "اطلاعات تکمیلی نامعتبر بود؛ اطلاعات ذخیره‌شدهٔ قبلی حفظ شد."
+
+msgid "Content modules"
+msgstr "ماژول‌های محتوا"
+
+msgid "Disabled modules keep their data and do not register content types or frontend processing."
+msgstr "ماژول غیرفعال داده‌هایش را حفظ می‌کند و نوع محتوا یا پردازش عمومی خود را ثبت نمی‌کند."
+
+msgid "Edit %s"
+msgstr "ویرایش %s"
+
+msgid "Enable JavaScript to edit these details. Existing values will be preserved."
+msgstr "برای ویرایش این اطلاعات جاوااسکریپت را فعال کنید؛ اطلاعات قبلی حفظ می‌شود."
+
+msgid "Image gallery"
+msgstr "گالری تصاویر"
+
+msgid "Invalid settings were ignored."
+msgstr "تنظیمات نامعتبر اعمال نشد."
+
+msgid "Label"
+msgstr "عنوان مشخصه"
+
+msgid "Links to your existing contact page with the product ID. This does not create a submission form or send messages."
+msgstr "همراه شناسهٔ محصول به برگهٔ تماس موجود پیوند می‌دهد؛ فرم ارسال ایجاد نمی‌کند و پیامی نمی‌فرستد."
+
+msgid "Move down"
+msgstr "انتقال به پایین"
+
+msgid "Move up"
+msgstr "انتقال به بالا"
+
+msgid "No images selected."
+msgstr "تصویری انتخاب نشده است."
+
+msgid "No inquiry link"
+msgstr "بدون پیوند استعلام"
+
+msgid "Portfolio"
+msgstr "نمونه‌کار"
+
+msgid "Product"
+msgstr "محصول"
+
+msgid "Product catalog"
+msgstr "کاتالوگ محصولات"
+
+msgid "Product categories"
+msgstr "دسته‌بندی محصولات"
+
+msgid "Product features"
+msgstr "ویژگی‌های محصولات"
+
+msgid "Product inquiries"
+msgstr "استعلام محصولات"
+
+msgid "Products"
+msgstr "محصولات"
+
+msgid "Project"
+msgstr "نمونه‌کار"
+
+msgid "Project categories"
+msgstr "دسته‌بندی نمونه‌کارها"
+
+msgid "Projects"
+msgstr "نمونه‌کارها"
+
+msgid "Radman CT content details"
+msgstr "اطلاعات تکمیلی رادمان"
+
+msgid "Reference code"
+msgstr "کد مرجع"
+
+msgid "Remove"
+msgstr "حذف"
+
+msgid "Technical specifications"
+msgstr "مشخصات فنی"
+
+msgid "Unit"
+msgstr "واحد"
+
+msgid "Up to 20 images and 40 specifications."
+msgstr "حداکثر ۲۰ تصویر و ۴۰ مشخصهٔ فنی."
+
+msgid "Value"
+msgstr "مقدار"
+
+msgid "Up to 20 images."
+msgstr "حداکثر ۲۰ تصویر."
+
+msgid "The specifications editor could not load. Saved values were preserved."
+msgstr "ویرایشگر مشخصات بارگذاری نشد؛ اطلاعات ذخیره‌شدهٔ قبلی حفظ شده است."
+
+msgid "Product category"
+msgstr "دستهٔ محصول"
+
+msgid "Brand"
+msgstr "برند"
+
+msgid "Product feature"
+msgstr "ویژگی محصول"
+
+msgid "Project category"
+msgstr "دستهٔ نمونه‌کار"
+
+msgid "View %s"
+msgstr "نمایش %s"
+
+msgid "Search %s"
+msgstr "جستجوی %s"
+
+msgid "New %s"
+msgstr "%s جدید"
+
+msgid "Update %s"
+msgstr "به‌روزرسانی %s"
+
+msgid "No items found."
+msgstr "موردی پیدا نشد."
+
+msgid "No items found in Trash."
+msgstr "موردی در زباله‌دان پیدا نشد."
+
+msgid "Radman Content"
+msgstr "محتوای رادمان"
+
+msgid "Product catalog and portfolio modules for Radman CT."
+msgstr "ماژول‌های کاتالوگ محصولات و نمونه‌کار برای Radman CT."
+
+msgid "Catalog and portfolio for Radman CT."
+msgstr "مدیریت کاتالوگ و نمونه‌کار رادمان."

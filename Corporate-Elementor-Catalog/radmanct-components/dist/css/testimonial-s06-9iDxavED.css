@@ -1,0 +1,5 @@
+.rdct-tst--s06 { text-align:center;padding-block:calc(var(--rdct-tst-padding,28px) * 1.5); }
+.rdct-tst--s06 .rdct-tst__quote { font-size:1.3125rem;max-inline-size:80%;margin-inline:auto; }
+.rdct-tst--s06 .rdct-tst__info { justify-content:center; }
+.rdct-tst--s06 .rdct-tst__avatar { inline-size:48px;block-size:48px; }
+.rdct-tst--s06 .rdct-tst__logo { margin-inline:auto; }

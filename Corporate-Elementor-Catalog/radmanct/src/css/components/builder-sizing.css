@@ -1,0 +1,10 @@
+.rdct-bld__item.rdct-bld__item--custom { flex: 0 1 var(--builder-custom-width, 50%); }
+@media (min-width: 64rem) and (max-width: 89.99rem) {
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item--laptop-custom { flex: 0 1 var(--builder-laptop-custom-width, var(--builder-custom-width, 50%)); --builder-grid-column: auto; }
+}
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item--tablet-custom { flex: 0 1 var(--builder-tablet-custom-width, var(--builder-custom-width, 50%)); --builder-grid-column: auto; }
+}
+@media (max-width: 47.99rem) {
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item--mobile-custom { flex: 0 1 var(--builder-mobile-custom-width, var(--builder-custom-width, 50%)); --builder-grid-column: auto; }
+}

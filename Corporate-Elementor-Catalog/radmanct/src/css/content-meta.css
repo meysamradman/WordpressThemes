@@ -1,0 +1,8 @@
+.rdct-cnt-meta { display: grid; gap: .5rem; margin-block: 1.5rem; }
+.rdct-cnt-meta > div { display: grid; grid-template-columns: minmax(5rem, auto) minmax(0, 1fr); align-items: baseline; gap: .5rem 1.25rem; padding-block: .5rem; border-block-end: 1px solid var(--rdct-line); }
+.rdct-cnt-meta dt { color: var(--rdct-muted); }
+.rdct-cnt-meta dd { margin: 0; overflow-wrap: anywhere; }
+.rdct-cnt-archive-link { display: inline-block; margin-block-end: 1.5rem; }
+.rdct-cnt-meta--compact { margin-block: 0; gap: .25rem; font-size: .875rem; }
+.rdct-cnt-meta--compact > div { padding-block: 0; border: 0; }
+@media (max-width: 30rem) { .rdct-cnt-meta > div { grid-template-columns: minmax(0, 1fr); } }

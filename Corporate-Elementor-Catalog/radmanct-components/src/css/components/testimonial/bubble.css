@@ -1,0 +1,2 @@
+.rdct-tst--bubble { margin-block-end:18px; }
+.rdct-tst--bubble::after { content:""; position:absolute; inset-inline-start:36px; inset-block-start:100%; border:12px solid transparent; border-block-start-color:var(--rdct-tst-background-color,var(--rdct-surface,#fff)); }

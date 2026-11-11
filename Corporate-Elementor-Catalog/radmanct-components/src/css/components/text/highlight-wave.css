@@ -1,0 +1,2 @@
+.rdct-text[data-highlight=wave] .rdct-text__highlight { text-decoration: underline wavy var(--rdct-text-highlight-color); text-underline-offset: .14em; }
+.rdct-text[data-highlight=wave] .rdct-text__highlight::before { display: none; }

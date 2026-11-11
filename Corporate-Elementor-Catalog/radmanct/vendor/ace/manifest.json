@@ -1,0 +1,29 @@
+{
+  "package": "ace-builds",
+  "version": "1.43.2",
+  "tarball": "https://registry.npmjs.org/ace-builds/-/ace-builds-1.43.2.tgz",
+  "integrity": "sha512-3wzJUJX0RpMc03jo0V8Q3bSb/cKPnS7Nqqw8fVHsCCHweKMiTIxT3fP46EhjmVy6MCuxwP801ere+RW245phGw==",
+  "files": {
+    "ace.js": "78f808597ab58d11a5cf87ba84f3d08630d1c409135e40893809005581f4c738",
+    "ext-language_tools.js": "1806e1d47757e8a2d4d85489c3957f1f7ccb69fd13c03661c50574e17a92670e",
+    "theme-textmate.js": "b6d8bae9abd821bc73ad30efa2b640953dee0132a26169330b80b25f15295937",
+    "theme-merbivore_soft.js": "1efdf11ad336a3ab136312ff920d6d46ff937554acc7c7cdedcbbec405cb19d5",
+    "mode-css.js": "cb6877f5c394feb9dc7647edb862b89634b0c3eaa1e26c97499c446035ae6d34",
+    "mode-html.js": "5bcfa6e1021dece0d3e66eccdd5d622bf9c26917e42e553583a52f216aa5cce1",
+    "mode-javascript.js": "11fa1afc31653a6f48f742bbb7cb52cf2c16f9a0b557cbf9e2fa0e6c197f7f14",
+    "mode-json.js": "010feab73fd75cfcdee30cdc71bdcc868e4f914465a59a7141c5ee4983a8afec",
+    "mode-php.js": "3274b7d6f9926bddd74c87e924abd8a53517135141a64c49d727336def7074ee",
+    "mode-text.js": "075a664f8a886a947294bb56ae32b8a9908bf8716f600ec2710213c60db5de19",
+    "worker-css.js": "15984481ef2b4f70fef94ca8a7d116a51da3d84b2ea7448ee788e80d3c22fc0a",
+    "worker-html.js": "6e866c8c7db97f5a43379c39fd44d2f8de034d6c9adca3f2b1c5e7067d038dfc",
+    "worker-javascript.js": "0dffa95689fc0b69d7b410e0e1b86f711cfba304587b84f1bf48e572d48c4cac",
+    "worker-json.js": "15a9597d26ce8252d020e518529ac5a844eb963a28aac1b03394decbbbe16f1b",
+    "snippets/css.js": "d51fbeffd9458214ca960ba16c34eadd21526fdff226adb27f1a1412377ce55f",
+    "snippets/html.js": "159b7192459d73d92761dab8c4d48e138e94e4d8e7bf99004bac257e403a0c3b",
+    "snippets/javascript.js": "6287a6b820c8707a0cd7b9e4545bcb023a8b9228569cfd21be6635d1409aabf4",
+    "snippets/json.js": "238a0bd54eb1b4c1a0801bdedd2ea4eb0c28b6987bf4311b9eccaaba3bd776d1",
+    "snippets/php.js": "c220c249e2a69633a0d3e8fe7736140c278cb36c19419a1a934f05ae3c1dd31f",
+    "snippets/text.js": "129e041636e78250edc68e351c2e0f9e2288bcbf737c5f7f0d11bde982d8fe71",
+    "LICENSE": "850f545c5254e8c08204edb2a6d50bbb72727c38a82982c17a84bebf6064cdf8"
+  }
+}

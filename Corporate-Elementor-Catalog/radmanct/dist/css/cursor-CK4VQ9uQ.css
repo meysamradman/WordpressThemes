@@ -1,0 +1,15 @@
+.rdct-cursor { position: fixed; inset: 0; z-index: 9998; pointer-events: none; color: var(--cursor-color); }
+.rdct-cursor[hidden] { display: none; }
+.rdct-cursor__dot,
+.rdct-cursor__ring { position: absolute; inset-block-start: 0; left: 0; border-radius: 50%; will-change: transform; }
+.rdct-cursor__dot { inline-size: var(--cursor-inner); block-size: var(--cursor-inner); background: currentColor; }
+.rdct-cursor__ring { display: grid; place-items: center; inline-size: var(--cursor-outer); block-size: var(--cursor-outer); isolation:isolate; }
+.rdct-cursor__ring::before { content:""; position:absolute; inset:0; border:1px solid currentColor; border-radius:inherit; transform:scale(1); transition:transform var(--cursor-hover-duration,.35s) cubic-bezier(.2,.75,.25,1),background-color var(--cursor-hover-duration,.35s),opacity var(--cursor-hover-duration,.35s); z-index:-1; }
+.rdct-cursor.is-interactive:not([data-hover-effect="none"]):not(.is-labelled) .rdct-cursor__ring::before { transform:scale(var(--cursor-hover-scale,1.8)); }
+.rdct-cursor.is-interactive[data-hover-effect="fill"] .rdct-cursor__ring::before { background:currentColor; opacity:.2; }
+.rdct-cursor.is-interactive { color: var(--cursor-hover); }
+.rdct-cursor.is-labelled .rdct-cursor__ring { inline-size: max(var(--cursor-outer), 5.5rem); block-size: max(var(--cursor-outer), 5.5rem); color: #fff; }
+.rdct-cursor.is-labelled .rdct-cursor__ring::before { background:var(--cursor-hover); opacity:1; }
+.rdct-cursor__label { max-inline-size: 5rem; padding: .5rem; font-size: .75rem; line-height: 1.4; text-align: center; overflow-wrap: anywhere; }
+.rdct-cursor--no-ring .rdct-cursor__ring { display: none; }
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) { .rdct-cursor { display: none; } }

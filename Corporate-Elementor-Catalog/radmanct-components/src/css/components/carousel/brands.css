@@ -1,0 +1,2 @@
+.rdct-crs--brands .rdct-crs__slide, .rdct-crs--brands .rdct-crs__link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; }
+.rdct-crs--brands .rdct-crs__media > img { inline-size: min(100%, 12rem); block-size: 6rem; object-fit: contain; }

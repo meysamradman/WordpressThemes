@@ -1,0 +1,3431 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct 1.1.1\nLanguage: fa_IR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Card video preview"
+msgstr "پیش‌نمایش ویدئویی کارت"
+
+msgid "Choose a video preview"
+msgstr "انتخاب ویدئوی پیش‌نمایش"
+
+msgid "Use an MP4, WebM or Ogg video."
+msgstr "از ویدئوی MP4، WebM یا Ogg استفاده کنید."
+
+msgid "No video selected"
+msgstr "ویدئویی انتخاب نشده"
+
+msgid "Choose video"
+msgstr "انتخاب ویدئو"
+
+msgid "Preview playback"
+msgstr "پخش پیش‌نمایش"
+
+msgid "While visible"
+msgstr "پخش هنگام دیده‌شدن"
+
+msgid "On hover or keyboard focus"
+msgstr "پخش با هاور یا فوکوس کیبورد"
+
+msgid "The featured image remains the poster. Card previews are silent and do not replace the video inside your content."
+msgstr "تصویر شاخص به‌عنوان پوستر باقی می‌ماند. پیش‌نمایش کارت بی‌صداست و ویدئوی داخل محتوای شما را تغییر نمی‌دهد."
+
+msgid "Inherit from parent category"
+msgstr "ارث‌بری از دستهٔ والد"
+
+msgid "Article (no media badge)"
+msgstr "مقاله (بدون نشان صوت یا ویدئو)"
+
+msgid "Podcast / audio"
+msgstr "پادکست / صوت"
+
+msgid "Video"
+msgstr "ویدئو"
+
+msgid "Podcast"
+msgstr "پادکست"
+
+msgid "Video article"
+msgstr "نوشتهٔ ویدئویی"
+
+msgid "Articles"
+msgstr "مقاله‌ها"
+
+msgid "Blog media badge"
+msgstr "نشان صوت و ویدئوی وبلاگ"
+
+msgid "Shows a music or video badge on blog images. Child categories inherit this choice unless overridden. Add the actual audio or video in the post editor."
+msgstr "روی تصویر نوشته‌ها نشان موسیقی یا ویدئو نمایش می‌دهد. زیر‌دسته‌ها این انتخاب را به ارث می‌برند، مگر آن را تغییر دهید. فایل صوتی یا ویدئو را در ویرایشگر نوشته قرار دهید."
+
+msgid "Music"
+msgstr "موسیقی"
+
+msgid "Skipped for reduced motion or startup after the page has loaded; closes within two seconds."
+msgstr "در حالت کاهش حرکت یا اجرای دیرهنگام پس از بارگذاری کامل نمایش داده نمی‌شود؛ حداکثر تا دو ثانیه بسته می‌شود."
+
+msgid "Curtain (two panels)"
+msgstr "پردهٔ دولایه"
+
+msgid "Fade (full-page overlay)"
+msgstr "محو شدن پوشش صفحه"
+
+msgid "Sliding (single panel)"
+msgstr "لغزش پوشش تک‌لایه"
+
+msgid "Spinner (animated arc)"
+msgstr "حلقه با قوس متحرک"
+
+msgid "Classic spinner (thin ring)"
+msgstr "چرخندهٔ کلاسیک (حلقهٔ باریک)"
+
+msgid "Dissolve (horizontal strips)"
+msgstr "محو نواری افقی"
+
+msgid "Bundled animated image (GIF)"
+msgstr "تصویر متحرک محلی (GIF)"
+
+msgid "Empty fields inherit the general typography settings. Save with the main settings button."
+msgstr "گزینه‌های خالی از تایپوگرافی عمومی ارث می‌برند. تغییرات را با دکمهٔ ذخیرهٔ همین پنل ثبت کنید."
+
+msgid "Restore general typography"
+msgstr "بازگردانی تایپوگرافی عمومی"
+
+msgid "Font size (rem)"
+msgstr "اندازهٔ فونت (rem)"
+
+msgid "Relative to the root font size. Leave empty to inherit."
+msgstr "نسبت به اندازهٔ فونت ریشهٔ صفحه است. مقدار خالی یعنی ارث‌بری."
+
+msgid "Layout deleted."
+msgstr "طرح حذف شد."
+
+msgid "Pages: %d"
+msgstr "برگه‌ها: %d"
+
+msgid "The request failed. Reload the page and try again."
+msgstr "درخواست انجام نشد. صفحه را تازه‌سازی کنید و دوباره تلاش کنید."
+
+msgid "Site header"
+msgstr "هدر سایت"
+
+msgid "Site footer"
+msgstr "فوتر سایت"
+
+msgid "Refresh saved layouts"
+msgstr "تازه‌سازی طرح‌های ذخیره‌شده"
+
+msgid "Unavailable layout"
+msgstr "طرح در دسترس نیست"
+
+msgid "Transparent header devices"
+msgstr "دستگاه‌های هدر شفاف"
+
+msgid "Add New Header"
+msgstr "افزودن هدر"
+
+msgid "Add New Footer"
+msgstr "افزودن فوتر"
+
+msgid "Back to layouts"
+msgstr "بازگشت به چیدمان‌ها"
+
+msgid "Search layouts"
+msgstr "جست‌وجوی چیدمان‌ها"
+
+msgid "No layouts found."
+msgstr "چیدمانی پیدا نشد."
+
+msgid "Radman Content"
+msgstr "محتوای رادمان"
+
+msgid "Radman Components"
+msgstr "کامپوننت‌های رادمان"
+
+msgid "Radman MCP"
+msgstr "رادمان MCP"
+
+msgid "Header contrast"
+msgstr "تطبیق رنگ هدر"
+
+msgid "Section color tone"
+msgstr "حالت رنگ سکشن"
+
+msgid "Unspecified"
+msgstr "تعیین‌نشده"
+
+msgid "Light section"
+msgstr "سکشن روشن"
+
+msgid "Dark section"
+msgstr "سکشن تیره"
+
+msgid "Follow site color scheme"
+msgstr "پیروی از حالت رنگ سایت"
+
+msgid "Follow section contrast"
+msgstr "تطبیق رنگ هدر با سکشن"
+
+msgid "Header color over light sections"
+msgstr "رنگ هدر روی سکشن روشن"
+
+msgid "Header color over dark sections"
+msgstr "رنگ هدر روی سکشن تیره"
+
+msgid "Sticky header color (optional)"
+msgstr "رنگ هدر چسبان (اختیاری)"
+
+msgid "Section contrast is independent of site dark mode. Unmarked sections keep the original header colors."
+msgstr "رنگ هدر مستقل از دارک‌مود سایت است. روی سکشن بدون تعیین حالت، رنگ اصلی هدر حفظ می‌شود."
+
+msgid "Header contrast behavior"
+msgstr "رفتار رنگ هدر"
+
+msgid "Automatic (preserve manual colors)"
+msgstr "خودکار (حفظ رنگ دستی)"
+
+msgid "Keep element colors"
+msgstr "حفظ رنگ عنصر"
+
+msgid "Logo over light sections"
+msgstr "لوگو روی سکشن روشن"
+
+msgid "Logo over dark sections"
+msgstr "لوگو روی سکشن تیره"
+
+msgid "Sticky header logo"
+msgstr "لوگوی هدر چسبان"
+
+msgid "Child theme design"
+msgstr "طرح چایلد"
+
+msgid "Custom design"
+msgstr "طراحی سفارشی"
+
+msgid "Default writing system"
+msgstr "خط پیش‌فرض سایت"
+
+msgid "Primary site font"
+msgstr "فونت اصلی سایت"
+
+msgid "Complementary font"
+msgstr "فونت مکمل"
+
+msgid "Font loading"
+msgstr "بارگذاری فونت"
+
+msgid "Arabic script"
+msgstr "خط فارسی و عربی"
+
+msgid "Latin script"
+msgstr "خط لاتین"
+
+msgid "This settings panel could not load. If the site was updated, reload the page. Unsaved changes will need to be entered again."
+msgstr "فرم تنظیمات بارگذاری نشد. اگر سایت به‌روزرسانی شده، صفحه را دوباره بارگذاری کنید. تغییرات ذخیره‌نشده باید دوباره وارد شوند."
+
+msgid "Reload settings"
+msgstr "بارگذاری مجدد تنظیمات"
+
+msgid "Inline text (span)"
+msgstr "متن درون‌خطی (span)"
+
+msgid "Link hover color"
+msgstr "رنگ لینک هنگام اشاره"
+
+msgid "Colors"
+msgstr "رنگ‌ها"
+
+msgid "Show sidebar"
+msgstr "نمایش سایدبار"
+
+msgid "Widget area"
+msgstr "ناحیهٔ ابزارک"
+
+msgid "Sidebar position"
+msgstr "جایگاه سایدبار"
+
+msgid "Start side"
+msgstr "ابتدای محتوا (راست در فارسی)"
+
+msgid "End side"
+msgstr "انتهای محتوا (چپ در فارسی)"
+
+msgid "Sidebar width (px)"
+msgstr "عرض سایدبار (پیکسل)"
+
+msgid "Widget area unavailable"
+msgstr "ناحیهٔ ابزارک در دسترس نیست"
+
+msgid "Manage widgets"
+msgstr "مدیریت ابزارک‌ها"
+
+msgid "Catalog"
+msgstr "کاتالوگ محصولات"
+
+msgid "Archive"
+msgstr "آرشیو"
+
+msgid "Single"
+msgstr "جزئیات"
+
+msgid "You are not allowed to install or update this plugin."
+msgstr "اجازهٔ نصب یا به‌روزرسانی این افزونه را ندارید."
+
+msgid "The local plugin package is unavailable or invalid. Existing plugin files were preserved."
+msgstr "بستهٔ محلی افزونه موجود یا معتبر نیست. فایل‌های افزونهٔ موجود حفظ شدند."
+
+msgid "The local plugin package could not be prepared."
+msgstr "آماده‌سازی بستهٔ محلی افزونه انجام نشد."
+
+msgid "Actions"
+msgstr "عملیات"
+
+msgid "Enabled"
+msgstr "فعال"
+
+msgid "Disabled"
+msgstr "غیرفعال"
+
+msgid "General"
+msgstr "عمومی"
+
+msgid "Hover"
+msgstr "هاور"
+
+msgid "Layouts"
+msgstr "چیدمان‌ها"
+
+msgid "Backups"
+msgstr "پشتیبان"
+
+msgid "Translations"
+msgstr "ترجمه‌ها"
+
+msgid "Sticky"
+msgstr "چسبان"
+
+msgid "Shadow"
+msgstr "سایه"
+
+msgid "Icon colors"
+msgstr "رنگ‌های آیکون"
+
+msgid "Header builder settings"
+msgstr "تنظیمات هدرساز"
+
+msgid "Footer builder settings"
+msgstr "تنظیمات فوترساز"
+
+msgid "Header behavior"
+msgstr "رفتار هدر"
+
+msgid "Back to editor"
+msgstr "بازگشت به ویرایشگر"
+
+msgid "Edit element"
+msgstr "ویرایش عنصر"
+
+msgid "Select an element on the canvas or in the structure."
+msgstr "یک عنصر را از بوم یا ساختار انتخاب کنید."
+
+msgid "Import and export"
+msgstr "درون‌ریزی و برون‌بری"
+
+msgid "Style section"
+msgstr "بخش استایل"
+
+msgid "Preparing preview…"
+msgstr "در حال آماده‌سازی پیش‌نمایش…"
+
+msgid "Retry controls"
+msgstr "تلاش دوباره برای کنترل‌ها"
+
+msgid "Page scrollbar"
+msgstr "اسکرول‌بار صفحه"
+
+msgid "Customize page scrollbar"
+msgstr "ظاهر سفارشی اسکرول‌بار صفحه"
+
+msgid "Scrollbar width (4–20 px)"
+msgstr "عرض اسکرول‌بار (۴ تا ۲۰ پیکسل)"
+
+msgid "Scrollbar thumb color"
+msgstr "رنگ دستهٔ اسکرول‌بار"
+
+msgid "Scrollbar track color"
+msgstr "رنگ زمینهٔ اسکرول‌بار"
+
+msgid "Applies to the public page scrollbar. Firefox uses its native thin or normal width; mobile overlay scrollbars follow the operating system."
+msgstr "فقط روی اسکرول‌بار صفحهٔ سایت اعمال می‌شود. فایرفاکس عرض بومی نازک یا معمولی دارد؛ اسکرول‌بار شناور موبایل از سیستم‌عامل پیروی می‌کند."
+
+msgid "Required shared components for custom PHP and optional Elementor pages."
+msgstr "کامپوننت‌های مشترکِ ضروری برای صفحات سفارشی PHP و صفحات اختیاری المنتور."
+
+msgid "Radman Components is required for this theme, including custom PHP pages. Elementor is optional."
+msgstr "افزونهٔ کامپوننت‌های رادمان برای قالب، از جمله صفحات سفارشی PHP، ضروری است. المنتور اختیاری است."
+
+msgid "Manage required plugins"
+msgstr "مدیریت افزونه‌های ضروری"
+
+msgid "Required"
+msgstr "ضروری"
+
+msgid "Line height"
+msgstr "ارتفاع خط"
+
+msgid "Font size (px)"
+msgstr "اندازهٔ فونت (پیکسل)"
+
+msgid "Default / inherited"
+msgstr "پیش‌فرض / ارث‌بری"
+
+msgid "Saving…"
+msgstr "در حال ذخیره…"
+
+msgid "Settings saved."
+msgstr "تنظیمات ذخیره شد."
+
+msgid "Settings could not be saved. Try again."
+msgstr "تنظیمات ذخیره نشد؛ دوباره تلاش کنید."
+
+msgid "Settings could not be saved. Reload the page and try again."
+msgstr "تنظیمات ذخیره نشد؛ صفحه را تازه کنید و دوباره تلاش کنید."
+
+msgid "Invalid settings data."
+msgstr "دادهٔ تنظیمات نامعتبر است."
+
+msgid "Some values are invalid. Check the settings and try again."
+msgstr "بعضی مقادیر معتبر نیستند؛ تنظیمات را بررسی کنید."
+
+msgid "Font weight"
+msgstr "وزن فونت"
+
+msgid "Default / inherited weight"
+msgstr "پیش‌فرض / ارث‌بری"
+
+msgid "Thin"
+msgstr "بسیار نازک"
+
+msgid "Extra Light"
+msgstr "فوق‌سبک"
+
+msgid "Light"
+msgstr "سبک"
+
+msgid "Regular"
+msgstr "معمولی"
+
+msgid "Medium"
+msgstr "متوسط"
+
+msgid "Semi Bold"
+msgstr "نیمه‌ضخیم"
+
+msgid "Bold"
+msgstr "ضخیم"
+
+msgid "Extra Bold"
+msgstr "فوق‌ضخیم"
+
+msgid "Black"
+msgstr "سنگین"
+
+msgid "Extra Black"
+msgstr "بسیار سنگین"
+
+msgid "Desktop smoothing with local GSAP. Touch devices and reduced motion use native scrolling."
+msgstr "اسکرول نرم دسکتاپ با GSAP محلی؛ در لمس و کاهش حرکت، اسکرول طبیعی استفاده می‌شود."
+
+msgid "Smoothing duration (seconds)"
+msgstr "مدت نرمی اسکرول (ثانیه)"
+
+msgid "Close button icon"
+msgstr "آیکون بستن پنل"
+
+msgid "Close button appearance"
+msgstr "ظاهر دکمهٔ بستن"
+
+msgid "Circle outline"
+msgstr "حلقهٔ دور آیکون"
+
+msgid "Close icon color"
+msgstr "رنگ آیکون بستن"
+
+msgid "Close icon hover color"
+msgstr "رنگ آیکون بستن در هاور"
+
+msgid "Close circle color"
+msgstr "رنگ حلقهٔ بستن"
+
+msgid "Menu aligned to start"
+msgstr "منوی خطی با تراز ابتدا"
+
+msgid "Menu aligned to end"
+msgstr "منوی خطی با تراز انتها"
+
+msgid "Menu with four lines"
+msgstr "منوی چهارخط"
+
+msgid "Menu in a square"
+msgstr "منوی مربعی"
+
+msgid "Saved Radman CSS"
+msgstr "CSS ذخیره‌شدهٔ رادمان"
+
+msgid "Use selector for this element, or write child selectors. Maximum 16 KB. Use local relative URLs. Imports, fonts and keyframes belong in site styles."
+msgstr "برای خود عنصر از selector و برای محتوایش از انتخابگر فرزند استفاده کنید. حداکثر ۱۶ کیلوبایت؛ آدرس فایل‌ها محلی و نسبی باشد. import، فونت و keyframes را در استایل سایت قرار دهید."
+
+msgid "Extend or shorten parallax distance"
+msgstr "افزایش یا کاهش مسافت پارالاکس"
+
+msgid "Parallax distance unit"
+msgstr "واحد مسافت پارالاکس"
+
+msgid "Reset preview"
+msgstr "بازنشانی پیش‌نمایش"
+
+msgid "Custom parallax start"
+msgstr "آغاز سفارشی پارالاکس"
+
+msgid "Custom parallax end"
+msgstr "پایان سفارشی پارالاکس"
+
+msgid "Google Analytics"
+msgstr "گوگل آنالیتیکس"
+
+msgid "Enable Google Analytics"
+msgstr "فعال‌سازی گوگل آنالیتیکس"
+
+msgid "Off by default. When enabled, public pages connect to Google. Administrator visits and editor previews are excluded."
+msgstr "پیش‌فرض خاموش است؛ با فعال‌سازی، صفحات عمومی به گوگل متصل می‌شوند. بازدید مدیر و پیش‌نمایش ویرایشگر شمارش نمی‌شوند."
+
+msgid "Measurement ID or Google tag code"
+msgstr "شناسهٔ اندازه‌گیری یا کد Google tag"
+
+msgid "Paste a GA4 G- ID or the Google tag snippet. Only the ID is stored. Enable tracking in one place to avoid duplicate statistics."
+msgstr "شناسهٔ G- یا کد Google tag مربوط به GA4 را وارد کنید؛ فقط شناسه ذخیره می‌شود. برای جلوگیری از آمار تکراری، رهگیری را فقط در یک محل فعال کنید."
+
+msgid "Custom CSS"
+msgstr "CSS سفارشی"
+
+msgid "Custom JavaScript"
+msgstr "جاوااسکریپت سفارشی"
+
+msgid "Custom code"
+msgstr "کد سفارشی"
+
+msgid "Enter CSS or JavaScript without style/script tags; up to 64 KB per field."
+msgstr "کد CSS یا JavaScript را بدون تگ style یا script وارد کنید؛ هر فیلد حداکثر ۶۴ کیلوبایت."
+
+msgid "Custom code requires permission to save unfiltered HTML."
+msgstr "ویرایش کد سفارشی به مجوز ذخیرهٔ HTML بدون فیلتر نیاز دارد."
+
+msgid "The code editor could not load. Your saved code is preserved."
+msgstr "ویرایشگر کد بارگذاری نشد؛ کد ذخیره‌شده محفوظ است."
+
+msgid "Global"
+msgstr "سراسری"
+
+msgid "Default font language"
+msgstr "زبان پیش‌فرض فونت"
+
+msgid "Automatic from the page language"
+msgstr "خودکار از زبان صفحه"
+
+msgid "Load both font groups on each page"
+msgstr "بارگذاری هر دو گروه فونت در هر صفحه"
+
+msgid "Enable only when the same page needs both local font groups. WPML pages otherwise load their own language."
+msgstr "فقط برای صفحه‌ای که به هر دو گروه فونت محلی نیاز دارد فعال کنید؛ در حالت عادی هر صفحهٔ WPML فونت زبان خودش را می‌گیرد."
+
+msgid "Appearance"
+msgstr "ظاهر"
+
+msgid "Reset color"
+msgstr "بازنشانی رنگ"
+
+msgid "Preview direction"
+msgstr "جهت پیش‌نمایش"
+
+msgid "Content text"
+msgstr "متن محتوا"
+
+msgid "Headings"
+msgstr "عنوان‌ها"
+
+msgid "Links"
+msgstr "پیوندها"
+
+msgid "Links on hover and focus"
+msgstr "پیوندها هنگام هاور و فوکوس"
+
+msgid "Card background"
+msgstr "پس‌زمینهٔ کارت‌ها"
+
+msgid "Content borders"
+msgstr "حاشیه‌های محتوا"
+
+msgid "Page background"
+msgstr "پس‌زمینهٔ صفحه"
+
+msgid "Leave empty to inherit the theme background. Elementor section and widget backgrounds stay independent."
+msgstr "برای ارث‌بری از پس‌زمینهٔ قالب خالی بگذارید. پس‌زمینهٔ سکشن‌ها و ویجت‌های المنتور مستقل می‌ماند."
+
+msgid "Radman CT content colors"
+msgstr "رنگ‌های محتوای رادمان"
+
+msgid "Leave empty to inherit the theme design. Item overrides apply to detail pages. Explicit Elementor widget and section colors stay independent."
+msgstr "برای ارث‌بری از طراحی قالب خالی بگذارید. تغییرات هر مورد روی صفحهٔ جزئیات آن اعمال می‌شود. رنگ صریح ویجت‌ها و سکشن‌های المنتور مستقل می‌ماند."
+
+msgid "Empty colors inherit the settings for this content type. Clear an override to restore inheritance. Elementor section and widget colors stay independent."
+msgstr "رنگ خالی از تنظیمات این نوع محتوا ارث می‌برد. برای بازگشت به ارث‌بری مقدار را پاک کنید. رنگ سکشن‌ها و ویجت‌های المنتور مستقل می‌ماند."
+
+msgid "%s unit"
+msgstr "واحد %s"
+
+msgid "Custom transform origin"
+msgstr "نقطهٔ تبدیل سفارشی"
+
+msgid "Transform origin %s"
+msgstr "نقطهٔ تبدیل %s"
+
+msgid "Origin %s unit"
+msgstr "واحد نقطهٔ تبدیل %s"
+
+msgid "Perspective"
+msgstr "عمق سه‌بعدی"
+
+msgid "An empty value uses the saved value or its default."
+msgstr "مقدار خالی از مقدار ذخیره‌شده یا پیش‌فرض استفاده می‌کند."
+
+msgid "Radman CT layout translations"
+msgstr "ترجمه‌های چیدمان رادمان"
+
+msgid "Layout translations"
+msgstr "ترجمه‌های چیدمان"
+
+msgid "Layout language"
+msgstr "زبان چیدمان"
+
+msgid "Create an independent copy"
+msgstr "ساخت نسخهٔ مستقل"
+
+msgid "Translation layout"
+msgstr "چیدمان ترجمه"
+
+msgid "Edit translation"
+msgstr "ویرایش ترجمه"
+
+msgid "Connect existing layout"
+msgstr "اتصال چیدمان موجود"
+
+msgid "Add translation"
+msgstr "افزودن ترجمه"
+
+msgid "Translations are connected through WPML and edited independently. Save and enable a new translation before it appears on the site."
+msgstr "ترجمه‌ها از طریق WPML به هم متصل‌اند و مستقل ویرایش می‌شوند. ترجمهٔ جدید را پیش از نمایش در سایت ذخیره و فعال کنید."
+
+msgid "Save your changes before adding or opening a translation."
+msgstr "پیش از افزودن یا بازکردن ترجمه، تغییرات را ذخیره کنید."
+
+msgid "This layout is already connected to another translation."
+msgstr "این چیدمان قبلاً به ترجمهٔ دیگری متصل شده است."
+
+msgid "The translation connection could not be saved."
+msgstr "اتصال ترجمه ذخیره نشد."
+
+msgid "The translation library changed. Reload and try again."
+msgstr "کتابخانهٔ ترجمه تغییر کرده است. صفحه را دوباره بارگذاری و تلاش کنید."
+
+msgid "Choose two active, different languages."
+msgstr "دو زبان فعال و متفاوت را انتخاب کنید."
+
+msgid "This translation is being created. Try again shortly."
+msgstr "این ترجمه در حال ساخته‌شدن است. کمی بعد دوباره تلاش کنید."
+
+msgid "Choose an available layout of the same builder."
+msgstr "یک چیدمان موجود از همین سازنده انتخاب کنید."
+
+msgid "Choose icon"
+msgstr "انتخاب آیکون"
+
+msgid "Search icons"
+msgstr "جست‌وجوی آیکون‌ها"
+
+msgid "Close icon picker"
+msgstr "بستن انتخابگر آیکون"
+
+msgid "No matching icons."
+msgstr "آیکونی پیدا نشد."
+
+msgid "Show more icons"
+msgstr "نمایش آیکون‌های بیشتر"
+
+msgid "Block Google Fonts"
+msgstr "مسدودسازی Google Fonts"
+
+msgid "Use local fonts and block standard Google Fonts sources. Elementor keeps its own local-font policy."
+msgstr "فونت‌های محلی استفاده شوند و منابع استاندارد Google Fonts مسدود شوند. سیاست فونت محلی المنتور مستقل باقی می‌ماند."
+
+msgid "Google Fonts requests are disabled in Radman CT settings."
+msgstr "درخواست‌های Google Fonts در تنظیمات رادمان غیرفعال شده‌اند."
+
+msgid "Navigation"
+msgstr "منو"
+
+msgid "Settings"
+msgstr "تنظیمات"
+
+msgid "Reset"
+msgstr "بازنشانی"
+
+msgid "Initial state"
+msgstr "حالت آغاز"
+
+msgid "Final state"
+msgstr "حالت پایان"
+
+msgid "Animations & Parallax"
+msgstr "انیمیشن و پارالاکس"
+
+msgid "Play all animations"
+msgstr "پخش همهٔ انیمیشن‌ها"
+
+msgid "Uses the site logo unless an image is selected for this element."
+msgstr "اگر برای این عنصر تصویری انتخاب نشود، لوگوی سایت استفاده می‌شود."
+
+msgid "Allow administrators to upload locally sanitized SVG files up to 1 MB; other plugins keep their own upload permissions."
+msgstr "مدیران می‌توانند SVG با پاک‌سازی محلی تا ۱ مگابایت بارگذاری کنند؛ مجوز افزونه‌های دیگر مستقل است."
+
+msgid "Logo image"
+msgstr "تصویر لوگو"
+
+msgid "Inner container"
+msgstr "گروه داخلی"
+
+msgid "Move to beginning"
+msgstr "انتقال به ابتدای گروه"
+
+msgid "Use a panel on this device"
+msgstr "نمایش به‌صورت پنل در این دستگاه"
+
+msgid "Panel button color"
+msgstr "رنگ دکمهٔ پنل"
+
+msgid "Select to add content"
+msgstr "برای افزودن محتوا انتخاب کنید"
+
+msgid "Use theme settings width"
+msgstr "ارث‌بری از عرض تنظیمات قالب"
+
+msgid "Size and position"
+msgstr "اندازه و جایگاه"
+
+msgid "Inner layout"
+msgstr "چیدمان داخل گروه"
+
+msgid "Custom width (%)"
+msgstr "عرض دلخواه (درصد)"
+
+msgid "Drag to resize width"
+msgstr "برای تغییر عرض بکشید"
+
+msgid "Panel button icon"
+msgstr "آیکون دکمهٔ پنل"
+
+msgid "Panel button appearance"
+msgstr "ظاهر دکمهٔ پنل"
+
+msgid "Outline"
+msgstr "دورخط"
+
+msgid "Solid"
+msgstr "پیوسته"
+
+msgid "Logo override (optional)"
+msgstr "لوگوی جایگزین این دستگاه (اختیاری)"
+
+msgid "The default logo for the site. Header and footer elements can override it per device."
+msgstr "لوگوی پیش‌فرض سایت؛ عناصر هدر و فوتر می‌توانند برای هر دستگاه تصویر جایگزین داشته باشند."
+
+msgid "One default logo and site icon for PHP and Elementor. Builder device overrides do not change these defaults."
+msgstr "لوگو و نمادک سراسری برای سایت سفارشی و المنتور؛ لوگوی جایگزین هر دستگاه در سازنده این تنظیمات را تغییر نمی‌دهد."
+
+msgid "Edit global logo and site icon"
+msgstr "ویرایش لوگوی اصلی و نمادک سایت"
+
+msgid "Image"
+msgstr "تصویر"
+
+msgid "Choose image"
+msgstr "انتخاب تصویر"
+
+msgid "Change image"
+msgstr "تغییر تصویر"
+
+msgid "Leave empty to use the WordPress site logo."
+msgstr "خالی بگذارید تا لوگوی سایت وردپرس استفاده شود."
+
+msgid "Leave empty to use the default image of this logo element."
+msgstr "خالی بگذارید تا تصویر پیش‌فرض همین عنصر لوگو استفاده شود."
+
+msgid "A standalone image without a home link. Uses the media library alternative text. Empty device images use the default image."
+msgstr "تصویر مستقل بدون لینک خانه؛ متن جایگزین از کتابخانهٔ رسانه می‌آید. تصویر خالی هر دستگاه از تصویر پیش‌فرض استفاده می‌کند."
+
+msgid "Image width (0 = inherit, max 512 px)"
+msgstr "عرض تصویر (۰: ارث‌بری، حداکثر ۵۱۲ پیکسل)"
+
+msgid "Image maximum height (0 = inherit, max 256 px)"
+msgstr "حداکثر ارتفاع تصویر (۰: ارث‌بری، حداکثر ۲۵۶ پیکسل)"
+
+msgid "Enable sanitized SVG uploads"
+msgstr "فعال‌سازی بارگذاری SVG با پاک‌سازی"
+
+msgid "Off by default. Administrators with media access can upload SVG files up to 1 MB. Files are sanitized locally; scripts and remote references are removed. Existing images remain available when disabled. Other plugins manage their own upload permissions."
+msgstr "پیش‌فرض خاموش است. مدیران دارای دسترسی رسانه می‌توانند SVG تا ۱ مگابایت بارگذاری کنند. پاک‌سازی محلی انجام می‌شود و اسکریپت و ارجاع خارجی حذف می‌شوند. خاموش‌کردن، تصاویر قبلی را حذف نمی‌کند. مجوز بارگذاری افزونه‌های دیگر مستقل است."
+
+msgid "SVG upload was rejected. Use a valid SVG under 1 MB and an administrator account with media access."
+msgstr "بارگذاری SVG رد شد. از فایل SVG معتبر زیر ۱ مگابایت و حساب مدیر دارای دسترسی رسانه استفاده کنید."
+
+msgid "Menu panel"
+msgstr "پنل منو"
+
+msgid "Menu panel on devices"
+msgstr "نمایش پنل منو در دستگاه‌ها"
+
+msgid "Panel side (follows RTL/LTR)"
+msgstr "سمت پنل (متناسب با جهت زبان)"
+
+msgid "Panel layout"
+msgstr "چیدمان پنل"
+
+msgid "Panel opening effect"
+msgstr "افکت بازشدن پنل"
+
+msgid "Panel content source"
+msgstr "منبع محتوای پنل"
+
+msgid "Empty"
+msgstr "خالی"
+
+msgid "Reusable block"
+msgstr "بلوک قابل‌استفادهٔ مجدد"
+
+msgid "Elementor template"
+msgstr "الگوی المنتور"
+
+msgid "Panel template"
+msgstr "الگوی محتوای پنل"
+
+msgid "Open panel"
+msgstr "بازکردن پنل"
+
+msgid "Close panel"
+msgstr "بستن پنل"
+
+msgid "Off-canvas panel"
+msgstr "پنل جانبی"
+
+msgid "Full screen menu links"
+msgstr "چیدمان پیوندهای منوی تمام‌صفحه"
+
+msgid "Standard"
+msgstr "استاندارد"
+
+msgid "Curved curtain"
+msgstr "پردهٔ خمیده"
+
+msgid "Wave cover and reveal"
+msgstr "پوشش و آشکارسازی موجی"
+
+msgid "Panel effect duration (milliseconds)"
+msgstr "مدت افکت پنل (میلی‌ثانیه)"
+
+msgid "Panel transition color"
+msgstr "رنگ لایهٔ گذار پنل"
+
+msgid "Submenu opens with"
+msgstr "روش بازشدن زیرمنو"
+
+msgid "Hover and click"
+msgstr "هاور و کلیک"
+
+msgid "Horizontal"
+msgstr "افقی"
+
+msgid "Vertical"
+msgstr "عمودی"
+
+msgid "Sidebar"
+msgstr "پنل کناری"
+
+msgid "Full screen"
+msgstr "تمام‌صفحه"
+
+msgid "Menu and content columns"
+msgstr "منو و محتوا در دو ستون"
+
+msgid "Panel content block"
+msgstr "بلوک محتوای پنل"
+
+msgid "Panel header block"
+msgstr "بلوک بالای پنل"
+
+msgid "Expanded"
+msgstr "باز و گسترده"
+
+msgid "Panel background image"
+msgstr "تصویر پس‌زمینهٔ پنل"
+
+msgid "Sidebar width"
+msgstr "عرض پنل کناری"
+
+msgid "Panel link size"
+msgstr "اندازهٔ لینک‌های پنل"
+
+msgid "Panel mobile link size"
+msgstr "اندازهٔ لینک‌های پنل در موبایل"
+
+msgid "Panel background"
+msgstr "پس‌زمینهٔ پنل"
+
+msgid "Panel text color"
+msgstr "رنگ متن پنل"
+
+msgid "Menu button label"
+msgstr "متن کنار آیکون (اختیاری)"
+
+msgid "Animated underline"
+msgstr "خط زیر متحرک"
+
+msgid "Hover color"
+msgstr "رنگ هنگام قرارگرفتن روی پیوند"
+
+msgid "Rounded highlight"
+msgstr "زمینهٔ گرد"
+
+msgid "Mega menu content block"
+msgstr "بلوک محتوای مگامنو"
+
+msgid "Menu orientation"
+msgstr "جهت چیدمان منو"
+
+msgid "Panel on desktop"
+msgstr "پنل در دسکتاپ"
+
+msgid "Panel on laptop"
+msgstr "پنل در لپ‌تاپ"
+
+msgid "Panel on tablet"
+msgstr "پنل در تبلت"
+
+msgid "Panel on mobile"
+msgstr "پنل در موبایل"
+
+msgid "Use menu location"
+msgstr "استفاده از جایگاه فهرست"
+
+msgid "Radman CT navigation"
+msgstr "منوی رادمان"
+
+msgid "Preview could not be loaded."
+msgstr "پیش‌نمایش بارگذاری نشد."
+
+msgid "Motion and animation"
+msgstr "حرکت و انیمیشن"
+
+msgid "Advanced scroll"
+msgstr "اسکرول پیشرفته"
+
+msgid "Animation settings"
+msgstr "تنظیمات انیمیشن"
+
+msgid "Animate element"
+msgstr "انیمیشن عنصر"
+
+msgid "Parallax takes priority over entrance animation on the same element."
+msgstr "روی یک عنصر، پارالاکس بر انیمیشن ورود اولویت دارد."
+
+msgid "This element"
+msgstr "خود این عنصر"
+
+msgid "An empty value uses the saved timing or its default."
+msgstr "مقدار خالی از زمان ذخیره‌شده یا پیش‌فرض استفاده می‌کند."
+
+msgid "Native Elementor motion takes priority on the same element. Independently animated children are excluded from parent targets."
+msgstr "موشن خود المنتور روی همان عنصر اولویت دارد. فرزندان دارای انیمیشن مستقل، هدف انیمیشن والد نمی‌شوند."
+
+msgid "Pinned horizontal scroll"
+msgstr "اسکرول افقی ثابت"
+
+msgid "Scroll direction"
+msgstr "جهت حرکت"
+
+msgid "Move left"
+msgstr "حرکت به چپ"
+
+msgid "Move right"
+msgstr "حرکت به راست"
+
+msgid "Panel width (%)"
+msgstr "عرض هر بخش (%)"
+
+msgid "Panel gap (px)"
+msgstr "فاصلهٔ بخش‌ها (پیکسل)"
+
+msgid "Panel alignment"
+msgstr "تراز بخش‌ها"
+
+msgid "Top offset (px)"
+msgstr "فاصله از بالا (پیکسل)"
+
+msgid "Minimum screen width (px)"
+msgstr "حداقل عرض صفحه (پیکسل)"
+
+msgid "Horizontal smoothing"
+msgstr "نرمی حرکت افقی"
+
+msgid "Scroll reveal"
+msgstr "آشکارشدن با اسکرول"
+
+msgid "Left"
+msgstr "چپ"
+
+msgid "Right"
+msgstr "راست"
+
+msgid "Reveal direction"
+msgstr "جهت آشکارشدن"
+
+msgid "Reveal start"
+msgstr "شروع در ارتفاع دید (%)"
+
+msgid "Reveal end"
+msgstr "پایان در ارتفاع دید (%)"
+
+msgid "Reveal smoothing"
+msgstr "نرمی آشکارشدن"
+
+msgid "Inherit font styles"
+msgstr "ارث‌بری استایل فونت"
+
+msgid "Inherited heading size"
+msgstr "اندازهٔ تیتر مرجع"
+
+msgid "Subtitle"
+msgstr "زیرعنوان"
+
+msgid "Label"
+msgstr "برچسب"
+
+msgid "Link"
+msgstr "پیوند"
+
+msgid "Open in new window"
+msgstr "بازکردن در پنجرهٔ جدید"
+
+msgid "Add nofollow"
+msgstr "افزودن nofollow"
+
+msgid "Show button"
+msgstr "نمایش دکمه"
+
+msgid "Button text"
+msgstr "متن دکمه"
+
+msgid "Button link"
+msgstr "پیوند دکمه"
+
+msgid "Content alignment"
+msgstr "تراز محتوا"
+
+msgid "Middle"
+msgstr "میانه"
+
+msgid "Box height (%)"
+msgstr "ارتفاع باکس (درصد)"
+
+msgid "Custom height (px)"
+msgstr "ارتفاع سفارشی (پیکسل)"
+
+msgid "Content width (%)"
+msgstr "عرض محتوا (درصد)"
+
+msgid "Label padding"
+msgstr "فاصلهٔ داخلی برچسب"
+
+msgid "Title size"
+msgstr "اندازهٔ عنوان"
+
+msgid "Label size"
+msgstr "اندازهٔ برچسب"
+
+msgid "Text size"
+msgstr "اندازهٔ متن"
+
+msgid "Overlay opacity"
+msgstr "شفافیت پوشش"
+
+msgid "Hover overlay opacity"
+msgstr "شفافیت پوشش هنگام اشاره"
+
+msgid "Gradient angle"
+msgstr "زاویهٔ گرادینت"
+
+msgid "Overlay color"
+msgstr "رنگ پوشش"
+
+msgid "Gradient second color"
+msgstr "رنگ دوم گرادیان"
+
+msgid "Hover overlay color"
+msgstr "رنگ پوشش هنگام اشاره"
+
+msgid "Content background"
+msgstr "پس‌زمینهٔ محتوا"
+
+msgid "Revealer color"
+msgstr "رنگ پردهٔ نمایش"
+
+msgid "Hover revealer color"
+msgstr "رنگ پرده هنگام اشاره"
+
+msgid "Heading color"
+msgstr "رنگ عنوان"
+
+msgid "Hover heading color"
+msgstr "رنگ عنوان هنگام اشاره"
+
+msgid "Content color"
+msgstr "رنگ محتوا"
+
+msgid "Subtitle color"
+msgstr "رنگ زیرعنوان"
+
+msgid "Hover icon color"
+msgstr "رنگ آیکون هنگام اشاره"
+
+msgid "Label color"
+msgstr "رنگ برچسب"
+
+msgid "Label background"
+msgstr "پس‌زمینهٔ برچسب"
+
+msgid "Radman CT box"
+msgstr "باکس رادمان"
+
+msgid "Image and content"
+msgstr "تصویر و محتوا"
+
+msgid "Height"
+msgstr "ارتفاع"
+
+msgid "Active item"
+msgstr "آیتم فعال"
+
+msgid "Trigger type"
+msgstr "نوع فعال‌سازی"
+
+msgid "Click"
+msgstr "کلیک"
+
+msgid "Title HTML tag"
+msgstr "تگ عنوان"
+
+msgid "Items gap"
+msgstr "فاصلهٔ آیتم‌ها"
+
+msgid "Minimum height"
+msgstr "حداقل ارتفاع"
+
+msgid "Collapsed width"
+msgstr "عرض آیتم بسته"
+
+msgid "Content padding"
+msgstr "فاصلهٔ داخلی محتوا"
+
+msgid "Animation duration"
+msgstr "مدت انیمیشن"
+
+msgid "Image or logo"
+msgstr "تصویر یا لوگو"
+
+msgid "Background image"
+msgstr "تصویر پس‌زمینه"
+
+msgid "Active background color"
+msgstr "رنگ پس‌زمینهٔ فعال"
+
+msgid "Radman CT curtain"
+msgstr "پنل‌های بازشوندهٔ رادمان"
+
+msgid "Expandable panels"
+msgstr "پنل‌های بازشونده"
+
+msgid "Layout"
+msgstr "چیدمان"
+
+msgid "None"
+msgstr "هیچ‌کدام"
+
+msgid "Add item"
+msgstr "افزودن آیتم"
+
+msgid "First item"
+msgstr "آیتم اول"
+
+msgid "Second item"
+msgstr "آیتم دوم"
+
+msgid "Third item"
+msgstr "آیتم سوم"
+
+msgid "Items"
+msgstr "آیتم‌ها"
+
+msgid "Border radius"
+msgstr "گردی گوشه"
+
+msgid "Could not load the library. Try again."
+msgstr "کتابخانه بارگذاری نشد؛ دوباره تلاش کنید."
+
+msgid "Available version:"
+msgstr "نسخهٔ موجود:"
+
+msgid "Update available"
+msgstr "به‌روزرسانی موجود است"
+
+msgid "Update"
+msgstr "به‌روزرسانی"
+
+msgid "Optional Radman CT extension."
+msgstr "افزونهٔ اختیاری رادمان."
+
+msgid "The local plugin package is missing or invalid. Upload the plugin ZIP through WordPress instead."
+msgstr "بستهٔ افزونه موجود یا معتبر نیست؛ ZIP را از وردپرس بارگذاری کنید."
+
+msgid "The local plugin update is unavailable or invalid. The installed plugin has been preserved."
+msgstr "بستهٔ به‌روزرسانی موجود یا معتبر نیست؛ افزونهٔ نصب‌شده حفظ شد."
+
+msgid "The local plugin update could not be prepared."
+msgstr "آماده‌سازی بستهٔ به‌روزرسانی انجام نشد."
+
+msgid "The plugin package version does not match its manifest. The installed plugin has been preserved."
+msgstr "نسخهٔ بسته با مشخصات آن مطابقت ندارد؛ افزونهٔ نصب‌شده حفظ شد."
+
+msgid "Optional loading effect; skipped in editor preview."
+msgstr "جلوهٔ اختیاری بارگذاری؛ در پیش‌نمایش ویرایشگر اجرا نمی‌شود."
+
+msgid "Skipped for delayed JavaScript and reduced motion; closes within two seconds."
+msgstr "با تأخیر جاوااسکریپت یا کاهش حرکت اجرا نمی‌شود؛ حداکثر دو ثانیه باز می‌ماند."
+
+msgid "Curtain back color"
+msgstr "رنگ پردهٔ پشتی"
+
+msgid "Classic spinner"
+msgstr "چرخندهٔ کلاسیک"
+
+msgid "Scrollable table"
+msgstr "جدول قابل پیمایش"
+
+msgid "No posts match these filters. Change or clear the filters to try again."
+msgstr "نوشته‌ای با این فیلترها پیدا نشد؛ فیلترها را تغییر دهید یا پاک کنید."
+
+msgid "Radman CT top-level submenu"
+msgstr "زیرمنوی سطح اول رادمان"
+
+msgid "Inherit menu setting"
+msgstr "ارث‌بری از تنظیم منو"
+
+msgid "Submenu type"
+msgstr "نوع زیرمنو"
+
+msgid "Mega menu"
+msgstr "مگامنو"
+
+msgid "Mega menu columns"
+msgstr "ستون‌های مگامنو"
+
+msgid "Mega menu width"
+msgstr "عرض مگامنو"
+
+msgid "Child items are columns; their children are links."
+msgstr "زیرمجموعه‌ها ستون هستند؛ فرزندانشان لینک‌های ستون‌اند."
+
+msgid "Menu appearance"
+msgstr "ظاهر منو"
+
+msgid "Menu item gap"
+msgstr "فاصلهٔ بین آیتم‌های منو"
+
+msgid "Boxed (theme settings width)"
+msgstr "جعبه‌ای (عرض تنظیمات قالب)"
+
+msgid "Sticky header starts"
+msgstr "شروع هدر چسبان"
+
+msgid "At the header"
+msgstr "از محل هدر"
+
+msgid "After the first section"
+msgstr "پس از بخش اول"
+
+msgid "Header and footer"
+msgstr "هدر و فوتر"
+
+msgid "Header and footer settings"
+msgstr "تنظیمات هدر و فوتر"
+
+msgid "Edit layout"
+msgstr "ویرایش چیدمان"
+
+msgid "Dismiss"
+msgstr "بستن پیام"
+
+msgid "Direction"
+msgstr "جهت"
+
+msgid "Wrap elements"
+msgstr "شکستن عناصر به خط بعد"
+
+msgid "Align elements"
+msgstr "تراز عناصر"
+
+msgid "Distribute elements"
+msgstr "پخش عناصر"
+
+msgid "Add container"
+msgstr "افزودن کانتینر"
+
+msgid "Container settings"
+msgstr "تنظیمات کانتینر"
+
+msgid "Container layout"
+msgstr "چیدمان کانتینر"
+
+msgid "Container"
+msgstr "کانتینر"
+
+msgid "Menu text hover"
+msgstr "هاور متن منو"
+
+msgid "Rolling text"
+msgstr "لغزش متن"
+
+msgid "Menu hover indicator"
+msgstr "نشانگر هاور منو"
+
+msgid "Dot"
+msgstr "نقطه"
+
+msgid "Plain"
+msgstr "ساده"
+
+msgid "Soft highlight"
+msgstr "زمینهٔ ملایم"
+
+msgid "Underline"
+msgstr "خط زیر"
+
+msgid "Sidebar on devices"
+msgstr "پنل کناری در دستگاه‌ها"
+
+msgid "Choose the editor in each page template."
+msgstr "ویرایشگر را در قالب هر برگه انتخاب کنید."
+
+msgid "Choose custom PHP or Elementor Pro for each view."
+msgstr "نمایش اختصاصی یا المنتور پرو را انتخاب کنید."
+
+msgid "Empty values inherit; zero removes spacing."
+msgstr "خالی یعنی ارث‌بری؛ صفر یعنی بدون فاصله."
+
+msgid "Drag elements onto a row."
+msgstr "عنصر را روی ردیف بکشید."
+
+msgid "Set menus and visibility for each device."
+msgstr "فهرست و نمایش هر دستگاه را جدا تنظیم کنید."
+
+msgid "Save before assigning. Page settings take priority."
+msgstr "پیش از تخصیص ذخیره کنید؛ تنظیم برگه اولویت دارد."
+
+msgid "Overlays the page; preview it on the site."
+msgstr "روی محتوا قرار می‌گیرد؛ در سایت ببینید."
+
+msgid "Keeps the header visible while scrolling."
+msgstr "هدر هنگام اسکرول نمایان می‌ماند."
+
+msgid "Phone: tel:, email: mailto:."
+msgstr "تلفن: tel:، ایمیل: mailto:."
+
+msgid "Up to 8 labeled links."
+msgstr "حداکثر ۸ پیوند با عنوان."
+
+msgid "Select an element to edit; save to publish."
+msgstr "عنصر را انتخاب کنید؛ برای اعمال تغییرات ذخیره کنید."
+
+msgid "Choose an element for the selected row."
+msgstr "عنصر ردیف انتخاب‌شده را اضافه کنید."
+
+msgid "JSON backup for this site; save after restoring."
+msgstr "پشتیبان JSON همین سایت؛ پس از بازیابی ذخیره کنید."
+
+msgid "Uses the WordPress site logo or title."
+msgstr "لوگو یا عنوان سایت وردپرس."
+
+msgid "Zero inherits the original size."
+msgstr "صفر یعنی ارث‌بری اندازه."
+
+msgid "Content defaults; builders and Elementor have separate controls."
+msgstr "پیش‌فرض محتوا؛ سازنده‌ها و المنتور تنظیمات جدا دارند."
+
+msgid "Loading results..."
+msgstr "در حال بارگذاری نتایج…"
+
+msgid "Results could not be loaded. Your previous results are still available."
+msgstr "بارگذاری نتایج انجام نشد؛ نتایج قبلی حفظ شده‌اند."
+
+msgid "Try again"
+msgstr "تلاش دوباره"
+
+msgid "This archive is not available."
+msgstr "این آرشیو در دسترس نیست."
+
+msgid "Search articles"
+msgstr "جستجوی مقاله‌ها"
+
+msgid "Tag"
+msgstr "برچسب"
+
+msgid "Animations and parallax"
+msgstr "انیمیشن و پارالاکس"
+
+msgid "Animate contents"
+msgstr "متحرک‌سازی محتوا"
+
+msgid "Animate from"
+msgstr "حالت آغاز انیمیشن"
+
+msgid "Animate to"
+msgstr "حالت پایان انیمیشن"
+
+msgid "Animation order"
+msgstr "ترتیب انیمیشن"
+
+msgid "Animation preset"
+msgstr "الگوی انیمیشن"
+
+msgid "Animation targets"
+msgstr "هدف‌های انیمیشن"
+
+msgid "All contents"
+msgstr "تمام محتوا"
+
+msgid "Direct inner containers"
+msgstr "کانتینرهای داخلی مستقیم"
+
+msgid "Include inner containers content"
+msgstr "شامل محتوای کانتینرهای داخلی"
+
+msgid "Custom"
+msgstr "سفارشی"
+
+msgid "Duration"
+msgstr "مدت اجرا"
+
+msgid "Easing"
+msgstr "منحنی حرکت"
+
+msgid "Fade in"
+msgstr "ورود با محوشدگی"
+
+msgid "Fade in down"
+msgstr "ورود با حرکت به پایین"
+
+msgid "Fade in up"
+msgstr "ورود با حرکت به بالا"
+
+msgid "Fade in left"
+msgstr "ورود از چپ"
+
+msgid "Fade in right"
+msgstr "ورود از راست"
+
+msgid "Flip in X"
+msgstr "ورود با چرخش محور X"
+
+msgid "Flip in Y"
+msgstr "ورود با چرخش محور Y"
+
+msgid "Scale up"
+msgstr "ورود با بزرگ‌شدن"
+
+msgid "Scale down"
+msgstr "ورود با کوچک‌شدن"
+
+msgid "Stagger"
+msgstr "فاصلهٔ زمانی عناصر"
+
+msgid "Start delay"
+msgstr "تأخیر شروع"
+
+msgid "Opacity"
+msgstr "شفافیت"
+
+msgid "Translate X"
+msgstr "جابجایی محور X"
+
+msgid "Translate Y"
+msgstr "جابجایی محور Y"
+
+msgid "Translate Z"
+msgstr "جابجایی محور Z"
+
+msgid "Scale X"
+msgstr "مقیاس محور X"
+
+msgid "Scale Y"
+msgstr "مقیاس محور Y"
+
+msgid "Rotate X"
+msgstr "چرخش محور X"
+
+msgid "Rotate Y"
+msgstr "چرخش محور Y"
+
+msgid "Rotate Z"
+msgstr "چرخش محور Z"
+
+msgid "Parallax"
+msgstr "پارالاکس"
+
+msgid "Parallax from"
+msgstr "حالت آغاز پارالاکس"
+
+msgid "Parallax to"
+msgstr "حالت پایان پارالاکس"
+
+msgid "Parallax settings"
+msgstr "تنظیمات پارالاکس"
+
+msgid "Parallax smoothing"
+msgstr "نرمی پارالاکس"
+
+msgid "Parallax easing"
+msgstr "منحنی پارالاکس"
+
+msgid "Parallax start"
+msgstr "شروع پارالاکس"
+
+msgid "Parallax end"
+msgstr "پایان پارالاکس"
+
+msgid "On enter"
+msgstr "هنگام ورود"
+
+msgid "On leave"
+msgstr "هنگام خروج"
+
+msgid "On center"
+msgstr "در مرکز"
+
+msgid "Play animations"
+msgstr "پخش انیمیشن‌ها"
+
+msgid "Pages"
+msgstr "برگه‌ها"
+
+msgid "Manage pages"
+msgstr "مدیریت برگه‌ها"
+
+msgid "Custom design layout"
+msgstr "چیدمان طراحی اختصاصی"
+
+msgid "Atomic editor is enabled in Elementor."
+msgstr "ویرایشگر اتمیک در المنتور فعال است."
+
+msgid "Enable Atomic editor"
+msgstr "فعال‌سازی ویرایشگر اتمیک"
+
+msgid "Enabling Atomic editor..."
+msgstr "در حال فعال‌سازی ویرایشگر اتمیک..."
+
+msgid "Atomic editor could not be enabled. Check Elementor and your administrator permissions, then try again."
+msgstr "فعال‌سازی ویرایشگر اتمیک انجام نشد. المنتور و دسترسی مدیر را بررسی و دوباره تلاش کنید."
+
+msgid "Atomic editor is not enabled in Elementor. Enable it through Elementor before using Atomic elements; existing classic documents remain available."
+msgstr "ویرایشگر اتمیک در المنتور فعال نیست. پیش از استفاده از عناصر اتمیک، آن را از خود المنتور فعال کنید؛ سندهای کلاسیک موجود همچنان در دسترس‌اند."
+
+msgid "Choose Radman CT custom design or Radman CT Elementor with header and footer in each page template selector. Both methods can be used on the same website without converting content."
+msgstr "در انتخاب‌گر قالب هر برگه، طراحی اختصاصی رادمان یا المنتور رادمان با هدر و فوتر را انتخاب کنید. هر دو روش بدون تبدیل محتوا در یک سایت قابل استفاده‌اند."
+
+msgid "Elementor pages support the native Atomic editor when enabled in Elementor. Ordinary pages need Elementor; single and archive Theme Builder designs need Elementor Pro."
+msgstr "برگه‌های المنتوری با ویرایشگر اتمیک بومیِ فعال‌شده در المنتور کار می‌کنند. برگهٔ معمولی به المنتور و طراحی آرشیو و جزئیات با Theme Builder به المنتور پرو نیاز دارد."
+
+msgid "Elementor is not active. Custom pages remain available; install your local Elementor ZIP to use its editor."
+msgstr "المنتور فعال نیست. برگه‌های اختصاصی در دسترس‌اند؛ برای استفاده از ویرایشگر المنتور، ZIP محلی آن را نصب کنید."
+
+msgid "Design preferences can be saved before enabling a module or installing Pro. They do not activate plugins or content modules."
+msgstr "انتخاب طراحی پیش از فعال‌کردن ماژول یا نصب پرو نیز قابل ذخیره است. این انتخاب، افزونه یا ماژول محتوا را فعال نمی‌کند."
+
+msgid "Layout and spacing"
+msgstr "چیدمان و فاصله‌ها"
+
+msgid "Content type layouts"
+msgstr "چیدمان انواع محتوا"
+
+msgid "Custom PHP layouts only. Elementor controls its own width and spacing."
+msgstr "ویژهٔ چیدمان سفارشی؛ عرض و فاصلهٔ المنتور مستقل است."
+
+msgid "Content type"
+msgstr "نوع محتوا"
+
+msgid "View"
+msgstr "نما"
+
+msgid "Single details"
+msgstr "جزئیات"
+
+msgid "Set archive and single layouts independently. These settings apply to custom PHP output and fallback; Elementor controls its own content width and spacing."
+msgstr "عرض و فاصله‌های آرشیو و جزئیات را جدا تنظیم کنید. این تنظیمات روی خروجی سفارشی و جایگزین آن اعمال می‌شوند؛ عرض و فاصلهٔ محتوای المنتوری از خود المنتور می‌آید."
+
+msgid "Content width mode"
+msgstr "حالت عرض محتوا"
+
+msgid "Use global layout settings"
+msgstr "استفاده از چیدمان سراسری"
+
+msgid "Site container width"
+msgstr "عرض محتوای سایت"
+
+msgid "Full width with configured gutters"
+msgstr "تمام‌عرض با فاصله‌های کناری انتخاب‌شده"
+
+msgid "Custom maximum width (px)"
+msgstr "حداکثر عرض سفارشی (پیکسل)"
+
+msgid "Text reading width (px)"
+msgstr "عرض خواندن متن (پیکسل)"
+
+msgid "Leave empty to inherit. Zero is an explicit spacing value."
+msgstr "برای ارث‌بری خالی بگذارید. صفر، فاصلهٔ صریح و معتبر است."
+
+msgid "These defaults apply to Radman CT content. Header and footer have independent controls in their builders. Elementor controls its own content width and spacing."
+msgstr "این پیش‌فرض‌ها برای محتوای رادمان‌اند. هدر و فوتر کنترل مستقل در سازنده دارند. عرض و فاصلهٔ محتوای المنتوری با خود المنتور است."
+
+msgid "Content side spacing (px)"
+msgstr "فاصلهٔ کناری محتوا (پیکسل)"
+
+msgid "Mobile content side spacing (px)"
+msgstr "فاصلهٔ کناری محتوای موبایل (پیکسل)"
+
+msgid "Tablet content side spacing (px)"
+msgstr "فاصلهٔ کناری محتوای تبلت (پیکسل)"
+
+msgid "Tablet content top spacing (px)"
+msgstr "فاصلهٔ بالای محتوای تبلت (پیکسل)"
+
+msgid "Tablet content bottom spacing (px)"
+msgstr "فاصلهٔ پایین محتوای تبلت (پیکسل)"
+
+msgid "Radman CT content layout"
+msgstr "چیدمان محتوای رادمان"
+
+msgid "Applies only to Radman-rendered page content. Elementor controls its own layout; header and footer settings stay independent."
+msgstr "فقط روی محتوای برگهٔ سفارشی رادمان اعمال می‌شود. چیدمان المنتور و تنظیمات هدر و فوتر مستقل‌اند."
+
+msgid "Global mode ignores the overrides below. Custom maximum width is used only in custom mode. Empty spacing inherits; zero removes spacing."
+msgstr "در حالت سراسری، مقادیر زیر اعمال نمی‌شوند. عرض سفارشی فقط در حالت سفارشی استفاده می‌شود. فاصلهٔ خالی ارث می‌برد؛ صفر فاصله را حذف می‌کند."
+
+msgid "Content top spacing (px)"
+msgstr "فاصلهٔ بالای محتوا (پیکسل)"
+
+msgid "Content bottom spacing (px)"
+msgstr "فاصلهٔ پایین محتوا (پیکسل)"
+
+msgid "Mobile content top spacing (px)"
+msgstr "فاصلهٔ بالای محتوای موبایل (پیکسل)"
+
+msgid "Mobile content bottom spacing (px)"
+msgstr "فاصلهٔ پایین محتوای موبایل (پیکسل)"
+
+msgid "Leave empty to inherit. Zero spacing is allowed. Background width is independent of the inner content width."
+msgstr "برای ارث‌بری خالی بگذارید. فاصلهٔ صفر مجاز است. عرض پس‌زمینه از عرض محتوای داخلی مستقل است."
+
+msgid "This row is full. Choose another row or add a row. Layouts support up to 8 rows and 6 elements per row."
+msgstr "ظرفیت این ردیف پر است. ردیف دیگری انتخاب یا اضافه کنید. هر چیدمان حداکثر ۸ ردیف و هر ردیف ۶ عنصر دارد."
+
+msgid "Content"
+msgstr "محتوا"
+
+msgid "Advanced"
+msgstr "پیشرفته"
+
+msgid "Focus mode"
+msgstr "حالت تمام‌صفحه"
+
+msgid "Layout settings"
+msgstr "تنظیمات چیدمان"
+
+msgid "Search elements"
+msgstr "جستجوی عناصر"
+
+msgid "Drag an element from the panel onto a row. Select an element to edit it; use its handle to move it. Structure provides keyboard move controls."
+msgstr "عنصر را از پنل روی ردیف بکشید. برای ویرایش انتخابش کنید و برای جابه‌جایی از دستگیره‌اش استفاده کنید. کنترل‌های جابه‌جایی با کیبورد در ساختار موجودند."
+
+msgid "Component category"
+msgstr "دستهٔ کامپوننت"
+
+msgid "All categories"
+msgstr "همهٔ دسته‌ها"
+
+msgid "Loading preview..."
+msgstr "در حال بارگذاری پیش‌نمایش…"
+
+msgid "Preview ready."
+msgstr "پیش‌نمایش آماده است."
+
+msgid "The preview could not be opened. Refresh this page and try again."
+msgstr "پیش‌نمایش باز نشد. این صفحه را تازه‌سازی و دوباره تلاش کنید."
+
+msgid "Sample language"
+msgstr "زبان نمونه"
+
+msgid "Close preview"
+msgstr "بستن پیش‌نمایش"
+
+msgid "Persian"
+msgstr "فارسی"
+
+msgid "English"
+msgstr "انگلیسی"
+
+msgid "Insertion could not be confirmed. Check the page before trying again."
+msgstr "درج نمونه تأیید نشد. پیش از تلاش دوباره، صفحه را بررسی کنید."
+
+msgid "Components"
+msgstr "کامپوننت‌ها"
+
+msgid "Search components"
+msgstr "جستجوی کامپوننت‌ها"
+
+msgid "Insert sample"
+msgstr "درج نمونه"
+
+msgid "No components match your search."
+msgstr "کامپوننتی مطابق جستجوی شما پیدا نشد."
+
+msgid "Preview language"
+msgstr "زبان پیش‌نمایش"
+
+msgid "Component preview"
+msgstr "پیش‌نمایش کامپوننت"
+
+msgid "Sample added at the end of the page. Edit it in Elementor and save your page."
+msgstr "نمونه به انتهای صفحه اضافه شد. آن را در المنتور ویرایش و صفحه را ذخیره کنید."
+
+msgid "Explore the available Radman CT components. PHP usage is documented in the project documentation."
+msgstr "کامپوننت‌های موجود رادمان را ببینید. روش استفاده در PHP در داکیومنت پروژه آمده است."
+
+msgid "Radman CT component library"
+msgstr "کتابخانهٔ کامپوننت‌های رادمان"
+
+msgid "Scroll or interact with the sample to preview its behavior."
+msgstr "برای دیدن رفتار نمونه، اسکرول کنید یا با آن تعامل داشته باشید."
+
+msgid "Style"
+msgstr "استایل"
+
+msgid "Text alignment"
+msgstr "تراز متن"
+
+msgid "Final opacity"
+msgstr "شفافیت نهایی"
+
+msgid "Scroll smoothing"
+msgstr "نرمی حرکت اسکرول"
+
+msgid "Word stagger"
+msgstr "فاصلهٔ زمانی کلمات"
+
+msgid "Scroll start"
+msgstr "شروع اسکرول"
+
+msgid "Scroll end"
+msgstr "پایان اسکرول"
+
+msgid "Two positions: top, center, bottom or 0–100%. Example: top 80%."
+msgstr "دو موقعیت: top، center، bottom یا درصد از ۰ تا ۱۰۰. مثال: top 80%."
+
+msgid "Reveal order"
+msgstr "ترتیب آشکارشدن"
+
+msgid "Reading start"
+msgstr "ابتدای خواندن"
+
+msgid "Reading end"
+msgstr "انتهای خواندن"
+
+msgid "Edges"
+msgstr "کناره‌ها"
+
+msgid "Random"
+msgstr "تصادفی"
+
+msgid "Justify"
+msgstr "تراز دوطرفه"
+
+msgid "Back to products"
+msgstr "بازگشت به محصولات"
+
+msgid "Back to projects"
+msgstr "بازگشت به نمونه‌کارها"
+
+msgid "No products match these filters. Change or clear the filters to try again."
+msgstr "محصولی با این فیلترها پیدا نشد. فیلترها را تغییر دهید یا پاک کنید."
+
+msgid "No projects found."
+msgstr "نمونه‌کاری پیدا نشد."
+
+msgid "Loading image..."
+msgstr "در حال بارگذاری تصویر…"
+
+msgid "This image could not be loaded."
+msgstr "این تصویر بارگذاری نشد."
+
+msgid "Image %1$s of %2$s"
+msgstr "تصویر %1$s از %2$s"
+
+msgid "Catalog filters"
+msgstr "فیلترهای کاتالوگ"
+
+msgid "Results: %s"
+msgstr "تعداد نتایج: %s"
+
+msgid "Active filters"
+msgstr "فیلترهای فعال"
+
+msgid "Remove filter: %s"
+msgstr "حذف فیلتر: %s"
+
+msgid "Manage content modules"
+msgstr "مدیریت ماژول‌های محتوا"
+
+msgid "View archive"
+msgstr "مشاهدهٔ آرشیو"
+
+msgid "Manage items"
+msgstr "مدیریت موارد"
+
+msgid "Body text fonts"
+msgstr "فونت متن بدنه"
+
+msgid "Heading fonts"
+msgstr "فونت تیترها"
+
+msgid "Individual heading tags (optional)"
+msgstr "فونت جدا برای هر تگ تیتر (اختیاری)"
+
+msgid "Use the body font"
+msgstr "استفاده از فونت متن بدنه"
+
+msgid "Use the heading font"
+msgstr "استفاده از فونت تیترها"
+
+msgid "Headings inherit the body font unless selected here. Each heading tag can override this choice. Only resolved local families are declared; fonts are not all preloaded."
+msgstr "تیترها در حالت پیش‌فرض از فونت متن بدنه استفاده می‌کنند. هر تگ تیتر می‌تواند انتخاب جدا داشته باشد. فقط خانواده‌های محلی مورد استفاده اعلان می‌شوند؛ همهٔ فونت‌ها پیش‌بارگذاری نمی‌شوند."
+
+msgid "Desktop logo width (0 = default, max 512 px)"
+msgstr "عرض لوگو در دسکتاپ (۰ = پیش‌فرض، حداکثر ۵۱۲ پیکسل)"
+
+msgid "Desktop logo maximum height (0 = default, max 256 px)"
+msgstr "حداکثر ارتفاع لوگو در دسکتاپ (۰ = پیش‌فرض، حداکثر ۲۵۶ پیکسل)"
+
+msgid "Mobile logo width (0 = inherit, max 512 px)"
+msgstr "عرض لوگو در موبایل (۰ = ارث‌بری، حداکثر ۵۱۲ پیکسل)"
+
+msgid "Mobile logo maximum height (0 = inherit, max 256 px)"
+msgstr "حداکثر ارتفاع لوگو در موبایل (۰ = ارث‌بری، حداکثر ۲۵۶ پیکسل)"
+
+msgid "The image keeps its proportions and fits within the row. These controls do not change the site title text size."
+msgstr "تصویر با حفظ تناسب در ردیف جا می‌گیرد. این گزینه‌ها اندازهٔ متن عنوان سایت را تغییر نمی‌دهند."
+
+msgid "Desktop menu layout"
+msgstr "چیدمان فهرست دسکتاپ"
+
+msgid "Horizontal links"
+msgstr "لینک‌های افقی"
+
+msgid "Vertical links"
+msgstr "لینک‌های عمودی"
+
+msgid "Always visible links"
+msgstr "لینک‌های همیشه نمایان"
+
+msgid "Button appearance"
+msgstr "ظاهر دکمه"
+
+msgid "Filled"
+msgstr "توپر"
+
+msgid "Outlined"
+msgstr "حاشیه‌دار"
+
+msgid "Text link"
+msgstr "لینک متنی"
+
+msgid "Button accent color"
+msgstr "رنگ اصلی دکمه"
+
+msgid "Use the theme button radius"
+msgstr "استفاده از گردی گوشهٔ سراسری قالب"
+
+msgid "Button corner radius (px)"
+msgstr "گردی گوشهٔ دکمه (پیکسل)"
+
+msgid "Button horizontal spacing (px)"
+msgstr "فاصلهٔ افقی دکمه (پیکسل)"
+
+msgid "Button vertical spacing (px)"
+msgstr "فاصلهٔ عمودی دکمه (پیکسل)"
+
+msgid "Open link in a new tab"
+msgstr "بازکردن لینک در زبانهٔ جدید"
+
+msgid "Mobile element gap"
+msgstr "فاصلهٔ بین اجزا در موبایل"
+
+msgid "Mobile row vertical spacing"
+msgstr "فضای عمودی ردیف در موبایل"
+
+msgid "Use desktop spacing"
+msgstr "استفاده از فاصلهٔ دسکتاپ"
+
+msgid "Use desktop value"
+msgstr "استفاده از مقدار دسکتاپ"
+
+msgid "Product description"
+msgstr "توضیحات محصول"
+
+msgid "View details"
+msgstr "مشاهدهٔ جزئیات"
+
+msgid "Read article"
+msgstr "خواندن مقاله"
+
+msgid "Back to articles"
+msgstr "بازگشت به مقاله‌ها"
+
+msgid "Element arrangement"
+msgstr "چیدمان عناصر"
+
+msgid "Contact us"
+msgstr "تماس با ما"
+
+msgid "Consultation and price inquiry"
+msgstr "مشاوره و استعلام قیمت"
+
+msgid "Price"
+msgstr "قیمت"
+
+msgid "Element type"
+msgstr "نوع عنصر"
+
+msgid "Classic"
+msgstr "کلاسیک"
+
+msgid "Atomic"
+msgstr "اتمیک"
+
+msgid "Logo width (0 = inherit, max 512 px)"
+msgstr "عرض لوگو (۰ = ارث‌بری، حداکثر ۵۱۲ پیکسل)"
+
+msgid "Logo maximum height (0 = inherit, max 256 px)"
+msgstr "حداکثر ارتفاع لوگو (۰ = ارث‌بری، حداکثر ۲۵۶ پیکسل)"
+
+msgid "Pixels"
+msgstr "پیکسل"
+
+msgid "Mobile menu"
+msgstr "فهرست موبایل"
+
+msgid "Use the desktop menu"
+msgstr "استفاده از فهرست دسکتاپ"
+
+msgid "Mobile menu display"
+msgstr "نمایش منوی موبایل"
+
+msgid "Dropdown"
+msgstr "بازشونده زیر دکمه"
+
+msgid "Sidebar drawer"
+msgstr "منوی کناری"
+
+msgid "Drawer side (follows RTL/LTR)"
+msgstr "سمت منوی کناری (متناسب با RTL/LTR)"
+
+msgid "Close menu"
+msgstr "بستن منو"
+
+msgid "Choose menus independently for header and footer. For different device layouts, create separate rows and set their visibility to desktop or mobile."
+msgstr "فهرست هدر و فوتر را مستقل انتخاب کنید. برای چیدمان متفاوت هر دستگاه، ردیف‌های جدا بسازید و نمایش آن‌ها را روی دسکتاپ یا موبایل بگذارید."
+
+msgid "Mobile element layout"
+msgstr "چیدمان عناصر در موبایل"
+
+msgid "Stacked"
+msgstr "زیر هم"
+
+msgid "Side by side"
+msgstr "کنار هم"
+
+msgid "Text color"
+msgstr "رنگ متن"
+
+msgid "Inherit appearance"
+msgstr "ارث‌بری ظاهر"
+
+msgid "Desktop text size (0 = inherit, max 96 px)"
+msgstr "اندازهٔ متن دسکتاپ (۰: ارث‌بری، حداکثر ۹۶ پیکسل)"
+
+msgid "Mobile text size (0 = inherit, max 96 px)"
+msgstr "اندازهٔ متن موبایل (۰: ارث‌بری، حداکثر ۹۶ پیکسل)"
+
+msgid "Layout width"
+msgstr "عرض چیدمان"
+
+msgid "Site content width"
+msgstr "محدود به عرض محتوای سایت"
+
+msgid "Add up to 8 profile links. Use an HTTP or HTTPS address, an internal path or # for a placeholder. Each link needs a label; icons are optional."
+msgstr "حداکثر ۸ لینک پروفایل اضافه کنید. نشانی HTTP یا HTTPS، مسیر داخلی یا # برای لینک موقت قابل استفاده است. هر لینک به عنوان نیاز دارد؛ آیکون اختیاری است."
+
+msgid "You are not allowed to install this plugin."
+msgstr "اجازهٔ نصب این افزونه را ندارید."
+
+msgid "Activate"
+msgstr "فعال‌سازی"
+
+msgid "Install"
+msgstr "نصب"
+
+msgid "Upload ZIP"
+msgstr "بارگذاری ZIP"
+
+msgid "Choose Install or Activate for the plugins you need. WordPress handles permissions and installation; nothing is installed automatically."
+msgstr "برای افزونه‌های مورد نیاز، نصب یا فعال‌سازی را انتخاب کنید. مجوزها و نصب از مسیر وردپرس مدیریت می‌شوند؛ چیزی خودکار نصب نمی‌شود."
+
+msgid "Retry preview"
+msgstr "تلاش دوباره برای پیش‌نمایش"
+
+msgid "You are not allowed to update this plugin."
+msgstr "شما اجازهٔ به‌روزرسانی این افزونه را ندارید."
+
+msgid "Upload your plugin ZIP through WordPress. No automatic download."
+msgstr "فایل ZIP افزونهٔ خود را از طریق وردپرس بارگذاری کنید. دانلود خودکار انجام نمی‌شود."
+
+msgid "Layout display and assignment"
+msgstr "نمایش و تخصیص چیدمان"
+
+msgid "The saved layout is disabled. Enable and save it to display it on the site."
+msgstr "چیدمان ذخیره‌شده غیرفعال است. برای نمایش در سایت، آن را فعال و ذخیره کنید."
+
+msgid "The saved layout is the default for this selection."
+msgstr "چیدمان ذخیره‌شده، پیش‌فرض این انتخاب است."
+
+msgid "The saved layout is enabled but is not the default for this selection."
+msgstr "چیدمان ذخیره‌شده فعال است، اما پیش‌فرض این انتخاب نیست."
+
+msgid "Save your changes before assigning a layout. Page overrides take priority over language and site defaults. Elementor Canvas omits the theme header and footer."
+msgstr "پیش از تخصیص چیدمان، تغییرات را ذخیره کنید. انتخاب اختصاصی برگه بر پیش‌فرض زبان و سایت اولویت دارد. قالب Canvas المنتور، هدر و فوتر پوسته را نمایش نمی‌دهد."
+
+msgid "Optional desktop smoothing. Native scrolling is used with the WordPress toolbar or a Radman CT sticky header, on touch devices and when reduced motion is requested."
+msgstr "اسکرول نرم اختیاری برای دسکتاپ؛ هنگام نمایش نوار مدیریت وردپرس یا هدر چسبان رادمان، روی دستگاه لمسی و در حالت کاهش حرکت، اسکرول طبیعی استفاده می‌شود."
+
+msgid "Sticky header"
+msgstr "هدر چسبان"
+
+msgid "Transparent header over page content"
+msgstr "هدر شفاف روی محتوای صفحه"
+
+msgid "Overlaps the top of the page without a gap. Row backgrounds are hidden; sticky scrolling uses the site background and text colors. Shown on the site, not in the isolated preview."
+msgstr "بدون فاصله روی ابتدای محتوا قرار می‌گیرد. زمینهٔ ردیف‌ها پنهان می‌شود؛ هدر چسبان پس از اسکرول از رنگ زمینه و متن سایت استفاده می‌کند. این حالت در سایت دیده می‌شود، نه پیش‌نمایش جداگانه."
+
+msgid "Off"
+msgstr "خاموش"
+
+msgid "Keeps the whole header visible on the selected devices. Native scrolling is used on pages with this header. Sticky behavior is shown on the site, not in the editor preview."
+msgstr "کل هدر در دستگاه‌های انتخاب‌شده هنگام اسکرول در دید می‌ماند. صفحات دارای این هدر از اسکرول طبیعی استفاده می‌کنند. رفتار چسبان در سایت نمایش داده می‌شود، نه پیش‌نمایش ویرایشگر."
+
+msgid "Plugins and requirements"
+msgstr "افزونه‌ها و پیش‌نیازها"
+
+msgid "Required only for the optional product and portfolio modules."
+msgstr "فقط برای ماژول‌های اختیاری محصول و نمونه‌کار لازم است."
+
+msgid "Required only for pages edited with Elementor."
+msgstr "فقط برای صفحاتی که با المنتور ویرایش می‌شوند لازم است."
+
+msgid "Required only for selected Pro features and Theme Builder designs."
+msgstr "فقط برای امکانات منتخب پرو و طراحی‌های سازندهٔ پوسته لازم است."
+
+msgid "Required only for multilingual content managed with WPML."
+msgstr "فقط برای محتوای چندزبانه‌ای که با WPML مدیریت می‌شود لازم است."
+
+msgid "Required only for translating builder strings through WPML."
+msgstr "فقط برای ترجمهٔ متن‌های سازنده از طریق WPML لازم است."
+
+msgid "Required only for sliders created with this plugin. Full integration is not yet verified."
+msgstr "فقط برای اسلایدرهای ساخته‌شده با این افزونه لازم است. ادغام کامل هنوز تأیید نشده است."
+
+msgid "The base theme requires no plugins. Install only what your project uses."
+msgstr "قالب پایه به افزونه نیاز ندارد. فقط موارد مورد استفادهٔ پروژه را نصب کنید."
+
+msgid "This page checks local installation status only. It does not install, activate, update or contact plugin providers."
+msgstr "این صفحه فقط وضعیت نصب محلی را بررسی می‌کند؛ نصب، فعال‌سازی، به‌روزرسانی یا اتصال به ارائه‌دهندگان افزونه انجام نمی‌دهد."
+
+msgid "Open plugin manager"
+msgstr "بازکردن مدیریت افزونه‌ها"
+
+msgid "Optional plugin status"
+msgstr "وضعیت افزونه‌های اختیاری"
+
+msgid "Plugin"
+msgstr "افزونه"
+
+msgid "Role"
+msgstr "نقش"
+
+msgid "Status"
+msgstr "وضعیت"
+
+msgid "Version"
+msgstr "نسخه"
+
+msgid "Used for"
+msgstr "کاربرد"
+
+msgid "Optional"
+msgstr "اختیاری"
+
+msgid "Not installed"
+msgstr "نصب نشده"
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Inactive"
+msgstr "غیرفعال"
+
+msgid "Prerequisite:"
+msgstr "پیش‌نیاز:"
+
+msgid "The prerequisite is not active."
+msgstr "پیش‌نیاز فعال نیست."
+
+msgid "Manage product and portfolio modules"
+msgstr "مدیریت ماژول‌های محصول و نمونه‌کار"
+
+msgid "Contact information"
+msgstr "اطلاعات تماس"
+
+msgid "Social links"
+msgstr "شبکه‌های اجتماعی"
+
+msgid "No icon"
+msgstr "بدون آیکون"
+
+msgid "Unavailable icon"
+msgstr "آیکون در دسترس نیست"
+
+msgid "Link label"
+msgstr "عنوان لینک"
+
+msgid "Social link"
+msgstr "لینک شبکهٔ اجتماعی"
+
+msgid "Add social link"
+msgstr "افزودن لینک اجتماعی"
+
+msgid "Use tel: for phone, mailto: for email, or leave the URL empty for plain text. Linked icons require a label."
+msgstr "برای تلفن از tel: و برای ایمیل از mailto: استفاده کنید؛ برای متن ساده نشانی را خالی بگذارید. آیکون لینک‌دار به عنوان نیاز دارد."
+
+msgid "Add up to 8 profile links. Each link needs a label and an HTTP or HTTPS address. Icons are optional."
+msgstr "حداکثر ۸ لینک پروفایل اضافه کنید. هر لینک به عنوان و نشانی HTTP یا HTTPS نیاز دارد. آیکون اختیاری است."
+
+msgid "Accessible label"
+msgstr "عنوان دسترس‌پذیر"
+
+msgid "Arrow left"
+msgstr "پیکان چپ"
+
+msgid "Arrow right"
+msgstr "پیکان راست"
+
+msgid "Automatic"
+msgstr "خودکار"
+
+msgid "Check"
+msgstr "تأیید"
+
+msgid "Chevron down"
+msgstr "فلش پایین"
+
+msgid "Chevron left"
+msgstr "فلش چپ"
+
+msgid "Chevron right"
+msgstr "فلش راست"
+
+msgid "Chevron up"
+msgstr "فلش بالا"
+
+msgid "Clock"
+msgstr "ساعت"
+
+msgid "Download"
+msgstr "دانلود"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "External link"
+msgstr "لینک خارجی"
+
+msgid "Font size"
+msgstr "اندازهٔ فونت"
+
+msgid "HTML tag"
+msgstr "تگ HTML"
+
+msgid "Highlighted text color"
+msgstr "رنگ متن برجسته"
+
+msgid "Hover and focus"
+msgstr "قرارگرفتن اشاره‌گر و فوکوس"
+
+msgid "Icon"
+msgstr "آیکون"
+
+msgid "Icon color"
+msgstr "رنگ آیکون"
+
+msgid "Icon size"
+msgstr "اندازهٔ آیکون"
+
+msgid "Inherit"
+msgstr "ارث‌بری"
+
+msgid "Initial opacity"
+msgstr "شفافیت اولیه"
+
+msgid "Initial text color"
+msgstr "رنگ اولیهٔ متن"
+
+msgid "Location"
+msgstr "موقعیت"
+
+msgid "Minus"
+msgstr "منفی"
+
+msgid "Mirror directional icons in RTL"
+msgstr "معکوس‌کردن آیکون‌های جهت‌دار در راست‌به‌چپ"
+
+msgid "Pause"
+msgstr "مکث"
+
+msgid "Phone"
+msgstr "تلفن"
+
+msgid "Play"
+msgstr "پخش"
+
+msgid "Plus"
+msgstr "مثبت"
+
+msgid "Radman CT icon"
+msgstr "آیکون رادمان"
+
+msgid "Radman CT text reveal"
+msgstr "آشکارسازی متن رادمان"
+
+msgid "Reveal behavior"
+msgstr "رفتار آشکارسازی"
+
+msgid "Scroll"
+msgstr "اسکرول"
+
+msgid "Stroke width"
+msgstr "ضخامت خط"
+
+msgid "Text becomes highlighted as you scroll."
+msgstr "متن با اسکرول به‌تدریج واضح می‌شود."
+
+msgid "Text direction"
+msgstr "جهت متن"
+
+msgid "Text reveal"
+msgstr "آشکارسازی متن"
+
+msgid "Primary menu"
+msgstr "فهرست اصلی"
+
+msgid "Footer menu"
+msgstr "فهرست پابرگ"
+
+msgid "Latest posts"
+msgstr "تازه‌ترین نوشته‌ها"
+
+msgid "Search results for: %s"
+msgstr "نتایج جستجو برای: %s"
+
+msgid "Skip to content"
+msgstr "رفتن به محتوا"
+
+msgid "Menu"
+msgstr "فهرست"
+
+msgid "Toggle submenu"
+msgstr "باز و بسته کردن زیرمنو"
+
+msgid "Content pages"
+msgstr "صفحه‌های محتوا"
+
+msgid "Previous"
+msgstr "قبلی"
+
+msgid "Next"
+msgstr "بعدی"
+
+msgid "No content found."
+msgstr "محتوایی پیدا نشد."
+
+msgid "Page not found"
+msgstr "صفحه پیدا نشد"
+
+msgid "Try a search or return to the home page."
+msgstr "جستجو کنید یا به صفحهٔ اصلی برگردید."
+
+msgid "Home"
+msgstr "صفحهٔ اصلی"
+
+msgid "Search"
+msgstr "جستجو"
+
+msgid "Search the site"
+msgstr "جستجو در سایت"
+
+msgid "Full width"
+msgstr "تمام‌عرض"
+
+msgid "Brand"
+msgstr "رنگ برند"
+
+msgid "Ink"
+msgstr "متن اصلی"
+
+msgid "Muted"
+msgstr "متن کم‌رنگ"
+
+msgid "Surface"
+msgstr "سطح"
+
+msgid "White"
+msgstr "سفید"
+
+msgid "Some values were invalid and kept their previous settings."
+msgstr "بعضی مقدارها معتبر نبودند و تنظیم قبلی آن‌ها حفظ شد."
+
+msgid "Settings were not saved because the submitted data was invalid."
+msgstr "به‌دلیل نامعتبر بودن داده‌های ارسالی، تنظیمات ذخیره نشد."
+
+msgid "Radman CT settings"
+msgstr "تنظیمات رادمان"
+
+msgid "Radman CT"
+msgstr "رادمان"
+
+msgid "Enable JavaScript to edit these settings."
+msgstr "برای ویرایش این تنظیمات، جاوااسکریپت مرورگر را فعال کنید."
+
+msgid "Theme settings"
+msgstr "تنظیمات قالب"
+
+msgid "Site identity"
+msgstr "هویت سایت"
+
+msgid "Typography"
+msgstr "فونت و تایپوگرافی"
+
+msgid "Design"
+msgstr "طراحی"
+
+msgid "Save changes"
+msgstr "ذخیرهٔ تغییرات"
+
+msgid "Reset section"
+msgstr "بازنشانی بخش"
+
+msgid "Reset all"
+msgstr "بازنشانی همه"
+
+msgid "Reset this section? Save changes to apply."
+msgstr "این بخش بازنشانی شود؟ برای اعمال نتیجه، تغییرات را ذخیره کنید."
+
+msgid "Reset all theme settings? Save changes to apply."
+msgstr "همهٔ تنظیمات قالب بازنشانی شوند؟ برای اعمال نتیجه، تغییرات را ذخیره کنید."
+
+msgid "Unsaved changes"
+msgstr "تغییرات ذخیره‌نشده"
+
+msgid "No pending changes"
+msgstr "تغییر ذخیره‌نشده‌ای ندارید"
+
+msgid "Persian font"
+msgstr "فونت فارسی"
+
+msgid "Latin font"
+msgstr "فونت انگلیسی (لاتین)"
+
+msgid "Fonts are loaded locally. Only the selected families are used."
+msgstr "فونت‌ها از خود سایت بارگذاری می‌شوند؛ فقط خانواده‌های انتخاب‌شده استفاده می‌شوند."
+
+msgid "This is a preview of the Persian font."
+msgstr "این یک پیش‌نمایش از فونت فارسی است."
+
+msgid "A clear typeface for your company."
+msgstr "A clear typeface for your company."
+
+msgid "Brand color"
+msgstr "رنگ برند"
+
+msgid "Content width"
+msgstr "عرض محتوا"
+
+msgid "Choose a width between 960 and 1600 pixels."
+msgstr "عرضی بین ۹۶۰ تا ۱۶۰۰ پیکسل انتخاب کنید."
+
+msgid "Manage the site title, logo and site icon in WordPress site identity."
+msgstr "عنوان سایت، لوگو و نمادک را از بخش هویت سایت در وردپرس مدیریت کنید."
+
+msgid "Edit site identity"
+msgstr "ویرایش هویت سایت"
+
+msgid "Font preview"
+msgstr "پیش‌نمایش فونت"
+
+msgid "Scroll and motion"
+msgstr "اسکرول و موشن"
+
+msgid "Scroll reveal animations"
+msgstr "انیمیشن ورود بخش‌ها"
+
+msgid "Animate marked sections as they enter the screen. Disabled by default."
+msgstr "بخش‌های مشخص‌شده هنگام ورود به صفحه حرکت می‌کنند؛ در حالت پیش‌فرض خاموش است."
+
+msgid "Smooth scrolling"
+msgstr "اسکرول نرم"
+
+msgid "Optional desktop smoothing. Native scrolling remains on touch devices and when reduced motion is requested."
+msgstr "اسکرول نرم اختیاری برای دسکتاپ؛ روی دستگاه لمسی و در حالت کاهش حرکت، اسکرول طبیعی حفظ می‌شود."
+
+msgid "Header builder"
+msgstr "هدرساز"
+
+msgid "Footer builder"
+msgstr "فوترساز"
+
+msgid "Use this layout"
+msgstr "استفاده از این چیدمان"
+
+msgid "Add row"
+msgstr "افزودن ردیف"
+
+msgid "Remove"
+msgstr "حذف"
+
+msgid "Move up"
+msgstr "انتقال به بالا"
+
+msgid "Move down"
+msgstr "انتقال به پایین"
+
+msgid "Move to previous row"
+msgstr "انتقال به ردیف قبلی"
+
+msgid "Move to next row"
+msgstr "انتقال به ردیف بعدی"
+
+msgid "Site logo"
+msgstr "لوگوی سایت"
+
+msgid "Navigation menu"
+msgstr "منوی ناوبری"
+
+msgid "Text"
+msgstr "متن"
+
+msgid "Button"
+msgstr "دکمه"
+
+msgid "Link URL"
+msgstr "نشانی پیوند"
+
+msgid "Add element"
+msgstr "افزودن عنصر"
+
+msgid "Save layout"
+msgstr "ذخیرهٔ چیدمان"
+
+msgid "Row"
+msgstr "ردیف"
+
+msgid "Drag rows or elements to reorder them. Move buttons also work with keyboard and touch. Up to 8 rows and 6 elements per row."
+msgstr "ردیف‌ها و عناصر را برای مرتب‌سازی بکشید و رها کنید. دکمه‌های جابه‌جایی با کیبورد و لمس هم کار می‌کنند. حداکثر ۸ ردیف و ۶ عنصر در هر ردیف."
+
+msgid "Uses the primary menu in the header and the footer menu in the footer. Assign menus in WordPress navigation settings."
+msgstr "در هدر از فهرست اصلی و در فوتر از فهرست پابرگ استفاده می‌شود. فهرست‌ها را از تنظیمات فهرست وردپرس اختصاص دهید."
+
+msgid "Uses the logo or site title from WordPress site identity."
+msgstr "از لوگو یا عنوان سایت در بخش هویت سایت وردپرس استفاده می‌کند."
+
+msgid "Remove this row and its elements?"
+msgstr "این ردیف و عناصر آن حذف شوند؟"
+
+msgid "Add a row, then add elements to build your layout."
+msgstr "یک ردیف اضافه کنید و سپس عناصر چیدمان را در آن قرار دهید."
+
+msgid "Layout saved."
+msgstr "چیدمان ذخیره شد."
+
+msgid "This layout changed in another tab. Reload before saving again."
+msgstr "این چیدمان در تب دیگری تغییر کرده است. پیش از ذخیرهٔ دوباره، صفحه را بازخوانی کنید."
+
+msgid "The layout is invalid. Your saved layout was preserved."
+msgstr "چیدمان ارسالی معتبر نیست. چیدمان ذخیره‌شدهٔ قبلی حفظ شد."
+
+msgid "You are not allowed to edit this layout."
+msgstr "شما اجازهٔ ویرایش این چیدمان را ندارید."
+
+msgid "Invalid request."
+msgstr "درخواست نامعتبر است."
+
+msgid "Radman CT local fonts"
+msgstr "فونت‌های محلی رادمان"
+
+msgid "Radman CT — Elementor with header and footer"
+msgstr "رادمان — المنتور با هدر و فوتر"
+
+msgid "Undo"
+msgstr "برگرداندن"
+
+msgid "Redo"
+msgstr "انجام دوباره"
+
+msgid "Duplicate"
+msgstr "تکثیر"
+
+msgid "Row settings"
+msgstr "تنظیمات ردیف"
+
+msgid "Element settings"
+msgstr "تنظیمات عنصر"
+
+msgid "Visibility"
+msgstr "نمایش"
+
+msgid "All devices"
+msgstr "همهٔ دستگاه‌ها"
+
+msgid "Desktop"
+msgstr "دسکتاپ"
+
+msgid "Mobile"
+msgstr "موبایل"
+
+msgid "Alignment"
+msgstr "تراز"
+
+msgid "Element distribution"
+msgstr "توزیع عناصر"
+
+msgid "Element width"
+msgstr "عرض عنصر"
+
+msgid "Equal columns"
+msgstr "ستون‌های برابر"
+
+msgid "Laptop"
+msgstr "لپ‌تاپ"
+
+msgid "Tablet"
+msgstr "تبلت"
+
+msgid "Device"
+msgstr "دستگاه"
+
+msgid "Hide on selected devices"
+msgstr "پنهان در دستگاه‌های انتخاب‌شده"
+
+msgid "Preview width"
+msgstr "عرض پیش‌نمایش"
+
+msgid "Column count"
+msgstr "تعداد ستون"
+
+msgid "Text size (px, 0 inherits)"
+msgstr "اندازهٔ متن (پیکسل؛ صفر برای ارث‌بری)"
+
+msgid "Colors apply to all devices."
+msgstr "رنگ‌ها برای همهٔ دستگاه‌ها اعمال می‌شوند."
+
+msgid "Row layout"
+msgstr "چیدمان ردیف"
+
+msgid "Flexible layout"
+msgstr "چیدمان ردیفی یا ستونی (Flex)"
+
+msgid "Equal column grid"
+msgstr "شبکه با ستون‌های مساوی"
+
+msgid "Desktop columns (1–6)"
+msgstr "ستون‌های دسکتاپ (۱ تا ۶)"
+
+msgid "Mobile columns (1–3)"
+msgstr "ستون‌های موبایل (۱ تا ۳)"
+
+msgid "Fit content"
+msgstr "متناسب با محتوا"
+
+msgid "Full row"
+msgstr "تمام ردیف"
+
+msgid "Start"
+msgstr "ابتدا"
+
+msgid "Center"
+msgstr "وسط"
+
+msgid "End"
+msgstr "انتها"
+
+msgid "Stretch"
+msgstr "کشیده"
+
+msgid "Space between"
+msgstr "فاصلهٔ بین عناصر"
+
+msgid "Element gap (0–64 px)"
+msgstr "فاصلهٔ عناصر (۰ تا ۶۴ پیکسل)"
+
+msgid "Vertical padding (0–120 px)"
+msgstr "فاصلهٔ عمودی (۰ تا ۱۲۰ پیکسل)"
+
+msgid "Background color"
+msgstr "رنگ پس‌زمینه"
+
+msgid "Transparent"
+msgstr "شفاف"
+
+msgid "General settings"
+msgstr "تنظیمات عمومی"
+
+msgid "Effects"
+msgstr "جلوه‌ها"
+
+msgid "Mouse cursor"
+msgstr "نشانگر ماوس"
+
+msgid "Circular mouse cursor"
+msgstr "نشانگر دایره‌ای ماوس"
+
+msgid "Disabled by default. Runs only with a mouse and without reduced motion."
+msgstr "پیش‌فرض خاموش است؛ فقط با ماوس و در نبود ترجیح کاهش حرکت اجرا می‌شود."
+
+msgid "A lightweight circle follows the mouse. The system pointer remains available; touch devices and form fields keep their normal behavior."
+msgstr "دایره‌ای سبک ماوس را دنبال می‌کند. نشانگر سیستم باقی می‌ماند؛ دستگاه لمسی و فیلدهای فرم رفتار عادی خود را دارند."
+
+msgid "Hide outer circle"
+msgstr "پنهان‌کردن حلقهٔ بیرونی"
+
+msgid "Inner dot size (2–24 px)"
+msgstr "اندازهٔ نقطهٔ داخلی (۲ تا ۲۴ پیکسل)"
+
+msgid "Outer circle size (16–120 px)"
+msgstr "اندازهٔ حلقهٔ بیرونی (۱۶ تا ۱۲۰ پیکسل)"
+
+msgid "Cursor color"
+msgstr "رنگ نشانگر"
+
+msgid "Blend mode"
+msgstr "حالت ترکیب رنگ"
+
+msgid "Normal"
+msgstr "عادی"
+
+msgid "Difference"
+msgstr "اختلاف رنگ"
+
+msgid "Image cursor label"
+msgstr "متن نشانگر تصویر"
+
+msgid "Carousel cursor label"
+msgstr "متن نشانگر کاروسل"
+
+msgid "Optional text for marked images or carousels. Leave empty for a circle only."
+msgstr "متن اختیاری برای تصویر یا کاروسل مشخص‌شده؛ برای نمایش دایره بدون متن، خالی بگذارید."
+
+msgid "Scroll progress"
+msgstr "پیشرفت اسکرول"
+
+msgid "Top scroll progress bar"
+msgstr "نوار پیشرفت اسکرول بالای صفحه"
+
+msgid "Show reading progress at the top of the page. Disabled by default; no animation library is needed."
+msgstr "پیشرفت پیمایش را بالای صفحه نشان می‌دهد؛ پیش‌فرض خاموش است و کتابخانهٔ انیمیشن لازم ندارد."
+
+msgid "Bar height (1–8 px)"
+msgstr "ارتفاع نوار (۱ تا ۸ پیکسل)"
+
+msgid "Progress color"
+msgstr "رنگ بخش پیموده‌شده"
+
+msgid "Track color"
+msgstr "رنگ زمینهٔ نوار"
+
+msgid "Page loading"
+msgstr "بارگذاری صفحه"
+
+msgid "Enable preloader"
+msgstr "فعال‌کردن پری‌لودر"
+
+msgid "Optional visual effect until the page structure is ready. Does not lock scrolling; disabled in Elementor editing and preview."
+msgstr "جلوهٔ اختیاری تا آماده‌شدن ساختار صفحه؛ اسکرول را قفل نمی‌کند و در ویرایش و پیش‌نمایش المنتور غیرفعال است."
+
+msgid "Preloader style"
+msgstr "سبک پری‌لودر"
+
+msgid "Preloader background"
+msgstr "رنگ زمینهٔ پری‌لودر"
+
+msgid "Preloader indicator color"
+msgstr "رنگ نشانگر بارگذاری"
+
+msgid "Closes automatically within two seconds. It stays hidden when JavaScript is delayed or reduced motion is requested."
+msgstr "حداکثر ظرف دو ثانیه بسته می‌شود؛ در تأخیر جاوااسکریپت یا ترجیح کاهش حرکت، پنهان می‌ماند."
+
+msgid "Curtain"
+msgstr "پرده‌ای"
+
+msgid "Fade"
+msgstr "محو تدریجی"
+
+msgid "Sliding"
+msgstr "لغزشی"
+
+msgid "Spinner"
+msgstr "حلقهٔ چرخان"
+
+msgid "Classic dots"
+msgstr "نقطه‌های کلاسیک"
+
+msgid "Dissolve"
+msgstr "محو نواری"
+
+msgid "Bundled local image"
+msgstr "تصویر محلی قالب"
+
+msgid "Shared content blocks"
+msgstr "بلوک‌های محتوایی مشترک"
+
+msgid "Shared content block"
+msgstr "بلوک محتوایی مشترک"
+
+msgid "Choose a content block"
+msgstr "انتخاب بلوک محتوا"
+
+msgid "Published WordPress patterns with basic text, image, layout and button blocks are supported. HTML, shortcodes, forms and plugin widgets are not supported here yet."
+msgstr "الگوهای منتشرشدهٔ وردپرس با بلوک‌های پایهٔ متن، تصویر، چیدمان و دکمه پشتیبانی می‌شوند؛ HTML آزاد، شورت‌کد، فرم و ابزارک افزونه هنوز در این بخش پشتیبانی نمی‌شوند."
+
+msgid "Manage shared content blocks"
+msgstr "مدیریت بلوک‌های محتوایی مشترک"
+
+msgid "The selected block is unavailable. Choose another block or remove this element."
+msgstr "بلوک انتخاب‌شده در دسترس نیست؛ بلوک دیگری انتخاب کنید یا این عنصر را حذف کنید."
+
+msgid "All"
+msgstr "همه"
+
+msgid "Apply filters"
+msgstr "اعمال فیلترها"
+
+msgid "Category"
+msgstr "دسته‌بندی"
+
+msgid "Clear filters"
+msgstr "پاک‌کردن فیلترها"
+
+msgid "Close"
+msgstr "بستن"
+
+msgid "Default order"
+msgstr "ترتیب پیش‌فرض"
+
+msgid "Feature"
+msgstr "ویژگی"
+
+msgid "Image gallery"
+msgstr "گالری تصاویر"
+
+msgid "Newest"
+msgstr "جدیدترین"
+
+msgid "Next image"
+msgstr "تصویر بعدی"
+
+msgid "Oldest"
+msgstr "قدیمی‌ترین"
+
+msgid "Open image"
+msgstr "بازکردن تصویر"
+
+msgid "Previous image"
+msgstr "تصویر قبلی"
+
+msgid "Reference code"
+msgstr "کد مرجع"
+
+msgid "Request a quote"
+msgstr "درخواست استعلام قیمت"
+
+msgid "Search products"
+msgstr "جستجوی محصولات"
+
+msgid "Sort by"
+msgstr "مرتب‌سازی"
+
+msgid "Technical specifications"
+msgstr "مشخصات فنی"
+
+msgid "Title"
+msgstr "عنوان"
+
+msgid "Radman CT page effects"
+msgstr "جلوه‌های برگهٔ رادمان"
+
+msgid "Follow theme settings"
+msgstr "پیروی از تنظیمات قالب"
+
+msgid "Enable on this page"
+msgstr "فعال در این برگه"
+
+msgid "Disable on this page"
+msgstr "غیرفعال در این برگه"
+
+msgid "Override effects for this page only. Editor previews always keep effects disabled."
+msgstr "جلوه‌ها را فقط برای این برگه تغییر دهید؛ جلوه‌ها در پیش‌نمایش ویرایشگر همیشه غیرفعال می‌مانند."
+
+msgid "All languages"
+msgstr "همهٔ زبان‌ها"
+
+msgid "Choose a menu"
+msgstr "انتخاب فهرست"
+
+msgid "Copyright"
+msgstr "کپی‌رایت"
+
+msgid "Could not create the layout. The limit is 12 saved layouts per builder."
+msgstr "ساخت چیدمان ممکن نشد؛ هر سازنده حداکثر ۱۲ چیدمان ذخیره‌شده می‌پذیرد."
+
+msgid "Default layout updated."
+msgstr "چیدمان پیش‌فرض به‌روز شد."
+
+msgid "Delete layout"
+msgstr "حذف چیدمان"
+
+msgid "Delete this saved layout?"
+msgstr "این چیدمان ذخیره‌شده حذف شود؟"
+
+msgid "Discard unsaved changes?"
+msgstr "تغییرات ذخیره‌نشده کنار گذاشته شوند؟"
+
+msgid "Enter a layout name with up to 80 characters."
+msgstr "نامی با حداکثر ۸۰ نویسه برای چیدمان وارد کنید."
+
+msgid "Export backup"
+msgstr "دریافت نسخهٔ پشتیبان"
+
+msgid "Hide on this page"
+msgstr "در این برگه نمایش داده نشود"
+
+msgid "Hide preview"
+msgstr "بستن پیش‌نمایش"
+
+msgid "Import backup"
+msgstr "بازیابی نسخهٔ پشتیبان"
+
+msgid "Cancel restore"
+msgstr "لغو بازیابی"
+
+msgid "JSON backup, up to 256 KiB, for this site and builder only. Restoring changes the editor; save to apply it."
+msgstr "فایل JSON تا ۲۵۶ کیبی‌بایت، فقط برای همین سایت و همین سازنده. بازیابی داخل ویرایشگر انجام می‌شود؛ برای اعمال، ذخیره کنید."
+
+msgid "Unable to create the backup. Check the 256 KiB file size limit and browser download permissions."
+msgstr "ساخت پشتیبان ممکن نشد. سقف ۲۵۶ کیبی‌بایت و مجوز دانلود مرورگر را بررسی کنید."
+
+msgid "Reading backup..."
+msgstr "در حال خواندن پشتیبان…"
+
+msgid "Checking backup..."
+msgstr "در حال بررسی پشتیبان…"
+
+msgid "Backup restored in the editor. Save to apply it."
+msgstr "پشتیبان در ویرایشگر بازیابی شد. برای اعمال، ذخیره کنید."
+
+msgid "Restore cancelled. Your layout has not changed."
+msgstr "بازیابی لغو شد. چیدمان شما تغییر نکرد."
+
+msgid "Restore failed. Your layout has not changed."
+msgstr "بازیابی ناموفق بود. چیدمان شما تغییر نکرد."
+
+msgid "Inherit site default"
+msgstr "پیروی از پیش‌فرض سایت"
+
+msgid "Inherit site or language default"
+msgstr "پیروی از پیش‌فرض سایت یا زبان"
+
+msgid "Language"
+msgstr "زبان"
+
+msgid "Layout name (up to 80 characters)"
+msgstr "نام چیدمان (حداکثر ۸۰ نویسه)"
+
+msgid "Loading..."
+msgstr "در حال پردازش…"
+
+msgid "New layout"
+msgstr "چیدمان جدید"
+
+msgid "Original layout"
+msgstr "چیدمان اصلی"
+
+msgid "Preview"
+msgstr "پیش‌نمایش"
+
+msgid "Preview is isolated and non-interactive. Unsaved changes are not published."
+msgstr "پیش‌نمایش جدا و بدون تعامل است؛ تغییرات ذخیره‌نشده منتشر نمی‌شوند."
+
+msgid "Radman CT header and footer"
+msgstr "هدر و فوتر رادمان"
+
+msgid "Rename layout"
+msgstr "تغییر نام چیدمان"
+
+msgid "Replace the editor with this backup? The saved layout will not change until you save."
+msgstr "این نسخهٔ پشتیبان وارد ویرایشگر شود؟ چیدمان ذخیره‌شده تا زمان ذخیره تغییر نمی‌کند."
+
+msgid "Save and enable the layout before assigning it."
+msgstr "پیش از تخصیص، چیدمان را فعال و ذخیره کنید."
+
+msgid "Save as new layout"
+msgstr "ذخیره به‌عنوان چیدمان جدید"
+
+msgid "Copy from layout"
+msgstr "کپی از چیدمان"
+
+msgid "Saved layouts"
+msgstr "چیدمان‌های ذخیره‌شده"
+
+msgid "The layout name could not be updated."
+msgstr "نام چیدمان به‌روز نشد."
+
+msgid "The original layout cannot be deleted, or the library changed. Reload and try again."
+msgstr "چیدمان اصلی قابل حذف نیست یا کتابخانه تغییر کرده است؛ صفحه را تازه کنید و دوباره تلاش کنید."
+
+msgid "The request failed. Your changes are still in the editor."
+msgstr "درخواست ناموفق بود؛ تغییرات شما در ویرایشگر باقی مانده‌اند."
+
+msgid "This backup is invalid or belongs to another site or builder."
+msgstr "نسخهٔ پشتیبان نامعتبر یا متعلق به سایت یا سازندهٔ دیگری است."
+
+msgid "This layout is assigned to the site or a page. Remove those assignments first."
+msgstr "این چیدمان به سایت یا برگه‌ای اختصاص دارد؛ ابتدا آن تخصیص‌ها را بردارید."
+
+msgid "This layout is no longer available."
+msgstr "این چیدمان دیگر در دسترس نیست."
+
+msgid "Use as site default"
+msgstr "انتخاب به‌عنوان پیش‌فرض سایت"
+
+msgid "Use for selected language"
+msgstr "استفاده برای زبان انتخاب‌شده"
+
+msgid "Use theme menu location"
+msgstr "استفاده از جایگاه فهرست قالب"
+
+msgid "Your session expired. Reload the editor before trying again."
+msgstr "نشست شما منقضی شده است؛ پیش از تلاش دوباره صفحهٔ ویرایشگر را تازه کنید."
+
+msgid "Content design"
+msgstr "طراحی محتوا"
+
+msgid "Blog"
+msgstr "وبلاگ"
+
+msgid "Products"
+msgstr "محصولات"
+
+msgid "Portfolio"
+msgstr "نمونه‌کار"
+
+msgid "Single page design"
+msgstr "طراحی صفحهٔ جزئیات"
+
+msgid "Archive design"
+msgstr "طراحی آرشیو"
+
+msgid "Radman CT custom design"
+msgstr "طراحی اختصاصی رادمان"
+
+msgid "Elementor Pro Theme Builder"
+msgstr "قالب‌ساز المنتور پرو"
+
+msgid "Choose a renderer for each content type. Elementor Pro uses its matching Theme Builder conditions. Without a matching published design, Radman CT custom output remains available."
+msgstr "روش نمایش هر نوع محتوا را انتخاب کنید. المنتور پرو از شرایط نمایش قالب‌ساز خودش استفاده می‌کند؛ بدون طرح منتشرشدهٔ منطبق، خروجی اختصاصی رادمان نمایش داده می‌شود."
+
+msgid "Elementor Pro is not active. Custom design is used until it is available."
+msgstr "المنتور پرو فعال نیست؛ تا فعال‌شدن آن، طراحی اختصاصی نمایش داده می‌شود."
+
+msgid "Select an element in the preview or structure to edit its settings. Links and forms remain inactive. Unsaved changes are not published."
+msgstr "برای ویرایش تنظیمات، یک عنصر را از پیش‌نمایش یا ساختار انتخاب کنید. لینک‌ها و فرم‌ها غیرفعال می‌مانند. تغییرات ذخیره‌نشده منتشر نمی‌شوند."
+
+msgid "Builder controls"
+msgstr "کنترل‌های سازنده"
+
+msgid "Elements"
+msgstr "عناصر"
+
+msgid "Layout structure"
+msgstr "ساختار چیدمان"
+
+msgid "Add to row"
+msgstr "افزودن به ردیف"
+
+msgid "Choose an element to add it to the selected row. Select a row or element to edit its settings."
+msgstr "یک عنصر انتخاب کنید تا به ردیف انتخاب‌شده اضافه شود. برای ویرایش تنظیمات، ردیف یا عنصر را انتخاب کنید."
+
+msgid "Required only for an enabled MCP connection."
+msgstr "فقط برای اتصال فعال MCP لازم است."
+
+msgid "Optional MCP tools for content and Radman CT layouts."
+msgstr "ابزارهای اختیاری MCP برای محتوا و چیدمان‌های رادمان."
+
+msgid "Radman Content stores product and portfolio data independently of the theme. Installing Content does not enable these modules automatically."
+msgstr "افزونهٔ محتوای رادمان داده‌های محصول و نمونه‌کار را مستقل از قالب نگه می‌دارد. نصب آن، این ماژول‌ها را خودکار فعال نمی‌کند."
+
+msgid "The local Radman Content package is missing or invalid. Upload the plugin ZIP through WordPress instead."
+msgstr "بستهٔ محلی افزونهٔ محتوای رادمان موجود نیست یا معتبر نیست. فایل ZIP افزونه را از طریق وردپرس بارگذاری کنید."
+
+msgid "Update Radman Content"
+msgstr "به‌روزرسانی محتوای رادمان"
+
+msgid "Built-in theme features do not need separate plugins. Enable effects in theme settings; enable products and portfolio independently in Radman Content."
+msgstr "جلوه‌ها را در تنظیمات قالب و محصول و نمونه‌کار را مستقل در افزونهٔ محتوای رادمان فعال کنید."
+
+msgid "This content module is disabled. Enable it independently in Radman Content."
+msgstr "این ماژول محتوا غیرفعال است؛ آن را مستقل در افزونهٔ محتوای رادمان فعال کنید."
+
+msgid "The local Content update is unavailable or invalid. The installed plugin has been preserved."
+msgstr "بستهٔ محلی به‌روزرسانی هسته موجود یا معتبر نیست. افزونهٔ نصب‌شده حفظ شده است."
+
+msgid "The local Content update could not be prepared."
+msgstr "آماده‌سازی بستهٔ محلی به‌روزرسانی هسته ممکن نشد."
+
+msgid "The Content package version does not match its manifest. The installed plugin has been preserved."
+msgstr "نسخهٔ بستهٔ هسته با مشخصات آن تطابق ندارد. افزونهٔ نصب‌شده حفظ شده است."
+
+msgid "Uses the local Content package when available."
+msgstr "در صورت وجود، از بستهٔ محلی Core استفاده می‌کند."
+
+msgid "Shared components for PHP and Elementor pages."
+msgstr "کامپوننت‌های مشترک برای صفحات PHP و المنتور."
+
+msgid "Arrow Up"
+msgstr "بالا"
+
+msgid "Arrow Down"
+msgstr "پایین"
+
+msgid "Arrow Up Right"
+msgstr "بالا و راست"
+
+msgid "Chevrons Left"
+msgstr "دو پیکان چپ"
+
+msgid "Chevrons Right"
+msgstr "دو پیکان راست"
+
+msgid "Move Left"
+msgstr "حرکت به چپ"
+
+msgid "Move Right"
+msgstr "حرکت به راست"
+
+msgid "Circle Arrow Left"
+msgstr "پیکان چپ دایره‌ای"
+
+msgid "Circle Arrow Right"
+msgstr "پیکان راست دایره‌ای"
+
+msgid "Smartphone"
+msgstr "موبایل"
+
+msgid "Monitor"
+msgstr "نمایشگر"
+
+msgid "Phone Call"
+msgstr "تماس تلفنی"
+
+msgid "Headphones"
+msgstr "پشتیبانی"
+
+msgid "Message Circle"
+msgstr "گفتگو"
+
+msgid "Message Square"
+msgstr "پیام"
+
+msgid "Send"
+msgstr "ارسال"
+
+msgid "Globe"
+msgstr "وب‌سایت"
+
+msgid "Languages"
+msgstr "زبان‌ها"
+
+msgid "Map"
+msgstr "نقشه"
+
+msgid "Calendar Days"
+msgstr "تقویم"
+
+msgid "Calendar"
+msgstr "تاریخ"
+
+msgid "Copy"
+msgstr "کپی"
+
+msgid "Share 2"
+msgstr "اشتراک‌گذاری"
+
+msgid "Info"
+msgstr "اطلاعات"
+
+msgid "Circle Help"
+msgstr "راهنما"
+
+msgid "Circle Alert"
+msgstr "هشدار"
+
+msgid "Circle Check"
+msgstr "تأیید"
+
+msgid "Circle X"
+msgstr "بستن دایره‌ای"
+
+msgid "Ellipsis"
+msgstr "گزینه‌های بیشتر"
+
+msgid "Ellipsis Vertical"
+msgstr "گزینه‌های عمودی"
+
+msgid "Sliders Horizontal"
+msgstr "تنظیم فیلتر"
+
+msgid "List Filter"
+msgstr "فیلتر فهرست"
+
+msgid "List"
+msgstr "فهرست"
+
+msgid "Layout Grid"
+msgstr "نمای شبکه‌ای"
+
+msgid "Images"
+msgstr "تصویرها"
+
+msgid "File Text"
+msgstr "سند"
+
+msgid "Folder"
+msgstr "پوشه"
+
+msgid "Briefcase Business"
+msgstr "کسب‌وکار"
+
+msgid "Building 2"
+msgstr "شرکت"
+
+msgid "Users"
+msgstr "اعضا"
+
+msgid "User Round"
+msgstr "شخص"
+
+msgid "Eye"
+msgstr "مشاهده"
+
+msgid "Maximize"
+msgstr "تمام‌صفحه"
+
+msgid "Minimize"
+msgstr "خروج از تمام‌صفحه"
+
+msgid "Volume 2"
+msgstr "صدا"
+
+msgid "Volume X"
+msgstr "بی‌صدا"
+
+msgid "Rotate Ccw"
+msgstr "بازنشانی"
+
+msgid "Refresh Cw"
+msgstr "تازه‌سازی"
+
+msgid "Directions"
+msgstr "مسیریابی"
+
+msgid "Dark mode"
+msgstr "حالت تیره"
+
+msgid "Dark mode toggle"
+msgstr "تغییر حالت روشن و تیره"
+
+msgid "Color scheme settings"
+msgstr "تنظیمات رنگ‌بندی"
+
+msgid "Color scheme"
+msgstr "حالت رنگ‌بندی"
+
+msgid "Light by default"
+msgstr "روشن پیش‌فرض"
+
+msgid "Dark by default"
+msgstr "تیره پیش‌فرض"
+
+msgid "Follow system preference"
+msgstr "مطابق تنظیم دستگاه"
+
+msgid "Dark background"
+msgstr "پس‌زمینهٔ تیره"
+
+msgid "Dark surface"
+msgstr "سطح کارت در حالت تیره"
+
+msgid "Dark mode text"
+msgstr "متن در حالت تیره"
+
+msgid "Dark mode secondary text"
+msgstr "متن فرعی در حالت تیره"
+
+msgid "Dark mode borders"
+msgstr "حاشیه‌ها در حالت تیره"
+
+msgid "Cursor link hover effect"
+msgstr "افکت نشانگر روی لینک‌ها"
+
+msgid "Color only"
+msgstr "فقط تغییر رنگ"
+
+msgid "Expand ring"
+msgstr "حلقهٔ بزرگ"
+
+msgid "Filled circle"
+msgstr "دایرهٔ پر"
+
+msgid "Magnetic ring"
+msgstr "حلقهٔ مغناطیسی"
+
+msgid "Cursor follow duration (seconds)"
+msgstr "زمان دنبال‌کردن نشانگر (ثانیه)"
+
+msgid "Cursor hover duration (seconds)"
+msgstr "زمان افکت هاور (ثانیه)"
+
+msgid "Cursor hover scale"
+msgstr "مقیاس هاور نشانگر"
+
+msgid "Offset menu"
+msgstr "منوی سه‌خطی نامتقارن"
+
+msgid "Sun"
+msgstr "خورشید"
+
+msgid "Moon"
+msgstr "ماه"
+
+msgid "Light mode icon"
+msgstr "آیکون حالت روشن"
+
+msgid "Dark mode icon"
+msgstr "آیکون حالت تیره"
+
+msgid "Show label"
+msgstr "نمایش عنوان"
+
+msgid "Button size (0: automatic)"
+msgstr "اندازهٔ دکمه (صفر: خودکار)"
+
+msgid "Padding"
+msgstr "فاصلهٔ داخلی"
+
+msgid "Border width"
+msgstr "ضخامت حاشیه"
+
+msgid "Icon transition"
+msgstr "جابه‌جایی آیکون"
+
+msgid "Rotate"
+msgstr "چرخش"
+
+msgid "Animation duration (seconds)"
+msgstr "زمان انیمیشن (ثانیه)"
+
+msgid "Light mode"
+msgstr "حالت روشن"
+
+msgid "Icon and text color"
+msgstr "رنگ آیکون و متن"
+
+msgid "Background"
+msgstr "پس‌زمینه"
+
+msgid "Border color"
+msgstr "رنگ کادر"
+
+msgid "Search %s"
+msgstr "جست‌وجوی %s"
+
+msgid "No results found."
+msgstr "نتیجه‌ای پیدا نشد."
+
+msgid "Remove item"
+msgstr "حذف گزینه"
+
+msgid "Layout border"
+msgstr "کادر طرح"
+
+msgid "Border style"
+msgstr "نوع خط کادر"
+
+msgid "No border"
+msgstr "بدون کادر"
+
+msgid "Dashed"
+msgstr "خط‌چین"
+
+msgid "Dotted"
+msgstr "نقطه‌چین"
+
+msgid "Double"
+msgstr "دوخطی"
+
+msgid "Top border width (px)"
+msgstr "ضخامت کادر بالا (پیکسل)"
+
+msgid "Bottom border width (px)"
+msgstr "ضخامت کادر پایین (پیکسل)"
+
+msgid "Start border width (px)"
+msgstr "ضخامت کادر ابتدای جهت متن (پیکسل)"
+
+msgid "End border width (px)"
+msgstr "ضخامت کادر انتهای جهت متن (پیکسل)"
+
+msgid "Page title"
+msgstr "عنوان صفحه"
+
+msgid "Page title typography"
+msgstr "تایپوگرافی عنوان صفحه"
+
+msgid "Page title display"
+msgstr "نمایش بخش عنوان صفحه"
+
+msgid "Show"
+msgstr "نمایش"
+
+msgid "Hide"
+msgstr "پنهان"
+
+msgid "Customize this title area"
+msgstr "ظاهر اختصاصی این بخش عنوان"
+
+msgid "Title area height (px)"
+msgstr "حداقل ارتفاع بخش عنوان (پیکسل)"
+
+msgid "Show breadcrumbs"
+msgstr "نمایش مسیر راهنما"
+
+msgid "Background overlay"
+msgstr "پوشش روی پس‌زمینه"
+
+msgid "Background type"
+msgstr "نوع پس‌زمینه"
+
+msgid "Gradient"
+msgstr "گرادینت"
+
+msgid "Second color"
+msgstr "رنگ دوم"
+
+msgid "Linear"
+msgstr "خطی"
+
+msgid "Radial"
+msgstr "شعاعی"
+
+msgid "First color position"
+msgstr "موقعیت رنگ اول"
+
+msgid "Second color position"
+msgstr "موقعیت رنگ دوم"
+
+msgid "Background video"
+msgstr "ویدئوی پس‌زمینه"
+
+msgid "Video poster image"
+msgstr "تصویر جایگزین ویدئو"
+
+msgid "Choose media"
+msgstr "انتخاب رسانه"
+
+msgid "Inherit / clear"
+msgstr "ارث‌بری / پاک‌کردن"
+
+msgid "Inherit / default"
+msgstr "ارث‌بری از پیش‌فرض"
+
+msgid "Submenu background"
+msgstr "پس‌زمینهٔ زیرمنو"
+
+msgid "Submenu text color"
+msgstr "رنگ متن زیرمنو"
+
+msgid "Submenu hover color"
+msgstr "رنگ هاور زیرمنو"
+
+msgid "Submenu animation duration (ms)"
+msgstr "مدت انیمیشن زیرمنو (میلی‌ثانیه)"
+
+msgid "Default submenu type. Override individual top-level items in Appearance > Menus."
+msgstr "نوع پیش‌فرض زیرمنو است؛ نوع هر آیتم سطح اول را می‌توانید در نمایش ← فهرست‌ها جداگانه انتخاب کنید."
+
+msgid "Manage menu items"
+msgstr "مدیریت آیتم‌های فهرست"
+
+msgid "Title area shape"
+msgstr "شکل بخش عنوان"
+
+msgid "Straight edge"
+msgstr "لبهٔ ساده"
+
+msgid "Curved edge"
+msgstr "لبهٔ منحنی"

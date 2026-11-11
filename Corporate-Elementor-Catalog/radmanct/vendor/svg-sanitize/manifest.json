@@ -1,0 +1,24 @@
+{
+  "package": "enshrined/svg-sanitize",
+  "version": "1.1.1",
+  "reference": "1976ff93c8d8a234cdd3ff99626bd43ecf11bf49",
+  "source": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/1976ff93c8d8a234cdd3ff99626bd43ecf11bf49",
+  "namespace": "RadmanCT\\Vendor\\SvgSanitize",
+  "archive_sha256": "fac34e4333b2fa5f5a6256249a54ece5833253ea889cfeef115a02a14632a188",
+  "files": {
+    "LICENSE": "c03cea027b4b40e4402fabd08557736727ec3d5bc54ad64ab6472de432198cad",
+    "src/ElementReference/Resolver.php": "ed53ceba504412e6d702ca0a243f0eb9b78189cb41e044d86f89407134facb25",
+    "src/ElementReference/Subject.php": "05f64a721f3f5a1b4e815bb575a9fa23190118837ca7cf2a41aca413c474f373",
+    "src/ElementReference/Usage.php": "f52212341c6b6aef2437f877eccfb1fc3e5f9ae535a0125c2ace7ed52977115b",
+    "src/Exceptions/NestingException.php": "d8a761d4cb7478f114b07537267b9e6df5a7d4f016f045d7b7b2cd9d5a45dc4a",
+    "src/Exceptions/RegexException.php": "d21c770069edae95d110899fc13fae7582be9edab3a0aeb82bcefdc0f20525ea",
+    "src/Helper.php": "57fd2891b30dcafcd5dfe03db8a5c843f796ca2be669fe64c3c532fdfd170ece",
+    "src/Sanitizer.php": "4eb31dcae7baa9ef60f97f8751bb0448cd94aa67653e95050e87b0f8ac013e87",
+    "src/data/AllowedAttributes.php": "adec143a03251e4accc2845822a53cdf396d33ce54eebab0a51cd4cdfe661cea",
+    "src/data/AllowedTags.php": "cfe47796b2e8802cc255b8bd1febb730ccf99b9400477829d648e4d6482407bd",
+    "src/data/AttributeInterface.php": "a85ee06566f0e6bc5ef861ae10fdb1cb9a0220c5545483bd3ea5bcd6e95ebfd0",
+    "src/data/TagInterface.php": "057c1df0ca5b207a36c9c230c82b60396a75702fa2d04de07419caf28085520a",
+    "src/data/XPath.php": "b325ab317dbceb8c3e10d1551c03bf490bffb8acf6c144a5daa9188ee7c03913",
+    "src/svg-scanner.php": "c3f028a3af342841749947da5baf4c88fd10e3b02b7a5b2b92560b9039f178bf"
+  }
+}

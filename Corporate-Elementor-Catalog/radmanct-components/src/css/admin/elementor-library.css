@@ -1,0 +1,6 @@
+@import './library-layout.css';
+
+[data-library-open][hidden] { display:none !important; }
+#rdct-elementor-library .dialog-widget-content { inline-size:min(78rem,calc(100vw - 3rem)); max-inline-size:calc(100vw - 3rem); font-family:var(--e-a-font-family,inherit); }
+#rdct-elementor-library .dialog-message { max-block-size:calc(90dvh - 4rem); overflow:auto; text-align:start; }
+#rdct-elementor-library .rdct-lib { --rdct-lib-ink:var(--e-a-color-txt); --rdct-lib-muted:var(--e-a-color-txt-muted); --rdct-lib-border:var(--e-a-border-color); --rdct-lib-surface:var(--e-a-bg-default); --rdct-lib-soft:var(--e-a-bg-hover); --rdct-lib-accent:var(--e-a-color-primary); }

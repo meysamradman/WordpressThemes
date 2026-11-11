@@ -1,0 +1,22 @@
+{
+  "valid": [
+    "",
+    "data-client=\"factory\" aria-label=\"Phone &amp; contact\"",
+    "role=\"button\" tabindex=\"0\" dir=\"rtl\" lang=\"fa\"",
+    "hidden=\"true\" inert=\"true\" translate=\"no\"",
+    " data-label=\"&quot; onmouseover=&quot;alert(1)\" "
+  ],
+  "invalid": [
+    "onclick=\"alert(1)\"",
+    "data-client=\"safe\" onmouseover=\"alert(1)\"",
+    "data-client=\"safe\"><img src=x onerror=alert(1)>",
+    "data-client=\"<script>bad()</script>\"",
+    "data-client=unquoted",
+    "style=\"background:url(javascript:bad())\"",
+    "id=\"replaces-native-id\"",
+    "class=\"replaces-native-classes\"",
+    "href=\"javascript:bad()\"",
+    "srcdoc=\"bad\"",
+    "aria-label=\"line\u0000break\""
+  ]
+}

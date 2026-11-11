@@ -1,0 +1,1 @@
+.rdct-text[data-highlight=fill] .rdct-text__highlight::before { block-size: var(--rdct-text-highlight-height, 75%); }

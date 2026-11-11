@@ -1,0 +1,1 @@
+.rdl-kit-map h1{font-size:clamp(2.5rem,4vw,4rem);margin-block-end:2rem}.rdl-kit-map ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-block-start:2rem}.rdl-kit-map li{border:1px solid var(--rdc-ln);border-radius:1rem}.rdl-kit-map a{display:block;padding:1.5rem}

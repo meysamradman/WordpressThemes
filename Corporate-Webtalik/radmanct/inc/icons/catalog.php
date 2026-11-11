@@ -1,0 +1,23 @@
+<?php
+defined('ABSPATH')||exit;
+return array(
+ 'plus'=>'<path d="M12 5v14M5 12h14"/>',
+ 'chat'=>'<path d="M4 4h16v12H9l-5 4V4Z"/><path d="M8 8h8M8 12h5"/>',
+ 'arrow-right'=>'<path d="M5 12h14m-6-6 6 6-6 6"/>','arrow-up-right'=>'<path d="M6 18 18 6M6 6h12v12"/>',
+ 'chevron-down'=>'<path d="m6 9 6 6 6-6"/>','search'=>'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
+ 'phone'=>'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.79a2 2 0 0 1-.45 2.11L8.09 9.89a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.33 1.83.56 2.79.69A2 2 0 0 1 22 16.92Z"/>',
+ 'headset'=>'<path d="M3 14v-3a9 9 0 0 1 18 0v8a3 3 0 0 1-3 3h-4"/><path d="M3 14h3v7H5a2 2 0 0 1-2-2v-5Zm18 0h-3v7h1a2 2 0 0 0 2-2v-5Z"/>',
+ 'headphones'=>'<path d="M4 14v-3a8 8 0 0 1 16 0v3M4 12H2v8h4v-8Zm16 0h2v8h-4v-8Z"/>',
+ 'menu'=>'<path d="M8 6h13M2 12h19M8 18h13"/>','x'=>'<path d="m6 6 12 12M6 18 18 6"/>',
+ 'play'=>'<path d="m9 5 11 7-11 7Z"/>','pause'=>'<path d="M8 5v14M16 5v14"/>',
+ 'music'=>'<path d="M9 18V5l11-2v13M9 8l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/>',
+ 'file-text'=>'<path d="M14 2H5v20h14V7Zm0 0v5h5M8 12h8M8 16h8"/>',
+ 'instagram'=>'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".75"/>',
+ 'linkedin'=>'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/>',
+ 'telegram'=>'<path d="m3 11 18-7-4 17-6-5-4 3 1-6 10-6-8 8"/>',
+ 'whatsapp'=>'<path d="M5 19 2 22l1.5-6A9 9 0 1 1 5 19Z"/><path d="m8 7-1 2c1 4 4 7 8 8l2-2-3-2-1 1c-2-1-3-2-4-4l1-1-2-2Z"/>',
+ 'client-code'=>'<path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/>',
+ 'client-network'=>'<rect x="8" y="2" width="8" height="6" rx="1"/><rect x="2" y="16" width="7" height="6" rx="1"/><rect x="15" y="16" width="7" height="6" rx="1"/><path d="M12 8v4M5.5 16v-4h13v4"/>',
+ 'client-security'=>'<path d="M12 3 4 6v5c0 5 4 8 8 10 4-2 8-5 8-10V6l-8-3Z"/>',
+ 'client-responsive'=>'<rect x="2" y="4" width="15" height="12" rx="1.5"/><path d="M6 20h7M9.5 16v4"/><rect x="15" y="10" width="7" height="11" rx="1.2"/>',
+ 'client-performance'=>'<path d="m13 2-9 12h7l-1 8 10-13h-7l0-7Z"/>');

@@ -1,0 +1,6 @@
+.rdct-tst--s10 { text-align:center; }
+.rdct-tst--s10 .rdct-tst__quote-mark { display:grid;place-items:center;inline-size:48px;block-size:48px;margin-inline:auto;border-radius:50%;background:var(--rdct-tst-text-color,#172b3a);color:var(--rdct-tst-quote-color,var(--rdct-tst-background-color,#fff));font-size:3.5rem; }
+.rdct-tst--s10 .rdct-tst__info { flex-direction:column;justify-content:center; }
+.rdct-tst--s10 .rdct-tst__quote { font-size:1.125rem; }
+.rdct-tst--s10 .rdct-tst__avatar { inline-size:65px;block-size:65px; }
+.rdct-tst--s10 .rdct-tst__logo { margin-inline:auto; }

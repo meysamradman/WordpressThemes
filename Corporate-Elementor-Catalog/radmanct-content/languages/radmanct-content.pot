@@ -1,0 +1,260 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct-content 1.1.1\nLanguage: \nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Specification label"
+msgstr ""
+
+msgid "Specification value"
+msgstr ""
+
+msgid "Specification unit"
+msgstr ""
+
+msgid "Displayed price"
+msgstr ""
+
+msgid "No public contact page is available for this language. The contact button will stay hidden until a published page is selected in Core settings."
+msgstr ""
+
+msgid "Choose a contact page in Core settings"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Price not entered"
+msgstr ""
+
+msgid "All: %s"
+msgstr ""
+
+msgid "Product price display"
+msgstr ""
+
+msgid "Contact us"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Enter the price and currency as display text. This does not enable online purchasing."
+msgstr ""
+
+msgid "Uses the contact page selected in Core settings. No form or request submission is created."
+msgstr ""
+
+msgid "The product details editor could not load. Saved values were preserved."
+msgstr ""
+
+msgid "Product contact link"
+msgstr ""
+
+msgid "No contact link"
+msgstr ""
+
+msgid "Used when a product displays Contact us instead of a price. This does not create a form or submit requests."
+msgstr ""
+
+msgid "Choose a published public contact page."
+msgstr ""
+
+msgid "Find a contact page"
+msgstr ""
+
+msgid "Save your changes before running another page search."
+msgstr ""
+
+msgid "Products, categories, brands, features, galleries and technical specifications. No cart or checkout."
+msgstr ""
+
+msgid "Projects, categories and image galleries. Independent of the product catalog."
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Enable this module"
+msgstr ""
+
+msgid "Manage items"
+msgstr ""
+
+msgid "Add item"
+msgstr ""
+
+msgid "View archive"
+msgstr ""
+
+msgid "Enable only the modules used by this project. After saving, each enabled module provides its own management menu and archive."
+msgstr ""
+
+msgid "Find an inquiry destination page"
+msgstr ""
+
+msgid "Search pages"
+msgstr ""
+
+msgid "Untitled page"
+msgstr ""
+
+msgid "Shows up to 20 matching public pages and the saved selection. Use the page search above to find another destination."
+msgstr ""
+
+msgid "No matching public pages. Search again or publish a contact page first."
+msgstr ""
+
+msgid "Add %s"
+msgstr ""
+
+msgid "Add specification"
+msgstr ""
+
+msgid "Brands"
+msgstr ""
+
+msgid "Choose a published public page for inquiries."
+msgstr ""
+
+msgid "Choose images"
+msgstr ""
+
+msgid "Contact page"
+msgstr ""
+
+msgid "Content details were invalid. Previously saved details were preserved."
+msgstr ""
+
+msgid "Content modules"
+msgstr ""
+
+msgid "Disabled modules keep their data and do not register content types or frontend processing."
+msgstr ""
+
+msgid "Edit %s"
+msgstr ""
+
+msgid "Enable JavaScript to edit these details. Existing values will be preserved."
+msgstr ""
+
+msgid "Image gallery"
+msgstr ""
+
+msgid "Invalid settings were ignored."
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Links to your existing contact page with the product ID. This does not create a submission form or send messages."
+msgstr ""
+
+msgid "Move down"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
+msgid "No images selected."
+msgstr ""
+
+msgid "No inquiry link"
+msgstr ""
+
+msgid "Portfolio"
+msgstr ""
+
+msgid "Product"
+msgstr ""
+
+msgid "Product catalog"
+msgstr ""
+
+msgid "Product categories"
+msgstr ""
+
+msgid "Product features"
+msgstr ""
+
+msgid "Product inquiries"
+msgstr ""
+
+msgid "Products"
+msgstr ""
+
+msgid "Project"
+msgstr ""
+
+msgid "Project categories"
+msgstr ""
+
+msgid "Projects"
+msgstr ""
+
+msgid "Radman CT content details"
+msgstr ""
+
+msgid "Reference code"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Technical specifications"
+msgstr ""
+
+msgid "Unit"
+msgstr ""
+
+msgid "Up to 20 images and 40 specifications."
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Up to 20 images."
+msgstr ""
+
+msgid "The specifications editor could not load. Saved values were preserved."
+msgstr ""
+
+msgid "Product category"
+msgstr ""
+
+msgid "Brand"
+msgstr ""
+
+msgid "Product feature"
+msgstr ""
+
+msgid "Project category"
+msgstr ""
+
+msgid "View %s"
+msgstr ""
+
+msgid "Search %s"
+msgstr ""
+
+msgid "New %s"
+msgstr ""
+
+msgid "Update %s"
+msgstr ""
+
+msgid "No items found."
+msgstr ""
+
+msgid "No items found in Trash."
+msgstr ""
+
+msgid "Radman Content"
+msgstr ""
+
+msgid "Product catalog and portfolio modules for Radman CT."
+msgstr ""
+
+msgid "Catalog and portfolio for Radman CT."
+msgstr ""

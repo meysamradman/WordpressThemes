@@ -1,0 +1,7 @@
+@import './image-placeholder.css';
+
+.rdct-post-card, .rdct-cnt-card { display: flex; flex-direction: column; min-inline-size: 0; background: var(--rdct-paper); }
+.rdct-post-card__body, .rdct-cnt-card__body { display: flex; flex-direction: column; flex: 1; gap: .75rem; min-inline-size: 0; }
+.rdct-card-excerpt { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; color: var(--rdct-muted); }
+.rdct-card-excerpt p { margin: 0; }
+.rdct-card-more { align-self: start; margin-block-start: auto; padding-block-start: .5rem; color: var(--rdct-accent); font-weight: 600; text-underline-offset: .25em; }

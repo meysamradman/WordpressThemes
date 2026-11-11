@@ -1,0 +1,1 @@
+<?php defined('ABSPATH')||exit; ?><div class="rdl-kit rdl-kit--hdr rdc-inv"><?php get_template_part('shared/radmanct/template-parts/layout/header'); ?><div class="rdl-kit__demo"><h1>هدر و منوی قالب</h1><p>منوی دسکتاپ، زیرمنو و پنل موبایل را می‌توانید در همین پیش‌نمایش بررسی کنید.</p></div><?php get_template_part('shared/radmanct/template-parts/layout/menu-panel'); ?></div>

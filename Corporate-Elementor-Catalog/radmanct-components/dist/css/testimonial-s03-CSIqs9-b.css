@@ -1,0 +1,4 @@
+.rdct-tst--s03 { box-shadow:0 4px 18px rgb(0 0 0 / 5%); }
+.rdct-tst--s03 .rdct-tst__review { padding-block-end:2rem;border-block-end:1px solid var(--rdct-tst-border-color,var(--rdct-border,#e6ecef)); }
+.rdct-tst--s03 .rdct-tst__quote { font-size:1.3125rem; }
+.rdct-tst--s03 .rdct-tst__avatar { inline-size:60px;block-size:60px; }

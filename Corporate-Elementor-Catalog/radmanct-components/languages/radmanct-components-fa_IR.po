@@ -1,0 +1,3431 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct-components 1.1.1\nLanguage: fa_IR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Play video preview"
+msgstr "پخش پیش‌نمایش ویدئو"
+
+msgid "Pause video preview"
+msgstr "توقف پیش‌نمایش ویدئو"
+
+msgid "Music"
+msgstr "موسیقی"
+
+msgid "Radman Components"
+msgstr "کامپوننت‌های رادمان"
+
+msgid "Radman CT — Atomic"
+msgstr "رادمان — Atomic"
+
+msgid "Radman CT — Classic"
+msgstr "رادمان — Classic"
+
+msgid "Unitless"
+msgstr "بدون واحد"
+
+msgid "Panel transition"
+msgstr "حرکت پنل‌ها"
+
+msgid "Pin only"
+msgstr "فقط چسبان"
+
+msgid "Slide and scale"
+msgstr "حرکت و تغییر مقیاس"
+
+msgid "A filled button with a label and optional icon."
+msgstr "دکمهٔ توپر با متن و آیکون اختیاری."
+
+msgid "A bordered button with a transparent background."
+msgstr "دکمهٔ دورخط با پس‌زمینهٔ شفاف."
+
+msgid "A minimal action without a filled background."
+msgstr "دکمهٔ ساده بدون پس‌زمینهٔ توپر."
+
+msgid "An underlined text link with hover interaction."
+msgstr "لینک متنی زیرخط‌دار با تعامل هاور."
+
+msgid "The label moves horizontally on hover."
+msgstr "متن دکمه هنگام هاور افقی جابه‌جا می‌شود."
+
+msgid "The label moves vertically on hover."
+msgstr "متن دکمه هنگام هاور عمودی جابه‌جا می‌شود."
+
+msgid "An alternate label appears on hover."
+msgstr "هنگام هاور، متن جایگزین نمایش داده می‌شود."
+
+msgid "The label scrolls continuously in a horizontal direction."
+msgstr "متن دکمه به‌صورت پیوسته در جهت افقی حرکت می‌کند."
+
+msgid "The label scrolls continuously in a vertical direction."
+msgstr "متن دکمه به‌صورت پیوسته در جهت عمودی حرکت می‌کند."
+
+msgid "A horizontal liquid transition on hover."
+msgstr "افکت سیال افقی هنگام هاور."
+
+msgid "A vertical liquid transition on hover."
+msgstr "افکت سیال عمودی هنگام هاور."
+
+msgid "A reversed horizontal liquid transition on hover."
+msgstr "افکت سیال افقی در جهت معکوس هنگام هاور."
+
+msgid "A reversed vertical liquid transition on hover."
+msgstr "افکت سیال عمودی در جهت معکوس هنگام هاور."
+
+msgid "Buttons"
+msgstr "دکمه‌ها"
+
+msgid "Image slider"
+msgstr "اسلایدر تصویری"
+
+msgid "Review carousel"
+msgstr "اسلایدر نظرات مشتریان"
+
+msgid "Card carousel"
+msgstr "کاروسل کارت‌ها"
+
+msgid "Logo carousel"
+msgstr "کاروسل لوگوها"
+
+msgid "designs"
+msgstr "طرح"
+
+msgid "component families"
+msgstr "خانوادهٔ کامپوننت"
+
+msgid "Browse real components. Open a design to interact with it."
+msgstr "کامپوننت را انتخاب کنید؛ سپس طرح‌های آن را ببینید."
+
+msgid "Search by component, design or feature…"
+msgstr "جست‌وجوی کامپوننت، طرح یا قابلیت…"
+
+msgid "Component pages"
+msgstr "صفحه‌های کامپوننت‌ها"
+
+msgid "No matching components. Try another word or clear the category."
+msgstr "کامپوننتی پیدا نشد؛ عبارت یا دسته را تغییر دهید."
+
+msgid "Back to components"
+msgstr "بازگشت به کامپوننت‌ها"
+
+msgid "Back to designs"
+msgstr "بازگشت به طرح‌ها"
+
+msgid "Design"
+msgstr "طرح"
+
+msgid "Loading preview…"
+msgstr "در حال بارگذاری پیش‌نمایش…"
+
+msgid "Ready. Hover, click or scroll to explore this design."
+msgstr "آماده است؛ با هاور، کلیک یا اسکرول، طرح را بررسی کنید."
+
+msgid "The preview could not load. Retry or choose another design."
+msgstr "پیش‌نمایش بارگذاری نشد؛ دوباره تلاش کنید یا طرح دیگری انتخاب کنید."
+
+msgid "Reload preview"
+msgstr "بارگذاری دوبارهٔ پیش‌نمایش"
+
+msgid "Links and actions with distinct styles, icons and hover effects."
+msgstr "دکمه و لینک با استایل، آیکون و افکت‌های هاور متنوع."
+
+msgid "A full-width image slider with navigation and motion."
+msgstr "اسلایدر تصویری تمام‌عرض همراه ناوبری و حرکت."
+
+msgid "A responsive image grid with a shared, interactive lightbox."
+msgstr "گالری واکنش‌گرا با لایت‌باکس مشترک و تعاملی."
+
+msgid "Customer review layouts inside the shared carousel."
+msgstr "طرح‌های نظرات مشتریان در کاروسل مشترک."
+
+msgid "Individual review cards with multiple visual styles."
+msgstr "کارت‌های مستقل نظر مشتری با طرح‌های متنوع."
+
+msgid "Responsive images with reveal, tilt and parallax options."
+msgstr "تصویر واکنش‌گرا با افکت آشکارشدن، شیب و پارالاکس."
+
+msgid "Readable text with scroll, hover and rotating-word effects."
+msgstr "متن خوانا با افکت اسکرول، هاور و واژه‌های چرخشی."
+
+msgid "Content cards with responsive carousel navigation."
+msgstr "کارت‌های محتوا با ناوبری واکنش‌گرای کاروسل."
+
+msgid "A compact carousel for brand logos."
+msgstr "کاروسل جمع‌وجور برای لوگوی برندها."
+
+msgid "Overlapping cards controlled by the shared slider."
+msgstr "کارت‌های روی هم با کنترل اسلایدر مشترک."
+
+msgid "A continuous content strip with reduced-motion support."
+msgstr "نوار پیوستهٔ محتوا با پشتیبانی از کاهش حرکت."
+
+msgid "Expandable content with lined and boxed styles."
+msgstr "محتوای بازشونده با طرح خطی و کادری."
+
+msgid "Alternating image and text steps in a responsive timeline."
+msgstr "خط زمانی واکنش‌گرا با تصویر و متن یکی‌درمیان."
+
+msgid "Scroll-driven panels, stacked cards and split sections."
+msgstr "پنل‌های اسکرولی، کارت‌های پشته‌ای و بخش‌های دو ستونه."
+
+msgid "Expandable content panels and image accordions."
+msgstr "پنل‌های محتوایی و آکاردئون تصویری بازشونده."
+
+msgid "An icon, heading and description in selectable layouts."
+msgstr "آیکون، عنوان و توضیح با چیدمان‌های قابل انتخاب."
+
+msgid "Two-sided content cards with directional interaction."
+msgstr "کارت محتوایی دوطرفه با جهت‌های مختلف چرخش."
+
+msgid "A structured, responsive table for general content."
+msgstr "جدول ساختاریافته و واکنش‌گرا برای محتوای عمومی."
+
+msgid "Local SVG icons from the shared Radman catalog."
+msgstr "آیکون‌های SVG محلی از فهرست مشترک رادمان."
+
+msgid "A lightweight interactive particle background."
+msgstr "پس‌زمینهٔ سبک و تعاملی ذرات."
+
+msgid "Image and content cards with distinct layout options."
+msgstr "کارت‌های تصویر و محتوا با چیدمان‌های متفاوت."
+
+msgid "Linked lightbox"
+msgstr "گالری با لایت‌باکس پیوسته"
+
+msgid "Natural image"
+msgstr "تصویر ساده"
+
+msgid "Hover tilt"
+msgstr "شیب تصویر هنگام هاور"
+
+msgid "Inline icon"
+msgstr "آیکون هم‌ردیف محتوا"
+
+msgid "Icon above content"
+msgstr "آیکون بالای محتوا"
+
+msgid "Flip from end"
+msgstr "چرخش از انتها"
+
+msgid "Flip from top"
+msgstr "چرخش از بالا"
+
+msgid "Flip from bottom"
+msgstr "چرخش از پایین"
+
+msgid "Static text"
+msgstr "متن ثابت"
+
+msgid "Hover highlight"
+msgstr "برجسته‌شدن هنگام هاور"
+
+msgid "Scroll fill"
+msgstr "پرشدن متن با اسکرول"
+
+msgid "Accordion"
+msgstr "آکاردئون"
+
+msgid "Accordion style"
+msgstr "استایل آکاردئون"
+
+msgid "Lined"
+msgstr "خطی"
+
+msgid "Boxed"
+msgstr "کادری"
+
+msgid "Allow multiple open items"
+msgstr "بازبودن هم‌زمان چند بخش"
+
+msgid "Initially open item (zero closes all)"
+msgstr "بخش باز در شروع (صفر: همه بسته)"
+
+msgid "Accordion indicator"
+msgstr "نشانگر آکاردئون"
+
+msgid "Plus and minus"
+msgstr "مثبت و منفی"
+
+msgid "Chevron"
+msgstr "فلش زاویه‌دار"
+
+msgid "Timeline"
+msgstr "خط زمانی"
+
+msgid "Column gap"
+msgstr "فاصلهٔ ستون‌ها"
+
+msgid "Image aspect ratio"
+msgstr "نسبت تصویر"
+
+msgid "Original"
+msgstr "اندازهٔ اصلی"
+
+msgid "Timeline style"
+msgstr "استایل خط زمانی"
+
+msgid "Alternating image and text"
+msgstr "تصویر و متن یکی‌درمیان"
+
+msgid "First image position"
+msgstr "سمت تصویر اول"
+
+msgid "Show timeline line"
+msgstr "نمایش خط میانی"
+
+msgid "Date or milestone"
+msgstr "تاریخ یا نام مرحله"
+
+msgid "Machine date (YYYY-MM-DD, optional)"
+msgstr "تاریخ میلادی برای مرورگر (اختیاری، YYYY-MM-DD)"
+
+msgid "Gradient start"
+msgstr "شروع گرادیان"
+
+msgid "Gradient end"
+msgstr "پایان گرادیان"
+
+msgid "Background size"
+msgstr "اندازهٔ پس‌زمینه"
+
+msgid "Auto"
+msgstr "خودکار"
+
+msgid "Background repeat"
+msgstr "تکرار پس‌زمینه"
+
+msgid "Background attachment"
+msgstr "حرکت پس‌زمینه"
+
+msgid "Hover gradient type"
+msgstr "نوع گرادیان هنگام هاور"
+
+msgid "Hover gradient start"
+msgstr "شروع گرادیان هنگام هاور"
+
+msgid "Hover gradient end"
+msgstr "پایان گرادیان هنگام هاور"
+
+msgid "Hover background position"
+msgstr "جای پس‌زمینه هنگام هاور"
+
+msgid "Hover background size"
+msgstr "اندازهٔ پس‌زمینه هنگام هاور"
+
+msgid "Hover background repeat"
+msgstr "تکرار پس‌زمینه هنگام هاور"
+
+msgid "Hover background attachment"
+msgstr "حرکت پس‌زمینه هنگام هاور"
+
+msgid "Hover inset shadow"
+msgstr "سایهٔ داخلی هنگام هاور"
+
+msgid "Sticky icon border color"
+msgstr "رنگ حاشیهٔ آیکون در هدر چسبان"
+
+msgid "Sticky separator color"
+msgstr "رنگ جداکننده در هدر چسبان"
+
+msgid "Sticky ripple color"
+msgstr "رنگ موج در هدر چسبان"
+
+msgid "Sticky hover icon color"
+msgstr "رنگ آیکون هنگام هاور هدر چسبان"
+
+msgid "Sticky hover icon background"
+msgstr "پس‌زمینهٔ آیکون هنگام هاور هدر چسبان"
+
+msgid "Sticky hover icon border color"
+msgstr "حاشیهٔ آیکون هنگام هاور هدر چسبان"
+
+msgid "Sticky hover separator color"
+msgstr "جداکننده هنگام هاور هدر چسبان"
+
+msgid "Sticky hover ripple color"
+msgstr "رنگ موج هنگام هاور هدر چسبان"
+
+msgid "Link action"
+msgstr "عملکرد دکمه"
+
+msgid "Simple link"
+msgstr "پیوند معمولی"
+
+msgid "Modal window"
+msgstr "پنجرهٔ محتوا"
+
+msgid "Scroll to target"
+msgstr "اسکرول به عنصر"
+
+msgid "Scroll to next section"
+msgstr "اسکرول به بخش بعد"
+
+msgid "Target element ID"
+msgstr "شناسهٔ عنصر مقصد"
+
+msgid "Lightbox caption"
+msgstr "زیرنویس لایت‌باکس"
+
+msgid "Scroll duration (seconds)"
+msgstr "مدت اسکرول (ثانیه)"
+
+msgid "Button size"
+msgstr "اندازهٔ دکمه"
+
+msgid "Extra Small"
+msgstr "بسیار کوچک"
+
+msgid "Small"
+msgstr "کوچک"
+
+msgid "Extra Large"
+msgstr "بسیار بزرگ"
+
+msgid "Custom width (zero is automatic)"
+msgstr "عرض دلخواه (صفر: خودکار)"
+
+msgid "Button rotation"
+msgstr "چرخش دکمه"
+
+msgid "Icon rotation"
+msgstr "چرخش آیکون"
+
+msgid "Icon container preset"
+msgstr "اندازهٔ کادر آیکون"
+
+msgid "Icon container size (zero is automatic)"
+msgstr "اندازهٔ دلخواه کادر آیکون (صفر: خودکار)"
+
+msgid "Magnetic icon"
+msgstr "آیکون مغناطیسی"
+
+msgid "Icon border width"
+msgstr "ضخامت حاشیهٔ آیکون"
+
+msgid "Icon border color"
+msgstr "رنگ حاشیهٔ آیکون"
+
+msgid "Separator color"
+msgstr "رنگ جداکننده"
+
+msgid "Ripple color"
+msgstr "رنگ موج"
+
+msgid "Shadow horizontal offset"
+msgstr "جابه‌جایی افقی سایه"
+
+msgid "Shadow vertical offset"
+msgstr "جابه‌جایی عمودی سایه"
+
+msgid "Hover background type"
+msgstr "نوع پس‌زمینه هنگام هاور"
+
+msgid "Hover gradient second color"
+msgstr "رنگ دوم گرادیان هنگام هاور"
+
+msgid "Hover gradient angle"
+msgstr "زاویهٔ گرادیان هنگام هاور"
+
+msgid "Hover background image"
+msgstr "تصویر پس‌زمینه هنگام هاور"
+
+msgid "Hover icon border color"
+msgstr "رنگ حاشیهٔ آیکون هنگام هاور"
+
+msgid "Hover separator color"
+msgstr "رنگ جداکننده هنگام هاور"
+
+msgid "Hover ripple color"
+msgstr "رنگ موج هنگام هاور"
+
+msgid "Hover shadow color"
+msgstr "رنگ سایه هنگام هاور"
+
+msgid "Hover shadow horizontal offset"
+msgstr "جابه‌جایی افقی سایه هنگام هاور"
+
+msgid "Hover shadow vertical offset"
+msgstr "جابه‌جایی عمودی سایه هنگام هاور"
+
+msgid "Hover shadow blur"
+msgstr "محو سایه هنگام هاور"
+
+msgid "Hover shadow spread"
+msgstr "گسترش سایه هنگام هاور"
+
+msgid "Sticky header colors"
+msgstr "رنگ‌های هدر چسبان"
+
+msgid "Sticky text color"
+msgstr "رنگ متن هدر چسبان"
+
+msgid "Sticky background color"
+msgstr "رنگ پس‌زمینهٔ هدر چسبان"
+
+msgid "Sticky border color"
+msgstr "رنگ حاشیهٔ هدر چسبان"
+
+msgid "Sticky hover text color"
+msgstr "رنگ متن هنگام هاور هدر چسبان"
+
+msgid "Sticky hover background"
+msgstr "پس‌زمینه هنگام هاور هدر چسبان"
+
+msgid "Sticky hover border color"
+msgstr "رنگ حاشیه هنگام هاور هدر چسبان"
+
+msgid "Sticky icon color"
+msgstr "رنگ آیکون هدر چسبان"
+
+msgid "Sticky icon background"
+msgstr "پس‌زمینهٔ آیکون هدر چسبان"
+
+msgid "Semi rounded"
+msgstr "گوشهٔ کمی گرد"
+
+msgid "Pill"
+msgstr "کپسولی"
+
+msgid "Button"
+msgstr "دکمه"
+
+msgid "Change text"
+msgstr "تغییر متن"
+
+msgid "Colors"
+msgstr "رنگ‌ها"
+
+msgid "Colors (Hover)"
+msgstr "رنگ‌ها هنگام هاور"
+
+msgid "Colors (Normal)"
+msgstr "رنگ‌ها در حالت عادی"
+
+msgid "Disabled"
+msgstr "غیرفعال"
+
+msgid "Element"
+msgstr "نوع عنصر"
+
+msgid "Fit content"
+msgstr "متناسب با محتوا"
+
+msgid "Full width"
+msgstr "تمام‌عرض"
+
+msgid "Horizontal padding"
+msgstr "فاصلهٔ داخلی افقی"
+
+msgid "Hover background color"
+msgstr "رنگ زمینه هنگام هاور"
+
+msgid "Hover border color"
+msgstr "رنگ حاشیه هنگام هاور"
+
+msgid "Hover duration (seconds)"
+msgstr "مدت حرکت هاور (ثانیه)"
+
+msgid "Hover effects"
+msgstr "افکت‌های هاور"
+
+msgid "Hover text"
+msgstr "متن هنگام هاور"
+
+msgid "Hover text color"
+msgstr "رنگ متن هنگام هاور"
+
+msgid "Icon appearance"
+msgstr "ظاهر آیکون"
+
+msgid "Icon gap"
+msgstr "فاصلهٔ آیکون و متن"
+
+msgid "Icon hover effect"
+msgstr "افکت هاور آیکون"
+
+msgid "Icon ripple"
+msgstr "موج دور آیکون"
+
+msgid "Icon separator"
+msgstr "جداکنندهٔ آیکون"
+
+msgid "Learn more"
+msgstr "بیشتر بدانید"
+
+msgid "Liquid horizontally"
+msgstr "حرکت سیال افقی"
+
+msgid "Liquid horizontally reversed"
+msgstr "حرکت سیال افقی معکوس"
+
+msgid "Liquid vertically"
+msgstr "حرکت سیال عمودی"
+
+msgid "Liquid vertically reversed"
+msgstr "حرکت سیال عمودی معکوس"
+
+msgid "Magnetic hover"
+msgstr "هاور مغناطیسی"
+
+msgid "Marquee horizontally"
+msgstr "متن روان افقی"
+
+msgid "Marquee vertically"
+msgstr "متن روان عمودی"
+
+msgid "Outline"
+msgstr "دورخط"
+
+msgid "Plain"
+msgstr "ساده"
+
+msgid "Reveal"
+msgstr "آشکارسازی"
+
+msgid "Rounded"
+msgstr "گوشه‌گرد"
+
+msgid "Swap"
+msgstr "جابه‌جایی"
+
+msgid "Switch horizontally"
+msgstr "جابه‌جایی افقی متن"
+
+msgid "Switch vertically"
+msgstr "جابه‌جایی عمودی متن"
+
+msgid "Text hover effect"
+msgstr "افکت هاور متن"
+
+msgid "Vertical padding"
+msgstr "فاصلهٔ داخلی عمودی"
+
+msgid "The icon library could not load. Try again."
+msgstr "کتابخانهٔ آیکون بارگذاری نشد. دوباره تلاش کنید."
+
+msgid "Use -1 to inherit; zero removes the border."
+msgstr "برای ارث‌بری ۱- وارد کنید؛ صفر حاشیه را حذف می‌کند."
+
+msgid "Carousel ID"
+msgstr "شناسهٔ کاروسل"
+
+msgid "Controlled carousel IDs"
+msgstr "شناسهٔ کاروسل‌های مقصد"
+
+msgid "External buttons"
+msgstr "دکمه‌های بیرونی"
+
+msgid "Card Carousel"
+msgstr "کاروسل کارت‌ها"
+
+msgid "Logo Carousel"
+msgstr "لوگوها"
+
+msgid "Hero Slider"
+msgstr "اسلایدر بزرگ"
+
+msgid "Stacked Cards"
+msgstr "کارت‌های لایه‌ای"
+
+msgid "Testimonials"
+msgstr "نظرات مشتریان"
+
+msgid "Card"
+msgstr "کارت"
+
+msgid "Speech bubble"
+msgstr "حباب گفتگو"
+
+msgid "Centered"
+msgstr "مرکزی"
+
+msgid "Side by side"
+msgstr "کنار هم"
+
+msgid "Outlined"
+msgstr "خطی"
+
+msgid "Testimonial style"
+msgstr "سبک نظر مشتری"
+
+msgid "Name color"
+msgstr "رنگ نام"
+
+msgid "Rating color"
+msgstr "رنگ امتیاز"
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Position or company"
+msgstr "سمت یا شرکت"
+
+msgid "Review text"
+msgstr "متن نظر"
+
+msgid "Avatar"
+msgstr "تصویر شخص"
+
+msgid "Client logo"
+msgstr "لوگوی مشتری"
+
+msgid "Rating"
+msgstr "امتیاز"
+
+msgid "Review date"
+msgstr "تاریخ نظر"
+
+msgid "Review source"
+msgstr "منبع نظر"
+
+msgid "Source link"
+msgstr "پیوند منبع"
+
+msgid "Rated %d out of 5"
+msgstr "امتیاز %d از ۵"
+
+msgid "Testimonial appearance"
+msgstr "ظاهر نظرات مشتریان"
+
+msgid "Customer review"
+msgstr "نظر مشتری"
+
+msgid "Slider"
+msgstr "اسلایدر"
+
+msgid "Previous button CSS class"
+msgstr "کلاس CSS دکمهٔ قبلی"
+
+msgid "Next button CSS class"
+msgstr "کلاس CSS دکمهٔ بعدی"
+
+msgid "Enter one unique CSS class without a dot. Add it to a button or its widget wrapper on this page."
+msgstr "یک کلاس CSS یکتا بدون نقطه وارد کنید و آن را به دکمه یا ویجت دکمه در همین صفحه بدهید."
+
+msgid "Synchronization"
+msgstr "همگام‌سازی"
+
+msgid "Synchronization method"
+msgstr "روش همگام‌سازی"
+
+msgid "Unit"
+msgstr "واحد"
+
+msgid "Highlight width"
+msgstr "عرض هایلایت"
+
+msgid "Highlight height"
+msgstr "ارتفاع هایلایت"
+
+msgid "Highlight bottom offset"
+msgstr "فاصلهٔ هایلایت از پایین"
+
+msgid "Highlight reading-start offset"
+msgstr "فاصلهٔ هایلایت از ابتدای متن"
+
+msgid "Highlight corner radius"
+msgstr "گردی گوشهٔ هایلایت"
+
+msgid "Slide index"
+msgstr "شمارهٔ اسلاید"
+
+msgid "Continuous progress"
+msgstr "پیشرفت پیوسته"
+
+msgid "Use a unique name starting with a letter, without #."
+msgstr "نامی یکتا با حرف انگلیسی آغاز کنید؛ بدون #."
+
+msgid "Add up to 16 carousel IDs, separated by commas. Use autoplay on the controlling carousel only."
+msgstr "حداکثر ۱۶ شناسهٔ کاروسل را با ویرگول جدا کنید. پخش خودکار را فقط روی کاروسل کنترل‌کننده فعال کنید."
+
+msgid "Radial gradient position"
+msgstr "مرکز گرادیان شعاعی"
+
+msgid "Start color position (%)"
+msgstr "موقعیت رنگ آغاز (%)"
+
+msgid "End color position (%)"
+msgstr "موقعیت رنگ پایان (%)"
+
+msgid "Center left"
+msgstr "وسط چپ"
+
+msgid "Center right"
+msgstr "وسط راست"
+
+msgid "Top center"
+msgstr "بالا وسط"
+
+msgid "Bottom center"
+msgstr "پایین وسط"
+
+msgid "Image top start corner"
+msgstr "گوشهٔ بالای ابتدا تصویر"
+
+msgid "Image top end corner"
+msgstr "گوشهٔ بالای انتها تصویر"
+
+msgid "Image bottom start corner"
+msgstr "گوشهٔ پایین ابتدا تصویر"
+
+msgid "Image bottom end corner"
+msgstr "گوشهٔ پایین انتها تصویر"
+
+msgid "%s (tablet)"
+msgstr "%s (تبلت)"
+
+msgid "%s (mobile)"
+msgstr "%s (موبایل)"
+
+msgid "Loading library..."
+msgstr "در حال بارگذاری کتابخانه…"
+
+msgid "Image loading"
+msgstr "بارگذاری تصویر"
+
+msgid "Automatic (WordPress)"
+msgstr "خودکار (وردپرس)"
+
+msgid "Main image above the fold"
+msgstr "تصویر اصلی ابتدای صفحه"
+
+msgid "Lazy loading"
+msgstr "بارگذاری تنبل"
+
+msgid "Use high priority only for the main image visible when the page opens."
+msgstr "اولویت بالا را فقط برای تصویر اصلیِ نمایان در ابتدای صفحه انتخاب کنید."
+
+msgid "Stacked cards"
+msgstr "کارت‌های لایه‌ای"
+
+msgid "Arrow color"
+msgstr "رنگ فلش"
+
+msgid "Arrow hover color"
+msgstr "رنگ فلش در هاور"
+
+msgid "Particles"
+msgstr "ذرات"
+
+msgid "Particles options"
+msgstr "گزینه‌های ذرات"
+
+msgid "Particle ID prefix"
+msgstr "پیشوند شناسهٔ ذرات"
+
+msgid "Use as background"
+msgstr "استفاده به‌عنوان پس‌زمینه"
+
+msgid "Visible on parent hover"
+msgstr "نمایش هنگام هاور والد"
+
+msgid "Tablet height"
+msgstr "ارتفاع تبلت"
+
+msgid "Mobile height"
+msgstr "ارتفاع موبایل"
+
+msgid "Number"
+msgstr "تعداد"
+
+msgid "Enable density"
+msgstr "فعال‌کردن تراکم"
+
+msgid "Density area"
+msgstr "مساحت تراکم"
+
+msgid "Color"
+msgstr "رنگ"
+
+msgid "Color variations"
+msgstr "تنوع رنگ"
+
+msgid "Single color"
+msgstr "تک‌رنگ"
+
+msgid "Multiple colors"
+msgstr "چندرنگ"
+
+msgid "Random color"
+msgstr "رنگ تصادفی"
+
+msgid "Stroke color"
+msgstr "رنگ خط دور"
+
+msgid "Polygon sides"
+msgstr "تعداد ضلع‌های چندضلعی"
+
+msgid "Image height"
+msgstr "ارتفاع تصویر"
+
+msgid "Random opacity"
+msgstr "شفافیت تصادفی"
+
+msgid "Animate opacity"
+msgstr "انیمیشن شفافیت"
+
+msgid "Opacity animation speed"
+msgstr "سرعت انیمیشن شفافیت"
+
+msgid "Minimum opacity"
+msgstr "حداقل شفافیت"
+
+msgid "Synchronize opacity animation"
+msgstr "همگام‌سازی انیمیشن شفافیت"
+
+msgid "Size"
+msgstr "اندازه"
+
+msgid "Random size"
+msgstr "اندازهٔ تصادفی"
+
+msgid "Animate size"
+msgstr "انیمیشن اندازه"
+
+msgid "Size animation speed"
+msgstr "سرعت انیمیشن اندازه"
+
+msgid "Minimum size"
+msgstr "حداقل اندازه"
+
+msgid "Synchronize size animation"
+msgstr "همگام‌سازی انیمیشن اندازه"
+
+msgid "Linked lines"
+msgstr "خطوط اتصال"
+
+msgid "Line distance"
+msgstr "فاصلهٔ خطوط"
+
+msgid "Line color"
+msgstr "رنگ خطوط"
+
+msgid "Line opacity"
+msgstr "شفافیت خطوط"
+
+msgid "Line width"
+msgstr "ضخامت خطوط"
+
+msgid "Move particles"
+msgstr "حرکت ذرات"
+
+msgid "Move speed"
+msgstr "سرعت حرکت"
+
+msgid "Move direction"
+msgstr "جهت حرکت"
+
+msgid "Random movement"
+msgstr "حرکت تصادفی"
+
+msgid "Straight movement"
+msgstr "حرکت مستقیم"
+
+msgid "Out mode"
+msgstr "رفتار خروج"
+
+msgid "Out"
+msgstr "خروج"
+
+msgid "Bounce"
+msgstr "بازگشت"
+
+msgid "Particle collisions"
+msgstr "برخورد ذرات"
+
+msgid "Attraction"
+msgstr "جاذبه"
+
+msgid "Attract rotate X"
+msgstr "چرخش جاذبه در محور X"
+
+msgid "Attract rotate Y"
+msgstr "چرخش جاذبه در محور Y"
+
+msgid "Interactivity"
+msgstr "تعامل"
+
+msgid "Detect on"
+msgstr "محدودهٔ تشخیص"
+
+msgid "Canvas area"
+msgstr "محدودهٔ بوم"
+
+msgid "Window"
+msgstr "پنجره"
+
+msgid "Hover interaction"
+msgstr "تعامل هاور"
+
+msgid "Hover mode"
+msgstr "حالت هاور"
+
+msgid "Grab"
+msgstr "اتصال به نشانگر"
+
+msgid "Bubble"
+msgstr "حباب"
+
+msgid "Repulse"
+msgstr "دفع"
+
+msgid "Click interaction"
+msgstr "تعامل کلیک"
+
+msgid "Click mode"
+msgstr "حالت کلیک"
+
+msgid "Push"
+msgstr "افزودن"
+
+msgid "Resize with container"
+msgstr "تغییر اندازه با ظرف"
+
+msgid "Grab distance"
+msgstr "فاصلهٔ اتصال نشانگر"
+
+msgid "Grab line opacity"
+msgstr "شفافیت خط اتصال نشانگر"
+
+msgid "Bubble distance"
+msgstr "فاصلهٔ حباب"
+
+msgid "Bubble size"
+msgstr "اندازهٔ حباب"
+
+msgid "Bubble duration"
+msgstr "مدت حباب"
+
+msgid "Repulse distance"
+msgstr "فاصلهٔ دفع"
+
+msgid "Repulse duration"
+msgstr "مدت دفع"
+
+msgid "Push count"
+msgstr "تعداد افزودن"
+
+msgid "Remove count"
+msgstr "تعداد حذف"
+
+msgid "Retina"
+msgstr "رتینا"
+
+msgid "Retina detection"
+msgstr "تشخیص رتینا"
+
+msgid "Polygon"
+msgstr "چندضلعی"
+
+msgid "Star"
+msgstr "ستاره"
+
+msgid "Triangle"
+msgstr "مثلث"
+
+msgid "Top right"
+msgstr "بالا راست"
+
+msgid "Top left"
+msgstr "بالا چپ"
+
+msgid "Bottom right"
+msgstr "پایین راست"
+
+msgid "Bottom left"
+msgstr "پایین چپ"
+
+msgid "Shapes"
+msgstr "شکل‌ها"
+
+msgid "Linked particles"
+msgstr "ذرات متصل"
+
+msgid "Effects"
+msgstr "جلوه‌ها"
+
+msgid "Image gallery"
+msgstr "گالری تصاویر"
+
+msgid "Add images"
+msgstr "افزودن تصاویر"
+
+msgid "Slide source"
+msgstr "منبع اسلایدها"
+
+msgid "Custom slides"
+msgstr "اسلایدهای سفارشی"
+
+msgid "Up to 50 images are displayed in selection order."
+msgstr "حداکثر ۵۰ تصویر به ترتیب انتخاب نمایش داده می‌شود."
+
+msgid "Words"
+msgstr "کلمه‌ها"
+
+msgid "Lines"
+msgstr "خط‌ها"
+
+msgid "Reveal units"
+msgstr "واحد آشکارشدن"
+
+msgid "Mask revealed lines"
+msgstr "ماسک خط‌های آشکارشونده"
+
+msgid "Reveal stagger"
+msgstr "فاصلهٔ آشکارشدن واحدها"
+
+msgid "Choose an icon from Radman CT. Project icons are registered in the shared local catalog."
+msgstr "آیکون را از مجموعهٔ رادمان انتخاب کنید. آیکون‌های اختصاصی پروژه در فهرست محلی مشترک ثبت می‌شوند."
+
+msgid "Line height"
+msgstr "ارتفاع خط"
+
+msgid "Line height (tablet)"
+msgstr "ارتفاع خط (تبلت)"
+
+msgid "Line height (mobile)"
+msgstr "ارتفاع خط (موبایل)"
+
+msgid "Letter spacing"
+msgstr "فاصلهٔ حروف"
+
+msgid "Letter spacing (tablet)"
+msgstr "فاصلهٔ حروف (تبلت)"
+
+msgid "Letter spacing (mobile)"
+msgstr "فاصلهٔ حروف (موبایل)"
+
+msgid "Fill image resolution"
+msgstr "اندازهٔ فایل تصویر داخل حروف"
+
+msgid "Full size"
+msgstr "اندازهٔ کامل"
+
+msgid "Font style"
+msgstr "حالت قلم"
+
+msgid "Italic"
+msgstr "ایتالیک"
+
+msgid "Oblique"
+msgstr "مایل"
+
+msgid "Text transform"
+msgstr "حالت حروف متن"
+
+msgid "Uppercase"
+msgstr "حروف بزرگ"
+
+msgid "Lowercase"
+msgstr "حروف کوچک"
+
+msgid "Capitalize"
+msgstr "حرف بزرگ ابتدای واژه‌ها"
+
+msgid "Text decoration"
+msgstr "خط تزئینی متن"
+
+msgid "Overline"
+msgstr "خط بالای متن"
+
+msgid "Line through"
+msgstr "خط روی متن"
+
+msgid "Choose icon"
+msgstr "انتخاب آیکون"
+
+msgid "Close icon picker"
+msgstr "بستن انتخابگر آیکون"
+
+msgid "No matching icons."
+msgstr "آیکونی پیدا نشد."
+
+msgid "Show more icons"
+msgstr "نمایش آیکون‌های بیشتر"
+
+msgid "Unavailable icon"
+msgstr "آیکون در دسترس نیست"
+
+msgid "Image width"
+msgstr "عرض تصویر"
+
+msgid "Image width (tablet)"
+msgstr "عرض تصویر (تبلت)"
+
+msgid "Image width (mobile)"
+msgstr "عرض تصویر (موبایل)"
+
+msgid "Image corner radius"
+msgstr "گردی گوشه‌های تصویر"
+
+msgid "Image corner radius (tablet)"
+msgstr "گردی گوشهٔ تصویر (تبلت)"
+
+msgid "Image corner radius (mobile)"
+msgstr "گردی گوشهٔ تصویر (موبایل)"
+
+msgid "Text shadow"
+msgstr "سایهٔ متن"
+
+msgid "Horizontal shadow (px)"
+msgstr "جابه‌جایی افقی سایه (px)"
+
+msgid "Vertical shadow (px)"
+msgstr "جابه‌جایی عمودی سایه (px)"
+
+msgid "Shadow blur (px)"
+msgstr "محوشدگی سایه (px)"
+
+msgid "Image top border (px)"
+msgstr "حاشیهٔ بالای تصویر (px)"
+
+msgid "Image bottom border (px)"
+msgstr "حاشیهٔ پایین تصویر (px)"
+
+msgid "Image start border (px)"
+msgstr "حاشیهٔ آغاز تصویر (px)"
+
+msgid "Image end border (px)"
+msgstr "حاشیهٔ پایان تصویر (px)"
+
+msgid "Use -1 to inherit the shared image border width."
+msgstr "برای ارث‌بری از ضخامت مشترک حاشیهٔ تصویر، مقدار ۱- را وارد کنید."
+
+msgid "Table"
+msgstr "جدول"
+
+msgid "Content Box"
+msgstr "باکس محتوا"
+
+msgid "Icon Box"
+msgstr "باکس آیکون"
+
+msgid "Flip Box"
+msgstr "کارت پشت‌ورو"
+
+msgid "Expandable Panels"
+msgstr "پنل بازشونده"
+
+msgid "Sticky Sections"
+msgstr "سکشن چسبان"
+
+msgid "Variable item widths"
+msgstr "عرض متغیر آیتم‌ها"
+
+msgid "Item width (px, 0 = content)"
+msgstr "عرض آیتم (پیکسل، صفر: اندازهٔ محتوا)"
+
+msgid "Tablet item width (px, -1 = inherit)"
+msgstr "عرض آیتم تبلت (پیکسل، ۱-: ارث‌بری)"
+
+msgid "Mobile item width (px, -1 = inherit)"
+msgstr "عرض آیتم موبایل (پیکسل، ۱-: ارث‌بری)"
+
+msgid "Arrow appearance"
+msgstr "ظاهر فلش‌ها"
+
+msgid "Arrow button size (px)"
+msgstr "اندازهٔ دکمهٔ فلش (پیکسل)"
+
+msgid "Arrow icon size (px)"
+msgstr "اندازهٔ آیکون فلش (پیکسل)"
+
+msgid "Arrow gap (px)"
+msgstr "فاصلهٔ فلش‌ها (پیکسل)"
+
+msgid "Image fill"
+msgstr "پرکردن با تصویر"
+
+msgid "Text fill image"
+msgstr "تصویر داخل متن"
+
+msgid "Fill image size"
+msgstr "اندازهٔ تصویر داخل متن"
+
+msgid "Fill image position"
+msgstr "موقعیت تصویر داخل متن"
+
+msgid "Repeat fill image"
+msgstr "تکرار تصویر داخل متن"
+
+msgid "Repeat"
+msgstr "تکرار"
+
+msgid "Original size"
+msgstr "اندازهٔ اصلی"
+
+msgid "No repeat"
+msgstr "بدون تکرار"
+
+msgid "Repeat horizontally"
+msgstr "تکرار افقی"
+
+msgid "Repeat vertically"
+msgstr "تکرار عمودی"
+
+msgid "Icon side"
+msgstr "سمت آیکون"
+
+msgid "Vertical alignment"
+msgstr "تراز عمودی"
+
+msgid "Text color type"
+msgstr "نوع رنگ متن"
+
+msgid "Gradient start color"
+msgstr "رنگ آغاز گرادیان"
+
+msgid "Gradient end color"
+msgstr "رنگ پایان گرادیان"
+
+msgid "Image border width (px)"
+msgstr "ضخامت حاشیهٔ تصویر (پیکسل)"
+
+msgid "Image border color"
+msgstr "رنگ حاشیهٔ تصویر"
+
+msgid "Slide transition"
+msgstr "گذار اسلاید"
+
+msgid "Crossfade"
+msgstr "محو هم‌زمان"
+
+msgid "Text and inline images"
+msgstr "متن و تصویر میان‌خطی"
+
+msgid "Text segments"
+msgstr "قطعه‌های متن"
+
+msgid "Text segment"
+msgstr "قطعهٔ متن"
+
+msgid "Inline image"
+msgstr "تصویر میان‌خطی"
+
+msgid "Image placement"
+msgstr "جای تصویر"
+
+msgid "Inline image width"
+msgstr "عرض تصویر میان‌خطی"
+
+msgid "Inline image radius"
+msgstr "گردی تصویر میان‌خطی"
+
+msgid "Before text"
+msgstr "پیش از متن"
+
+msgid "After text"
+msgstr "پس از متن"
+
+msgid "Baseline"
+msgstr "خط پایه"
+
+msgid "Middle"
+msgstr "میانه"
+
+msgid "Text top"
+msgstr "بالای متن"
+
+msgid "Text bottom"
+msgstr "پایین متن"
+
+msgid "Relative text size (%)"
+msgstr "اندازهٔ نسبی متن (٪)"
+
+msgid "Font weight"
+msgstr "وزن قلم"
+
+msgid "Image overlay — 1"
+msgstr "متن روی تصویر — ۱"
+
+msgid "Image overlay — 1A"
+msgstr "متن روی تصویر — ۱A"
+
+msgid "Image overlay with label — 1B"
+msgstr "متن و برچسب روی تصویر — ۱B"
+
+msgid "Image with caption bar — 2"
+msgstr "تصویر با نوار عنوان — ۲"
+
+msgid "Image with dark content — 3"
+msgstr "تصویر با محتوای تیره — ۳"
+
+msgid "Centered card with divider — 4"
+msgstr "کارت وسط‌چین با خط جداکننده — ۴"
+
+msgid "Side image card — 5"
+msgstr "کارت با تصویر کناری — ۵"
+
+msgid "Image with tilt effect — 6"
+msgstr "تصویر با افکت شیب — ۶"
+
+msgid "Raised image card — 7"
+msgstr "کارت تصویری برجسته — ۷"
+
+msgid "Overlapping content card — 8"
+msgstr "کارت با محتوای هم‌پوشان — ۸"
+
+msgid "Centered image card — 9"
+msgstr "کارت تصویری وسط‌چین — ۹"
+
+msgid "Text with arrow — 10"
+msgstr "متن با پیکان — ۱۰"
+
+msgid "Circular image card — 11"
+msgstr "کارت با تصویر دایره‌ای — ۱۱"
+
+msgid "Radman CT Expandable Panels"
+msgstr "پنل‌های بازشوندهٔ رادمان (Expandable Panels)"
+
+msgid "Radman CT Content Box"
+msgstr "کادر محتوای رادمان (Content Box)"
+
+msgid "Radman CT Flip Box"
+msgstr "کارت پشت‌ورو رادمان (Flip Box)"
+
+msgid "Radman CT Icon Box"
+msgstr "کادر آیکون رادمان (Icon Box)"
+
+msgid "Radman CT Image"
+msgstr "تصویر رادمان (Image)"
+
+msgid "Radman CT Table"
+msgstr "جدول رادمان (Table)"
+
+msgid "Radman CT Icon"
+msgstr "آیکون رادمان (Icon)"
+
+msgid "Radman CT Text Reveal"
+msgstr "آشکارسازی متن رادمان (Text Reveal)"
+
+msgid "Radman CT Sticky Sections"
+msgstr "بخش‌های چسبان رادمان (Sticky Sections)"
+
+msgid "Device"
+msgstr "دستگاه"
+
+msgid "Reset to inherited value"
+msgstr "بازنشانی به مقدار ارث‌بری‌شده"
+
+msgid "Search icons"
+msgstr "جست‌وجوی آیکون‌ها"
+
+msgid "Icon style"
+msgstr "استایل آیکون"
+
+msgid "Hover"
+msgstr "هاور"
+
+msgid "Title and description"
+msgstr "عنوان و توضیحات"
+
+msgid "Icon style (Normal)"
+msgstr "استایل آیکون — عادی"
+
+msgid "Icon style (Hover)"
+msgstr "استایل آیکون — هاور"
+
+msgid "Alignment and spacing"
+msgstr "تراز و فاصله‌ها"
+
+msgid "Description size"
+msgstr "اندازهٔ توضیحات"
+
+msgid "Appearance"
+msgstr "ظاهر"
+
+msgid "Left top"
+msgstr "بالا چپ"
+
+msgid "Center top"
+msgstr "بالا وسط"
+
+msgid "Right top"
+msgstr "بالا راست"
+
+msgid "Left center"
+msgstr "وسط چپ"
+
+msgid "Right center"
+msgstr "وسط راست"
+
+msgid "Left bottom"
+msgstr "پایین چپ"
+
+msgid "Center bottom"
+msgstr "پایین وسط"
+
+msgid "Right bottom"
+msgstr "پایین راست"
+
+msgid "Background position"
+msgstr "جایگاه پس‌زمینه"
+
+msgid "Float start unit"
+msgstr "واحد شروع شناوری"
+
+msgid "Float end unit"
+msgstr "واحد پایان شناوری"
+
+msgid "Image repeat"
+msgstr "تکرار تصویر"
+
+msgid "Inset shadow"
+msgstr "سایهٔ داخلی"
+
+msgid "Label font family"
+msgstr "خانوادهٔ فونت برچسب"
+
+msgid "Overlay image size"
+msgstr "اندازهٔ تصویر رویی"
+
+msgid "Add side label"
+msgstr "افزودن برچسب کناری"
+
+msgid "Animate shadow"
+msgstr "حرکت سایه"
+
+msgid "Background type"
+msgstr "نوع پس‌زمینه"
+
+msgid "Blur"
+msgstr "تاری"
+
+msgid "Bottom - Top"
+msgstr "پایین به بالا"
+
+msgid "Brightness"
+msgstr "روشنایی"
+
+msgid "Choose an image"
+msgstr "تصویر انتخاب کنید"
+
+msgid "Contain"
+msgstr "نمایش کامل"
+
+msgid "Contrast"
+msgstr "کنتراست"
+
+msgid "Cover"
+msgstr "پوشاندن"
+
+msgid "Custom"
+msgstr "سفارشی"
+
+msgid "Custom float easing"
+msgstr "منحنی شناوری سفارشی"
+
+msgid "Custom roundness"
+msgstr "گردی سفارشی"
+
+msgid "Depth 1"
+msgstr "عمق ۱"
+
+msgid "Depth 2"
+msgstr "عمق ۲"
+
+msgid "Depth 3"
+msgstr "عمق ۳"
+
+msgid "Depth 4"
+msgstr "عمق ۴"
+
+msgid "Direction"
+msgstr "جهت"
+
+msgid "Enable lightbox"
+msgstr "فعال‌کردن لایت‌باکس"
+
+msgid "Fill"
+msgstr "کشیدن تصویر"
+
+msgid "Float delay (s)"
+msgstr "تأخیر شناوری (ثانیه)"
+
+msgid "Float duration (s)"
+msgstr "مدت شناوری (ثانیه)"
+
+msgid "Float easing"
+msgstr "منحنی شناوری"
+
+msgid "Float from (%)"
+msgstr "شروع شناوری (%)"
+
+msgid "Float to (%)"
+msgstr "پایان شناوری (%)"
+
+msgid "Floating effect"
+msgstr "شناوری"
+
+msgid "Full"
+msgstr "کامل"
+
+msgid "Gradient first stop"
+msgstr "موقعیت رنگ اول"
+
+msgid "Gradient second stop"
+msgstr "موقعیت رنگ دوم"
+
+msgid "Hover 3D"
+msgstr "هاور سه‌بعدی"
+
+msgid "Hover opacity"
+msgstr "شفافیت هاور"
+
+msgid "Hue"
+msgstr "فام"
+
+msgid "Image resolution"
+msgstr "وضوح تصویر"
+
+msgid "Label letter spacing"
+msgstr "فاصلهٔ حروف برچسب"
+
+msgid "Label line height"
+msgstr "ارتفاع خط برچسب"
+
+msgid "Label position"
+msgstr "جایگاه برچسب"
+
+msgid "Label side"
+msgstr "سمت برچسب"
+
+msgid "Label weight"
+msgstr "وزن برچسب"
+
+msgid "Laptop"
+msgstr "لپ‌تاپ"
+
+msgid "Large"
+msgstr "بزرگ"
+
+msgid "Left"
+msgstr "چپ"
+
+msgid "Left - Right"
+msgstr "چپ به راست"
+
+msgid "Lightbox"
+msgstr "لایت‌باکس"
+
+msgid "Lightbox group"
+msgstr "گروه لایت‌باکس"
+
+msgid "Linear gradient"
+msgstr "گرادیان خطی"
+
+msgid "Lines color"
+msgstr "رنگ خطوط"
+
+msgid "Lines count"
+msgstr "تعداد خطوط"
+
+msgid "Max width"
+msgstr "بیشترین عرض"
+
+msgid "Medium"
+msgstr "متوسط"
+
+msgid "Medium large"
+msgstr "متوسط بزرگ"
+
+msgid "Next"
+msgstr "بعدی"
+
+msgid "Object fit"
+msgstr "نحوهٔ جای‌گیری تصویر"
+
+msgid "Opacity"
+msgstr "شفافیت"
+
+msgid "Overlay background"
+msgstr "پس‌زمینهٔ روی تصویر"
+
+msgid "Overlay image"
+msgstr "تصویر رویی"
+
+msgid "Overlay lines"
+msgstr "خطوط روی تصویر"
+
+msgid "Percentage image size"
+msgstr "اندازه نسبت به ظرف"
+
+msgid "Previous"
+msgstr "قبلی"
+
+msgid "Radial gradient"
+msgstr "گرادیان شعاعی"
+
+msgid "Radman CT image"
+msgstr "تصویر رادمان"
+
+msgid "Reveal delay (ms)"
+msgstr "تأخیر آشکارشدن (میلی‌ثانیه)"
+
+msgid "Reveal effect"
+msgstr "جلوهٔ آشکارشدن"
+
+msgid "Right"
+msgstr "راست"
+
+msgid "Right - Left"
+msgstr "راست به چپ"
+
+msgid "Roundness"
+msgstr "گردی گوشه‌ها"
+
+msgid "Saturation"
+msgstr "اشباع رنگ"
+
+msgid "Shadow X"
+msgstr "جابه‌جایی افقی سایه"
+
+msgid "Shadow Y"
+msgstr "جابه‌جایی عمودی سایه"
+
+msgid "Shadow blur"
+msgstr "محوشدگی سایه"
+
+msgid "Shadow color"
+msgstr "رنگ سایه"
+
+msgid "Shadow delay (ms)"
+msgstr "تأخیر سایه (میلی‌ثانیه)"
+
+msgid "Shadow spread"
+msgstr "گستردگی سایه"
+
+msgid "Side label"
+msgstr "برچسب کناری"
+
+msgid "Side label overlay"
+msgstr "برچسب روی تصویر"
+
+msgid "Source height (px)"
+msgstr "ارتفاع فایل (پیکسل)"
+
+msgid "Source width (px)"
+msgstr "عرض فایل (پیکسل)"
+
+msgid "Stacking factor"
+msgstr "ضریب عمق"
+
+msgid "Tablet"
+msgstr "تبلت"
+
+msgid "Thumbnail"
+msgstr "بندانگشتی"
+
+msgid "Top - Bottom"
+msgstr "بالا به پایین"
+
+msgid "View image"
+msgstr "مشاهدهٔ تصویر"
+
+msgid "Width"
+msgstr "عرض"
+
+msgid "Content only"
+msgstr "فقط محتوا"
+
+msgid "Image background"
+msgstr "تصویر زمینه"
+
+msgid "Layer spacing"
+msgstr "فاصلهٔ لایه‌ها"
+
+msgid "Minimum scale"
+msgstr "کمترین مقیاس"
+
+msgid "Minimum screen width"
+msgstr "کمترین عرض صفحه"
+
+msgid "Overlapping sections"
+msgstr "سکشن‌های هم‌پوشان"
+
+msgid "Radman CT sticky sections"
+msgstr "سکشن‌های چسبان رادمان"
+
+msgid "Section title"
+msgstr "عنوان سکشن"
+
+msgid "Sticky effect"
+msgstr "جلوهٔ چسبان"
+
+msgid "Image parallax"
+msgstr "پارالاکس تصویر"
+
+msgid "Review font size (px)"
+msgstr "اندازهٔ متن نظر (پیکسل)"
+
+msgid "Review line height"
+msgstr "ارتفاع خط متن نظر"
+
+msgid "Reviewer name size (px)"
+msgstr "اندازهٔ نام نویسنده (پیکسل)"
+
+msgid "Reviewer position size (px)"
+msgstr "اندازهٔ سمت نویسنده (پیکسل)"
+
+msgid "Avatar size (px)"
+msgstr "اندازهٔ تصویر نویسنده (پیکسل)"
+
+msgid "Client logo width (px)"
+msgstr "عرض لوگوی مشتری (پیکسل)"
+
+msgid "Client logo height (px)"
+msgstr "ارتفاع لوگوی مشتری (پیکسل)"
+
+msgid "Rating size (px)"
+msgstr "اندازهٔ امتیاز (پیکسل)"
+
+msgid "Quote mark size (px)"
+msgstr "اندازهٔ نشان نقل‌قول (پیکسل)"
+
+msgid "%s font weight"
+msgstr "وزن قلم %s"
+
+msgid "Review source color"
+msgstr "رنگ منبع نظر"
+
+msgid "Position color"
+msgstr "رنگ سمت"
+
+msgid "Accent color"
+msgstr "رنگ تأکید"
+
+msgid "Quote mark color"
+msgstr "رنگ نشان نقل‌قول"
+
+msgid "Review source icon"
+msgstr "آیکون منبع نظر"
+
+msgid "01 - Author first"
+msgstr "۰۱ — نویسنده در بالا"
+
+msgid "02 - Full speech bubble"
+msgstr "۰۲ — حباب کامل"
+
+msgid "03 - Divided review card"
+msgstr "۰۳ — کارت با جداکننده"
+
+msgid "04 - Compact social review"
+msgstr "۰۴ — نظر فشرده با تصویر کناری"
+
+msgid "05 - Client logo above"
+msgstr "۰۵ — لوگوی مشتری در بالا"
+
+msgid "06 - Centered spacious quote"
+msgstr "۰۶ — نقل‌قول مرکزی با فضای باز"
+
+msgid "07 - Portrait beside review"
+msgstr "۰۷ — تصویر بزرگ کنار نظر"
+
+msgid "08 - Compact author first"
+msgstr "۰۸ — نویسندهٔ فشرده در بالا"
+
+msgid "09 - Bordered author first"
+msgstr "۰۹ — نویسنده در کادر بالا"
+
+msgid "10 - Centered quote badge"
+msgstr "۱۰ — نقل‌قول با نشان مرکزی"
+
+msgid "11 - Centered rating card"
+msgstr "۱۱ — کارت امتیاز مرکزی"
+
+msgid "12 - Quote mark at start"
+msgstr "۱۲ — نشان نقل‌قول در ابتدا"
+
+msgid "13 - Large editorial quote"
+msgstr "۱۳ — نقل‌قول درشت تحریریه‌ای"
+
+msgid "14 - Large author first"
+msgstr "۱۴ — نویسندهٔ درشت در بالا"
+
+msgid "15 - Large speech bubble"
+msgstr "۱۵ — حباب نقل‌قول درشت"
+
+msgid "16 - Portrait and client logo"
+msgstr "۱۶ — تصویر بزرگ و لوگوی مشتری"
+
+msgid "17 - Centered speech bubble"
+msgstr "۱۷ — حباب مرکزی با نویسنده زیر آن"
+
+msgid "18 - Accent and client logo"
+msgstr "۱۸ — نوار تأکید و لوگوی مشتری"
+
+msgid "19 - Inline author and rating"
+msgstr "۱۹ — نویسندهٔ هم‌ردیف و امتیاز"
+
+msgid "Image border unit"
+msgstr "واحد حاشیهٔ تصویر"
+
+msgid "Text shadow unit"
+msgstr "واحد سایهٔ متن"
+
+msgid "Arrow fill"
+msgstr "پُرشدگی دکمه‌های فلش"
+
+msgid "Arrow shadow"
+msgstr "سایهٔ دکمه‌های فلش"
+
+msgid "Arrow background"
+msgstr "پس‌زمینهٔ فلش"
+
+msgid "Arrow hover background"
+msgstr "پس‌زمینهٔ هاور فلش"
+
+msgid "Arrow border color"
+msgstr "رنگ حاشیهٔ فلش"
+
+msgid "Arrow hover border color"
+msgstr "رنگ حاشیهٔ هاور فلش"
+
+msgid "On hover and focus"
+msgstr "هنگام هاور و فوکوس"
+
+msgid "Shadow layers"
+msgstr "تعداد لایه‌های سایه"
+
+msgid "%1$s — layer %2$d"
+msgstr "%1$s — لایهٔ %2$d"
+
+msgid "%1$s (%2$s)"
+msgstr "%1$s (%2$s)"
+
+msgid "Horizontal shadow"
+msgstr "جابه‌جایی افقی سایه"
+
+msgid "Vertical shadow"
+msgstr "جابه‌جایی عمودی سایه"
+
+msgid "Image border width"
+msgstr "ضخامت حاشیهٔ تصویر"
+
+msgid "Image top border"
+msgstr "حاشیهٔ بالای تصویر"
+
+msgid "Image bottom border"
+msgstr "حاشیهٔ پایین تصویر"
+
+msgid "Image start border"
+msgstr "حاشیهٔ آغاز تصویر"
+
+msgid "Image end border"
+msgstr "حاشیهٔ پایان تصویر"
+
+msgid "Word spacing"
+msgstr "فاصلهٔ واژه‌ها"
+
+msgid "Fill image width"
+msgstr "عرض تصویر داخل حروف"
+
+msgid "Fill image height"
+msgstr "ارتفاع تصویر داخل حروف"
+
+msgid "Fill image horizontal position"
+msgstr "موقعیت افقی تصویر داخل حروف"
+
+msgid "Fill image vertical position"
+msgstr "موقعیت عمودی تصویر داخل حروف"
+
+msgid "Fill image attachment"
+msgstr "رفتار تصویر داخل حروف"
+
+msgid "Fixed"
+msgstr "ثابت"
+
+msgid "Header state colors"
+msgstr "رنگ متن در وضعیت‌های هدر"
+
+msgid "Sticky header text color"
+msgstr "رنگ متن هدر چسبان"
+
+msgid "Text over light sections"
+msgstr "رنگ متن روی بخش روشن"
+
+msgid "Text over dark sections"
+msgstr "رنگ متن روی بخش تیره"
+
+msgid "Panel layout"
+msgstr "چیدمان پنل"
+
+msgid "Image accordion"
+msgstr "پنل‌های تصویری بازشونده"
+
+msgid "Expanded image ratio"
+msgstr "نسبت عرض تصویر بازشده"
+
+msgid "Parallax inside a fixed frame"
+msgstr "حرکت تصویر داخل قاب ثابت"
+
+msgid "Parallax travel (%)"
+msgstr "شدت حرکت (درصد)"
+
+msgid "Up"
+msgstr "بالا"
+
+msgid "Down"
+msgstr "پایین"
+
+msgid "Pinned service panels"
+msgstr "پنل‌های سرویس پین‌شده"
+
+msgid "Zooming cards"
+msgstr "کارت‌های کوچک‌شونده"
+
+msgid "Fixed column and scrolling content"
+msgstr "ستون ثابت و محتوای اسکرولی"
+
+msgid "Fixed column position"
+msgstr "جای ستون ثابت"
+
+msgid "Fixed column width (%)"
+msgstr "عرض ستون ثابت (درصد)"
+
+msgid "Fixed column content"
+msgstr "محتوای ستون ثابت"
+
+msgid "Text and image"
+msgstr "متن و تصویر"
+
+msgid "Top offset"
+msgstr "فاصله از بالا"
+
+msgid "Description"
+msgstr "توضیحات"
+
+msgid "Open in new tab"
+msgstr "بازشدن در زبانه جدید"
+
+msgid "Nofollow"
+msgstr "نوفالو"
+
+msgid "Border color"
+msgstr "رنگ حاشیه"
+
+msgid "SVG animation"
+msgstr "انیمیشن SVG"
+
+msgid "Rotate"
+msgstr "چرخش"
+
+msgid "Float"
+msgstr "شناور"
+
+msgid "Pulse"
+msgstr "ضربان"
+
+msgid "Draw strokes"
+msgstr "رسم خطوط"
+
+msgid "Animation target"
+msgstr "هدف انیمیشن"
+
+msgid "Whole icon"
+msgstr "کل آیکون"
+
+msgid "SVG parts"
+msgstr "اجزای SVG"
+
+msgid "Animation trigger"
+msgstr "اجرای انیمیشن"
+
+msgid "Hover and focus"
+msgstr "قرارگرفتن اشاره‌گر و فوکوس"
+
+msgid "Always"
+msgstr "همیشه"
+
+msgid "Animation duration"
+msgstr "مدت انیمیشن"
+
+msgid "Components"
+msgstr "کامپوننت‌ها"
+
+msgid "Search components"
+msgstr "جستجوی کامپوننت‌ها"
+
+msgid "Component category"
+msgstr "دستهٔ کامپوننت"
+
+msgid "All categories"
+msgstr "همهٔ دسته‌ها"
+
+msgid "Sample language"
+msgstr "زبان نمونه"
+
+msgid "Persian"
+msgstr "فارسی"
+
+msgid "English"
+msgstr "انگلیسی"
+
+msgid "Element type"
+msgstr "نوع عنصر"
+
+msgid "Classic"
+msgstr "کلاسیک"
+
+msgid "Atomic"
+msgstr "اتمیک"
+
+msgid "Preview"
+msgstr "پیش‌نمایش"
+
+msgid "Insert sample"
+msgstr "درج نمونه"
+
+msgid "No components match your search."
+msgstr "کامپوننتی مطابق جستجوی شما پیدا نشد."
+
+msgid "Mobile"
+msgstr "موبایل"
+
+msgid "Desktop"
+msgstr "دسکتاپ"
+
+msgid "Close preview"
+msgstr "بستن پیش‌نمایش"
+
+msgid "Loading preview..."
+msgstr "در حال بارگذاری پیش‌نمایش…"
+
+msgid "Preview ready."
+msgstr "پیش‌نمایش آماده است."
+
+msgid "The preview could not be opened. Refresh this page and try again."
+msgstr "پیش‌نمایش باز نشد. این صفحه را تازه‌سازی و دوباره تلاش کنید."
+
+msgid "Component preview"
+msgstr "پیش‌نمایش کامپوننت"
+
+msgid "Sample added at the end of the page. Edit it in Elementor and save your page."
+msgstr "نمونه به انتهای صفحه اضافه شد. آن را در المنتور ویرایش و صفحه را ذخیره کنید."
+
+msgid "Insertion could not be confirmed. Check the page before trying again."
+msgstr "درج نمونه تأیید نشد. پیش از تلاش دوباره، صفحه را بررسی کنید."
+
+msgid "Explore the available Radman CT components. PHP usage is documented in the project documentation."
+msgstr "کامپوننت‌های موجود رادمان را ببینید. روش استفاده در PHP در داکیومنت پروژه آمده است."
+
+msgid "Could not load the library. Try again."
+msgstr "کتابخانه بارگذاری نشد؛ دوباره تلاش کنید."
+
+msgid "Radman CT component library"
+msgstr "کتابخانهٔ کامپوننت‌های رادمان"
+
+msgid "Close"
+msgstr "بستن"
+
+msgid "Scroll or interact with the sample to preview its behavior."
+msgstr "برای دیدن رفتار نمونه، اسکرول کنید یا با آن تعامل داشته باشید."
+
+msgid "Style"
+msgstr "استایل"
+
+msgid "Title"
+msgstr "عنوان"
+
+msgid "Title HTML tag"
+msgstr "تگ عنوان"
+
+msgid "Inherit font styles"
+msgstr "ارث‌بری استایل فونت"
+
+msgid "Inherited heading size"
+msgstr "اندازهٔ تیتر مرجع"
+
+msgid "Subtitle"
+msgstr "زیرعنوان"
+
+msgid "Label"
+msgstr "برچسب"
+
+msgid "Text"
+msgstr "متن"
+
+msgid "Link"
+msgstr "پیوند"
+
+msgid "Open in new window"
+msgstr "بازکردن در پنجرهٔ جدید"
+
+msgid "Add nofollow"
+msgstr "افزودن nofollow"
+
+msgid "Show button"
+msgstr "نمایش دکمه"
+
+msgid "Button text"
+msgstr "متن دکمه"
+
+msgid "View details"
+msgstr "مشاهدهٔ جزئیات"
+
+msgid "Button link"
+msgstr "پیوند دکمه"
+
+msgid "Icon"
+msgstr "آیکون"
+
+msgid "Content alignment"
+msgstr "تراز محتوا"
+
+msgid "Reading start"
+msgstr "ابتدای خواندن"
+
+msgid "Center"
+msgstr "وسط"
+
+msgid "Reading end"
+msgstr "انتهای خواندن"
+
+msgid "Box height (%)"
+msgstr "ارتفاع باکس (درصد)"
+
+msgid "Custom height (px)"
+msgstr "ارتفاع سفارشی (پیکسل)"
+
+msgid "Content width (%)"
+msgstr "عرض محتوا (درصد)"
+
+msgid "Content padding"
+msgstr "فاصلهٔ داخلی محتوا"
+
+msgid "Label padding"
+msgstr "فاصلهٔ داخلی برچسب"
+
+msgid "Title size"
+msgstr "اندازهٔ عنوان"
+
+msgid "Label size"
+msgstr "اندازهٔ برچسب"
+
+msgid "Text size"
+msgstr "اندازهٔ متن"
+
+msgid "Overlay opacity"
+msgstr "شفافیت پوشش"
+
+msgid "Hover overlay opacity"
+msgstr "شفافیت پوشش هنگام اشاره"
+
+msgid "Gradient angle"
+msgstr "زاویهٔ گرادیان"
+
+msgid "Border radius"
+msgstr "گردی گوشه‌ها"
+
+msgid "Overlay color"
+msgstr "رنگ پوشش"
+
+msgid "Gradient second color"
+msgstr "رنگ دوم گرادیان"
+
+msgid "Hover overlay color"
+msgstr "رنگ پوشش هنگام اشاره"
+
+msgid "Content background"
+msgstr "پس‌زمینهٔ محتوا"
+
+msgid "Revealer color"
+msgstr "رنگ پردهٔ نمایش"
+
+msgid "Hover revealer color"
+msgstr "رنگ پرده هنگام اشاره"
+
+msgid "Heading color"
+msgstr "رنگ عنوان"
+
+msgid "Hover heading color"
+msgstr "رنگ عنوان هنگام اشاره"
+
+msgid "Content color"
+msgstr "رنگ محتوا"
+
+msgid "Subtitle color"
+msgstr "رنگ زیرعنوان"
+
+msgid "Icon color"
+msgstr "رنگ آیکون"
+
+msgid "Hover icon color"
+msgstr "رنگ آیکون در حالت اشاره"
+
+msgid "Label color"
+msgstr "رنگ برچسب"
+
+msgid "Label background"
+msgstr "پس‌زمینهٔ برچسب"
+
+msgid "Active item"
+msgstr "آیتم فعال"
+
+msgid "Trigger type"
+msgstr "نوع فعال‌سازی"
+
+msgid "Click"
+msgstr "کلیک"
+
+msgid "Items gap"
+msgstr "فاصلهٔ آیتم‌ها"
+
+msgid "Minimum height"
+msgstr "حداقل ارتفاع"
+
+msgid "Collapsed width"
+msgstr "عرض آیتم بسته"
+
+msgid "Content"
+msgstr "محتوا"
+
+msgid "Image or logo"
+msgstr "تصویر یا لوگو"
+
+msgid "Background image"
+msgstr "تصویر پس‌زمینه"
+
+msgid "Background color"
+msgstr "رنگ پس‌زمینه"
+
+msgid "Active background color"
+msgstr "رنگ پس‌زمینهٔ فعال"
+
+msgid "Text color"
+msgstr "رنگ متن"
+
+msgid "Radman CT box"
+msgstr "باکس رادمان"
+
+msgid "Image and content"
+msgstr "تصویر و محتوا"
+
+msgid "Layout"
+msgstr "چیدمان"
+
+msgid "Radman CT curtain"
+msgstr "پنل‌های بازشوندهٔ رادمان"
+
+msgid "Expandable panels"
+msgstr "پنل‌های بازشونده"
+
+msgid "Radman CT text reveal"
+msgstr "آشکارسازی متن رادمان"
+
+msgid "Scroll"
+msgstr "اسکرول"
+
+msgid "Radman CT icon"
+msgstr "آیکون رادمان"
+
+msgid "Phone"
+msgstr "تلفن"
+
+msgid "Arrow right"
+msgstr "پیکان راست"
+
+msgid "Arrow left"
+msgstr "پیکان چپ"
+
+msgid "Chevron left"
+msgstr "فلش چپ"
+
+msgid "Chevron right"
+msgstr "فلش راست"
+
+msgid "Chevron up"
+msgstr "فلش بالا"
+
+msgid "Chevron down"
+msgstr "فلش پایین"
+
+msgid "Menu"
+msgstr "فهرست"
+
+msgid "Check"
+msgstr "تأیید"
+
+msgid "Search"
+msgstr "جست‌وجو"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Location"
+msgstr "موقعیت"
+
+msgid "External link"
+msgstr "لینک خارجی"
+
+msgid "Download"
+msgstr "دانلود"
+
+msgid "Play"
+msgstr "پخش"
+
+msgid "Pause"
+msgstr "مکث"
+
+msgid "Clock"
+msgstr "ساعت"
+
+msgid "Plus"
+msgstr "مثبت"
+
+msgid "Minus"
+msgstr "منفی"
+
+msgid "Image"
+msgstr "تصویر"
+
+msgid "First item"
+msgstr "آیتم اول"
+
+msgid "Second item"
+msgstr "آیتم دوم"
+
+msgid "Third item"
+msgstr "آیتم سوم"
+
+msgid "Items"
+msgstr "آیتم‌ها"
+
+msgid "None"
+msgstr "هیچ‌کدام"
+
+msgid "Icon size"
+msgstr "اندازهٔ آیکون"
+
+msgid "Stroke width"
+msgstr "ضخامت خط"
+
+msgid "Accessible label"
+msgstr "عنوان دسترس‌پذیر"
+
+msgid "Mirror directional icons in RTL"
+msgstr "معکوس‌کردن آیکون‌های جهت‌دار در راست‌به‌چپ"
+
+msgid "Text becomes highlighted as you scroll."
+msgstr "متن با اسکرول به‌تدریج واضح می‌شود."
+
+msgid "Reveal behavior"
+msgstr "رفتار آشکارسازی"
+
+msgid "HTML tag"
+msgstr "تگ HTML"
+
+msgid "Text direction"
+msgstr "جهت متن"
+
+msgid "Inherit"
+msgstr "ارث‌بری"
+
+msgid "Automatic"
+msgstr "خودکار"
+
+msgid "Initial opacity"
+msgstr "شفافیت اولیه"
+
+msgid "Final opacity"
+msgstr "شفافیت نهایی"
+
+msgid "Scroll smoothing"
+msgstr "نرمی حرکت اسکرول"
+
+msgid "Word stagger"
+msgstr "فاصلهٔ زمانی کلمات"
+
+msgid "Scroll start"
+msgstr "شروع اسکرول"
+
+msgid "Scroll end"
+msgstr "پایان اسکرول"
+
+msgid "Reveal order"
+msgstr "ترتیب آشکارشدن"
+
+msgid "Edges"
+msgstr "کناره‌ها"
+
+msgid "Random"
+msgstr "تصادفی"
+
+msgid "Initial text color"
+msgstr "رنگ اولیهٔ متن"
+
+msgid "Highlighted text color"
+msgstr "رنگ متن برجسته"
+
+msgid "Add item"
+msgstr "افزودن آیتم"
+
+msgid "Remove"
+msgstr "حذف"
+
+msgid "Duplicate"
+msgstr "تکثیر"
+
+msgid "Move up"
+msgstr "انتقال به بالا"
+
+msgid "Move down"
+msgstr "انتقال به پایین"
+
+msgid "Typography"
+msgstr "فونت و تایپوگرافی"
+
+msgid "Height"
+msgstr "ارتفاع"
+
+msgid "Text reveal"
+msgstr "آشکارسازی متن"
+
+msgid "Two positions: top, center, bottom or 0–100%. Example: top 80%."
+msgstr "دو موقعیت: top، center، bottom یا درصد از ۰ تا ۱۰۰. مثال: top 80%."
+
+msgid "Text alignment"
+msgstr "تراز متن"
+
+msgid "Justify"
+msgstr "تراز دوطرفه"
+
+msgid "Font size"
+msgstr "اندازهٔ فونت"
+
+msgid "Radman CT"
+msgstr "رادمان"
+
+msgid "Flip direction"
+msgstr "جهت چرخش"
+
+msgid "Left to right"
+msgstr "چپ به راست"
+
+msgid "Right to left"
+msgstr "راست به چپ"
+
+msgid "Top to bottom"
+msgstr "بالا به پایین"
+
+msgid "Bottom to top"
+msgstr "پایین به بالا"
+
+msgid "Shadow"
+msgstr "سایه"
+
+msgid "Default"
+msgstr "پیش‌فرض"
+
+msgid "On hover"
+msgstr "هنگام اشاره"
+
+msgid "Semi round"
+msgstr "کمی گرد"
+
+msgid "Round"
+msgstr "گرد"
+
+msgid "Circle"
+msgstr "دایره"
+
+msgid "Duration"
+msgstr "مدت اجرا"
+
+msgid "Content type"
+msgstr "نوع محتوا"
+
+msgid "Text editor"
+msgstr "ویرایشگر متن"
+
+msgid "Elementor template"
+msgstr "قالب المنتور"
+
+msgid "Front side"
+msgstr "روی کارت"
+
+msgid "Back side"
+msgstr "پشت کارت"
+
+msgid "Select template"
+msgstr "انتخاب قالب"
+
+msgid "Background"
+msgstr "پس‌زمینه"
+
+msgid "Gradient"
+msgstr "گرادیان"
+
+msgid "Second color"
+msgstr "رنگ دوم"
+
+msgid "Gradient type"
+msgstr "نوع گرادیان"
+
+msgid "Linear"
+msgstr "خطی"
+
+msgid "Radial"
+msgstr "شعاعی"
+
+msgid "Angle"
+msgstr "زاویه"
+
+msgid "Image position"
+msgstr "جایگاه تصویر"
+
+msgid "Background overlay"
+msgstr "پوشش پس‌زمینه"
+
+msgid "Overlay second color"
+msgstr "رنگ دوم پوشش"
+
+msgid "Overlay angle"
+msgstr "زاویه پوشش"
+
+msgid "Padding"
+msgstr "فاصله داخلی"
+
+msgid "Flip card"
+msgstr "چرخاندن کارت"
+
+msgid "Radman CT flip box"
+msgstr "کارت پشت‌ورو رادمان"
+
+msgid "Front and back"
+msgstr "رو و پشت"
+
+msgid "General"
+msgstr "عمومی"
+
+msgid "Preview could not be loaded."
+msgstr "پیش‌نمایش بارگذاری نشد."
+
+msgid "Icon position"
+msgstr "جایگاه آیکون"
+
+msgid "Icon on top"
+msgstr "آیکون بالا"
+
+msgid "Icon and heading inline"
+msgstr "آیکون کنار عنوان"
+
+msgid "Icon and content inline"
+msgstr "آیکون کنار محتوا"
+
+msgid "Icon type"
+msgstr "نوع آیکون"
+
+msgid "Service title"
+msgstr "عنوان خدمت"
+
+msgid "Link text"
+msgstr "متن لینک"
+
+msgid "Alignment"
+msgstr "تراز"
+
+msgid "Start"
+msgstr "ابتدا"
+
+msgid "End"
+msgstr "انتها"
+
+msgid "Icon shape"
+msgstr "شکل آیکون"
+
+msgid "Square"
+msgstr "مربع"
+
+msgid "Lozenge"
+msgstr "لوزی"
+
+msgid "Icon padding"
+msgstr "فاصله داخلی آیکون"
+
+msgid "Border width"
+msgstr "ضخامت حاشیه"
+
+msgid "Gap"
+msgstr "فاصله"
+
+msgid "Title spacing"
+msgstr "فاصله عنوان"
+
+msgid "Icon background"
+msgstr "زمینه آیکون"
+
+msgid "Hover icon background"
+msgstr "زمینه آیکون در حالت اشاره"
+
+msgid "Radman CT icon box"
+msgstr "باکس آیکون رادمان"
+
+msgid "Items HTML tag"
+msgstr "تگ پنل‌ها"
+
+msgid "Before"
+msgstr "قبل"
+
+msgid "After"
+msgstr "بعد"
+
+msgid "Title color"
+msgstr "رنگ عنوان"
+
+msgid "Border style"
+msgstr "نوع حاشیه"
+
+msgid "Solid"
+msgstr "یکپارچه"
+
+msgid "Dashed"
+msgstr "خط‌چین"
+
+msgid "Dotted"
+msgstr "نقطه‌چین"
+
+msgid "Normal"
+msgstr "عادی"
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Loading image..."
+msgstr "در حال بارگذاری تصویر…"
+
+msgid "This image could not be loaded."
+msgstr "این تصویر بارگذاری نشد."
+
+msgid "Image %1$s of %2$s"
+msgstr "تصویر %1$s از %2$s"
+
+msgid "Table caption"
+msgstr "عنوان جدول"
+
+msgid "Grid"
+msgstr "شبکه‌ای"
+
+msgid "Striped"
+msgstr "راه‌راه"
+
+msgid "Minimal"
+msgstr "ساده"
+
+msgid "Show column headings"
+msgstr "نمایش سرستون‌ها"
+
+msgid "First column as row headings"
+msgstr "ستون اول عنوان ردیف باشد"
+
+msgid "Minimum table width (px)"
+msgstr "حداقل عرض جدول (پیکسل)"
+
+msgid "Cell padding (px)"
+msgstr "فاصلهٔ داخلی سلول (پیکسل)"
+
+msgid "Header background"
+msgstr "زمینهٔ سرستون"
+
+msgid "Feature"
+msgstr "ویژگی"
+
+msgid "Value"
+msgstr "مقدار"
+
+msgid "Material"
+msgstr "جنس"
+
+msgid "Your content"
+msgstr "محتوای دلخواه"
+
+msgid "Data table"
+msgstr "جدول داده‌ها"
+
+msgid "Radman CT table"
+msgstr "جدول رادمان"
+
+msgid "Table content"
+msgstr "محتوای جدول"
+
+msgid "Row"
+msgstr "ردیف"
+
+msgid "Column"
+msgstr "ستون"
+
+msgid "Move earlier"
+msgstr "انتقال به قبل"
+
+msgid "Move later"
+msgstr "انتقال به بعد"
+
+msgid "Remove column"
+msgstr "حذف ستون"
+
+msgid "Remove row"
+msgstr "حذف ردیف"
+
+msgid "Duplicate row"
+msgstr "تکثیر ردیف"
+
+msgid "Add column"
+msgstr "افزودن ستون"
+
+msgid "General content table"
+msgstr "جدول عمومی"
+
+msgid "Add row"
+msgstr "افزودن ردیف"
+
+msgid "Table content is too large. Shorten a cell or remove a row."
+msgstr "حجم جدول زیاد است؛ متن یک سلول را کوتاه یا یک ردیف را حذف کنید."
+
+msgid "Reusable components for Radman CT."
+msgstr "کامپوننت‌های مشترک رادمان."
+
+msgid "Autoplay"
+msgstr "پخش خودکار"
+
+msgid "Autoplay delay (ms)"
+msgstr "فاصلهٔ پخش خودکار (میلی‌ثانیه)"
+
+msgid "Bottom"
+msgstr "پایین"
+
+msgid "Brand logos"
+msgstr "لوگوی برندها"
+
+msgid "Cards"
+msgstr "کارت‌ها"
+
+msgid "Carousel"
+msgstr "کاروسل"
+
+msgid "Controls position"
+msgstr "موقعیت کنترل‌ها"
+
+msgid "Current / total"
+msgstr "شمارهٔ فعلی / کل"
+
+msgid "Desktop slides"
+msgstr "تعداد اسلاید در دسکتاپ"
+
+msgid "Dots"
+msgstr "نقطه‌ها"
+
+msgid "Existing components"
+msgstr "کامپوننت‌های موجود"
+
+msgid "Images"
+msgstr "تصویرها"
+
+msgid "Mobile slides"
+msgstr "تعداد اسلاید در موبایل"
+
+msgid "Navigation"
+msgstr "کنترل حرکت"
+
+msgid "Navigation arrows"
+msgstr "فلش‌های حرکت"
+
+msgid "Next arrow icon (LTR)"
+msgstr "آیکون بعدی (در چیدمان چپ‌چین)"
+
+msgid "Next slide"
+msgstr "اسلاید بعدی"
+
+msgid "Numbers"
+msgstr "شماره‌ها"
+
+msgid "Pagination"
+msgstr "صفحه‌بندی"
+
+msgid "Previous arrow icon (LTR)"
+msgstr "آیکون قبلی (در چیدمان چپ‌چین)"
+
+msgid "Previous slide"
+msgstr "اسلاید قبلی"
+
+msgid "Radman CT Carousel"
+msgstr "کاروسل رادمان (Carousel)"
+
+msgid "Slide"
+msgstr "اسلاید"
+
+msgid "Slide gap (px)"
+msgstr "فاصلهٔ اسلایدها (پیکسل)"
+
+msgid "Slides"
+msgstr "اسلایدها"
+
+msgid "Tablet slides"
+msgstr "تعداد اسلاید در تبلت"
+
+msgid "Tall image cover"
+msgstr "کارت تصویری بلند"
+
+msgid "Timing"
+msgstr "زمان‌بندی"
+
+msgid "Top"
+msgstr "بالا"
+
+msgid "Transition duration (ms)"
+msgstr "مدت حرکت (میلی‌ثانیه)"
+
+msgid "Item height"
+msgstr "ارتفاع آیتم"
+
+msgid "Tablet item height"
+msgstr "ارتفاع آیتم در تبلت"
+
+msgid "Mobile item height"
+msgstr "ارتفاع آیتم در موبایل"
+
+msgid "Items height"
+msgstr "ارتفاع آیتم‌ها"
+
+msgid "Height unit"
+msgstr "واحد ارتفاع"
+
+msgid "Tablet height unit"
+msgstr "واحد ارتفاع تبلت"
+
+msgid "Mobile height unit"
+msgstr "واحد ارتفاع موبایل"
+
+msgid "Slide {{index}} of {{slidesLength}}"
+msgstr "اسلاید {{index}} از {{slidesLength}}"
+
+msgid "Go to slide {{index}}"
+msgstr "رفتن به اسلاید {{index}}"
+
+msgid "Active word gradient end"
+msgstr "رنگ پایانی گرادیان واژهٔ فعال"
+
+msgid "Active-slide height"
+msgstr "ارتفاع اسلاید فعال"
+
+msgid "Arrow alignment"
+msgstr "تراز فلش‌ها"
+
+msgid "Arrow position"
+msgstr "جای فلش‌ها"
+
+msgid "Automatic height"
+msgstr "ارتفاع خودکار"
+
+msgid "Autoplay direction"
+msgstr "جهت پخش خودکار"
+
+msgid "Background fill"
+msgstr "پس‌زمینهٔ پُر"
+
+msgid "Brush"
+msgstr "قلم‌مو"
+
+msgid "Display mode"
+msgstr "نوع نمایش"
+
+msgid "Double underline"
+msgstr "زیرخط دوتایی"
+
+msgid "Drag and swipe"
+msgstr "کشیدن و لمس"
+
+msgid "Equal height"
+msgstr "ارتفاع برابر"
+
+msgid "Fade"
+msgstr "محو شدن"
+
+msgid "Fill highlight on hover"
+msgstr "پُرشدن هایلایت با هاور"
+
+msgid "Forward"
+msgstr "رو به جلو"
+
+msgid "Gradient text"
+msgstr "متن گرادیانی"
+
+msgid "Highlight animation"
+msgstr "حرکت هایلایت"
+
+msgid "Highlight color"
+msgstr "رنگ هایلایت"
+
+msgid "Text highlight"
+msgstr "هایلایت متن"
+
+msgid "Highlight width (%)"
+msgstr "عرض هایلایت (درصد)"
+
+msgid "Highlight height (px)"
+msgstr "ارتفاع هایلایت (پیکسل)"
+
+msgid "Highlight bottom offset (px)"
+msgstr "جابه‌جایی هایلایت از پایین (پیکسل)"
+
+msgid "Highlight reading-start offset (px)"
+msgstr "جابه‌جایی هایلایت از ابتدای خواندن (پیکسل)"
+
+msgid "Highlight corner radius (px)"
+msgstr "گردی گوشهٔ هایلایت (پیکسل)"
+
+msgid "Highlight duration (seconds)"
+msgstr "مدت حرکت هایلایت (ثانیه)"
+
+msgid "Highlight delay (seconds)"
+msgstr "تأخیر حرکت هایلایت (ثانیه)"
+
+msgid "Highlight shape"
+msgstr "شکل هایلایت"
+
+msgid "Horizontal"
+msgstr "افقی"
+
+msgid "Image motion duration (seconds)"
+msgstr "مدت حرکت تصویر (ثانیه)"
+
+msgid "Image zoom scale"
+msgstr "مقیاس زوم تصویر"
+
+msgid "Keep text on one line"
+msgstr "متن در یک خط"
+
+msgid "Ken Burns image motion"
+msgstr "حرکت تصویر (Ken Burns)"
+
+msgid "Move visible slides as a group"
+msgstr "حرکت گروهی اسلایدهای نمایان"
+
+msgid "Natural height"
+msgstr "ارتفاع طبیعی"
+
+msgid "Opposite edges"
+msgstr "دو لبهٔ مقابل"
+
+msgid "Outline color"
+msgstr "رنگ دورخط"
+
+msgid "Outline width (px)"
+msgstr "ضخامت دورخط (پیکسل)"
+
+msgid "Overlay controls on slides"
+msgstr "کنترل‌ها روی اسلاید"
+
+msgid "Pagination alignment"
+msgstr "تراز صفحه‌بندی"
+
+msgid "Pagination position"
+msgstr "جای صفحه‌بندی"
+
+msgid "Pause autoplay on hover"
+msgstr "توقف پخش با هاور"
+
+msgid "Play or pause rotating words"
+msgstr "پخش یا توقف تغییر واژه‌ها"
+
+msgid "Radman CT Text"
+msgstr "متن رادمان"
+
+msgid "Resume autoplay after interaction"
+msgstr "ادامهٔ پخش پس از تعامل"
+
+msgid "Return to the first slide"
+msgstr "بازگشت به اسلاید اول"
+
+msgid "Reverse"
+msgstr "معکوس"
+
+msgid "Rotating word color"
+msgstr "رنگ واژه‌های چرخشی"
+
+msgid "Rotating word font family"
+msgstr "خانوادهٔ فونت واژه‌های چرخشی"
+
+msgid "Rotating word size"
+msgstr "اندازهٔ واژه‌های چرخشی"
+
+msgid "Rotating words"
+msgstr "واژه‌های چرخشی"
+
+msgid "Same as arrows"
+msgstr "هم‌جای فلش‌ها"
+
+msgid "Scroll text fill"
+msgstr "پُرشدن متن با اسکرول"
+
+msgid "Single-slide slider"
+msgstr "اسلایدر تک‌اسلاید"
+
+msgid "Slide alignment"
+msgstr "تراز اسلایدها"
+
+msgid "Stop autoplay at the last slide"
+msgstr "توقف پخش در اسلاید آخر"
+
+msgid "Text after rotating words"
+msgstr "متن پس از واژه‌های چرخشی"
+
+msgid "Text before rotating words"
+msgstr "متن اصلی / پیش از واژه‌های چرخشی"
+
+msgid "Text effect"
+msgstr "افکت متن"
+
+msgid "Text font family"
+msgstr "خانوادهٔ فونت متن"
+
+msgid "Text gradient end"
+msgstr "رنگ پایانی گرادیان متن"
+
+msgid "Text outline"
+msgstr "دورخط متن"
+
+msgid "Text style"
+msgstr "استایل متن"
+
+msgid "Underline"
+msgstr "زیرخط"
+
+msgid "Vertical left to right"
+msgstr "عمودی از چپ به راست"
+
+msgid "Vertical right to left"
+msgstr "عمودی از راست به چپ"
+
+msgid "Visible words"
+msgstr "تعداد واژه‌های نمایان"
+
+msgid "Wave"
+msgstr "موج"
+
+msgid "Word color"
+msgstr "رنگ واژه"
+
+msgid "Word hold time (seconds)"
+msgstr "مکث هر واژه (ثانیه)"
+
+msgid "Word list"
+msgstr "فهرست واژه‌ها"
+
+msgid "Word or phrase"
+msgstr "واژه یا عبارت"
+
+msgid "Word transition"
+msgstr "حرکت تغییر واژه"
+
+msgid "Word transition time (seconds)"
+msgstr "مدت تغییر واژه (ثانیه)"
+
+msgid "Wrap highlighted words in [[double brackets]]."
+msgstr "واژه‌های هایلایت را داخل [[دو کروشه]] بنویسید."
+
+msgid "Writing mode"
+msgstr "جهت نوشتار"
+
+msgid "Zoom in"
+msgstr "زوم به جلو"
+
+msgid "Zoom out"
+msgstr "زوم به عقب"
+
+msgid "Zoom toward reading end"
+msgstr "زوم به سمت پایان خواندن"
+
+msgid "Zoom toward reading start"
+msgstr "زوم به سمت آغاز خواندن"
+
+msgid "Animated border width (px)"
+msgstr "ضخامت حاشیهٔ متحرک (پیکسل)"
+
+msgid "Animated hover border"
+msgstr "حاشیهٔ چرخان با هاور"
+
+msgid "Border end color"
+msgstr "رنگ پایانی حاشیه"
+
+msgid "Border rotation direction"
+msgstr "جهت چرخش حاشیه"
+
+msgid "Border rotation duration (seconds)"
+msgstr "مدت چرخش حاشیه (ثانیه)"
+
+msgid "Border start color"
+msgstr "رنگ آغاز حاشیه"
+
+msgid "Clockwise"
+msgstr "ساعت‌گرد"
+
+msgid "Counterclockwise"
+msgstr "پادساعت‌گرد"
+
+msgid "Fade marquee edges"
+msgstr "محو شدن لبه‌های نوار متحرک"
+
+msgid "Marquee"
+msgstr "نوار متحرک پیوسته (Marquee)"
+
+msgid "Marquee direction"
+msgstr "جهت حرکت نوار"
+
+msgid "Marquee gap (px)"
+msgstr "فاصلهٔ آیتم‌های نوار (پیکسل)"
+
+msgid "Marquee speed (px/second)"
+msgstr "سرعت نوار (پیکسل بر ثانیه)"
+
+msgid "Mobile marquee speed (-1 inherits)"
+msgstr "سرعت موبایل (۱-: ارث‌بری)"
+
+msgid "Pause marquee on hover"
+msgstr "توقف نوار با هاور"
+
+msgid "Play or pause marquee"
+msgstr "پخش یا توقف نوار متحرک"
+
+msgid "Tablet marquee speed (-1 inherits)"
+msgstr "سرعت تبلت (۱-: ارث‌بری)"
+
+msgid "Toward reading end"
+msgstr "به‌سوی پایان خواندن"
+
+msgid "Toward reading start"
+msgstr "به‌سوی آغاز خواندن"
+
+msgid "Text effects"
+msgstr "افکت‌های متن"
+
+msgid "Marquee Rotating words Text fill"
+msgstr "نوار متحرک Marquee واژه‌های چرخشی پُرشدن متن"
+
+msgid "Marquee animates static content. Linked or interactive content keeps manual scrolling."
+msgstr "نوار متحرک برای محتوای ثابت است. محتوای دارای لینک یا تعامل با اسکرول دستی نمایش داده می‌شود."
+
+msgid "Arrow Up"
+msgstr "بالا"
+
+msgid "Arrow Down"
+msgstr "پایین"
+
+msgid "Arrow Up Right"
+msgstr "بالا و راست"
+
+msgid "Chevrons Left"
+msgstr "دو پیکان چپ"
+
+msgid "Chevrons Right"
+msgstr "دو پیکان راست"
+
+msgid "Move Left"
+msgstr "حرکت به چپ"
+
+msgid "Move Right"
+msgstr "حرکت به راست"
+
+msgid "Circle Arrow Left"
+msgstr "پیکان چپ دایره‌ای"
+
+msgid "Circle Arrow Right"
+msgstr "پیکان راست دایره‌ای"
+
+msgid "Home"
+msgstr "خانه"
+
+msgid "Smartphone"
+msgstr "موبایل"
+
+msgid "Monitor"
+msgstr "نمایشگر"
+
+msgid "Phone Call"
+msgstr "تماس تلفنی"
+
+msgid "Headphones"
+msgstr "پشتیبانی"
+
+msgid "Message Circle"
+msgstr "گفتگو"
+
+msgid "Message Square"
+msgstr "پیام"
+
+msgid "Send"
+msgstr "ارسال"
+
+msgid "Globe"
+msgstr "وب‌سایت"
+
+msgid "Languages"
+msgstr "زبان‌ها"
+
+msgid "Map"
+msgstr "نقشه"
+
+msgid "Calendar Days"
+msgstr "تقویم"
+
+msgid "Calendar"
+msgstr "تاریخ"
+
+msgid "Copy"
+msgstr "کپی"
+
+msgid "Share 2"
+msgstr "اشتراک‌گذاری"
+
+msgid "Info"
+msgstr "اطلاعات"
+
+msgid "Circle Help"
+msgstr "راهنما"
+
+msgid "Circle Alert"
+msgstr "هشدار"
+
+msgid "Circle Check"
+msgstr "تأیید"
+
+msgid "Circle X"
+msgstr "بستن دایره‌ای"
+
+msgid "Ellipsis"
+msgstr "گزینه‌های بیشتر"
+
+msgid "Ellipsis Vertical"
+msgstr "گزینه‌های عمودی"
+
+msgid "Settings"
+msgstr "تنظیمات"
+
+msgid "Sliders Horizontal"
+msgstr "تنظیم فیلتر"
+
+msgid "List Filter"
+msgstr "فیلتر فهرست"
+
+msgid "List"
+msgstr "فهرست"
+
+msgid "Layout Grid"
+msgstr "نمای شبکه‌ای"
+
+msgid "File Text"
+msgstr "سند"
+
+msgid "Folder"
+msgstr "پوشه"
+
+msgid "Briefcase Business"
+msgstr "کسب‌وکار"
+
+msgid "Building 2"
+msgstr "شرکت"
+
+msgid "Users"
+msgstr "اعضا"
+
+msgid "User Round"
+msgstr "شخص"
+
+msgid "Eye"
+msgstr "مشاهده"
+
+msgid "Maximize"
+msgstr "تمام‌صفحه"
+
+msgid "Minimize"
+msgstr "خروج از تمام‌صفحه"
+
+msgid "Volume 2"
+msgstr "صدا"
+
+msgid "Volume X"
+msgstr "بی‌صدا"
+
+msgid "Rotate Ccw"
+msgstr "بازنشانی"
+
+msgid "Refresh Cw"
+msgstr "تازه‌سازی"
+
+msgid "Directions"
+msgstr "مسیریابی"
+
+msgid "Offset menu"
+msgstr "منوی سه‌خطی نامتقارن"
+
+msgid "Sun"
+msgstr "خورشید"
+
+msgid "Moon"
+msgstr "ماه"
+
+msgid "Search %s"
+msgstr "جست‌وجوی %s"
+
+msgid "No results found."
+msgstr "نتیجه‌ای پیدا نشد."
+
+msgid "Remove item"
+msgstr "حذف گزینه"
+
+msgid "Taxonomy"
+msgstr "طبقه‌بندی"
+
+msgid "Category tree"
+msgstr "درخت دسته‌بندی"
+
+msgid "Tag cloud"
+msgstr "ابر برچسب‌ها"
+
+msgid "Show counts"
+msgstr "نمایش تعداد"
+
+msgid "Hierarchy"
+msgstr "ساختار تودرتو"
+
+msgid "Hide empty terms"
+msgstr "پنهان‌کردن موارد خالی"
+
+msgid "Maximum terms"
+msgstr "حداکثر تعداد موارد"
+
+msgid "All content"
+msgstr "همهٔ محتوا"
+
+msgid "Placeholder"
+msgstr "متن راهنما"
+
+msgid "Use the Radman archive target when available"
+msgstr "استفاده از مقصد آرشیو رادمان در صورت وجود"
+
+msgid "Search the site"
+msgstr "جست‌وجو در سایت"
+
+msgid "Taxonomy list"
+msgstr "فهرست دسته‌ها و برچسب‌ها"
+
+msgid "Content search"
+msgstr "جست‌وجوی محتوا"
+
+msgid "Stacked"
+msgstr "زیر هم"
+
+msgid "Inline"
+msgstr "کنار هم"
+
+msgid "Field label"
+msgstr "عنوان فیلد"
+
+msgid "Show label"
+msgstr "نمایش عنوان فیلد"
+
+msgid "Breadcrumbs"
+msgstr "مسیر راهنما"
+
+msgid "Play background video"
+msgstr "پخش ویدئوی پس‌زمینه"
+
+msgid "Pause background video"
+msgstr "توقف ویدئوی پس‌زمینه"

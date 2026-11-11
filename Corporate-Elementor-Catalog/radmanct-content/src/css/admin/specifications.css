@@ -1,0 +1,4 @@
+.rdct-cnt-editor__spec label { display: grid; gap: .4rem; font-weight: 600; }
+.rdct-cnt-editor__spec { display: grid; grid-template-columns: minmax(100px, 1fr) minmax(140px, 2fr) minmax(60px, .6fr); gap: .75rem; padding: 1rem; margin-block: .75rem; background: var(--rdct-admin-soft); border: 1px solid var(--rdct-admin-border); border-radius: var(--rdct-admin-radius); }
+.rdct-cnt-editor__spec .rdct-cnt-editor__actions { grid-column: 1 / -1; }
+@media (max-width: 600px) { .rdct-cnt-editor__spec { grid-template-columns: 1fr; } }

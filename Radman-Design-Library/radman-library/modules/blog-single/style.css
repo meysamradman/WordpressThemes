@@ -1,0 +1,3 @@
+@import '../../shared/radmanct/src/css/pages/blog.css';
+@import '../../shared/radmanct/src/css/pages/blog/single.css';
+.rdl-demo--blog-single .rdc-sgl-more{--rdc-ctr:75rem}

@@ -1,0 +1,2 @@
+<?php defined('ABSPATH')||exit; ?>
+<div class="rdl-tx-lead"><p>برای دیدن حرکت متن، صفحه را اسکرول کنید ↓</p></div><section class="rdl-tx-demo" data-rdl-tx-demo><h1>کلمه‌ها، همراه اسکرول.</h1><p class="rdl-tx-demo__fill">طراحی زمانی معنا پیدا می‌کند که هر حرکت به خواندن و درک بهتر کمک کند. با پیشرفت اسکرول، کلمه‌ها آرام روشن می‌شوند و مسیر روایت را شکل می‌دهند.</p></section>

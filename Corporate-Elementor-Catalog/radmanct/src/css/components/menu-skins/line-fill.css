@@ -1,0 +1,5 @@
+.rdct-menu--skin-line-fill .rdct-menu > li > a { position: relative; text-decoration: none; }
+.rdct-menu--skin-line-fill .rdct-menu > li > a::after { content: ''; position: absolute; inset-inline: .5rem; inset-block-end: .15em; block-size: 2px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+.rdct-menu--skin-line-fill:dir(rtl) .rdct-menu > li > a::after { transform-origin: right; }
+.rdct-menu--skin-line-fill .rdct-menu > li:is(:hover,:focus-within,.current-menu-item,.current-menu-ancestor) > a::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) { .rdct-menu--skin-line-fill .rdct-menu > li > a::after { transition: none; } }

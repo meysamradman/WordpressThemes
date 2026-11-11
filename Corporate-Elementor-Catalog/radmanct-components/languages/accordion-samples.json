@@ -1,0 +1,12 @@
+{
+  "fa": [
+    {"title": "عنوان بخش اول", "content_type": "text", "content": "<p>متن یا الگوی دلخواه این بخش را انتخاب کنید.</p>"},
+    {"title": "عنوان بخش دوم", "content_type": "text", "content": "<p>هر بخش محتوای مستقل خود را دارد.</p>"},
+    {"title": "عنوان بخش سوم", "content_type": "text", "content": "<p>برای مشاهدهٔ محتوا، عنوان را باز کنید.</p>"}
+  ],
+  "en": [
+    {"title": "First section", "content_type": "text", "content": "<p>Add text or select a template for this section.</p>"},
+    {"title": "Second section", "content_type": "text", "content": "<p>Each section has independent content.</p>"},
+    {"title": "Third section", "content_type": "text", "content": "<p>Expand the title to read its content.</p>"}
+  ]
+}

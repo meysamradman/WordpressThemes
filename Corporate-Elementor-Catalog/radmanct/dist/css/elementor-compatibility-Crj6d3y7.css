@@ -1,0 +1,11 @@
+.elementor { --rdct-elementor-font: var(--rdct-font-body); font-family: var(--rdct-elementor-font); }
+.elementor [lang|="en"] { --rdct-elementor-font: var(--rdct-font-latin, system-ui), sans-serif; }
+.elementor [lang|="fa"], .elementor [lang|="ar"] { --rdct-elementor-font: var(--rdct-font-fa, sans-serif), var(--rdct-font-latin, system-ui), sans-serif; }
+.elementor :is(h1, h1 *, h1 [lang]) { --rdct-elementor-font: var(--rdct-font-h1); }
+.elementor :is(h2, h2 *, h2 [lang]) { --rdct-elementor-font: var(--rdct-font-h2); }
+.elementor :is(h3, h3 *, h3 [lang]) { --rdct-elementor-font: var(--rdct-font-h3); }
+.elementor :is(h4, h4 *, h4 [lang]) { --rdct-elementor-font: var(--rdct-font-h4); }
+.elementor :is(h5, h5 *, h5 [lang]) { --rdct-elementor-font: var(--rdct-font-h5); }
+.elementor :is(h6, h6 *, h6 [lang]) { --rdct-elementor-font: var(--rdct-font-h6); }
+.elementor :where(*):not(:where(i[class], .elementor-icon, .elementor-icon *, .fa, .fa *, .fas, .fas *, .far, .far *, .fab, .fab *, [class^="fa-"], [class*=" fa-"], [class^="eicon-"], [class*=" eicon-"], .dashicons, .dashicons *, .rdct-library, .rdct-library *, [data-icon], [data-icon] *)) { font-family: var(--rdct-elementor-font, var(--rdct-font-body)) !important; }
+.rdct-elementor-page { margin: 0; padding: 0; }

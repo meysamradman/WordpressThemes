@@ -1,0 +1,7 @@
+.rdct-site { font-weight: var(--rdct-weight-body,normal); }
+.rdct-site :is(h1, h1 [lang]) { font-family: var(--rdct-font-h1, var(--rdct-font-body)); font-weight: var(--rdct-weight-h1,revert); }
+.rdct-site :is(h2, h2 [lang]) { font-family: var(--rdct-font-h2, var(--rdct-font-body)); font-weight: var(--rdct-weight-h2,revert); }
+.rdct-site :is(h3, h3 [lang]) { font-family: var(--rdct-font-h3, var(--rdct-font-body)); font-weight: var(--rdct-weight-h3,revert); }
+.rdct-site :is(h4, h4 [lang]) { font-family: var(--rdct-font-h4, var(--rdct-font-body)); font-weight: var(--rdct-weight-h4,revert); }
+.rdct-site :is(h5, h5 [lang]) { font-family: var(--rdct-font-h5, var(--rdct-font-body)); font-weight: var(--rdct-weight-h5,revert); }
+.rdct-site :is(h6, h6 [lang]) { font-family: var(--rdct-font-h6, var(--rdct-font-body)); font-weight: var(--rdct-weight-h6,revert); }

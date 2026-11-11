@@ -1,0 +1,3431 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct 1.1.1\nLanguage: \nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Card video preview"
+msgstr ""
+
+msgid "Choose a video preview"
+msgstr ""
+
+msgid "Use an MP4, WebM or Ogg video."
+msgstr ""
+
+msgid "No video selected"
+msgstr ""
+
+msgid "Choose video"
+msgstr ""
+
+msgid "Preview playback"
+msgstr ""
+
+msgid "While visible"
+msgstr ""
+
+msgid "On hover or keyboard focus"
+msgstr ""
+
+msgid "The featured image remains the poster. Card previews are silent and do not replace the video inside your content."
+msgstr ""
+
+msgid "Inherit from parent category"
+msgstr ""
+
+msgid "Article (no media badge)"
+msgstr ""
+
+msgid "Podcast / audio"
+msgstr ""
+
+msgid "Video"
+msgstr ""
+
+msgid "Podcast"
+msgstr ""
+
+msgid "Video article"
+msgstr ""
+
+msgid "Articles"
+msgstr ""
+
+msgid "Blog media badge"
+msgstr ""
+
+msgid "Shows a music or video badge on blog images. Child categories inherit this choice unless overridden. Add the actual audio or video in the post editor."
+msgstr ""
+
+msgid "Music"
+msgstr ""
+
+msgid "Skipped for reduced motion or startup after the page has loaded; closes within two seconds."
+msgstr ""
+
+msgid "Curtain (two panels)"
+msgstr ""
+
+msgid "Fade (full-page overlay)"
+msgstr ""
+
+msgid "Sliding (single panel)"
+msgstr ""
+
+msgid "Spinner (animated arc)"
+msgstr ""
+
+msgid "Classic spinner (thin ring)"
+msgstr ""
+
+msgid "Dissolve (horizontal strips)"
+msgstr ""
+
+msgid "Bundled animated image (GIF)"
+msgstr ""
+
+msgid "Empty fields inherit the general typography settings. Save with the main settings button."
+msgstr ""
+
+msgid "Restore general typography"
+msgstr ""
+
+msgid "Font size (rem)"
+msgstr ""
+
+msgid "Relative to the root font size. Leave empty to inherit."
+msgstr ""
+
+msgid "Layout deleted."
+msgstr ""
+
+msgid "Pages: %d"
+msgstr ""
+
+msgid "The request failed. Reload the page and try again."
+msgstr ""
+
+msgid "Site header"
+msgstr ""
+
+msgid "Site footer"
+msgstr ""
+
+msgid "Refresh saved layouts"
+msgstr ""
+
+msgid "Unavailable layout"
+msgstr ""
+
+msgid "Transparent header devices"
+msgstr ""
+
+msgid "Add New Header"
+msgstr ""
+
+msgid "Add New Footer"
+msgstr ""
+
+msgid "Back to layouts"
+msgstr ""
+
+msgid "Search layouts"
+msgstr ""
+
+msgid "No layouts found."
+msgstr ""
+
+msgid "Radman Content"
+msgstr ""
+
+msgid "Radman Components"
+msgstr ""
+
+msgid "Radman MCP"
+msgstr ""
+
+msgid "Header contrast"
+msgstr ""
+
+msgid "Section color tone"
+msgstr ""
+
+msgid "Unspecified"
+msgstr ""
+
+msgid "Light section"
+msgstr ""
+
+msgid "Dark section"
+msgstr ""
+
+msgid "Follow site color scheme"
+msgstr ""
+
+msgid "Follow section contrast"
+msgstr ""
+
+msgid "Header color over light sections"
+msgstr ""
+
+msgid "Header color over dark sections"
+msgstr ""
+
+msgid "Sticky header color (optional)"
+msgstr ""
+
+msgid "Section contrast is independent of site dark mode. Unmarked sections keep the original header colors."
+msgstr ""
+
+msgid "Header contrast behavior"
+msgstr ""
+
+msgid "Automatic (preserve manual colors)"
+msgstr ""
+
+msgid "Keep element colors"
+msgstr ""
+
+msgid "Logo over light sections"
+msgstr ""
+
+msgid "Logo over dark sections"
+msgstr ""
+
+msgid "Sticky header logo"
+msgstr ""
+
+msgid "Child theme design"
+msgstr ""
+
+msgid "Custom design"
+msgstr ""
+
+msgid "Default writing system"
+msgstr ""
+
+msgid "Primary site font"
+msgstr ""
+
+msgid "Complementary font"
+msgstr ""
+
+msgid "Font loading"
+msgstr ""
+
+msgid "Arabic script"
+msgstr ""
+
+msgid "Latin script"
+msgstr ""
+
+msgid "This settings panel could not load. If the site was updated, reload the page. Unsaved changes will need to be entered again."
+msgstr ""
+
+msgid "Reload settings"
+msgstr ""
+
+msgid "Inline text (span)"
+msgstr ""
+
+msgid "Link hover color"
+msgstr ""
+
+msgid "Colors"
+msgstr ""
+
+msgid "Show sidebar"
+msgstr ""
+
+msgid "Widget area"
+msgstr ""
+
+msgid "Sidebar position"
+msgstr ""
+
+msgid "Start side"
+msgstr ""
+
+msgid "End side"
+msgstr ""
+
+msgid "Sidebar width (px)"
+msgstr ""
+
+msgid "Widget area unavailable"
+msgstr ""
+
+msgid "Manage widgets"
+msgstr ""
+
+msgid "Catalog"
+msgstr ""
+
+msgid "Archive"
+msgstr ""
+
+msgid "Single"
+msgstr ""
+
+msgid "You are not allowed to install or update this plugin."
+msgstr ""
+
+msgid "The local plugin package is unavailable or invalid. Existing plugin files were preserved."
+msgstr ""
+
+msgid "The local plugin package could not be prepared."
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "Hover"
+msgstr ""
+
+msgid "Layouts"
+msgstr ""
+
+msgid "Backups"
+msgstr ""
+
+msgid "Translations"
+msgstr ""
+
+msgid "Sticky"
+msgstr ""
+
+msgid "Shadow"
+msgstr ""
+
+msgid "Icon colors"
+msgstr ""
+
+msgid "Header builder settings"
+msgstr ""
+
+msgid "Footer builder settings"
+msgstr ""
+
+msgid "Header behavior"
+msgstr ""
+
+msgid "Back to editor"
+msgstr ""
+
+msgid "Edit element"
+msgstr ""
+
+msgid "Select an element on the canvas or in the structure."
+msgstr ""
+
+msgid "Import and export"
+msgstr ""
+
+msgid "Style section"
+msgstr ""
+
+msgid "Preparing preview…"
+msgstr ""
+
+msgid "Retry controls"
+msgstr ""
+
+msgid "Page scrollbar"
+msgstr ""
+
+msgid "Customize page scrollbar"
+msgstr ""
+
+msgid "Scrollbar width (4–20 px)"
+msgstr ""
+
+msgid "Scrollbar thumb color"
+msgstr ""
+
+msgid "Scrollbar track color"
+msgstr ""
+
+msgid "Applies to the public page scrollbar. Firefox uses its native thin or normal width; mobile overlay scrollbars follow the operating system."
+msgstr ""
+
+msgid "Required shared components for custom PHP and optional Elementor pages."
+msgstr ""
+
+msgid "Radman Components is required for this theme, including custom PHP pages. Elementor is optional."
+msgstr ""
+
+msgid "Manage required plugins"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Line height"
+msgstr ""
+
+msgid "Font size (px)"
+msgstr ""
+
+msgid "Default / inherited"
+msgstr ""
+
+msgid "Saving…"
+msgstr ""
+
+msgid "Settings saved."
+msgstr ""
+
+msgid "Settings could not be saved. Try again."
+msgstr ""
+
+msgid "Settings could not be saved. Reload the page and try again."
+msgstr ""
+
+msgid "Invalid settings data."
+msgstr ""
+
+msgid "Some values are invalid. Check the settings and try again."
+msgstr ""
+
+msgid "Font weight"
+msgstr ""
+
+msgid "Default / inherited weight"
+msgstr ""
+
+msgid "Thin"
+msgstr ""
+
+msgid "Extra Light"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "Regular"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Semi Bold"
+msgstr ""
+
+msgid "Bold"
+msgstr ""
+
+msgid "Extra Bold"
+msgstr ""
+
+msgid "Black"
+msgstr ""
+
+msgid "Extra Black"
+msgstr ""
+
+msgid "Desktop smoothing with local GSAP. Touch devices and reduced motion use native scrolling."
+msgstr ""
+
+msgid "Smoothing duration (seconds)"
+msgstr ""
+
+msgid "Close button icon"
+msgstr ""
+
+msgid "Close button appearance"
+msgstr ""
+
+msgid "Circle outline"
+msgstr ""
+
+msgid "Close icon color"
+msgstr ""
+
+msgid "Close icon hover color"
+msgstr ""
+
+msgid "Close circle color"
+msgstr ""
+
+msgid "Menu aligned to start"
+msgstr ""
+
+msgid "Menu aligned to end"
+msgstr ""
+
+msgid "Menu with four lines"
+msgstr ""
+
+msgid "Menu in a square"
+msgstr ""
+
+msgid "Saved Radman CSS"
+msgstr ""
+
+msgid "Use selector for this element, or write child selectors. Maximum 16 KB. Use local relative URLs. Imports, fonts and keyframes belong in site styles."
+msgstr ""
+
+msgid "Extend or shorten parallax distance"
+msgstr ""
+
+msgid "Parallax distance unit"
+msgstr ""
+
+msgid "Reset preview"
+msgstr ""
+
+msgid "Custom parallax start"
+msgstr ""
+
+msgid "Custom parallax end"
+msgstr ""
+
+msgid "Google Analytics"
+msgstr ""
+
+msgid "Enable Google Analytics"
+msgstr ""
+
+msgid "Off by default. When enabled, public pages connect to Google. Administrator visits and editor previews are excluded."
+msgstr ""
+
+msgid "Measurement ID or Google tag code"
+msgstr ""
+
+msgid "Paste a GA4 G- ID or the Google tag snippet. Only the ID is stored. Enable tracking in one place to avoid duplicate statistics."
+msgstr ""
+
+msgid "Custom CSS"
+msgstr ""
+
+msgid "Custom JavaScript"
+msgstr ""
+
+msgid "Custom code"
+msgstr ""
+
+msgid "Enter CSS or JavaScript without style/script tags; up to 64 KB per field."
+msgstr ""
+
+msgid "Custom code requires permission to save unfiltered HTML."
+msgstr ""
+
+msgid "The code editor could not load. Your saved code is preserved."
+msgstr ""
+
+msgid "Global"
+msgstr ""
+
+msgid "Default font language"
+msgstr ""
+
+msgid "Automatic from the page language"
+msgstr ""
+
+msgid "Load both font groups on each page"
+msgstr ""
+
+msgid "Enable only when the same page needs both local font groups. WPML pages otherwise load their own language."
+msgstr ""
+
+msgid "Appearance"
+msgstr ""
+
+msgid "Reset color"
+msgstr ""
+
+msgid "Preview direction"
+msgstr ""
+
+msgid "Content text"
+msgstr ""
+
+msgid "Headings"
+msgstr ""
+
+msgid "Links"
+msgstr ""
+
+msgid "Links on hover and focus"
+msgstr ""
+
+msgid "Card background"
+msgstr ""
+
+msgid "Content borders"
+msgstr ""
+
+msgid "Page background"
+msgstr ""
+
+msgid "Leave empty to inherit the theme background. Elementor section and widget backgrounds stay independent."
+msgstr ""
+
+msgid "Radman CT content colors"
+msgstr ""
+
+msgid "Leave empty to inherit the theme design. Item overrides apply to detail pages. Explicit Elementor widget and section colors stay independent."
+msgstr ""
+
+msgid "Empty colors inherit the settings for this content type. Clear an override to restore inheritance. Elementor section and widget colors stay independent."
+msgstr ""
+
+msgid "%s unit"
+msgstr ""
+
+msgid "Custom transform origin"
+msgstr ""
+
+msgid "Transform origin %s"
+msgstr ""
+
+msgid "Origin %s unit"
+msgstr ""
+
+msgid "Perspective"
+msgstr ""
+
+msgid "An empty value uses the saved value or its default."
+msgstr ""
+
+msgid "Radman CT layout translations"
+msgstr ""
+
+msgid "Layout translations"
+msgstr ""
+
+msgid "Layout language"
+msgstr ""
+
+msgid "Create an independent copy"
+msgstr ""
+
+msgid "Translation layout"
+msgstr ""
+
+msgid "Edit translation"
+msgstr ""
+
+msgid "Connect existing layout"
+msgstr ""
+
+msgid "Add translation"
+msgstr ""
+
+msgid "Translations are connected through WPML and edited independently. Save and enable a new translation before it appears on the site."
+msgstr ""
+
+msgid "Save your changes before adding or opening a translation."
+msgstr ""
+
+msgid "This layout is already connected to another translation."
+msgstr ""
+
+msgid "The translation connection could not be saved."
+msgstr ""
+
+msgid "The translation library changed. Reload and try again."
+msgstr ""
+
+msgid "Choose two active, different languages."
+msgstr ""
+
+msgid "This translation is being created. Try again shortly."
+msgstr ""
+
+msgid "Choose an available layout of the same builder."
+msgstr ""
+
+msgid "Choose icon"
+msgstr ""
+
+msgid "Search icons"
+msgstr ""
+
+msgid "Close icon picker"
+msgstr ""
+
+msgid "No matching icons."
+msgstr ""
+
+msgid "Show more icons"
+msgstr ""
+
+msgid "Block Google Fonts"
+msgstr ""
+
+msgid "Use local fonts and block standard Google Fonts sources. Elementor keeps its own local-font policy."
+msgstr ""
+
+msgid "Google Fonts requests are disabled in Radman CT settings."
+msgstr ""
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "Initial state"
+msgstr ""
+
+msgid "Final state"
+msgstr ""
+
+msgid "Animations & Parallax"
+msgstr ""
+
+msgid "Play all animations"
+msgstr ""
+
+msgid "Uses the site logo unless an image is selected for this element."
+msgstr ""
+
+msgid "Allow administrators to upload locally sanitized SVG files up to 1 MB; other plugins keep their own upload permissions."
+msgstr ""
+
+msgid "Logo image"
+msgstr ""
+
+msgid "Inner container"
+msgstr ""
+
+msgid "Move to beginning"
+msgstr ""
+
+msgid "Use a panel on this device"
+msgstr ""
+
+msgid "Panel button color"
+msgstr ""
+
+msgid "Select to add content"
+msgstr ""
+
+msgid "Use theme settings width"
+msgstr ""
+
+msgid "Size and position"
+msgstr ""
+
+msgid "Inner layout"
+msgstr ""
+
+msgid "Custom width (%)"
+msgstr ""
+
+msgid "Drag to resize width"
+msgstr ""
+
+msgid "Panel button icon"
+msgstr ""
+
+msgid "Panel button appearance"
+msgstr ""
+
+msgid "Outline"
+msgstr ""
+
+msgid "Solid"
+msgstr ""
+
+msgid "Logo override (optional)"
+msgstr ""
+
+msgid "The default logo for the site. Header and footer elements can override it per device."
+msgstr ""
+
+msgid "One default logo and site icon for PHP and Elementor. Builder device overrides do not change these defaults."
+msgstr ""
+
+msgid "Edit global logo and site icon"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Choose image"
+msgstr ""
+
+msgid "Change image"
+msgstr ""
+
+msgid "Leave empty to use the WordPress site logo."
+msgstr ""
+
+msgid "Leave empty to use the default image of this logo element."
+msgstr ""
+
+msgid "A standalone image without a home link. Uses the media library alternative text. Empty device images use the default image."
+msgstr ""
+
+msgid "Image width (0 = inherit, max 512 px)"
+msgstr ""
+
+msgid "Image maximum height (0 = inherit, max 256 px)"
+msgstr ""
+
+msgid "Enable sanitized SVG uploads"
+msgstr ""
+
+msgid "Off by default. Administrators with media access can upload SVG files up to 1 MB. Files are sanitized locally; scripts and remote references are removed. Existing images remain available when disabled. Other plugins manage their own upload permissions."
+msgstr ""
+
+msgid "SVG upload was rejected. Use a valid SVG under 1 MB and an administrator account with media access."
+msgstr ""
+
+msgid "Menu panel"
+msgstr ""
+
+msgid "Menu panel on devices"
+msgstr ""
+
+msgid "Panel side (follows RTL/LTR)"
+msgstr ""
+
+msgid "Panel layout"
+msgstr ""
+
+msgid "Panel opening effect"
+msgstr ""
+
+msgid "Panel content source"
+msgstr ""
+
+msgid "Empty"
+msgstr ""
+
+msgid "Reusable block"
+msgstr ""
+
+msgid "Elementor template"
+msgstr ""
+
+msgid "Panel template"
+msgstr ""
+
+msgid "Open panel"
+msgstr ""
+
+msgid "Close panel"
+msgstr ""
+
+msgid "Off-canvas panel"
+msgstr ""
+
+msgid "Full screen menu links"
+msgstr ""
+
+msgid "Standard"
+msgstr ""
+
+msgid "Curved curtain"
+msgstr ""
+
+msgid "Wave cover and reveal"
+msgstr ""
+
+msgid "Panel effect duration (milliseconds)"
+msgstr ""
+
+msgid "Panel transition color"
+msgstr ""
+
+msgid "Submenu opens with"
+msgstr ""
+
+msgid "Hover and click"
+msgstr ""
+
+msgid "Horizontal"
+msgstr ""
+
+msgid "Vertical"
+msgstr ""
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Full screen"
+msgstr ""
+
+msgid "Menu and content columns"
+msgstr ""
+
+msgid "Panel content block"
+msgstr ""
+
+msgid "Panel header block"
+msgstr ""
+
+msgid "Expanded"
+msgstr ""
+
+msgid "Panel background image"
+msgstr ""
+
+msgid "Sidebar width"
+msgstr ""
+
+msgid "Panel link size"
+msgstr ""
+
+msgid "Panel mobile link size"
+msgstr ""
+
+msgid "Panel background"
+msgstr ""
+
+msgid "Panel text color"
+msgstr ""
+
+msgid "Menu button label"
+msgstr ""
+
+msgid "Animated underline"
+msgstr ""
+
+msgid "Hover color"
+msgstr ""
+
+msgid "Rounded highlight"
+msgstr ""
+
+msgid "Mega menu content block"
+msgstr ""
+
+msgid "Menu orientation"
+msgstr ""
+
+msgid "Panel on desktop"
+msgstr ""
+
+msgid "Panel on laptop"
+msgstr ""
+
+msgid "Panel on tablet"
+msgstr ""
+
+msgid "Panel on mobile"
+msgstr ""
+
+msgid "Use menu location"
+msgstr ""
+
+msgid "Radman CT navigation"
+msgstr ""
+
+msgid "Preview could not be loaded."
+msgstr ""
+
+msgid "Motion and animation"
+msgstr ""
+
+msgid "Advanced scroll"
+msgstr ""
+
+msgid "Animation settings"
+msgstr ""
+
+msgid "Animate element"
+msgstr ""
+
+msgid "Parallax takes priority over entrance animation on the same element."
+msgstr ""
+
+msgid "This element"
+msgstr ""
+
+msgid "An empty value uses the saved timing or its default."
+msgstr ""
+
+msgid "Native Elementor motion takes priority on the same element. Independently animated children are excluded from parent targets."
+msgstr ""
+
+msgid "Pinned horizontal scroll"
+msgstr ""
+
+msgid "Scroll direction"
+msgstr ""
+
+msgid "Move left"
+msgstr ""
+
+msgid "Move right"
+msgstr ""
+
+msgid "Panel width (%)"
+msgstr ""
+
+msgid "Panel gap (px)"
+msgstr ""
+
+msgid "Panel alignment"
+msgstr ""
+
+msgid "Top offset (px)"
+msgstr ""
+
+msgid "Minimum screen width (px)"
+msgstr ""
+
+msgid "Horizontal smoothing"
+msgstr ""
+
+msgid "Scroll reveal"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Reveal direction"
+msgstr ""
+
+msgid "Reveal start"
+msgstr ""
+
+msgid "Reveal end"
+msgstr ""
+
+msgid "Reveal smoothing"
+msgstr ""
+
+msgid "Inherit font styles"
+msgstr ""
+
+msgid "Inherited heading size"
+msgstr ""
+
+msgid "Subtitle"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Open in new window"
+msgstr ""
+
+msgid "Add nofollow"
+msgstr ""
+
+msgid "Show button"
+msgstr ""
+
+msgid "Button text"
+msgstr ""
+
+msgid "Button link"
+msgstr ""
+
+msgid "Content alignment"
+msgstr ""
+
+msgid "Middle"
+msgstr ""
+
+msgid "Box height (%)"
+msgstr ""
+
+msgid "Custom height (px)"
+msgstr ""
+
+msgid "Content width (%)"
+msgstr ""
+
+msgid "Label padding"
+msgstr ""
+
+msgid "Title size"
+msgstr ""
+
+msgid "Label size"
+msgstr ""
+
+msgid "Text size"
+msgstr ""
+
+msgid "Overlay opacity"
+msgstr ""
+
+msgid "Hover overlay opacity"
+msgstr ""
+
+msgid "Gradient angle"
+msgstr ""
+
+msgid "Overlay color"
+msgstr ""
+
+msgid "Gradient second color"
+msgstr ""
+
+msgid "Hover overlay color"
+msgstr ""
+
+msgid "Content background"
+msgstr ""
+
+msgid "Revealer color"
+msgstr ""
+
+msgid "Hover revealer color"
+msgstr ""
+
+msgid "Heading color"
+msgstr ""
+
+msgid "Hover heading color"
+msgstr ""
+
+msgid "Content color"
+msgstr ""
+
+msgid "Subtitle color"
+msgstr ""
+
+msgid "Hover icon color"
+msgstr ""
+
+msgid "Label color"
+msgstr ""
+
+msgid "Label background"
+msgstr ""
+
+msgid "Radman CT box"
+msgstr ""
+
+msgid "Image and content"
+msgstr ""
+
+msgid "Height"
+msgstr ""
+
+msgid "Active item"
+msgstr ""
+
+msgid "Trigger type"
+msgstr ""
+
+msgid "Click"
+msgstr ""
+
+msgid "Title HTML tag"
+msgstr ""
+
+msgid "Items gap"
+msgstr ""
+
+msgid "Minimum height"
+msgstr ""
+
+msgid "Collapsed width"
+msgstr ""
+
+msgid "Content padding"
+msgstr ""
+
+msgid "Animation duration"
+msgstr ""
+
+msgid "Image or logo"
+msgstr ""
+
+msgid "Background image"
+msgstr ""
+
+msgid "Active background color"
+msgstr ""
+
+msgid "Radman CT curtain"
+msgstr ""
+
+msgid "Expandable panels"
+msgstr ""
+
+msgid "Layout"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Add item"
+msgstr ""
+
+msgid "First item"
+msgstr ""
+
+msgid "Second item"
+msgstr ""
+
+msgid "Third item"
+msgstr ""
+
+msgid "Items"
+msgstr ""
+
+msgid "Border radius"
+msgstr ""
+
+msgid "Could not load the library. Try again."
+msgstr ""
+
+msgid "Available version:"
+msgstr ""
+
+msgid "Update available"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Optional Radman CT extension."
+msgstr ""
+
+msgid "The local plugin package is missing or invalid. Upload the plugin ZIP through WordPress instead."
+msgstr ""
+
+msgid "The local plugin update is unavailable or invalid. The installed plugin has been preserved."
+msgstr ""
+
+msgid "The local plugin update could not be prepared."
+msgstr ""
+
+msgid "The plugin package version does not match its manifest. The installed plugin has been preserved."
+msgstr ""
+
+msgid "Optional loading effect; skipped in editor preview."
+msgstr ""
+
+msgid "Skipped for delayed JavaScript and reduced motion; closes within two seconds."
+msgstr ""
+
+msgid "Curtain back color"
+msgstr ""
+
+msgid "Classic spinner"
+msgstr ""
+
+msgid "Scrollable table"
+msgstr ""
+
+msgid "No posts match these filters. Change or clear the filters to try again."
+msgstr ""
+
+msgid "Radman CT top-level submenu"
+msgstr ""
+
+msgid "Inherit menu setting"
+msgstr ""
+
+msgid "Submenu type"
+msgstr ""
+
+msgid "Mega menu"
+msgstr ""
+
+msgid "Mega menu columns"
+msgstr ""
+
+msgid "Mega menu width"
+msgstr ""
+
+msgid "Child items are columns; their children are links."
+msgstr ""
+
+msgid "Menu appearance"
+msgstr ""
+
+msgid "Menu item gap"
+msgstr ""
+
+msgid "Boxed (theme settings width)"
+msgstr ""
+
+msgid "Sticky header starts"
+msgstr ""
+
+msgid "At the header"
+msgstr ""
+
+msgid "After the first section"
+msgstr ""
+
+msgid "Header and footer"
+msgstr ""
+
+msgid "Header and footer settings"
+msgstr ""
+
+msgid "Edit layout"
+msgstr ""
+
+msgid "Dismiss"
+msgstr ""
+
+msgid "Direction"
+msgstr ""
+
+msgid "Wrap elements"
+msgstr ""
+
+msgid "Align elements"
+msgstr ""
+
+msgid "Distribute elements"
+msgstr ""
+
+msgid "Add container"
+msgstr ""
+
+msgid "Container settings"
+msgstr ""
+
+msgid "Container layout"
+msgstr ""
+
+msgid "Container"
+msgstr ""
+
+msgid "Menu text hover"
+msgstr ""
+
+msgid "Rolling text"
+msgstr ""
+
+msgid "Menu hover indicator"
+msgstr ""
+
+msgid "Dot"
+msgstr ""
+
+msgid "Plain"
+msgstr ""
+
+msgid "Soft highlight"
+msgstr ""
+
+msgid "Underline"
+msgstr ""
+
+msgid "Sidebar on devices"
+msgstr ""
+
+msgid "Choose the editor in each page template."
+msgstr ""
+
+msgid "Choose custom PHP or Elementor Pro for each view."
+msgstr ""
+
+msgid "Empty values inherit; zero removes spacing."
+msgstr ""
+
+msgid "Drag elements onto a row."
+msgstr ""
+
+msgid "Set menus and visibility for each device."
+msgstr ""
+
+msgid "Save before assigning. Page settings take priority."
+msgstr ""
+
+msgid "Overlays the page; preview it on the site."
+msgstr ""
+
+msgid "Keeps the header visible while scrolling."
+msgstr ""
+
+msgid "Phone: tel:, email: mailto:."
+msgstr ""
+
+msgid "Up to 8 labeled links."
+msgstr ""
+
+msgid "Select an element to edit; save to publish."
+msgstr ""
+
+msgid "Choose an element for the selected row."
+msgstr ""
+
+msgid "JSON backup for this site; save after restoring."
+msgstr ""
+
+msgid "Uses the WordPress site logo or title."
+msgstr ""
+
+msgid "Zero inherits the original size."
+msgstr ""
+
+msgid "Content defaults; builders and Elementor have separate controls."
+msgstr ""
+
+msgid "Loading results..."
+msgstr ""
+
+msgid "Results could not be loaded. Your previous results are still available."
+msgstr ""
+
+msgid "Try again"
+msgstr ""
+
+msgid "This archive is not available."
+msgstr ""
+
+msgid "Search articles"
+msgstr ""
+
+msgid "Tag"
+msgstr ""
+
+msgid "Animations and parallax"
+msgstr ""
+
+msgid "Animate contents"
+msgstr ""
+
+msgid "Animate from"
+msgstr ""
+
+msgid "Animate to"
+msgstr ""
+
+msgid "Animation order"
+msgstr ""
+
+msgid "Animation preset"
+msgstr ""
+
+msgid "Animation targets"
+msgstr ""
+
+msgid "All contents"
+msgstr ""
+
+msgid "Direct inner containers"
+msgstr ""
+
+msgid "Include inner containers content"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Easing"
+msgstr ""
+
+msgid "Fade in"
+msgstr ""
+
+msgid "Fade in down"
+msgstr ""
+
+msgid "Fade in up"
+msgstr ""
+
+msgid "Fade in left"
+msgstr ""
+
+msgid "Fade in right"
+msgstr ""
+
+msgid "Flip in X"
+msgstr ""
+
+msgid "Flip in Y"
+msgstr ""
+
+msgid "Scale up"
+msgstr ""
+
+msgid "Scale down"
+msgstr ""
+
+msgid "Stagger"
+msgstr ""
+
+msgid "Start delay"
+msgstr ""
+
+msgid "Opacity"
+msgstr ""
+
+msgid "Translate X"
+msgstr ""
+
+msgid "Translate Y"
+msgstr ""
+
+msgid "Translate Z"
+msgstr ""
+
+msgid "Scale X"
+msgstr ""
+
+msgid "Scale Y"
+msgstr ""
+
+msgid "Rotate X"
+msgstr ""
+
+msgid "Rotate Y"
+msgstr ""
+
+msgid "Rotate Z"
+msgstr ""
+
+msgid "Parallax"
+msgstr ""
+
+msgid "Parallax from"
+msgstr ""
+
+msgid "Parallax to"
+msgstr ""
+
+msgid "Parallax settings"
+msgstr ""
+
+msgid "Parallax smoothing"
+msgstr ""
+
+msgid "Parallax easing"
+msgstr ""
+
+msgid "Parallax start"
+msgstr ""
+
+msgid "Parallax end"
+msgstr ""
+
+msgid "On enter"
+msgstr ""
+
+msgid "On leave"
+msgstr ""
+
+msgid "On center"
+msgstr ""
+
+msgid "Play animations"
+msgstr ""
+
+msgid "Pages"
+msgstr ""
+
+msgid "Manage pages"
+msgstr ""
+
+msgid "Custom design layout"
+msgstr ""
+
+msgid "Atomic editor is enabled in Elementor."
+msgstr ""
+
+msgid "Enable Atomic editor"
+msgstr ""
+
+msgid "Enabling Atomic editor..."
+msgstr ""
+
+msgid "Atomic editor could not be enabled. Check Elementor and your administrator permissions, then try again."
+msgstr ""
+
+msgid "Atomic editor is not enabled in Elementor. Enable it through Elementor before using Atomic elements; existing classic documents remain available."
+msgstr ""
+
+msgid "Choose Radman CT custom design or Radman CT Elementor with header and footer in each page template selector. Both methods can be used on the same website without converting content."
+msgstr ""
+
+msgid "Elementor pages support the native Atomic editor when enabled in Elementor. Ordinary pages need Elementor; single and archive Theme Builder designs need Elementor Pro."
+msgstr ""
+
+msgid "Elementor is not active. Custom pages remain available; install your local Elementor ZIP to use its editor."
+msgstr ""
+
+msgid "Design preferences can be saved before enabling a module or installing Pro. They do not activate plugins or content modules."
+msgstr ""
+
+msgid "Layout and spacing"
+msgstr ""
+
+msgid "Content type layouts"
+msgstr ""
+
+msgid "Custom PHP layouts only. Elementor controls its own width and spacing."
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Single details"
+msgstr ""
+
+msgid "Set archive and single layouts independently. These settings apply to custom PHP output and fallback; Elementor controls its own content width and spacing."
+msgstr ""
+
+msgid "Content width mode"
+msgstr ""
+
+msgid "Use global layout settings"
+msgstr ""
+
+msgid "Site container width"
+msgstr ""
+
+msgid "Full width with configured gutters"
+msgstr ""
+
+msgid "Custom maximum width (px)"
+msgstr ""
+
+msgid "Text reading width (px)"
+msgstr ""
+
+msgid "Leave empty to inherit. Zero is an explicit spacing value."
+msgstr ""
+
+msgid "These defaults apply to Radman CT content. Header and footer have independent controls in their builders. Elementor controls its own content width and spacing."
+msgstr ""
+
+msgid "Content side spacing (px)"
+msgstr ""
+
+msgid "Mobile content side spacing (px)"
+msgstr ""
+
+msgid "Tablet content side spacing (px)"
+msgstr ""
+
+msgid "Tablet content top spacing (px)"
+msgstr ""
+
+msgid "Tablet content bottom spacing (px)"
+msgstr ""
+
+msgid "Radman CT content layout"
+msgstr ""
+
+msgid "Applies only to Radman-rendered page content. Elementor controls its own layout; header and footer settings stay independent."
+msgstr ""
+
+msgid "Global mode ignores the overrides below. Custom maximum width is used only in custom mode. Empty spacing inherits; zero removes spacing."
+msgstr ""
+
+msgid "Content top spacing (px)"
+msgstr ""
+
+msgid "Content bottom spacing (px)"
+msgstr ""
+
+msgid "Mobile content top spacing (px)"
+msgstr ""
+
+msgid "Mobile content bottom spacing (px)"
+msgstr ""
+
+msgid "Leave empty to inherit. Zero spacing is allowed. Background width is independent of the inner content width."
+msgstr ""
+
+msgid "This row is full. Choose another row or add a row. Layouts support up to 8 rows and 6 elements per row."
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Advanced"
+msgstr ""
+
+msgid "Focus mode"
+msgstr ""
+
+msgid "Layout settings"
+msgstr ""
+
+msgid "Search elements"
+msgstr ""
+
+msgid "Drag an element from the panel onto a row. Select an element to edit it; use its handle to move it. Structure provides keyboard move controls."
+msgstr ""
+
+msgid "Component category"
+msgstr ""
+
+msgid "All categories"
+msgstr ""
+
+msgid "Loading preview..."
+msgstr ""
+
+msgid "Preview ready."
+msgstr ""
+
+msgid "The preview could not be opened. Refresh this page and try again."
+msgstr ""
+
+msgid "Sample language"
+msgstr ""
+
+msgid "Close preview"
+msgstr ""
+
+msgid "Persian"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Insertion could not be confirmed. Check the page before trying again."
+msgstr ""
+
+msgid "Components"
+msgstr ""
+
+msgid "Search components"
+msgstr ""
+
+msgid "Insert sample"
+msgstr ""
+
+msgid "No components match your search."
+msgstr ""
+
+msgid "Preview language"
+msgstr ""
+
+msgid "Component preview"
+msgstr ""
+
+msgid "Sample added at the end of the page. Edit it in Elementor and save your page."
+msgstr ""
+
+msgid "Explore the available Radman CT components. PHP usage is documented in the project documentation."
+msgstr ""
+
+msgid "Radman CT component library"
+msgstr ""
+
+msgid "Scroll or interact with the sample to preview its behavior."
+msgstr ""
+
+msgid "Style"
+msgstr ""
+
+msgid "Text alignment"
+msgstr ""
+
+msgid "Final opacity"
+msgstr ""
+
+msgid "Scroll smoothing"
+msgstr ""
+
+msgid "Word stagger"
+msgstr ""
+
+msgid "Scroll start"
+msgstr ""
+
+msgid "Scroll end"
+msgstr ""
+
+msgid "Two positions: top, center, bottom or 0–100%. Example: top 80%."
+msgstr ""
+
+msgid "Reveal order"
+msgstr ""
+
+msgid "Reading start"
+msgstr ""
+
+msgid "Reading end"
+msgstr ""
+
+msgid "Edges"
+msgstr ""
+
+msgid "Random"
+msgstr ""
+
+msgid "Justify"
+msgstr ""
+
+msgid "Back to products"
+msgstr ""
+
+msgid "Back to projects"
+msgstr ""
+
+msgid "No products match these filters. Change or clear the filters to try again."
+msgstr ""
+
+msgid "No projects found."
+msgstr ""
+
+msgid "Loading image..."
+msgstr ""
+
+msgid "This image could not be loaded."
+msgstr ""
+
+msgid "Image %1$s of %2$s"
+msgstr ""
+
+msgid "Catalog filters"
+msgstr ""
+
+msgid "Results: %s"
+msgstr ""
+
+msgid "Active filters"
+msgstr ""
+
+msgid "Remove filter: %s"
+msgstr ""
+
+msgid "Manage content modules"
+msgstr ""
+
+msgid "View archive"
+msgstr ""
+
+msgid "Manage items"
+msgstr ""
+
+msgid "Body text fonts"
+msgstr ""
+
+msgid "Heading fonts"
+msgstr ""
+
+msgid "Individual heading tags (optional)"
+msgstr ""
+
+msgid "Use the body font"
+msgstr ""
+
+msgid "Use the heading font"
+msgstr ""
+
+msgid "Headings inherit the body font unless selected here. Each heading tag can override this choice. Only resolved local families are declared; fonts are not all preloaded."
+msgstr ""
+
+msgid "Desktop logo width (0 = default, max 512 px)"
+msgstr ""
+
+msgid "Desktop logo maximum height (0 = default, max 256 px)"
+msgstr ""
+
+msgid "Mobile logo width (0 = inherit, max 512 px)"
+msgstr ""
+
+msgid "Mobile logo maximum height (0 = inherit, max 256 px)"
+msgstr ""
+
+msgid "The image keeps its proportions and fits within the row. These controls do not change the site title text size."
+msgstr ""
+
+msgid "Desktop menu layout"
+msgstr ""
+
+msgid "Horizontal links"
+msgstr ""
+
+msgid "Vertical links"
+msgstr ""
+
+msgid "Always visible links"
+msgstr ""
+
+msgid "Button appearance"
+msgstr ""
+
+msgid "Filled"
+msgstr ""
+
+msgid "Outlined"
+msgstr ""
+
+msgid "Text link"
+msgstr ""
+
+msgid "Button accent color"
+msgstr ""
+
+msgid "Use the theme button radius"
+msgstr ""
+
+msgid "Button corner radius (px)"
+msgstr ""
+
+msgid "Button horizontal spacing (px)"
+msgstr ""
+
+msgid "Button vertical spacing (px)"
+msgstr ""
+
+msgid "Open link in a new tab"
+msgstr ""
+
+msgid "Mobile element gap"
+msgstr ""
+
+msgid "Mobile row vertical spacing"
+msgstr ""
+
+msgid "Use desktop spacing"
+msgstr ""
+
+msgid "Use desktop value"
+msgstr ""
+
+msgid "Product description"
+msgstr ""
+
+msgid "View details"
+msgstr ""
+
+msgid "Read article"
+msgstr ""
+
+msgid "Back to articles"
+msgstr ""
+
+msgid "Element arrangement"
+msgstr ""
+
+msgid "Contact us"
+msgstr ""
+
+msgid "Consultation and price inquiry"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Element type"
+msgstr ""
+
+msgid "Classic"
+msgstr ""
+
+msgid "Atomic"
+msgstr ""
+
+msgid "Logo width (0 = inherit, max 512 px)"
+msgstr ""
+
+msgid "Logo maximum height (0 = inherit, max 256 px)"
+msgstr ""
+
+msgid "Pixels"
+msgstr ""
+
+msgid "Mobile menu"
+msgstr ""
+
+msgid "Use the desktop menu"
+msgstr ""
+
+msgid "Mobile menu display"
+msgstr ""
+
+msgid "Dropdown"
+msgstr ""
+
+msgid "Sidebar drawer"
+msgstr ""
+
+msgid "Drawer side (follows RTL/LTR)"
+msgstr ""
+
+msgid "Close menu"
+msgstr ""
+
+msgid "Choose menus independently for header and footer. For different device layouts, create separate rows and set their visibility to desktop or mobile."
+msgstr ""
+
+msgid "Mobile element layout"
+msgstr ""
+
+msgid "Stacked"
+msgstr ""
+
+msgid "Side by side"
+msgstr ""
+
+msgid "Text color"
+msgstr ""
+
+msgid "Inherit appearance"
+msgstr ""
+
+msgid "Desktop text size (0 = inherit, max 96 px)"
+msgstr ""
+
+msgid "Mobile text size (0 = inherit, max 96 px)"
+msgstr ""
+
+msgid "Layout width"
+msgstr ""
+
+msgid "Site content width"
+msgstr ""
+
+msgid "Add up to 8 profile links. Use an HTTP or HTTPS address, an internal path or # for a placeholder. Each link needs a label; icons are optional."
+msgstr ""
+
+msgid "You are not allowed to install this plugin."
+msgstr ""
+
+msgid "Activate"
+msgstr ""
+
+msgid "Install"
+msgstr ""
+
+msgid "Upload ZIP"
+msgstr ""
+
+msgid "Choose Install or Activate for the plugins you need. WordPress handles permissions and installation; nothing is installed automatically."
+msgstr ""
+
+msgid "Retry preview"
+msgstr ""
+
+msgid "You are not allowed to update this plugin."
+msgstr ""
+
+msgid "Upload your plugin ZIP through WordPress. No automatic download."
+msgstr ""
+
+msgid "Layout display and assignment"
+msgstr ""
+
+msgid "The saved layout is disabled. Enable and save it to display it on the site."
+msgstr ""
+
+msgid "The saved layout is the default for this selection."
+msgstr ""
+
+msgid "The saved layout is enabled but is not the default for this selection."
+msgstr ""
+
+msgid "Save your changes before assigning a layout. Page overrides take priority over language and site defaults. Elementor Canvas omits the theme header and footer."
+msgstr ""
+
+msgid "Optional desktop smoothing. Native scrolling is used with the WordPress toolbar or a Radman CT sticky header, on touch devices and when reduced motion is requested."
+msgstr ""
+
+msgid "Sticky header"
+msgstr ""
+
+msgid "Transparent header over page content"
+msgstr ""
+
+msgid "Overlaps the top of the page without a gap. Row backgrounds are hidden; sticky scrolling uses the site background and text colors. Shown on the site, not in the isolated preview."
+msgstr ""
+
+msgid "Off"
+msgstr ""
+
+msgid "Keeps the whole header visible on the selected devices. Native scrolling is used on pages with this header. Sticky behavior is shown on the site, not in the editor preview."
+msgstr ""
+
+msgid "Plugins and requirements"
+msgstr ""
+
+msgid "Required only for the optional product and portfolio modules."
+msgstr ""
+
+msgid "Required only for pages edited with Elementor."
+msgstr ""
+
+msgid "Required only for selected Pro features and Theme Builder designs."
+msgstr ""
+
+msgid "Required only for multilingual content managed with WPML."
+msgstr ""
+
+msgid "Required only for translating builder strings through WPML."
+msgstr ""
+
+msgid "Required only for sliders created with this plugin. Full integration is not yet verified."
+msgstr ""
+
+msgid "The base theme requires no plugins. Install only what your project uses."
+msgstr ""
+
+msgid "This page checks local installation status only. It does not install, activate, update or contact plugin providers."
+msgstr ""
+
+msgid "Open plugin manager"
+msgstr ""
+
+msgid "Optional plugin status"
+msgstr ""
+
+msgid "Plugin"
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "Used for"
+msgstr ""
+
+msgid "Optional"
+msgstr ""
+
+msgid "Not installed"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Inactive"
+msgstr ""
+
+msgid "Prerequisite:"
+msgstr ""
+
+msgid "The prerequisite is not active."
+msgstr ""
+
+msgid "Manage product and portfolio modules"
+msgstr ""
+
+msgid "Contact information"
+msgstr ""
+
+msgid "Social links"
+msgstr ""
+
+msgid "No icon"
+msgstr ""
+
+msgid "Unavailable icon"
+msgstr ""
+
+msgid "Link label"
+msgstr ""
+
+msgid "Social link"
+msgstr ""
+
+msgid "Add social link"
+msgstr ""
+
+msgid "Use tel: for phone, mailto: for email, or leave the URL empty for plain text. Linked icons require a label."
+msgstr ""
+
+msgid "Add up to 8 profile links. Each link needs a label and an HTTP or HTTPS address. Icons are optional."
+msgstr ""
+
+msgid "Accessible label"
+msgstr ""
+
+msgid "Arrow left"
+msgstr ""
+
+msgid "Arrow right"
+msgstr ""
+
+msgid "Automatic"
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
+msgid "Chevron down"
+msgstr ""
+
+msgid "Chevron left"
+msgstr ""
+
+msgid "Chevron right"
+msgstr ""
+
+msgid "Chevron up"
+msgstr ""
+
+msgid "Clock"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "External link"
+msgstr ""
+
+msgid "Font size"
+msgstr ""
+
+msgid "HTML tag"
+msgstr ""
+
+msgid "Highlighted text color"
+msgstr ""
+
+msgid "Hover and focus"
+msgstr ""
+
+msgid "Icon"
+msgstr ""
+
+msgid "Icon color"
+msgstr ""
+
+msgid "Icon size"
+msgstr ""
+
+msgid "Inherit"
+msgstr ""
+
+msgid "Initial opacity"
+msgstr ""
+
+msgid "Initial text color"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Minus"
+msgstr ""
+
+msgid "Mirror directional icons in RTL"
+msgstr ""
+
+msgid "Pause"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Plus"
+msgstr ""
+
+msgid "Radman CT icon"
+msgstr ""
+
+msgid "Radman CT text reveal"
+msgstr ""
+
+msgid "Reveal behavior"
+msgstr ""
+
+msgid "Scroll"
+msgstr ""
+
+msgid "Stroke width"
+msgstr ""
+
+msgid "Text becomes highlighted as you scroll."
+msgstr ""
+
+msgid "Text direction"
+msgstr ""
+
+msgid "Text reveal"
+msgstr ""
+
+msgid "Primary menu"
+msgstr ""
+
+msgid "Footer menu"
+msgstr ""
+
+msgid "Latest posts"
+msgstr ""
+
+msgid "Search results for: %s"
+msgstr ""
+
+msgid "Skip to content"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Toggle submenu"
+msgstr ""
+
+msgid "Content pages"
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "No content found."
+msgstr ""
+
+msgid "Page not found"
+msgstr ""
+
+msgid "Try a search or return to the home page."
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Search the site"
+msgstr ""
+
+msgid "Full width"
+msgstr ""
+
+msgid "Brand"
+msgstr ""
+
+msgid "Ink"
+msgstr ""
+
+msgid "Muted"
+msgstr ""
+
+msgid "Surface"
+msgstr ""
+
+msgid "White"
+msgstr ""
+
+msgid "Some values were invalid and kept their previous settings."
+msgstr ""
+
+msgid "Settings were not saved because the submitted data was invalid."
+msgstr ""
+
+msgid "Radman CT settings"
+msgstr ""
+
+msgid "Radman CT"
+msgstr ""
+
+msgid "Enable JavaScript to edit these settings."
+msgstr ""
+
+msgid "Theme settings"
+msgstr ""
+
+msgid "Site identity"
+msgstr ""
+
+msgid "Typography"
+msgstr ""
+
+msgid "Design"
+msgstr ""
+
+msgid "Save changes"
+msgstr ""
+
+msgid "Reset section"
+msgstr ""
+
+msgid "Reset all"
+msgstr ""
+
+msgid "Reset this section? Save changes to apply."
+msgstr ""
+
+msgid "Reset all theme settings? Save changes to apply."
+msgstr ""
+
+msgid "Unsaved changes"
+msgstr ""
+
+msgid "No pending changes"
+msgstr ""
+
+msgid "Persian font"
+msgstr ""
+
+msgid "Latin font"
+msgstr ""
+
+msgid "Fonts are loaded locally. Only the selected families are used."
+msgstr ""
+
+msgid "This is a preview of the Persian font."
+msgstr ""
+
+msgid "A clear typeface for your company."
+msgstr ""
+
+msgid "Brand color"
+msgstr ""
+
+msgid "Content width"
+msgstr ""
+
+msgid "Choose a width between 960 and 1600 pixels."
+msgstr ""
+
+msgid "Manage the site title, logo and site icon in WordPress site identity."
+msgstr ""
+
+msgid "Edit site identity"
+msgstr ""
+
+msgid "Font preview"
+msgstr ""
+
+msgid "Scroll and motion"
+msgstr ""
+
+msgid "Scroll reveal animations"
+msgstr ""
+
+msgid "Animate marked sections as they enter the screen. Disabled by default."
+msgstr ""
+
+msgid "Smooth scrolling"
+msgstr ""
+
+msgid "Optional desktop smoothing. Native scrolling remains on touch devices and when reduced motion is requested."
+msgstr ""
+
+msgid "Header builder"
+msgstr ""
+
+msgid "Footer builder"
+msgstr ""
+
+msgid "Use this layout"
+msgstr ""
+
+msgid "Add row"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
+msgid "Move down"
+msgstr ""
+
+msgid "Move to previous row"
+msgstr ""
+
+msgid "Move to next row"
+msgstr ""
+
+msgid "Site logo"
+msgstr ""
+
+msgid "Navigation menu"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Button"
+msgstr ""
+
+msgid "Link URL"
+msgstr ""
+
+msgid "Add element"
+msgstr ""
+
+msgid "Save layout"
+msgstr ""
+
+msgid "Row"
+msgstr ""
+
+msgid "Drag rows or elements to reorder them. Move buttons also work with keyboard and touch. Up to 8 rows and 6 elements per row."
+msgstr ""
+
+msgid "Uses the primary menu in the header and the footer menu in the footer. Assign menus in WordPress navigation settings."
+msgstr ""
+
+msgid "Uses the logo or site title from WordPress site identity."
+msgstr ""
+
+msgid "Remove this row and its elements?"
+msgstr ""
+
+msgid "Add a row, then add elements to build your layout."
+msgstr ""
+
+msgid "Layout saved."
+msgstr ""
+
+msgid "This layout changed in another tab. Reload before saving again."
+msgstr ""
+
+msgid "The layout is invalid. Your saved layout was preserved."
+msgstr ""
+
+msgid "You are not allowed to edit this layout."
+msgstr ""
+
+msgid "Invalid request."
+msgstr ""
+
+msgid "Radman CT local fonts"
+msgstr ""
+
+msgid "Radman CT — Elementor with header and footer"
+msgstr ""
+
+msgid "Undo"
+msgstr ""
+
+msgid "Redo"
+msgstr ""
+
+msgid "Duplicate"
+msgstr ""
+
+msgid "Row settings"
+msgstr ""
+
+msgid "Element settings"
+msgstr ""
+
+msgid "Visibility"
+msgstr ""
+
+msgid "All devices"
+msgstr ""
+
+msgid "Desktop"
+msgstr ""
+
+msgid "Mobile"
+msgstr ""
+
+msgid "Alignment"
+msgstr ""
+
+msgid "Element distribution"
+msgstr ""
+
+msgid "Element width"
+msgstr ""
+
+msgid "Equal columns"
+msgstr ""
+
+msgid "Laptop"
+msgstr ""
+
+msgid "Tablet"
+msgstr ""
+
+msgid "Device"
+msgstr ""
+
+msgid "Hide on selected devices"
+msgstr ""
+
+msgid "Preview width"
+msgstr ""
+
+msgid "Column count"
+msgstr ""
+
+msgid "Text size (px, 0 inherits)"
+msgstr ""
+
+msgid "Colors apply to all devices."
+msgstr ""
+
+msgid "Row layout"
+msgstr ""
+
+msgid "Flexible layout"
+msgstr ""
+
+msgid "Equal column grid"
+msgstr ""
+
+msgid "Desktop columns (1–6)"
+msgstr ""
+
+msgid "Mobile columns (1–3)"
+msgstr ""
+
+msgid "Fit content"
+msgstr ""
+
+msgid "Full row"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "End"
+msgstr ""
+
+msgid "Stretch"
+msgstr ""
+
+msgid "Space between"
+msgstr ""
+
+msgid "Element gap (0–64 px)"
+msgstr ""
+
+msgid "Vertical padding (0–120 px)"
+msgstr ""
+
+msgid "Background color"
+msgstr ""
+
+msgid "Transparent"
+msgstr ""
+
+msgid "General settings"
+msgstr ""
+
+msgid "Effects"
+msgstr ""
+
+msgid "Mouse cursor"
+msgstr ""
+
+msgid "Circular mouse cursor"
+msgstr ""
+
+msgid "Disabled by default. Runs only with a mouse and without reduced motion."
+msgstr ""
+
+msgid "A lightweight circle follows the mouse. The system pointer remains available; touch devices and form fields keep their normal behavior."
+msgstr ""
+
+msgid "Hide outer circle"
+msgstr ""
+
+msgid "Inner dot size (2–24 px)"
+msgstr ""
+
+msgid "Outer circle size (16–120 px)"
+msgstr ""
+
+msgid "Cursor color"
+msgstr ""
+
+msgid "Blend mode"
+msgstr ""
+
+msgid "Normal"
+msgstr ""
+
+msgid "Difference"
+msgstr ""
+
+msgid "Image cursor label"
+msgstr ""
+
+msgid "Carousel cursor label"
+msgstr ""
+
+msgid "Optional text for marked images or carousels. Leave empty for a circle only."
+msgstr ""
+
+msgid "Scroll progress"
+msgstr ""
+
+msgid "Top scroll progress bar"
+msgstr ""
+
+msgid "Show reading progress at the top of the page. Disabled by default; no animation library is needed."
+msgstr ""
+
+msgid "Bar height (1–8 px)"
+msgstr ""
+
+msgid "Progress color"
+msgstr ""
+
+msgid "Track color"
+msgstr ""
+
+msgid "Page loading"
+msgstr ""
+
+msgid "Enable preloader"
+msgstr ""
+
+msgid "Optional visual effect until the page structure is ready. Does not lock scrolling; disabled in Elementor editing and preview."
+msgstr ""
+
+msgid "Preloader style"
+msgstr ""
+
+msgid "Preloader background"
+msgstr ""
+
+msgid "Preloader indicator color"
+msgstr ""
+
+msgid "Closes automatically within two seconds. It stays hidden when JavaScript is delayed or reduced motion is requested."
+msgstr ""
+
+msgid "Curtain"
+msgstr ""
+
+msgid "Fade"
+msgstr ""
+
+msgid "Sliding"
+msgstr ""
+
+msgid "Spinner"
+msgstr ""
+
+msgid "Classic dots"
+msgstr ""
+
+msgid "Dissolve"
+msgstr ""
+
+msgid "Bundled local image"
+msgstr ""
+
+msgid "Shared content blocks"
+msgstr ""
+
+msgid "Shared content block"
+msgstr ""
+
+msgid "Choose a content block"
+msgstr ""
+
+msgid "Published WordPress patterns with basic text, image, layout and button blocks are supported. HTML, shortcodes, forms and plugin widgets are not supported here yet."
+msgstr ""
+
+msgid "Manage shared content blocks"
+msgstr ""
+
+msgid "The selected block is unavailable. Choose another block or remove this element."
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Apply filters"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Clear filters"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Default order"
+msgstr ""
+
+msgid "Feature"
+msgstr ""
+
+msgid "Image gallery"
+msgstr ""
+
+msgid "Newest"
+msgstr ""
+
+msgid "Next image"
+msgstr ""
+
+msgid "Oldest"
+msgstr ""
+
+msgid "Open image"
+msgstr ""
+
+msgid "Previous image"
+msgstr ""
+
+msgid "Reference code"
+msgstr ""
+
+msgid "Request a quote"
+msgstr ""
+
+msgid "Search products"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Technical specifications"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Radman CT page effects"
+msgstr ""
+
+msgid "Follow theme settings"
+msgstr ""
+
+msgid "Enable on this page"
+msgstr ""
+
+msgid "Disable on this page"
+msgstr ""
+
+msgid "Override effects for this page only. Editor previews always keep effects disabled."
+msgstr ""
+
+msgid "All languages"
+msgstr ""
+
+msgid "Choose a menu"
+msgstr ""
+
+msgid "Copyright"
+msgstr ""
+
+msgid "Could not create the layout. The limit is 12 saved layouts per builder."
+msgstr ""
+
+msgid "Default layout updated."
+msgstr ""
+
+msgid "Delete layout"
+msgstr ""
+
+msgid "Delete this saved layout?"
+msgstr ""
+
+msgid "Discard unsaved changes?"
+msgstr ""
+
+msgid "Enter a layout name with up to 80 characters."
+msgstr ""
+
+msgid "Export backup"
+msgstr ""
+
+msgid "Hide on this page"
+msgstr ""
+
+msgid "Hide preview"
+msgstr ""
+
+msgid "Import backup"
+msgstr ""
+
+msgid "Cancel restore"
+msgstr ""
+
+msgid "JSON backup, up to 256 KiB, for this site and builder only. Restoring changes the editor; save to apply it."
+msgstr ""
+
+msgid "Unable to create the backup. Check the 256 KiB file size limit and browser download permissions."
+msgstr ""
+
+msgid "Reading backup..."
+msgstr ""
+
+msgid "Checking backup..."
+msgstr ""
+
+msgid "Backup restored in the editor. Save to apply it."
+msgstr ""
+
+msgid "Restore cancelled. Your layout has not changed."
+msgstr ""
+
+msgid "Restore failed. Your layout has not changed."
+msgstr ""
+
+msgid "Inherit site default"
+msgstr ""
+
+msgid "Inherit site or language default"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Layout name (up to 80 characters)"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "New layout"
+msgstr ""
+
+msgid "Original layout"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Preview is isolated and non-interactive. Unsaved changes are not published."
+msgstr ""
+
+msgid "Radman CT header and footer"
+msgstr ""
+
+msgid "Rename layout"
+msgstr ""
+
+msgid "Replace the editor with this backup? The saved layout will not change until you save."
+msgstr ""
+
+msgid "Save and enable the layout before assigning it."
+msgstr ""
+
+msgid "Save as new layout"
+msgstr ""
+
+msgid "Copy from layout"
+msgstr ""
+
+msgid "Saved layouts"
+msgstr ""
+
+msgid "The layout name could not be updated."
+msgstr ""
+
+msgid "The original layout cannot be deleted, or the library changed. Reload and try again."
+msgstr ""
+
+msgid "The request failed. Your changes are still in the editor."
+msgstr ""
+
+msgid "This backup is invalid or belongs to another site or builder."
+msgstr ""
+
+msgid "This layout is assigned to the site or a page. Remove those assignments first."
+msgstr ""
+
+msgid "This layout is no longer available."
+msgstr ""
+
+msgid "Use as site default"
+msgstr ""
+
+msgid "Use for selected language"
+msgstr ""
+
+msgid "Use theme menu location"
+msgstr ""
+
+msgid "Your session expired. Reload the editor before trying again."
+msgstr ""
+
+msgid "Content design"
+msgstr ""
+
+msgid "Blog"
+msgstr ""
+
+msgid "Products"
+msgstr ""
+
+msgid "Portfolio"
+msgstr ""
+
+msgid "Single page design"
+msgstr ""
+
+msgid "Archive design"
+msgstr ""
+
+msgid "Radman CT custom design"
+msgstr ""
+
+msgid "Elementor Pro Theme Builder"
+msgstr ""
+
+msgid "Choose a renderer for each content type. Elementor Pro uses its matching Theme Builder conditions. Without a matching published design, Radman CT custom output remains available."
+msgstr ""
+
+msgid "Elementor Pro is not active. Custom design is used until it is available."
+msgstr ""
+
+msgid "Select an element in the preview or structure to edit its settings. Links and forms remain inactive. Unsaved changes are not published."
+msgstr ""
+
+msgid "Builder controls"
+msgstr ""
+
+msgid "Elements"
+msgstr ""
+
+msgid "Layout structure"
+msgstr ""
+
+msgid "Add to row"
+msgstr ""
+
+msgid "Choose an element to add it to the selected row. Select a row or element to edit its settings."
+msgstr ""
+
+msgid "Required only for an enabled MCP connection."
+msgstr ""
+
+msgid "Optional MCP tools for content and Radman CT layouts."
+msgstr ""
+
+msgid "Radman Content stores product and portfolio data independently of the theme. Installing Content does not enable these modules automatically."
+msgstr ""
+
+msgid "The local Radman Content package is missing or invalid. Upload the plugin ZIP through WordPress instead."
+msgstr ""
+
+msgid "Update Radman Content"
+msgstr ""
+
+msgid "Built-in theme features do not need separate plugins. Enable effects in theme settings; enable products and portfolio independently in Radman Content."
+msgstr ""
+
+msgid "This content module is disabled. Enable it independently in Radman Content."
+msgstr ""
+
+msgid "The local Content update is unavailable or invalid. The installed plugin has been preserved."
+msgstr ""
+
+msgid "The local Content update could not be prepared."
+msgstr ""
+
+msgid "The Content package version does not match its manifest. The installed plugin has been preserved."
+msgstr ""
+
+msgid "Uses the local Content package when available."
+msgstr ""
+
+msgid "Shared components for PHP and Elementor pages."
+msgstr ""
+
+msgid "Arrow Up"
+msgstr ""
+
+msgid "Arrow Down"
+msgstr ""
+
+msgid "Arrow Up Right"
+msgstr ""
+
+msgid "Chevrons Left"
+msgstr ""
+
+msgid "Chevrons Right"
+msgstr ""
+
+msgid "Move Left"
+msgstr ""
+
+msgid "Move Right"
+msgstr ""
+
+msgid "Circle Arrow Left"
+msgstr ""
+
+msgid "Circle Arrow Right"
+msgstr ""
+
+msgid "Smartphone"
+msgstr ""
+
+msgid "Monitor"
+msgstr ""
+
+msgid "Phone Call"
+msgstr ""
+
+msgid "Headphones"
+msgstr ""
+
+msgid "Message Circle"
+msgstr ""
+
+msgid "Message Square"
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Globe"
+msgstr ""
+
+msgid "Languages"
+msgstr ""
+
+msgid "Map"
+msgstr ""
+
+msgid "Calendar Days"
+msgstr ""
+
+msgid "Calendar"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Share 2"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Circle Help"
+msgstr ""
+
+msgid "Circle Alert"
+msgstr ""
+
+msgid "Circle Check"
+msgstr ""
+
+msgid "Circle X"
+msgstr ""
+
+msgid "Ellipsis"
+msgstr ""
+
+msgid "Ellipsis Vertical"
+msgstr ""
+
+msgid "Sliders Horizontal"
+msgstr ""
+
+msgid "List Filter"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "Layout Grid"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "File Text"
+msgstr ""
+
+msgid "Folder"
+msgstr ""
+
+msgid "Briefcase Business"
+msgstr ""
+
+msgid "Building 2"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "User Round"
+msgstr ""
+
+msgid "Eye"
+msgstr ""
+
+msgid "Maximize"
+msgstr ""
+
+msgid "Minimize"
+msgstr ""
+
+msgid "Volume 2"
+msgstr ""
+
+msgid "Volume X"
+msgstr ""
+
+msgid "Rotate Ccw"
+msgstr ""
+
+msgid "Refresh Cw"
+msgstr ""
+
+msgid "Directions"
+msgstr ""
+
+msgid "Dark mode"
+msgstr ""
+
+msgid "Dark mode toggle"
+msgstr ""
+
+msgid "Color scheme settings"
+msgstr ""
+
+msgid "Color scheme"
+msgstr ""
+
+msgid "Light by default"
+msgstr ""
+
+msgid "Dark by default"
+msgstr ""
+
+msgid "Follow system preference"
+msgstr ""
+
+msgid "Dark background"
+msgstr ""
+
+msgid "Dark surface"
+msgstr ""
+
+msgid "Dark mode text"
+msgstr ""
+
+msgid "Dark mode secondary text"
+msgstr ""
+
+msgid "Dark mode borders"
+msgstr ""
+
+msgid "Cursor link hover effect"
+msgstr ""
+
+msgid "Color only"
+msgstr ""
+
+msgid "Expand ring"
+msgstr ""
+
+msgid "Filled circle"
+msgstr ""
+
+msgid "Magnetic ring"
+msgstr ""
+
+msgid "Cursor follow duration (seconds)"
+msgstr ""
+
+msgid "Cursor hover duration (seconds)"
+msgstr ""
+
+msgid "Cursor hover scale"
+msgstr ""
+
+msgid "Offset menu"
+msgstr ""
+
+msgid "Sun"
+msgstr ""
+
+msgid "Moon"
+msgstr ""
+
+msgid "Light mode icon"
+msgstr ""
+
+msgid "Dark mode icon"
+msgstr ""
+
+msgid "Show label"
+msgstr ""
+
+msgid "Button size (0: automatic)"
+msgstr ""
+
+msgid "Padding"
+msgstr ""
+
+msgid "Border width"
+msgstr ""
+
+msgid "Icon transition"
+msgstr ""
+
+msgid "Rotate"
+msgstr ""
+
+msgid "Animation duration (seconds)"
+msgstr ""
+
+msgid "Light mode"
+msgstr ""
+
+msgid "Icon and text color"
+msgstr ""
+
+msgid "Background"
+msgstr ""
+
+msgid "Border color"
+msgstr ""
+
+msgid "Search %s"
+msgstr ""
+
+msgid "No results found."
+msgstr ""
+
+msgid "Remove item"
+msgstr ""
+
+msgid "Layout border"
+msgstr ""
+
+msgid "Border style"
+msgstr ""
+
+msgid "No border"
+msgstr ""
+
+msgid "Dashed"
+msgstr ""
+
+msgid "Dotted"
+msgstr ""
+
+msgid "Double"
+msgstr ""
+
+msgid "Top border width (px)"
+msgstr ""
+
+msgid "Bottom border width (px)"
+msgstr ""
+
+msgid "Start border width (px)"
+msgstr ""
+
+msgid "End border width (px)"
+msgstr ""
+
+msgid "Page title"
+msgstr ""
+
+msgid "Page title typography"
+msgstr ""
+
+msgid "Page title display"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Hide"
+msgstr ""
+
+msgid "Customize this title area"
+msgstr ""
+
+msgid "Title area height (px)"
+msgstr ""
+
+msgid "Show breadcrumbs"
+msgstr ""
+
+msgid "Background overlay"
+msgstr ""
+
+msgid "Background type"
+msgstr ""
+
+msgid "Gradient"
+msgstr ""
+
+msgid "Second color"
+msgstr ""
+
+msgid "Linear"
+msgstr ""
+
+msgid "Radial"
+msgstr ""
+
+msgid "First color position"
+msgstr ""
+
+msgid "Second color position"
+msgstr ""
+
+msgid "Background video"
+msgstr ""
+
+msgid "Video poster image"
+msgstr ""
+
+msgid "Choose media"
+msgstr ""
+
+msgid "Inherit / clear"
+msgstr ""
+
+msgid "Inherit / default"
+msgstr ""
+
+msgid "Submenu background"
+msgstr ""
+
+msgid "Submenu text color"
+msgstr ""
+
+msgid "Submenu hover color"
+msgstr ""
+
+msgid "Submenu animation duration (ms)"
+msgstr ""
+
+msgid "Default submenu type. Override individual top-level items in Appearance > Menus."
+msgstr ""
+
+msgid "Manage menu items"
+msgstr ""
+
+msgid "Title area shape"
+msgstr ""
+
+msgid "Straight edge"
+msgstr ""
+
+msgid "Curved edge"
+msgstr ""

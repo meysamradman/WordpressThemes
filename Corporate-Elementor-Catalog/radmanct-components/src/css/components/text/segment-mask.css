@@ -1,0 +1,9 @@
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .rdct-text__part[data-paint=image][data-mask-size=custom] { background-size: var(--rdct-segment-mask-width, auto) var(--rdct-segment-mask-height, auto); }
+  .rdct-text__part[data-paint=image][data-mask-position=custom] { background-position: var(--rdct-segment-mask-x, 50%) var(--rdct-segment-mask-y, 50%); }
+  .rdct-text__part[data-paint=image] { background-attachment: var(--rdct-segment-mask-attachment, scroll); background-color: currentColor; background-image: var(--rdct-segment-mask-image); background-size: var(--rdct-segment-mask-size, cover); background-repeat: var(--rdct-segment-mask-repeat, no-repeat); background-position: center; }
+  .rdct-text__part[data-mask-position=top] { background-position: center top; }
+  .rdct-text__part[data-mask-position=bottom] { background-position: center bottom; }
+  .rdct-text__part[data-mask-position=start], .rdct-text__part[data-mask-position=end]:dir(rtl) { background-position: left center; }
+  .rdct-text__part[data-mask-position=end], .rdct-text__part[data-mask-position=start]:dir(rtl) { background-position: right center; }
+}

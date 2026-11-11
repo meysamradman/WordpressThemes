@@ -1,0 +1,11 @@
+.rdct-crs__media { overflow: hidden; }
+.rdct-crs .rdct-crs__media > img { inline-size: 100%; block-size: 100%; object-fit: cover; }
+.rdct-crs.is-enhanced .swiper-slide-active .rdct-crs__media > img { animation: rdct-carousel-zoom-in var(--rdct-carousel-motion-duration, 8s) linear both; }
+.rdct-crs[data-media-motion=out].is-enhanced .swiper-slide-active .rdct-crs__media > img { animation-name: rdct-carousel-zoom-out; }
+.rdct-crs[data-media-motion=start] .rdct-crs__media > img { transform-origin: left center; }
+.rdct-crs[data-media-motion=end] .rdct-crs__media > img { transform-origin: right center; }
+.rdct-crs[data-media-motion=start]:dir(rtl) .rdct-crs__media > img { transform-origin: right center; }
+.rdct-crs[data-media-motion=end]:dir(rtl) .rdct-crs__media > img { transform-origin: left center; }
+@keyframes rdct-carousel-zoom-in { from { transform: scale(1); } to { transform: scale(var(--rdct-carousel-motion-scale, 1.15)); } }
+@keyframes rdct-carousel-zoom-out { from { transform: scale(var(--rdct-carousel-motion-scale, 1.15)); } to { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .rdct-crs.is-enhanced .swiper-slide-active .rdct-crs__media > img { animation: none; transform: none; } }

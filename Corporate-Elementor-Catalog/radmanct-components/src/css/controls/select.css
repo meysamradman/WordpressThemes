@@ -1,0 +1,40 @@
+@supports (appearance:base-select) and selector(select::picker(select)) {
+  @media (hover:hover) and (pointer:fine) and (forced-colors:none) {
+    .rdct-form select[data-rdct-select] {
+      appearance:base-select; display:flex; align-items:center; gap:1rem;
+      padding-inline:.875rem; background-image:none; text-align:start;
+    }
+    .rdct-form select[data-rdct-select]::picker(select) {
+      appearance:base-select; box-sizing:border-box; min-inline-size:anchor-size(self-inline);
+      max-inline-size:calc(100vw - 2rem); max-block-size:min(22rem,50dvh); overflow:auto;
+      margin-block:.4rem; padding:.375rem; border:1px solid var(--rdct-line,#dce2df);
+      border-radius:var(--rdct-radius,.75rem); background:var(--rdct-paper,#fff);
+      color:var(--rdct-text-body-color,var(--rdct-ink,#17241f)); font:inherit;
+      box-shadow:0 .5rem 1.5rem color-mix(in srgb,var(--rdct-ink,#17241f) 14%,transparent);
+      overscroll-behavior:contain; scrollbar-width:thin;
+    }
+    .rdct-form select[data-rdct-select]::picker-icon {
+      content:''; flex:none; inline-size:.45rem; block-size:.45rem; margin-inline-start:auto; margin-inline-end:.25rem;
+      border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor;
+      color:var(--rdct-muted,#66716a); rotate:45deg;
+    }
+    .rdct-form select[data-rdct-select]:open { border-color:var(--rdct-accent,#b98a2f); }
+    .rdct-form select[data-rdct-select]:open::picker-icon { rotate:225deg; color:var(--rdct-accent,#b98a2f); }
+    .rdct-form select[data-rdct-select] option {
+      display:flex; align-items:center; gap:.75rem; min-block-size:2.75rem; padding:.65rem .875rem;
+      border:0; border-radius:calc(var(--rdct-radius,.75rem) * .7); background:transparent; color:inherit;
+      font:inherit; line-height:1.5; white-space:normal; overflow-wrap:anywhere; cursor:pointer;
+    }
+    .rdct-form select[data-rdct-select] option:is(:hover,:focus-visible) {
+      background:color-mix(in srgb,var(--rdct-accent,#b98a2f) 10%,var(--rdct-paper,#fff));
+    }
+    .rdct-form select[data-rdct-select] option:checked {
+      background:color-mix(in srgb,var(--rdct-accent,#b98a2f) 14%,var(--rdct-paper,#fff)); color:var(--rdct-accent,#b98a2f); font-weight:600;
+    }
+    .rdct-form select[data-rdct-select] option::checkmark { order:1; margin-inline-start:auto; color:var(--rdct-accent,#b98a2f); }
+    .rdct-form select[data-rdct-select] option:disabled { opacity:.5; cursor:default; }
+    @media (prefers-reduced-motion:no-preference) {
+      .rdct-form select[data-rdct-select]::picker-icon { transition:rotate .15s ease; }
+    }
+  }
+}

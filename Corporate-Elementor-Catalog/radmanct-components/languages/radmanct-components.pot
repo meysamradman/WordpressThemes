@@ -1,0 +1,3431 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct-components 1.1.1\nLanguage: \nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Play video preview"
+msgstr ""
+
+msgid "Pause video preview"
+msgstr ""
+
+msgid "Music"
+msgstr ""
+
+msgid "Radman Components"
+msgstr ""
+
+msgid "Radman CT — Atomic"
+msgstr ""
+
+msgid "Radman CT — Classic"
+msgstr ""
+
+msgid "Unitless"
+msgstr ""
+
+msgid "Panel transition"
+msgstr ""
+
+msgid "Pin only"
+msgstr ""
+
+msgid "Slide and scale"
+msgstr ""
+
+msgid "A filled button with a label and optional icon."
+msgstr ""
+
+msgid "A bordered button with a transparent background."
+msgstr ""
+
+msgid "A minimal action without a filled background."
+msgstr ""
+
+msgid "An underlined text link with hover interaction."
+msgstr ""
+
+msgid "The label moves horizontally on hover."
+msgstr ""
+
+msgid "The label moves vertically on hover."
+msgstr ""
+
+msgid "An alternate label appears on hover."
+msgstr ""
+
+msgid "The label scrolls continuously in a horizontal direction."
+msgstr ""
+
+msgid "The label scrolls continuously in a vertical direction."
+msgstr ""
+
+msgid "A horizontal liquid transition on hover."
+msgstr ""
+
+msgid "A vertical liquid transition on hover."
+msgstr ""
+
+msgid "A reversed horizontal liquid transition on hover."
+msgstr ""
+
+msgid "A reversed vertical liquid transition on hover."
+msgstr ""
+
+msgid "Buttons"
+msgstr ""
+
+msgid "Image slider"
+msgstr ""
+
+msgid "Review carousel"
+msgstr ""
+
+msgid "Card carousel"
+msgstr ""
+
+msgid "Logo carousel"
+msgstr ""
+
+msgid "designs"
+msgstr ""
+
+msgid "component families"
+msgstr ""
+
+msgid "Browse real components. Open a design to interact with it."
+msgstr ""
+
+msgid "Search by component, design or feature…"
+msgstr ""
+
+msgid "Component pages"
+msgstr ""
+
+msgid "No matching components. Try another word or clear the category."
+msgstr ""
+
+msgid "Back to components"
+msgstr ""
+
+msgid "Back to designs"
+msgstr ""
+
+msgid "Design"
+msgstr ""
+
+msgid "Loading preview…"
+msgstr ""
+
+msgid "Ready. Hover, click or scroll to explore this design."
+msgstr ""
+
+msgid "The preview could not load. Retry or choose another design."
+msgstr ""
+
+msgid "Reload preview"
+msgstr ""
+
+msgid "Links and actions with distinct styles, icons and hover effects."
+msgstr ""
+
+msgid "A full-width image slider with navigation and motion."
+msgstr ""
+
+msgid "A responsive image grid with a shared, interactive lightbox."
+msgstr ""
+
+msgid "Customer review layouts inside the shared carousel."
+msgstr ""
+
+msgid "Individual review cards with multiple visual styles."
+msgstr ""
+
+msgid "Responsive images with reveal, tilt and parallax options."
+msgstr ""
+
+msgid "Readable text with scroll, hover and rotating-word effects."
+msgstr ""
+
+msgid "Content cards with responsive carousel navigation."
+msgstr ""
+
+msgid "A compact carousel for brand logos."
+msgstr ""
+
+msgid "Overlapping cards controlled by the shared slider."
+msgstr ""
+
+msgid "A continuous content strip with reduced-motion support."
+msgstr ""
+
+msgid "Expandable content with lined and boxed styles."
+msgstr ""
+
+msgid "Alternating image and text steps in a responsive timeline."
+msgstr ""
+
+msgid "Scroll-driven panels, stacked cards and split sections."
+msgstr ""
+
+msgid "Expandable content panels and image accordions."
+msgstr ""
+
+msgid "An icon, heading and description in selectable layouts."
+msgstr ""
+
+msgid "Two-sided content cards with directional interaction."
+msgstr ""
+
+msgid "A structured, responsive table for general content."
+msgstr ""
+
+msgid "Local SVG icons from the shared Radman catalog."
+msgstr ""
+
+msgid "A lightweight interactive particle background."
+msgstr ""
+
+msgid "Image and content cards with distinct layout options."
+msgstr ""
+
+msgid "Linked lightbox"
+msgstr ""
+
+msgid "Natural image"
+msgstr ""
+
+msgid "Hover tilt"
+msgstr ""
+
+msgid "Inline icon"
+msgstr ""
+
+msgid "Icon above content"
+msgstr ""
+
+msgid "Flip from end"
+msgstr ""
+
+msgid "Flip from top"
+msgstr ""
+
+msgid "Flip from bottom"
+msgstr ""
+
+msgid "Static text"
+msgstr ""
+
+msgid "Hover highlight"
+msgstr ""
+
+msgid "Scroll fill"
+msgstr ""
+
+msgid "Accordion"
+msgstr ""
+
+msgid "Accordion style"
+msgstr ""
+
+msgid "Lined"
+msgstr ""
+
+msgid "Boxed"
+msgstr ""
+
+msgid "Allow multiple open items"
+msgstr ""
+
+msgid "Initially open item (zero closes all)"
+msgstr ""
+
+msgid "Accordion indicator"
+msgstr ""
+
+msgid "Plus and minus"
+msgstr ""
+
+msgid "Chevron"
+msgstr ""
+
+msgid "Timeline"
+msgstr ""
+
+msgid "Column gap"
+msgstr ""
+
+msgid "Image aspect ratio"
+msgstr ""
+
+msgid "Original"
+msgstr ""
+
+msgid "Timeline style"
+msgstr ""
+
+msgid "Alternating image and text"
+msgstr ""
+
+msgid "First image position"
+msgstr ""
+
+msgid "Show timeline line"
+msgstr ""
+
+msgid "Date or milestone"
+msgstr ""
+
+msgid "Machine date (YYYY-MM-DD, optional)"
+msgstr ""
+
+msgid "Gradient start"
+msgstr ""
+
+msgid "Gradient end"
+msgstr ""
+
+msgid "Background size"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Background repeat"
+msgstr ""
+
+msgid "Background attachment"
+msgstr ""
+
+msgid "Hover gradient type"
+msgstr ""
+
+msgid "Hover gradient start"
+msgstr ""
+
+msgid "Hover gradient end"
+msgstr ""
+
+msgid "Hover background position"
+msgstr ""
+
+msgid "Hover background size"
+msgstr ""
+
+msgid "Hover background repeat"
+msgstr ""
+
+msgid "Hover background attachment"
+msgstr ""
+
+msgid "Hover inset shadow"
+msgstr ""
+
+msgid "Sticky icon border color"
+msgstr ""
+
+msgid "Sticky separator color"
+msgstr ""
+
+msgid "Sticky ripple color"
+msgstr ""
+
+msgid "Sticky hover icon color"
+msgstr ""
+
+msgid "Sticky hover icon background"
+msgstr ""
+
+msgid "Sticky hover icon border color"
+msgstr ""
+
+msgid "Sticky hover separator color"
+msgstr ""
+
+msgid "Sticky hover ripple color"
+msgstr ""
+
+msgid "Link action"
+msgstr ""
+
+msgid "Simple link"
+msgstr ""
+
+msgid "Modal window"
+msgstr ""
+
+msgid "Scroll to target"
+msgstr ""
+
+msgid "Scroll to next section"
+msgstr ""
+
+msgid "Target element ID"
+msgstr ""
+
+msgid "Lightbox caption"
+msgstr ""
+
+msgid "Scroll duration (seconds)"
+msgstr ""
+
+msgid "Button size"
+msgstr ""
+
+msgid "Extra Small"
+msgstr ""
+
+msgid "Small"
+msgstr ""
+
+msgid "Extra Large"
+msgstr ""
+
+msgid "Custom width (zero is automatic)"
+msgstr ""
+
+msgid "Button rotation"
+msgstr ""
+
+msgid "Icon rotation"
+msgstr ""
+
+msgid "Icon container preset"
+msgstr ""
+
+msgid "Icon container size (zero is automatic)"
+msgstr ""
+
+msgid "Magnetic icon"
+msgstr ""
+
+msgid "Icon border width"
+msgstr ""
+
+msgid "Icon border color"
+msgstr ""
+
+msgid "Separator color"
+msgstr ""
+
+msgid "Ripple color"
+msgstr ""
+
+msgid "Shadow horizontal offset"
+msgstr ""
+
+msgid "Shadow vertical offset"
+msgstr ""
+
+msgid "Hover background type"
+msgstr ""
+
+msgid "Hover gradient second color"
+msgstr ""
+
+msgid "Hover gradient angle"
+msgstr ""
+
+msgid "Hover background image"
+msgstr ""
+
+msgid "Hover icon border color"
+msgstr ""
+
+msgid "Hover separator color"
+msgstr ""
+
+msgid "Hover ripple color"
+msgstr ""
+
+msgid "Hover shadow color"
+msgstr ""
+
+msgid "Hover shadow horizontal offset"
+msgstr ""
+
+msgid "Hover shadow vertical offset"
+msgstr ""
+
+msgid "Hover shadow blur"
+msgstr ""
+
+msgid "Hover shadow spread"
+msgstr ""
+
+msgid "Sticky header colors"
+msgstr ""
+
+msgid "Sticky text color"
+msgstr ""
+
+msgid "Sticky background color"
+msgstr ""
+
+msgid "Sticky border color"
+msgstr ""
+
+msgid "Sticky hover text color"
+msgstr ""
+
+msgid "Sticky hover background"
+msgstr ""
+
+msgid "Sticky hover border color"
+msgstr ""
+
+msgid "Sticky icon color"
+msgstr ""
+
+msgid "Sticky icon background"
+msgstr ""
+
+msgid "Semi rounded"
+msgstr ""
+
+msgid "Pill"
+msgstr ""
+
+msgid "Button"
+msgstr ""
+
+msgid "Change text"
+msgstr ""
+
+msgid "Colors"
+msgstr ""
+
+msgid "Colors (Hover)"
+msgstr ""
+
+msgid "Colors (Normal)"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Element"
+msgstr ""
+
+msgid "Fit content"
+msgstr ""
+
+msgid "Full width"
+msgstr ""
+
+msgid "Horizontal padding"
+msgstr ""
+
+msgid "Hover background color"
+msgstr ""
+
+msgid "Hover border color"
+msgstr ""
+
+msgid "Hover duration (seconds)"
+msgstr ""
+
+msgid "Hover effects"
+msgstr ""
+
+msgid "Hover text"
+msgstr ""
+
+msgid "Hover text color"
+msgstr ""
+
+msgid "Icon appearance"
+msgstr ""
+
+msgid "Icon gap"
+msgstr ""
+
+msgid "Icon hover effect"
+msgstr ""
+
+msgid "Icon ripple"
+msgstr ""
+
+msgid "Icon separator"
+msgstr ""
+
+msgid "Learn more"
+msgstr ""
+
+msgid "Liquid horizontally"
+msgstr ""
+
+msgid "Liquid horizontally reversed"
+msgstr ""
+
+msgid "Liquid vertically"
+msgstr ""
+
+msgid "Liquid vertically reversed"
+msgstr ""
+
+msgid "Magnetic hover"
+msgstr ""
+
+msgid "Marquee horizontally"
+msgstr ""
+
+msgid "Marquee vertically"
+msgstr ""
+
+msgid "Outline"
+msgstr ""
+
+msgid "Plain"
+msgstr ""
+
+msgid "Reveal"
+msgstr ""
+
+msgid "Rounded"
+msgstr ""
+
+msgid "Swap"
+msgstr ""
+
+msgid "Switch horizontally"
+msgstr ""
+
+msgid "Switch vertically"
+msgstr ""
+
+msgid "Text hover effect"
+msgstr ""
+
+msgid "Vertical padding"
+msgstr ""
+
+msgid "The icon library could not load. Try again."
+msgstr ""
+
+msgid "Use -1 to inherit; zero removes the border."
+msgstr ""
+
+msgid "Carousel ID"
+msgstr ""
+
+msgid "Controlled carousel IDs"
+msgstr ""
+
+msgid "External buttons"
+msgstr ""
+
+msgid "Card Carousel"
+msgstr ""
+
+msgid "Logo Carousel"
+msgstr ""
+
+msgid "Hero Slider"
+msgstr ""
+
+msgid "Stacked Cards"
+msgstr ""
+
+msgid "Testimonials"
+msgstr ""
+
+msgid "Card"
+msgstr ""
+
+msgid "Speech bubble"
+msgstr ""
+
+msgid "Centered"
+msgstr ""
+
+msgid "Side by side"
+msgstr ""
+
+msgid "Outlined"
+msgstr ""
+
+msgid "Testimonial style"
+msgstr ""
+
+msgid "Name color"
+msgstr ""
+
+msgid "Rating color"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Position or company"
+msgstr ""
+
+msgid "Review text"
+msgstr ""
+
+msgid "Avatar"
+msgstr ""
+
+msgid "Client logo"
+msgstr ""
+
+msgid "Rating"
+msgstr ""
+
+msgid "Review date"
+msgstr ""
+
+msgid "Review source"
+msgstr ""
+
+msgid "Source link"
+msgstr ""
+
+msgid "Rated %d out of 5"
+msgstr ""
+
+msgid "Testimonial appearance"
+msgstr ""
+
+msgid "Customer review"
+msgstr ""
+
+msgid "Slider"
+msgstr ""
+
+msgid "Previous button CSS class"
+msgstr ""
+
+msgid "Next button CSS class"
+msgstr ""
+
+msgid "Enter one unique CSS class without a dot. Add it to a button or its widget wrapper on this page."
+msgstr ""
+
+msgid "Synchronization"
+msgstr ""
+
+msgid "Synchronization method"
+msgstr ""
+
+msgid "Unit"
+msgstr ""
+
+msgid "Highlight width"
+msgstr ""
+
+msgid "Highlight height"
+msgstr ""
+
+msgid "Highlight bottom offset"
+msgstr ""
+
+msgid "Highlight reading-start offset"
+msgstr ""
+
+msgid "Highlight corner radius"
+msgstr ""
+
+msgid "Slide index"
+msgstr ""
+
+msgid "Continuous progress"
+msgstr ""
+
+msgid "Use a unique name starting with a letter, without #."
+msgstr ""
+
+msgid "Add up to 16 carousel IDs, separated by commas. Use autoplay on the controlling carousel only."
+msgstr ""
+
+msgid "Radial gradient position"
+msgstr ""
+
+msgid "Start color position (%)"
+msgstr ""
+
+msgid "End color position (%)"
+msgstr ""
+
+msgid "Center left"
+msgstr ""
+
+msgid "Center right"
+msgstr ""
+
+msgid "Top center"
+msgstr ""
+
+msgid "Bottom center"
+msgstr ""
+
+msgid "Image top start corner"
+msgstr ""
+
+msgid "Image top end corner"
+msgstr ""
+
+msgid "Image bottom start corner"
+msgstr ""
+
+msgid "Image bottom end corner"
+msgstr ""
+
+msgid "%s (tablet)"
+msgstr ""
+
+msgid "%s (mobile)"
+msgstr ""
+
+msgid "Loading library..."
+msgstr ""
+
+msgid "Image loading"
+msgstr ""
+
+msgid "Automatic (WordPress)"
+msgstr ""
+
+msgid "Main image above the fold"
+msgstr ""
+
+msgid "Lazy loading"
+msgstr ""
+
+msgid "Use high priority only for the main image visible when the page opens."
+msgstr ""
+
+msgid "Stacked cards"
+msgstr ""
+
+msgid "Arrow color"
+msgstr ""
+
+msgid "Arrow hover color"
+msgstr ""
+
+msgid "Particles"
+msgstr ""
+
+msgid "Particles options"
+msgstr ""
+
+msgid "Particle ID prefix"
+msgstr ""
+
+msgid "Use as background"
+msgstr ""
+
+msgid "Visible on parent hover"
+msgstr ""
+
+msgid "Tablet height"
+msgstr ""
+
+msgid "Mobile height"
+msgstr ""
+
+msgid "Number"
+msgstr ""
+
+msgid "Enable density"
+msgstr ""
+
+msgid "Density area"
+msgstr ""
+
+msgid "Color"
+msgstr ""
+
+msgid "Color variations"
+msgstr ""
+
+msgid "Single color"
+msgstr ""
+
+msgid "Multiple colors"
+msgstr ""
+
+msgid "Random color"
+msgstr ""
+
+msgid "Stroke color"
+msgstr ""
+
+msgid "Polygon sides"
+msgstr ""
+
+msgid "Image height"
+msgstr ""
+
+msgid "Random opacity"
+msgstr ""
+
+msgid "Animate opacity"
+msgstr ""
+
+msgid "Opacity animation speed"
+msgstr ""
+
+msgid "Minimum opacity"
+msgstr ""
+
+msgid "Synchronize opacity animation"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Random size"
+msgstr ""
+
+msgid "Animate size"
+msgstr ""
+
+msgid "Size animation speed"
+msgstr ""
+
+msgid "Minimum size"
+msgstr ""
+
+msgid "Synchronize size animation"
+msgstr ""
+
+msgid "Linked lines"
+msgstr ""
+
+msgid "Line distance"
+msgstr ""
+
+msgid "Line color"
+msgstr ""
+
+msgid "Line opacity"
+msgstr ""
+
+msgid "Line width"
+msgstr ""
+
+msgid "Move particles"
+msgstr ""
+
+msgid "Move speed"
+msgstr ""
+
+msgid "Move direction"
+msgstr ""
+
+msgid "Random movement"
+msgstr ""
+
+msgid "Straight movement"
+msgstr ""
+
+msgid "Out mode"
+msgstr ""
+
+msgid "Out"
+msgstr ""
+
+msgid "Bounce"
+msgstr ""
+
+msgid "Particle collisions"
+msgstr ""
+
+msgid "Attraction"
+msgstr ""
+
+msgid "Attract rotate X"
+msgstr ""
+
+msgid "Attract rotate Y"
+msgstr ""
+
+msgid "Interactivity"
+msgstr ""
+
+msgid "Detect on"
+msgstr ""
+
+msgid "Canvas area"
+msgstr ""
+
+msgid "Window"
+msgstr ""
+
+msgid "Hover interaction"
+msgstr ""
+
+msgid "Hover mode"
+msgstr ""
+
+msgid "Grab"
+msgstr ""
+
+msgid "Bubble"
+msgstr ""
+
+msgid "Repulse"
+msgstr ""
+
+msgid "Click interaction"
+msgstr ""
+
+msgid "Click mode"
+msgstr ""
+
+msgid "Push"
+msgstr ""
+
+msgid "Resize with container"
+msgstr ""
+
+msgid "Grab distance"
+msgstr ""
+
+msgid "Grab line opacity"
+msgstr ""
+
+msgid "Bubble distance"
+msgstr ""
+
+msgid "Bubble size"
+msgstr ""
+
+msgid "Bubble duration"
+msgstr ""
+
+msgid "Repulse distance"
+msgstr ""
+
+msgid "Repulse duration"
+msgstr ""
+
+msgid "Push count"
+msgstr ""
+
+msgid "Remove count"
+msgstr ""
+
+msgid "Retina"
+msgstr ""
+
+msgid "Retina detection"
+msgstr ""
+
+msgid "Polygon"
+msgstr ""
+
+msgid "Star"
+msgstr ""
+
+msgid "Triangle"
+msgstr ""
+
+msgid "Top right"
+msgstr ""
+
+msgid "Top left"
+msgstr ""
+
+msgid "Bottom right"
+msgstr ""
+
+msgid "Bottom left"
+msgstr ""
+
+msgid "Shapes"
+msgstr ""
+
+msgid "Linked particles"
+msgstr ""
+
+msgid "Effects"
+msgstr ""
+
+msgid "Image gallery"
+msgstr ""
+
+msgid "Add images"
+msgstr ""
+
+msgid "Slide source"
+msgstr ""
+
+msgid "Custom slides"
+msgstr ""
+
+msgid "Up to 50 images are displayed in selection order."
+msgstr ""
+
+msgid "Words"
+msgstr ""
+
+msgid "Lines"
+msgstr ""
+
+msgid "Reveal units"
+msgstr ""
+
+msgid "Mask revealed lines"
+msgstr ""
+
+msgid "Reveal stagger"
+msgstr ""
+
+msgid "Choose an icon from Radman CT. Project icons are registered in the shared local catalog."
+msgstr ""
+
+msgid "Line height"
+msgstr ""
+
+msgid "Line height (tablet)"
+msgstr ""
+
+msgid "Line height (mobile)"
+msgstr ""
+
+msgid "Letter spacing"
+msgstr ""
+
+msgid "Letter spacing (tablet)"
+msgstr ""
+
+msgid "Letter spacing (mobile)"
+msgstr ""
+
+msgid "Fill image resolution"
+msgstr ""
+
+msgid "Full size"
+msgstr ""
+
+msgid "Font style"
+msgstr ""
+
+msgid "Italic"
+msgstr ""
+
+msgid "Oblique"
+msgstr ""
+
+msgid "Text transform"
+msgstr ""
+
+msgid "Uppercase"
+msgstr ""
+
+msgid "Lowercase"
+msgstr ""
+
+msgid "Capitalize"
+msgstr ""
+
+msgid "Text decoration"
+msgstr ""
+
+msgid "Overline"
+msgstr ""
+
+msgid "Line through"
+msgstr ""
+
+msgid "Choose icon"
+msgstr ""
+
+msgid "Close icon picker"
+msgstr ""
+
+msgid "No matching icons."
+msgstr ""
+
+msgid "Show more icons"
+msgstr ""
+
+msgid "Unavailable icon"
+msgstr ""
+
+msgid "Image width"
+msgstr ""
+
+msgid "Image width (tablet)"
+msgstr ""
+
+msgid "Image width (mobile)"
+msgstr ""
+
+msgid "Image corner radius"
+msgstr ""
+
+msgid "Image corner radius (tablet)"
+msgstr ""
+
+msgid "Image corner radius (mobile)"
+msgstr ""
+
+msgid "Text shadow"
+msgstr ""
+
+msgid "Horizontal shadow (px)"
+msgstr ""
+
+msgid "Vertical shadow (px)"
+msgstr ""
+
+msgid "Shadow blur (px)"
+msgstr ""
+
+msgid "Image top border (px)"
+msgstr ""
+
+msgid "Image bottom border (px)"
+msgstr ""
+
+msgid "Image start border (px)"
+msgstr ""
+
+msgid "Image end border (px)"
+msgstr ""
+
+msgid "Use -1 to inherit the shared image border width."
+msgstr ""
+
+msgid "Table"
+msgstr ""
+
+msgid "Content Box"
+msgstr ""
+
+msgid "Icon Box"
+msgstr ""
+
+msgid "Flip Box"
+msgstr ""
+
+msgid "Expandable Panels"
+msgstr ""
+
+msgid "Sticky Sections"
+msgstr ""
+
+msgid "Variable item widths"
+msgstr ""
+
+msgid "Item width (px, 0 = content)"
+msgstr ""
+
+msgid "Tablet item width (px, -1 = inherit)"
+msgstr ""
+
+msgid "Mobile item width (px, -1 = inherit)"
+msgstr ""
+
+msgid "Arrow appearance"
+msgstr ""
+
+msgid "Arrow button size (px)"
+msgstr ""
+
+msgid "Arrow icon size (px)"
+msgstr ""
+
+msgid "Arrow gap (px)"
+msgstr ""
+
+msgid "Image fill"
+msgstr ""
+
+msgid "Text fill image"
+msgstr ""
+
+msgid "Fill image size"
+msgstr ""
+
+msgid "Fill image position"
+msgstr ""
+
+msgid "Repeat fill image"
+msgstr ""
+
+msgid "Repeat"
+msgstr ""
+
+msgid "Original size"
+msgstr ""
+
+msgid "No repeat"
+msgstr ""
+
+msgid "Repeat horizontally"
+msgstr ""
+
+msgid "Repeat vertically"
+msgstr ""
+
+msgid "Icon side"
+msgstr ""
+
+msgid "Vertical alignment"
+msgstr ""
+
+msgid "Text color type"
+msgstr ""
+
+msgid "Gradient start color"
+msgstr ""
+
+msgid "Gradient end color"
+msgstr ""
+
+msgid "Image border width (px)"
+msgstr ""
+
+msgid "Image border color"
+msgstr ""
+
+msgid "Slide transition"
+msgstr ""
+
+msgid "Crossfade"
+msgstr ""
+
+msgid "Text and inline images"
+msgstr ""
+
+msgid "Text segments"
+msgstr ""
+
+msgid "Text segment"
+msgstr ""
+
+msgid "Inline image"
+msgstr ""
+
+msgid "Image placement"
+msgstr ""
+
+msgid "Inline image width"
+msgstr ""
+
+msgid "Inline image radius"
+msgstr ""
+
+msgid "Before text"
+msgstr ""
+
+msgid "After text"
+msgstr ""
+
+msgid "Baseline"
+msgstr ""
+
+msgid "Middle"
+msgstr ""
+
+msgid "Text top"
+msgstr ""
+
+msgid "Text bottom"
+msgstr ""
+
+msgid "Relative text size (%)"
+msgstr ""
+
+msgid "Font weight"
+msgstr ""
+
+msgid "Image overlay — 1"
+msgstr ""
+
+msgid "Image overlay — 1A"
+msgstr ""
+
+msgid "Image overlay with label — 1B"
+msgstr ""
+
+msgid "Image with caption bar — 2"
+msgstr ""
+
+msgid "Image with dark content — 3"
+msgstr ""
+
+msgid "Centered card with divider — 4"
+msgstr ""
+
+msgid "Side image card — 5"
+msgstr ""
+
+msgid "Image with tilt effect — 6"
+msgstr ""
+
+msgid "Raised image card — 7"
+msgstr ""
+
+msgid "Overlapping content card — 8"
+msgstr ""
+
+msgid "Centered image card — 9"
+msgstr ""
+
+msgid "Text with arrow — 10"
+msgstr ""
+
+msgid "Circular image card — 11"
+msgstr ""
+
+msgid "Radman CT Expandable Panels"
+msgstr ""
+
+msgid "Radman CT Content Box"
+msgstr ""
+
+msgid "Radman CT Flip Box"
+msgstr ""
+
+msgid "Radman CT Icon Box"
+msgstr ""
+
+msgid "Radman CT Image"
+msgstr ""
+
+msgid "Radman CT Table"
+msgstr ""
+
+msgid "Radman CT Icon"
+msgstr ""
+
+msgid "Radman CT Text Reveal"
+msgstr ""
+
+msgid "Radman CT Sticky Sections"
+msgstr ""
+
+msgid "Device"
+msgstr ""
+
+msgid "Reset to inherited value"
+msgstr ""
+
+msgid "Search icons"
+msgstr ""
+
+msgid "Icon style"
+msgstr ""
+
+msgid "Hover"
+msgstr ""
+
+msgid "Title and description"
+msgstr ""
+
+msgid "Icon style (Normal)"
+msgstr ""
+
+msgid "Icon style (Hover)"
+msgstr ""
+
+msgid "Alignment and spacing"
+msgstr ""
+
+msgid "Description size"
+msgstr ""
+
+msgid "Appearance"
+msgstr ""
+
+msgid "Left top"
+msgstr ""
+
+msgid "Center top"
+msgstr ""
+
+msgid "Right top"
+msgstr ""
+
+msgid "Left center"
+msgstr ""
+
+msgid "Right center"
+msgstr ""
+
+msgid "Left bottom"
+msgstr ""
+
+msgid "Center bottom"
+msgstr ""
+
+msgid "Right bottom"
+msgstr ""
+
+msgid "Background position"
+msgstr ""
+
+msgid "Float start unit"
+msgstr ""
+
+msgid "Float end unit"
+msgstr ""
+
+msgid "Image repeat"
+msgstr ""
+
+msgid "Inset shadow"
+msgstr ""
+
+msgid "Label font family"
+msgstr ""
+
+msgid "Overlay image size"
+msgstr ""
+
+msgid "Add side label"
+msgstr ""
+
+msgid "Animate shadow"
+msgstr ""
+
+msgid "Background type"
+msgstr ""
+
+msgid "Blur"
+msgstr ""
+
+msgid "Bottom - Top"
+msgstr ""
+
+msgid "Brightness"
+msgstr ""
+
+msgid "Choose an image"
+msgstr ""
+
+msgid "Contain"
+msgstr ""
+
+msgid "Contrast"
+msgstr ""
+
+msgid "Cover"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Custom float easing"
+msgstr ""
+
+msgid "Custom roundness"
+msgstr ""
+
+msgid "Depth 1"
+msgstr ""
+
+msgid "Depth 2"
+msgstr ""
+
+msgid "Depth 3"
+msgstr ""
+
+msgid "Depth 4"
+msgstr ""
+
+msgid "Direction"
+msgstr ""
+
+msgid "Enable lightbox"
+msgstr ""
+
+msgid "Fill"
+msgstr ""
+
+msgid "Float delay (s)"
+msgstr ""
+
+msgid "Float duration (s)"
+msgstr ""
+
+msgid "Float easing"
+msgstr ""
+
+msgid "Float from (%)"
+msgstr ""
+
+msgid "Float to (%)"
+msgstr ""
+
+msgid "Floating effect"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Gradient first stop"
+msgstr ""
+
+msgid "Gradient second stop"
+msgstr ""
+
+msgid "Hover 3D"
+msgstr ""
+
+msgid "Hover opacity"
+msgstr ""
+
+msgid "Hue"
+msgstr ""
+
+msgid "Image resolution"
+msgstr ""
+
+msgid "Label letter spacing"
+msgstr ""
+
+msgid "Label line height"
+msgstr ""
+
+msgid "Label position"
+msgstr ""
+
+msgid "Label side"
+msgstr ""
+
+msgid "Label weight"
+msgstr ""
+
+msgid "Laptop"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Left - Right"
+msgstr ""
+
+msgid "Lightbox"
+msgstr ""
+
+msgid "Lightbox group"
+msgstr ""
+
+msgid "Linear gradient"
+msgstr ""
+
+msgid "Lines color"
+msgstr ""
+
+msgid "Lines count"
+msgstr ""
+
+msgid "Max width"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Medium large"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Object fit"
+msgstr ""
+
+msgid "Opacity"
+msgstr ""
+
+msgid "Overlay background"
+msgstr ""
+
+msgid "Overlay image"
+msgstr ""
+
+msgid "Overlay lines"
+msgstr ""
+
+msgid "Percentage image size"
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+msgid "Radial gradient"
+msgstr ""
+
+msgid "Radman CT image"
+msgstr ""
+
+msgid "Reveal delay (ms)"
+msgstr ""
+
+msgid "Reveal effect"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Right - Left"
+msgstr ""
+
+msgid "Roundness"
+msgstr ""
+
+msgid "Saturation"
+msgstr ""
+
+msgid "Shadow X"
+msgstr ""
+
+msgid "Shadow Y"
+msgstr ""
+
+msgid "Shadow blur"
+msgstr ""
+
+msgid "Shadow color"
+msgstr ""
+
+msgid "Shadow delay (ms)"
+msgstr ""
+
+msgid "Shadow spread"
+msgstr ""
+
+msgid "Side label"
+msgstr ""
+
+msgid "Side label overlay"
+msgstr ""
+
+msgid "Source height (px)"
+msgstr ""
+
+msgid "Source width (px)"
+msgstr ""
+
+msgid "Stacking factor"
+msgstr ""
+
+msgid "Tablet"
+msgstr ""
+
+msgid "Thumbnail"
+msgstr ""
+
+msgid "Top - Bottom"
+msgstr ""
+
+msgid "View image"
+msgstr ""
+
+msgid "Width"
+msgstr ""
+
+msgid "Content only"
+msgstr ""
+
+msgid "Image background"
+msgstr ""
+
+msgid "Layer spacing"
+msgstr ""
+
+msgid "Minimum scale"
+msgstr ""
+
+msgid "Minimum screen width"
+msgstr ""
+
+msgid "Overlapping sections"
+msgstr ""
+
+msgid "Radman CT sticky sections"
+msgstr ""
+
+msgid "Section title"
+msgstr ""
+
+msgid "Sticky effect"
+msgstr ""
+
+msgid "Image parallax"
+msgstr ""
+
+msgid "Review font size (px)"
+msgstr ""
+
+msgid "Review line height"
+msgstr ""
+
+msgid "Reviewer name size (px)"
+msgstr ""
+
+msgid "Reviewer position size (px)"
+msgstr ""
+
+msgid "Avatar size (px)"
+msgstr ""
+
+msgid "Client logo width (px)"
+msgstr ""
+
+msgid "Client logo height (px)"
+msgstr ""
+
+msgid "Rating size (px)"
+msgstr ""
+
+msgid "Quote mark size (px)"
+msgstr ""
+
+msgid "%s font weight"
+msgstr ""
+
+msgid "Review source color"
+msgstr ""
+
+msgid "Position color"
+msgstr ""
+
+msgid "Accent color"
+msgstr ""
+
+msgid "Quote mark color"
+msgstr ""
+
+msgid "Review source icon"
+msgstr ""
+
+msgid "01 - Author first"
+msgstr ""
+
+msgid "02 - Full speech bubble"
+msgstr ""
+
+msgid "03 - Divided review card"
+msgstr ""
+
+msgid "04 - Compact social review"
+msgstr ""
+
+msgid "05 - Client logo above"
+msgstr ""
+
+msgid "06 - Centered spacious quote"
+msgstr ""
+
+msgid "07 - Portrait beside review"
+msgstr ""
+
+msgid "08 - Compact author first"
+msgstr ""
+
+msgid "09 - Bordered author first"
+msgstr ""
+
+msgid "10 - Centered quote badge"
+msgstr ""
+
+msgid "11 - Centered rating card"
+msgstr ""
+
+msgid "12 - Quote mark at start"
+msgstr ""
+
+msgid "13 - Large editorial quote"
+msgstr ""
+
+msgid "14 - Large author first"
+msgstr ""
+
+msgid "15 - Large speech bubble"
+msgstr ""
+
+msgid "16 - Portrait and client logo"
+msgstr ""
+
+msgid "17 - Centered speech bubble"
+msgstr ""
+
+msgid "18 - Accent and client logo"
+msgstr ""
+
+msgid "19 - Inline author and rating"
+msgstr ""
+
+msgid "Image border unit"
+msgstr ""
+
+msgid "Text shadow unit"
+msgstr ""
+
+msgid "Arrow fill"
+msgstr ""
+
+msgid "Arrow shadow"
+msgstr ""
+
+msgid "Arrow background"
+msgstr ""
+
+msgid "Arrow hover background"
+msgstr ""
+
+msgid "Arrow border color"
+msgstr ""
+
+msgid "Arrow hover border color"
+msgstr ""
+
+msgid "On hover and focus"
+msgstr ""
+
+msgid "Shadow layers"
+msgstr ""
+
+msgid "%1$s — layer %2$d"
+msgstr ""
+
+msgid "%1$s (%2$s)"
+msgstr ""
+
+msgid "Horizontal shadow"
+msgstr ""
+
+msgid "Vertical shadow"
+msgstr ""
+
+msgid "Image border width"
+msgstr ""
+
+msgid "Image top border"
+msgstr ""
+
+msgid "Image bottom border"
+msgstr ""
+
+msgid "Image start border"
+msgstr ""
+
+msgid "Image end border"
+msgstr ""
+
+msgid "Word spacing"
+msgstr ""
+
+msgid "Fill image width"
+msgstr ""
+
+msgid "Fill image height"
+msgstr ""
+
+msgid "Fill image horizontal position"
+msgstr ""
+
+msgid "Fill image vertical position"
+msgstr ""
+
+msgid "Fill image attachment"
+msgstr ""
+
+msgid "Fixed"
+msgstr ""
+
+msgid "Header state colors"
+msgstr ""
+
+msgid "Sticky header text color"
+msgstr ""
+
+msgid "Text over light sections"
+msgstr ""
+
+msgid "Text over dark sections"
+msgstr ""
+
+msgid "Panel layout"
+msgstr ""
+
+msgid "Image accordion"
+msgstr ""
+
+msgid "Expanded image ratio"
+msgstr ""
+
+msgid "Parallax inside a fixed frame"
+msgstr ""
+
+msgid "Parallax travel (%)"
+msgstr ""
+
+msgid "Up"
+msgstr ""
+
+msgid "Down"
+msgstr ""
+
+msgid "Pinned service panels"
+msgstr ""
+
+msgid "Zooming cards"
+msgstr ""
+
+msgid "Fixed column and scrolling content"
+msgstr ""
+
+msgid "Fixed column position"
+msgstr ""
+
+msgid "Fixed column width (%)"
+msgstr ""
+
+msgid "Fixed column content"
+msgstr ""
+
+msgid "Text and image"
+msgstr ""
+
+msgid "Top offset"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Open in new tab"
+msgstr ""
+
+msgid "Nofollow"
+msgstr ""
+
+msgid "Border color"
+msgstr ""
+
+msgid "SVG animation"
+msgstr ""
+
+msgid "Rotate"
+msgstr ""
+
+msgid "Float"
+msgstr ""
+
+msgid "Pulse"
+msgstr ""
+
+msgid "Draw strokes"
+msgstr ""
+
+msgid "Animation target"
+msgstr ""
+
+msgid "Whole icon"
+msgstr ""
+
+msgid "SVG parts"
+msgstr ""
+
+msgid "Animation trigger"
+msgstr ""
+
+msgid "Hover and focus"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Animation duration"
+msgstr ""
+
+msgid "Components"
+msgstr ""
+
+msgid "Search components"
+msgstr ""
+
+msgid "Component category"
+msgstr ""
+
+msgid "All categories"
+msgstr ""
+
+msgid "Sample language"
+msgstr ""
+
+msgid "Persian"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Element type"
+msgstr ""
+
+msgid "Classic"
+msgstr ""
+
+msgid "Atomic"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Insert sample"
+msgstr ""
+
+msgid "No components match your search."
+msgstr ""
+
+msgid "Mobile"
+msgstr ""
+
+msgid "Desktop"
+msgstr ""
+
+msgid "Close preview"
+msgstr ""
+
+msgid "Loading preview..."
+msgstr ""
+
+msgid "Preview ready."
+msgstr ""
+
+msgid "The preview could not be opened. Refresh this page and try again."
+msgstr ""
+
+msgid "Component preview"
+msgstr ""
+
+msgid "Sample added at the end of the page. Edit it in Elementor and save your page."
+msgstr ""
+
+msgid "Insertion could not be confirmed. Check the page before trying again."
+msgstr ""
+
+msgid "Explore the available Radman CT components. PHP usage is documented in the project documentation."
+msgstr ""
+
+msgid "Could not load the library. Try again."
+msgstr ""
+
+msgid "Radman CT component library"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Scroll or interact with the sample to preview its behavior."
+msgstr ""
+
+msgid "Style"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Title HTML tag"
+msgstr ""
+
+msgid "Inherit font styles"
+msgstr ""
+
+msgid "Inherited heading size"
+msgstr ""
+
+msgid "Subtitle"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Open in new window"
+msgstr ""
+
+msgid "Add nofollow"
+msgstr ""
+
+msgid "Show button"
+msgstr ""
+
+msgid "Button text"
+msgstr ""
+
+msgid "View details"
+msgstr ""
+
+msgid "Button link"
+msgstr ""
+
+msgid "Icon"
+msgstr ""
+
+msgid "Content alignment"
+msgstr ""
+
+msgid "Reading start"
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "Reading end"
+msgstr ""
+
+msgid "Box height (%)"
+msgstr ""
+
+msgid "Custom height (px)"
+msgstr ""
+
+msgid "Content width (%)"
+msgstr ""
+
+msgid "Content padding"
+msgstr ""
+
+msgid "Label padding"
+msgstr ""
+
+msgid "Title size"
+msgstr ""
+
+msgid "Label size"
+msgstr ""
+
+msgid "Text size"
+msgstr ""
+
+msgid "Overlay opacity"
+msgstr ""
+
+msgid "Hover overlay opacity"
+msgstr ""
+
+msgid "Gradient angle"
+msgstr ""
+
+msgid "Border radius"
+msgstr ""
+
+msgid "Overlay color"
+msgstr ""
+
+msgid "Gradient second color"
+msgstr ""
+
+msgid "Hover overlay color"
+msgstr ""
+
+msgid "Content background"
+msgstr ""
+
+msgid "Revealer color"
+msgstr ""
+
+msgid "Hover revealer color"
+msgstr ""
+
+msgid "Heading color"
+msgstr ""
+
+msgid "Hover heading color"
+msgstr ""
+
+msgid "Content color"
+msgstr ""
+
+msgid "Subtitle color"
+msgstr ""
+
+msgid "Icon color"
+msgstr ""
+
+msgid "Hover icon color"
+msgstr ""
+
+msgid "Label color"
+msgstr ""
+
+msgid "Label background"
+msgstr ""
+
+msgid "Active item"
+msgstr ""
+
+msgid "Trigger type"
+msgstr ""
+
+msgid "Click"
+msgstr ""
+
+msgid "Items gap"
+msgstr ""
+
+msgid "Minimum height"
+msgstr ""
+
+msgid "Collapsed width"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Image or logo"
+msgstr ""
+
+msgid "Background image"
+msgstr ""
+
+msgid "Background color"
+msgstr ""
+
+msgid "Active background color"
+msgstr ""
+
+msgid "Text color"
+msgstr ""
+
+msgid "Radman CT box"
+msgstr ""
+
+msgid "Image and content"
+msgstr ""
+
+msgid "Layout"
+msgstr ""
+
+msgid "Radman CT curtain"
+msgstr ""
+
+msgid "Expandable panels"
+msgstr ""
+
+msgid "Radman CT text reveal"
+msgstr ""
+
+msgid "Scroll"
+msgstr ""
+
+msgid "Radman CT icon"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Arrow right"
+msgstr ""
+
+msgid "Arrow left"
+msgstr ""
+
+msgid "Chevron left"
+msgstr ""
+
+msgid "Chevron right"
+msgstr ""
+
+msgid "Chevron up"
+msgstr ""
+
+msgid "Chevron down"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "External link"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Pause"
+msgstr ""
+
+msgid "Clock"
+msgstr ""
+
+msgid "Plus"
+msgstr ""
+
+msgid "Minus"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "First item"
+msgstr ""
+
+msgid "Second item"
+msgstr ""
+
+msgid "Third item"
+msgstr ""
+
+msgid "Items"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Icon size"
+msgstr ""
+
+msgid "Stroke width"
+msgstr ""
+
+msgid "Accessible label"
+msgstr ""
+
+msgid "Mirror directional icons in RTL"
+msgstr ""
+
+msgid "Text becomes highlighted as you scroll."
+msgstr ""
+
+msgid "Reveal behavior"
+msgstr ""
+
+msgid "HTML tag"
+msgstr ""
+
+msgid "Text direction"
+msgstr ""
+
+msgid "Inherit"
+msgstr ""
+
+msgid "Automatic"
+msgstr ""
+
+msgid "Initial opacity"
+msgstr ""
+
+msgid "Final opacity"
+msgstr ""
+
+msgid "Scroll smoothing"
+msgstr ""
+
+msgid "Word stagger"
+msgstr ""
+
+msgid "Scroll start"
+msgstr ""
+
+msgid "Scroll end"
+msgstr ""
+
+msgid "Reveal order"
+msgstr ""
+
+msgid "Edges"
+msgstr ""
+
+msgid "Random"
+msgstr ""
+
+msgid "Initial text color"
+msgstr ""
+
+msgid "Highlighted text color"
+msgstr ""
+
+msgid "Add item"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Duplicate"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
+msgid "Move down"
+msgstr ""
+
+msgid "Typography"
+msgstr ""
+
+msgid "Height"
+msgstr ""
+
+msgid "Text reveal"
+msgstr ""
+
+msgid "Two positions: top, center, bottom or 0–100%. Example: top 80%."
+msgstr ""
+
+msgid "Text alignment"
+msgstr ""
+
+msgid "Justify"
+msgstr ""
+
+msgid "Font size"
+msgstr ""
+
+msgid "Radman CT"
+msgstr ""
+
+msgid "Flip direction"
+msgstr ""
+
+msgid "Left to right"
+msgstr ""
+
+msgid "Right to left"
+msgstr ""
+
+msgid "Top to bottom"
+msgstr ""
+
+msgid "Bottom to top"
+msgstr ""
+
+msgid "Shadow"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "On hover"
+msgstr ""
+
+msgid "Semi round"
+msgstr ""
+
+msgid "Round"
+msgstr ""
+
+msgid "Circle"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "Text editor"
+msgstr ""
+
+msgid "Elementor template"
+msgstr ""
+
+msgid "Front side"
+msgstr ""
+
+msgid "Back side"
+msgstr ""
+
+msgid "Select template"
+msgstr ""
+
+msgid "Background"
+msgstr ""
+
+msgid "Gradient"
+msgstr ""
+
+msgid "Second color"
+msgstr ""
+
+msgid "Gradient type"
+msgstr ""
+
+msgid "Linear"
+msgstr ""
+
+msgid "Radial"
+msgstr ""
+
+msgid "Angle"
+msgstr ""
+
+msgid "Image position"
+msgstr ""
+
+msgid "Background overlay"
+msgstr ""
+
+msgid "Overlay second color"
+msgstr ""
+
+msgid "Overlay angle"
+msgstr ""
+
+msgid "Padding"
+msgstr ""
+
+msgid "Flip card"
+msgstr ""
+
+msgid "Radman CT flip box"
+msgstr ""
+
+msgid "Front and back"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "Preview could not be loaded."
+msgstr ""
+
+msgid "Icon position"
+msgstr ""
+
+msgid "Icon on top"
+msgstr ""
+
+msgid "Icon and heading inline"
+msgstr ""
+
+msgid "Icon and content inline"
+msgstr ""
+
+msgid "Icon type"
+msgstr ""
+
+msgid "Service title"
+msgstr ""
+
+msgid "Link text"
+msgstr ""
+
+msgid "Alignment"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "End"
+msgstr ""
+
+msgid "Icon shape"
+msgstr ""
+
+msgid "Square"
+msgstr ""
+
+msgid "Lozenge"
+msgstr ""
+
+msgid "Icon padding"
+msgstr ""
+
+msgid "Border width"
+msgstr ""
+
+msgid "Gap"
+msgstr ""
+
+msgid "Title spacing"
+msgstr ""
+
+msgid "Icon background"
+msgstr ""
+
+msgid "Hover icon background"
+msgstr ""
+
+msgid "Radman CT icon box"
+msgstr ""
+
+msgid "Items HTML tag"
+msgstr ""
+
+msgid "Before"
+msgstr ""
+
+msgid "After"
+msgstr ""
+
+msgid "Title color"
+msgstr ""
+
+msgid "Border style"
+msgstr ""
+
+msgid "Solid"
+msgstr ""
+
+msgid "Dashed"
+msgstr ""
+
+msgid "Dotted"
+msgstr ""
+
+msgid "Normal"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Loading image..."
+msgstr ""
+
+msgid "This image could not be loaded."
+msgstr ""
+
+msgid "Image %1$s of %2$s"
+msgstr ""
+
+msgid "Table caption"
+msgstr ""
+
+msgid "Grid"
+msgstr ""
+
+msgid "Striped"
+msgstr ""
+
+msgid "Minimal"
+msgstr ""
+
+msgid "Show column headings"
+msgstr ""
+
+msgid "First column as row headings"
+msgstr ""
+
+msgid "Minimum table width (px)"
+msgstr ""
+
+msgid "Cell padding (px)"
+msgstr ""
+
+msgid "Header background"
+msgstr ""
+
+msgid "Feature"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Material"
+msgstr ""
+
+msgid "Your content"
+msgstr ""
+
+msgid "Data table"
+msgstr ""
+
+msgid "Radman CT table"
+msgstr ""
+
+msgid "Table content"
+msgstr ""
+
+msgid "Row"
+msgstr ""
+
+msgid "Column"
+msgstr ""
+
+msgid "Move earlier"
+msgstr ""
+
+msgid "Move later"
+msgstr ""
+
+msgid "Remove column"
+msgstr ""
+
+msgid "Remove row"
+msgstr ""
+
+msgid "Duplicate row"
+msgstr ""
+
+msgid "Add column"
+msgstr ""
+
+msgid "General content table"
+msgstr ""
+
+msgid "Add row"
+msgstr ""
+
+msgid "Table content is too large. Shorten a cell or remove a row."
+msgstr ""
+
+msgid "Reusable components for Radman CT."
+msgstr ""
+
+msgid "Autoplay"
+msgstr ""
+
+msgid "Autoplay delay (ms)"
+msgstr ""
+
+msgid "Bottom"
+msgstr ""
+
+msgid "Brand logos"
+msgstr ""
+
+msgid "Cards"
+msgstr ""
+
+msgid "Carousel"
+msgstr ""
+
+msgid "Controls position"
+msgstr ""
+
+msgid "Current / total"
+msgstr ""
+
+msgid "Desktop slides"
+msgstr ""
+
+msgid "Dots"
+msgstr ""
+
+msgid "Existing components"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "Mobile slides"
+msgstr ""
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Navigation arrows"
+msgstr ""
+
+msgid "Next arrow icon (LTR)"
+msgstr ""
+
+msgid "Next slide"
+msgstr ""
+
+msgid "Numbers"
+msgstr ""
+
+msgid "Pagination"
+msgstr ""
+
+msgid "Previous arrow icon (LTR)"
+msgstr ""
+
+msgid "Previous slide"
+msgstr ""
+
+msgid "Radman CT Carousel"
+msgstr ""
+
+msgid "Slide"
+msgstr ""
+
+msgid "Slide gap (px)"
+msgstr ""
+
+msgid "Slides"
+msgstr ""
+
+msgid "Tablet slides"
+msgstr ""
+
+msgid "Tall image cover"
+msgstr ""
+
+msgid "Timing"
+msgstr ""
+
+msgid "Top"
+msgstr ""
+
+msgid "Transition duration (ms)"
+msgstr ""
+
+msgid "Item height"
+msgstr ""
+
+msgid "Tablet item height"
+msgstr ""
+
+msgid "Mobile item height"
+msgstr ""
+
+msgid "Items height"
+msgstr ""
+
+msgid "Height unit"
+msgstr ""
+
+msgid "Tablet height unit"
+msgstr ""
+
+msgid "Mobile height unit"
+msgstr ""
+
+msgid "Slide {{index}} of {{slidesLength}}"
+msgstr ""
+
+msgid "Go to slide {{index}}"
+msgstr ""
+
+msgid "Active word gradient end"
+msgstr ""
+
+msgid "Active-slide height"
+msgstr ""
+
+msgid "Arrow alignment"
+msgstr ""
+
+msgid "Arrow position"
+msgstr ""
+
+msgid "Automatic height"
+msgstr ""
+
+msgid "Autoplay direction"
+msgstr ""
+
+msgid "Background fill"
+msgstr ""
+
+msgid "Brush"
+msgstr ""
+
+msgid "Display mode"
+msgstr ""
+
+msgid "Double underline"
+msgstr ""
+
+msgid "Drag and swipe"
+msgstr ""
+
+msgid "Equal height"
+msgstr ""
+
+msgid "Fade"
+msgstr ""
+
+msgid "Fill highlight on hover"
+msgstr ""
+
+msgid "Forward"
+msgstr ""
+
+msgid "Gradient text"
+msgstr ""
+
+msgid "Highlight animation"
+msgstr ""
+
+msgid "Highlight color"
+msgstr ""
+
+msgid "Text highlight"
+msgstr ""
+
+msgid "Highlight width (%)"
+msgstr ""
+
+msgid "Highlight height (px)"
+msgstr ""
+
+msgid "Highlight bottom offset (px)"
+msgstr ""
+
+msgid "Highlight reading-start offset (px)"
+msgstr ""
+
+msgid "Highlight corner radius (px)"
+msgstr ""
+
+msgid "Highlight duration (seconds)"
+msgstr ""
+
+msgid "Highlight delay (seconds)"
+msgstr ""
+
+msgid "Highlight shape"
+msgstr ""
+
+msgid "Horizontal"
+msgstr ""
+
+msgid "Image motion duration (seconds)"
+msgstr ""
+
+msgid "Image zoom scale"
+msgstr ""
+
+msgid "Keep text on one line"
+msgstr ""
+
+msgid "Ken Burns image motion"
+msgstr ""
+
+msgid "Move visible slides as a group"
+msgstr ""
+
+msgid "Natural height"
+msgstr ""
+
+msgid "Opposite edges"
+msgstr ""
+
+msgid "Outline color"
+msgstr ""
+
+msgid "Outline width (px)"
+msgstr ""
+
+msgid "Overlay controls on slides"
+msgstr ""
+
+msgid "Pagination alignment"
+msgstr ""
+
+msgid "Pagination position"
+msgstr ""
+
+msgid "Pause autoplay on hover"
+msgstr ""
+
+msgid "Play or pause rotating words"
+msgstr ""
+
+msgid "Radman CT Text"
+msgstr ""
+
+msgid "Resume autoplay after interaction"
+msgstr ""
+
+msgid "Return to the first slide"
+msgstr ""
+
+msgid "Reverse"
+msgstr ""
+
+msgid "Rotating word color"
+msgstr ""
+
+msgid "Rotating word font family"
+msgstr ""
+
+msgid "Rotating word size"
+msgstr ""
+
+msgid "Rotating words"
+msgstr ""
+
+msgid "Same as arrows"
+msgstr ""
+
+msgid "Scroll text fill"
+msgstr ""
+
+msgid "Single-slide slider"
+msgstr ""
+
+msgid "Slide alignment"
+msgstr ""
+
+msgid "Stop autoplay at the last slide"
+msgstr ""
+
+msgid "Text after rotating words"
+msgstr ""
+
+msgid "Text before rotating words"
+msgstr ""
+
+msgid "Text effect"
+msgstr ""
+
+msgid "Text font family"
+msgstr ""
+
+msgid "Text gradient end"
+msgstr ""
+
+msgid "Text outline"
+msgstr ""
+
+msgid "Text style"
+msgstr ""
+
+msgid "Underline"
+msgstr ""
+
+msgid "Vertical left to right"
+msgstr ""
+
+msgid "Vertical right to left"
+msgstr ""
+
+msgid "Visible words"
+msgstr ""
+
+msgid "Wave"
+msgstr ""
+
+msgid "Word color"
+msgstr ""
+
+msgid "Word hold time (seconds)"
+msgstr ""
+
+msgid "Word list"
+msgstr ""
+
+msgid "Word or phrase"
+msgstr ""
+
+msgid "Word transition"
+msgstr ""
+
+msgid "Word transition time (seconds)"
+msgstr ""
+
+msgid "Wrap highlighted words in [[double brackets]]."
+msgstr ""
+
+msgid "Writing mode"
+msgstr ""
+
+msgid "Zoom in"
+msgstr ""
+
+msgid "Zoom out"
+msgstr ""
+
+msgid "Zoom toward reading end"
+msgstr ""
+
+msgid "Zoom toward reading start"
+msgstr ""
+
+msgid "Animated border width (px)"
+msgstr ""
+
+msgid "Animated hover border"
+msgstr ""
+
+msgid "Border end color"
+msgstr ""
+
+msgid "Border rotation direction"
+msgstr ""
+
+msgid "Border rotation duration (seconds)"
+msgstr ""
+
+msgid "Border start color"
+msgstr ""
+
+msgid "Clockwise"
+msgstr ""
+
+msgid "Counterclockwise"
+msgstr ""
+
+msgid "Fade marquee edges"
+msgstr ""
+
+msgid "Marquee"
+msgstr ""
+
+msgid "Marquee direction"
+msgstr ""
+
+msgid "Marquee gap (px)"
+msgstr ""
+
+msgid "Marquee speed (px/second)"
+msgstr ""
+
+msgid "Mobile marquee speed (-1 inherits)"
+msgstr ""
+
+msgid "Pause marquee on hover"
+msgstr ""
+
+msgid "Play or pause marquee"
+msgstr ""
+
+msgid "Tablet marquee speed (-1 inherits)"
+msgstr ""
+
+msgid "Toward reading end"
+msgstr ""
+
+msgid "Toward reading start"
+msgstr ""
+
+msgid "Text effects"
+msgstr ""
+
+msgid "Marquee Rotating words Text fill"
+msgstr ""
+
+msgid "Marquee animates static content. Linked or interactive content keeps manual scrolling."
+msgstr ""
+
+msgid "Arrow Up"
+msgstr ""
+
+msgid "Arrow Down"
+msgstr ""
+
+msgid "Arrow Up Right"
+msgstr ""
+
+msgid "Chevrons Left"
+msgstr ""
+
+msgid "Chevrons Right"
+msgstr ""
+
+msgid "Move Left"
+msgstr ""
+
+msgid "Move Right"
+msgstr ""
+
+msgid "Circle Arrow Left"
+msgstr ""
+
+msgid "Circle Arrow Right"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Smartphone"
+msgstr ""
+
+msgid "Monitor"
+msgstr ""
+
+msgid "Phone Call"
+msgstr ""
+
+msgid "Headphones"
+msgstr ""
+
+msgid "Message Circle"
+msgstr ""
+
+msgid "Message Square"
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Globe"
+msgstr ""
+
+msgid "Languages"
+msgstr ""
+
+msgid "Map"
+msgstr ""
+
+msgid "Calendar Days"
+msgstr ""
+
+msgid "Calendar"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Share 2"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Circle Help"
+msgstr ""
+
+msgid "Circle Alert"
+msgstr ""
+
+msgid "Circle Check"
+msgstr ""
+
+msgid "Circle X"
+msgstr ""
+
+msgid "Ellipsis"
+msgstr ""
+
+msgid "Ellipsis Vertical"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Sliders Horizontal"
+msgstr ""
+
+msgid "List Filter"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "Layout Grid"
+msgstr ""
+
+msgid "File Text"
+msgstr ""
+
+msgid "Folder"
+msgstr ""
+
+msgid "Briefcase Business"
+msgstr ""
+
+msgid "Building 2"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "User Round"
+msgstr ""
+
+msgid "Eye"
+msgstr ""
+
+msgid "Maximize"
+msgstr ""
+
+msgid "Minimize"
+msgstr ""
+
+msgid "Volume 2"
+msgstr ""
+
+msgid "Volume X"
+msgstr ""
+
+msgid "Rotate Ccw"
+msgstr ""
+
+msgid "Refresh Cw"
+msgstr ""
+
+msgid "Directions"
+msgstr ""
+
+msgid "Offset menu"
+msgstr ""
+
+msgid "Sun"
+msgstr ""
+
+msgid "Moon"
+msgstr ""
+
+msgid "Search %s"
+msgstr ""
+
+msgid "No results found."
+msgstr ""
+
+msgid "Remove item"
+msgstr ""
+
+msgid "Taxonomy"
+msgstr ""
+
+msgid "Category tree"
+msgstr ""
+
+msgid "Tag cloud"
+msgstr ""
+
+msgid "Show counts"
+msgstr ""
+
+msgid "Hierarchy"
+msgstr ""
+
+msgid "Hide empty terms"
+msgstr ""
+
+msgid "Maximum terms"
+msgstr ""
+
+msgid "All content"
+msgstr ""
+
+msgid "Placeholder"
+msgstr ""
+
+msgid "Use the Radman archive target when available"
+msgstr ""
+
+msgid "Search the site"
+msgstr ""
+
+msgid "Taxonomy list"
+msgstr ""
+
+msgid "Content search"
+msgstr ""
+
+msgid "Stacked"
+msgstr ""
+
+msgid "Inline"
+msgstr ""
+
+msgid "Field label"
+msgstr ""
+
+msgid "Show label"
+msgstr ""
+
+msgid "Breadcrumbs"
+msgstr ""
+
+msgid "Play background video"
+msgstr ""
+
+msgid "Pause background video"
+msgstr ""

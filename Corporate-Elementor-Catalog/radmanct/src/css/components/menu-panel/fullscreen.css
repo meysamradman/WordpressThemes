@@ -1,0 +1,5 @@
+.rdct-mob-drawer[data-panel-mode="fullscreen"] { inset: 0 auto 0 0; inline-size: 100vw; padding: clamp(1.25rem,4vw,5rem); }
+.rdct-mob-drawer[data-panel-mode="fullscreen"]:not([data-panel-only]) > .rdct-nav > .rdct-menu { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: clamp(1rem,4vw,4rem); padding-block: clamp(2rem,10vh,8rem); }
+.rdct-mob-drawer[data-panel-mode="fullscreen"] > .rdct-menu-panel-content { max-inline-size: 70rem; margin-inline: auto; }
+@media (max-width: 47.99rem) { .rdct-mob-drawer[data-panel-mode="fullscreen"]:not([data-panel-only]) > .rdct-nav > .rdct-menu { flex-direction: column; align-items: stretch; } }
+.rdct-mob-drawer[data-panel-mode="fullscreen"][data-panel-link-layout="vertical"]:not([data-panel-only]) > .rdct-nav > .rdct-menu { flex-direction:column; align-items:stretch; gap:.35rem; padding-block:0; }

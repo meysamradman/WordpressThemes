@@ -1,0 +1,3 @@
+.rdct-menu--skin-color .rdct-menu > li > a { transition: color .25s ease; }
+.rdct-menu--skin-color .rdct-menu > li:is(:hover,:focus-within,.current-menu-item,.current-menu-ancestor) > a { color: var(--rdct-accent); }
+@media (prefers-reduced-motion: reduce) { .rdct-menu--skin-color .rdct-menu > li > a { transition: none; } }

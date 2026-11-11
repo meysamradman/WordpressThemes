@@ -1,0 +1,5 @@
+.rdct-tst--split { display:grid; grid-template-columns:minmax(0,2fr) minmax(120px,1fr); align-items:center; }
+.rdct-tst--split .rdct-tst__info { flex-direction:column; margin:0; text-align:center; }
+.rdct-tst--split .rdct-tst__avatar { inline-size:96px; block-size:96px; }
+.rdct-tst--split .rdct-tst__logo { margin-inline:auto; }
+@media(max-width:48rem) { .rdct-tst--split { grid-template-columns:minmax(0,1fr); } }

@@ -1,0 +1,6 @@
+.rdct-ss__list { display: grid; gap: var(--rdct-ss-gap, 40px); min-inline-size: 0; }
+.rdct-ss__aside, .rdct-ss__fixed { min-inline-size: 0; }
+.rdct-ss[data-mode="split"].is-enhanced { grid-template-columns: minmax(0,var(--rdct-ss-aside-width,35%)) minmax(0,1fr); align-items: start; }
+.rdct-ss.is-enhanced > .rdct-ss__aside--end { order: 2; }
+.rdct-ss[data-mode="split"].is-enhanced:has(> .rdct-ss__aside--end) { grid-template-columns: minmax(0,1fr) minmax(0,var(--rdct-ss-aside-width,35%)); }
+@media print { .rdct-ss[data-mode="split"].is-enhanced { display: block; } }

@@ -1,0 +1,21 @@
+#rdct-preloader { position: fixed; inset: 0; z-index: 9996; display: grid; place-items: center; overflow: clip; background: var(--rdct-preloader-background); color: var(--rdct-preloader-color); pointer-events: none; transition: opacity .5s ease; }
+#rdct-preloader[hidden] { display: none; }
+#rdct-preloader.is-visible { animation: rdct-preloader-expire 0s 2s forwards; }
+#rdct-preloader:is(.rdct-pre--fade, .rdct-pre--spinner, .rdct-pre--spinner-classic, .rdct-pre--image).is-leaving { opacity: 0; }
+#rdct-preloader:is(.rdct-pre--curtain, .rdct-pre--sliding, .rdct-pre--dissolve) { background: transparent; }
+.rdct-pre__panel { position: absolute; inset: 0; background: var(--rdct-preloader-background); transition: transform .5s cubic-bezier(.76, 0, .24, 1); }
+.rdct-pre--curtain .rdct-pre__panel { z-index: 1; background: var(--rdct-preloader-back); transition-duration: .5s; transition-delay: calc(var(--rdct-panel) * .215s); }
+.rdct-pre--curtain .rdct-pre__panel:first-child { z-index: 2; background: var(--rdct-preloader-background); }
+.rdct-pre--curtain.is-leaving .rdct-pre__panel, .rdct-pre--sliding.is-leaving .rdct-pre__panel { transform: translateX(-100%); }
+.rdct-pre--dissolve .rdct-pre__panel { inset: auto 0; top: calc(var(--rdct-panel) * 100% / 27); height: calc(100% / 27 + 1px); transform-origin: center bottom; transition: transform .6s ease calc(var(--rdct-panel) * .012s); }
+.rdct-pre--dissolve.is-leaving .rdct-pre__panel { transform: scaleY(0); }
+.rdct-pre__indicator { display: none; }
+.rdct-pre__spinner { inline-size: 64px; block-size: 64px; animation: rdct-preloader-spin 2s linear infinite; }
+.rdct-pre__spinner circle { stroke: currentColor; stroke-linecap: round; stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: rdct-preloader-dash 1.5s ease-in-out infinite both; }
+.rdct-pre--spinner-classic .rdct-pre__indicator { display: block; inline-size: 50px; block-size: 50px; border: 1px solid color-mix(in srgb, currentColor 20%, transparent); border-inline-start-color: currentColor; border-radius: 50%; animation: rdct-preloader-spin .7s linear infinite; }
+#rdct-preloader.rdct-pre--image { transition-duration: .3s; }
+#rdct-preloader img { object-fit: contain; }
+@keyframes rdct-preloader-spin { to { transform: rotate(360deg); } }
+@keyframes rdct-preloader-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 130, 200; stroke-dashoffset: -40; } 100% { stroke-dasharray: 130, 200; stroke-dashoffset: -170; } }
+@keyframes rdct-preloader-expire { to { opacity: 0; visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { #rdct-preloader { display: none; } }

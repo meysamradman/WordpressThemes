@@ -1,0 +1,2 @@
+.rdct-ico { display: inline-block; vertical-align: -.15em; flex-shrink: 0; }
+.rdct-ico--directional:dir(rtl) { transform: scaleX(-1); }

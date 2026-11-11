@@ -1,0 +1,9 @@
+[
+  "none", "linear",
+  "power1.in", "power2.in", "power3.in", "power4.in",
+  "sine.in", "expo.in", "circ.in", "back.in", "bounce.in", "elastic.in(1,0.2)",
+  "power1.out", "power2.out", "power3.out", "power4.out",
+  "sine.out", "expo.out", "circ.out", "back.out", "bounce.out", "elastic.out(1,0.2)",
+  "power1.inOut", "power2.inOut", "power3.inOut", "power4.inOut",
+  "sine.inOut", "expo.inOut", "circ.inOut", "back.inOut", "bounce.inOut", "elastic.inOut(1,0.2)"
+]

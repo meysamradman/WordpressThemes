@@ -1,0 +1,20 @@
+@import '../../../../shared/admin/tokens.css';
+
+.rdct-cnt-editor { padding: .5rem; max-inline-size: 72rem; margin-inline: auto; }
+.rdct-cnt-editor, .rdct-cnt-editor * { box-sizing: border-box; }
+.rdct-cnt-editor__section { padding-block: 1rem; min-inline-size: 0; border-block-end: 1px solid var(--rdct-admin-border); }
+.rdct-cnt-editor__heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; }
+.rdct-cnt-editor__heading h3 { margin: 0; font-size: 14px; }
+.rdct-cnt-editor__product { display: grid; gap: 1rem; padding-block-start: 1.25rem; }
+.rdct-cnt-editor .description { max-inline-size: 52rem; margin-block: .6rem; }
+.rdct-cnt-editor .notice { margin: 0; padding: .5rem .75rem; }
+.rdct-cnt-editor__field { display: grid; gap: .4rem; font-weight: 600; }
+.rdct-cnt-editor__field { max-inline-size: 24rem; }
+.rdct-cnt-editor__pricing { display: grid; gap: .75rem; min-inline-size: 0; max-inline-size: 52rem; margin: 0; padding: .5rem 0 1rem; border: 0; }
+.rdct-cnt-editor__pricing legend { font-weight: 600; }
+.rdct-cnt-editor__gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr)); gap: .75rem; padding: 0; margin-block: .75rem 0; list-style: none; }
+.rdct-cnt-editor__gallery li { padding: .75rem; border: 1px solid var(--rdct-admin-border); border-radius: var(--rdct-admin-radius); }
+.rdct-cnt-editor__gallery img { display: block; max-inline-size: 100%; object-fit: contain; margin-block-end: .75rem; }
+.rdct-cnt-editor__actions { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.rdct-cnt-editor input, .rdct-cnt-editor textarea, .rdct-cnt-editor select { min-inline-size: 0; max-inline-size: 100%; inline-size: 100%; margin: 0; }
+.rdct-cnt-editor :focus-visible { outline: 2px solid var(--rdct-admin-accent); outline-offset: 3px; }

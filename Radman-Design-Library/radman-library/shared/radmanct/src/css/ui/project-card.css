@@ -1,0 +1,19 @@
+@import './card-preview.css';
+.rdc-prj { display: flex; flex-direction: column; min-inline-size: 0; overflow: hidden; border: 1px solid var(--rdc-ln); border-radius: var(--rdc-rad); background: transparent; }
+.rdc-prj__md { display: block; position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: transparent; }
+.rdc-prj__md :is(img,.rdc-im-ph) { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; }
+.rdc-prj__px { display: block; position: absolute; inset: 0; transform-origin: center; }
+.rdc-prj__zoom { display: block; inline-size: 100%; block-size: 100%; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .rdc-prj__zoom { transition: transform .85s cubic-bezier(.22,.61,.36,1); }
+  .rdc-prj:is(:hover,:focus-within) .rdc-prj__zoom { transform: scale(1.045); }
+}
+.rdc-prj__body { display: flex; flex-direction: column; align-items: flex-start; min-inline-size: 0; gap: 1.25rem; padding: clamp(1.25rem,3vw,2.5rem); flex: 1; }
+.rdc-prj__body h3 { margin: 0; overflow-wrap: anywhere; }
+.rdc-prj__cats { display: flex; flex-wrap: wrap; gap: .5rem; font-size: var(--rdc-sz-sm); }
+.rdc-prj__cats a { padding: .3rem .75rem; border: 1px solid var(--rdc-ln); border-radius: 2rem; }
+.rdc-prj__exc p { margin: 0; }
+.rdc-prj__more { display: inline-flex; align-items: center; gap: .75rem; min-block-size: 2.75rem; margin-block-start: auto; color: var(--rdc-acc); }
+.rdc-prj__more svg { inline-size: 1.25rem; block-size: 1.25rem; }
+
+.rdc-prj__exc{inline-size:100%;color:var(--rdc-mut)}

@@ -1,0 +1,5 @@
+.rdct-content-dialog { box-sizing:border-box; max-inline-size:calc(100vw - 2rem); max-block-size:calc(100dvh - 2rem); margin:auto; padding:clamp(1rem,3vw,3rem); border:0; border-radius:.75rem; color:var(--rdct-ink,#182522); background:var(--rdct-paper,#fff); overflow:auto; overscroll-behavior:contain; }
+.rdct-content-dialog::backdrop { background:#000a; }
+.rdct-content-dialog__close { display:block; margin-inline-start:auto; padding:.25rem .6rem; border:0; background:transparent; color:inherit; font:inherit; font-size:2rem; cursor:pointer; }
+.rdct-content-dialog__close:focus-visible { outline:2px solid currentColor; outline-offset:2px; }
+.rdct-content-dialog > video { display:block; max-inline-size:100%; max-block-size:75dvh; }

@@ -1,0 +1,38 @@
+# Local third-party reference themes; preserve on disk, never publish.
+/themes/
+
+# No workflows for this project.
+/.github/workflows/
+
+# Local dependencies, caches and editor metadata.
+node_modules/
+vendor/
+!/radmanct-components/src/js/vendor/
+/radmanct-components/src/js/vendor/*
+!/radmanct-components/src/js/vendor/particles.js
+!/radmanct/vendor/
+/radmanct/vendor/*
+!/radmanct/vendor/svg-sanitize/
+!/radmanct/vendor/ace/
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+/artifacts/
+*.log
+
+# Local secrets and database backups.
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.sql
+*.sql.gz
+*.pem
+*.key
+
+# Source archive: local-only files stay outside Git.
+.playwright-mcp/
+.local-admin.txt

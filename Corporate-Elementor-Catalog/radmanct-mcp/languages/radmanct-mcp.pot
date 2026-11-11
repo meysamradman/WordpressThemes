@@ -1,0 +1,89 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct-mcp 1.1.1\nLanguage: \nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Connection status"
+msgstr ""
+
+msgid "WordPress Abilities API"
+msgstr ""
+
+msgid "Official MCP Adapter"
+msgstr ""
+
+msgid "Registered HTTP endpoint"
+msgstr ""
+
+msgid "Application passwords for your account"
+msgstr ""
+
+msgid "Available"
+msgstr ""
+
+msgid "Unavailable"
+msgstr ""
+
+msgid "Detected routes do not verify client authentication or access to every ability. Custom servers may expose a different tool set."
+msgstr ""
+
+msgid "Adapter endpoint"
+msgstr ""
+
+msgid "Connect your assistant"
+msgstr ""
+
+msgid "Install and activate the official MCP Adapter separately. The AI plugin is not required for Radman tools."
+msgstr ""
+
+msgid "Enable Radman tools and save. Leave changes disabled for read-only access."
+msgstr ""
+
+msgid "Create an application password in your WordPress profile. Use your login name and that password in your client; never use your main account password."
+msgstr ""
+
+msgid "Use a registered endpoint above with a transport supported by your client. Follow the official Adapter connection guide. Do not disable TLS verification."
+msgstr ""
+
+msgid "Ask the assistant to discover abilities, inspect radmanct/site-context, then execute it with parameters={}. Read the target and its version before requesting changes."
+msgstr ""
+
+msgid "Official connection guide"
+msgstr ""
+
+msgid "Enable Elementor tools in Elementor itself. Radman does not rewrite Elementor documents or custom PHP source files."
+msgstr ""
+
+msgid "MCP tools for WordPress content and Radman CT layouts."
+msgstr ""
+
+msgid "Radman MCP"
+msgstr ""
+
+msgid "AI connection (MCP)"
+msgstr ""
+
+msgid "Optional administrator tools for content and Radman CT layouts."
+msgstr ""
+
+msgid "Enable MCP tools"
+msgstr ""
+
+msgid "Allow content and layout changes"
+msgstr ""
+
+msgid "WordPress Abilities and MCP Adapter detected."
+msgstr ""
+
+msgid "Requires WordPress Abilities API and the official WordPress MCP Adapter."
+msgstr ""
+
+msgid "Use the MCP Adapter connection with your WordPress application password. Enable Elementor tools in its own MCP settings."
+msgstr ""
+
+msgid "Application passwords"
+msgstr ""
+
+msgid "Default adapter endpoint"
+msgstr ""
+
+msgid "MCP integration for Radman CT."
+msgstr ""

@@ -1,0 +1,1120 @@
+{
+    "source": "Corporate-Webtalik/radmanct",
+    "map": {
+        "hero": 12,
+        "hero-clean": 27,
+        "offering-web": 13,
+        "offering-wordpress": 19,
+        "offering-systems": 18,
+        "offering-apps": 20,
+        "orb-gold": 14,
+        "orb-ivory": 15,
+        "services-strip-48": 97,
+        "services-strip-45": 98,
+        "services-strip-46": 99,
+        "services-strip-47": 100,
+        "services-strip-49": 101
+    },
+    "media": [
+        {
+            "id": 12,
+            "file": "2026/10/sld2.webp",
+            "files": [
+                "2026/10/sld2.webp",
+                "2026/10/sld2-300x169.webp",
+                "2026/10/sld2-1024x576.webp",
+                "2026/10/sld2-150x150.webp",
+                "2026/10/sld2-768x432.webp",
+                "2026/10/sld2-1536x864.webp"
+            ],
+            "meta": {
+                "width": 1920,
+                "height": 1080,
+                "file": "2026/10/sld2.webp",
+                "filesize": 78952,
+                "sizes": {
+                    "medium": {
+                        "file": "sld2-300x169.webp",
+                        "width": 300,
+                        "height": 169,
+                        "mime-type": "image/webp",
+                        "filesize": 1988
+                    },
+                    "large": {
+                        "file": "sld2-1024x576.webp",
+                        "width": 1024,
+                        "height": 576,
+                        "mime-type": "image/webp",
+                        "filesize": 12626
+                    },
+                    "thumbnail": {
+                        "file": "sld2-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 1150
+                    },
+                    "medium_large": {
+                        "file": "sld2-768x432.webp",
+                        "width": 768,
+                        "height": 432,
+                        "mime-type": "image/webp",
+                        "filesize": 7826
+                    },
+                    "1536x1536": {
+                        "file": "sld2-1536x864.webp",
+                        "width": 1536,
+                        "height": 864,
+                        "mime-type": "image/webp",
+                        "filesize": 23608
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "sld2",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 27,
+            "file": "2026/11/hero-clean-plate-v1.webp",
+            "files": [
+                "2026/11/hero-clean-plate-v1.webp",
+                "2026/11/hero-clean-plate-v1-300x169.webp",
+                "2026/11/hero-clean-plate-v1-1024x576.webp",
+                "2026/11/hero-clean-plate-v1-150x150.webp",
+                "2026/11/hero-clean-plate-v1-768x432.webp",
+                "2026/11/hero-clean-plate-v1-1536x864.webp"
+            ],
+            "meta": {
+                "width": 1672,
+                "height": 941,
+                "file": "2026/11/hero-clean-plate-v1.webp",
+                "filesize": 33704,
+                "sizes": {
+                    "medium": {
+                        "file": "hero-clean-plate-v1-300x169.webp",
+                        "width": 300,
+                        "height": 169,
+                        "mime-type": "image/webp",
+                        "filesize": 2062
+                    },
+                    "large": {
+                        "file": "hero-clean-plate-v1-1024x576.webp",
+                        "width": 1024,
+                        "height": 576,
+                        "mime-type": "image/webp",
+                        "filesize": 13320
+                    },
+                    "thumbnail": {
+                        "file": "hero-clean-plate-v1-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 1228
+                    },
+                    "medium_large": {
+                        "file": "hero-clean-plate-v1-768x432.webp",
+                        "width": 768,
+                        "height": 432,
+                        "mime-type": "image/webp",
+                        "filesize": 8744
+                    },
+                    "1536x1536": {
+                        "file": "hero-clean-plate-v1-1536x864.webp",
+                        "width": 1536,
+                        "height": 864,
+                        "mime-type": "image/webp",
+                        "filesize": 23792
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Hero clean plate &#8211; isolated background patches",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 13,
+            "file": "2026/10/website-art-base-v4.webp",
+            "files": [
+                "2026/10/website-art-base-v4.webp",
+                "2026/10/website-art-base-v4-300x188.webp",
+                "2026/10/website-art-base-v4-1024x641.webp",
+                "2026/10/website-art-base-v4-150x150.webp",
+                "2026/10/website-art-base-v4-768x481.webp"
+            ],
+            "meta": {
+                "width": 1440,
+                "height": 901,
+                "file": "2026/10/website-art-base-v4.webp",
+                "filesize": 95168,
+                "sizes": {
+                    "medium": {
+                        "file": "website-art-base-v4-300x188.webp",
+                        "width": 300,
+                        "height": 188,
+                        "mime-type": "image/webp",
+                        "filesize": 9240
+                    },
+                    "large": {
+                        "file": "website-art-base-v4-1024x641.webp",
+                        "width": 1024,
+                        "height": 641,
+                        "mime-type": "image/webp",
+                        "filesize": 46894
+                    },
+                    "thumbnail": {
+                        "file": "website-art-base-v4-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 5630
+                    },
+                    "medium_large": {
+                        "file": "website-art-base-v4-768x481.webp",
+                        "width": 768,
+                        "height": 481,
+                        "mime-type": "image/webp",
+                        "filesize": 30754
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Website design artwork &#8211; base",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 19,
+            "file": "2026/10/wordpress-network-v3.webp",
+            "files": [
+                "2026/10/wordpress-network-v3.webp",
+                "2026/10/wordpress-network-v3-300x188.webp",
+                "2026/10/wordpress-network-v3-1024x640.webp",
+                "2026/10/wordpress-network-v3-150x150.webp",
+                "2026/10/wordpress-network-v3-768x480.webp"
+            ],
+            "meta": {
+                "width": 1440,
+                "height": 900,
+                "file": "2026/10/wordpress-network-v3.webp",
+                "filesize": 191098,
+                "sizes": {
+                    "medium": {
+                        "file": "wordpress-network-v3-300x188.webp",
+                        "width": 300,
+                        "height": 188,
+                        "mime-type": "image/webp",
+                        "filesize": 18708
+                    },
+                    "large": {
+                        "file": "wordpress-network-v3-1024x640.webp",
+                        "width": 1024,
+                        "height": 640,
+                        "mime-type": "image/webp",
+                        "filesize": 88232
+                    },
+                    "thumbnail": {
+                        "file": "wordpress-network-v3-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 10726
+                    },
+                    "medium_large": {
+                        "file": "wordpress-network-v3-768x480.webp",
+                        "width": 768,
+                        "height": 480,
+                        "mime-type": "image/webp",
+                        "filesize": 61902
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "wordpress-network-v3",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 18,
+            "file": "2026/10/web-systems-v1.webp",
+            "files": [
+                "2026/10/web-systems-v1.webp",
+                "2026/10/web-systems-v1-300x188.webp",
+                "2026/10/web-systems-v1-1024x640.webp",
+                "2026/10/web-systems-v1-150x150.webp",
+                "2026/10/web-systems-v1-768x480.webp"
+            ],
+            "meta": {
+                "width": 1440,
+                "height": 900,
+                "file": "2026/10/web-systems-v1.webp",
+                "filesize": 150502,
+                "sizes": {
+                    "medium": {
+                        "file": "web-systems-v1-300x188.webp",
+                        "width": 300,
+                        "height": 188,
+                        "mime-type": "image/webp",
+                        "filesize": 14434
+                    },
+                    "large": {
+                        "file": "web-systems-v1-1024x640.webp",
+                        "width": 1024,
+                        "height": 640,
+                        "mime-type": "image/webp",
+                        "filesize": 69568
+                    },
+                    "thumbnail": {
+                        "file": "web-systems-v1-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 8892
+                    },
+                    "medium_large": {
+                        "file": "web-systems-v1-768x480.webp",
+                        "width": 768,
+                        "height": 480,
+                        "mime-type": "image/webp",
+                        "filesize": 47064
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "web-systems-v1",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 20,
+            "file": "2026/10/mobile-app-v1.webp",
+            "files": [
+                "2026/10/mobile-app-v1.webp",
+                "2026/10/mobile-app-v1-300x188.webp",
+                "2026/10/mobile-app-v1-1024x640.webp",
+                "2026/10/mobile-app-v1-150x150.webp",
+                "2026/10/mobile-app-v1-768x480.webp"
+            ],
+            "meta": {
+                "width": 1440,
+                "height": 900,
+                "file": "2026/10/mobile-app-v1.webp",
+                "filesize": 123798,
+                "sizes": {
+                    "medium": {
+                        "file": "mobile-app-v1-300x188.webp",
+                        "width": 300,
+                        "height": 188,
+                        "mime-type": "image/webp",
+                        "filesize": 10504
+                    },
+                    "large": {
+                        "file": "mobile-app-v1-1024x640.webp",
+                        "width": 1024,
+                        "height": 640,
+                        "mime-type": "image/webp",
+                        "filesize": 50150
+                    },
+                    "thumbnail": {
+                        "file": "mobile-app-v1-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 6970
+                    },
+                    "medium_large": {
+                        "file": "mobile-app-v1-768x480.webp",
+                        "width": 768,
+                        "height": 480,
+                        "mime-type": "image/webp",
+                        "filesize": 34964
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "mobile-app-v1",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 14,
+            "file": "2026/10/orb-gold-v1.webp",
+            "files": [
+                "2026/10/orb-gold-v1.webp",
+                "2026/10/orb-gold-v1-150x150.webp"
+            ],
+            "meta": {
+                "width": 160,
+                "height": 160,
+                "file": "2026/10/orb-gold-v1.webp",
+                "filesize": 3868,
+                "sizes": {
+                    "thumbnail": {
+                        "file": "orb-gold-v1-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 3214
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Website design artwork &#8211; gold",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 15,
+            "file": "2026/10/orb-ivory-v1.webp",
+            "files": [
+                "2026/10/orb-ivory-v1.webp",
+                "2026/10/orb-ivory-v1-150x150.webp"
+            ],
+            "meta": {
+                "width": 160,
+                "height": 160,
+                "file": "2026/10/orb-ivory-v1.webp",
+                "filesize": 4100,
+                "sizes": {
+                    "thumbnail": {
+                        "file": "orb-ivory-v1-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 3758
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Website design artwork &#8211; ivory",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 97,
+            "file": "2026/11/orisa-services-48.webp",
+            "files": [
+                "2026/11/orisa-services-48.webp",
+                "2026/11/orisa-services-48-300x218.webp",
+                "2026/11/orisa-services-48-150x150.webp",
+                "2026/11/orisa-services-48-768x559.webp"
+            ],
+            "meta": {
+                "width": 770,
+                "height": 560,
+                "file": "2026/11/orisa-services-48.webp",
+                "filesize": 370330,
+                "sizes": {
+                    "medium": {
+                        "file": "orisa-services-48-300x218.webp",
+                        "width": 300,
+                        "height": 218,
+                        "mime-type": "image/webp",
+                        "filesize": 58860
+                    },
+                    "thumbnail": {
+                        "file": "orisa-services-48-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 23452
+                    },
+                    "medium_large": {
+                        "file": "orisa-services-48-768x559.webp",
+                        "width": 768,
+                        "height": 559,
+                        "mime-type": "image/webp",
+                        "filesize": 328254
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Orisa Services 04 — 48",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 98,
+            "file": "2026/11/orisa-services-45.webp",
+            "files": [
+                "2026/11/orisa-services-45.webp",
+                "2026/11/orisa-services-45-300x218.webp",
+                "2026/11/orisa-services-45-150x150.webp",
+                "2026/11/orisa-services-45-768x559.webp"
+            ],
+            "meta": {
+                "width": 770,
+                "height": 560,
+                "file": "2026/11/orisa-services-45.webp",
+                "filesize": 475856,
+                "sizes": {
+                    "medium": {
+                        "file": "orisa-services-45-300x218.webp",
+                        "width": 300,
+                        "height": 218,
+                        "mime-type": "image/webp",
+                        "filesize": 75826
+                    },
+                    "thumbnail": {
+                        "file": "orisa-services-45-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 30128
+                    },
+                    "medium_large": {
+                        "file": "orisa-services-45-768x559.webp",
+                        "width": 768,
+                        "height": 559,
+                        "mime-type": "image/webp",
+                        "filesize": 413584
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Orisa Services 04 — 45",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 99,
+            "file": "2026/11/orisa-services-46.webp",
+            "files": [
+                "2026/11/orisa-services-46.webp",
+                "2026/11/orisa-services-46-300x218.webp",
+                "2026/11/orisa-services-46-150x150.webp",
+                "2026/11/orisa-services-46-768x559.webp"
+            ],
+            "meta": {
+                "width": 770,
+                "height": 560,
+                "file": "2026/11/orisa-services-46.webp",
+                "filesize": 545140,
+                "sizes": {
+                    "medium": {
+                        "file": "orisa-services-46-300x218.webp",
+                        "width": 300,
+                        "height": 218,
+                        "mime-type": "image/webp",
+                        "filesize": 67878
+                    },
+                    "thumbnail": {
+                        "file": "orisa-services-46-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 27588
+                    },
+                    "medium_large": {
+                        "file": "orisa-services-46-768x559.webp",
+                        "width": 768,
+                        "height": 559,
+                        "mime-type": "image/webp",
+                        "filesize": 456844
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Orisa Services 04 — 46",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 100,
+            "file": "2026/11/orisa-services-47.webp",
+            "files": [
+                "2026/11/orisa-services-47.webp",
+                "2026/11/orisa-services-47-300x218.webp",
+                "2026/11/orisa-services-47-150x150.webp",
+                "2026/11/orisa-services-47-768x559.webp"
+            ],
+            "meta": {
+                "width": 770,
+                "height": 560,
+                "file": "2026/11/orisa-services-47.webp",
+                "filesize": 464564,
+                "sizes": {
+                    "medium": {
+                        "file": "orisa-services-47-300x218.webp",
+                        "width": 300,
+                        "height": 218,
+                        "mime-type": "image/webp",
+                        "filesize": 52168
+                    },
+                    "thumbnail": {
+                        "file": "orisa-services-47-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 21688
+                    },
+                    "medium_large": {
+                        "file": "orisa-services-47-768x559.webp",
+                        "width": 768,
+                        "height": 559,
+                        "mime-type": "image/webp",
+                        "filesize": 379088
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Orisa Services 04 — 47",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 101,
+            "file": "2026/11/orisa-services-49.webp",
+            "files": [
+                "2026/11/orisa-services-49.webp",
+                "2026/11/orisa-services-49-300x218.webp",
+                "2026/11/orisa-services-49-150x150.webp",
+                "2026/11/orisa-services-49-768x559.webp"
+            ],
+            "meta": {
+                "width": 770,
+                "height": 560,
+                "file": "2026/11/orisa-services-49.webp",
+                "filesize": 435310,
+                "sizes": {
+                    "medium": {
+                        "file": "orisa-services-49-300x218.webp",
+                        "width": 300,
+                        "height": 218,
+                        "mime-type": "image/webp",
+                        "filesize": 55598
+                    },
+                    "thumbnail": {
+                        "file": "orisa-services-49-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 20926
+                    },
+                    "medium_large": {
+                        "file": "orisa-services-49-768x559.webp",
+                        "width": 768,
+                        "height": 559,
+                        "mime-type": "image/webp",
+                        "filesize": 365038
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Orisa Services 04 — 49",
+            "mime": "image/webp",
+            "alt": ""
+        },
+        {
+            "id": 25,
+            "file": "2019/07/wordpress-training-v1.webp",
+            "files": [
+                "2019/07/wordpress-training-v1.webp",
+                "2019/07/wordpress-training-v1-300x200.webp",
+                "2019/07/wordpress-training-v1-1024x683.webp",
+                "2019/07/wordpress-training-v1-150x150.webp",
+                "2019/07/wordpress-training-v1-768x512.webp"
+            ],
+            "meta": {
+                "width": 1200,
+                "height": 800,
+                "file": "2019/07/wordpress-training-v1.webp",
+                "filesize": 73940,
+                "sizes": {
+                    "medium": {
+                        "file": "wordpress-training-v1-300x200.webp",
+                        "width": 300,
+                        "height": 200,
+                        "mime-type": "image/webp",
+                        "filesize": 11942
+                    },
+                    "large": {
+                        "file": "wordpress-training-v1-1024x683.webp",
+                        "width": 1024,
+                        "height": 683,
+                        "mime-type": "image/webp",
+                        "filesize": 55296
+                    },
+                    "thumbnail": {
+                        "file": "wordpress-training-v1-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 6100
+                    },
+                    "medium_large": {
+                        "file": "wordpress-training-v1-768x512.webp",
+                        "width": 768,
+                        "height": 512,
+                        "mime-type": "image/webp",
+                        "filesize": 38432
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "آموزش وردپرس",
+            "mime": "image/webp",
+            "alt": "راهنمایی هنرجو برای طراحی صفحه وب با یک ویرایشگر سایت"
+        },
+        {
+            "id": 24,
+            "file": "2019/09/real-estate-website-v1.webp",
+            "files": [
+                "2019/09/real-estate-website-v1.webp",
+                "2019/09/real-estate-website-v1-300x200.webp",
+                "2019/09/real-estate-website-v1-1024x683.webp",
+                "2019/09/real-estate-website-v1-150x150.webp",
+                "2019/09/real-estate-website-v1-768x512.webp"
+            ],
+            "meta": {
+                "width": 1200,
+                "height": 800,
+                "file": "2019/09/real-estate-website-v1.webp",
+                "filesize": 112046,
+                "sizes": {
+                    "medium": {
+                        "file": "real-estate-website-v1-300x200.webp",
+                        "width": 300,
+                        "height": 200,
+                        "mime-type": "image/webp",
+                        "filesize": 15344
+                    },
+                    "large": {
+                        "file": "real-estate-website-v1-1024x683.webp",
+                        "width": 1024,
+                        "height": 683,
+                        "mime-type": "image/webp",
+                        "filesize": 81520
+                    },
+                    "thumbnail": {
+                        "file": "real-estate-website-v1-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 6588
+                    },
+                    "medium_large": {
+                        "file": "real-estate-website-v1-768x512.webp",
+                        "width": 768,
+                        "height": 512,
+                        "mime-type": "image/webp",
+                        "filesize": 55870
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "طراحی سایت املاک",
+            "mime": "image/webp",
+            "alt": "وب‌سایت معرفی املاک روی لپ‌تاپ کنار ماکت خانه و کلید"
+        },
+        {
+            "id": 23,
+            "file": "2019/09/bilingual-website-design-v1.webp",
+            "files": [
+                "2019/09/bilingual-website-design-v1.webp",
+                "2019/09/bilingual-website-design-v1-300x200.webp",
+                "2019/09/bilingual-website-design-v1-1024x683.webp",
+                "2019/09/bilingual-website-design-v1-150x150.webp",
+                "2019/09/bilingual-website-design-v1-768x512.webp"
+            ],
+            "meta": {
+                "width": 1200,
+                "height": 800,
+                "file": "2019/09/bilingual-website-design-v1.webp",
+                "filesize": 107912,
+                "sizes": {
+                    "medium": {
+                        "file": "bilingual-website-design-v1-300x200.webp",
+                        "width": 300,
+                        "height": 200,
+                        "mime-type": "image/webp",
+                        "filesize": 16490
+                    },
+                    "large": {
+                        "file": "bilingual-website-design-v1-1024x683.webp",
+                        "width": 1024,
+                        "height": 683,
+                        "mime-type": "image/webp",
+                        "filesize": 78966
+                    },
+                    "thumbnail": {
+                        "file": "bilingual-website-design-v1-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image/webp",
+                        "filesize": 7768
+                    },
+                    "medium_large": {
+                        "file": "bilingual-website-design-v1-768x512.webp",
+                        "width": 768,
+                        "height": 512,
+                        "mime-type": "image/webp",
+                        "filesize": 54588
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "طراحی سایت دوزبانه",
+            "mime": "image/webp",
+            "alt": "همکاری دو طراح روی نسخه‌های مختلف یک وب‌سایت دوزبانه"
+        }
+    ],
+    "home": {
+        "heading": "وبتالیک",
+        "subheading": "طراحی و توسعه وب‌سایت، سامانه‌های تحت وب و اپلیکیشن موبایل",
+        "accent": "طراحی و توسعه وب‌سایت اختصاصی\nطراحی و توسعه تخصصی وردپرس\nپنل مدیریت و سامانه‌های تحت وب\nطراحی و توسعه اپلیکیشن موبایل",
+        "description": "در وبتالیک، ایده‌ها را با طراحی مدرن و برنامه‌نویسی اختصاصی به وب‌سایت‌ها، سامانه‌های پیشرفته و اپلیکیشن‌های کاربردی تبدیل می‌کنیم.",
+        "button_url": "http://127.0.0.1:8095/contact-us/",
+        "button_label": "شروع همکاری"
+    },
+    "offerings": [
+        [
+            "web",
+            "طراحی وب‌سایت",
+            "اختصاصی",
+            "طراحی و توسعهٔ وب‌سایت‌های مدرن، سریع و کاملاً متناسب با هویت برند شما. از ایده تا اجرا، همراه شما هستیم.",
+            [
+                "امنیت و پایداری",
+                "طراحی واکنش‌گرا",
+                "سرعت و عملکرد بالا"
+            ]
+        ],
+        [
+            "wordpress",
+            "طراحی و توسعه",
+            "تخصصی وردپرس",
+            "راهکارهای حرفه‌ای وردپرس؛ از طراحی قالب و افزونهٔ اختصاصی تا مدیریت آسان محتوا، با تمرکز بر سرعت، امنیت و رشد کسب‌وکار شما.",
+            [
+                "عملکرد و مقیاس‌پذیری",
+                "توسعهٔ اختصاصی",
+                "راه‌اندازی چندسایته"
+            ]
+        ],
+        [
+            "systems",
+            "طراحی پنل مدیریت",
+            "و سامانه‌های تحت وب",
+            "طراحی و توسعهٔ پنل‌های مدیریت و سامانه‌های تحت وب قدرتمند، سفارشی و متناسب با نیازهای کسب‌وکار شما؛ با معماری ماژولار و مقیاس‌پذیر.",
+            [
+                "امنیت و مدیریت دسترسی",
+                "API و اتصال سرویس‌ها",
+                "معماری مقیاس‌پذیر"
+            ]
+        ],
+        [
+            "apps",
+            "طراحی و توسعه",
+            "اپلیکیشن موبایل",
+            "طراحی و توسعهٔ اپلیکیشن‌های اختصاصی اندروید و iOS با تجربهٔ کاربری روان، عملکرد پایدار و اتصال یکپارچه به سامانه‌های کسب‌وکار شما.",
+            [
+                "اندروید و iOS",
+                "تجربهٔ کاربری",
+                "API و اتصال سرویس‌ها"
+            ]
+        ]
+    ],
+    "projects": [
+        {
+            "image": 25,
+            "title": "وب‌سایت آموزشی مهارت",
+            "description": "وب‌سایت وردپرسی برای معرفی محتوای آموزشی و سرفصل‌ها.",
+            "categories": [
+                "وب‌سایت آموزشی"
+            ]
+        },
+        {
+            "image": 24,
+            "title": "وب‌سایت املاک سپهر",
+            "description": "وب‌سایت معرفی خدمات املاک و نمایش فایل‌ها.",
+            "categories": [
+                "وب‌سایت املاک"
+            ]
+        },
+        {
+            "image": 23,
+            "title": "وب‌سایت شرکتی آفاق",
+            "description": "معرفی شرکت و خدمات با ساختار محتوایی روشن.",
+            "categories": [
+                "وب‌سایت شرکتی"
+            ]
+        }
+    ],
+    "services": [
+        {
+            "slug": "custom-website-design-development",
+            "title": "طراحی و توسعه وب‌سایت اختصاصی",
+            "description": "وب‌سایتی سریع و اختصاصی، متناسب با هویت برند و نیازهای کسب‌وکار شما.",
+            "media": "offering-web",
+            "url": "http://127.0.0.1:8095/custom-website-design-development/",
+            "image": 13
+        },
+        {
+            "slug": "specialized-wordpress-design-development",
+            "title": "طراحی و توسعه تخصصی وردپرس",
+            "description": "طراحی، توسعه و بهینه‌سازی تخصصی وردپرس با معماری منظم و قابل توسعه.",
+            "media": "offering-wordpress",
+            "url": "http://127.0.0.1:8095/specialized-wordpress-design-development/",
+            "image": 19
+        },
+        {
+            "slug": "admin-panel-web-systems",
+            "title": "پنل مدیریت و سامانه‌های تحت وب",
+            "description": "پنل‌ها و سامانه‌های یکپارچه برای مدیریت ساده‌تر اطلاعات و فرایندهای روزانه.",
+            "media": "offering-systems",
+            "url": "http://127.0.0.1:8095/admin-panel-web-systems/",
+            "image": 18
+        },
+        {
+            "slug": "mobile-app-design-development",
+            "title": "طراحی و توسعه اپلیکیشن موبایل",
+            "description": "تجربه‌ای روان در موبایل با عملکرد پایدار و اتصال یکپارچه به سرویس‌ها.",
+            "media": "offering-apps",
+            "url": "http://127.0.0.1:8095/mobile-app-design-development/",
+            "image": 20
+        }
+    ],
+    "faq": [
+        [
+            "مراحل طراحی پروژه چطور پیش می‌رود؟",
+            "ابتدا هدف پروژه را مشخص می‌کنیم. بعد ساختار و رابط کاربری را طراحی می‌کنیم، بازخورد شما را بررسی می‌کنیم و پروژه را برای راه‌اندازی آماده می‌کنیم."
+        ],
+        [
+            "انجام پروژه چقدر زمان می‌برد؟",
+            "زمان تحویل به حجم و پیچیدگی کار بستگی دارد. پس از بررسی اولیه، مراحل پروژه و زمان تحویل را با شما مشخص می‌کنیم."
+        ],
+        [
+            "با تیم‌های تازه‌کار هم همکاری می‌کنید؟",
+            "بله. با تیم‌های تازه‌کار و کسب‌وکارهای باسابقه همکاری می‌کنیم و دامنهٔ پروژه را بر اساس نیاز و هدف هر تیم تعیین می‌کنیم."
+        ],
+        [
+            "پروژه‌های سفارشی هم انجام می‌دهید؟",
+            "بله. نیازهای پروژه را بررسی می‌کنیم و برای وب‌سایت اختصاصی، سامانهٔ تحت وب یا اپلیکیشن موبایل راهکار پیشنهاد می‌دهیم."
+        ]
+    ]
+}

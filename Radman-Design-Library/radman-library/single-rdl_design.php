@@ -1,0 +1,6 @@
+<?php defined('ABSPATH')||exit; get_header(); ?>
+<main id="rdl-main"><?php while(have_posts()): the_post(); ?><div class="rdl-pv-bar"><a href="<?php echo esc_url(home_url('/')); ?>">→ برگشت به کتابخانه</a><span><?php the_title(); ?></span><?php edit_post_link('ویرایش نمونه'); ?></div>
+<?php if(post_password_required()): ?><div class="rdl-wrap"><?php echo get_the_password_form(); ?></div><?php else: $module=\RadmanLibrary\module(get_the_ID()); if(isset($module['source'])): ?>
+<section class="rdl-wrap rdl-demo-info"><div><h1><?php the_title(); ?></h1><p><?php echo esc_html(get_the_excerpt()); ?></p><?php if(get_the_excerpt()!==$module['motion']): ?><p class="rdl-lbl"><?php echo esc_html($module['motion']); ?></p><?php endif; ?></div><a class="rdl-full" href="<?php the_permalink(); ?>">پیش‌نمایش تمام‌صفحه ↗</a></section>
+<div class="rdl-wrap rdl-demo-thm"><?php if(has_post_thumbnail())the_post_thumbnail('large'); ?><p>پیش‌نمایش با اسکرول مستقل صفحه و همان ابعاد واقعی قالب باز می‌شود.</p></div>
+<?php elseif($module): require get_template_directory().'/modules/'.$module['slug'].'/view.php'; else: ?><article class="rdl-wrap rdl-cnt"><h1><?php the_title(); ?></h1><?php the_content(); ?></article><?php endif; endif; endwhile; ?></main><?php get_footer(); ?>

@@ -1,0 +1,1 @@
+.rdct-text[data-highlight=circle] .rdct-text__highlight:before{block-size:var(--rdct-text-highlight-height,calc(100% + .24em));border:.045em solid var(--rdct-text-highlight-color);border-radius:var(--rdct-text-highlight-radius,50%);background:0 0;bottom:var(--rdct-text-highlight-offset,-.12em)}

@@ -1,0 +1,2 @@
+<?php defined('ABSPATH')||exit; ?>
+<section class="rdl-demo"><div><p class="rdl-demo__lbl">نمونهٔ پایه / ۰۰۱</p><h1>هر ایده،<br>یک شروع تازه.</h1><p>این یک فضای مستقل برای ساخت طراحی بعدی است؛ نمونه‌های واقعی را مرحله‌به‌مرحله اینجا اضافه می‌کنیم.</p><a href="<?php echo esc_url(home_url('/')); ?>">برگشت به طراحی‌ها ↖</a></div><div class="rdl-demo__art" aria-hidden="true"><span>R</span><small>RADMAN / DESIGN STUDIES</small></div></section>

@@ -1,0 +1,5 @@
+.rdct-box--s01a { display: grid; aspect-ratio: var(--rdct-box-ratio, 1); min-block-size: var(--rdct-box-height, 0px); overflow: clip; }
+.rdct-box--s01a > * { grid-area: 1 / 1; }
+.rdct-box--s01a .rdct-box__content { align-self: end; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; color: #fff; background: transparent; z-index: 1; }
+.rdct-box--s01a .rdct-box__title { flex: 1 1 70%; }.rdct-box--s01a .rdct-box__button { order: -1; margin: 0; }
+.rdct-box--s01a:is(:hover, :focus-within) { transform: translateY(-3px); box-shadow: 0 15px 80px #0004; }

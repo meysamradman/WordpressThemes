@@ -1,0 +1,68 @@
+name: webtalik
+
+services:
+  db:
+    image: mariadb:11.4@sha256:1292844148b311e4ed4300022a996d39083f415a963e970cf47cad1b3b18e3a6
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: webtalik_local
+      MARIADB_USER: radman
+      MARIADB_PASSWORD: ${WEBTALIK_DB_PASSWORD:?Run WordPress-Start.cmd first}
+      MARIADB_ROOT_PASSWORD: ${WEBTALIK_DB_ROOT_PASSWORD:?Run WordPress-Start.cmd first}
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+
+  wordpress:
+    image: wordpress:php8.4-apache@sha256:309307430abf80009378a63a79df73554a6449b700fac59a991b4959e6dda8ca
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:8095:80'
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: webtalik_local
+      WORDPRESS_DB_USER: radman
+      WORDPRESS_DB_PASSWORD: ${WEBTALIK_DB_PASSWORD}
+      WORDPRESS_TABLE_PREFIX: rdct_
+      WORDPRESS_DEBUG: '1'
+      WEBTALIK_LOCAL_SITE: '1'
+      WEBTALIK_LOCAL_URL: http://127.0.0.1:8095
+      WEBTALIK_ADMIN_USER: radman
+      WEBTALIK_ADMIN_PASSWORD: ${WEBTALIK_ADMIN_PASSWORD:?Run WordPress-Start.cmd first}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', getenv('WEBTALIK_LOCAL_URL'));
+        define('WP_SITEURL', getenv('WEBTALIK_LOCAL_URL'));
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        define('WP_MEMORY_LIMIT', '256M');
+        define('WP_MAX_MEMORY_LIMIT', '512M');
+        define('WP_HTTP_BLOCK_EXTERNAL', true);
+        define('DISABLE_WP_CRON', true);
+        define('AUTOMATIC_UPDATER_DISABLED', true);
+        define('WP_AUTO_UPDATE_CORE', false);
+    volumes:
+      - wordpress:/var/www/html
+      - ../../radmanct:/var/www/html/wp-content/themes/radmanct:ro
+      - ./provision.php:/opt/webtalik/provision.php:ro
+      - ./local-boundaries.php:/var/www/html/wp-content/mu-plugins/webtalik-local.php:ro
+      - ./php.ini:/usr/local/etc/php/conf.d/webtalik.ini:ro
+    healthcheck:
+      test: [CMD, php, '-r', "exit(@fsockopen('127.0.0.1', 80) ? 0 : 1);"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  database:
+    name: webtalik-database
+  wordpress:
+    name: webtalik-wordpress

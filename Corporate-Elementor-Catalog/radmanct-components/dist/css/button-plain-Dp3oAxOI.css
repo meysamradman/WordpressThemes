@@ -1,0 +1,2 @@
+.rdct-button--plain { padding:0; border:0; color:var(--rdct-button-color,var(--rdct-accent,#235a50)); background-color:var(--rdct-button-background,transparent); }
+.rdct-button--plain:is(:hover,:focus-visible) { color:var(--rdct-button-hover-color,#143d35); background-color:var(--rdct-button-hover-background,transparent); }

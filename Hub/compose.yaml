@@ -1,0 +1,35 @@
+name: hub
+services:
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: hub
+      MARIADB_USER: hub
+      MARIADB_PASSWORD: ${HUB_DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${HUB_DB_ROOT_PASSWORD}
+    volumes:
+      - hub_db:/var/lib/mysql
+    networks: [hub]
+  wordpress:
+    image: wordpress:php8.4-apache
+    ports:
+      - "127.0.0.1:8096:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: hub
+      WORDPRESS_DB_USER: hub
+      WORDPRESS_DB_PASSWORD: ${HUB_DB_PASSWORD}
+      WORDPRESS_DEBUG: '1'
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG_DISPLAY', false);
+        define('WP_DEBUG_LOG', true);
+      HUB_ADMIN_PASSWORD: ${HUB_ADMIN_PASSWORD}
+    volumes:
+      - hub_wordpress:/var/www/html
+    networks: [hub]
+networks:
+  hub:
+    driver: bridge
+volumes:
+  hub_db:
+  hub_wordpress:

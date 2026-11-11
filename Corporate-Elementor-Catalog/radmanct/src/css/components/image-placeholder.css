@@ -1,0 +1,2 @@
+.rdct-image-placeholder { display: grid; place-items: center; background: var(--rdct-surface); }
+.rdct-image-placeholder::after { content: ''; inline-size: 2.5rem; aspect-ratio: 1; border: 2px solid var(--rdct-line); border-radius: var(--rdct-radius); transform: rotate(45deg); }

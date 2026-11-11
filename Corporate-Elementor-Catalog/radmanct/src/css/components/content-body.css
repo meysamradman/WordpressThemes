@@ -1,0 +1,12 @@
+.rdct-tbl-scroll { min-inline-size: 0; max-inline-size: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
+.rdct-cnt { min-inline-size: 0; line-height: 1.9; overflow-wrap: anywhere; }
+.rdct-cnt > * { min-inline-size: 0; max-inline-size: var(--rdct-reading); margin-inline: auto; }
+.rdct-cnt > .alignwide { max-inline-size: var(--rdct-content-wide, var(--rdct-container)); }
+.rdct-cnt > .alignfull { max-inline-size: none; }
+.rdct-cnt :where(h1, h2, h3, h4, h5, h6) { line-height: 1.4; text-wrap: balance; }
+.rdct-cnt :where(table) { border-collapse: collapse; inline-size: 100%; }
+.rdct-cnt :where(th, td) { border: 1px solid var(--rdct-line); padding: .65rem; text-align: start; }
+.rdct-cnt :where(pre) { max-inline-size: 100%; direction: ltr; text-align: left; overflow: auto; background: var(--rdct-surface); padding: 1rem; border-radius: var(--rdct-radius); }
+.rdct-cnt :where(video, audio, iframe, embed, object, svg) { max-inline-size: 100%; }
+.rdct-cnt :where(video) { block-size: auto; }
+.rdct-cnt :where(.wp-block-table) { min-inline-size: 0; overflow-x: auto; }

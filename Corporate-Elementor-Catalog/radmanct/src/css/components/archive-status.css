@@ -1,0 +1,4 @@
+.rdct-archive-status:empty { display: none; }
+[data-rdct-archive-retry] { margin-block-end: 1rem; }
+[data-rdct-archive].is-loading :is(.rdct-post-grid, .rdct-cnt-grid) { opacity: .6; }
+[data-rdct-archive-view] { scroll-margin-block-start: 6rem; }

@@ -1,0 +1,18 @@
+[
+  { "settings": { "_animation": "none" }, "expected": false },
+  { "settings": { "_animation": { "$$type": "string", "value": "none" } }, "expected": false },
+  { "settings": { "animation": { "$$type": "string", "value": "" } }, "expected": false },
+  { "settings": { "animation": { "$$type": "string", "value": "fadeIn", "disabled": true } }, "expected": false },
+  { "settings": { "animation": { "$$type": "boolean", "value": true } }, "expected": false },
+  { "settings": { "animation": { "$$type": "string", "value": "fadeIn" } }, "expected": true },
+  { "settings": { "_animation_mobile": "slideInLeft" }, "expected": true },
+  { "settings": { "motion_fx_motion_fx_scrolling": { "$$type": "boolean", "value": false } }, "expected": false },
+  { "settings": { "motion_fx_motion_fx_mouse": { "$$type": "boolean", "value": true } }, "expected": true },
+  { "settings": { "motion_fx_motion_fx_scrolling": { "$$type": "boolean", "value": true, "disabled": true } }, "expected": false },
+  { "settings": { "motion_fx_motion_fx_scrolling": "yes" }, "expected": true },
+  { "settings": { "motion_fx_motion_fx_scrolling": { "$$type": "string", "value": "yes" } }, "expected": true },
+  { "settings": { "motion_fx_motion_fx_scrolling": { "$$type": "string", "value": "yes", "disabled": true } }, "expected": false },
+  { "settings": {}, "interactions": { "items": "invalid" }, "expected": false },
+  { "settings": {}, "interactions": { "value": { "items": [{}] } }, "expected": true },
+  { "settings": {}, "interactions": { "disabled": true, "value": { "items": [{}] } }, "expected": false }
+]

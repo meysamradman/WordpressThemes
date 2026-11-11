@@ -1,0 +1,5 @@
+.rdct-blog-media-frame { position:relative; }
+.rdct-blog-media-badge { position:absolute; inset-block-start:50%; inset-inline-start:50%; transform:translate(50%,-50%); display:grid; place-items:center; inline-size:var(--rdct-media-badge-size,2.75rem); aspect-ratio:1; box-sizing:border-box; border:1.5px solid #fff; border-radius:50%; background:#10151166; color:#fff; pointer-events:none; }
+.rdct-blog-media-badge:dir(ltr) { transform:translate(-50%,-50%); }
+.rdct-blog-media-badge > svg { display:block; inline-size:var(--rdct-media-icon-size,1.375rem); block-size:var(--rdct-media-icon-size,1.375rem); }
+@media (forced-colors:active) { .rdct-blog-media-badge { background:Canvas; color:CanvasText; border-color:CanvasText; } }

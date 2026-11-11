@@ -1,0 +1,24 @@
+.rdct-client-blog-archive { --rdct-blog-lead-title: #ece9e2; --rdct-blog-lead-meta: #d5d2cb; }
+.rdct-client-blog-lead-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(.75rem, 1.4vw, 1.25rem); margin-block-end: clamp(2rem, 4vw, 3.5rem); }
+.rdct-client-blog-lead { min-inline-size: 0; overflow: hidden; border-radius: var(--rdct-radius); background: #20211f; }
+.rdct-client-blog-lead:first-of-type { grid-column: 1; grid-row: 1 / span 2; }
+.rdct-client-blog-lead > a { display: grid; position: relative; isolation: isolate; block-size: 100%; min-block-size: 15rem; color: var(--rdct-blog-lead-title); text-decoration: none; }
+.rdct-client-blog-lead > a::after { content: ''; grid-area: 1 / 1; z-index: -1; background: linear-gradient(180deg, #09090800 25%, #09090845 55%, #090908ed); }
+.rdct-client-blog-lead img { position: absolute; inset: 0; z-index: -2; display: block; inline-size: 100%; block-size: 100%; object-fit: cover; transition: transform .5s ease; }
+.rdct-client-blog-lead header { grid-area: 1 / 1; align-self: end; display: grid; gap: .5rem; padding: clamp(1.25rem, 2.8vw, 2.5rem); text-align: center; }
+.rdct-site .rdct-client-blog-lead h4 { margin: 0; color: inherit; font-size: clamp(1.05rem, 1.3vw, 1.375rem); line-height: var(--rdct-line-height-h4, 1.5); text-wrap: balance; }
+.rdct-site .rdct-client-blog-lead:first-of-type h4 { font-size: clamp(1.375rem, 2vw, 2rem); }
+.rdct-site .rdct-client-blog-lead :is(p, time) { margin: 0; color: var(--rdct-blog-lead-meta); font-size: .8125rem; line-height: 1.6; }
+.rdct-client-blog-lead > a:focus-visible { outline: 2px solid var(--rdct-accent); outline-offset: -4px; }
+.rdct-client-blog-lead-grid[data-count="2"] > .rdct-client-blog-lead:first-of-type { grid-row: auto; }
+.rdct-client-blog-lead:only-of-type { grid-column: 1 / -1; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .rdct-client-blog-lead > a:hover img { transform: scale(1.035); } }
+@media (max-width: 47.99rem) {
+  .rdct-client-blog-lead-grid { grid-template-columns: minmax(0, 1fr); }
+  .rdct-client-blog-lead:first-of-type { grid-column: auto; grid-row: auto; }
+  .rdct-client-blog-lead > a { min-block-size: 16rem; }
+  .rdct-client-blog-lead:first-of-type > a { min-block-size: 22rem; }
+}
+@media (prefers-reduced-motion: reduce) { .rdct-client-blog-lead img { transition: none; } }
+
+.rdct-client-blog-lead .rdct-card-preview { position:absolute;inset:0;z-index:-2; }

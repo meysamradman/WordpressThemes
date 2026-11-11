@@ -1,0 +1,3 @@
+.rdct-prd-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1rem; margin-block: 1rem; }
+.rdct-prd-price > bdi { font-size: 1.25em; font-weight: 700; overflow-wrap: anywhere; }
+.rdct-prd-contact { margin-block: 1rem; }

@@ -1,0 +1,3 @@
+.rdct-form.rdct-component-search { display:grid; gap:1rem; min-inline-size:0; margin:0; }
+.rdct-component-search.rdct-component-search--inline { display:flex; flex-wrap:wrap; align-items:end; gap:.75rem; }
+.rdct-component-search--inline > label { flex:1 1 10rem; }

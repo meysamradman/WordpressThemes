@@ -1,0 +1,2 @@
+<?php defined('ABSPATH')||exit; \RadmanLibrary\Portfolio\render('single'); ?>
+<dialog class="rdc-lb rdc-inv" aria-label="نمایش تصویر"><button type="button" data-rdc-lb-cls aria-label="بستن">بستن ×</button><img alt=""></dialog>

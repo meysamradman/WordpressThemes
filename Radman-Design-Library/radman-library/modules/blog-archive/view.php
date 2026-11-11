@@ -1,0 +1,1 @@
+<?php defined('ABSPATH')||exit; \RadmanLibrary\Blog\render('archive');

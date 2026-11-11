@@ -1,0 +1,1 @@
+@media (prefers-reduced-motion:no-preference){.rdct-im .rdct-im__tilt{transform:perspective(1000px) rotateX(var(--rdct-im-rx,0deg)) rotateY(var(--rdct-im-ry,0deg));transition:transform .15s ease-out}}

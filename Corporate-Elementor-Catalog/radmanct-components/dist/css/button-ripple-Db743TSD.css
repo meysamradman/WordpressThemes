@@ -1,0 +1,5 @@
+.rdct-button__icon[data-ripple]::before { content:''; position:absolute; inset:0; border:1px solid var(--rdct-button-ripple-color,currentColor); border-radius:inherit; opacity:0; pointer-events:none; }
+@media(prefers-reduced-motion:no-preference) { .rdct-button:is(:hover,:focus-visible) .rdct-button__icon[data-ripple]::before { animation:rdct-button-ripple 1s ease-out infinite; } }
+@keyframes rdct-button-ripple { from { transform:scale(.9); opacity:.6; } to { transform:scale(1.7); opacity:0; } }
+
+.rdct-button:is(:hover,:focus-visible) .rdct-button__icon[data-ripple]::before { border-color:var(--rdct-button-hover-ripple-color,var(--rdct-button-ripple-color,currentColor)); }

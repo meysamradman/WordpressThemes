@@ -1,0 +1,18 @@
+:root {
+  --rdct-accent: var(--wp--preset--color--brand, #235a50);
+  --rdct-ink: var(--wp--preset--color--ink, #182522);
+  --rdct-muted: var(--wp--preset--color--muted, #53635d);
+  --rdct-surface: var(--wp--preset--color--surface, #f4f6f2);
+  --rdct-paper: var(--wp--preset--color--white, #fff);
+  --rdct-line: #dce3dc;
+  --rdct-container: 75rem;
+  --rdct-reading: 47.5rem;
+  --rdct-gutter: clamp(1rem, 4vw, 3rem);
+  --rdct-radius: .5rem;
+  --rdct-space: clamp(2.5rem, 6vw, 5rem);
+  --rdct-font-body: var(--rdct-font-latin, system-ui), var(--rdct-font-fa, sans-serif), sans-serif;
+}
+
+:root:lang(fa), :root:lang(ar), [lang|="fa"], [lang|="ar"] {
+  --rdct-font-body: var(--rdct-font-fa, sans-serif), var(--rdct-font-latin, system-ui), sans-serif;
+}

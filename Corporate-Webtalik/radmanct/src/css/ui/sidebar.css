@@ -1,0 +1,10 @@
+.rdc-cnt-sb :where(.rdc-wdg__ttl,.wp-block-heading) { display:flex; align-items:center; gap:.75rem; margin:0; font-size:1.0625rem; line-height:1.5; }
+.rdc-cnt-sb :where(.rdc-wdg__ttl,.wp-block-heading)::after { content:''; flex:1; border-block-start:1px solid var(--rdc-ln); }
+.rdc-cnt-sb .widget_categories > ul:not(.rdc-cat-tree), .rdc-cnt-sb .wp-block-categories-list, .rdc-cnt-sb :where(.widget_categories > ul:not(.rdc-cat-tree),.wp-block-categories-list) ul { margin:0; padding:0; list-style:none; }
+.rdc-cnt-sb :where(.widget_categories > ul:not(.rdc-cat-tree),.wp-block-categories-list) li { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:.5rem; margin:0; padding-block:.75rem; border-block-end:1px solid var(--rdc-ln); color:var(--rdc-mut); font-size:.875rem; }
+.rdc-cnt-sb :where(.widget_categories > ul:not(.rdc-cat-tree),.wp-block-categories-list) li > a { color:var(--rdc-ink); text-decoration:none; }
+.rdc-cnt-sb :where(.widget_categories > ul:not(.rdc-cat-tree),.wp-block-categories-list) li > a::before { content:'›'; display:inline-block; margin-inline-end:.65rem; color:var(--rdc-acc); }
+.rdc-cnt-sb:dir(rtl) :where(.widget_categories > ul:not(.rdc-cat-tree),.wp-block-categories-list) li > a::before { transform:scaleX(-1); }
+.rdc-cnt-sb :where(.widget_categories > ul:not(.rdc-cat-tree),.wp-block-categories-list) li > a:is(:hover,:focus-visible) { color:var(--rdc-acc); }
+.rdc-cnt-sb :where(.widget_categories > ul:not(.rdc-cat-tree),.wp-block-categories-list) .children { grid-column:1 / -1; padding-inline-start:1.1rem; }
+.rdc-cnt-sb{min-inline-size:0}.rdc-blog-sb__cnt{display:grid;gap:2.5rem;position:sticky;inset-block-start:2rem}.rdc-wdg{display:grid;gap:1.25rem}.rdc-srch{position:relative}.rdc-srch input{inline-size:100%;min-block-size:3.25rem;padding:.8rem 1rem .8rem 3rem;border:1px solid var(--rdc-ln);border-radius:1rem;color:var(--rdc-ink);background:var(--rdc-ppr)}.rdc-srch>span{position:absolute;inset-inline-end:1rem;inset-block-start:1rem;pointer-events:none}.rdc-srch svg{inline-size:1.25rem;block-size:1.25rem}@media(max-width:64rem){.rdc-blog-sb__cnt{position:static}}

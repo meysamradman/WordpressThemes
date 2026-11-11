@@ -1,0 +1,7 @@
+:where(.rdct-im, .rdct-ib, .rdct-fb, .rdct-box, .rdct-curtain, .rdct-tr, .rdct-ico) { box-sizing: border-box; }
+:where(.rdct-im, .rdct-ib, .rdct-fb, .rdct-box, .rdct-curtain) *, :where(.rdct-im, .rdct-ib, .rdct-fb, .rdct-box, .rdct-curtain) *::before, :where(.rdct-im, .rdct-ib, .rdct-fb, .rdct-box, .rdct-curtain) *::after { box-sizing: inherit; }
+:where(.rdct-im, .rdct-ib, .rdct-fb, .rdct-box, .rdct-curtain) [hidden] { display: none !important; }
+:where(.rdct-im, .rdct-ib, .rdct-fb, .rdct-box, .rdct-curtain) img { display: block; max-inline-size: 100%; }
+:where(.rdct-im, .rdct-ib, .rdct-fb, .rdct-box, .rdct-curtain) button { font: inherit; }
+:where(.rdct-im, .rdct-ib, .rdct-fb, .rdct-box, .rdct-curtain) :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+:where(.rdct-atomic-surface) { box-sizing: border-box; inline-size: 100%; min-inline-size: 0; max-inline-size: 100%; }

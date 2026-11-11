@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wpml-config>
+  <custom-types>
+    <custom-type translate="1">radman_product</custom-type>
+    <custom-type translate="1">radman_portfolio</custom-type>
+  </custom-types>
+  <taxonomies>
+    <taxonomy translate="1">radman_product_cat</taxonomy>
+    <taxonomy translate="1">radman_product_brand</taxonomy>
+    <taxonomy translate="1">radman_product_feature</taxonomy>
+    <taxonomy translate="1">radman_product_tag</taxonomy>
+    <taxonomy translate="1">radman_portfolio_cat</taxonomy>
+  </taxonomies>
+  <custom-fields>
+    <custom-field action="translate">_radman_content_data</custom-field>
+  </custom-fields>
+  <custom-fields-texts>
+    <key name="_radman_content_data">
+      <key name="specifications">
+        <key name="*">
+          <key name="label" label="Specification label" />
+          <key name="value" label="Specification value" />
+          <key name="unit" label="Specification unit" />
+        </key>
+      </key>
+      <key name="pricing">
+        <key name="text" label="Displayed price" />
+      </key>
+    </key>
+  </custom-fields-texts>
+</wpml-config>

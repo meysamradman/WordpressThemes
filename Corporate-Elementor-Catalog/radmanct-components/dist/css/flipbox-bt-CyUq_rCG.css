@@ -1,0 +1,3 @@
+.rdct-fb--bt.is-enhanced .rdct-fb__back { transform: rotateX(180deg) translateZ(1px); }
+.rdct-fb--bt.is-enhanced.is-flipped .rdct-fb__wrap { transform: rotateX(180deg); }
+@media (prefers-reduced-motion: reduce) { .rdct-fb--bt.is-enhanced .rdct-fb__back, .rdct-fb--bt.is-enhanced.is-flipped .rdct-fb__wrap { transform: none; } }

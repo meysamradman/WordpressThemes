@@ -1,0 +1,5 @@
+.rdct-button__text { display:inline-grid; overflow:clip; line-height:inherit; --rdct-button-slide:100%; }
+.rdct-button:dir(rtl) .rdct-button__text { --rdct-button-slide:-100%; }
+.rdct-button__text > span { grid-area:1/1; min-inline-size:0; text-align:center; }
+.rdct-button__clone { visibility:hidden; }
+@media(prefers-reduced-motion:reduce) { .rdct-button__text > .rdct-button__label { transform:none; } .rdct-button__text > .rdct-button__clone { display:none; } }

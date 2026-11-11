@@ -1,0 +1,1788 @@
+{
+  "home-hero": {
+    "kind": "section",
+    "family": "hero",
+    "effects": [
+      "gsap",
+      "entrance",
+      "rotator",
+      "smooth"
+    ],
+    "entries": [
+      "modules/home-hero/script.js",
+      "modules/home-hero/style.css",
+      "modules/home-hero/view.php"
+    ],
+    "source_files": [
+      "dist/manifest.json",
+      "modules/home-hero/script.js",
+      "modules/home-hero/style.css",
+      "modules/home-hero/view.php",
+      "shared/radmanct/inc/assets.php",
+      "shared/radmanct/inc/home.php",
+      "shared/radmanct/inc/home/art.php",
+      "shared/radmanct/inc/home/projects.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/pages/home/hero.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/text-motion.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/pages/home/offering-art.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/rotator.js",
+      "shared/radmanct/src/js/ui/text-motion.js",
+      "shared/radmanct/template-parts/sections/home/hero-art.php",
+      "shared/radmanct/template-parts/sections/home/hero.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "home-services": {
+    "kind": "section",
+    "family": "panels",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "pin",
+      "smooth"
+    ],
+    "entries": [
+      "modules/home-services/script.js",
+      "modules/home-services/style.css",
+      "modules/home-services/view.php"
+    ],
+    "source_files": [
+      "dist/manifest.json",
+      "modules/home-services/script.js",
+      "modules/home-services/style.css",
+      "modules/home-services/view.php",
+      "shared/radmanct/inc/assets.php",
+      "shared/radmanct/inc/home.php",
+      "shared/radmanct/inc/home/art.php",
+      "shared/radmanct/inc/home/projects.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/pages/home/offering-art.css",
+      "shared/radmanct/src/css/pages/home/offering-web.css",
+      "shared/radmanct/src/css/pages/home/offerings.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/text-motion.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/pages/home/offering-art.js",
+      "shared/radmanct/src/js/pages/home/scene.js",
+      "shared/radmanct/src/js/pages/home/slides.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/text-motion.js",
+      "shared/radmanct/template-parts/sections/home/offering-panel.php",
+      "shared/radmanct/template-parts/sections/home/offering-systems-art.php",
+      "shared/radmanct/template-parts/sections/home/offering-web-art.php",
+      "shared/radmanct/template-parts/sections/home/offering-web-copy.php",
+      "shared/radmanct/template-parts/sections/home/offering-wordpress-art.php",
+      "shared/radmanct/template-parts/sections/home/offerings.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "home-projects": {
+    "kind": "section",
+    "family": "gallery",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "parallax",
+      "smooth"
+    ],
+    "entries": [
+      "modules/home-projects/script.js",
+      "modules/home-projects/style.css",
+      "modules/home-projects/view.php"
+    ],
+    "source_files": [
+      "modules/home-projects/script.js",
+      "modules/home-projects/style.css",
+      "modules/home-projects/view.php",
+      "shared/radmanct/inc/home.php",
+      "shared/radmanct/inc/home/art.php",
+      "shared/radmanct/inc/home/projects.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/pages/home/projects.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/text-motion.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/pages/home/projects.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/media-parallax.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/runtime/sticky.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/text-motion.js",
+      "shared/radmanct/template-parts/sections/home/projects.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "services-cover": {
+    "kind": "section",
+    "family": "page-title",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "parallax",
+      "smooth"
+    ],
+    "entries": [
+      "modules/services-cover/script.js",
+      "modules/services-cover/style.css",
+      "modules/services-cover/view.php"
+    ],
+    "source_files": [
+      "dist/manifest.json",
+      "modules/services-cover/script.js",
+      "modules/services-cover/style.css",
+      "modules/services-cover/view.php",
+      "shared/radmanct/inc/assets.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/layout/page-title.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/pages/page-title.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/media-parallax.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/template-parts/layout/titles/cover.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "services-list": {
+    "kind": "section",
+    "family": "showcase",
+    "effects": [
+      "native",
+      "sticky",
+      "smooth"
+    ],
+    "entries": [
+      "modules/services-list/script.js",
+      "modules/services-list/style.css",
+      "modules/services-list/view.php"
+    ],
+    "source_files": [
+      "modules/services-list/script.js",
+      "modules/services-list/style.css",
+      "modules/services-list/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/runtime/sticky.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/services-showcase.js",
+      "shared/radmanct/template-parts/sections/services/showcase.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "services-strip": {
+    "kind": "section",
+    "family": "gallery",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "horizontal",
+      "loop",
+      "smooth"
+    ],
+    "entries": [
+      "modules/services-strip/script.js",
+      "modules/services-strip/style.css",
+      "modules/services-strip/view.php"
+    ],
+    "source_files": [
+      "modules/services-strip/script.js",
+      "modules/services-strip/style.css",
+      "modules/services-strip/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/pages/services-strip.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/template-parts/sections/services/strip.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "services-faq": {
+    "kind": "section",
+    "family": "accordion",
+    "effects": [
+      "native"
+    ],
+    "entries": [
+      "modules/services-faq/style.css",
+      "modules/services-faq/view.php"
+    ],
+    "source_files": [
+      "modules/services-faq/style.css",
+      "modules/services-faq/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/faq.css",
+      "shared/radmanct/template-parts/ui/faq.php",
+      "src/css/client-base.css"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "process-steps": {
+    "kind": "section",
+    "family": "process",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "entrance",
+      "smooth"
+    ],
+    "entries": [
+      "modules/process-steps/data.php",
+      "modules/process-steps/script.js",
+      "modules/process-steps/style.css",
+      "modules/process-steps/view.php"
+    ],
+    "source_files": [
+      "modules/process-steps/data.php",
+      "modules/process-steps/script.js",
+      "modules/process-steps/style.css",
+      "modules/process-steps/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "project-marquee": {
+    "kind": "section",
+    "family": "gallery",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "loop",
+      "smooth"
+    ],
+    "entries": [
+      "modules/project-marquee/data.php",
+      "modules/project-marquee/script.js",
+      "modules/project-marquee/style.css",
+      "modules/project-marquee/view.php"
+    ],
+    "source_files": [
+      "modules/project-marquee/data.php",
+      "modules/project-marquee/script.js",
+      "modules/project-marquee/style.css",
+      "modules/project-marquee/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "portfolio-archive": {
+    "kind": "page",
+    "family": "portfolio",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "parallax",
+      "smooth"
+    ],
+    "entries": [
+      "modules/portfolio-archive/script.js",
+      "modules/portfolio-archive/style.css",
+      "modules/portfolio-archive/view.php"
+    ],
+    "source_files": [
+      "modules/portfolio-archive/script.js",
+      "modules/portfolio-archive/style.css",
+      "modules/portfolio-archive/view.php",
+      "shared/radmanct/inc/content/continuation.php",
+      "shared/radmanct/inc/content/projects.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/media.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/pages/portfolio/archive.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-preview.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/project-card.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/pages/archive.js",
+      "shared/radmanct/src/js/pages/portfolio.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/media-parallax.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/runtime/sticky.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/card-preview.js",
+      "shared/radmanct/template-parts/ui/content-heading.php",
+      "shared/radmanct/templates/portfolio-archive.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "portfolio-single": {
+    "kind": "page",
+    "family": "portfolio",
+    "effects": [
+      "native",
+      "lightbox",
+      "smooth"
+    ],
+    "entries": [
+      "modules/portfolio-single/script.js",
+      "modules/portfolio-single/style.css",
+      "modules/portfolio-single/view.php"
+    ],
+    "source_files": [
+      "modules/portfolio-single/script.js",
+      "modules/portfolio-single/style.css",
+      "modules/portfolio-single/view.php",
+      "shared/radmanct/inc/content/continuation.php",
+      "shared/radmanct/inc/content/projects.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/media.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/layout/continuation.css",
+      "shared/radmanct/src/css/pages/portfolio/single.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-preview.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/gallery.css",
+      "shared/radmanct/src/css/ui/project-card.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/card-preview.js",
+      "shared/radmanct/src/js/ui/gallery.js",
+      "shared/radmanct/template-parts/layout/continuation.php",
+      "shared/radmanct/template-parts/ui/content-heading.php",
+      "shared/radmanct/templates/portfolio-single.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "header-radman": {
+    "kind": "section",
+    "family": "header",
+    "effects": [
+      "gsap",
+      "menu",
+      "smooth"
+    ],
+    "entries": [
+      "modules/header-radman/script.js",
+      "modules/header-radman/style.css",
+      "modules/header-radman/view.php"
+    ],
+    "source_files": [
+      "modules/header-radman/script.js",
+      "modules/header-radman/style.css",
+      "modules/header-radman/view.php",
+      "shared/radmanct/inc/brand.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/navigation.php",
+      "shared/radmanct/inc/navigation/panel-walker.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/layout/menu-panel.css",
+      "shared/radmanct/src/css/layout/navigation.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/brand.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/brand.js",
+      "shared/radmanct/src/js/ui/footer.js",
+      "shared/radmanct/src/js/ui/header.js",
+      "shared/radmanct/src/js/ui/menu-hover.js",
+      "shared/radmanct/src/js/ui/menu-panel.js",
+      "shared/radmanct/src/js/ui/panel/branches.js",
+      "shared/radmanct/src/js/ui/panel/content.js",
+      "shared/radmanct/src/js/ui/panel/timeline.js",
+      "shared/radmanct/src/js/ui/panel/wave.js",
+      "shared/radmanct/template-parts/layout/header.php",
+      "shared/radmanct/template-parts/layout/menu-panel-desktop.php",
+      "shared/radmanct/template-parts/layout/menu-panel-info.php",
+      "shared/radmanct/template-parts/layout/menu-panel.php",
+      "src/css/client-base.css",
+      "src/js/chrome.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "footer-radman": {
+    "kind": "section",
+    "family": "footer",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "entries": [
+      "modules/footer-radman/script.js",
+      "modules/footer-radman/style.css",
+      "modules/footer-radman/view.php"
+    ],
+    "source_files": [
+      "modules/footer-radman/script.js",
+      "modules/footer-radman/style.css",
+      "modules/footer-radman/view.php",
+      "shared/radmanct/inc/brand.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/navigation.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/layout/footer.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/brand.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/brand.js",
+      "shared/radmanct/src/js/ui/footer.js",
+      "shared/radmanct/src/js/ui/header.js",
+      "shared/radmanct/src/js/ui/menu-hover.js",
+      "shared/radmanct/src/js/ui/menu-panel.js",
+      "shared/radmanct/src/js/ui/panel/branches.js",
+      "shared/radmanct/src/js/ui/panel/content.js",
+      "shared/radmanct/src/js/ui/panel/timeline.js",
+      "shared/radmanct/src/js/ui/panel/wave.js",
+      "shared/radmanct/template-parts/layout/footer.php",
+      "src/css/client-base.css",
+      "src/js/chrome.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "wellness-scroll": {
+    "kind": "section",
+    "family": "panels",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "pin",
+      "horizontal",
+      "smooth"
+    ],
+    "entries": [
+      "modules/wellness-scroll/data.php",
+      "modules/wellness-scroll/script.js",
+      "modules/wellness-scroll/style.css",
+      "modules/wellness-scroll/view.php"
+    ],
+    "source_files": [
+      "modules/wellness-scroll/data.php",
+      "modules/wellness-scroll/script.js",
+      "modules/wellness-scroll/style.css",
+      "modules/wellness-scroll/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "text-start": {
+    "kind": "section",
+    "family": "text",
+    "effects": [
+      "gsap",
+      "entrance",
+      "smooth"
+    ],
+    "entries": [
+      "modules/text-start/script.js",
+      "modules/text-start/style.css",
+      "modules/text-start/view.php"
+    ],
+    "source_files": [
+      "modules/text-start/script.js",
+      "modules/text-start/style.css",
+      "modules/text-start/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/text-motion.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/text-motion.js",
+      "src/css/client-base.css",
+      "src/css/text-demo.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "text-scroll": {
+    "kind": "section",
+    "family": "text",
+    "effects": [
+      "gsap",
+      "entrance",
+      "smooth"
+    ],
+    "entries": [
+      "modules/text-scroll/script.js",
+      "modules/text-scroll/style.css",
+      "modules/text-scroll/view.php"
+    ],
+    "source_files": [
+      "modules/text-scroll/script.js",
+      "modules/text-scroll/style.css",
+      "modules/text-scroll/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/text-motion.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/text-motion.js",
+      "src/css/client-base.css",
+      "src/css/text-demo.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "text-fill": {
+    "kind": "section",
+    "family": "text",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "text-fill",
+      "smooth"
+    ],
+    "entries": [
+      "modules/text-fill/script.js",
+      "modules/text-fill/style.css",
+      "modules/text-fill/view.php"
+    ],
+    "source_files": [
+      "modules/text-fill/script.js",
+      "modules/text-fill/style.css",
+      "modules/text-fill/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/text-motion.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/text-motion.js",
+      "src/css/client-base.css",
+      "src/css/text-demo.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "blog-archive": {
+    "kind": "page",
+    "family": "blog",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "entries": [
+      "modules/blog-archive/script.js",
+      "modules/blog-archive/style.css",
+      "modules/blog-archive/view.php"
+    ],
+    "source_files": [
+      "modules/blog-archive/script.js",
+      "modules/blog-archive/style.css",
+      "modules/blog-archive/view.php",
+      "shared/radmanct/inc/blog.php",
+      "shared/radmanct/inc/content/continuation.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/media.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/inc/ui/category-tree.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/pages/blog.css",
+      "shared/radmanct/src/css/pages/blog/archive.css",
+      "shared/radmanct/src/css/pages/blog/cards.css",
+      "shared/radmanct/src/css/pages/blog/journal.css",
+      "shared/radmanct/src/css/pages/blog/lead.css",
+      "shared/radmanct/src/css/pages/blog/section.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-preview.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/category-tree.css",
+      "shared/radmanct/src/css/ui/sidebar.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/pages/archive.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/runtime/sticky.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/card-preview.js",
+      "shared/radmanct/template-parts/blog/journal.php",
+      "shared/radmanct/template-parts/blog/lead.php",
+      "shared/radmanct/template-parts/blog/meta.php",
+      "shared/radmanct/template-parts/blog/preview.php",
+      "shared/radmanct/template-parts/blog/results.php",
+      "shared/radmanct/template-parts/blog/sidebar.php",
+      "shared/radmanct/template-parts/ui/content-heading.php",
+      "shared/radmanct/templates/blog-archive.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "blog-single": {
+    "kind": "page",
+    "family": "blog",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "entries": [
+      "modules/blog-single/script.js",
+      "modules/blog-single/style.css",
+      "modules/blog-single/view.php"
+    ],
+    "source_files": [
+      "modules/blog-single/script.js",
+      "modules/blog-single/style.css",
+      "modules/blog-single/view.php",
+      "shared/radmanct/inc/blog.php",
+      "shared/radmanct/inc/content/continuation.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/media.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/inc/ui/category-tree.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/layout/continuation.css",
+      "shared/radmanct/src/css/pages/blog.css",
+      "shared/radmanct/src/css/pages/blog/cards.css",
+      "shared/radmanct/src/css/pages/blog/single.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-preview.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/card-preview.js",
+      "shared/radmanct/template-parts/blog/meta.php",
+      "shared/radmanct/template-parts/layout/continuation.php",
+      "shared/radmanct/template-parts/ui/content-heading.php",
+      "shared/radmanct/templates/blog-single.php",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "music-archive": {
+    "kind": "page",
+    "family": "music",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "entries": [
+      "modules/music-archive/script.js",
+      "modules/music-archive/style.css",
+      "modules/music-archive/template.php",
+      "modules/music-archive/view.php"
+    ],
+    "source_files": [
+      "inc/music.php",
+      "modules/music-archive/script.js",
+      "modules/music-archive/style.css",
+      "modules/music-archive/template.php",
+      "modules/music-archive/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/css/music.css",
+      "src/js/admin/music-editor.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "music-single": {
+    "kind": "page",
+    "family": "music",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "entries": [
+      "modules/music-single/script.js",
+      "modules/music-single/style.css",
+      "modules/music-single/template.php",
+      "modules/music-single/view.php"
+    ],
+    "source_files": [
+      "inc/music.php",
+      "modules/music-single/script.js",
+      "modules/music-single/style.css",
+      "modules/music-single/template.php",
+      "modules/music-single/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/css/music.css",
+      "src/js/admin/music-editor.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "catalog-archive": {
+    "kind": "page",
+    "family": "catalog",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "entries": [
+      "modules/catalog-archive/script.js",
+      "modules/catalog-archive/style.css",
+      "modules/catalog-archive/template.php",
+      "modules/catalog-archive/view.php"
+    ],
+    "source_files": [
+      "inc/catalog.php",
+      "inc/catalog/admin.php",
+      "inc/catalog/fields.php",
+      "inc/catalog/model.php",
+      "inc/catalog/query.php",
+      "modules/catalog-archive/script.js",
+      "modules/catalog-archive/style.css",
+      "modules/catalog-archive/template.php",
+      "modules/catalog-archive/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/inc/ui/category-tree.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/category-tree.css",
+      "shared/radmanct/src/css/ui/sidebar.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/catalog.css",
+      "src/css/client-base.css",
+      "src/js/admin/catalog-editor.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "catalog-single": {
+    "kind": "page",
+    "family": "catalog",
+    "effects": [
+      "native",
+      "smooth",
+      "lightbox"
+    ],
+    "entries": [
+      "modules/catalog-single/script.js",
+      "modules/catalog-single/style.css",
+      "modules/catalog-single/template.php",
+      "modules/catalog-single/view.php"
+    ],
+    "source_files": [
+      "inc/catalog.php",
+      "inc/catalog/admin.php",
+      "inc/catalog/fields.php",
+      "inc/catalog/model.php",
+      "inc/catalog/query.php",
+      "modules/catalog-single/script.js",
+      "modules/catalog-single/style.css",
+      "modules/catalog-single/template.php",
+      "modules/catalog-single/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/inc/ui/category-tree.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/category-tree.css",
+      "shared/radmanct/src/css/ui/gallery.css",
+      "shared/radmanct/src/css/ui/sidebar.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "shared/radmanct/src/js/ui/gallery.js",
+      "src/css/catalog.css",
+      "src/css/client-base.css",
+      "src/js/admin/catalog-editor.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "image-accordion": {
+    "kind": "section",
+    "family": "accordion",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "entries": [
+      "modules/image-accordion/data.php",
+      "modules/image-accordion/script.js",
+      "modules/image-accordion/style.css",
+      "modules/image-accordion/view.php"
+    ],
+    "source_files": [
+      "modules/image-accordion/data.php",
+      "modules/image-accordion/script.js",
+      "modules/image-accordion/style.css",
+      "modules/image-accordion/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/css/ui/image-accordion.css",
+      "src/js/scroll.js",
+      "src/js/ui/image-accordion.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "card-accordion": {
+    "kind": "section",
+    "family": "accordion",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "entries": [
+      "modules/card-accordion/data.php",
+      "modules/card-accordion/script.js",
+      "modules/card-accordion/style.css",
+      "modules/card-accordion/view.php"
+    ],
+    "source_files": [
+      "modules/card-accordion/data.php",
+      "modules/card-accordion/script.js",
+      "modules/card-accordion/style.css",
+      "modules/card-accordion/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/css/ui/image-accordion.css",
+      "src/js/scroll.js",
+      "src/js/ui/image-accordion.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "column-gallery": {
+    "kind": "section",
+    "family": "gallery",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "smooth",
+      "parallax"
+    ],
+    "entries": [
+      "modules/column-gallery/data.php",
+      "modules/column-gallery/script.js",
+      "modules/column-gallery/style.css",
+      "modules/column-gallery/view.php"
+    ],
+    "source_files": [
+      "modules/column-gallery/data.php",
+      "modules/column-gallery/script.js",
+      "modules/column-gallery/style.css",
+      "modules/column-gallery/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "process-phases": {
+    "kind": "section",
+    "family": "process",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "entrance",
+      "smooth"
+    ],
+    "entries": [
+      "modules/process-phases/data.php",
+      "modules/process-phases/script.js",
+      "modules/process-phases/style.css",
+      "modules/process-phases/view.php"
+    ],
+    "source_files": [
+      "modules/process-phases/data.php",
+      "modules/process-phases/script.js",
+      "modules/process-phases/style.css",
+      "modules/process-phases/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "media-stretch": {
+    "kind": "section",
+    "family": "gallery",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "pin",
+      "smooth"
+    ],
+    "entries": [
+      "modules/media-stretch/data.php",
+      "modules/media-stretch/script.js",
+      "modules/media-stretch/style.css",
+      "modules/media-stretch/view.php"
+    ],
+    "source_files": [
+      "modules/media-stretch/data.php",
+      "modules/media-stretch/script.js",
+      "modules/media-stretch/style.css",
+      "modules/media-stretch/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "sticky-cards": {
+    "kind": "section",
+    "family": "panels",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "sticky",
+      "entrance",
+      "smooth"
+    ],
+    "entries": [
+      "modules/sticky-cards/data.php",
+      "modules/sticky-cards/script.js",
+      "modules/sticky-cards/style.css",
+      "modules/sticky-cards/view.php"
+    ],
+    "source_files": [
+      "modules/sticky-cards/data.php",
+      "modules/sticky-cards/script.js",
+      "modules/sticky-cards/style.css",
+      "modules/sticky-cards/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/runtime/sticky.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "text-marquee": {
+    "kind": "section",
+    "family": "text",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "loop",
+      "entrance",
+      "smooth"
+    ],
+    "entries": [
+      "modules/text-marquee/data.php",
+      "modules/text-marquee/script.js",
+      "modules/text-marquee/style.css",
+      "modules/text-marquee/view.php"
+    ],
+    "source_files": [
+      "inc/ui/text-marquee.php",
+      "modules/text-marquee/data.php",
+      "modules/text-marquee/script.js",
+      "modules/text-marquee/style.css",
+      "modules/text-marquee/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/css/ui/text-marquee.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js",
+      "src/js/ui/text-marquee.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "text-loop": {
+    "kind": "section",
+    "family": "text",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "loop",
+      "entrance",
+      "smooth"
+    ],
+    "entries": [
+      "modules/text-loop/data.php",
+      "modules/text-loop/script.js",
+      "modules/text-loop/style.css",
+      "modules/text-loop/view.php"
+    ],
+    "source_files": [
+      "inc/ui/text-marquee.php",
+      "modules/text-loop/data.php",
+      "modules/text-loop/script.js",
+      "modules/text-loop/style.css",
+      "modules/text-loop/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/refresh.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/css/ui/text-marquee.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js",
+      "src/js/ui/text-marquee.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  }
+}

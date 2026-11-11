@@ -1,0 +1,11 @@
+.rdct-text.rdct-text .rdct-text__word { font-family: var(--rdct-text-word-font, var(--rdct-text-font, var(--rdct-text-default-font, var(--rdct-elementor-font, inherit)))) !important; }
+.rdct-text__word { color: var(--rdct-word-color, var(--rdct-text-word-color)); margin-inline-end: .2em; }
+.rdct-text__rotator { display: inline-block; vertical-align: bottom; }
+.rdct-text.is-text-rotating.has-word-motion .rdct-text__word { transition:none; transform:none; transform-origin:center center; }
+.rdct-text.is-text-rotating .rdct-text__words { display: grid; overflow: hidden; line-height: 1.35; }
+.rdct-text.is-text-rotating .rdct-text__word { grid-area: 1/1; opacity: 0; visibility: hidden; transition: transform var(--rdct-text-word-duration) ease, opacity var(--rdct-text-word-duration) ease; transform: translateY(calc(var(--rdct-word-offset) * 100%)); }
+.rdct-text.is-text-rotating .rdct-text__word[data-current=true] { opacity: 1; visibility: visible; }
+.rdct-text.is-text-rotating [data-word-style=basic] .rdct-text__word { transform: none; }
+.rdct-text__play { display: inline-flex; justify-content: center; align-items: center; vertical-align: middle; min-inline-size: 2rem; min-block-size: 2rem; margin-inline-start: .5em; border: 1px solid currentColor; border-radius: 50%; background: none; color: var(--rdct-text-active); font: 12px/1 sans-serif; cursor: pointer; }
+.rdct-text__play[hidden] { display: none; }
+.rdct-text__play:not(:focus-visible) { position: absolute; inline-size: 1px; min-inline-size: 0; block-size: 1px; min-block-size: 0; margin: 0; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

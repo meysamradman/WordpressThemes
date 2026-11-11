@@ -1,0 +1,4 @@
+.rdc-tx-en__wd { display:inline-block; }
+@media (prefers-reduced-motion:no-preference) {
+ html[data-rdc-ent="pending"] [data-rdc-ent] [data-rdc-en] { opacity:0; visibility:hidden; }
+}

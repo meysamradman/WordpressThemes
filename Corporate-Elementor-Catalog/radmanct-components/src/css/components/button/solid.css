@@ -1,0 +1,2 @@
+.rdct-button--solid { color:var(--rdct-button-color,#fff); background-color:var(--rdct-button-background,var(--rdct-accent,#235a50)); border-color:var(--rdct-button-border-color,var(--rdct-button-background,var(--rdct-accent,#235a50))); }
+.rdct-button--solid:is(:hover,:focus-visible) { color:var(--rdct-button-hover-color,#fff); background-color:var(--rdct-button-hover-background,#143d35); border-color:var(--rdct-button-hover-border-color,var(--rdct-button-hover-background,#143d35)); }

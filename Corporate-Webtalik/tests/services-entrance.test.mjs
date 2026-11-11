@@ -1,0 +1,48 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mount} from '../radmanct/src/js/pages/home/slides.js';
+test('only the active pinned service plays its timed entrance; other panels remain deferred',()=>{
+ const doc=new EventTarget(),view=new EventTarget(),observed=[],calls=[],played=[],hidden=[],transitions=[],hints=[],contexts=[],finished=[];let scheduled,currentContext;
+ const media=new EventTarget();media.matches=true;const reduced=new EventTarget();reduced.matches=false;
+ view.innerWidth=1440;view.innerHeight=900;view.matchMedia=q=>q.includes('prefers-reduced-motion:reduce')?reduced:media;
+ view.getComputedStyle=()=>({position:'static'});view.requestAnimationFrame=fn=>{scheduled=fn;return 1;};view.cancelAnimationFrame=()=>{scheduled=undefined;};
+ view.IntersectionObserver=class{constructor(fn){this.fn=fn;}observe(root){observed.push({root,show:()=>this.fn([{isIntersecting:true}])});}disconnect(){}};
+ doc.defaultView=view;doc.querySelectorAll=()=>[];doc.getElementById=()=>null;
+ const classes=()=>({contains:name=>name==='rdc-ss__itm',add(){},remove(){},toggle(){}});
+ const items=Array.from({length:4},(_,index)=>{
+  const item=Object.assign(new EventTarget(),{ownerDocument:doc,isConnected:true,classList:classes()});const inner={offsetHeight:500};const title={index};
+  item.querySelector=q=>q.includes('rdc-ss__inr')?inner:q==='[data-rdc-pnl-ttl]'?title:null;item.querySelectorAll=()=>[];return item;
+ });
+ const root=Object.assign(new EventTarget(),{ownerDocument:doc,isConnected:true,dataset:{minWidth:'1024'},children:items,classList:classes(),style:{removeProperty(){},setProperty(){}},parentElement:{closest:()=>null},querySelector:()=>null});
+ let owner,config,refreshes=0,time=0;
+ const gsap={registerPlugin(){},set(){},context(fn){const parent=currentContext,record={children:[],reverted:false};contexts.push(record);parent?.children.push(record);const run=fn=>{currentContext=record;try{fn();}finally{currentContext=parent;}};run(fn);const revert=record=>{record.reverted=true;record.children.forEach(revert);};return{add:run,revert(){revert(record);}};},timeline(options){let duration=0,entrance;const tl={play(){played.push(entrance);},progress(value){assert.equal(value,1);finished.push(entrance);return tl;},pause(){return tl;},duration:()=>duration,time:()=>time,seek(value){time=value;options.onUpdate?.();},set(target,vars,at){('willChange' in vars?hints:hidden).push({target,vars,at});return tl;},to(target,vars,at=duration){duration=Math.max(duration,at+(vars.duration||0));return tl;},from(target,vars,at=duration){duration=Math.max(duration,at+(vars.duration||0));return tl;},fromTo(target,from,to,at=duration){if(options?.scrollTrigger){transitions.push({target,from,to,at});duration=Math.max(duration,at+(to.duration||0));}else entrance=target[0].index;return tl;},call(fn,args,at){calls.push({fn,at});return tl;}};if(options?.scrollTrigger){owner=tl;config=options.scrollTrigger;}return tl;}};
+ const release=mount(root,{gsap,ScrollTrigger:{refresh(){refreshes++;}}});
+ assert.ok(owner);assert.equal(observed.length,1);assert.equal(played.length,0);assert.equal(calls.length,0);
+ assert.deepEqual(hidden.map(step=>step.target),items.slice(0,-1));
+ hidden.forEach((step,index)=>{assert.deepEqual(step.vars,{opacity:0,visibility:"hidden"});assert.equal(step.at,.35+index*1.2+1);});
+ assert.equal(config.scrub,true);assert.equal(config.end(),`+=${876*3.75}`);assert.equal(config.refreshPriority,1);assert.equal(refreshes,1);
+ assert.equal(owner.duration(),3.75);assert.equal(hidden.at(-1).at,owner.duration());
+ const scales=transitions.filter(step=>'scale' in step.from),slides=transitions.filter(step=>'yPercent' in step.from);
+ assert.equal(scales.length,3);assert.equal(slides.length,3);
+ scales.forEach(step=>{assert.deepEqual(step.from,{scale:1,autoAlpha:1});assert.equal(step.to.scale,.9);assert.equal(step.to.immediateRender,false);});
+ slides.forEach(step=>{assert.equal(step.from.yPercent,105);assert.equal(step.to.yPercent,0);assert.equal(step.to.ease,'none');});
+ assert.equal(hints.length,6);assert.equal(hints[0].vars.willChange,'transform,opacity');assert.equal(hints[1].vars.willChange,'auto');
+ observed[0].show();assert.deepEqual(played,[0]);
+ config.onUpdate({progress:.59/3.75});assert.deepEqual(played,[0]);
+ config.onUpdate({progress:.61/3.75});assert.deepEqual(played,[0,1]);
+ config.onUpdate({progress:.61/3.75});assert.deepEqual(played,[0,1]);
+ // A restored scroll position may skip all timeline callbacks.
+ config.onRefresh({progress:1.81/3.75});assert.deepEqual(played,[0,1,2]);
+ config.onUpdate({progress:0});assert.deepEqual(played,[0,1,2]);
+ assert.equal(contexts.length,5);const entryContexts=contexts.slice(0,4);
+ view.innerWidth=1280;view.dispatchEvent(new Event('resize'));scheduled();
+ assert.equal(contexts.length,6);assert.equal(contexts[4].reverted,true);
+ assert.ok(entryContexts.every(record=>!record.reverted));assert.equal(observed.length,1);
+ assert.deepEqual(played,[0,1,2]);
+ config.onRefresh({progress:1.81/3.75});assert.deepEqual(played,[0,1,2]);
+ config.onRefresh({progress:1});assert.deepEqual(played,[0,1,2,3]);
+ config.onUpdate({progress:0});config.onUpdate({progress:1});assert.deepEqual(played,[0,1,2,3]);
+ media.matches=false;media.dispatchEvent(new Event('change'));scheduled();
+ assert.deepEqual(finished,[0,1,2,3]);assert.ok(entryContexts.every(record=>!record.reverted));
+ release();assert.ok(entryContexts.every(record=>record.reverted));config.onUpdate({progress:1});assert.deepEqual(played,[0,1,2,3]);
+});

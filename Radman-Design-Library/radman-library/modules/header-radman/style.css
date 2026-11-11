@@ -1,0 +1,4 @@
+@import '../../shared/radmanct/src/css/layout/navigation.css';
+@import '../../shared/radmanct/src/css/layout/menu-panel.css';
+@import '../../shared/radmanct/src/css/ui/brand.css';
+.rdl-kit{position:relative}.rdl-kit--hdr{min-block-size:80svh;background:var(--rdc-clr-dark)}.rdl-kit__demo{padding:12rem var(--rdc-gut) 6rem}.rdl-kit__demo h1{font-size:clamp(2rem,4vw,4rem);margin-block-end:1rem}

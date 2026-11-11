@@ -1,0 +1,10 @@
+.rdct-gal { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 1rem; margin-block: 2.5rem; }
+.rdct-gal > a { display: block; aspect-ratio: 4 / 3; background: var(--rdct-surface); border: 1px solid var(--rdct-line); border-radius: var(--rdct-radius); overflow: hidden; }
+.rdct-gal img { inline-size: 100%; block-size: 100%; object-fit: contain; }
+.rdct-gal-dialog { inline-size: min(94vw, 1100px); max-inline-size: none; max-block-size: 94dvh; padding: 1rem; color: var(--rdct-ink); background: var(--rdct-paper); border: 0; border-radius: var(--rdct-radius); font: inherit; }
+.rdct-gal-dialog::backdrop { background: rgb(0 0 0 / 80%); }
+.rdct-gal-dialog__controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+.rdct-gal-dialog__image { display: block; inline-size: 100%; block-size: min(70dvh, 800px); margin-block: 1rem; object-fit: contain; touch-action: pan-y pinch-zoom; }
+.rdct-gal-dialog__caption { margin-block: .5rem 0; }
+.rdct-gal-dialog__status { min-block-size: 1.8em; margin-block: .5rem; color: var(--rdct-muted); }
+.rdct-gal-dialog__image[hidden] { display: none; }

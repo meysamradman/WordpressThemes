@@ -1,0 +1,522 @@
+{
+  "home-hero": {
+    "title": "هیرو با ورود متن و عبارت چرخشی · Radman",
+    "slug": "home-hero",
+    "group": "hero",
+    "key": "hero",
+    "image": "hero",
+    "motion": "GSAP Core · ورود متن، چرخش عبارت و حرکت جزئیات تصویر",
+    "source": "template-parts/sections/home/hero.php",
+    "effects": [
+      "gsap",
+      "entrance",
+      "rotator",
+      "smooth"
+    ],
+    "icon": "panel-top"
+  },
+  "home-services": {
+    "title": "پنل‌های اسکرولی با پین · Radman",
+    "slug": "home-services",
+    "group": "panels",
+    "key": "offerings",
+    "image": "offering-web",
+    "motion": "GSAP Core + ScrollTrigger + ScrollSmoother · پنل‌های پین‌شده و جزئیات گرافیکی",
+    "source": "template-parts/sections/home/offerings.php",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "pin",
+      "smooth"
+    ],
+    "icon": "layers"
+  },
+  "home-projects": {
+    "title": "گالری با متن استیکی و ورود تصاویر · Radman",
+    "slug": "home-projects",
+    "group": "gallery",
+    "key": "projects",
+    "image": "projects",
+    "motion": "GSAP Core + ScrollTrigger + ScrollSmoother · متن استیکی و ورود تصاویر",
+    "source": "template-parts/sections/home/projects.php",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "parallax",
+      "smooth"
+    ],
+    "icon": "image"
+  },
+  "services-cover": {
+    "title": "عنوان صفحه با تصویر یا ویدئو · Radman",
+    "slug": "services-cover",
+    "group": "page-title",
+    "key": "cover",
+    "image": "hero",
+    "motion": "ScrollTrigger + ScrollSmoother · پارالاکس و زوم تصویر/ویدئو",
+    "source": "template-parts/layout/titles/cover.php",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "parallax",
+      "smooth"
+    ],
+    "icon": "image"
+  },
+  "services-list": {
+    "title": "فهرست با پیش‌نمایش تصویر · Radman",
+    "slug": "services-list",
+    "group": "showcase",
+    "key": "showcase",
+    "image": "offering-wordpress",
+    "motion": "Vanilla JS + sticky مشترک · تغییر تصویر با انتخاب خدمت",
+    "source": "template-parts/sections/services/showcase.php",
+    "effects": [
+      "native",
+      "sticky",
+      "smooth"
+    ],
+    "icon": "list"
+  },
+  "services-strip": {
+    "title": "نوار پیوستهٔ تصاویر · Radman",
+    "slug": "services-strip",
+    "group": "gallery",
+    "key": "strip",
+    "image": "services-strip-48",
+    "motion": "GSAP Core + ScrollTrigger · حرکت افقی پیوسته و کشیدن",
+    "source": "template-parts/sections/services/strip.php",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "horizontal",
+      "loop",
+      "smooth"
+    ],
+    "icon": "loop"
+  },
+  "services-faq": {
+    "title": "آکاردئون شماره‌دار · Radman",
+    "slug": "services-faq",
+    "group": "accordion",
+    "key": "faq",
+    "image": "none",
+    "motion": "CSS + details بومی · باز و بسته شدن؛ بدون GSAP",
+    "source": "template-parts/ui/faq.php",
+    "effects": [
+      "native"
+    ],
+    "icon": "accordion"
+  },
+  "process-steps": {
+    "title": "مراحل شماره‌دار · Radman",
+    "slug": "process-steps",
+    "group": "process",
+    "surface": "dark",
+    "scroll_gap": false,
+    "image": "none",
+    "motion": "GSAP · ورود تدریجی پنج مرحله و معرفی مسیر همکاری",
+    "source": "reference/orisa/index-14-dark/process",
+    "reference": "https://orisa-html-demo.pages.dev/index-14-dark",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "entrance",
+      "smooth"
+    ],
+    "icon": "timeline"
+  },
+  "project-marquee": {
+    "title": "گالری پیوسته با تیتر · Radman",
+    "slug": "project-marquee",
+    "group": "gallery",
+    "surface": "dark",
+    "image": "none",
+    "motion": "GSAP · گالری پیوسته با سرعت واکنش‌پذیر به اسکرول و امکان توقف",
+    "source": "reference/azurio/services/moving-list",
+    "reference": "https://demo.artureanec.com/themes/azurio/services/",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "loop",
+      "smooth"
+    ],
+    "icon": "image"
+  },
+  "portfolio-archive": {
+    "title": "آرشیو نمونه‌کار · Radman",
+    "slug": "portfolio-archive",
+    "group": "portfolio",
+    "kind": "page",
+    "surface": "light",
+    "scroll_gap": false,
+    "source": "radmanct/composition/portfolio-archive",
+    "motion": "آرشیو بومی، بارگذاری بیشتر AJAX و پارالاکس GSAP",
+    "image": "projects",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "parallax",
+      "smooth"
+    ],
+    "icon": "grid"
+  },
+  "portfolio-single": {
+    "title": "جزئیات نمونه‌کار · Radman",
+    "slug": "portfolio-single",
+    "group": "portfolio",
+    "kind": "page",
+    "surface": "light",
+    "scroll_gap": false,
+    "source": "radmanct/composition/portfolio-single",
+    "motion": "جزئیات، گالری، قبلی/بعدی و مشابه؛ اسکرول مشترک",
+    "image": "projects",
+    "effects": [
+      "native",
+      "lightbox",
+      "smooth"
+    ],
+    "icon": "layout"
+  },
+  "header-radman": {
+    "title": "هدر و منوی کامل · Radman",
+    "slug": "header-radman",
+    "group": "header",
+    "kind": "section",
+    "surface": "dark",
+    "scroll_gap": false,
+    "source": "radmanct/composition/header-radman",
+    "motion": "هدر با منوی Roll و پنل Wave؛ GSAP",
+    "image": "none",
+    "effects": [
+      "gsap",
+      "menu",
+      "smooth"
+    ],
+    "icon": "panel-top"
+  },
+  "footer-radman": {
+    "title": "فوتر کامل · Radman",
+    "slug": "footer-radman",
+    "group": "footer",
+    "kind": "section",
+    "surface": "dark",
+    "scroll_gap": false,
+    "source": "radmanct/composition/footer-radman",
+    "motion": "فوتر داده‌محور، لوگوی CSS و بازگشت بالا",
+    "image": "none",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "icon": "panel-bottom"
+  },
+  "wellness-scroll": {
+    "title": "کارت‌های افقی با اسکرول · Radman",
+    "slug": "wellness-scroll",
+    "group": "panels",
+    "kind": "section",
+    "source": "reference/uncode/wellness",
+    "reference": "https://undsgn.com/uncode/homepages/creative-wellness/",
+    "image": "none",
+    "motion": "GSAP ScrollTrigger · پین افقی با اسکرول عمودی؛ fallback لمسی بومی",
+    "scroll_gap": false,
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "pin",
+      "horizontal",
+      "smooth"
+    ],
+    "icon": "columns"
+  },
+  "text-start": {
+    "title": "متن · ورود با شروع صفحه · Radman",
+    "slug": "text-start",
+    "group": "text",
+    "kind": "section",
+    "surface": "dark",
+    "source": "radmanct/text-motion/text-start",
+    "image": "none",
+    "motion": "ورود اولیهٔ متن؛ همان پروفایل Hero قالب",
+    "scroll_gap": false,
+    "effects": [
+      "gsap",
+      "entrance",
+      "smooth"
+    ],
+    "icon": "type"
+  },
+  "text-scroll": {
+    "title": "متن · ورود هنگام اسکرول · Radman",
+    "slug": "text-scroll",
+    "group": "text",
+    "kind": "section",
+    "surface": "dark",
+    "source": "radmanct/text-motion/text-scroll",
+    "image": "none",
+    "motion": "ورود یک‌بارمصرف هنگام رسیدن متن به دید",
+    "scroll_gap": false,
+    "effects": [
+      "gsap",
+      "entrance",
+      "smooth"
+    ],
+    "icon": "type"
+  },
+  "text-fill": {
+    "title": "متن · پُرشدن با اسکرول · Radman",
+    "slug": "text-fill",
+    "group": "text",
+    "kind": "section",
+    "surface": "dark",
+    "source": "radmanct/text-motion/text-fill",
+    "image": "none",
+    "motion": "روشن‌شدن ترتیبی کلمه‌ها با اسکرول؛ بازهٔ متصل به متن و قابل تکمیل تا انتهای صفحه",
+    "scroll_gap": false,
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "text-fill",
+      "smooth"
+    ],
+    "icon": "type"
+  },
+  "blog-archive": {
+    "title": "آرشیو وبلاگ · Radman",
+    "slug": "blog-archive",
+    "group": "blog",
+    "kind": "page",
+    "source": "radmanct/blog/archive",
+    "motion": "رندر بومی نوشته، تصویر و دسته‌بندی مستقل",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "grid"
+  },
+  "blog-single": {
+    "title": "جزئیات وبلاگ · Radman",
+    "slug": "blog-single",
+    "group": "blog",
+    "kind": "page",
+    "source": "radmanct/blog/single",
+    "motion": "رندر بومی نوشته، تصویر و دسته‌بندی مستقل",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "file-text"
+  },
+  "music-archive": {
+    "title": "آرشیو موسیقی · Radman",
+    "slug": "music-archive",
+    "group": "music",
+    "kind": "page",
+    "source": "native/track/archive",
+    "motion": "آهنگ، هنرمند، کاور، دسته‌بندی و فایل صوتی؛ مستقل از وبلاگ",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "music"
+  },
+  "music-single": {
+    "title": "جزئیات موسیقی · Radman",
+    "slug": "music-single",
+    "group": "music",
+    "kind": "page",
+    "source": "native/track/single",
+    "motion": "آهنگ، هنرمند، کاور، دسته‌بندی و فایل صوتی؛ مستقل از وبلاگ",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "headphones"
+  },
+  "catalog-archive": {
+    "title": "آرشیو کاتالوگ محصول · Radman",
+    "slug": "catalog-archive",
+    "group": "catalog",
+    "kind": "page",
+    "source": "Corporate-Elementor-Catalog/catalog/archive",
+    "motion": "کاتالوگ بدون فروش، گالری و مشخصات؛ PHP و Vanilla مستقل از المنتور",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "box"
+  },
+  "catalog-single": {
+    "title": "جزئیات محصول کاتالوگ · Radman",
+    "slug": "catalog-single",
+    "group": "catalog",
+    "kind": "page",
+    "source": "Corporate-Elementor-Catalog/catalog/single",
+    "motion": "کاتالوگ بدون فروش، گالری و مشخصات؛ PHP و Vanilla مستقل از المنتور",
+    "effects": [
+      "native",
+      "smooth",
+      "lightbox"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "box"
+  },
+  "image-accordion": {
+    "slug": "image-accordion",
+    "title": "آکاردئون تصویری · Radman",
+    "group": "accordion",
+    "kind": "section",
+    "source": "reference/elementra/image-accordion",
+    "reference": "https://creative-agency.elementra.themerex.net/",
+    "motion": "بازشدن عرضی ۳ به ۱ با hover، بازگشت به کارت اول؛ CSS .4s و Vanilla؛ لمس و کیبورد",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "icon": "image"
+  },
+  "card-accordion": {
+    "slug": "card-accordion",
+    "title": "آکاردئون تصویر و باکس متن · Radman",
+    "group": "accordion",
+    "kind": "section",
+    "source": "reference/elementra/image-accordion",
+    "reference": "https://creative-agency.elementra.themerex.net/",
+    "motion": "بازشدن عرضی ۳ به ۱ با hover، بازگشت به کارت اول؛ CSS .4s و Vanilla؛ لمس و کیبورد",
+    "effects": [
+      "native",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "icon": "accordion"
+  },
+  "column-gallery": {
+    "slug": "column-gallery",
+    "title": "گالری ستون‌های خلاف‌جهت · Radman",
+    "group": "gallery",
+    "kind": "section",
+    "source": "reference/orisa/services-1/column-gallery",
+    "reference": "https://orisa-html-demo.pages.dev/services-1",
+    "motion": "سه ستون با سرعت‌های −۰٫۱ / ۰٫۸ / −۰٫۱؛ حرکت وابسته به اسکرول و زوم hover، بدون اسلایدر",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "smooth",
+      "parallax"
+    ],
+    "image": "none",
+    "surface": "dark",
+    "scroll_gap": false,
+    "icon": "columns"
+  },
+  "process-phases": {
+    "slug": "process-phases",
+    "title": "مراحل پنج‌ستونه با زمان‌بندی · Radman",
+    "group": "process",
+    "kind": "section",
+    "source": "reference/process-phases",
+    "reference": "https://orisa-html-demo.pages.dev/index-13",
+    "motion": "ورود مرحله‌ها از کنار، خط زمانی، زمان‌بندی و خروجی هر مرحله",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "entrance",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "icon": "timeline"
+  },
+  "media-stretch": {
+    "slug": "media-stretch",
+    "title": "بازشدن قاب تصویر با اسکرول · Radman",
+    "group": "gallery",
+    "kind": "section",
+    "source": "reference/media-stretch",
+    "reference": "https://preview.treethemes.com/elementor/willows/iris/",
+    "motion": "قاب باریک با شعاع ۲۵۰ به تصویر تمام‌عرض؛ پین و scrub 1",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "pin",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "surface": "dark",
+    "icon": "expand"
+  },
+  "sticky-cards": {
+    "slug": "sticky-cards",
+    "title": "ستون معرفی ثابت و کارت‌های تصویری · Radman",
+    "group": "panels",
+    "kind": "section",
+    "source": "reference/sticky-cards",
+    "reference": "https://preview.treethemes.com/elementor/willows/jane/",
+    "motion": "معرفی ثابت در راست، کارت‌ها در چپ، خط و نقطهٔ پیشرفت اسکرول",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "sticky",
+      "entrance",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "icon": "layers"
+  },
+  "text-marquee": {
+    "slug": "text-marquee",
+    "title": "نوار متن متحرک و قاب تصویر · Radman",
+    "group": "text",
+    "kind": "section",
+    "source": "reference/text-marquee",
+    "reference": "https://azizkhaldi.com/",
+    "motion": "نوار متن مشترک + قاب بازشونده و زوم عکس ۶۰ تا ۱۰۰ درصد با اسکرول",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "loop",
+      "entrance",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "surface": "dark",
+    "icon": "wave"
+  },
+  "text-loop": {
+    "slug": "text-loop",
+    "title": "نوار متن پیوسته با تغییر جهت · Radman",
+    "group": "text",
+    "kind": "section",
+    "source": "reference/aziz/text-loop",
+    "reference": "https://azizkhaldi.com/",
+    "motion": "نوار متن مستقل؛ حرکت ۲۰ثانیه‌ای و تغییر جهت اسکرول، با توقف و reduced-motion",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "loop",
+      "entrance",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "icon": "loop"
+  }
+}

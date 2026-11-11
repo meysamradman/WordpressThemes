@@ -1,0 +1,57 @@
+name: radman-design-library
+services:
+  db:
+    image: mariadb:11.4@sha256:1292844148b311e4ed4300022a996d39083f415a963e970cf47cad1b3b18e3a6
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: radman_library
+      MARIADB_USER: library
+      MARIADB_PASSWORD: ${LIBRARY_DB_PASSWORD:?Missing local env}
+      MARIADB_ROOT_PASSWORD: ${LIBRARY_ROOT_PASSWORD:?Missing local env}
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  wordpress:
+    image: wordpress:php8.4-apache@sha256:309307430abf80009378a63a79df73554a6449b700fac59a991b4959e6dda8ca
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:8097:80'
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: radman_library
+      WORDPRESS_DB_USER: library
+      WORDPRESS_DB_PASSWORD: ${LIBRARY_DB_PASSWORD}
+      WORDPRESS_TABLE_PREFIX: rdl_
+      LIBRARY_ADMIN_PASSWORD: ${LIBRARY_ADMIN_PASSWORD:?Missing local env}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://127.0.0.1:8097');
+        define('WP_SITEURL', 'http://127.0.0.1:8097');
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_HTTP_BLOCK_EXTERNAL', true);
+        define('DISABLE_WP_CRON', true);
+        define('AUTOMATIC_UPDATER_DISABLED', true);
+        define('WP_AUTO_UPDATE_CORE', false);
+        define('WP_DEBUG_DISPLAY', false);
+        define('WP_MEMORY_LIMIT', '256M');
+    volumes:
+      - wordpress:/var/www/html
+      - ../radman-library:/var/www/html/wp-content/themes/radman-library:ro
+      - ./provision.php:/opt/library/provision.php:ro
+      - ./import-samples.php:/opt/library/import-samples.php:ro
+      - ../fixtures:/opt/library/fixtures:ro
+      - ./local.php:/var/www/html/wp-content/mu-plugins/library-local.php:ro
+    healthcheck:
+      test: [CMD, php, '-r', "exit(@fsockopen('127.0.0.1',80) ? 0 : 1);"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  database:
+  wordpress:

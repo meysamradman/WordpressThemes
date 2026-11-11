@@ -1,0 +1,4 @@
+@import '../../ui/project-card.css';
+@import '../../layout/continuation.css';
+.rdc-prj-meta{display:flex;flex-wrap:wrap;gap:1.5rem;margin-block:2rem}.rdc-prj-meta>div{display:grid;gap:.4rem}.rdc-prj-meta dt{color:var(--rdc-mut)}.rdc-prj-meta dd{margin:0}.rdc-prj-cvr{display:block;inline-size:100%;block-size:auto;border-radius:var(--rdc-rad);margin-block:2rem}.rdc-prj-gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-block:2rem}.rdc-prj-gal img{display:block;inline-size:100%;block-size:auto;border-radius:var(--rdc-rad)}@media(max-width:48rem){.rdc-prj-gal{grid-template-columns:1fr}}
+.rdc-lb{max-inline-size:95vw;max-block-size:95svh;border:0;padding:3rem 1rem 1rem;background:var(--rdc-clr-hero);color:var(--rdc-clr-wht)}.rdc-lb::backdrop{background:var(--rdc-ovl-gal)}.rdc-lb>img{display:block;max-inline-size:85vw;max-block-size:80svh;inline-size:auto;block-size:auto}

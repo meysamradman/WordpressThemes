@@ -1,0 +1,6 @@
+.rdct-tst--s07 { padding:0;overflow:hidden;box-shadow:0 18px 38px rgb(0 0 0 / 8%); }
+.rdct-tst--s07 .rdct-tst__review,.rdct-tst--s07 .rdct-tst__info { padding:var(--rdct-tst-padding,28px); }
+.rdct-tst--s07 .rdct-tst__info { padding-block-start:0; }
+.rdct-tst--s07 .rdct-tst__portrait { block-size:240px; }
+.rdct-tst--s07 .rdct-tst__quote { font-size:1.3125rem; }
+@media(min-width:48rem) { .rdct-tst--s07.has-portrait { display:grid;grid-template-columns:40% minmax(0,1fr);gap:0; } .rdct-tst--s07 .rdct-tst__portrait { grid-column:1;grid-row:1 / span 2;block-size:100%; } .rdct-tst--s07 .rdct-tst__review { grid-column:2;grid-row:1; } .rdct-tst--s07 .rdct-tst__info { grid-column:2;grid-row:2; } }

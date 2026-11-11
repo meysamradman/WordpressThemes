@@ -1,0 +1,14 @@
+@import './components/post-meta.css';
+
+.rdct-single { padding-block: var(--rdct-space); }
+.rdct-single__header { margin-block-end: 2rem; }
+.rdct-single__header h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.3; text-wrap: balance; }
+.rdct-single time { color: var(--rdct-muted); font-size: .875rem; }
+.rdct-single__header, .rdct-single__image { max-inline-size: var(--rdct-reading); margin-inline: auto; }
+.rdct-single__image { margin-block-end: 2rem; }
+.rdct-single__image img { border-radius: var(--rdct-radius); }
+.rdct-single__back { display: block; max-inline-size: var(--rdct-reading); margin: 0 auto 1.5rem; color: var(--rdct-accent); text-underline-offset: .25em; }
+.rdct-single__header .rdct-post-categories { margin-block-end: 1rem; }
+.rdct-single__header h1 { margin-block: 1rem; }
+.rdct-single__intro { color: var(--rdct-muted); font-size: 1.125rem; }
+.rdct-single__image img { display: block; inline-size: 100%; block-size: auto; }

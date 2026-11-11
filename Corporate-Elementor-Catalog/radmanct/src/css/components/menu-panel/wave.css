@@ -1,0 +1,6 @@
+.rdct-mob-drawer[data-panel-motion="wave"] > .rdct-panel-wave { position:absolute; inset:0; inline-size:100%; block-size:100%; z-index:10; pointer-events:none; fill:var(--rdct-panel-motion-color,#390507); }
+.rdct-mob-drawer[data-panel-motion="wave"][data-motion-covered] { background:transparent; }
+.rdct-mob-drawer[data-panel-motion="wave"][data-motion-covered] > :not(.rdct-panel-wave):not(.rdct-mob-drawer__close) { visibility:hidden; }
+.rdct-mob-drawer[data-panel-motion="wave"] > .rdct-mob-drawer__close { position:relative; z-index:11; }
+.rdct-mob-drawer[data-panel-mode="fullscreen"][data-panel-motion="wave"]:not([data-panel-link-layout="horizontal"]):not([data-panel-only]) > .rdct-nav > .rdct-menu { align-items:center; text-align:center; }
+@media(prefers-reduced-motion:reduce) { .rdct-mob-drawer > .rdct-panel-wave { display:none; } }

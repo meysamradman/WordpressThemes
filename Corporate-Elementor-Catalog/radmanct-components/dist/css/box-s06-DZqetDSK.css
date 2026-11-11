@@ -1,0 +1,3 @@
+.rdct-box--s06 { display: grid; aspect-ratio: var(--rdct-box-ratio, 1); min-block-size: var(--rdct-box-height, 0px); transform: perspective(1300px) rotateX(var(--rdct-box-rotate-x, 0deg)) rotateY(var(--rdct-box-rotate-y, 0deg)); }
+.rdct-box--s06 > * { grid-area: 1 / 1; }.rdct-box--s06 .rdct-box__content { align-self: end; color: #fff; background: transparent; z-index: 1; }.rdct-box--s06 .rdct-box__title { font-weight: 600; }.rdct-box--s06 .rdct-box__subtitle { font-size: .75rem; letter-spacing: .1em; opacity: .7; }
+.rdct-box--s06:is(:hover, :focus-within) { box-shadow: 0 35px 90px #0004; }.rdct-box--s06:is(:hover, :focus-within) .rdct-box__subtitle { opacity: 1; }

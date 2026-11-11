@@ -1,0 +1,6 @@
+.rdct-crs--profile-slider .rdct-crs__content { position:relative; isolation:isolate; }
+.rdct-crs--profile-slider .rdct-crs__media { position:absolute; inset:0; z-index:-1; }
+.rdct-crs--profile-slider .rdct-crs__media > img { inline-size:100%; block-size:100%; aspect-ratio:auto; object-fit:cover; }
+.rdct-crs--profile-slider .rdct-crs__caption { box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-end; min-block-size:100%; padding:clamp(1.5rem,5vw,5rem); color:#fff; background:linear-gradient(transparent,#0009); }
+.rdct-crs--profile-slider .rdct-crs__caption h3 { color:inherit; font-size:clamp(1.75rem,4vw,4rem); margin-block:0 .75rem; }
+.rdct-crs--profile-slider .rdct-crs__link { block-size:100%; }

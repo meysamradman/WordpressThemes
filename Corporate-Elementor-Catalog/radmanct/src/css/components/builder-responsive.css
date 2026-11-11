@@ -1,0 +1,65 @@
+@media (min-width: 90rem) {
+  .rdct-bld .rdct-bld--hide-desktop { display: none; }
+}
+
+@media (min-width: 64rem) and (max-width: 89.99rem) {
+  .rdct-bld { --builder-device-gutter: var(--builder-laptop-gutter, var(--builder-gutter, var(--rdct-gutter))); }
+  .rdct-bld .rdct-bld__logo .custom-logo-link { max-inline-size: min(100%, var(--builder-logo-laptop-width, var(--builder-logo-width, 13rem))); }
+  .rdct-bld .rdct-bld__logo .custom-logo { inline-size: var(--builder-logo-laptop-width, var(--builder-logo-width, auto)); max-block-size: var(--builder-logo-laptop-height, var(--builder-logo-height, none)); }
+  .rdct-bld .rdct-bld--hide-laptop { display: none; }
+  .rdct-bld .rdct-bld__row { padding-block: var(--builder-laptop-padding, var(--builder-padding, 1rem)); }
+  .rdct-bld .rdct-bld__columns { gap: var(--builder-laptop-gap, var(--builder-gap, 1.5rem)); }
+  .rdct-bld .rdct-bld__row--grid > .rdct-bld__columns { grid-template-columns: repeat(var(--builder-laptop-columns, var(--builder-columns, 3)), minmax(0, 1fr)); }
+  .rdct-bld .rdct-bld--laptop-font-custom { font-size: var(--builder-laptop-font-size); }
+  .rdct-bld--laptop-font-custom > .rdct-brand { font-size: inherit; }
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item.rdct-bld__item--laptop-equal { flex: 1 1 var(--builder-axis-basis, 12rem); --builder-grid-column: auto; }
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item.rdct-bld__item--laptop-auto { flex: 0 1 auto; --builder-grid-column: auto; }
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item.rdct-bld__item--laptop-full { flex: 1 1 var(--builder-full-basis, 100%); --builder-grid-column: 1 / -1; }
+}
+
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .rdct-bld { --builder-device-gutter: var(--builder-tablet-gutter, var(--builder-gutter, var(--rdct-gutter))); }
+  .rdct-bld .rdct-bld__logo .custom-logo-link { max-inline-size: min(100%, var(--builder-logo-tablet-width, var(--builder-logo-width, 13rem))); }
+  .rdct-bld .rdct-bld__logo .custom-logo { inline-size: var(--builder-logo-tablet-width, var(--builder-logo-width, auto)); max-block-size: var(--builder-logo-tablet-height, var(--builder-logo-height, none)); }
+  .rdct-bld .rdct-bld--hide-tablet { display: none; }
+  .rdct-bld .rdct-bld__row { padding-block: var(--builder-tablet-padding, var(--builder-padding, 1rem)); }
+  .rdct-bld .rdct-bld__columns { gap: var(--builder-tablet-gap, var(--builder-gap, 1.5rem)); }
+  .rdct-bld .rdct-bld__row--grid > .rdct-bld__columns { grid-template-columns: repeat(var(--builder-tablet-columns, var(--builder-columns, 3)), minmax(0, 1fr)); }
+  .rdct-bld .rdct-bld--tablet-font-custom { font-size: var(--builder-tablet-font-size); }
+  .rdct-bld--tablet-font-custom > .rdct-brand { font-size: inherit; }
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item.rdct-bld__item--tablet-equal { flex: 1 1 var(--builder-axis-basis, 12rem); --builder-grid-column: auto; }
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item.rdct-bld__item--tablet-auto { flex: 0 1 auto; --builder-grid-column: auto; }
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item.rdct-bld__item--tablet-full { flex: 1 1 var(--builder-full-basis, 100%); --builder-grid-column: 1 / -1; }
+}
+
+@media (max-width: 47.99rem) {
+  .rdct-bld .rdct-bld--hide-mobile { display: none; }
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item.rdct-bld__item--mobile-equal { flex: 1 1 var(--builder-axis-basis, 12rem); --builder-grid-column: auto; }
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item.rdct-bld__item--mobile-auto { flex: 0 1 auto; --builder-grid-column: auto; }
+  .rdct-bld .rdct-bld__columns > .rdct-bld__item.rdct-bld__item--mobile-full { flex: 1 1 var(--builder-full-basis, 100%); --builder-grid-column: 1 / -1; }
+}
+
+@media (min-width: 64rem) and (max-width: 89.99rem) {
+  .rdct-bld .rdct-bld__item.rdct-bld--laptop-align { --builder-content-align: var(--builder-laptop-align); text-align: var(--builder-laptop-align); }
+  .rdct-bld .rdct-bld__item.rdct-bld--laptop-align .rdct-menu { justify-content: var(--builder-laptop-align); text-align: var(--builder-laptop-align); }
+  .rdct-bld .rdct-bld__row.rdct-bld--laptop-align > .rdct-bld__columns { align-items: var(--builder-laptop-align); }
+  .rdct-bld .rdct-bld__row.rdct-bld--laptop-justify > .rdct-bld__columns { justify-content: var(--builder-laptop-justify); }
+  .rdct-bld .rdct-bld__row--laptop-stack:not(.rdct-bld__row--grid) > .rdct-bld__columns { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .rdct-bld .rdct-bld__row--laptop-inline:not(.rdct-bld__row--grid) > .rdct-bld__columns > :is(.rdct-bld__item--equal, .rdct-bld__item--laptop-equal):not(.rdct-bld__item--laptop-full):not(.rdct-bld__item--laptop-auto) { flex-basis: var(--builder-inline-basis, 0); }
+}
+
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .rdct-bld .rdct-bld__item.rdct-bld--tablet-align { --builder-content-align: var(--builder-tablet-align); text-align: var(--builder-tablet-align); }
+  .rdct-bld .rdct-bld__item.rdct-bld--tablet-align .rdct-menu { justify-content: var(--builder-tablet-align); text-align: var(--builder-tablet-align); }
+  .rdct-bld .rdct-bld__row.rdct-bld--tablet-align > .rdct-bld__columns { align-items: var(--builder-tablet-align); }
+  .rdct-bld .rdct-bld__row.rdct-bld--tablet-justify > .rdct-bld__columns { justify-content: var(--builder-tablet-justify); }
+  .rdct-bld .rdct-bld__row--tablet-stack:not(.rdct-bld__row--grid) > .rdct-bld__columns { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .rdct-bld .rdct-bld__row--tablet-inline:not(.rdct-bld__row--grid) > .rdct-bld__columns > :is(.rdct-bld__item--equal, .rdct-bld__item--tablet-equal):not(.rdct-bld__item--tablet-full):not(.rdct-bld__item--tablet-auto) { flex-basis: var(--builder-inline-basis, 0); }
+}
+
+@media (max-width: 47.99rem) {
+  .rdct-bld .rdct-bld__item.rdct-bld--mobile-align { --builder-content-align: var(--builder-mobile-align); text-align: var(--builder-mobile-align); }
+  .rdct-bld .rdct-bld__item.rdct-bld--mobile-align .rdct-menu { justify-content: var(--builder-mobile-align); text-align: var(--builder-mobile-align); }
+  .rdct-bld .rdct-bld__row.rdct-bld--mobile-align > .rdct-bld__columns { align-items: var(--builder-mobile-align); }
+  .rdct-bld .rdct-bld__row.rdct-bld--mobile-justify > .rdct-bld__columns { justify-content: var(--builder-mobile-justify); }
+}

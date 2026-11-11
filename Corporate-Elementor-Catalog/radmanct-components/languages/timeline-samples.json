@@ -1,0 +1,12 @@
+{
+  "fa": [
+    {"date": "مرحلهٔ اول", "title": "شروع مسیر", "content": "<p>تصویر و توضیح این مرحله را وارد کنید.</p>"},
+    {"date": "مرحلهٔ دوم", "title": "رشد و توسعه", "content": "<p>تصویر این مرحله در سمت مقابل قرار می‌گیرد.</p>"},
+    {"date": "مرحلهٔ سوم", "title": "قدم بعدی", "content": "<p>روایت مسیر خود را ادامه دهید.</p>"}
+  ],
+  "en": [
+    {"date": "Stage one", "title": "The beginning", "content": "<p>Add the image and description for this milestone.</p>"},
+    {"date": "Stage two", "title": "Growth", "content": "<p>This milestone places its image on the opposite side.</p>"},
+    {"date": "Stage three", "title": "What comes next", "content": "<p>Continue telling your story.</p>"}
+  ]
+}

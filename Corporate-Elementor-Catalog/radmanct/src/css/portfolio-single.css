@@ -1,0 +1,8 @@
+@import './components/content-detail.css';
+@import './content-meta.css';
+@import './components/image-placeholder.css';
+
+.rdct-prj-media { max-inline-size: var(--rdct-content-wide, var(--rdct-reading)); margin: 0 auto 2rem; min-inline-size: 0; }
+.rdct-prj-media__image { display: grid; place-items: center; min-block-size: 12rem; background: var(--rdct-surface); border: 1px solid var(--rdct-line); border-radius: var(--rdct-radius); overflow: hidden; }
+.rdct-prj-media__image img { display: block; inline-size: 100%; max-block-size: 42rem; object-fit: contain; }
+.rdct-prj-media .rdct-gal { grid-template-columns: repeat(auto-fill, minmax(min(100%, 5rem), 1fr)); gap: .5rem; margin-block: .75rem 0; }

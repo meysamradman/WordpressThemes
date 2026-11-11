@@ -1,0 +1,8 @@
+.rdct-taxonomy-chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:0; padding:0; list-style:none; }
+.rdct-taxonomy-chips li { margin:0; padding:0; }
+.rdct-taxonomy-chips > li > a { display:inline-flex; align-items:center; gap:.5rem; min-block-size:2.75rem; padding:.4rem .75rem; border:1px solid var(--rdct-line,#dce2df); border-radius:var(--rdct-radius,.75rem); color:inherit; font:inherit; text-decoration:none; }
+.rdct-taxonomy-chips a:is(:hover,:focus-visible,[aria-current=page]) { text-decoration:none; border-color:var(--rdct-accent,#b98a2f); }
+.rdct-taxonomy-chips a:focus-visible { outline:2px solid var(--rdct-accent,#b98a2f); outline-offset:2px; }
+.rdct-taxonomy-chips span { font-size:.85em; font-variant-numeric:tabular-nums; opacity:.8; }
+
+.rdct-taxonomy-chips a[aria-current=page] { color:var(--rdct-accent,#b98a2f); }

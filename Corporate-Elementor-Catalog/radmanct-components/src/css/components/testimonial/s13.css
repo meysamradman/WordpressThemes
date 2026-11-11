@@ -1,0 +1,3 @@
+.rdct-tst--s13 { background:var(--rdct-tst-background-color,transparent); }
+.rdct-tst--s13 .rdct-tst__quote { font-size:1.5625rem; }
+.rdct-tst--s13 .rdct-tst__avatar { inline-size:72px;block-size:72px; }

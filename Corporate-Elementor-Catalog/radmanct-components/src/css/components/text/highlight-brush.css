@@ -1,0 +1,1 @@
+.rdct-text[data-highlight=brush] .rdct-text__highlight::before { block-size: var(--rdct-text-highlight-height, .3em); clip-path: polygon(0 20%,98% 0,100% 70%,2% 100%); }

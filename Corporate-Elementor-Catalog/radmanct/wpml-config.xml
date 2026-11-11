@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wpml-config>
+  <custom-types>
+    <custom-type translate="1">rdct_layout</custom-type>
+  </custom-types>
+  <custom-fields>
+    <custom-field action="copy-once">_rdct_page_title</custom-field>
+    <custom-field action="copy" type="post-ids" sub-type="attachment">_rdct_card_video_id</custom-field>
+    <custom-field action="copy">_rdct_card_video_mode</custom-field>
+    <custom-field action="copy-once">_rdct_page_layout</custom-field>
+    <custom-field action="copy-once">_radman_page_effects</custom-field>
+    <custom-field action="copy-once">_radman_header_layout</custom-field>
+    <custom-field action="copy-once">_radman_footer_layout</custom-field>
+    <custom-field action="ignore">_rdct_builder_kind</custom-field>
+    <custom-field action="ignore">_rdct_builder_layout</custom-field>
+  </custom-fields>
+  <custom-term-fields>
+    <custom-term-field action="copy">_rdct_blog_media_type</custom-term-field>
+  </custom-term-fields>
+</wpml-config>

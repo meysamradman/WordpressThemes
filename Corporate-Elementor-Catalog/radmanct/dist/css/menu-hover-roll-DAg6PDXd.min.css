@@ -1,0 +1,1 @@
+.rdct-menu-roll{vertical-align:top;padding-block-end:4px;display:inline-grid;overflow:hidden}.rdct-menu-roll__text,.rdct-menu-roll__copy{pointer-events:none;grid-area:1/1;display:block}.rdct-menu-roll__copy{transform:translateY(calc(100% + 4px))}[data-rdct-menu][data-menu-hover=roll]>.rdct-nav>.rdct-menu>li>a{padding-block-end:calc(.35rem - 4px)}

@@ -1,0 +1,2 @@
+.rdct-ss[data-mode="zoom"] .rdct-ss__inner { transform-origin: center center; }
+.rdct-ss[data-mode="stack"] > .rdct-ss__item { scroll-margin-block-start: var(--rdct-ss-top,30px); }

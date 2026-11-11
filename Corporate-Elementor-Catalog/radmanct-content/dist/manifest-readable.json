@@ -1,0 +1,50 @@
+{
+  "src/css/admin/content-list.css": {
+    "file": "css/content-list-wDiaqsxt.css",
+    "name": "content-list",
+    "names": [
+      "content-list.css"
+    ],
+    "src": "src/css/admin/content-list.css",
+    "isEntry": true
+  },
+  "src/css/admin/content.css": {
+    "file": "css/admin-content-C0o8yl1M.css",
+    "name": "admin-content",
+    "names": [
+      "admin-content.css"
+    ],
+    "src": "src/css/admin/content.css",
+    "isEntry": true
+  },
+  "src/css/admin/settings.css": {
+    "file": "css/core-settings-Dzfl0Alx.css",
+    "name": "core-settings",
+    "names": [
+      "core-settings.css"
+    ],
+    "src": "src/css/admin/settings.css",
+    "isEntry": true
+  },
+  "src/js/admin/content.js": {
+    "file": "js/content-jbdCS8Sn.js",
+    "name": "content",
+    "src": "src/js/admin/content.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/js/admin/product-fields.js"
+    ]
+  },
+  "src/js/admin/product-fields.js": {
+    "file": "js/product-fields-CBueDBF7.js",
+    "name": "product-fields",
+    "src": "src/js/admin/product-fields.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/js/admin/content.js"
+    ],
+    "css": [
+      "css/product-fields-Czi8UuiS.css"
+    ]
+  }
+}

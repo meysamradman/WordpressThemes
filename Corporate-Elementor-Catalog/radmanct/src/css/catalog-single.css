@@ -1,0 +1,15 @@
+@import './components/content-detail.css';
+@import './specifications.css';
+@import './content-meta.css';
+@import './product-display.css';
+@import './components/image-placeholder.css';
+
+.rdct-prd-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: clamp(1.5rem, 4vw, 3.5rem); margin-block-end: 3rem; }
+.rdct-prd-media, .rdct-prd-summary { min-inline-size: 0; }
+.rdct-prd-media__image { display: grid; place-items: center; aspect-ratio: 1; border: 1px solid var(--rdct-line); border-radius: var(--rdct-radius); background: var(--rdct-surface); overflow: hidden; }
+.rdct-prd-media__image img { inline-size: 100%; block-size: 100%; max-block-size: 36rem; object-fit: contain; }
+.rdct-prd-media .rdct-gal { grid-template-columns: repeat(auto-fill, minmax(min(100%, 5rem), 1fr)); gap: .5rem; margin-block: .75rem 0; }
+.rdct-prd-summary h1 { margin-block: 0 1rem; font-size: var(--rdct-size-h1,clamp(1.75rem, 3vw, 2.75rem)); }
+.rdct-prd-summary .rdct-cnt-detail__intro p { margin-block: 0 1.25rem; }
+.rdct-prd-description-title { max-inline-size: var(--rdct-reading); margin: 0 auto 1rem; font-size: var(--rdct-size-h2,1.5rem); line-height:var(--rdct-line-height-h2,normal); }
+@media (max-width: 48rem) { .rdct-prd-overview { grid-template-columns: minmax(0, 1fr); } .rdct-prd-media__image { aspect-ratio: 4 / 3; } }

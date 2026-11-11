@@ -1,0 +1,89 @@
+msgid ""
+msgstr "Project-Id-Version: radmanct-mcp 1.1.1\nLanguage: fa_IR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Connection status"
+msgstr "وضعیت اتصال"
+
+msgid "WordPress Abilities API"
+msgstr "Abilities API وردپرس"
+
+msgid "Official MCP Adapter"
+msgstr "MCP Adapter رسمی"
+
+msgid "Registered HTTP endpoint"
+msgstr "نشانی HTTP ثبت‌شده"
+
+msgid "Application passwords for your account"
+msgstr "رمزهای برنامه برای حساب شما"
+
+msgid "Available"
+msgstr "در دسترس"
+
+msgid "Unavailable"
+msgstr "در دسترس نیست"
+
+msgid "Detected routes do not verify client authentication or access to every ability. Custom servers may expose a different tool set."
+msgstr "شناسایی نشانی، احراز هویت کلاینت یا دسترسی به همهٔ ابزارها را تأیید نمی‌کند. سرورهای سفارشی ممکن است ابزارهای متفاوتی ارائه کنند."
+
+msgid "Adapter endpoint"
+msgstr "نشانی Adapter"
+
+msgid "Connect your assistant"
+msgstr "اتصال دستیار"
+
+msgid "Install and activate the official MCP Adapter separately. The AI plugin is not required for Radman tools."
+msgstr "MCP Adapter رسمی را جداگانه نصب و فعال کنید. افزونهٔ AI برای ابزارهای رادمان ضروری نیست."
+
+msgid "Enable Radman tools and save. Leave changes disabled for read-only access."
+msgstr "ابزارهای رادمان را فعال و ذخیره کنید. برای دسترسی فقط‌خواندنی، اجازهٔ تغییرات را خاموش نگه دارید."
+
+msgid "Create an application password in your WordPress profile. Use your login name and that password in your client; never use your main account password."
+msgstr "در شناسنامهٔ وردپرس یک رمز برنامه بسازید. در کلاینت، نام کاربری و همان رمز برنامه را وارد کنید؛ از رمز اصلی حساب استفاده نکنید."
+
+msgid "Use a registered endpoint above with a transport supported by your client. Follow the official Adapter connection guide. Do not disable TLS verification."
+msgstr "یکی از نشانی‌های ثبت‌شدهٔ بالا را با روش اتصال سازگار با کلاینت خود استفاده کنید. راهنمای رسمی Adapter را دنبال کنید. بررسی TLS را خاموش نکنید."
+
+msgid "Ask the assistant to discover abilities, inspect radmanct/site-context, then execute it with parameters={}. Read the target and its version before requesting changes."
+msgstr "از دستیار بخواهید ابزارها را کشف کند، مشخصات radmanct/site-context را بخواند و آن را با parameters={} اجرا کند. پیش از درخواست تغییر، محتوای هدف و نسخهٔ آن خوانده شود."
+
+msgid "Official connection guide"
+msgstr "راهنمای رسمی اتصال"
+
+msgid "Enable Elementor tools in Elementor itself. Radman does not rewrite Elementor documents or custom PHP source files."
+msgstr "ابزارهای المنتور را در خود المنتور فعال کنید. رادمان سندهای المنتور یا فایل‌های سورس PHP اختصاصی را بازنویسی نمی‌کند."
+
+msgid "MCP tools for WordPress content and Radman CT layouts."
+msgstr "ابزارهای MCP برای مدیریت محتوای وردپرس و چیدمان‌های Radman CT."
+
+msgid "Radman MCP"
+msgstr "رادمان MCP"
+
+msgid "AI connection (MCP)"
+msgstr "اتصال هوش مصنوعی (MCP)"
+
+msgid "Optional administrator tools for content and Radman CT layouts."
+msgstr "ابزار اختیاری مدیر برای محتوا و چیدمان‌های رادمان."
+
+msgid "Enable MCP tools"
+msgstr "فعال‌سازی ابزارهای MCP"
+
+msgid "Allow content and layout changes"
+msgstr "اجازهٔ تغییر محتوا و چیدمان"
+
+msgid "WordPress Abilities and MCP Adapter detected."
+msgstr "Abilities وردپرس و MCP Adapter شناسایی شدند."
+
+msgid "Requires WordPress Abilities API and the official WordPress MCP Adapter."
+msgstr "به Abilities API وردپرس و MCP Adapter رسمی وردپرس نیاز دارد."
+
+msgid "Use the MCP Adapter connection with your WordPress application password. Enable Elementor tools in its own MCP settings."
+msgstr "با رمز برنامهٔ وردپرس به MCP Adapter وصل شوید؛ ابزارهای المنتور را در تنظیمات MCP خودش فعال کنید."
+
+msgid "Application passwords"
+msgstr "رمزهای برنامه"
+
+msgid "Default adapter endpoint"
+msgstr "نشانی پیش‌فرض Adapter"
+
+msgid "MCP integration for Radman CT."
+msgstr "اتصال MCP برای رادمان."

@@ -1,0 +1,2 @@
+#rdct-scroll-content { inline-size: 100%; overflow: visible; }
+.rdct-bld[data-rdct-smooth-sticky] { position:relative; inset-block-start:auto; }

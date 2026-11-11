@@ -1,0 +1,6 @@
+.rdct-tst--s04 { box-shadow:0 24px 60px rgb(0 0 0 / 10%); }
+.rdct-tst--s04.has-portrait { display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:1rem; }
+.rdct-tst--s04 .rdct-tst__info { grid-column:1;grid-row:1;margin:0; }
+.rdct-tst--s04 .rdct-tst__review { grid-column:1;grid-row:2; }
+.rdct-tst--s04 .rdct-tst__portrait { grid-column:2;grid-row:1 / span 2;align-self:start;inline-size:65px;block-size:65px;border-radius:50%; }
+.rdct-tst--s04 .rdct-tst__quote { font-size:.9375rem; }

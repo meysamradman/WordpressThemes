@@ -1,0 +1,21 @@
+.rdct-button__icon { display:inline-grid; position:relative; place-items:center; flex:none; color:var(--rdct-button-icon-color,inherit); }
+.rdct-button__icon svg { display:block; inline-size:var(--rdct-button-icon-size,20px); block-size:var(--rdct-button-icon-size,20px); }
+.rdct-button__icon[data-icon-shape="circle"] { border-radius:50%; }
+.rdct-button__icon[data-icon-shape="rounded"] { border-radius:.5rem; }
+.rdct-button__icon:is([data-icon-style="solid"],[data-icon-style="outline"]) { padding:.65em; }
+.rdct-button__icon[data-icon-style="solid"] { background:var(--rdct-button-icon-background,#143d35); }
+.rdct-button__icon[data-icon-style="outline"] { border:var(--rdct-button-border-width,1px) solid currentColor; }
+.rdct-button[data-icon-position="top"],.rdct-button[data-icon-position="bottom"] { flex-direction:column; }
+.rdct-button__icon[data-separator] { border-inline-start:1px solid currentColor; padding-inline-start:var(--rdct-button-gap,12px); }
+.rdct-button[data-icon-position="start"] .rdct-button__icon[data-separator] { border-inline-start:0; border-inline-end:1px solid currentColor; padding-inline-start:0; padding-inline-end:var(--rdct-button-gap,12px); }
+
+.rdct-button__icon { box-sizing:border-box; inline-size:var(--rdct-button-icon-box-size,auto); block-size:var(--rdct-button-icon-box-size,auto); }
+.rdct-button__icon[data-icon-box] { padding:0; }
+.rdct-button__icon svg { rotate:var(--rdct-button-icon-rotation,none); }
+.rdct-button__icon[data-icon-shape="semi-round"] { border-radius:.25em; }
+.rdct-button__icon[data-icon-shape="round"] { border-radius:100em; }
+.rdct-button__icon[data-icon-style="outline"] { border-width:var(--rdct-button-icon-border-width,1px); border-color:var(--rdct-button-icon-border-color,currentColor); }
+.rdct-button__icon[data-separator] { border-color:var(--rdct-button-separator-color,currentColor); }
+.rdct-button:is(:hover,:focus-visible) .rdct-button__icon { color:var(--rdct-button-hover-icon-color,var(--rdct-button-icon-color,inherit)); border-color:var(--rdct-button-hover-icon-border-color,var(--rdct-button-icon-border-color,currentColor)); }
+.rdct-button:is(:hover,:focus-visible) .rdct-button__icon[data-icon-style="solid"] { background:var(--rdct-button-hover-icon-background,var(--rdct-button-icon-background,#143d35)); }
+.rdct-button:is(:hover,:focus-visible) .rdct-button__icon[data-separator] { border-color:var(--rdct-button-hover-separator-color,var(--rdct-button-separator-color,currentColor)); }

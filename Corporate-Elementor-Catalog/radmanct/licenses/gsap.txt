@@ -1,0 +1,5 @@
+GSAP 3.15.0, ScrollTrigger 3.15.0 and ScrollSmoother 3.15.0
+Copyright 2008-2026, GreenSock. All rights reserved.
+Subject to the GSAP Standard License: https://gsap.com/standard-license
+The bundled files retain their upstream license notices.
+This notice is not a runtime network connection.

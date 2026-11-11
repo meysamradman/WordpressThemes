@@ -1,0 +1,11 @@
+.rdct-mob-drawer[data-panel-mode="split"] { inset: 0 auto 0 0; inline-size: 100vw; padding: clamp(1.25rem,4vw,5rem); }
+.rdct-mob-drawer[data-panel-mode="split"][open] { display: grid; grid-template-columns: minmax(0,3fr) minmax(0,2fr); align-content: start; align-items: start; gap: clamp(1rem,4vw,5rem); }
+.rdct-mob-drawer[data-panel-mode="split"] > .rdct-nav { grid-column: 1; grid-row: 2; }
+.rdct-mob-drawer[data-panel-mode="split"] > .rdct-menu-panel-content { grid-column: 2; grid-row: 2; align-self: center; }
+@media (max-width: 47.99rem) {
+  .rdct-mob-drawer[data-panel-mode="split"][open] { grid-template-columns: minmax(0,1fr) auto; }
+  .rdct-mob-drawer[data-panel-mode="split"] > .rdct-nav { grid-column: 1 / -1; }
+  .rdct-mob-drawer[data-panel-mode="split"] > .rdct-menu-panel-content { grid-column: 1 / -1; grid-row: 3; }
+}
+
+.rdct-mob-drawer[data-panel-only][data-panel-mode="split"] > [data-rdct-panel-body] { grid-column:1 / -1; grid-row:2; }

@@ -1,0 +1,109 @@
+{
+    "map": {
+        "logo": 21,
+        "logo_footer": 88,
+        "footer_background": 91
+    },
+    "media": [
+        {
+            "id": 21,
+            "file": "2026\/10\/he4.svg",
+            "files": [
+                "2026\/10\/he4.svg"
+            ],
+            "meta": {
+                "width": 250,
+                "height": 133,
+                "file": "2026\/10\/he4.svg"
+            },
+            "title": "HE4 Logo",
+            "mime": "image\/svg+xml"
+        },
+        {
+            "id": 88,
+            "file": "2026\/11\/logo-gold.svg",
+            "files": [
+                "2026\/11\/logo-gold.svg"
+            ],
+            "meta": {
+                "width": 250,
+                "height": 133,
+                "file": "2026\/11\/logo-gold.svg"
+            },
+            "title": "Gold gradient logo",
+            "mime": "image\/svg+xml"
+        },
+        {
+            "id": 91,
+            "file": "2026\/11\/footer-decoration.webp",
+            "files": [
+                "2026\/11\/footer-decoration.webp",
+                "2026\/11\/footer-decoration-300x171.webp",
+                "2026\/11\/footer-decoration-1024x585.webp",
+                "2026\/11\/footer-decoration-150x150.webp",
+                "2026\/11\/footer-decoration-768x439.webp",
+                "2026\/11\/footer-decoration-1536x878.webp"
+            ],
+            "meta": {
+                "width": 1659,
+                "height": 948,
+                "file": "2026\/11\/footer-decoration.webp",
+                "filesize": 195154,
+                "sizes": {
+                    "medium": {
+                        "file": "footer-decoration-300x171.webp",
+                        "width": 300,
+                        "height": 171,
+                        "mime-type": "image\/webp",
+                        "filesize": 10266
+                    },
+                    "large": {
+                        "file": "footer-decoration-1024x585.webp",
+                        "width": 1024,
+                        "height": 585,
+                        "mime-type": "image\/webp",
+                        "filesize": 66960
+                    },
+                    "thumbnail": {
+                        "file": "footer-decoration-150x150.webp",
+                        "width": 150,
+                        "height": 150,
+                        "mime-type": "image\/webp",
+                        "filesize": 3528
+                    },
+                    "medium_large": {
+                        "file": "footer-decoration-768x439.webp",
+                        "width": 768,
+                        "height": 439,
+                        "mime-type": "image\/webp",
+                        "filesize": 42916
+                    },
+                    "1536x1536": {
+                        "file": "footer-decoration-1536x878.webp",
+                        "width": 1536,
+                        "height": 878,
+                        "mime-type": "image\/webp",
+                        "filesize": 137886
+                    }
+                },
+                "image_meta": {
+                    "aperture": "0",
+                    "credit": "",
+                    "camera": "",
+                    "caption": "",
+                    "created_timestamp": "0",
+                    "copyright": "",
+                    "focal_length": "0",
+                    "iso": "0",
+                    "shutter_speed": "0",
+                    "title": "",
+                    "orientation": "0",
+                    "keywords": [],
+                    "alt": ""
+                }
+            },
+            "title": "Transparent gold footer decoration",
+            "mime": "image\/webp"
+        }
+    ]
+}

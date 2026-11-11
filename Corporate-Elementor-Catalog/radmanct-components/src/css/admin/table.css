@@ -1,0 +1,7 @@
+.rdct-tbl-editor { margin:0; padding:0; border:0; min-inline-size:0; font:inherit; }
+.rdct-tbl-editor__scroll { max-inline-size:100%; overflow:auto; margin-block:.75rem; }
+.rdct-tbl-editor table { border-collapse:collapse; font:inherit; }
+.rdct-tbl-editor :is(th,td) { min-inline-size:135px; padding:6px; border:1px solid var(--rdct-table-border,var(--e-a-border-color,currentColor)); vertical-align:top; }
+.rdct-tbl-editor--classic :is(input,textarea) { display:block; box-sizing:border-box; min-inline-size:135px; inline-size:100%; }
+.rdct-tbl-editor--classic textarea { resize:vertical; }
+.rdct-tbl-editor__actions { display:flex; flex-wrap:wrap; gap:4px; margin-block-start:6px; }

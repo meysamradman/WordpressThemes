@@ -1,0 +1,17 @@
+.rdct-ico-picker { min-inline-size: 0; }
+.rdct-ico-picker__trigger { inline-size: 100%; padding: .65rem; color: inherit; background: var(--rdct-admin-paper, #fff); border: 1px solid var(--rdct-admin-border, #d1d5db); border-radius: 4px; font: inherit; cursor: pointer; }
+.rdct-ico-picker__selection { display: flex; align-items: center; gap: .6rem; }
+.rdct-ico-picker__glyph { display: inline-block; flex-shrink: 0; inline-size: 1.75rem; block-size: 1.75rem; background: currentColor; mask-size: contain; mask-position: center; mask-repeat: no-repeat; -webkit-mask-size: contain; -webkit-mask-position: center; -webkit-mask-repeat: no-repeat; }
+.rdct-ico-picker__dialog { position: fixed; inset: 0; box-sizing: border-box; inline-size: min(56rem, 92vw); max-inline-size: 92vw; max-block-size: 86dvh; margin: auto; padding: 0; color: var(--rdct-admin-ink, #1f2937); background: var(--rdct-admin-paper, #fff); border: 1px solid var(--rdct-admin-border, #d1d5db); border-radius: 8px; box-shadow: 0 1rem 4rem #0004; font: inherit; }
+.rdct-ico-picker__dialog::backdrop { background: #0008; }
+.rdct-ico-picker__body { display: grid; gap: 1rem; padding: 1.25rem; }
+.rdct-ico-picker__heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.rdct-ico-picker__dialog button { font: inherit; color: inherit; cursor: pointer; }
+.rdct-ico-picker__heading button { min-inline-size: 2.75rem; min-block-size: 2.75rem; background: transparent; border: 0; font-size: 1.5rem; }
+.rdct-ico-picker__dialog input[type=search] { box-sizing: border-box; inline-size: 100%; min-block-size: 2.75rem; padding: .65rem; color: inherit; background: inherit; border: 1px solid var(--rdct-admin-border, #d1d5db); border-radius: 4px; font: inherit; }
+.rdct-ico-picker__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 7rem), 1fr)); grid-auto-rows: max-content; align-content: start; gap: .5rem; max-block-size: 55dvh; overflow-y: auto; scrollbar-gutter: stable; padding: 3px; }
+.rdct-ico-picker__grid button { display: grid; grid-template-rows: 1.75rem minmax(3.4em, auto) auto; align-content: start; justify-items: center; gap: .35rem; box-sizing: border-box; min-inline-size: 0; min-block-size: 8rem; padding: .75rem .5rem; border: 1px solid var(--rdct-admin-border, #d1d5db); border-radius: 4px; background: inherit; line-height: 1.7; text-align: center; }
+.rdct-ico-picker__grid button > span:not(.rdct-ico-picker__glyph), .rdct-ico-picker__grid small { display: block; max-inline-size: 100%; min-inline-size: 0; overflow-wrap: anywhere; white-space: normal; }
+.rdct-ico-picker__grid small { opacity: .75; font-size: 12px; line-height: 1.6; }
+.rdct-ico-picker__grid button[aria-pressed=true] { border-color: var(--rdct-admin-accent, #2563eb); outline: 1px solid var(--rdct-admin-accent, #2563eb); }
+.rdct-ico-picker__dialog button:focus-visible, .rdct-ico-picker__trigger:focus-visible { outline: 2px solid var(--rdct-admin-accent, #2563eb); outline-offset: 2px; }

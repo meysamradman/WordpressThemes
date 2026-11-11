@@ -1,0 +1,2 @@
+.rdct-tb--striped :is(th,td) { border-block-end:1px solid var(--rdct-tb-line,#e6ecef); }
+.rdct-tb--striped tbody tr:nth-child(even) { background:var(--rdct-tb-head,#f1f7f6); }

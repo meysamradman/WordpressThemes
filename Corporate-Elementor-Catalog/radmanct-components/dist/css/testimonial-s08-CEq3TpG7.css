@@ -1,0 +1,4 @@
+.rdct-tst--s08 { background:var(--rdct-tst-background-color,transparent); }
+.rdct-tst--s08 .rdct-tst__info { margin-block-start:0; }
+.rdct-tst--s08 .rdct-tst__quote { font-size:1rem; }
+.rdct-tst--s08 .rdct-tst__avatar { inline-size:48px;block-size:48px; }

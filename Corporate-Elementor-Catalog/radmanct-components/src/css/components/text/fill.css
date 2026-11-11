@@ -1,0 +1,3 @@
+.rdct-text__fill-word { background-image: linear-gradient(var(--rdct-text-active),var(--rdct-text-active)), linear-gradient(var(--rdct-text-idle),var(--rdct-text-idle)); background-position: left; background-size: 0% 100%, 100% 100%; background-repeat: no-repeat; background-clip: text; -webkit-text-fill-color: transparent; -webkit-text-stroke: .01em var(--rdct-text-idle); }
+.rdct-text:dir(rtl) .rdct-text__fill-word { background-position: right; }
+@media (prefers-reduced-motion: reduce) { .rdct-text__fill-word { background-size: 100% 100%; } }

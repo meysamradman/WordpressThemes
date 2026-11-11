@@ -1,0 +1,5 @@
+.rdct-menu-roll { display: inline-grid; overflow: hidden; vertical-align: top; padding-block-end:4px; }
+.rdct-menu-roll__text, .rdct-menu-roll__copy { display: block; grid-area: 1 / 1; pointer-events: none; }
+.rdct-menu-roll__copy { transform: translateY(calc(100% + 4px)); }
+
+[data-rdct-menu][data-menu-hover="roll"] > .rdct-nav > .rdct-menu > li > a { padding-block-end:calc(.35rem - 4px); }

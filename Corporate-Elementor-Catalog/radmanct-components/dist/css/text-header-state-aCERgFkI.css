@@ -1,0 +1,6 @@
+.rdct-text[data-header-current=sticky] { --rdct-text-header-current: var(--rdct-text-header-sticky); }
+.rdct-text[data-header-current=light] { --rdct-text-header-current: var(--rdct-text-header-light); }
+.rdct-text[data-header-current=dark] { --rdct-text-header-current: var(--rdct-text-header-dark); }
+.rdct-text[data-header-current][data-gradient=false] { color: var(--rdct-text-header-current); }
+.rdct-text[data-header-current][data-gradient=false] .rdct-text__part[data-paint=solid] { color: var(--rdct-text-header-current); }
+@media (forced-colors: active) { .rdct-text[data-header-current][data-gradient=false] { color: CanvasText; } }

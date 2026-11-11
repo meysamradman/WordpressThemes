@@ -1,0 +1,13 @@
+@import './content-listing-shell.css';
+@import './content-card.css';
+
+.rdct-cnt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(1rem, 3vw, 2rem); }
+.rdct-cnt-card { container-type: inline-size; border: 1px solid var(--rdct-line); border-radius: var(--rdct-radius); overflow: hidden; background: var(--rdct-paper); }
+.rdct-cnt-card__image { display: block; aspect-ratio: 4 / 3; background: var(--rdct-surface); }
+.rdct-cnt-card__image img { inline-size: 100%; block-size: 100%; object-fit: cover; }
+.rdct-cnt-card__body { padding: 1.25rem; }
+.rdct-cnt-card--product .rdct-cnt-card__image img { object-fit: contain; padding: 1rem; }
+.rdct-cnt-card h2 { --rdct-size-h2:var(--rdct-card-title-size,1.25rem); margin-block: 0 .75rem; font-size:var(--rdct-size-h2); line-height:var(--rdct-line-height-h2,1.5); }
+.rdct-cnt-card h2 a { text-decoration: none; }
+.rdct-cnt-card p { margin-block: 0; }
+@container (min-width: 380px) { .rdct-cnt-card__body { padding: 1.75rem; } }

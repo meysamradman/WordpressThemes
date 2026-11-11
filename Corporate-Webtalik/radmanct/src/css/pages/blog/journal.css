@@ -1,0 +1,25 @@
+.rdc-jrn { margin-block:0 2rem; }
+.rdc-jrn__ttl { position:relative; margin:0 0 1.75rem; padding-block-end:.7rem; border-block-end:2px solid var(--rdc-ln); font-size:1.125rem; line-height:1.5; }
+.rdc-jrn__ttl::after { content:''; position:absolute; inset-inline-start:0; inset-block-end:-2px; inline-size:2.5rem; border-block-end:2px solid var(--rdc-acc); }
+.rdc-jrn__list { display:grid; gap:2rem; }
+.rdc-jrn-card { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1fr); gap:clamp(1rem,2.5vw,2rem); min-inline-size:0; }
+.rdc-jrn-card + .rdc-jrn-card { padding-block-start:2rem; border-block-start:1px solid var(--rdc-ln); }
+.rdc-jrn-card__im { border-radius:calc(var(--rdc-rad) / 2); aspect-ratio:3 / 2; }
+.rdc-jrn-card__body { min-inline-size:0; }
+.rdc-jrn-card__body:only-child { grid-column:1 / -1; }
+.rdc-jrn-card h3 { margin:.65rem 0; font-size:1.25rem; line-height:1.5; }
+.rdc-jrn-card h3 a { color:var(--rdc-ink); text-decoration:none; }
+.rdc-jrn-card h3 a:is(:hover,:focus-visible) { color:var(--rdc-acc); }
+.rdc-jrn-card .rdc-post-cats > :is(a,span) { padding:0; background:none; color:var(--rdc-acc); }
+.rdc-jrn-card .rdc-post-meta > span { order:-1; padding-inline-end:1rem; border-inline-end:1px solid var(--rdc-ln); }
+.rdc-jrn-card__exc::before { content:''; display:block; inline-size:3rem; margin-block-end:1rem; border-block-start:1px solid var(--rdc-acc); }
+.rdc-jrn-card__exc { margin-block:1rem 1.25rem; color:var(--rdc-mut); }
+.rdc-jrn-card__exc p { margin:0; }
+.rdc-jrn-card__more { align-self:start; justify-self:start; font-size:.8125rem; }
+.rdc-blog-arc .pagination .nav-links { align-items:center; }
+.rdc-blog-arc .pagination .page-numbers { display:inline-flex; align-items:center; justify-content:center; min-inline-size:2.75rem; min-block-size:2.75rem; padding:.4rem .8rem; border:1px solid var(--rdc-ln); border-radius:calc(var(--rdc-rad) / 2); text-decoration:none; }
+.rdc-blog-arc .pagination :is(.current,a:hover,a:focus-visible) { border-color:var(--rdc-acc); background:var(--rdc-acc); color:var(--rdc-on-acc); }
+.rdc-blog-arc .pagination .dots { border-color:transparent; }
+@media (max-width:47.99rem) {
+  .rdc-jrn-card { grid-template-columns:minmax(0,1fr); }
+}

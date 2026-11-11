@@ -1,0 +1,21 @@
+.rdct-cnt-detail { padding-block: var(--rdct-space); }
+.rdct-cnt-detail__header { max-inline-size: var(--rdct-reading); margin: 0 auto 2rem; }
+.rdct-cnt-detail h1 { font-size: var(--rdct-size-h1,clamp(2rem, 5vw, 3.5rem)); line-height: var(--rdct-line-height-h1,1.3); text-wrap: balance; }
+.rdct-cnt-detail__intro { color: var(--rdct-muted); font-size: var(--rdct-size-body,1.125rem); }
+.rdct-cnt-detail__image { max-inline-size: var(--rdct-reading); margin: 0 auto 2rem; }
+.rdct-cnt-detail__image img { display: block; border-radius: var(--rdct-radius); }
+.rdct-cnt-detail__inquiry { margin-block: 2rem 0; }
+.rdct-cnt-meta { display: grid; gap: .5rem; margin-block: 1.5rem; }
+.rdct-cnt-meta > div { display: grid; grid-template-columns: minmax(5rem, auto) minmax(0, 1fr); align-items: baseline; gap: .5rem 1.25rem; padding-block: .5rem; border-block-end: 1px solid var(--rdct-line); }
+.rdct-cnt-meta dt { color: var(--rdct-muted); }
+.rdct-cnt-meta dd { margin: 0; overflow-wrap: anywhere; }
+.rdct-cnt-archive-link { display: inline-block; margin-block-end: 1.5rem; }
+.rdct-cnt-meta--compact { margin-block: 0; gap: .25rem; font-size: .875rem; }
+.rdct-cnt-meta--compact > div { padding-block: 0; border: 0; }
+@media (max-width: 30rem) { .rdct-cnt-meta > div { grid-template-columns: minmax(0, 1fr); } }
+.rdct-image-placeholder { display: grid; place-items: center; background: var(--rdct-surface); }
+.rdct-image-placeholder::after { content: ''; inline-size: 2.5rem; aspect-ratio: 1; border: 2px solid var(--rdct-line); border-radius: var(--rdct-radius); transform: rotate(45deg); }
+.rdct-prj-media { max-inline-size: var(--rdct-content-wide, var(--rdct-reading)); margin: 0 auto 2rem; min-inline-size: 0; }
+.rdct-prj-media__image { display: grid; place-items: center; min-block-size: 12rem; background: var(--rdct-surface); border: 1px solid var(--rdct-line); border-radius: var(--rdct-radius); overflow: hidden; }
+.rdct-prj-media__image img { display: block; inline-size: 100%; max-block-size: 42rem; object-fit: contain; }
+.rdct-prj-media .rdct-gal { grid-template-columns: repeat(auto-fill, minmax(min(100%, 5rem), 1fr)); gap: .5rem; margin-block: .75rem 0; }

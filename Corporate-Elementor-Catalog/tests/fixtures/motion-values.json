@@ -1,0 +1,11 @@
+[
+  { "input": { "duration": [2] }, "expected": { "duration": 1.6 } },
+  { "input": { "duration": {} }, "expected": { "duration": 1.6 } },
+  { "input": { "duration": " " }, "expected": { "duration": 1.6 } },
+  { "input": { "duration": "0x10" }, "expected": { "duration": 1.6 } },
+  { "input": { "duration": true }, "expected": { "duration": 1.6 } },
+  { "input": { "duration": "Infinity" }, "expected": { "duration": 1.6 } },
+  { "input": { "duration": " 2e-1 " }, "expected": { "duration": 0.2 } },
+  { "input": { "duration": 0 }, "expected": { "duration": 0 } },
+  { "input": { "inner": null }, "expected": { "inner": true } }
+]

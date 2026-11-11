@@ -1,0 +1,4 @@
+@media (prefers-reduced-motion:no-preference) {
+  .rdct-im.is-enhanced.has-shadow-motion:not(.is-seen) .rdct-im__figure { box-shadow:none; }
+  .rdct-im.is-enhanced.has-shadow-motion .rdct-im__figure { transition:box-shadow .8s var(--rdct-im-shadow-delay,0ms); }
+}

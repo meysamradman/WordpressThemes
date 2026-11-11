@@ -1,0 +1,10 @@
+{
+  "fa": [
+    {"title":"نام مشتری","position":"سمت یا شرکت","content":"متن نظر واقعی مشتری را اینجا وارد کنید.","rating":0},
+    {"title":"نام مشتری","position":"سمت یا شرکت","content":"این متن نمونه است؛ پیش از انتشار با نظر مشتری جایگزین کنید.","rating":0}
+  ],
+  "en": [
+    {"title":"Customer name","position":"Position or company","content":"Add your customer's actual review here.","rating":0},
+    {"title":"Customer name","position":"Position or company","content":"Sample text. Replace it with a customer review before publishing.","rating":0}
+  ]
+}

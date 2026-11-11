@@ -1,0 +1,17 @@
+.rdct-page-title { position:relative; margin-block-end:3rem; background:var(--rdct-title-surface,transparent); }
+.rdct-page-title__body { position:relative; isolation:isolate; display:grid; align-items:center; box-sizing:border-box; padding-block-start:var(--rdct-title-header-offset,0px); min-block-size:var(--rdct-title-height,280px); background:var(--rdct-title-paint,var(--rdct-paper)); }
+.rdct-page-title__media { position:absolute; inset:0; z-index:-2; overflow:hidden; }
+.rdct-page-title__media :is(img,.rdct-card-preview) { display:block; inline-size:100%; block-size:100%; object-fit:cover; }
+.rdct-page-title__body::before { content:''; position:absolute; inset:0; z-index:-1; background:var(--rdct-title-overlay,#000); opacity:var(--rdct-title-overlay-opacity,0); pointer-events:none; }
+.rdct-page-title__inner { min-inline-size:0; box-sizing:border-box; padding-block:clamp(2rem,4vw,3rem); text-align:center; }
+.rdct-page-title h1 { max-inline-size:30ch; margin-block:0; margin-inline:auto; font-size:var(--rdct-size-h1,clamp(2rem,6vw,5rem)); line-height:var(--rdct-line-height-h1,1.2); overflow-wrap:anywhere; text-wrap:balance; }
+.rdct-page-title__trail { position:relative; inline-size:fit-content; margin-inline:auto; min-inline-size:min(22rem,calc(100% - 4rem)); max-inline-size:calc(100% - 4rem); box-sizing:border-box; padding:1rem 2rem; background:var(--rdct-title-base,var(--rdct-paper)); border-end-start-radius:2rem; border-end-end-radius:2rem; }
+.rdct-page-title__body > .rdct-card-preview-control { inset-block-start:auto; inset-block-end:1rem; }
+.rdct-page-title__trail ol { display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; padding:0; margin:0; list-style:none; font-size:var(--rdct-size-small,.875rem); }
+.rdct-page-title__trail li { display:inline-flex; align-items:center; max-inline-size:100%; gap:.5rem; overflow-wrap:anywhere; }
+.rdct-page-title__trail :is(a,span) { min-inline-size:0; }
+.rdct-page-title__trail li + li::before { content:'›'; opacity:.6; flex:none; }
+:dir(rtl) .rdct-page-title__trail li + li::before { content:'‹'; }
+.rdct-page-title__trail a { color:inherit; opacity:.7; }
+.rdct-page-title__trail a:is(:hover,:focus-visible) { opacity:1; }
+@media (max-width:48rem) { .rdct-page-title__body { min-block-size:min(var(--rdct-title-height,280px),240px); } .rdct-page-title__trail { padding:1rem; } }

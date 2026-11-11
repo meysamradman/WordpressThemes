@@ -1,0 +1,8 @@
+.rdct-timeline{position:relative;display:grid;gap:var(--rdct-timeline-gap,56px);list-style:none;margin:0;padding:0;color:inherit}
+.rdct-timeline__item{position:relative;min-inline-size:0;margin:0;padding:0}
+.rdct-timeline__media{min-inline-size:0;margin:0;overflow:hidden;border-radius:var(--rdct-timeline-radius,16px)}
+.rdct-timeline__image{display:block;inline-size:100%;block-size:auto;aspect-ratio:var(--rdct-timeline-ratio,4/3);object-fit:cover}
+.rdct-timeline__content{min-inline-size:0;align-self:center;overflow-wrap:anywhere}
+.rdct-timeline__date{display:block;margin-block-end:.75em;font-size:.875em;opacity:.75}
+.rdct-timeline__title{margin:0 0 .6em;font-size:1.5em;font-weight:700;color:inherit}
+.rdct-timeline__text>:first-child{margin-block-start:0}.rdct-timeline__text>:last-child{margin-block-end:0}

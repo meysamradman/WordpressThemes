@@ -1,0 +1,13 @@
+.rdct-text__segment { font-size: var(--rdct-segment-scale, 100%); }
+.rdct-text__part:is([data-paint=gradient],[data-paint=image]) { -webkit-text-fill-color:currentColor; }
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .rdct-text__part:is([data-paint=gradient],[data-paint=image]) { background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+}
+@media (forced-colors: active) {
+  .rdct-text__part[style] { text-shadow: none !important; }
+  .rdct-text__part:is([data-paint=gradient], [data-paint=image]) { background: none !important; color: CanvasText !important; -webkit-text-fill-color: CanvasText !important; }
+}
+@media print {
+  .rdct-text__part[style] { text-shadow: none !important; }
+  .rdct-text__part:is([data-paint=gradient], [data-paint=image]) { background: none !important; -webkit-text-fill-color: currentColor !important; }
+}

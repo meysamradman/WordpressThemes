@@ -1,0 +1,6 @@
+.rdct-crs__arrows { gap: var(--rdct-crs-nav-gap, .75rem); }
+.rdct-crs__arrows button { inline-size: var(--rdct-crs-btn, 44px); block-size: var(--rdct-crs-btn, 44px); padding: 0; }
+.rdct-crs__arrows button { color: var(--rdct-crs-arrow-color, inherit); }
+.rdct-crs__arrows button:is(:hover,:focus-visible) { color: var(--rdct-crs-arrow-hover-color, var(--rdct-crs-arrow-color, inherit)); }
+.rdct-crs__arrows[data-style=square] button { border-radius: .25rem; }
+.rdct-crs__arrows[data-style=minimal] button { border-color: transparent; border-radius: 0; background: transparent; }

@@ -1,0 +1,430 @@
+{
+  "source": "lucide-static",
+  "version": "1.59.0",
+  "icons": {
+    "custom-music": { "file": "custom/music.svg", "directional": false, "label": "Music" },
+    "arrow-left": {
+      "file": "lucide/arrow-left.svg",
+      "directional": true,
+      "label": "Arrow left"
+    },
+    "arrow-right": {
+      "file": "lucide/arrow-right.svg",
+      "directional": true,
+      "label": "Arrow right"
+    },
+    "chevron-left": {
+      "file": "lucide/chevron-left.svg",
+      "directional": true,
+      "label": "Chevron left"
+    },
+    "chevron-right": {
+      "file": "lucide/chevron-right.svg",
+      "directional": true,
+      "label": "Chevron right"
+    },
+    "chevron-up": {
+      "file": "lucide/chevron-up.svg",
+      "directional": false,
+      "label": "Chevron up"
+    },
+    "chevron-down": {
+      "file": "lucide/chevron-down.svg",
+      "directional": false,
+      "label": "Chevron down"
+    },
+    "menu": {
+      "file": "lucide/menu.svg",
+      "directional": false,
+      "label": "Menu"
+    },
+    "x": {
+      "file": "lucide/x.svg",
+      "directional": false,
+      "label": "Close"
+    },
+    "check": {
+      "file": "lucide/check.svg",
+      "directional": false,
+      "label": "Check"
+    },
+    "search": {
+      "file": "lucide/search.svg",
+      "directional": false,
+      "label": "Search"
+    },
+    "phone": {
+      "file": "lucide/phone.svg",
+      "directional": false,
+      "label": "Phone"
+    },
+    "mail": {
+      "file": "lucide/mail.svg",
+      "directional": false,
+      "label": "Email"
+    },
+    "map-pin": {
+      "file": "lucide/map-pin.svg",
+      "directional": false,
+      "label": "Location"
+    },
+    "external-link": {
+      "file": "lucide/external-link.svg",
+      "directional": false,
+      "label": "External link"
+    },
+    "download": {
+      "file": "lucide/download.svg",
+      "directional": false,
+      "label": "Download"
+    },
+    "play": {
+      "file": "lucide/play.svg",
+      "directional": false,
+      "label": "Play"
+    },
+    "pause": {
+      "file": "lucide/pause.svg",
+      "directional": false,
+      "label": "Pause"
+    },
+    "clock": {
+      "file": "lucide/clock.svg",
+      "directional": false,
+      "label": "Clock"
+    },
+    "plus": {
+      "file": "lucide/plus.svg",
+      "directional": false,
+      "label": "Plus"
+    },
+    "minus": {
+      "file": "lucide/minus.svg",
+      "directional": false,
+      "label": "Minus"
+    },
+    "arrow-up": {
+      "file": "lucide/arrow-up.svg",
+      "directional": false
+    },
+    "arrow-down": {
+      "file": "lucide/arrow-down.svg",
+      "directional": false
+    },
+    "arrow-up-right": {
+      "file": "lucide/arrow-up-right.svg",
+      "directional": true
+    },
+    "chevrons-left": {
+      "file": "lucide/chevrons-left.svg",
+      "directional": true
+    },
+    "chevrons-right": {
+      "file": "lucide/chevrons-right.svg",
+      "directional": true
+    },
+    "move-left": {
+      "file": "lucide/move-left.svg",
+      "directional": true
+    },
+    "move-right": {
+      "file": "lucide/move-right.svg",
+      "directional": true
+    },
+    "circle-arrow-left": {
+      "file": "lucide/circle-arrow-left.svg",
+      "directional": true
+    },
+    "circle-arrow-right": {
+      "file": "lucide/circle-arrow-right.svg",
+      "directional": true
+    },
+    "home": {
+      "file": "lucide/home.svg",
+      "directional": false
+    },
+    "smartphone": {
+      "file": "lucide/smartphone.svg",
+      "directional": false
+    },
+    "tablet": {
+      "file": "lucide/tablet.svg",
+      "directional": false
+    },
+    "monitor": {
+      "file": "lucide/monitor.svg",
+      "directional": false
+    },
+    "laptop": {
+      "file": "lucide/laptop.svg",
+      "directional": false
+    },
+    "phone-call": {
+      "file": "lucide/phone-call.svg",
+      "directional": false
+    },
+    "headphones": {
+      "file": "lucide/headphones.svg",
+      "directional": false
+    },
+    "message-circle": {
+      "file": "lucide/message-circle.svg",
+      "directional": false
+    },
+    "message-square": {
+      "file": "lucide/message-square.svg",
+      "directional": false
+    },
+    "send": {
+      "file": "lucide/send.svg",
+      "directional": false
+    },
+    "globe": {
+      "file": "lucide/globe.svg",
+      "directional": false
+    },
+    "languages": {
+      "file": "lucide/languages.svg",
+      "directional": false
+    },
+    "map": {
+      "file": "lucide/map.svg",
+      "directional": false
+    },
+    "navigation": {
+      "file": "lucide/navigation.svg",
+      "directional": false,
+      "label": "Directions"
+    },
+    "calendar-days": {
+      "file": "lucide/calendar-days.svg",
+      "directional": false
+    },
+    "calendar": {
+      "file": "lucide/calendar.svg",
+      "directional": false
+    },
+    "link": {
+      "file": "lucide/link.svg",
+      "directional": false
+    },
+    "copy": {
+      "file": "lucide/copy.svg",
+      "directional": false
+    },
+    "share-2": {
+      "file": "lucide/share-2.svg",
+      "directional": false
+    },
+    "info": {
+      "file": "lucide/info.svg",
+      "directional": false
+    },
+    "circle-help": {
+      "file": "lucide/circle-help.svg",
+      "directional": false
+    },
+    "circle-alert": {
+      "file": "lucide/circle-alert.svg",
+      "directional": false
+    },
+    "circle-check": {
+      "file": "lucide/circle-check.svg",
+      "directional": false
+    },
+    "circle-x": {
+      "file": "lucide/circle-x.svg",
+      "directional": false
+    },
+    "ellipsis": {
+      "file": "lucide/ellipsis.svg",
+      "directional": false
+    },
+    "ellipsis-vertical": {
+      "file": "lucide/ellipsis-vertical.svg",
+      "directional": false
+    },
+    "settings": {
+      "file": "lucide/settings.svg",
+      "directional": false
+    },
+    "sliders-horizontal": {
+      "file": "lucide/sliders-horizontal.svg",
+      "directional": false
+    },
+    "list-filter": {
+      "file": "lucide/list-filter.svg",
+      "directional": false
+    },
+    "list": {
+      "file": "lucide/list.svg",
+      "directional": false
+    },
+    "layout-grid": {
+      "file": "lucide/layout-grid.svg",
+      "directional": false
+    },
+    "image": {
+      "file": "lucide/image.svg",
+      "directional": false
+    },
+    "images": {
+      "file": "lucide/images.svg",
+      "directional": false
+    },
+    "file-text": {
+      "file": "lucide/file-text.svg",
+      "directional": false
+    },
+    "folder": {
+      "file": "lucide/folder.svg",
+      "directional": false
+    },
+    "briefcase-business": {
+      "file": "lucide/briefcase-business.svg",
+      "directional": false
+    },
+    "building-2": {
+      "file": "lucide/building-2.svg",
+      "directional": false
+    },
+    "users": {
+      "file": "lucide/users.svg",
+      "directional": false
+    },
+    "user-round": {
+      "file": "lucide/user-round.svg",
+      "directional": false
+    },
+    "eye": {
+      "file": "lucide/eye.svg",
+      "directional": false
+    },
+    "maximize": {
+      "file": "lucide/maximize.svg",
+      "directional": false
+    },
+    "minimize": {
+      "file": "lucide/minimize.svg",
+      "directional": false
+    },
+    "volume-2": {
+      "file": "lucide/volume-2.svg",
+      "directional": false
+    },
+    "volume-x": {
+      "file": "lucide/volume-x.svg",
+      "directional": false
+    },
+    "rotate-ccw": {
+      "file": "lucide/rotate-ccw.svg",
+      "directional": false
+    },
+    "refresh-cw": {
+      "file": "lucide/refresh-cw.svg",
+      "directional": false
+    },
+    "brand-instagram": {
+      "file": "tabler/brand-instagram.svg",
+      "directional": false,
+      "label": "Instagram"
+    },
+    "brand-telegram": {
+      "file": "tabler/brand-telegram.svg",
+      "directional": false,
+      "label": "Telegram"
+    },
+    "brand-whatsapp": {
+      "file": "tabler/brand-whatsapp.svg",
+      "directional": false,
+      "label": "WhatsApp"
+    },
+    "brand-linkedin": {
+      "file": "tabler/brand-linkedin.svg",
+      "directional": false,
+      "label": "LinkedIn"
+    },
+    "brand-facebook": {
+      "file": "tabler/brand-facebook.svg",
+      "directional": false,
+      "label": "Facebook"
+    },
+    "brand-x": {
+      "file": "tabler/brand-x.svg",
+      "directional": false,
+      "label": "X"
+    },
+    "brand-youtube": {
+      "file": "tabler/brand-youtube.svg",
+      "directional": false,
+      "label": "YouTube"
+    },
+    "brand-github": {
+      "file": "tabler/brand-github.svg",
+      "directional": false,
+      "label": "GitHub"
+    },
+    "brand-pinterest": {
+      "file": "tabler/brand-pinterest.svg",
+      "directional": false,
+      "label": "Pinterest"
+    },
+    "brand-tiktok": {
+      "file": "tabler/brand-tiktok.svg",
+      "directional": false,
+      "label": "TikTok"
+    },
+    "brand-discord": {
+      "file": "tabler/brand-discord.svg",
+      "directional": false,
+      "label": "Discord"
+    },
+    "text-align-start": {
+      "file": "lucide/text-align-start.svg",
+      "directional": true,
+      "label": "Menu aligned to start"
+    },
+    "text-align-end": {
+      "file": "lucide/text-align-end.svg",
+      "directional": true,
+      "label": "Menu aligned to end"
+    },
+    "align-justify": {
+      "file": "lucide/align-justify.svg",
+      "directional": false,
+      "label": "Menu with four lines"
+    },
+    "square-menu": {
+      "file": "lucide/square-menu.svg",
+      "directional": false,
+      "label": "Menu in a square"
+    },
+    "sun": {
+      "file": "lucide/sun.svg",
+      "directional": false,
+      "label": "Sun"
+    },
+    "moon": {
+      "file": "lucide/moon.svg",
+      "directional": false,
+      "label": "Moon"
+    },
+    "custom-menu-offset": {
+      "file": "custom/menu-offset.svg",
+      "directional": true,
+      "label": "Offset menu"
+    }
+  },
+  "sources": {
+    "lucide": {
+      "package": "lucide-static",
+      "version": "1.59.0",
+      "prefix": "package/icons/"
+    },
+    "tabler": {
+      "package": "@tabler/icons",
+      "version": "3.49.0",
+      "prefix": "package/icons/outline/"
+    }
+  }
+}

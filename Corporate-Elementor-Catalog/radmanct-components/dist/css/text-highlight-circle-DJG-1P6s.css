@@ -1,0 +1,1 @@
+.rdct-text[data-highlight=circle] .rdct-text__highlight::before { inset-block-end: var(--rdct-text-highlight-offset, -.12em); block-size: var(--rdct-text-highlight-height, calc(100% + .24em)); background: none; border: .045em solid var(--rdct-text-highlight-color); border-radius: var(--rdct-text-highlight-radius, 50%); }

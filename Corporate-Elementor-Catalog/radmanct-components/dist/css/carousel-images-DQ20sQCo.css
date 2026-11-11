@@ -1,0 +1,5 @@
+.rdct-crs--images .rdct-crs__slide { overflow: clip; border-radius: var(--rdct-radius, .75rem); }
+.rdct-crs--images .rdct-crs__media > img { inline-size: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+.rdct-crs--images .rdct-crs__media { block-size: var(--rdct-carousel-height, auto); }
+.rdct-crs--images .rdct-crs__media > img { block-size: 100%; }

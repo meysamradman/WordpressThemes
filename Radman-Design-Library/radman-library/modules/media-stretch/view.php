@@ -1,0 +1,2 @@
+<?php defined('ABSPATH')||exit;require_once __DIR__.'/data.php';$data=\RadmanLibrary\Designs\Stretch\data();$id=(int)$data['image']; ?>
+<section class="rdl-str" data-rdl-str><h1 class="screen-reader-text">بازشدن قاب تصویر با اسکرول</h1><div class="rdl-str__stage"><figure class="rdl-str__frame"><?php if(\RadmanCT\PageTitle\attachment_allowed($id)&&wp_attachment_is_image($id))echo wp_get_attachment_image($id,'full',false,['alt'=>$data['alt'],'loading'=>'eager','decoding'=>'async','sizes'=>'100vw']); ?></figure></div></section>

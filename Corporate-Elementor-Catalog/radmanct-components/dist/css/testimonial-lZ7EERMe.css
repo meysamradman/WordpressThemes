@@ -1,0 +1,26 @@
+.rdct-tst { box-sizing:border-box; position:relative; display:flex; flex-direction:column; gap:1.5rem; margin:0; min-inline-size:0; block-size:100%; padding:var(--rdct-tst-padding,28px); border-radius:var(--rdct-tst-radius,12px); background:var(--rdct-tst-background-color,var(--rdct-surface,#fff)); color:var(--rdct-tst-text-color,inherit); text-align:start; overflow-wrap:anywhere; }
+.rdct-tst__quote { margin:0; padding:0; border:0; font:inherit; line-height:1.85; }
+.rdct-tst__quote > :first-child { margin-block-start:0; }
+.rdct-tst__quote > :last-child { margin-block-end:0; }
+.rdct-tst__info { display:flex; align-items:center; flex-wrap:wrap; gap:1rem; margin-block-start:auto; }
+.rdct-tst__author { display:flex; flex-direction:column; gap:.25rem; min-inline-size:0; }
+.rdct-tst cite { font-style:normal; font-weight:700; color:var(--rdct-tst-name-color,inherit); }
+.rdct-tst__avatar { inline-size:64px; block-size:64px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+.rdct-tst__logo { inline-size:auto; max-inline-size:100px; max-block-size:48px; object-fit:contain; margin-inline-start:auto; }
+.rdct-tst__rating { color:var(--rdct-tst-rating-color,#d99b20); letter-spacing:.1em; direction:ltr; unicode-bidi:isolate; }
+.rdct-tst small { opacity:.75; }
+.rdct-tst__author > span { color:var(--rdct-tst-position-color,inherit); }
+.rdct-tst small, .rdct-tst small a { color:var(--rdct-tst-source-color,inherit); }
+.rdct-tst__source-icon { display:inline-flex;vertical-align:middle;margin-inline-end:.35em; }
+.rdct-tst__quote-mark { color:var(--rdct-tst-quote-color,inherit); }
+.rdct-tst__review { display:flex;flex-direction:column;gap:1rem;min-inline-size:0; }
+.rdct-tst__portrait { position:relative;min-inline-size:0;overflow:hidden; }
+.rdct-tst__portrait-image { position:absolute;inset:0;display:block;inline-size:100%;block-size:100%;object-fit:cover; }
+.rdct-tst__quote-mark { line-height:1; }
+.rdct-tst[data-align=center] { text-align:center; }
+.rdct-tst[data-align=start] { text-align:start; }
+.rdct-tst[data-align=start] .rdct-tst__info { justify-content:flex-start; }
+.rdct-tst[data-align=center] .rdct-tst__info { justify-content:center; }
+.rdct-tst[data-align=end] { text-align:end; }
+.rdct-tst[data-align=end] .rdct-tst__info { justify-content:flex-end; }
+.rdct-crs--profile-testimonials .rdct-crs__slide { padding:0; border:0; }

@@ -1,0 +1,23 @@
+{
+  "name": "radmanct-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "node tools/build.mjs && node tools/build-translations.mjs",
+    "check": "node --test tests/carousel.test.mjs tests/carousel-sync.test.mjs tests/text-segments.test.mjs tests/css-naming.test.mjs tests/assets.test.mjs tests/effects.test.mjs tests/builder-layout.test.mjs tests/builder-responsive.test.mjs tests/builder-history.test.mjs tests/navigation.test.mjs tests/builder-selection.test.mjs tests/text-reveal.test.mjs tests/text-lines.test.mjs tests/builder-elements.test.mjs tests/navigation-drawer.test.mjs tests/gallery.test.mjs tests/image-swipe.test.mjs tests/admin-ui.test.mjs tests/component-library.test.mjs tests/atomic-components.test.mjs tests/builder-workspace.test.mjs tests/builder-preview.test.mjs tests/builder-transport.test.mjs tests/builder-backup.test.mjs tests/builder-library.test.mjs tests/renderer-fields.test.mjs tests/container-motion.test.mjs tests/container-motion-manager.test.mjs tests/table-data.test.mjs",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/package.ps1"
+  },
+  "devDependencies": {
+    "vite": "8.3.4"
+  },
+  "dependencies": {
+    "@simonwep/pickr": "1.10.2",
+    "gsap": "3.15.0",
+    "swiper": "14.3.0",
+    "tom-select": "2.6.2"
+  }
+}

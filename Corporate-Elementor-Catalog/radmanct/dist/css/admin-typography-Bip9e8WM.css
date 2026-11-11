@@ -1,0 +1,5 @@
+.rdct-adm-interface { --rdct-admin-font: "Radman CT Admin Peyda", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+.rdct-adm-interface :is(.rdct-ico-picker__dialog, .rdct-clr-popover) { font-family: var(--rdct-admin-font); }
+.rdct-adm-interface :is(.rdct-stg, .rdct-bld-editor, .rdct-ico-picker__dialog) { font-size: 14px; line-height: 1.7; }
+.rdct-adm-interface #wpbody-content > .wrap,
+.rdct-adm-interface #wpbody-content > .wrap :where(h1, h2, h3, h4, h5, h6, label, legend, p, small, strong, summary, table, th, td, input, select, textarea, button, .button):not(.rdct-stg__font-preview):not(.rdct-stg-code textarea) { font-family: var(--rdct-admin-font); }

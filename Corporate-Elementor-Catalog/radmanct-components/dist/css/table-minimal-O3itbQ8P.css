@@ -1,0 +1,2 @@
+.rdct-tb--minimal thead { background:transparent; }
+.rdct-tb--minimal :is(th,td) { border:0; border-block-end:1px solid var(--rdct-tb-line,#e6ecef); }

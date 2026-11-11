@@ -1,0 +1,4 @@
+[data-rdct-menu].rdct-menu--skin-pill .rdct-menu { gap: .35rem; padding: .35rem; border-radius: 999px; background: color-mix(in srgb,currentColor 8%,transparent); }
+[data-rdct-menu].rdct-menu--skin-pill .rdct-menu > li > a { display: block; padding: .6em 1.2em; border-radius: 999px; transition: background-color .25s ease,color .25s ease; }
+[data-rdct-menu].rdct-menu--skin-pill .rdct-menu > li:is(:hover,:focus-within,.current-menu-item,.current-menu-ancestor) > a { background: var(--rdct-accent); color: var(--rdct-paper); }
+@media (prefers-reduced-motion: reduce) { [data-rdct-menu].rdct-menu--skin-pill .rdct-menu > li > a { transition: none; } }
