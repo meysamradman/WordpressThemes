@@ -14,7 +14,7 @@ export function initializeHeroSlider(root,{gsap}){
  const remember=node=>{if(!saved.has(node))saved.set(node,{style:node.getAttribute('style'),hidden:node.hidden,inert:node.inert,aria:node.getAttribute('aria-hidden')});return node;};
  const parts=slides.map(slide=>({slide:remember(slide),media:remember(slide.querySelector('[data-rdl-hsl-md]')),image:slide.querySelector('img'),text:[...slide.querySelectorAll('[data-rdl-hsl-tx]')].map(remember)}));
  parts.forEach(part=>{if(part.image)remember(part.image);});
- let index=0,pending=-1,direction=1,timeline,settle,gesture,suppressClick=false,suppressTimer,alive=true;
+ let index=0,pending=-1,direction=1,timeline,context,settle,gesture,suppressClick=false,suppressTimer,alive=true;
  const warmNext=()=>{
   const image=parts[index].image,next=parts[(index+1)%parts.length].image;
   if(!next)return;
@@ -32,7 +32,9 @@ export function initializeHeroSlider(root,{gsap}){
   number.textContent=String(index+1).padStart(2,'0');
   root.removeAttribute('data-rdl-hsl-drag');
  };
- const kill=()=>{settle?.kill();timeline?.kill();settle=timeline=undefined;pending=-1;};
+ // Revert through GSAP so its transform cache and the DOM return together.
+ // Removing inline styles alone leaves the outgoing x/scale cached for reuse.
+ const kill=()=>{settle?.kill();context?.revert();timeline?.kill();settle=timeline=context=undefined;pending=-1;};
  const announce=()=>{status.textContent=`اسلاید ${index+1} از ${slides.length}: ${slides[index].querySelector('h2').textContent}`;};
  const complete=commit=>{
   if(commit&&pending>=0){
@@ -48,15 +50,17 @@ export function initializeHeroSlider(root,{gsap}){
   if(next.image)next.image.loading='eager';
   if(motion.matches)return;
   next.slide.hidden=false;next.slide.style.zIndex='2';
-  gsap.set(next.media,{xPercent:sign*100});
-  if(next.image)gsap.set(next.image,{xPercent:-sign*100,scale:1.08});
-  gsap.set(next.text,{autoAlpha:0,y:32});
-  timeline=gsap.timeline({paused:true,defaults:{ease:'none'}})
-   .to(next.media,{xPercent:0,duration:1},0)
-   .to(previous.text,{autoAlpha:0,x:-sign*24,duration:.32,stagger:.025},0);
-  if(next.image)timeline.to(next.image,{xPercent:0,scale:1,duration:1},0);
-  if(previous.image)timeline.to(previous.image,{xPercent:-sign*3,scale:1.08,duration:1},0);
-  timeline.to(next.text,{autoAlpha:1,y:0,duration:.55,stagger:.075},.26);
+  context=gsap.context(()=>{
+   gsap.set(next.media,{xPercent:sign*100});
+   if(next.image)gsap.set(next.image,{xPercent:-sign*100,scale:1.08});
+   gsap.set(next.text,{autoAlpha:0,x:0,y:32});
+   timeline=gsap.timeline({paused:true,defaults:{ease:'none'}})
+    .to(next.media,{xPercent:0,duration:1},0)
+    .to(previous.text,{autoAlpha:0,x:-sign*24,duration:.32,stagger:.025},0);
+   if(next.image)timeline.to(next.image,{xPercent:0,scale:1,duration:1},0);
+   if(previous.image)timeline.to(previous.image,{xPercent:-sign*3,scale:1.08,duration:1},0);
+   timeline.to(next.text,{autoAlpha:1,y:0,duration:.55,stagger:.075},.26);
+  },root);
  };
  const finish=commit=>{
   if(pending<0)return;
@@ -87,8 +91,7 @@ export function initializeHeroSlider(root,{gsap}){
   }
   if(event.cancelable)event.preventDefault();
   const step=(dx>0?1:-1)*(rtl()?1:-1);
-  if(pending<0||step!==direction)prepare(step);
-  root.setAttribute('data-rdl-hsl-drag','');
+  if(pending<0||step!==direction){prepare(step);root.setAttribute('data-rdl-hsl-drag','');}
   const elapsed=event.timeStamp-gesture.lastTime;
   if(elapsed>0)gesture.velocity=(event.clientX-gesture.lastX)/elapsed;
   gesture.lastX=event.clientX;gesture.lastTime=event.timeStamp;gesture.dx=dx;

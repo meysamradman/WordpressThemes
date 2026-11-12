@@ -39,7 +39,7 @@ function fixture({reduced=false,direction='rtl'}={}){
  root.single={'.rdl-hsl__win':win,'[data-rdl-hsl-nav]':nav,'[data-rdl-hsl-num]':number,'[data-rdl-hsl-status]':status,'[data-rdl-hsl-prev]':prev,'[data-rdl-hsl-next]':next};
  root.multiple={'[data-rdl-hsl-itm]':slides};
  const tweens=[],timelines=[];
- const gsap={set(){},timeline(){
+ const gsap={set(){},context(initialize){initialize();return{revert(){}};},timeline(){
   const tl={value:0,killed:false,to(){return this;},progress(value){if(value===undefined)return this.value;this.value=value;return this;},duration:()=>1,kill(){this.killed=true;},tweenTo(target,options){
    const tween={killed:false,kill(){this.killed=true;},finish(){if(!this.killed){tl.value=target;options.onComplete();}}};tweens.push(tween);return tween;
   }};timelines.push(tl);return tl;
