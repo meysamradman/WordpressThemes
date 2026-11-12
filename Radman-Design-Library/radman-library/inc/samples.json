@@ -592,5 +592,19 @@
     "scroll_gap": false,
     "surface": "light",
     "icon": "layers"
+  },
+  "hero-slider": {
+    "title": "هیروی اسلایدری با پردهٔ جهت‌دار · Radman",
+    "slug": "hero-slider",
+    "group": "hero",
+    "kind": "section",
+    "key": "hero-slider",
+    "image": "hero",
+    "surface": "dark",
+    "scroll_gap": false,
+    "motion": "Vanilla Pointer Events + GSAP · کشیدن و سوایپ، فلش، پردهٔ جهت‌دار و ورود هماهنگ متن؛ بدون پخش خودکار",
+    "source": "modules/hero-slider/view.php",
+    "effects": ["gsap", "drag", "entrance"],
+    "icon": "panel-top"
   }
 }

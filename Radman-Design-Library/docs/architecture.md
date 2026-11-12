@@ -34,6 +34,9 @@
 `inc/catalog.php` ثبت CPT/طبقه‌بندی/رندر؛ `inc/catalog/model.php` مدل منتخب منبع، `query.php` فیلتر بومی، `admin.php` و `fields.php` ویرایش امن محتوا؛ `src/js/admin/catalog-editor.js` فقط مدیریت محصول. دو ماژول `catalog-archive` و `catalog-single` مالک نمایش و CSS مشترک `src/css/catalog.css` هستند. گالری از مالک کوچک موجود `ui/gallery.js` و `ui/gallery.css` استفاده می‌کند. قرارداد و منشأ در [catalog-products.md](catalog-products.md).
 
 ## ماژول‌های مرجع اسکرولی
+
+هیروی اسلایدری مالک مستقل `modules/hero-slider/{data.php,view.php,style.css,script.js}` و فیلتر `rdl/hero-slider/data` دارد. دادهٔ نمونه از attachmentهای محلی موجود می‌آید و هنگام انتقال جایگزین می‌شود. Pointer Events پیش‌نمایش پردهٔ جهت‌دار را کنترل می‌کند؛ GSAP محلی فقط حرکت را اجرا می‌کند، بدون Swiper، autoplay یا موتور اسکرول دوم. فلش، کیبورد، برگشت drag کوتاه، لغو pointer/resize و کاهش حرکت حفظ شوند. تنها اسلاید فعال در ترتیب فوکوس است؛ بدون JS همهٔ اسلایدها و لینک‌ها خوانا می‌مانند. ثبت محلی idempotent در `tools/register-hero-slider.php` است؛ خانواده hero با زیرشاخه‌های ثابت/اسلایدری از carousel جداست.
+
 کاروسل محتوای آزاد مالک کوچک PHP/CSS/JS در `inc/ui/carousel.php` و `src/{css,js}/ui/carousel.*` دارد؛ محتوای کارت فقط در مصرف‌کننده است. قرارداد جهت، گاتر، کنترل‌ها و انتقال در [carousel.md](carousel.md).
 `column-gallery`، `process-phases`، `media-stretch`، `sticky-cards` و `text-marquee` ماژول مستقل‌اند؛ فقط lifecycle/scroll-state/refresh/observer/vendor و sticky واقعی را از مالکان موجود می‌گیرند. تصاویر attachment محلی هستند و فیلتر data هر ماژول به مشتری مقصد قابل جایگزینی است. مقادیر حرکت، fallback و منشأ در [reference-sections.md](reference-sections.md)؛ فایل‌های انتقال در module-map.json.
 

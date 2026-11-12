@@ -293,6 +293,26 @@
     "src": "modules/header-radman/style.css",
     "isEntry": true
   },
+  "modules/hero-slider/script.js": {
+    "file": "js/sample-76-CcvZXmZQ.min.js",
+    "name": "sample-76",
+    "src": "modules/hero-slider/script.js",
+    "isEntry": true,
+    "imports": [
+      "_preload-helper-BHE0HD1N.min.js",
+      "_motion-BDGS3Mx2.min.js",
+      "_scroll-ievP5wp_.min.js"
+    ]
+  },
+  "modules/hero-slider/style.css": {
+    "file": "css/css-hero-slider-CeJCql6Z.min.css",
+    "name": "css-hero-slider",
+    "names": [
+      "css-hero-slider.css"
+    ],
+    "src": "modules/hero-slider/style.css",
+    "isEntry": true
+  },
   "modules/home-hero/script.js": {
     "file": "js/sample-7-D2IvYNwC.min.js",
     "name": "sample-7",

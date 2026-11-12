@@ -1,10 +1,11 @@
 # فهرست طرح‌های مرجع
 
-۳۱ نمونهٔ فعال؛ دستهٔ خالی صرفاً ظرفیت توسعه است. هر نمونه URL و دارایی مصرفی مستقل دارد. قرارداد انتقال در [scenario.md](scenario.md) و نقشهٔ فایل‌ها در [module-map.json](module-map.json).
+فهرست نمونه‌های مرجع؛ هر نمونه URL و دارایی مصرفی مستقل دارد. دستهٔ خالی صرفاً ظرفیت توسعه است. ثبت فعال طرح‌ها در `inc/samples.json`، قرارداد انتقال در [scenario.md](scenario.md) و نقشهٔ فایل‌ها در [module-map.json](module-map.json) است.
 
 | طرح | خانواده | کاربرد / حرکت |
 |---|---|---|
-| [هیرو با ورود متن و عبارت چرخشی · Radman](http://127.0.0.1:8097/design/home-hero/) | hero | GSAP Core · ورود متن، چرخش عبارت و حرکت جزئیات تصویر |
+| [هیروی اسلایدری با پردهٔ جهت‌دار · Radman](http://127.0.0.1:8097/design/hero-slider/) | hero / hero-slider | GSAP + Pointer Events · drag، سوایپ و فلش؛ انتقال پرده‌ای، پارالاکس محدود و ورود هماهنگ متن؛ بدون autoplay |
+| [هیرو با ورود متن و عبارت چرخشی · Radman](http://127.0.0.1:8097/design/home-hero/) | hero / hero-static | GSAP Core · ورود متن، چرخش عبارت و حرکت جزئیات تصویر؛ بدون تعویض اسلاید |
 | [پنل‌های اسکرولی با پین · Radman](http://127.0.0.1:8097/design/home-services/) | panels | GSAP Core + ScrollTrigger + ScrollSmoother · پنل‌های پین‌شده و جزئیات گرافیکی |
 | [گالری با متن استیکی و ورود تصاویر · Radman](http://127.0.0.1:8097/design/home-projects/) | gallery | GSAP Core + ScrollTrigger + ScrollSmoother · متن استیکی و ورود تصاویر |
 | [عنوان صفحه با تصویر یا ویدئو · Radman](http://127.0.0.1:8097/design/services-cover/) | page-title | ScrollTrigger + ScrollSmoother · پارالاکس و زوم تصویر/ویدئو |
