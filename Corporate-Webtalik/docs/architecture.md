@@ -168,6 +168,6 @@ Services gallery: sections/services/project-marquee.php replaces the retired ima
 
 The project-marquee visual reference is https://demo.artureanec.com/themes/azurio/services/ (the “Let’s talk about your project” section); do not confuse it with the retired Orisa services-4 image strip.
 
-Marquee velocity contract: keep the inspected Azurio base loop at 70s, clamp(abs(scroll velocity / 200), 1, 6), and ease timeScale over .5s with power1.out. Apply velocity on viewport entry as well as scroll updates. One restartable .2s idle call restores base speed when updates stop; release it with the loop. No per-frame layout reads or extra scroll owner.
+Marquee velocity contract: keep the inspected Azurio base loop at 70s, clamp(abs(scroll velocity / 200), 1, 6), and ease timeScale over .5s with power1.out. Apply velocity on viewport entry as well as scroll updates. Hold the peak within each scroll burst instead of restarting a slower tween every smoother frame. One restartable .5s idle call eases back to base speed when updates stop; release it with the loop. No per-frame layout reads or extra scroll owner.
 
 Media ownership: offering-web (13) and offering-apps (20) are the original animated home artwork bases, paired with their existing orbital assets and geometry. Service showcase replacements use separate services-web (111) / services-apps (112) keys. Never update a home artwork mapping to replace a service-page image; preserve the home image/orbit combination.
