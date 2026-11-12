@@ -6,7 +6,7 @@ $tag=in_array($args['heading_tag']??'h2',['h1','h2'],true)?($args['heading_tag']
 $heading=wp_unique_id('rdl-mq-ttl-');
 ?>
 <section class="rdl-mq rdc-inv" aria-labelledby="<?php echo esc_attr($heading); ?>" data-rdl-mq>
- <header class="rdl-mq__hdr"><a href="<?php echo esc_url($data['url']); ?>"><<?php echo $tag; ?> class="rdl-mq__ttl" id="<?php echo esc_attr($heading); ?>"><?php foreach($data['title'] as $line): ?><span><?php echo esc_html($line); ?></span><?php endforeach; ?></<?php echo $tag; ?>></a><button class="rdl-mq__play" type="button" hidden aria-pressed="false" data-rdl-mq-play>توقف حرکت</button></header>
+ <header class="rdl-mq__hdr"><a href="<?php echo esc_url($data['url']); ?>"><<?php echo $tag; ?> class="rdl-mq__ttl" id="<?php echo esc_attr($heading); ?>"><?php foreach($data['title'] as $line): ?><span><?php echo esc_html($line); ?></span><?php endforeach; ?></<?php echo $tag; ?>></a></header>
  <div class="rdl-mq__win" tabindex="0" aria-label="گالری حوزه‌های طراحی">
   <div class="rdl-mq__track"><ul class="rdl-mq__grp">
    <?php foreach($data['images'] as $item): $id=(int)$item['id'];if(!\RadmanCT\PageTitle\attachment_allowed($id))continue; ?>

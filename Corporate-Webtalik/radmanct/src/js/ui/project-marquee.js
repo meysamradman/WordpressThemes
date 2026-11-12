@@ -5,28 +5,24 @@ export function initializeProjectMarquee(root,{gsap,ScrollTrigger}){
  const doc=root.ownerDocument,win=root.querySelector('.rdc-prj-mq__win'),track=root.querySelector('.rdc-prj-mq__trk'),group=track.firstElementChild;
  if(!group.children.length)return()=>{};
  const clone=group.cloneNode(true);clone.setAttribute('aria-hidden','true');clone.setAttribute('inert','');track.append(clone);win.classList.add('is-enh');
- let visible=false,focused=false,speed,targetScale=1;
- // The reference's 70s cycle contains 15 cards; preserve pixels/second for shorter collections.
+ let visible=false,focused=false,speed;
  const duration=70*group.children.length/15;
  const tween=gsap.fromTo(track,{xPercent:0},{xPercent:-50,duration,ease:'none',repeat:-1,paused:true});
- // Preserve a wheel burst long enough to reach its requested speed.
- // Smoother tail updates must not cancel the acceleration on every frame.
+ // Reference response only: no held peak, idle timer or extended coast.
  const drive=velocity=>{
-  const next=gsap.utils.clamp(1,6,Math.abs(velocity/200));
-  if(next===targetScale)return;
-  targetScale=next;speed?.kill();speed=gsap.to(tween,{timeScale:next,duration:next===1?1.4:.5,ease:'power1.out',overwrite:true});
+  speed=gsap.to(tween,{timeScale:gsap.utils.clamp(1,6,Math.abs(velocity/200)),duration:.5,ease:'power1.out',overwrite:'auto'});
  };
- const idle=gsap.delayedCall(.7,()=>drive(0)).pause();
- const accelerate=self=>{const velocity=self.getVelocity();if(Math.abs(velocity)/200>targetScale)drive(velocity);idle.restart(true);};
+ const settle=()=>{if(visible&&!doc.hidden&&!focused)drive(0);};
  const sync=()=>tween.paused(!visible||doc.hidden||focused);
  const focus=()=>{focused=true;sync();},blur=()=>{focused=false;sync();};
- const trigger=ScrollTrigger.create({trigger:win,start:'top bottom',end:'bottom top',onToggle:self=>{visible=self.isActive;sync();if(visible)accelerate(self);else{idle.pause();speed?.kill();targetScale=1;tween.timeScale(1);}},onUpdate:self=>{
+ const trigger=ScrollTrigger.create({trigger:win,start:'top bottom',end:'bottom top',onToggle:self=>{visible=self.isActive;sync();},onUpdate:self=>{
   if(!visible||doc.hidden||focused)return;
-  accelerate(self);
+  drive(self.getVelocity());
  }});
  visible=trigger.isActive;sync();
+ ScrollTrigger.addEventListener('scrollEnd',settle);
  win.addEventListener('focusin',focus);win.addEventListener('focusout',blur);doc.addEventListener('visibilitychange',sync);
- return()=>{idle.kill();speed?.kill();trigger.kill();tween.revert();clone.remove();win.classList.remove('is-enh');win.removeEventListener('focusin',focus);win.removeEventListener('focusout',blur);doc.removeEventListener('visibilitychange',sync);};
+ return()=>{ScrollTrigger.removeEventListener('scrollEnd',settle);gsap.killTweensOf(tween);trigger.kill();tween.revert();clone.remove();win.classList.remove('is-enh');win.removeEventListener('focusin',focus);win.removeEventListener('focusout',blur);doc.removeEventListener('visibilitychange',sync);};
  });
  return()=>media.revert();
 }
