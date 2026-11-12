@@ -78,8 +78,8 @@ add_filter('radmanct/home/data',static function(array $data):array {
 add_filter('radmanct/services/specs',static function(array $items):array {
  return array(
         array('slug'=>'custom-website-design-development','title'=>__('Custom website development','radmanct'),'description'=>__('Fast, tailored websites designed around your brand and business needs.','radmanct'),'media'=>'services-web'),
-        array('slug'=>'specialized-wordpress-design-development','title'=>__('Specialized WordPress development','radmanct'),'description'=>__('Custom WordPress design, development and optimization with a maintainable architecture.','radmanct'),'media'=>'offering-wordpress'),
-        array('slug'=>'admin-panel-web-systems','title'=>__('Admin panels and web systems','radmanct'),'description'=>__('Purpose-built dashboards and connected systems that simplify your daily workflows.','radmanct'),'media'=>'offering-systems'),
+        array('slug'=>'specialized-wordpress-design-development','title'=>__('Specialized WordPress development','radmanct'),'description'=>__('Custom WordPress design, development and optimization with a maintainable architecture.','radmanct'),'media'=>'services-wordpress'),
+        array('slug'=>'admin-panel-web-systems','title'=>__('Admin panels and web systems','radmanct'),'description'=>__('Purpose-built dashboards and connected systems that simplify your daily workflows.','radmanct'),'media'=>'services-systems'),
         array('slug'=>'mobile-app-design-development','title'=>__('Mobile application development','radmanct'),'description'=>__('Thoughtful mobile experiences with reliable performance and integrated services.','radmanct'),'media'=>'services-apps'),
     );
 });
