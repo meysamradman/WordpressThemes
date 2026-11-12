@@ -179,6 +179,25 @@
     "src": "modules/card-accordion/style.css",
     "isEntry": true
   },
+  "modules/card-carousel/script.js": {
+    "file": "js/sample-74-b00-dQx_.min.js",
+    "name": "sample-74",
+    "src": "modules/card-carousel/script.js",
+    "isEntry": true,
+    "imports": [
+      "_preload-helper-BHE0HD1N.min.js",
+      "_scroll-ievP5wp_.min.js"
+    ]
+  },
+  "modules/card-carousel/style.css": {
+    "file": "css/css-card-carousel-D90TXrOg.min.css",
+    "name": "css-card-carousel",
+    "names": [
+      "css-card-carousel.css"
+    ],
+    "src": "modules/card-carousel/style.css",
+    "isEntry": true
+  },
   "modules/catalog-archive/script.js": {
     "file": "js/sample-48-V4q8z5Wn.min.js",
     "name": "sample-48",

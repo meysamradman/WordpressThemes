@@ -1,5 +1,7 @@
 # نام‌گذاری کتابخانهٔ Radman
 
+`cr` کاروسل، `win` پنجرهٔ قابل اسکرول و `trk` مسیر کارت‌هاست؛ `rdl-cr` هستهٔ عمومی و `rdl-cards` فقط نمونهٔ کارت‌های ترکیبی است.
+
 واژه‌نامه از `Corporate-Webtalik/docs/naming.md` گرفته شده است. نام تجاری Radman باقی می‌ماند؛ نام مشتری بخشی از شناسهٔ فنی نیست.
 
 - قالب کارگاه: `radman-library`؛ text domain همان؛ namespace رابط `RadmanLibrary` و کلاس/ID/data/CSS custom property/event رابط `rdl-` است.

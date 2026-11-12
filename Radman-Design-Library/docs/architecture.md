@@ -34,6 +34,7 @@
 `inc/catalog.php` ثبت CPT/طبقه‌بندی/رندر؛ `inc/catalog/model.php` مدل منتخب منبع، `query.php` فیلتر بومی، `admin.php` و `fields.php` ویرایش امن محتوا؛ `src/js/admin/catalog-editor.js` فقط مدیریت محصول. دو ماژول `catalog-archive` و `catalog-single` مالک نمایش و CSS مشترک `src/css/catalog.css` هستند. گالری از مالک کوچک موجود `ui/gallery.js` و `ui/gallery.css` استفاده می‌کند. قرارداد و منشأ در [catalog-products.md](catalog-products.md).
 
 ## ماژول‌های مرجع اسکرولی
+کاروسل محتوای آزاد مالک کوچک PHP/CSS/JS در `inc/ui/carousel.php` و `src/{css,js}/ui/carousel.*` دارد؛ محتوای کارت فقط در مصرف‌کننده است. قرارداد جهت، گاتر، کنترل‌ها و انتقال در [carousel.md](carousel.md).
 `column-gallery`، `process-phases`، `media-stretch`، `sticky-cards` و `text-marquee` ماژول مستقل‌اند؛ فقط lifecycle/scroll-state/refresh/observer/vendor و sticky واقعی را از مالکان موجود می‌گیرند. تصاویر attachment محلی هستند و فیلتر data هر ماژول به مشتری مقصد قابل جایگزینی است. مقادیر حرکت، fallback و منشأ در [reference-sections.md](reference-sections.md)؛ فایل‌های انتقال در module-map.json.
 
 مالک مشترک نوار متن: inc/ui/text-marquee.php، src/css/ui/text-marquee.css و src/js/ui/text-marquee.js؛ text-loop نمونهٔ مستقل و text-marquee مصرف‌کنندهٔ ترکیبی همان مالک‌اند. کارت فهرست فقط icon محلی samples.json را رندر می‌کند؛ thumbnail یا عکس نمایشی در فهرست درخواست نمی‌شود.

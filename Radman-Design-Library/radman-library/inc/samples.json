@@ -573,5 +573,24 @@
     "scroll_gap": false,
     "surface": "light",
     "icon": "type"
+  },
+  "card-carousel": {
+    "slug": "card-carousel",
+    "title": "کاروسل کارت‌های ترکیبی با برش کناره · Radman",
+    "group": "carousel",
+    "kind": "section",
+    "source": "reference/mixed-cards-carousel",
+    "reference": "https://essentials.pixfort.com/ai-agency/",
+    "motion": "کاروسل دستی با نمایش بخشی از کارت بعدی، جهت RTL/LTR، کشیدن، لمس، کلیدها و صفحه‌بندی؛ محتوای کارت مستقل از هسته",
+    "effects": [
+      "native",
+      "drag",
+      "video",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "surface": "light",
+    "icon": "layers"
   }
 }
