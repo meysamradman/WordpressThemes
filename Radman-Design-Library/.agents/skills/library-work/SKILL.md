@@ -24,6 +24,8 @@ Scope: keep existing home/services sections, but do not add full home/services p
 
 Content carousels compose inc/ui/carousel.php and src/css/ui + src/js/ui/carousel owners. Keep card markup/data in each consuming module; the engine knows no card types. Preserve logical start gutter/opposite edge peek, RTL/LTR keyboard and native touch/drag, resize and lifecycle cleanup. Do not substitute marquee or add a slider framework; see docs/carousel.md.
 
+Carousel arrows advance one card, never a viewport. Keep matching start/end gutters in bleed layouts and avoid double gutters in boxed layouts. Programmatic motion temporarily disables native snap, supports interruption/rapid clicks/reduced motion and restores snap on cleanup; unchanged resize notifications must not cancel it.
+
 Catalog: inc/catalog.php and inc/catalog/ own radman_product, four product taxonomies and the retained _radman_content_data schema adapted from Corporate-Elementor-Catalog. No Elementor, Components/Content plugin, settings panel, cart or checkout dependency. Per-product media/specification fields are native content, not global settings. Transfer catalog modules and their mapped helpers only; do not modify the source checkout or copy its database.
 
 Classify and name designs by their reusable form/behavior (hero, page-title, panels, showcase, accordion, gallery, text), not by the source home/services page. Keep source slugs for stable URLs. Text-fill must initialize every word uniformly, preserve Persian shaping and bind its range to the visible text; clamp the end to reachable scroll and refresh through the existing owner after font layout. Do not add blank runway or a pin to conceal an unreachable range.

@@ -18,11 +18,11 @@ export function initializeCarousel(root){
  const glide=target=>{
   const from=position();target=Math.max(0,Math.min(max,target));cancelMotion();
   if(reduced.matches||Math.abs(target-from)<1){win.scrollLeft=sign*target;return;}
-  const state={target,raf:0,start:null},duration=Math.min(600,Math.max(320,Math.abs(target-from)*.35));
+  const state={target,raf:0,start:null},duration=Math.min(650,Math.max(480,Math.abs(target-from)*.5));
   motion=state;win.classList.add('is-moving');
   const frame=time=>{
    if(motion!==state)return;
-   state.start??=time;const progress=Math.min(1,(time-state.start)/duration),eased=1-Math.pow(1-progress,3);
+   state.start??=time;const progress=Math.min(1,(time-state.start)/duration),eased=progress<.5?4*progress**3:1-(-2*progress+2)**3/2;
    win.scrollLeft=sign*(from+(target-from)*eased);
    if(progress<1)state.raf=view.requestAnimationFrame(frame);
    else{cancelMotion();indicate();}
@@ -37,12 +37,11 @@ export function initializeCarousel(root){
  const back=()=>step(-1),forward=()=>step(1);
  const choose=event=>{const button=event.target.closest('button[data-page]');if(button&&dots.contains(button))go(Number(button.dataset.page));};
  const measure=()=>{
-  cancelMotion();
-  sign=view.getComputedStyle(win).direction==='rtl'?-1:1;max=Math.max(0,win.scrollWidth-win.clientWidth);
-  offsets=slides.map(slide=>Math.abs(slide.offsetLeft-slides[0].offsetLeft));
-  const gap=Number.parseFloat(view.getComputedStyle(track).columnGap)||0,padding=Number.parseFloat(view.getComputedStyle(win).paddingInlineStart)||0;
-  const count=Math.max(1,Math.floor((win.clientWidth-padding+gap)/(slides[0].offsetWidth+gap)));
-  const nextPages=[0];for(let index=count;index<slides.length;index+=count){const value=Math.min(max,offsets[index]);if(value>nextPages.at(-1)+2)nextPages.push(value);}
+  const nextSign=view.getComputedStyle(win).direction==='rtl'?-1:1,nextMax=Math.max(0,win.scrollWidth-win.clientWidth);
+  const nextOffsets=slides.map(slide=>Math.abs(slide.offsetLeft-slides[0].offsetLeft));
+  if(nextSign!==sign||nextMax!==max||nextOffsets.some((offset,index)=>offset!==offsets[index]))cancelMotion();
+  sign=nextSign;max=nextMax;offsets=nextOffsets;
+  const nextPages=[0];for(let index=1;index<slides.length;index++){const value=Math.min(max,offsets[index]);if(value>nextPages.at(-1)+2)nextPages.push(value);}
   if(max>nextPages.at(-1)+2)nextPages.push(max);
   if(nextPages.length!==pages.length){dots.replaceChildren();dotButtons=nextPages.map((_,index)=>{const button=doc.createElement('button');button.type='button';button.dataset.page=String(index);button.setAttribute('aria-label',`صفحهٔ ${index+1}`);button.setAttribute('aria-controls',win.id);dots.append(button);return button;});}
   pages=nextPages;nav.hidden=dots.hidden=pages.length<2;indicate();
