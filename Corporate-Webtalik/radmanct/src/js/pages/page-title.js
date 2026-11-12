@@ -1,6 +1,6 @@
 import {createPageLifecycle,reportRuntimeError} from '../runtime/lifecycle.js';
 import {initializeMediaParallax} from '../runtime/media-parallax.js';
-import {loadAnimation} from '../motion.js';
+import {loadAnimation,loadGsap} from '../motion.js';
 
 export function initializeTitleVideo(root){
  const doc=root.ownerDocument,view=doc.defaultView;
@@ -49,8 +49,9 @@ export function initializeTitleVideo(root){
 
 if(typeof document!=='undefined'){
  const page=createPageLifecycle(window);
- for(const root of document.querySelectorAll('.rdc-pt--cover')){
-  const targets=[...root.querySelectorAll('.rdc-pt__inr>img,.rdc-pt__inr>video')];
+ for(const art of document.querySelectorAll('[data-rdc-pt-art]'))page.mountRoot(art,'page-title-art',()=>import('../runtime/art-orbit.js'),module=>module.initializeOfferingArt(art,loadGsap));
+ for(const root of document.querySelectorAll('.rdc-pt--cover:not(.rdc-pt--inset)')){
+  const targets=[...root.querySelectorAll('.rdc-pt__inr>img,.rdc-pt__inr>video,.rdc-pt__inr>.rdc-pt__art')];
   if(targets.length)page.mountRoot(root,'page-title-motion',()=>({}),()=>initializeMediaParallax(root,{frame:root,target:targets,motion:'zoom',amount:15,minWidth:1024},loadAnimation));
  }
  for(const root of document.querySelectorAll('[data-rdc-pt-vid]'))page.mountRoot(root,'page-title-video',()=>({}),()=>initializeTitleVideo(root));

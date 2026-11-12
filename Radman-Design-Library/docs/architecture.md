@@ -39,3 +39,5 @@
 مالک مشترک نوار متن: inc/ui/text-marquee.php، src/css/ui/text-marquee.css و src/js/ui/text-marquee.js؛ text-loop نمونهٔ مستقل و text-marquee مصرف‌کنندهٔ ترکیبی همان مالک‌اند. کارت فهرست فقط icon محلی samples.json را رندر می‌کند؛ thumbnail یا عکس نمایشی در فهرست درخواست نمی‌شود.
 
 رنگ و کارت‌های رابط فهرست فقط در `assets/shell.css` و توکن‌های `--rdl-*` نگهداری شوند؛ ظاهر نمونه‌های مشتری تغییر نکند. سایدبار فهرست sticky بومی CSS با فاصلهٔ admin bar، ارتفاع محدود به viewport و اسکرول داخلی دسته‌های بلند است؛ زیر ۹۰۰ پیکسل جریان عادی دارد. برای آن pin، GSAP، listener اسکرول یا مالک موازی نسازید؛ جایگزینی AJAX همان کلاس‌ها را حفظ می‌کند.
+
+project-marquee motion follows the inspected Azurio services reference: 70s loop; timeScale clamp(abs(scroll velocity / 200),1,6), .5s power1.out easing. Apply on entry and scroll updates, then settle to base speed after .2s without updates through a single reusable delayedCall. Release the idle call, speed tween, trigger and clone together; preserve pause/focus/hidden-tab/reduced-motion handling. Customer copies retain these constants and reuse the destination scroll owner.

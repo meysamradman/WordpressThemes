@@ -20,11 +20,11 @@ function data(array $args=array()):array {
   if($blog&&get_post_status($blog)==='publish')$trail[]=array('title'=>get_the_title($blog),'url'=>get_permalink($blog));
  }elseif(is_singular('project'))$trail[]=array('title'=>__('Projects','radmanct'),'url'=>get_post_type_archive_link('project'));
  $trail[]=array('title'=>$title,'url'=>'');
- $defaults=array('type'=>'cover','title'=>$title,'accent'=>'','desc'=>$public&&$id?wp_strip_all_tags(get_post_field('post_excerpt',$id)):'','label'=>'','button'=>array(),'link'=>array(),'image'=>$public&&$id?(int)get_post_thumbnail_id($id):0,'video'=>0,'trail'=>$trail);
+ $defaults=array('type'=>'cover','title'=>$title,'accent'=>'','desc'=>$public&&$id?wp_strip_all_tags(get_post_field('post_excerpt',$id)):'','label'=>'','button'=>array(),'link'=>array(),'image'=>$public&&$id?(int)get_post_thumbnail_id($id):0,'video'=>0,'media_inset'=>false,'art_tracks'=>array(),'trail'=>$trail);
  $data=array_replace($defaults,apply_filters('radmanct/page-title/data',$defaults),$args);
  $data['type']=in_array($data['type'],array('split','cover'),true)?$data['type']:'cover';
  foreach(array('title','accent','desc','label') as $key)$data[$key]=is_scalar($data[$key])?(string)$data[$key]:'';
- foreach(array('button','link','trail') as $key)if(!is_array($data[$key]))$data[$key]=array();
+ foreach(array('button','link','trail','art_tracks') as $key)if(!is_array($data[$key]))$data[$key]=array();
  $data['image']=absint($data['image']);$data['video']=absint($data['video']);
  if(!$public){$data['desc']=$data['accent']=$data['label']='';$data['button']=$data['link']=array();$data['image']=$data['video']=0;}
  if(!attachment_allowed($data['image'])||!wp_attachment_is_image($data['image']))$data['image']=0;
@@ -60,7 +60,10 @@ function media(array $data):void {
  if($data['image']||$data['video'])\RadmanCT\Assets\script('pages/page-title');
  echo '<div class="rdc-pt__md" aria-hidden="true">';
  echo '<div class="rdc-pt__inr" data-rdc-scr-spd=".4">';
+ $art=$data['image']&&!$data['video']&&!empty($data['art_tracks']);
+ if($art)echo '<div class="rdc-pt__art" data-rdc-pt-art data-rdc-ofr-art>';
  if($data['image'])echo wp_get_attachment_image($data['image'],'full',false,array('class'=>'rdc-pt__im','alt'=>'','loading'=>'eager','fetchpriority'=>'high','decoding'=>'async','sizes'=>'100vw'));
+ if($art){get_template_part('template-parts/sections/services/title-art',null,array('tracks'=>$data['art_tracks']));echo '</div>';}
  if($data['video']){
   echo '<video class="rdc-pt__vid" muted loop playsinline preload="none" tabindex="-1" data-src="'.esc_url(wp_get_attachment_url($data['video'])).'"></video>';
  }

@@ -1,5 +1,5 @@
 <?php defined('ABSPATH')||exit; ?>
-<section class="rdc-pt rdc-pt--cover rdc-inv"<?php if($args['video'])echo ' data-rdc-pt-vid'; ?>>
+<section class="rdc-pt rdc-pt--cover rdc-inv<?php if(!empty($args['media_inset']))echo ' rdc-pt--inset'; ?>"<?php if($args['video'])echo ' data-rdc-pt-vid'; ?>>
  <?php \RadmanCT\PageTitle\media($args); ?>
  <div class="rdc-pt__cnt"><div class="rdc-pt__copy">
   <?php \RadmanCT\PageTitle\trail($args['trail']); ?>

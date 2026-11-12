@@ -20,8 +20,10 @@ add_filter('radmanct/services/faq',static function():array {
   array(__('Can you build a custom solution?','radmanct'),__('Yes. We review your requirements and recommend an approach for your custom website, web application, or mobile app.','radmanct')),
  );
 });
-add_filter('radmanct/services/strip',static function():array {
- return array_map(static fn(int $number):int=>\RadmanCT\media_id('services-strip-'.$number),array(48,45,46,47,49));
+add_filter('radmanct/services/marquee',static function():array {
+ $labels=array('عکاسی','مدل‌سازی سه‌بعدی','توسعه','تصویرسازی','مد و استایل','هنر دیجیتال','بسته‌بندی','موشن','تولید ویدئو');
+ $images=array();foreach($labels as $index=>$label)$images[]=array('id'=>\RadmanCT\media_id('services-marquee-'.($index+1)),'label'=>$label);
+ return array('title'=>array('دربارهٔ پروژه‌ات','گفت‌وگو کنیم'),'url'=>\RadmanCT\Footer\data()['contact'],'images'=>$images);
 });
 // Current customer's editorial data. Replace this file for the next project;
 // shared renderers, assets and animation code remain independent of this content.
@@ -35,6 +37,13 @@ add_filter('radmanct/page-title/enabled',static function(bool $enabled):bool {
 });
 add_filter('radmanct/page-title/data',static function(array $data):array {
  if(!$data['image'])$data['image']=\RadmanCT\media_id('hero');
+ $data['media_inset']=is_page('services');
+ if(is_page('services'))$data['art_tracks']=array(
+  array('M739.5 215 L765 187.25 H777 V383',18,.62),
+  array('M0 187.25 H111.75 V255.5',20,.3),
+  array('M78 584 V718.25 H262.5',19,.55),
+  array('M682.5 718.25 H915',24,.28)
+ );
  $data['label']=__('What we build','radmanct');
  $description=__('Thoughtful design, reliable development, and room for your business to grow.','radmanct');
  $data['button']=array('label'=>__('Start a project','radmanct'),'url'=>\RadmanCT\Footer\data()['contact']);
@@ -68,10 +77,10 @@ add_filter('radmanct/home/data',static function(array $data):array {
 });
 add_filter('radmanct/services/specs',static function(array $items):array {
  return array(
-        array('slug'=>'custom-website-design-development','title'=>__('Custom website development','radmanct'),'description'=>__('Fast, tailored websites designed around your brand and business needs.','radmanct'),'media'=>'offering-web'),
+        array('slug'=>'custom-website-design-development','title'=>__('Custom website development','radmanct'),'description'=>__('Fast, tailored websites designed around your brand and business needs.','radmanct'),'media'=>'services-web'),
         array('slug'=>'specialized-wordpress-design-development','title'=>__('Specialized WordPress development','radmanct'),'description'=>__('Custom WordPress design, development and optimization with a maintainable architecture.','radmanct'),'media'=>'offering-wordpress'),
         array('slug'=>'admin-panel-web-systems','title'=>__('Admin panels and web systems','radmanct'),'description'=>__('Purpose-built dashboards and connected systems that simplify your daily workflows.','radmanct'),'media'=>'offering-systems'),
-        array('slug'=>'mobile-app-design-development','title'=>__('Mobile application development','radmanct'),'description'=>__('Thoughtful mobile experiences with reliable performance and integrated services.','radmanct'),'media'=>'offering-apps'),
+        array('slug'=>'mobile-app-design-development','title'=>__('Mobile application development','radmanct'),'description'=>__('Thoughtful mobile experiences with reliable performance and integrated services.','radmanct'),'media'=>'services-apps'),
     );
 });
 add_filter('radmanct/home/selected-work',static function(array $items):array {

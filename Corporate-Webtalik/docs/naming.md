@@ -28,7 +28,7 @@
 | `ctr` / `cnt` | Container / Content |
 | `prj` / `prjs` | Project / Projects |
 | `svc` / `svcs` | Service / Services |
-| `svc-strip` | Full-width image strip below the services showcase |
+| `prj-mq` | Continuous bottom-aligned gallery with project CTA; `trk` is its moving track |
 | `faq` | Shared frequently asked questions |
 | `ctc` | Floating contact launcher and its channel panel |
 | `pnl` | Menu panel |
