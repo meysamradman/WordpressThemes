@@ -554,5 +554,24 @@
     "scroll_gap": false,
     "surface": "dark",
     "icon": "layers"
+  },
+  "text-images": {
+    "slug": "text-images",
+    "title": "عنوان با عکس‌های داخل متن · Radman",
+    "group": "text",
+    "kind": "section",
+    "source": "reference/inline-images",
+    "reference": "https://undsgn.com/uncode/pages/services-wellness/",
+    "motion": "عنوان واکنش‌گرا با عکس‌های کوچک داخل خط؛ ورود ملایم متن و زوم عکس‌ها یک‌بار در دید، با حفظ اتصال حروف فارسی",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "entrance",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "surface": "light",
+    "icon": "type"
   }
 }

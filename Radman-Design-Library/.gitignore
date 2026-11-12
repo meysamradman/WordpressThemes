@@ -13,3 +13,5 @@ radman-library/dist-selected/
 .env.*
 !.env.example
 !.env.*.example
+
+/output/

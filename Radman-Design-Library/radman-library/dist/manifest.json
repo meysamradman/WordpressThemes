@@ -680,6 +680,25 @@
     "src": "modules/text-fill/style.css",
     "isEntry": true
   },
+  "modules/text-images/script.js": {
+    "file": "js/sample-72-BjA1OTpc.min.js",
+    "name": "sample-72",
+    "src": "modules/text-images/script.js",
+    "isEntry": true,
+    "imports": [
+      "_scroll-ievP5wp_.min.js",
+      "_motion-view-aC_4bNO8.min.js"
+    ]
+  },
+  "modules/text-images/style.css": {
+    "file": "css/css-text-images-DgCOV2jH.min.css",
+    "name": "css-text-images",
+    "names": [
+      "css-text-images.css"
+    ],
+    "src": "modules/text-images/style.css",
+    "isEntry": true
+  },
   "modules/text-loop/script.js": {
     "file": "js/sample-66-XrPSOUkj.min.js",
     "name": "sample-66",

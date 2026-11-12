@@ -1,0 +1,6 @@
+.rdl-tx-im{padding:clamp(4rem,8vw,8rem) var(--rdc-gut);background:var(--rdl-tx-im-bg,#fff);color:var(--rdl-tx-im-clr,#303131)}
+.rdl-tx-im .rdl-tx-im__ttl{max-inline-size:75rem;margin:0 auto;padding:0;font-size:clamp(1.55rem,7.3vw,6.25rem);font-weight:500;line-height:1.4;text-align:center;text-wrap:wrap;overflow-wrap:normal}
+.rdl-tx-im__part{display:inline-block;max-inline-size:100%;white-space:nowrap;margin-inline:.07em}
+.rdl-tx-im__md{display:inline-block;inline-size:1.35em;block-size:.9em;margin-inline-start:.06em;vertical-align:-.05em;overflow:hidden;border-radius:.08em}
+.rdl-tx-im__md img{display:block;inline-size:100%;block-size:100%;object-fit:cover}
+@media(max-width:25rem){.rdl-tx-im__part{white-space:normal}.rdl-tx-im .rdl-tx-im__ttl{line-height:1.6}}
