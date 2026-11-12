@@ -21,13 +21,13 @@ const torso=new T.Mesh(new T.CylinderGeometry(.3,.47,.72,32),metal);torso.positi
 box(body,'Body_Base',.83,.12,.6,.06,dark,0,-1.02);
 const neck=new T.Mesh(new T.CylinderGeometry(.115,.14,.3,24),dark);neck.position.y=-.15;body.add(neck);
 const base=new T.Mesh(new T.CylinderGeometry(.2,.3,.35,24),metal);base.position.y=-1.24;body.add(base);
-const pivot=new T.Group();pivot.name='Head_Pivot';pivot.position.y=.01;root.add(pivot);
+const pivot=new T.Group();pivot.name='Head_Pivot';pivot.position.y=.01;pivot.scale.setScalar(.9);root.add(pivot);
 box(pivot,'Robot_Head',2.45,1.48,.85,.21,shell,0,.69,-.1);
 box(pivot,'Head_Back',2.27,1.3,.08,.17,dark,0,.69,-.532);
 box(pivot,'Head_Rim',2.29,1.33,.12,.18,rim,0,.7,.333);
 box(pivot,'Face_Glass',2.17,1.22,.14,.16,black,0,.7,.39);
-sphere(pivot,'Left_Eye',.185,eye,-.5,.84,.51);
-sphere(pivot,'Right_Eye',.185,eye,.5,.84,.51);
+sphere(pivot,'Left_Eye',.185,eye,-.4,.84,.51);
+sphere(pivot,'Right_Eye',.185,eye,.4,.84,.51);
 // Flush circular joints follow the rounded shell; no projecting ears.
 for(const side of [-1,1]){
  const joint=new T.Mesh(new T.TorusGeometry(.17,.016,6,28),dark);
