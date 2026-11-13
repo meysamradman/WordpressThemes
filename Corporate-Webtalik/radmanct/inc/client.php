@@ -50,7 +50,7 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
  foreach(apply_filters('radmanct/services/specs',array()) as $service){
   if(is_page($service['slug'])){$description=$service['description'];break;}
  }
- if(is_page('about-us')){
+ if(is_page('custom-website-design-development')){
   $data['media_inset']=true;
   $data['media_flat']=true;
   $data['art_draw']=true;
@@ -61,6 +61,14 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
   );
   $data['art_nodes']=array();
   $data['art_matrix']=array(91.87,760);
+ }elseif(is_page('about-us')){
+  $data['media_inset']=true;
+  $data['media_flat']=true;
+  $data['art_tracks']=array(
+   array('M220.05 180.86 L199.95 200.96 L181.87 221.05 L167.8 241.15 L155.74 261.24 L145.69 281.34 L136.65 301.44',28,.35),
+   array('M790.77 462.2 C794.79 484.31 794.79 506.41 792.78 527.51',24,.65),
+   array('M192.92 643.06 C241.15 706.36 301.44 748.57 361.72 757.61',30,.3)
+  );
   $data['label']=__('Who we are','radmanct');
   $description=__('A focused team for thoughtful design and reliable development.','radmanct');
  }elseif(is_page('contact-us')){
