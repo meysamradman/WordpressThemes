@@ -29,8 +29,11 @@
 .rdc-pt--inset { block-size:100vh; block-size:100svh; min-block-size:0; }
 .rdc-pt--inset .rdc-pt__inr { display:grid; align-items:start; }
 .rdc-pt__art { position:relative; inline-size:100%; aspect-ratio:16/9; }
+.rdc-pt--flat .rdc-pt__md,.rdc-pt--flat .rdc-pt__art { background:var(--rdc-clr-dark); }
 .rdc-pt__orbs { position:absolute; inset:0; inline-size:100%; block-size:100%; pointer-events:none; }
 .rdc-pt__dot { position:absolute; display:block; inline-size:clamp(3px,.18vw,4px); aspect-ratio:1; border-radius:50%; background:var(--rdc-clr-art-node); opacity:0; pointer-events:none; }
+.rdc-pt--flat .rdc-pt__dot { inline-size:.18%; }
+.rdc-pt__node { position:absolute;inline-size:.18%;aspect-ratio:1;border-radius:50%;background:var(--rdc-clr-art-node-mut);opacity:.45;transform:translate(-50%,-50%);pointer-events:none; }
 .rdc-pt__cnt { inline-size:max(0px,calc(100% - 2 * var(--rdc-gut))); margin-inline:auto; margin-block:auto; padding-block:2rem; }
 .rdc-pt--cover .rdc-pt__copy { inline-size:100%; max-inline-size:680px; padding-inline:.75rem; }
 .rdc-pt--cover .rdc-pt__trl { margin-block-end:2rem; }

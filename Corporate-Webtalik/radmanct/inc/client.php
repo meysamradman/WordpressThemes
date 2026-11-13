@@ -54,6 +54,15 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
   $data['label']=__('Who we are','radmanct');
   $description=__('A focused team for thoughtful design and reliable development.','radmanct');
  }elseif(is_page('contact-us')){
+  $data['media_inset']=true;
+  $data['media_flat']=true;
+  $data['art_nodes']=array(array(91.87,479.75),array(737.22,274.3),array(937.03,702.44),array(893.4,812.58));
+  $data['art_tracks']=array(
+   array('M153.88 479.75 C153.88 296.11 315.79 146.91 516.75 146.91 C671.77 146.91 810.72 239.87 872.73 376.45',28,.12),
+   array('M179.14 195.11 V596.81',24,.55),
+   array('M838.28 269.71 H1056.46',20,.3),
+   array('M183.73 789.63 V895.22',22,.72)
+  );
   $data['label']=__('Let us talk','radmanct');
   $description=__('Let’s talk about your next project.','radmanct');
   $data['button']=array('label'=>__('Explore our services','radmanct'),'url'=>home_url('/services/'));

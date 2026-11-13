@@ -7,3 +7,6 @@
 <?php foreach($tracks as $index=>$track): ?>
 <span class="rdc-pt__dot" data-orbit-track="<?php echo (int)$index; ?>" data-orbit-phase="<?php echo esc_attr($track[2]); ?>" aria-hidden="true"></span>
 <?php endforeach; ?>
+<?php foreach(array_slice($args['nodes']??array(),0,6) as $node): ?>
+<span class="rdc-pt__node" style="left:<?php echo esc_attr(round((float)$node[0]/1920*100,4)); ?>%;top:<?php echo esc_attr(round((float)$node[1]/1080*100,4)); ?>%" aria-hidden="true"></span>
+<?php endforeach; ?>
