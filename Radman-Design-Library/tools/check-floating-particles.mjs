@@ -1,0 +1,21 @@
+import {readFileSync} from 'node:fs';
+import {runInNewContext} from 'node:vm';
+import assert from 'node:assert/strict';
+const source=readFileSync(new URL('../radman-library/modules/particles-float/script.js',import.meta.url),'utf8').replace('export function','function').split('for(const root of document.querySelectorAll')[0];
+const initialize=runInNewContext(`${source}\ninitializeFloatingParticles`,{AbortController});
+class Target extends EventTarget{constructor(){super();this.dataset={};}setAttribute(k,v){this[k]=v;}removeAttribute(){delete this.dataset.rdlPflState;}}
+const root=new Target(),doc=new Target(),view=new Target(),button=new Target(),motion=new Target();let observer;
+motion.matches=false;doc.hidden=false;doc.defaultView=view;root.ownerDocument=doc;
+root.querySelector=s=>s.includes('pause')?button:{};
+view.matchMedia=()=>motion;
+view.IntersectionObserver=class{constructor(callback){this.callback=callback;observer=this;}observe(){}disconnect(){this.disconnected=true;}};
+const cleanup=initialize(root);assert.equal(initialize(root),cleanup);assert.equal(root.dataset.rdlPflState,'paused');
+observer.callback([{isIntersecting:true}]);assert.equal(root.dataset.rdlPflState,'running');
+button.dispatchEvent(new Event('click'));assert.equal(root.dataset.rdlPflState,'paused');
+button.dispatchEvent(new Event('click'));assert.equal(root.dataset.rdlPflState,'running');
+doc.hidden=true;doc.dispatchEvent(new Event('visibilitychange'));assert.equal(root.dataset.rdlPflState,'paused');
+doc.hidden=false;doc.dispatchEvent(new Event('visibilitychange'));assert.equal(root.dataset.rdlPflState,'running');
+motion.matches=true;motion.dispatchEvent(new Event('change'));assert.equal(root.dataset.rdlPflState,'static');assert.equal(button.hidden,true);
+motion.matches=false;motion.dispatchEvent(new Event('change'));observer.callback([{isIntersecting:false}]);assert.equal(root.dataset.rdlPflState,'paused');
+cleanup();assert.equal(observer.disconnected,true);button.dispatchEvent(new Event('click'));assert.equal(root.dataset.rdlPflState,undefined);
+console.log('PASS visibility, pause/resume, reduced motion, idempotency and teardown (mock DOM observers).');

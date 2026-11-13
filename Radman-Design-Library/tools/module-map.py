@@ -35,8 +35,10 @@ for slug,module in registry.items():
     if slug in ['header-radman','footer-radman','page-home','page-services']:helpers+=['shared/radmanct/inc/brand.php','shared/radmanct/inc/navigation.php']
     if slug in ['services-cover','services-strip','page-services','wellness-scroll','project-marquee']:helpers+=['shared/radmanct/inc/page-title.php']
     if slug in ['home-hero','home-services','services-cover','page-home','page-services']:helpers+=['shared/radmanct/inc/assets.php']
-    if slug not in ['robot','text-3d','data-table','particles','curtain-accordion']:helpers+=['shared/radmanct/inc/ui/button.php','shared/radmanct/inc/icons.php','shared/radmanct/inc/icons/catalog.php']
+    if slug not in ['robot','text-3d','data-table','particles','particles-float','curtain-accordion']:helpers+=['shared/radmanct/inc/ui/button.php','shared/radmanct/inc/icons.php','shared/radmanct/inc/icons/catalog.php']
     out[slug]={'kind':module.get('kind','section'),'family':module['group'],'effects':module.get('effects',[]),'entries':entries,'source_files':relative_graph(entries+helpers+['src/css/client-base.css']),'css_base':'src/css/client-base.css','php_contracts':['Native WordPress APIs','Use existing RadmanCT helpers once; replace workshop fixture adapters with client data'],'preview_only':['inc/samples.php','inc/portfolio.php','preview.php','assets/bar.css'],'vendor':'local GSAP 3.15.0 only if consumed; never one vendor copy per sample'}
+    if slug=='particles-float':
+        out[slug].update(vendor='None; independent CSS transforms with native visibility/reduced-motion lifecycle; no Canvas, GSAP or RAF loop',php_contracts=['Native WordPress escaping and unique heading ID','rdl/particles-float/data supplies copy and number clamped to 0..24; blue/white colors belong to scoped CSS tokens'])
     if slug=='curtain-accordion':
         out[slug].update(vendor='None; native details, CSS transitions and local standalone event/resize lifecycle',php_contracts=['Native WordPress attachment APIs','rdl/curtain-accordion/data supplies title, background attachment ID and items title/desc/icon/image IDs; replace the workshop media option for client use'],assets=['fixtures/curtain-accordion/media.json'])
     if slug=='data-table':

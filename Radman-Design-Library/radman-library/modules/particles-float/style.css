@@ -1,0 +1,14 @@
+/* Independent rendition of the blue/white floating dots observed in Hub/Nilgoon. */
+.rdl-pfl{--rdl-pfl-blue:#0f63c6;--rdl-pfl-white:#fff;--rdl-pfl-bg:#edf5ff;--rdl-pfl-ink:#10294b;position:relative;isolation:isolate;display:grid;place-items:center;min-block-size:max(36rem,calc(100svh - 5rem));padding:clamp(4rem,8vw,8rem) var(--rdc-gut);overflow:clip;background:var(--rdl-pfl-bg);color:var(--rdl-pfl-ink)}
+.rdl-pfl__dots{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.rdl-pfl__dot{position:absolute;inset-inline-start:var(--rdl-pfl-x);inset-block-start:var(--rdl-pfl-y);inline-size:var(--rdl-pfl-size);block-size:var(--rdl-pfl-size);border-radius:50%;background:var(--rdl-pfl-blue);animation:rdl-pfl-drift var(--rdl-pfl-dur) linear var(--rdl-pfl-delay) infinite alternate;animation-play-state:paused}
+.rdl-pfl__dot:nth-child(even){background:var(--rdl-pfl-white)}
+.rdl-pfl[data-rdl-pfl-state="running"] .rdl-pfl__dot{animation-play-state:running}
+.rdl-pfl__copy{max-inline-size:55rem;text-align:center;pointer-events:none}
+.rdl-pfl__lbl{font-size:.875rem;color:var(--rdl-pfl-blue);margin-block-end:1.5rem}
+.rdl-pfl__copy h1{font-size:clamp(2.6rem,4.7vw,5rem);color:inherit;margin-block-end:1.5rem}
+.rdl-pfl__desc{max-inline-size:48ch;margin-inline:auto;font-size:1rem;line-height:1.9}
+.rdl-pfl__pause{position:absolute;inset-inline-end:var(--rdc-gut);inset-block-end:2rem;min-block-size:44px;border:1px solid var(--rdl-pfl-blue);border-radius:2rem;background:transparent;color:var(--rdl-pfl-blue);padding:.6rem 1.2rem;font-size:.875rem}
+.rdl-pfl__pause[hidden]{display:none}
+@keyframes rdl-pfl-drift{from{transform:translate(-5vw,0) scale(.65)}to{transform:translate(5vw,var(--rdl-pfl-dy)) scale(1)}}
+@media(prefers-reduced-motion:reduce){.rdl-pfl__dot{animation:none}}

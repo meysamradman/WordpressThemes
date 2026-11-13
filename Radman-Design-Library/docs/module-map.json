@@ -2501,5 +2501,49 @@
     "assets": [
       "fixtures/curtain-accordion/media.json"
     ]
+  },
+  "particles-float": {
+    "kind": "section",
+    "family": "particles",
+    "effects": [
+      "native",
+      "loop"
+    ],
+    "entries": [
+      "modules/particles-float/data.php",
+      "modules/particles-float/script.js",
+      "modules/particles-float/style.css",
+      "modules/particles-float/view.php"
+    ],
+    "source_files": [
+      "modules/particles-float/data.php",
+      "modules/particles-float/script.js",
+      "modules/particles-float/style.css",
+      "modules/particles-float/view.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "src/css/client-base.css"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress escaping and unique heading ID",
+      "rdl/particles-float/data supplies copy and number clamped to 0..24; blue/white colors belong to scoped CSS tokens"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "src/css/canvas-base.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
+    ],
+    "vendor": "None; independent CSS transforms with native visibility/reduced-motion lifecycle; no Canvas, GSAP or RAF loop"
   }
 }

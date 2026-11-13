@@ -519,6 +519,21 @@
     "src": "modules/music-archive/style.css",
     "isEntry": true
   },
+  "modules/particles-float/script.js": {
+    "file": "js/sample-86-a-qBLXvd.min.js",
+    "name": "sample-86",
+    "src": "modules/particles-float/script.js",
+    "isEntry": true
+  },
+  "modules/particles-float/style.css": {
+    "file": "css/css-particles-float-QqBaJpY9.min.css",
+    "name": "css-particles-float",
+    "names": [
+      "css-particles-float.css"
+    ],
+    "src": "modules/particles-float/style.css",
+    "isEntry": true
+  },
   "modules/particles/engine.js": {
     "file": "js/engine-BYssdeXI.min.js",
     "name": "engine",

@@ -693,5 +693,21 @@
     "surface": "light",
     "scroll_gap": false,
     "icon": "accordion"
+  },
+  "particles-float": {
+    "title": "ذرات شناور آبی و سفید · Radman",
+    "slug": "particles-float",
+    "group": "particles",
+    "kind": "section",
+    "source": "modules/particles-float/view.php",
+    "motion": "۱۰ نقطه آبی/سفید بدون خطوط اتصال؛ حرکت CSS مستقل، توقف دستی/خارج دید/تب مخفی و کاهش حرکت؛ بدون Canvas یا GSAP",
+    "effects": [
+      "native",
+      "loop"
+    ],
+    "image": "none",
+    "surface": "light",
+    "scroll_gap": false,
+    "icon": "particles"
   }
 }

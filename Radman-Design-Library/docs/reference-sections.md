@@ -103,6 +103,12 @@ text-loop نمونهٔ مستقل است؛ text-marquee همان renderer/CSS/JS
 
 منشأ ۱۳ فایل تصویر/آیکون در `fixtures/curtain-accordion/media.json` ثبت است؛ این‌ها دارایی‌های نمایشی همان سایت مرجع‌اند و مجوز بازتوزیع عمومی از این انتقال نتیجه نمی‌شود. آیکون‌های SVG مشاهده‌شده فقط به شکل img محلی مصرف می‌شوند؛ سیاست عمومی آپلود SVG تغییر نمی‌کند. `tools/register-curtain-accordion.php` ورود صریح و idempotent به رسانهٔ همین کتابخانه است. فیلتر `rdl/curtain-accordion/data` مالک attachment IDها و متن است؛ در مشتری باید جایگزین شود. runtime هیچ درخواست خارجی ندارد.
 
+## ذرات شناور آبی و سفید — `particles-float`
+
+مرجع مشاهده‌شده در مرورگر: [خانهٔ نیلگون](https://nilgoondeniz.com/)، پس‌زمینهٔ معرفی/گواهی‌ها. تنظیمات DOM مرجع: ۱۰ ذره، دو رنگ #FFFFFF و #0F63C6، دایره با اندازهٔ پایهٔ ۴ و Retina؛ Hub `LiquidParticles` در `Hub/hub/assets/js/theme.js` اتصال خطوط و تعامل hover/click را خاموش می‌کند. این مدل با ذرات پیوندخوردهٔ تیره متفاوت است؛ کارت‌ها، محتوای شرکت، نشانگر ماوس حلقه‌ای و موتور کامل Hub جزو طرح منتقل‌شده نیستند.
+
+مالک مستقل `modules/particles-float/{data,view,style,script}` است، بدون import از ذرات قبلی یا هر ماژول دیگر. ۱۰ نقطهٔ تزئینی آبی/سفید با transform و scale CSS جابه‌جا می‌شوند؛ بازسازی دقیق شبیه‌سازی Canvas/attraction مرجع هدف این اجرای سبک نیست. شمار داده بین ۰ تا ۲۴ محدود است. حلقهٔ RAF، Canvas، موتور vendor، resize listener و درخواست خارجی ندارد؛ یک IntersectionObserver و visibility/reduced-motion تغییر وضعیت CSS را کنترل می‌کنند. توقف دستی موقعیت فعلی را نگه می‌دارد؛ بیرون دید/تب مخفی توقف، کاهش حرکت/بدون JS نمایش ایستا و cleanup ناظر/listener را آزاد می‌کند. فیلتر `rdl/particles-float/data` مالک متن و تعداد و توکن‌های scoped مالک رنگ‌اند. هر دو نمونه زیر خانوادهٔ مستقل `particles` باقی می‌مانند.
+
 ## ذرات پیوندخورده — `particles`
 
 موتور محلی particles.js نسخهٔ 2.0.0 با آداپتر lifecycle از `Corporate-Elementor-Catalog/radmanct-components/src/js/vendor/particles.js` به‌عنوان مرجع فقط‌خواندنی منتقل شده؛ مجوز MIT و نام Vincent Garreau در `modules/particles/LICENSE.txt` و سربرگ موتور حفظ شده‌اند. ماژول مالک مستقل data/view/style/script/engine است و از طرح دیگری import نمی‌کند. موتور هنگام ورود به دید به‌صورت lazy بارگذاری می‌شود؛ شمار ذرات متناسب با مساحت و حداکثر ۷۲ است. توقف کاربر، خروج از دید، تب مخفی و reduced-motion موتور را آزاد می‌کنند؛ fallback ایستا خوانایی را حفظ می‌کند. resize فقط یک مالک رویدادمحور دارد و teardown ناظرها، listenerها و زمان‌بندی‌های خود ماژول را آزاد می‌کند.
