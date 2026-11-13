@@ -95,6 +95,14 @@ text-loop نمونهٔ مستقل است؛ text-marquee همان renderer/CSS/JS
 درخواست ماوس به‌صورت قابلیت جدا افزوده شده؛ در افکت flip مرجع، pointer handler پیدا نشد. با pointer=false خاموش می‌شود. wrapper ماوس از wrapper چرخش جداست؛ GSAP quickTo موجود با duration=.7، power3.out و سقف 20px افقی/10px عمودی/1.5deg کار می‌کند. روی لمس فعال نیست؛ هیچ حلقهٔ RAF یا ticker دائمی ندارد. توقف/بازگشت هنگام خروج، blur، تب مخفی و cleanup lifecycle موجود انجام می‌شود. داده و CSS ماژول همراه گراف انتخابی مشتری منتقل شوند؛ Elementor/jQuery/فونت یا موتور مرجع کپی نشوند.
 
 
+## ستون‌های بازشونده — `curtain-accordion`
+
+مرجع: [مواد اولیه شیمیایی نیلگون](https://nilgoondeniz.com/chemical-raw-materials-supply/)؛ Liquid Themes Hub Curtain. مالک قبلی فقط‌خواندنی: `Hub/hub-elementor-addons/assets/css/elements/curtain/curtain-base.css`، widget `curtain.php` و کلاس `LiquidCurtain` در `Hub/hub/assets/js/theme.js`. مرجع مدت .65s، منحنی cubic-bezier(.23,1,.32,1)، حداقل ارتفاع 550px، گوشه 20px، رویداد pointerenter و شکست عمودی زیر 992px دارد. نسخهٔ مستقل همین هندسه/زمان را با PHP، details بومی، CSS و JS کوچک اجرا می‌کند؛ کد vendor، Elementor و jQuery منتقل نمی‌شوند.
+
+ماژول مالک مستقل data/view/style/script است؛ هیچ import از طرح یا موتور اسکرول دیگری ندارد. هر بار یک پنل باز است؛ hover فقط برای ماوس دقیق دسکتاپ، کلیک/لمس و Arrow/Home/End برای کیبورد. summary متن عادی کنترل است و H2 فقط عنوان واقعی محتوای پنل؛ H1 نمونه و تصاویر تزئینی نام‌های تکراری نمی‌سازند. بدون JS details عمودی کار می‌کند؛ reduced-motion بدون transition/ورود است. یک ResizeObserver عرض متن را ثابت نگه می‌دارد تا هنگام تغییر عرض پنل نوشته دوباره نشکند؛ اندازه‌گیری RAF فقط پس از تغییر اندازه و cleanup رویدادها/ناظر محلی است.
+
+منشأ ۱۳ فایل تصویر/آیکون در `fixtures/curtain-accordion/media.json` ثبت است؛ این‌ها دارایی‌های نمایشی همان سایت مرجع‌اند و مجوز بازتوزیع عمومی از این انتقال نتیجه نمی‌شود. آیکون‌های SVG مشاهده‌شده فقط به شکل img محلی مصرف می‌شوند؛ سیاست عمومی آپلود SVG تغییر نمی‌کند. `tools/register-curtain-accordion.php` ورود صریح و idempotent به رسانهٔ همین کتابخانه است. فیلتر `rdl/curtain-accordion/data` مالک attachment IDها و متن است؛ در مشتری باید جایگزین شود. runtime هیچ درخواست خارجی ندارد.
+
 ## ذرات پیوندخورده — `particles`
 
 موتور محلی particles.js نسخهٔ 2.0.0 با آداپتر lifecycle از `Corporate-Elementor-Catalog/radmanct-components/src/js/vendor/particles.js` به‌عنوان مرجع فقط‌خواندنی منتقل شده؛ مجوز MIT و نام Vincent Garreau در `modules/particles/LICENSE.txt` و سربرگ موتور حفظ شده‌اند. ماژول مالک مستقل data/view/style/script/engine است و از طرح دیگری import نمی‌کند. موتور هنگام ورود به دید به‌صورت lazy بارگذاری می‌شود؛ شمار ذرات متناسب با مساحت و حداکثر ۷۲ است. توقف کاربر، خروج از دید، تب مخفی و reduced-motion موتور را آزاد می‌کنند؛ fallback ایستا خوانایی را حفظ می‌کند. resize فقط یک مالک رویدادمحور دارد و teardown ناظرها، listenerها و زمان‌بندی‌های خود ماژول را آزاد می‌کند.

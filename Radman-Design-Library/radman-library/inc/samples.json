@@ -607,7 +607,11 @@
     "scroll_gap": false,
     "motion": "Vanilla Pointer Events + GSAP · کشیدن و سوایپ، فلش، پردهٔ جهت‌دار و ورود هماهنگ متن؛ بدون پخش خودکار",
     "source": "modules/hero-slider/view.php",
-    "effects": ["gsap", "drag", "entrance"],
+    "effects": [
+      "gsap",
+      "drag",
+      "entrance"
+    ],
     "icon": "panel-top"
   },
   "hero-typography": {
@@ -619,7 +623,10 @@
     "source": "modules/hero-typography/view.php",
     "reference": "https://creative-agency.elementra.themerex.net/",
     "motion": "هیرو بدون اسلایدر؛ تیتر پنج‌خطی با تصاویر دایره‌ای، تصویر عمودی و زمینهٔ روشن؛ ورود یک‌بارهٔ GSAP با حفظ اتصال فارسی",
-    "effects": ["gsap", "entrance"],
+    "effects": [
+      "gsap",
+      "entrance"
+    ],
     "image": "none",
     "surface": "light",
     "scroll_gap": false,
@@ -632,7 +639,9 @@
     "kind": "section",
     "source": "modules/data-table/view.php",
     "motion": "جدول بومی PHP/CSS با caption، سرستون و عنوان ردیف؛ اسکرول افقی و ستون اول ثابت در موبایل؛ بدون JavaScript",
-    "effects": ["native"],
+    "effects": [
+      "native"
+    ],
     "image": "none",
     "surface": "light",
     "scroll_gap": false,
@@ -645,7 +654,9 @@
     "kind": "section",
     "source": "modules/button-roll/view.php",
     "motion": "دکمهٔ منتخب Webtalik با جابه‌جایی متن و فلش در hover و فوکوس کیبورد؛ روشن/تیره و reduced-motion؛ فقط CSS",
-    "effects": ["native"],
+    "effects": [
+      "native"
+    ],
     "image": "none",
     "surface": "light",
     "scroll_gap": false,
@@ -658,10 +669,29 @@
     "kind": "section",
     "source": "modules/particles/view.php",
     "motion": "Canvas محلی با حرکت آرام و خطوط اتصال؛ توقف دستی، سقف ذره/Retina و توقف خارج دید و تب مخفی؛ بدون GSAP یا وابستگی به طرح دیگر",
-    "effects": ["canvas", "loop"],
+    "effects": [
+      "canvas",
+      "loop"
+    ],
     "image": "none",
     "surface": "dark",
     "scroll_gap": false,
     "icon": "particles"
+  },
+  "curtain-accordion": {
+    "title": "آکاردئون ستون‌های بازشونده · Radman",
+    "slug": "curtain-accordion",
+    "group": "accordion",
+    "subgroup": "accordion-curtain",
+    "kind": "section",
+    "source": "modules/curtain-accordion/view.php",
+    "motion": "پنل‌های افقی با عنوان عمودی؛ بازشدن با ماوس، کلیک و کیبورد؛ موبایل عمودی، حرکت ۰٫۶۵ ثانیه و کاهش حرکت؛ بدون GSAP",
+    "effects": [
+      "native"
+    ],
+    "image": "none",
+    "surface": "light",
+    "scroll_gap": false,
+    "icon": "accordion"
   }
 }

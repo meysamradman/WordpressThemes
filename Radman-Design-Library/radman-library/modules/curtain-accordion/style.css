@@ -1,8 +1,7 @@
 /* Independent rendition of Liquid Themes Hub Curtain; source/provenance in docs/reference-sections.md. */
 .rdl-crt{--rdl-crt-bg:#edf6ff;--rdl-crt-ink:#10294b;--rdl-crt-accent:#008dff;--rdl-crt-gap:20px;--rdl-crt-rail:120px;padding:clamp(1rem,2vw,2rem);color:var(--rdl-crt-ink);min-block-size:calc(100svh - 5rem);display:grid;align-content:center}
 .rdl-crt__row{display:flex;flex-direction:column;gap:var(--rdl-crt-gap)}
-.rdl-crt__itm{position:relative;isolation:isolate;min-inline-size:0;border-radius:20px;background:var(--rdl-crt-bg);overflow:clip}
-.rdl-crt__bg{position:absolute;z-index:-1;inset:0;inline-size:100%;block-size:100%;object-fit:cover;object-position:left center;pointer-events:none}
+.rdl-crt__itm{position:relative;isolation:isolate;min-inline-size:0;border-radius:20px;background:var(--rdl-crt-art,none) left center/cover no-repeat var(--rdl-crt-bg);overflow:clip}
 .rdl-crt__tgl{display:flex;align-items:center;gap:1rem;list-style:none;cursor:pointer;padding:1.25rem 1.75rem;font-weight:600}
 .rdl-crt__tgl::-webkit-details-marker{display:none}
 .rdl-crt__ico{inline-size:32px;block-size:32px;object-fit:contain;flex:none}

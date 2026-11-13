@@ -8,8 +8,8 @@ export function initializeCurtain(root){
  const queue=()=>{if(alive&&!frame)frame=view.requestAnimationFrame(layout);};
  for(const [index,item] of items.entries()){
   const button=item.querySelector('summary');
-  item.addEventListener('pointerenter',()=>{if(fine.matches&&view.innerWidth>=992&&!root.contains(root.ownerDocument.activeElement))select(item);},{signal:events.signal});
-  button.addEventListener('click',event=>{event.preventDefault();select(item);},{signal:events.signal});
+  item.addEventListener('pointerenter',()=>{if(fine.matches&&view.innerWidth>=992&&!root.querySelector('summary:focus-visible'))select(item);},{signal:events.signal});
+  button.addEventListener('click',event=>{event.preventDefault();select(item);button.focus({preventScroll:true});},{signal:events.signal});
   button.addEventListener('keydown',event=>{
    let next;if(event.key==='Home')next=0;else if(event.key==='End')next=items.length-1;else if(['ArrowRight','ArrowLeft','ArrowDown','ArrowUp'].includes(event.key)){const rtl=view.getComputedStyle(root).direction==='rtl';const forward=event.key==='ArrowDown'||event.key===(rtl?'ArrowLeft':'ArrowRight');next=(index+(forward?1:-1)+items.length)%items.length;}else return;
    event.preventDefault();select(items[next]);items[next].querySelector('summary').focus({preventScroll:true});

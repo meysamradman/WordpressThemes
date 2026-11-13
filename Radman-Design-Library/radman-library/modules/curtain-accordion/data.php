@@ -14,8 +14,11 @@ function data():array {
  $items=array();foreach($copy as $i=>$item)$items[]=array('title'=>$item[0],'desc'=>$item[1],'image'=>(int)($media['panel-'.$i]??0),'icon'=>(int)($media['icon-'.$i]??0));
  return apply_filters('rdl/curtain-accordion/data',array('title'=>'آکاردئون ستون‌های بازشونده','background'=>(int)($media['background']??0),'items'=>$items));
 }
+function allowed(int $id):bool {
+ if(!$id||get_post_type($id)!=='attachment'||!in_array(get_post_status($id),array('inherit','publish'),true))return false;
+ $parent=wp_get_post_parent_id($id);return !$parent||(is_post_publicly_viewable($parent)&&!post_password_required($parent));
+}
 function media(int $id,string $size='large',array $attrs=array()):string {
- if(!$id||get_post_type($id)!=='attachment'||!in_array(get_post_status($id),array('inherit','publish'),true))return '';
- $parent=wp_get_post_parent_id($id);if($parent&&(!is_post_publicly_viewable($parent)||post_password_required($parent)))return '';
+ if(!allowed($id))return '';
  return wp_get_attachment_image($id,$size,false,$attrs);
 }

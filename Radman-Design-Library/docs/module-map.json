@@ -2455,5 +2455,51 @@
     "assets": [
       "modules/particles/LICENSE.txt"
     ]
+  },
+  "curtain-accordion": {
+    "kind": "section",
+    "family": "accordion",
+    "effects": [
+      "native"
+    ],
+    "entries": [
+      "modules/curtain-accordion/data.php",
+      "modules/curtain-accordion/script.js",
+      "modules/curtain-accordion/style.css",
+      "modules/curtain-accordion/view.php"
+    ],
+    "source_files": [
+      "modules/curtain-accordion/data.php",
+      "modules/curtain-accordion/script.js",
+      "modules/curtain-accordion/style.css",
+      "modules/curtain-accordion/view.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "src/css/client-base.css"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress attachment APIs",
+      "rdl/curtain-accordion/data supplies title, background attachment ID and items title/desc/icon/image IDs; replace the workshop media option for client use"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "src/css/canvas-base.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
+    ],
+    "vendor": "None; native details, CSS transitions and local standalone event/resize lifecycle",
+    "assets": [
+      "fixtures/curtain-accordion/media.json"
+    ]
   }
 }

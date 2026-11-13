@@ -273,6 +273,21 @@
     "src": "modules/column-gallery/style.css",
     "isEntry": true
   },
+  "modules/curtain-accordion/script.js": {
+    "file": "js/sample-84-Bo5faoN-.min.js",
+    "name": "sample-84",
+    "src": "modules/curtain-accordion/script.js",
+    "isEntry": true
+  },
+  "modules/curtain-accordion/style.css": {
+    "file": "css/css-curtain-accordion-pupH6VMv.min.css",
+    "name": "css-curtain-accordion",
+    "names": [
+      "css-curtain-accordion.css"
+    ],
+    "src": "modules/curtain-accordion/style.css",
+    "isEntry": true
+  },
   "modules/data-table/style.css": {
     "file": "css/css-data-table-B5GpBONV.min.css",
     "name": "css-data-table",
