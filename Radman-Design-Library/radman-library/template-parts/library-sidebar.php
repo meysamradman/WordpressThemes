@@ -4,8 +4,9 @@
   <label class="rdl-sr" for="rdl-srch">نام یا توضیح طراحی</label><input id="rdl-srch" type="search" name="s" value="<?php echo esc_attr($filters['s']??''); ?>" placeholder="جستجوی طراحی…" autocomplete="off">
   <?php if(isset($filters['rdl_group'])): ?><input type="hidden" name="rdl_group" value="<?php echo esc_attr($filters['rdl_group']); ?>"><?php endif; ?><span aria-hidden="true"><?php echo \RadmanCT\icon('search'); ?></span>
  </form></section>
- <section class="rdl-wdg"><h2>دسته‌بندی</h2>
+ <section class="rdl-wdg rdl-wdg--cats"><h2>دسته‌بندی</h2>
   <a class="rdl-all" href="<?php echo esc_url(home_url('/')); ?>"<?php if(!$filters)echo ' aria-current="page"'; ?>>همهٔ طرح‌ها</a>
+  <div class="rdl-sb__tree" tabindex="0" role="region" aria-label="فهرست دسته‌های طراحی">
   <?php
   $terms=get_terms(['taxonomy'=>'rdl_group','hide_empty'=>true]);
   // Keep the requested button family visible even when no samples are assigned.
@@ -14,5 +15,6 @@
   $current=isset($filters['rdl_group'])?get_term_by('slug',$filters['rdl_group'],'rdl_group'):false;
   if(!is_wp_error($terms))\RadmanCT\UI\category_tree($terms,['current'=>$current?$current->term_id:0,'ancestors'=>$current?get_ancestors($current->term_id,'rdl_group'):[],'url'=>static fn($term)=>\RadmanLibrary\Library\url(['rdl_group'=>$term->slug])]);
   ?>
+  </div>
  </section>
 </aside>

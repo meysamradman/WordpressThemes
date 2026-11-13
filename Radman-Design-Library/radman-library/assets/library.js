@@ -12,8 +12,15 @@ if(root){
    const doc=new DOMParser().parseFromString(await response.text(),'text/html');
    const incoming=doc.querySelector('[data-rdl-res]');if(!incoming)throw new Error('Library response missing');if(current!==serial||controller.signal.aborted)return;
    const active=document.activeElement,id=active?.id,activeUrl=active?.tagName==='A'?active.href:null,selection=typeof active?.selectionStart==='number'?[active.selectionStart,active.selectionEnd]:null;
+   const tree=root.querySelector('.rdl-sb__tree'),treeScroll=tree?.scrollTop??0;
+   const openBranches=new Set([...tree?.querySelectorAll('details[open]>summary>a')??[]].map(link=>link.href));
+   const treeFocused=active===tree;
    root.querySelector('[data-rdl-res]').replaceWith(incoming);
    for(const selector of ['.rdl-sb']){const next=doc.querySelector(selector);if(next)root.querySelector(selector)?.replaceWith(next);}
+   const nextTree=root.querySelector('.rdl-sb__tree');
+   for(const link of nextTree?.querySelectorAll('details>summary>a')??[])if(openBranches.has(link.href))link.closest('details').open=true;
+   if(nextTree)nextTree.scrollTop=treeScroll;
+   if(treeFocused)nextTree?.focus({preventScroll:true});
    document.title=doc.title;if(push)history.pushState({},'',target.href);
    status.textContent='طراحی‌ها به‌روز شدند.';
    if(id){const next=document.getElementById(id);next?.focus({preventScroll:true});if(selection&&next?.setSelectionRange)next.setSelectionRange(...selection);}
