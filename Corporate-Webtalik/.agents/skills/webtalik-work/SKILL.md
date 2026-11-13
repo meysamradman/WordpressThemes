@@ -48,3 +48,5 @@ Approved Services artwork keeps a 1920×1080 canvas, with the original artwork r
 Before changing media mappings, inspect every consumer. Home offering-* keys are reserved for animated home artwork with image-specific orbit geometry; service-page replacement images must use separate services-* keys. Changing service imagery must not replace home base images or motion.
 
 Design-library/client boundary: the library is the reusable reference; Webtalik is an independent customer implementation. Transfer only selected modules, remap media and inspect all consumers; no automatic cross-project sync or replacement of unrelated page imagery. For marquee comparisons, match pixels per second rather than copying a duration across different card counts; verify acceleration and deceleration separately.
+
+Internal hero decoration uses the shared title-art renderer and art-orbit runtime. Main home dots and internal fixed/moving nodes use the single --rdc-art-node-sz token; fixed nodes may be dimmer but not a different size. Visible contours must join exactly; motion uses those same paths. Keep image background correction in the asset, without CSS image blend/mask/filter.

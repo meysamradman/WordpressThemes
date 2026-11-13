@@ -55,15 +55,34 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
   $data['media_flat']=true;
   $data['art_draw']=true;
   $data['art_tracks']=array(
-   array('M110 340 C160 205 302 142 445 151 C595 160 737 250 807 372',30,.3),
-   array('M88 480 C45 592 102 722 227 794 C344 862 491 875 623 845',28,.65),
-   array('M815 410 C914 547 898 711 763 819 C684 883 575 908 472 890',32,.4)
+   array('M35 510 A420 350 0 0 1 455 160 A420 350 0 0 1 875 510',32,.3),
+   array('M875 510 A420 350 0 0 1 455 860',28,.65),
+   array('M455 860 A420 350 0 0 1 35 510',30,.4)
   );
-  $data['art_nodes']=array();
+  $data['art_nodes']=array(array(35,510),array(875,510),array(455,860));
   $data['art_matrix']=array(91.87,760);
+ }elseif(is_page('specialized-wordpress-design-development')){
+  $data['media_inset']=true;
+  $data['media_flat']=true;
+  $data['art_tracks']=array(
+   array('M242.16 209 C310 144 390 124 454 129 C521 131 578 152 622 193',30,.3),
+   array('M82.39 346.65 V396.89',22,.6),
+   array('M830 655 C817 677 801 697 784 713',26,.35)
+  );
+  $data['art_nodes']=array(array(155.74,134.64),array(155.74,241.15),array(796.79,228.09),array(158.76,693.3),array(848.04,615.93),array(781.72,713.4));
+ }elseif(is_page('admin-panel-web-systems')){
+  $data['media_inset']=true;
+  $data['media_flat']=true;
+  $data['art_tracks']=array(
+   array('M214.02 240.14 C272.3 177.85 359.71 130.62 450.14 130.62 C523.49 130.62 591.82 157.75 644.07 204.98',30,.3),
+   array('M748.56 738.52 C713.4 773.68 673.21 799.81 633.01 815.89',26,.6),
+   array('M411.96 840 C321.53 823.92 241.15 781.72 190.91 713.4',32,.4)
+  );
+  $data['art_nodes']=array(array(145.69,183.88),array(330.57,183.88),array(859.09,205.98),array(777.7,699.33),array(145.69,773.68),array(776.7,773.68));
  }elseif(is_page('about-us')){
   $data['media_inset']=true;
   $data['media_flat']=true;
+  $data['art_nodes']=array(array(328.56,123.59),array(643.06,188.9),array(789.76,557.65),array(188.9,750.57),array(89.43,276.32),array(89.43,368.76));
   $data['art_tracks']=array(
    array('M220.05 180.86 L199.95 200.96 L181.87 221.05 L167.8 241.15 L155.74 261.24 L145.69 281.34 L136.65 301.44',28,.35),
    array('M790.77 462.2 C794.79 484.31 794.79 506.41 792.78 527.51',24,.65),
