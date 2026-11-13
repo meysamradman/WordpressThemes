@@ -21,11 +21,6 @@
 .rdl-sb .rdc-cat-tree__row:hover{background:var(--rdl-field)}
 .rdl-sb .rdc-cat-tree__num{display:grid;place-items:center;min-inline-size:1.6rem;block-size:1.6rem;border-radius:.45rem;background:var(--rdl-card-tint,var(--rdl-field));color:var(--rdl-muted);font-size:.75rem}
 .rdl-sb .rdc-cat-tree>li+li{border-block-start-color:var(--rdl-line)}
-.rdl-site .rdl-bar{background:var(--rdl-panel);border-color:var(--rdl-line);color:var(--rdl-ink)}
-.rdl-site .rdl-mark{background:var(--rdl-brand);color:var(--rdl-panel)}
-.rdl-site .rdl-brd small,.rdl-site .rdl-bar__ttl{color:var(--rdl-muted)}
-.rdl-site .rdl-bar nav a:hover{color:var(--rdl-brand)}
-.rdl-site .rdl-bar a:focus-visible{outline-color:var(--rdl-brand)}
 .rdl-site .page-numbers{background:var(--rdl-panel)}
 .rdl-site .page-numbers:is(.current,:hover){background:var(--rdl-brand);color:var(--rdl-panel);border-color:var(--rdl-brand)}
 @media(prefers-reduced-motion:no-preference){.rdl-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.rdl-card:is(:hover,:focus-within){transform:translateY(-3px)}}

@@ -59,3 +59,5 @@ project-marquee motion: Match the inspected reference: duration = 70 × card cou
 پوستهٔ فهرست کتابخانه پالت روشن و خنثی دارد: زمینهٔ خنثی #eceef1، پنل ملایم #f8f9fa و رنگ اصلی آبی #3159b7 در assets/shell.css. کارت‌ها پالت یکسان دارند؛ رنگ‌های چرخشی nth-child یا رنگ‌بندی جدا برای هر دسته اضافه نشود. این قرارداد فقط رابط کتابخانه است و رنگ نمونه‌ها را تغییر نمی‌دهد.
 
 Library sidebar uses a responsive 320–368px desktop column. Search and the category heading stay outside the native category scroll region (rdl-sb__tree); keep a visible stable scrollbar and keyboard scrolling. AJAX restores the category scroll position and expanded branches when replacing sidebar markup. Below 900px the sidebar returns to normal flow with a bounded category list; no scroll listeners or animation engine.
+
+هدر اصلی و هدر پیش‌نمایش هر دو از assets/bar.css استفاده می‌کنند؛ رنگ، لوگو، متن و فوکوس هدر فقط در همین فایل تعریف شوند. shell.css برای هدر override رنگ جدا نداشته باشد.
