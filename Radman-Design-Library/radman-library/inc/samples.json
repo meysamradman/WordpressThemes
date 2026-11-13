@@ -709,5 +709,21 @@
     "surface": "light",
     "scroll_gap": false,
     "icon": "particles"
+  },
+  "media-mosaic": {
+    "title": "چیدمان شطرنجی متن و رسانه · Radman",
+    "slug": "media-mosaic",
+    "group": "gallery",
+    "kind": "section",
+    "source": "modules/media-mosaic/view.php",
+    "motion": "چهار جفت متن و رسانه در دو ردیف متناوب؛ سه تصویر محلی و یک ویدئو با کنترل بومی، بدون پخش خودکار و JavaScript؛ موبایل با ترتیب متن و رسانهٔ مرتبط",
+    "effects": [
+      "native"
+    ],
+    "image": "none",
+    "surface": "light",
+    "scroll_gap": false,
+    "icon": "grid",
+    "reference": "https://museum.elementra.themerex.net/"
   }
 }

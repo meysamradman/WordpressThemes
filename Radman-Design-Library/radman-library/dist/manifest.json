@@ -460,6 +460,15 @@
     "src": "modules/image-accordion/style.css",
     "isEntry": true
   },
+  "modules/media-mosaic/style.css": {
+    "file": "css/css-media-mosaic-Bl6XYLrV.min.css",
+    "name": "css-media-mosaic",
+    "names": [
+      "css-media-mosaic.css"
+    ],
+    "src": "modules/media-mosaic/style.css",
+    "isEntry": true
+  },
   "modules/media-stretch/script.js": {
     "file": "js/sample-60-B4ecJ2kd.min.js",
     "name": "sample-60",

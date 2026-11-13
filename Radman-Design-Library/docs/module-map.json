@@ -2545,5 +2545,52 @@
       "template-parts/device-preview.php"
     ],
     "vendor": "None; independent CSS transforms with native visibility/reduced-motion lifecycle; no Canvas, GSAP or RAF loop"
+  },
+  "media-mosaic": {
+    "kind": "section",
+    "family": "gallery",
+    "effects": [
+      "native"
+    ],
+    "entries": [
+      "modules/media-mosaic/data.php",
+      "modules/media-mosaic/style.css",
+      "modules/media-mosaic/view.php"
+    ],
+    "source_files": [
+      "modules/media-mosaic/data.php",
+      "modules/media-mosaic/style.css",
+      "modules/media-mosaic/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "src/css/client-base.css"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress attachment APIs and privacy guards",
+      "rdl/media-mosaic/data supplies copy, links, image and video IDs; replace the workshop media option in customer builds"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "src/css/canvas-base.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
+    ],
+    "vendor": "None; native CSS Grid and HTML video controls, no JS",
+    "assets": [
+      "fixtures/media-mosaic/PROVENANCE.md"
+    ]
   }
 }

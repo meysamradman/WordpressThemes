@@ -50,3 +50,5 @@
 | [ربات سه‌بعدی تعاملی · Radman](http://127.0.0.1:8097/design/robot/) | interactive-3d | مدل اولیهٔ مستقل GLB، Three.js، نگاه نرم سر، رندر درخواستی؛ [قرارداد انتقال](robot.md) |
 
 | [ورود سه‌بعدی متن و حرکت نشانگر · Radman](http://127.0.0.1:8097/design/text-3d/) | text / text-3d | flip دووجهی با ورود به دید؛ پارالاکس اختیاری ماوس، اتصال درست حروف فارسی |
+
+media-mosaic: independent gallery/section module, alternating text/media grid with three local WebP images and one native controlled video. Owns view.php, data.php and style.css; no JS or sibling-design dependency. rdl/media-mosaic/data supplies editorial copy and remapped local attachment IDs; fixtures/media-mosaic/PROVENANCE.md records selected demo media and layout reference. Mobile preserves each text/media pair; the video uses preload none and no autoplay.

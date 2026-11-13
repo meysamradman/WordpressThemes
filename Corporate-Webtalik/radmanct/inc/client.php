@@ -1,6 +1,17 @@
 <?php
 namespace RadmanCT\Client;
 defined('ABSPATH')||exit;
+add_filter('radmanct/service/mosaic',static function(array $data):array {
+ $url=home_url('/contact-us/');
+ $copy=array(
+  array('طراحی با هویت برند شما','از ساختار صفحه‌ها تا جزئیات رابط کاربری؛ تجربه‌ای روشن و منسجم، متناسب با مخاطب و شخصیت کسب‌وکارتان.',\RadmanCT\media_id('services-marquee-1'),0),
+  array('توسعهٔ اختصاصی و منعطف','سایت بر اساس نیاز واقعی شما ساخته می‌شود؛ با ساختاری قابل نگهداری و فضایی برای توسعهٔ قابلیت‌های آینده.',\RadmanCT\media_id('services-marquee-2'),0),
+  array('تجربهٔ واقعی در اجرا','نمونه‌ای از اجرای یک تجربهٔ دیجیتال؛ از ایده و طراحی تا محصولی که روی دستگاه‌های مختلف قابل استفاده است.',23,92),
+  array('جزئیاتی برای یک تجربهٔ بهتر','خوانایی، دسترسی‌پذیری و نمایش درست در موبایل، بخشی از طراحی و اجرای هر صفحه‌اند.',\RadmanCT\media_id('services-marquee-3'),0),
+ );
+ $items=array();foreach($copy as $row)$items[]=array('title'=>$row[0],'desc'=>$row[1],'image'=>$row[2],'video'=>$row[3],'link'=>'دربارهٔ پروژه‌ات بگو','url'=>$url);
+ return array('label'=>'از ایده تا اجرا','title'=>'وب‌سایتی که برای کسب‌وکار شما ساخته می‌شود','items'=>$items);
+});
 add_filter('radmanct/seo/description',static function(string $description):string {
  if(\RadmanCT\SEO\plain($description)!=='')return $description;
  if(is_front_page())return \RadmanCT\Home\data()['description'];
@@ -40,7 +51,7 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
  $data['media_inset']=is_page('services');
  if(is_page('services'))$data['art_tracks']=array(
   array('M739.5 215 L765 187.25 H777 V383',18,.62),
-  array('M0 187.25 H111.75 V255.5',20,.3),
+  array('M60 186.25 H111.75 V255.5',20,.3),
   array('M78 584 V718.25 H262.5',19,.55),
   array('M682.5 718.25 H915',24,.28)
  );
@@ -65,27 +76,27 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
   $data['media_inset']=true;
   $data['media_flat']=true;
   $data['art_tracks']=array(
-   array('M242.16 209 C310 144 390 124 454 129 C521 131 578 152 622 193',30,.3),
-   array('M82.39 346.65 V396.89',22,.6),
-   array('M830 655 C817 677 801 697 784 713',26,.35)
+   array('M241.76 208.16 C343.47 114.23 512.49 98.29 626.67 188.30',30,.3),
+   array('M81.89 346.65 V396.89',22,.6),
+   array('M833.84 657.31 C822.75 679.79 809.61 702.32 791.70 721.14',26,.35)
   );
   $data['art_nodes']=array(array(155.74,134.64),array(155.74,241.15),array(796.79,228.09),array(158.76,693.3),array(848.04,615.93),array(781.72,713.4));
  }elseif(is_page('admin-panel-web-systems')){
   $data['media_inset']=true;
   $data['media_flat']=true;
   $data['art_tracks']=array(
-   array('M213 239 C271 177 358 130 448 130 C521 130 589 157 641 204',30,.3),
-   array('M745 735 C710 770 670 796 630 812',26,.6),
-   array('M410 836 C320 820 240 778 190 710',32,.4)
+   array('M211.60 242.53 C315.16 103.67 521.27 95.20 642.68 202.51',30,.3),
+   array('M738.22 728.14 C708.43 762.80 669.31 788.01 627.94 806.81',26,.6),
+   array('M411.02 832.12 C325.24 815.18 251.99 767.03 197.12 704.95',32,.4)
   );
   $data['art_nodes']=array(array(145,183),array(329,183),array(855,205),array(774,696),array(145,770),array(773,770));
  }elseif(is_page('mobile-app-design-development')){
   $data['media_inset']=true;
   $data['media_flat']=true;
   $data['art_tracks']=array(
-   array('M366 102 C432 86 508 95 570 128',30,.35),
-   array('M757 705 C730 759 685 800 633 825',28,.6),
-   array('M270 150 C206 196 157 256 127 320',32,.4)
+   array('M366.42 103.71 C433.28 84.61 509.44 92.93 569.15 129.74',30,.35),
+   array('M756.00 704.49 C726.13 754.90 681.87 793.92 631.17 821.13',28,.6),
+   array('M270.85 151.71 C220.23 205.23 160.68 252.34 131.58 322.39',32,.4)
   );
   $data['art_nodes']=array(array(337,114),array(618,166),array(823,222),array(98,417),array(777,663),array(242,739));
  }elseif(is_page('about-us')){

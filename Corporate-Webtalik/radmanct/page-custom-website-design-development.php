@@ -6,6 +6,7 @@
    <div class="rdc-ctr rdc-main"><?php echo get_the_password_form(); ?></div>
   <?php else: ?>
    <?php if(trim(get_the_content())): ?><article class="rdc-ctr rdc-main rdc-cnt"><?php the_content();wp_link_pages(); ?></article><?php endif; ?>
+   <?php get_template_part('template-parts/sections/service/mosaic'); ?>
    <?php get_template_part('template-parts/ui/faq',null,array('items'=>apply_filters('radmanct/services/faq',array()))); ?>
   <?php endif; ?>
  <?php endwhile; ?>
