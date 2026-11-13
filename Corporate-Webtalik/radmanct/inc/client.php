@@ -74,11 +74,20 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
   $data['media_inset']=true;
   $data['media_flat']=true;
   $data['art_tracks']=array(
-   array('M214.02 240.14 C272.3 177.85 359.71 130.62 450.14 130.62 C523.49 130.62 591.82 157.75 644.07 204.98',30,.3),
-   array('M748.56 738.52 C713.4 773.68 673.21 799.81 633.01 815.89',26,.6),
-   array('M411.96 840 C321.53 823.92 241.15 781.72 190.91 713.4',32,.4)
+   array('M213 239 C271 177 358 130 448 130 C521 130 589 157 641 204',30,.3),
+   array('M745 735 C710 770 670 796 630 812',26,.6),
+   array('M410 836 C320 820 240 778 190 710',32,.4)
   );
-  $data['art_nodes']=array(array(145.69,183.88),array(330.57,183.88),array(859.09,205.98),array(777.7,699.33),array(145.69,773.68),array(776.7,773.68));
+  $data['art_nodes']=array(array(145,183),array(329,183),array(855,205),array(774,696),array(145,770),array(773,770));
+ }elseif(is_page('mobile-app-design-development')){
+  $data['media_inset']=true;
+  $data['media_flat']=true;
+  $data['art_tracks']=array(
+   array('M366 102 C432 86 508 95 570 128',30,.35),
+   array('M757 705 C730 759 685 800 633 825',28,.6),
+   array('M270 150 C206 196 157 256 127 320',32,.4)
+  );
+  $data['art_nodes']=array(array(337,114),array(618,166),array(823,222),array(98,417),array(777,663),array(242,739));
  }elseif(is_page('about-us')){
   $data['media_inset']=true;
   $data['media_flat']=true;
