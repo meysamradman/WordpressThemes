@@ -10,8 +10,8 @@ function hero_term(string $slug,string $name,int $parent=0):int {
  return (int)$result['term_id'];
 }
 $hero=hero_term('hero','هیرو');
-hero_term('hero-static','هیروی ثابت',$hero);
-hero_term('hero-slider','هیروی اسلایدری',$hero);
+hero_term('hero-static','هیرو بدون اسلایدر',$hero);
+hero_term('hero-slider','هیرو اسلایدری',$hero);
 foreach(array('drag'=>'کشیدن و سوایپ','gsap'=>'GSAP','entrance'=>'ورود متن')as$slug=>$name){
  if(!term_exists($slug,'rdl_fx')){$result=wp_insert_term($name,'rdl_fx',array('slug'=>$slug));if(is_wp_error($result))throw new RuntimeException($result->get_error_message());}
 }

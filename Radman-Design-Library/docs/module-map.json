@@ -2044,5 +2044,133 @@
       "assets/bar.css"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "hero-typography": {
+    "kind": "section",
+    "family": "hero",
+    "effects": [
+      "gsap",
+      "entrance"
+    ],
+    "entries": [
+      "modules/hero-typography/data.php",
+      "modules/hero-typography/script.js",
+      "modules/hero-typography/style.css",
+      "modules/hero-typography/view.php"
+    ],
+    "source_files": [
+      "modules/hero-typography/data.php",
+      "modules/hero-typography/script.js",
+      "modules/hero-typography/style.css",
+      "modules/hero-typography/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/motion-view.js",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "data-table": {
+    "kind": "section",
+    "family": "table",
+    "effects": [
+      "native"
+    ],
+    "entries": [
+      "modules/data-table/data.php",
+      "modules/data-table/style.css",
+      "modules/data-table/table.php",
+      "modules/data-table/view.php"
+    ],
+    "source_files": [
+      "modules/data-table/data.php",
+      "modules/data-table/style.css",
+      "modules/data-table/table.php",
+      "modules/data-table/view.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "src/css/client-base.css"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "rdl/data-table/data supplies plain table copy and columns/rows cells; no workshop fixture or client database required"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css"
+    ],
+    "vendor": "None; native PHP/HTML/CSS table and browser scrolling only"
+  },
+  "button-roll": {
+    "kind": "section",
+    "family": "button",
+    "effects": [
+      "native"
+    ],
+    "entries": [
+      "modules/button-roll/data.php",
+      "modules/button-roll/style.css",
+      "modules/button-roll/view.php"
+    ],
+    "source_files": [
+      "modules/button-roll/data.php",
+      "modules/button-roll/style.css",
+      "modules/button-roll/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "src/css/client-base.css"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css",
+      "modules/button-roll/style.css"
+    ],
+    "vendor": "None; existing shared RadmanCT button renderer and CSS transitions only"
   }
 }

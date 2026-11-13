@@ -35,6 +35,12 @@
 
 ## ماژول‌های مرجع اسکرولی
 
+نمونهٔ `modules/button-roll/` فقط قاب و دادهٔ دکمهٔ فعلی Webtalik است. view همان `RadmanCT\button()` و CSS موجود `shared/radmanct/src/css/ui/button.css` را مصرف می‌کند؛ رفتار hover/focus/reduced-motion کپی یا بازنویسی نمی‌شود. فیلتر `rdl/button-roll/data` متن، URL و نام آیکون را تحویل می‌دهد. پیش‌نمایش روشن/تیره یک طراحی است، نه دو موتور یا دو ماژول؛ JS و اسکرول نرم بارگذاری نمی‌شوند. قرارداد انتقال شامل renderer، آیکون و توکن/CSS مشترک موجود است؛ قاب `rdl-btn-demo` مخصوص کارگاه است.
+
+جدول مستقل `modules/data-table/` شامل data/view/table/style است؛ اسکریپت ندارد. فیلتر `rdl/data-table/data` عنوان و دادهٔ `columns` / `rows[].cells` را تأمین می‌کند. renderer فقط caption، th/td با scope و خروجی escaped دارد؛ خانه‌های کم‌شده خالی می‌مانند و حداکثر ۱۲ ستون/۱۰۰ ردیف پذیرفته می‌شود. قاب بومی برای لمس و کیبورد اسکرول افقی دارد و عنوان ردیف در موبایل sticky است. دادهٔ نمونه، runtime یا ذخیره‌سازی قالب قبلی وارد کتابخانه نمی‌شود؛ انتقال این طرح نیازمند Elementor، Components، JS یا رسانه نیست.
+
+هیروی تایپوگرافیِ بدون اسلایدر در `modules/hero-typography/` مستقل است؛ view/data/style/script خودش را دارد و فقط scroll/lifecycle/GSAP و نگهبان رسانهٔ موجود را مصرف می‌کند. فیلتر `rdl/hero-typography/data` متن، سطرها، تصویر و زمینهٔ attachment محلی را تحویل می‌دهد. ورود یک‌باره روی سطر کامل است؛ فارسی به حرف‌ها شکسته نمی‌شود. بدون JS و در reduced-motion محتوا خواناست. `samples.json/subgroup` جایگاه بدون اسلایدر/اسلایدری را برای ثبت مجدد حفظ می‌کند. رابط کتابخانه، خانوادهٔ دکمهٔ خالی را عمداً نمایش می‌دهد؛ runtime نمونه یا طرح دکمهٔ فرضی اضافه نمی‌شود.
+
 هیروی اسلایدری مالک مستقل `modules/hero-slider/{data.php,view.php,style.css,script.js}` و فیلتر `rdl/hero-slider/data` دارد. دادهٔ نمونه از attachmentهای محلی موجود می‌آید و هنگام انتقال جایگزین می‌شود. Pointer Events پیش‌نمایش پردهٔ جهت‌دار را کنترل می‌کند؛ GSAP محلی فقط حرکت را اجرا می‌کند، بدون Swiper، autoplay یا موتور اسکرول دوم. فلش، کیبورد، برگشت drag کوتاه، لغو pointer/resize و کاهش حرکت حفظ شوند. تنها اسلاید فعال در ترتیب فوکوس است؛ بدون JS همهٔ اسلایدها و لینک‌ها خوانا می‌مانند. ثبت محلی idempotent در `tools/register-hero-slider.php` است؛ خانواده hero با زیرشاخه‌های ثابت/اسلایدری از carousel جداست.
 
 کاروسل محتوای آزاد مالک کوچک PHP/CSS/JS در `inc/ui/carousel.php` و `src/{css,js}/ui/carousel.*` دارد؛ محتوای کارت فقط در مصرف‌کننده است. قرارداد جهت، گاتر، کنترل‌ها و انتقال در [carousel.md](carousel.md).

@@ -4,6 +4,9 @@
 
 | طرح | خانواده | کاربرد / حرکت |
 |---|---|---|
+| [دکمه با متن چرخشی و فلش مورب · Radman](http://127.0.0.1:8097/design/button-roll/) | button | همان دکمهٔ Webtalik؛ renderer و CSS مشترک موجود، hover و focus-visible، روشن/تیره؛ بدون JS |
+| [جدول مشخصات با سرستون رنگی · Radman](http://127.0.0.1:8097/design/data-table/) | table | جدول بومی و مستقل؛ سرستون رنگی، ردیف‌های راه‌راه، caption و اسکرول افقی موبایل؛ بدون JS |
+| [هیرو با تیتر بزرگ و تصاویر میان متن · Radman](http://127.0.0.1:8097/design/hero-typography/) | hero / hero-static | هیرو بدون اسلایدر؛ متن فارسی، تصاویر دایره‌ای میان تیتر، عکس عمودی و زمینهٔ روشن؛ ورود یک‌بارهٔ GSAP |
 | [هیروی اسلایدری با پردهٔ جهت‌دار · Radman](http://127.0.0.1:8097/design/hero-slider/) | hero / hero-slider | GSAP + Pointer Events · drag، سوایپ و فلش؛ انتقال پرده‌ای، پارالاکس محدود و ورود هماهنگ متن؛ بدون autoplay |
 | [هیرو با ورود متن و عبارت چرخشی · Radman](http://127.0.0.1:8097/design/home-hero/) | hero / hero-static | GSAP Core · ورود متن، چرخش عبارت و حرکت جزئیات تصویر؛ بدون تعویض اسلاید |
 | [پنل‌های اسکرولی با پین · Radman](http://127.0.0.1:8097/design/home-services/) | panels | GSAP Core + ScrollTrigger + ScrollSmoother · پنل‌های پین‌شده و جزئیات گرافیکی |

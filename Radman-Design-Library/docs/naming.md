@@ -4,6 +4,12 @@
 
 `hsl` هیروی اسلایدری مستقل است؛ `itm/md/im/cnt/ttl/desc/nav` بخش‌های آن هستند. `hero-static` و `hero-slider` زیرشاخهٔ خانوادهٔ `hero` هستند؛ کاروسل کارت‌ها در `carousel` می‌ماند.
 
+`htx` هیروی تایپوگرافیِ بدون اسلایدر است؛ `row/chip/mark/main/side/media` بخش‌های چیدمان و تزئینات آن هستند. خانوادهٔ `button` فقط دسته‌بندی طرح‌های دکمه است، نه renderer یا رفتار تازه.
+
+`tbl` نمونهٔ مستقل جدول داده در خانوادهٔ `table` است؛ `win/table/card/meta/value/hint` بخش‌های نمایشی آن هستند. دادهٔ `columns` و `rows[].cells` قرارداد سادهٔ جدول است؛ با schema یا کنترل‌های Elementor وابستگی ندارد.
+
+`rdl-btn-demo` فقط قاب پیش‌نمایش `button-roll` است؛ خود دکمه، renderer و CSS موجود `rdc-btn` را حفظ می‌کند. پوستهٔ پیش‌نمایش جای مالک حرکت دکمه نیست.
+
 واژه‌نامه از `Corporate-Webtalik/docs/naming.md` گرفته شده است. نام تجاری Radman باقی می‌ماند؛ نام مشتری بخشی از شناسهٔ فنی نیست.
 
 - قالب کارگاه: `radman-library`؛ text domain همان؛ namespace رابط `RadmanLibrary` و کلاس/ID/data/CSS custom property/event رابط `rdl-` است.

@@ -160,6 +160,15 @@
     "src": "modules/blog-single/style.css",
     "isEntry": true
   },
+  "modules/button-roll/style.css": {
+    "file": "css/css-button-roll-ChNCRfe9.min.css",
+    "name": "css-button-roll",
+    "names": [
+      "css-button-roll.css"
+    ],
+    "src": "modules/button-roll/style.css",
+    "isEntry": true
+  },
   "modules/card-accordion/script.js": {
     "file": "js/sample-54-DeWSZB73.min.js",
     "name": "sample-54",
@@ -257,6 +266,15 @@
     "src": "modules/column-gallery/style.css",
     "isEntry": true
   },
+  "modules/data-table/style.css": {
+    "file": "css/css-data-table-B5GpBONV.min.css",
+    "name": "css-data-table",
+    "names": [
+      "css-data-table.css"
+    ],
+    "src": "modules/data-table/style.css",
+    "isEntry": true
+  },
   "modules/footer-radman/script.js": {
     "file": "js/sample-30-D-KzQRpD.min.js",
     "name": "sample-30",
@@ -311,6 +329,26 @@
       "css-hero-slider.css"
     ],
     "src": "modules/hero-slider/style.css",
+    "isEntry": true
+  },
+  "modules/hero-typography/script.js": {
+    "file": "js/sample-78-C4FvhSM6.min.js",
+    "name": "sample-78",
+    "src": "modules/hero-typography/script.js",
+    "isEntry": true,
+    "imports": [
+      "_motion-BDGS3Mx2.min.js",
+      "_scroll-ievP5wp_.min.js",
+      "_motion-view-aC_4bNO8.min.js"
+    ]
+  },
+  "modules/hero-typography/style.css": {
+    "file": "css/css-hero-typography-BulQZl4M.min.css",
+    "name": "css-hero-typography",
+    "names": [
+      "css-hero-typography.css"
+    ],
+    "src": "modules/hero-typography/style.css",
     "isEntry": true
   },
   "modules/home-hero/script.js": {

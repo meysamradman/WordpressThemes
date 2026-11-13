@@ -3,7 +3,10 @@ if(PHP_SAPI!=='cli')exit(1);
 require '/var/www/html/wp-load.php';
 if(home_url()!=='http://127.0.0.1:8097'||!get_option('rdl_local_ready'))throw new RuntimeException('Wrong destination.');
 $families=['panels'=>'پنل‌های اسکرولی','showcase'=>'نمایش تعاملی','accordion'=>'آکاردئون','page-title'=>'عنوان صفحه','catalog'=>'کاتالوگ محصول','home'=>'صفحهٔ اول','portfolio'=>'نمونه‌کار','blog'=>'وبلاگ','music'=>'موسیقی و صدا','text'=>'انیمیشن متن','sidebar'=>'سایدبار','kits'=>'مجموعهٔ قالب‌ها','carousel'=>'کاروسل و اسلایدر'];
+$families['hero']='هیرو';$families['button']='دکمه‌ها';$families['carousel']='کاروسل';$families['table']='جدول‌ها';
 foreach($families as $slug=>$name)if(!term_exists($slug,'rdl_group'))wp_insert_term($name,'rdl_group',['slug'=>$slug]);
+$hero=get_term_by('slug','hero','rdl_group');
+foreach(['hero-static'=>'هیرو بدون اسلایدر','hero-slider'=>'هیرو اسلایدری'] as $slug=>$name)if(!term_exists($slug,'rdl_group'))wp_insert_term($name,'rdl_group',['slug'=>$slug,'parent'=>$hero?(int)$hero->term_id:0]);
 foreach(['section'=>'سکشن و جزء','page'=>'صفحهٔ کامل','kit'=>'مجموعهٔ قالب'] as $slug=>$name)if(!term_exists($slug,'rdl_kind'))wp_insert_term($name,'rdl_kind',['slug'=>$slug]);
 $effects=['gsap'=>'GSAP Core','scrolltrigger'=>'ScrollTrigger','smooth'=>'ScrollSmoother مشترک','native'=>'CSS / Vanilla بدون موشن GSAP','entrance'=>'ورود متن یا محتوا','text-fill'=>'پُرشدن متن با اسکرول','horizontal'=>'حرکت افقی با اسکرول','pin'=>'پین سکشن','loop'=>'حلقهٔ پیوسته / Marquee','parallax'=>'پارالاکس و زوم','sticky'=>'استیکی','rotator'=>'عبارت چرخشی','menu'=>'منو و پنل','lightbox'=>'نمایش بزرگ تصویر'];
 foreach($effects as $slug=>$name)if(!term_exists($slug,'rdl_fx'))wp_insert_term($name,'rdl_fx',['slug'=>$slug]);
@@ -32,7 +35,8 @@ foreach(RadmanLibrary\modules() as $slug=>$module){
         $image=$module['image']??'none';$image=$image==='projects'?($fixture['projects'][0]['image']??0):($fixture['map'][$image]??0);if($image)set_post_thumbnail($id,$image);
     }else{$id=$post->ID;}
     $groups=[$module['group']??'sections'];$subgroup=['process-phases'=>'process-timeline','media-stretch'=>'gallery-reveal','sticky-cards'=>'panels-sticky','text-loop'=>'text-loop','text-marquee'=>'text-loop','column-gallery'=>'gallery-columns','image-accordion'=>'accordion-image','card-accordion'=>'accordion-card','catalog-archive'=>'catalog-grid','catalog-single'=>'catalog-detail','portfolio-archive'=>'portfolio-grid','portfolio-single'=>'portfolio-detail','blog-archive'=>'blog-grid','blog-single'=>'blog-detail','music-archive'=>'music-grid','music-single'=>'music-detail','text-start'=>'text-initial','text-scroll'=>'text-viewport','text-fill'=>'text-progress','services-strip'=>'marquee','project-marquee'=>'marquee'][$slug]??'';if($subgroup)$groups[]=$subgroup;
-    wp_set_object_terms($id,$groups,'rdl_group');
+    if(!empty($module['subgroup']))$groups[]=$module['subgroup'];
+    wp_set_object_terms($id,array_values(array_unique($groups)),'rdl_group');
     wp_set_object_terms($id,$module['kind']??'section','rdl_kind');
     wp_set_object_terms($id,$module['effects']??[],'rdl_fx');
 }
