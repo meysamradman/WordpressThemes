@@ -9,6 +9,7 @@ Runtime workflow: `.agents/skills/library-work/SKILL.md`. Read the relevant `doc
 - Each reusable design owns `modules/<slug>/view.php` and optional CSS/JS. Register trusted module paths explicitly in `inc/modules.php`; no paths supplied by users. Enqueue module files only on their matching preview.
 - Module views must be usable independently of the library navigation. Keep editorial data separate from effects; escape output. No duplication of animation engines. Use local GSAP only when a sample actually needs it, with cleanup and reduced motion.
 - Local fonts/assets only. Preserve asset licenses and provenance. No copying full customer databases, media libraries or entire themes into this workshop.
+- Requested device previews are a workshop-only exception: free view stays in the current document; laptop/tablet/mobile use one same-origin iframe with real viewport dimensions. Resize that frame without reloading the design. Never load sample runtime in the outer shell or copy preview controls into client selections.
 - Local Docker project `radman-design-library`, port 8097, dedicated database/network/volumes. Start/Stop preserve data. Never use `down -v` or reset without explicit request.
 - Keep native wp_head/wp_body_open/wp_footer, semantic markup, keyboard access and responsive RTL/LTR. Admin writes require nonce/capability checks.
 - Run short affected checks. No commit, publish or external tracking without request. Credentials stay in ignored local files.

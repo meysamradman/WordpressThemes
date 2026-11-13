@@ -57,7 +57,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -127,7 +132,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -188,7 +198,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -246,7 +261,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -299,7 +319,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -353,7 +378,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -391,7 +421,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -444,7 +479,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -498,7 +538,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -562,7 +607,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -624,7 +674,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -693,7 +748,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -756,7 +816,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -812,7 +877,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -865,7 +935,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -918,7 +993,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -973,7 +1053,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1046,7 +1131,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1108,7 +1198,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1161,7 +1256,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1214,7 +1314,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1274,7 +1379,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1337,7 +1447,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1390,7 +1505,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1443,7 +1563,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1498,7 +1623,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1551,7 +1681,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1606,7 +1741,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1663,7 +1803,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1722,7 +1867,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1781,7 +1931,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1823,7 +1978,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "Local Three.js (exact version in package-lock.json); dynamic viewer only, no GSAP or Spline",
     "assets": [
@@ -1880,7 +2040,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1933,7 +2098,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -1990,7 +2160,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -2041,7 +2216,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -2093,7 +2273,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   },
@@ -2130,7 +2315,12 @@
       "inc/samples.php",
       "inc/portfolio.php",
       "preview.php",
-      "assets/bar.css"
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "None; native PHP/HTML/CSS table and browser scrolling only"
   },
@@ -2169,8 +2359,61 @@
       "inc/portfolio.php",
       "preview.php",
       "assets/bar.css",
-      "modules/button-roll/style.css"
+      "modules/button-roll/style.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
     ],
     "vendor": "None; existing shared RadmanCT button renderer and CSS transitions only"
+  },
+  "particles": {
+    "kind": "section",
+    "family": "particles",
+    "effects": [
+      "canvas",
+      "loop"
+    ],
+    "entries": [
+      "modules/particles/data.php",
+      "modules/particles/engine.js",
+      "modules/particles/script.js",
+      "modules/particles/style.css",
+      "modules/particles/view.php"
+    ],
+    "source_files": [
+      "modules/particles/data.php",
+      "modules/particles/engine.js",
+      "modules/particles/script.js",
+      "modules/particles/style.css",
+      "modules/particles/view.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "src/css/client-base.css"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "rdl/particles/data supplies copy and bounded particle settings; no workshop fixture required"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
+    ],
+    "vendor": "Local particles.js 2.0.0 MIT factory, owned by this module only; no GSAP or sibling sample imports",
+    "assets": [
+      "modules/particles/LICENSE.txt"
+    ]
   }
 }

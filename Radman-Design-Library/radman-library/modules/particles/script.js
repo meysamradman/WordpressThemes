@@ -18,12 +18,12 @@ export function initializeParticles(root,load=()=>import('./engine.js')){
   const count=Math.min(number,Math.max(Math.min(12,number),Math.round(number*Math.min(1,width*height/760000))));
   engine=factory(layer,{
    particles:{number:{value:count,density:{enable:false}},color:{value:color},shape:{type:'circle'},opacity:{value:.7,random:true},size:{value:size,random:true},line_linked:{enable:true,distance,color,opacity:.24,width:.7},move:{enable:true,speed,out_mode:'out'}},
-   interactivity:{detect_on:'canvas',events:{onhover:{enable:fine.matches,mode:'grab'},onclick:{enable:false},resize:true},modes:{grab:{distance:160,line_linked:{opacity:.4}}}},retina_detect:true,
+   interactivity:{detect_on:'canvas',events:{onhover:{enable:fine.matches,mode:'grab'},onclick:{enable:false},resize:false},modes:{grab:{distance:160,line_linked:{opacity:.4}}}},retina_detect:true,
   },root);
   root.dataset.rdlPtcState='running';root.dataset.rdlPtcCount=String(engine.count);
  };
  const sync=async()=>{
-  button.hidden=media.matches;button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'ادامهٔ حرکت':'توقف حرکت';
+  button.hidden=media.matches||number===0;button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'ادامهٔ حرکت':'توقف حرکت';
   if(!canRun()){stop();return;}
   if(engine||pending)return;
   if(factory){start();return;}

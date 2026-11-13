@@ -1,0 +1,19 @@
+.rdl-bar--preview{flex-wrap:wrap;gap:.75rem 1.5rem}
+.rdl-pv__toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;flex-basis:100%;padding-block-start:.75rem;border-block-start:1px solid #dedfd5}
+.rdl-pv__choices{display:flex;flex-wrap:wrap;gap:.3rem;padding:.3rem;background:#e9eadf;border-radius:.8rem}
+.rdl-bar .rdl-pv__choice{display:inline-flex;gap:.45rem;align-items:center;min-height:38px;padding:.45rem .85rem;border-radius:.55rem;color:#5a6053;font-size:.8rem;white-space:nowrap}
+.rdl-bar .rdl-pv__choice[aria-current]{background:#fff;color:#263622;box-shadow:0 1px 4px #25331b12}
+.rdl-pv__choice svg{width:1.05rem;height:1.05rem}
+.rdl-pv__readout{display:flex;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.75rem;color:#62665d;font-variant-numeric:tabular-nums}
+.rdl-pv__fit{min-height:38px;display:flex;align-items:center;gap:.5rem;padding:.4rem .75rem;background:transparent;border:1px solid #d4d7ca;border-radius:.6rem;color:#384333;font-size:.75rem}
+.rdl-pv__fit[aria-pressed="true"]{background:#e9eadf}
+.rdl-device-view{overflow:hidden;background:#e9ebe5}
+.rdl-device-shell{height:100svh;display:flex;flex-direction:column}
+.rdl-device-shell>.rdl-bar{flex-shrink:0}
+.rdl-pv__workspace{min-height:0;flex:1;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:2rem;background:#e9ebe5;direction:ltr}
+.rdl-pv__port{position:relative;flex:none;width:var(--rdl-pv-w);height:var(--rdl-pv-h)}
+.rdl-pv__device{position:absolute;inset:0 auto auto 0;width:var(--rdl-pv-w);height:var(--rdl-pv-h);transform-origin:top left;border-radius:1rem;overflow:hidden;background:white;box-shadow:0 0 0 8px #252922,0 15px 35px #17201120}
+.rdl-pv__device[data-rdl-pv-shell="mobile"]{border-radius:1.8rem}
+.rdl-pv__device[data-rdl-pv-shell="tablet"]{border-radius:1.3rem}
+.rdl-pv__frame{display:block;border:0;width:100%;height:100%;background:white}
+@media(max-width:42rem){.rdl-pv__choices{gap:.1rem}.rdl-bar .rdl-pv__choice{padding:.4rem .55rem}.rdl-pv__readout{margin-inline-start:auto}.rdl-pv__workspace{padding:1rem}.rdl-pv__toolbar{gap:.5rem}}

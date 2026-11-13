@@ -3,7 +3,7 @@ if(PHP_SAPI!=='cli')exit(1);
 require '/var/www/html/wp-load.php';
 if(home_url()!=='http://127.0.0.1:8097'||!get_option('rdl_local_ready'))throw new RuntimeException('Wrong destination.');
 $families=['panels'=>'پنل‌های اسکرولی','showcase'=>'نمایش تعاملی','accordion'=>'آکاردئون','page-title'=>'عنوان صفحه','catalog'=>'کاتالوگ محصول','home'=>'صفحهٔ اول','portfolio'=>'نمونه‌کار','blog'=>'وبلاگ','music'=>'موسیقی و صدا','text'=>'انیمیشن متن','sidebar'=>'سایدبار','kits'=>'مجموعهٔ قالب‌ها','carousel'=>'کاروسل و اسلایدر'];
-$families['hero']='هیرو';$families['button']='دکمه‌ها';$families['carousel']='کاروسل';$families['table']='جدول‌ها';
+$families['hero']='هیرو';$families['button']='دکمه‌ها';$families['carousel']='کاروسل';$families['table']='جدول‌ها';$families['particles']='ذرات';
 foreach($families as $slug=>$name)if(!term_exists($slug,'rdl_group'))wp_insert_term($name,'rdl_group',['slug'=>$slug]);
 $hero=get_term_by('slug','hero','rdl_group');
 foreach(['hero-static'=>'هیرو بدون اسلایدر','hero-slider'=>'هیرو اسلایدری'] as $slug=>$name)if(!term_exists($slug,'rdl_group'))wp_insert_term($name,'rdl_group',['slug'=>$slug,'parent'=>$hero?(int)$hero->term_id:0]);

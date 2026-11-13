@@ -10,6 +10,8 @@
 
 `rdl-btn-demo` فقط قاب پیش‌نمایش `button-roll` است؛ خود دکمه، renderer و CSS موجود `rdc-btn` را حفظ می‌کند. پوستهٔ پیش‌نمایش جای مالک حرکت دکمه نیست.
 
+`ptc` طرح ذرات است و مالک `canvas/copy/fallback/pause` خودش را دارد. `pv` کنترل دستگاهِ کارگاه است؛ `toolbar/choices/readout/workspace/port/device/frame/fit` بخش‌های آن هستند. `rdl_view` و `rdl_canvas` فقط queryهای نمایش کتابخانه‌اند و به خروجی مشتری منتقل نمی‌شوند.
+
 واژه‌نامه از `Corporate-Webtalik/docs/naming.md` گرفته شده است. نام تجاری Radman باقی می‌ماند؛ نام مشتری بخشی از شناسهٔ فنی نیست.
 
 - قالب کارگاه: `radman-library`؛ text domain همان؛ namespace رابط `RadmanLibrary` و کلاس/ID/data/CSS custom property/event رابط `rdl-` است.

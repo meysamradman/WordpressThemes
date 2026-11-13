@@ -2,6 +2,7 @@
 namespace RadmanLibrary;
 defined('ABSPATH')||exit;
 require_once __DIR__.'/samples.php';
+require_once __DIR__.'/preview.php';
 foreach(['assets','icons','ui/button','page-title','home','brand','navigation'] as $part)require_once get_template_directory().'/shared/radmanct/inc/'.$part.'.php';
 add_filter('radmanct/home/data',static function(array $data):array{
     $data=array_replace($data,Samples\fixture()['home']??[]);$data['button_url']=Samples\link('services-list');return $data;
@@ -19,8 +20,12 @@ add_filter('show_admin_bar',static fn(bool $show):bool=>Samples\raw()?false:$sho
 add_action('wp_enqueue_scripts',static function():void{
     if(!Samples\raw())return;
     $module=Samples\selected();
-    $base=\RadmanCT\Assets\entry('src/css/sample-base.css');
+    $base=\RadmanCT\Assets\entry(Preview\canvas()?'src/css/client-base.css':'src/css/sample-base.css');
     if($base)wp_enqueue_style('rdl-sample-base',\RadmanCT\Assets\url($base['file']),[],null);
+    if(Preview\framed()){
+        wp_enqueue_script('rdl-device-preview',get_template_directory_uri().'/assets/preview.js',[],filemtime(get_template_directory().'/assets/preview.js'),array('in_footer'=>true,'strategy'=>'defer'));
+        return;
+    }
     $asset=\RadmanCT\Assets\entry('modules/'.$module['slug'].'/style.css');
     if($asset)wp_enqueue_style('rdl-design',\RadmanCT\Assets\url($asset['file']),['rdl-sample-base'],null);
     $script=\RadmanCT\Assets\entry('modules/'.$module['slug'].'/script.js');

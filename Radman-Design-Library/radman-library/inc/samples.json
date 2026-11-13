@@ -650,5 +650,18 @@
     "surface": "light",
     "scroll_gap": false,
     "icon": "arrow-up-right"
+  },
+  "particles": {
+    "title": "ذرات پیوندخوردهٔ تعاملی · Radman",
+    "slug": "particles",
+    "group": "particles",
+    "kind": "section",
+    "source": "modules/particles/view.php",
+    "motion": "Canvas محلی با حرکت آرام و خطوط اتصال؛ توقف دستی، سقف ذره/Retina و توقف خارج دید و تب مخفی؛ بدون GSAP یا وابستگی به طرح دیگر",
+    "effects": ["canvas", "loop"],
+    "image": "none",
+    "surface": "dark",
+    "scroll_gap": false,
+    "icon": "particles"
   }
 }

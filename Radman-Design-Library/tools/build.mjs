@@ -11,6 +11,7 @@ const entries=[request?'src/css/client-base.css':'src/css/sample-base.css'];
 if(!request||selected.some(slug=>['home-hero','home-services','page-home'].includes(slug)))entries.push('shared/radmanct/src/js/gsap-vendor.js');
 if(!request)entries.push('shared/radmanct/src/js/animation-vendor.js','shared/radmanct/src/js/pages/page-title.js','shared/radmanct/src/js/admin/media-editor.js','shared/radmanct/src/css/admin/gallery.css');
 for(const slug of selected)for(const file of ['style.css','script.js'])if(existsSync(resolve(root,'modules',slug,file)))entries.push(`modules/${slug}/${file}`);
+if(!request)entries.push('src/css/client-base.css');
 const input=Object.fromEntries(entries.map((name,index)=>[name.endsWith('.css')?'css-'+(name.includes('modules/')?name.split('/')[1]:name.split('/').slice(-2).join('-').replace(/\.css$/,'')):'sample-'+index,resolve(root,name)]));
 const outDir=request?'dist-selected':'dist';
 await build({root,configFile:false,publicDir:resolve(root,'fonts'),base:'./',experimental:{renderBuiltUrl(filename,{type}){return type==='public'?`../../fonts/${filename}`:{relative:true};}},build:{copyPublicDir:false,outDir,emptyOutDir:true,minify:true,cssMinify:true,sourcemap:false,manifest:'manifest.json',cssCodeSplit:true,rollupOptions:{preserveEntrySignatures:'strict',input,output:{entryFileNames:'js/[name]-[hash].min.js',chunkFileNames:'js/[name]-[hash].min.js',assetFileNames:asset=>asset.names?.some(name=>name.endsWith('.css'))?'css/[name]-[hash].min[extname]':'assets/[name]-[hash][extname]'}}}});

@@ -20,6 +20,8 @@
 
 پیش‌نمایش پیش‌فرض URL هر طراحی است؛ `?rdl_info=1` فقط اطلاعات را نشان می‌دهد. هدر کتابخانه حذف نشود. هدر و main از ابتدا داخل همان محتوای relative اسکرول باشند؛ iframe، اصلاح دیرهنگام موقعیت و موتور دوم نداریم. رسانهٔ full bleed تمام‌عرض و گاتر محتوا `clamp(1.25rem,3.15vw,3.75rem)` است؛ فاصله دوباره اعمال نشود. محدودیت عمدی FAQ و محتوای مقاله حفظ شود.
 
+استثنای صریح ابزار دستگاه: `inc/preview.php` و assets/preview CSS/JS فقط متعلق به کارگاه‌اند. حالت آزاد همچنان مستقیم و بدون iframe است؛ `?rdl_view=laptop|tablet|mobile` پوسته‌ای با یک iframe هم‌مبدأ می‌سازد که همان طرح را با `?rdl_canvas=1`، بدون هدر/کنترل کارگاه، نمایش می‌دهد. viewportهای واقعی ۱۴۴۰×۹۰۰، ۷۶۸×۱۰۲۴ و ۳۹۰×۸۴۴ هستند؛ اندازهٔ قاب عوض می‌شود تا media query و svh همان دستگاه اعمال شوند. تغییر میان دستگاه‌ها فقط همان iframe را resize می‌کند و src را عوض نمی‌کند. جاگیری خودکار با یک ResizeObserver رویدادمحور است؛ حلقهٔ اندازه‌گیری، bundle همهٔ طرح‌ها یا اسکرول دوم نداریم. پوسته فقط پایه/کنترل کارگاه را می‌گیرد و دارایی طرح فقط در سند داخلی بارگذاری می‌شود. در canvas ساخت قاب تودرتو ممنوع است. این فایل‌ها در module-map به‌عنوان preview_only مشخص‌اند و خروجی انتخابی از client-base بدون کنترل کارگاه استفاده می‌کند.
+
 آرشیو `/projects/`، taxonomy و جزئیات `project` واقعاً کار می‌کنند؛ مدیریت بومی، گالری، عکس شاخص، excerpt و محتوای editor مستقل است. نمونه‌های library نیز همان renderer را با query آزمایشی و بازگرداندن main query مصرف می‌کنند. pagination بومی، قبلی/بعدی و مشابه مالک مشترک دارند؛ source IDs و اطلاعات مشتری کپی نشده‌اند.
 
 ## داده و دارایی
@@ -34,6 +36,8 @@
 `inc/catalog.php` ثبت CPT/طبقه‌بندی/رندر؛ `inc/catalog/model.php` مدل منتخب منبع، `query.php` فیلتر بومی، `admin.php` و `fields.php` ویرایش امن محتوا؛ `src/js/admin/catalog-editor.js` فقط مدیریت محصول. دو ماژول `catalog-archive` و `catalog-single` مالک نمایش و CSS مشترک `src/css/catalog.css` هستند. گالری از مالک کوچک موجود `ui/gallery.js` و `ui/gallery.css` استفاده می‌کند. قرارداد و منشأ در [catalog-products.md](catalog-products.md).
 
 ## ماژول‌های مرجع اسکرولی
+
+`modules/particles/` مالک کامل data/view/style/script/engine و LICENSE خودش است؛ به runtime یا طرح دیگر import ندارد. موتور محلیِ MIT از نسخهٔ قبلی Radman CT اقتباس شده، با سقف ۷۲ ذره در انتخاب نمونه، کاهش تعداد متناسب با مساحت و سقف Retina=2 موتور. بارگیری engine فقط هنگام دید و اجازهٔ حرکت انجام می‌شود؛ توقف دستی، بیرون دید، تب مخفی، reduced-motion و teardown موتور و canvas را آزاد می‌کنند. فقط ResizeObserver همین ماژول resize را مدیریت می‌کند؛ listeners موازی موتور خاموش‌اند. fallback ایستا و متن بدون JS خوانا می‌مانند. schema و پنل Elementor منتقل نشده‌اند.
 
 نمونهٔ `modules/button-roll/` فقط قاب و دادهٔ دکمهٔ فعلی Webtalik است. view همان `RadmanCT\button()` و CSS موجود `shared/radmanct/src/css/ui/button.css` را مصرف می‌کند؛ رفتار hover/focus/reduced-motion کپی یا بازنویسی نمی‌شود. فیلتر `rdl/button-roll/data` متن، URL و نام آیکون را تحویل می‌دهد. پیش‌نمایش روشن/تیره یک طراحی است، نه دو موتور یا دو ماژول؛ JS و اسکرول نرم بارگذاری نمی‌شوند. قرارداد انتقال شامل renderer، آیکون و توکن/CSS مشترک موجود است؛ قاب `rdl-btn-demo` مخصوص کارگاه است.
 

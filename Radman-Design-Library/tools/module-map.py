@@ -35,13 +35,16 @@ for slug,module in registry.items():
     if slug in ['header-radman','footer-radman','page-home','page-services']:helpers+=['shared/radmanct/inc/brand.php','shared/radmanct/inc/navigation.php']
     if slug in ['services-cover','services-strip','page-services','wellness-scroll','project-marquee']:helpers+=['shared/radmanct/inc/page-title.php']
     if slug in ['home-hero','home-services','services-cover','page-home','page-services']:helpers+=['shared/radmanct/inc/assets.php']
-    if slug not in ['robot','text-3d','data-table']:helpers+=['shared/radmanct/inc/ui/button.php','shared/radmanct/inc/icons.php','shared/radmanct/inc/icons/catalog.php']
+    if slug not in ['robot','text-3d','data-table','particles']:helpers+=['shared/radmanct/inc/ui/button.php','shared/radmanct/inc/icons.php','shared/radmanct/inc/icons/catalog.php']
     out[slug]={'kind':module.get('kind','section'),'family':module['group'],'effects':module.get('effects',[]),'entries':entries,'source_files':relative_graph(entries+helpers+['src/css/client-base.css']),'css_base':'src/css/client-base.css','php_contracts':['Native WordPress APIs','Use existing RadmanCT helpers once; replace workshop fixture adapters with client data'],'preview_only':['inc/samples.php','inc/portfolio.php','preview.php','assets/bar.css'],'vendor':'local GSAP 3.15.0 only if consumed; never one vendor copy per sample'}
     if slug=='data-table':
         out[slug].update(vendor='None; native PHP/HTML/CSS table and browser scrolling only',php_contracts=['Native WordPress APIs','rdl/data-table/data supplies plain table copy and columns/rows cells; no workshop fixture or client database required'])
     if slug=='button-roll':
         out[slug]['vendor']='None; existing shared RadmanCT button renderer and CSS transitions only'
         out[slug]['preview_only']+=['modules/button-roll/style.css']
+    out[slug]['preview_only']+=['inc/preview.php','assets/preview.js','assets/preview.css','template-parts/preview-toolbar.php','template-parts/device-preview.php']
+    if slug=='particles':
+        out[slug].update(vendor='Local particles.js 2.0.0 MIT factory, owned by this module only; no GSAP or sibling sample imports',assets=['modules/particles/LICENSE.txt'],php_contracts=['Native WordPress APIs','rdl/particles/data supplies copy and bounded particle settings; no workshop fixture required'])
     if slug=='robot':
         out[slug].update(vendor='Local Three.js (exact version in package-lock.json); dynamic viewer only, no GSAP or Spline',assets=['modules/robot/models/robot.glb','modules/robot/poster.svg'],build_tools=['tools/build-robot.mjs'],php_contracts=['Native WordPress APIs','rdl_robot_data supplies per-client config; no workshop data required'])
 (root/'docs/module-map.json').write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8')
