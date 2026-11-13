@@ -997,17 +997,17 @@
       "_gsap-vendor-CvDoa17S.min.js"
     ]
   },
-  "src/css/client-base.css": {
-    "file": "css/css-css-client-base-BuBbADiF.min.css",
-    "name": "css-css-client-base",
+  "src/css/canvas-base.css": {
+    "file": "css/css-css-canvas-base-47KMKxIs.min.css",
+    "name": "css-css-canvas-base",
     "names": [
-      "css-css-client-base.css"
+      "css-css-canvas-base.css"
     ],
-    "src": "src/css/client-base.css",
+    "src": "src/css/canvas-base.css",
     "isEntry": true
   },
   "src/css/sample-base.css": {
-    "file": "css/css-css-sample-base-DMHph2If.min.css",
+    "file": "css/css-css-sample-base-C6vmcp3N.min.css",
     "name": "css-css-sample-base",
     "names": [
       "css-css-sample-base.css"

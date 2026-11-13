@@ -12,7 +12,7 @@
 | `preview.php` + `template-parts/library-bar.php` | هدر مشترک و پیش‌نمایش تمام‌عرض با یک اسکرول |
 | `inc/library.php`، `assets/library.js`، `library-sidebar.php` | فهرست AJAX، جستجو، loading، دسته‌های بومی و صفحه‌بندی |
 | `src/js/scroll.js` / `motion-view.js` | مالک اسکرول موجود / lifecycle و reduced-motion کوچک مشترک |
-| `src/css/sample-base.css` / `client-base.css` | پایهٔ پیش‌نمایش با هدر کارگاه / پایهٔ مشتری بدون رابط کارگاه |
+| `src/css/sample-base.css` / `canvas-base.css` / `client-base.css` | پایهٔ پیش‌نمایش با هدر کارگاه / قاب دستگاه با فاصلهٔ اسکرول نمونه / پایهٔ مشتری بدون رابط کارگاه |
 | `dist` / `dist-selected` | build کتابخانه / خروجی انتخابی مشتری؛ ویرایش مستقیم ممنوع |
 | `docs/module-map.json` | نقشهٔ فایل‌ها و قرارداد helperها برای برداشتن هر ماژول |
 
