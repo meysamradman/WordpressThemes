@@ -9,9 +9,8 @@
 .rdl-mosaic__copy h3 { margin:0; max-inline-size:12ch; font-size:clamp(1.35rem,1.75vw,2rem); line-height:1.5; }
 .rdl-mosaic__cnt p { margin:0 0 .5rem; color:var(--rdc-mut); font-size:clamp(.875rem,1vw,1rem); }
 .rdl-mosaic__cnt .rdc-btn { --rdc-btn-pad:0; --rdc-btn-ht:2.5rem; }
-.rdl-mosaic__md { aspect-ratio:1; min-inline-size:0; background:var(--rdc-clr-ink); overflow:hidden; }
-.rdl-mosaic__md :is(img,video) { display:block; inline-size:100%; block-size:100%; object-fit:cover; }
-.rdl-mosaic__md video { object-fit:contain; }
+.rdl-mosaic__md { position:relative; aspect-ratio:1; min-inline-size:0; background:var(--rdc-clr-ink); overflow:hidden; }
+.rdl-mosaic__md :is(img,video) { position:absolute; inset:0; display:block; inline-size:100%; block-size:100%; object-fit:cover; }
 @media (min-width:1024px) { .rdl-mosaic__itm:nth-child(4n+3) .rdl-mosaic__md,.rdl-mosaic__itm:nth-child(4n+4) .rdl-mosaic__md { order:-1; } }
 @media (max-width:1023px) { .rdl-mosaic__grid { grid-template-columns:minmax(0,1fr); } .rdl-mosaic__itm:nth-child(even) .rdl-mosaic__md { order:-1; } .rdl-mosaic__copy h3 { font-size:clamp(1.5rem,3vw,2.25rem); } }
 @media (max-width:639px) { .rdl-mosaic__itm { grid-template-columns:minmax(0,1fr); gap:0; } .rdl-mosaic__itm:nth-child(even) .rdl-mosaic__md { order:initial; } .rdl-mosaic__copy { aspect-ratio:auto; min-block-size:19rem; gap:2rem; padding:1.75rem; } .rdl-mosaic__copy h3 { max-inline-size:18ch; } .rdl-mosaic__md { aspect-ratio:4/3; } }
