@@ -1,7 +1,10 @@
 <?php defined('ABSPATH')||exit;$tracks=array_slice($args['tracks']??array(),0,4); ?>
 <svg class="rdc-pt__orbs" viewBox="0 0 1920 1080" aria-hidden="true" focusable="false">
+ <?php if(count($args['matrix']??array())===2):for($row=0;$row<5;$row++):for($column=0;$column<3;$column++): ?>
+ <circle class="rdc-pt__matrix" cx="<?php echo esc_attr((float)$args['matrix'][0]+$column*17); ?>" cy="<?php echo esc_attr((float)$args['matrix'][1]+$row*17); ?>" r="1.3"/>
+ <?php endfor;endfor;endif; ?>
  <?php foreach($tracks as $track): ?>
- <path d="<?php echo esc_attr($track[0]); ?>" data-orbit-pipe data-orbit-duration="<?php echo (int)$track[1]; ?>" fill="none" stroke="none"/>
+ <path<?php if(!empty($args['draw']))echo ' class="rdc-pt__line"'; ?> d="<?php echo esc_attr($track[0]); ?>" data-orbit-pipe data-orbit-duration="<?php echo (int)$track[1]; ?>" fill="none"<?php if(empty($args['draw']))echo ' stroke="none"'; ?>/>
  <?php endforeach; ?>
 </svg>
 <?php foreach($tracks as $index=>$track): ?>

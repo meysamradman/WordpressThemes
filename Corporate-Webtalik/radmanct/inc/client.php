@@ -51,6 +51,16 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
   if(is_page($service['slug'])){$description=$service['description'];break;}
  }
  if(is_page('about-us')){
+  $data['media_inset']=true;
+  $data['media_flat']=true;
+  $data['art_draw']=true;
+  $data['art_tracks']=array(
+   array('M110 340 C160 205 302 142 445 151 C595 160 737 250 807 372',30,.3),
+   array('M88 480 C45 592 102 722 227 794 C344 862 491 875 623 845',28,.65),
+   array('M815 410 C914 547 898 711 763 819 C684 883 575 908 472 890',32,.4)
+  );
+  $data['art_nodes']=array();
+  $data['art_matrix']=array(91.87,760);
   $data['label']=__('Who we are','radmanct');
   $description=__('A focused team for thoughtful design and reliable development.','radmanct');
  }elseif(is_page('contact-us')){
