@@ -33,7 +33,7 @@
    </div>
    <section class="rdc-ftr__prj" aria-labelledby="footer-project-title">
     <p class="rdc-ftr__lbl"><?php esc_html_e('A new collaboration','radmanct'); ?></p>
-    <h2 id="footer-project-title"><?php esc_html_e('Let’s talk about your next project.','radmanct'); ?></h2>
+    <p class="rdc-ftr__ttl" id="footer-project-title"><?php esc_html_e('Let’s talk about your next project.','radmanct'); ?></p>
     <p class="rdc-ftr__intr"><?php esc_html_e('From the first idea to a website built for your business, we are here to help.','radmanct'); ?></p>
     <?php if($footer['contact']): ?><?php echo \RadmanCT\button(__('Start a conversation','radmanct'),$footer['contact']); ?><?php endif; ?>
    </section>

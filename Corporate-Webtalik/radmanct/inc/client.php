@@ -28,7 +28,7 @@ add_filter('radmanct/services/marquee',static function():array {
 // Current customer's editorial data. Replace this file for the next project;
 // shared renderers, assets and animation code remain independent of this content.
 add_filter('body_class',static function(array $classes):array {
- if(is_page('services'))$classes[]='rdc-inv';
+ if(is_page(array('services','custom-website-design-development')))$classes[]='rdc-inv';
  return $classes;
 });
 add_filter('radmanct/page-title/enabled',static function(bool $enabled):bool {

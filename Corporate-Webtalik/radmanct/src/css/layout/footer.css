@@ -22,7 +22,7 @@
 .rdc-ftr__soc > .rdc-ico:last-child { inline-size:1rem; block-size:1rem; }
 .rdc-ftr__socs span.rdc-ftr__soc { color:var(--rdc-mut); }
 .rdc-ftr__prj { text-align:end; }
-.rdc-ftr__prj h2 { max-inline-size:none; font-size:clamp(1.5rem,2.2vw,2.25rem); text-wrap:balance; }
+.rdc-ftr__ttl { max-inline-size:none; font-size:clamp(1.5rem,2.2vw,2.25rem); font-weight:var(--rdc-wt-hdg); line-height:var(--rdc-ln-ht-hdg); text-wrap:balance; }
 .rdc-ftr__intr { max-inline-size:none; margin-block:1rem 1.5rem; color:var(--rdc-mut); font-size:var(--rdc-sz-sm); }
 .rdc-ftr__prj .rdc-btn { inline-size:100%; justify-content:space-between; }
 .rdc-ftr__btm { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block-start:1.25rem; border-block-start:1px solid var(--rdc-ln); color:var(--rdc-mut); font-size:var(--rdc-sz-sm); }

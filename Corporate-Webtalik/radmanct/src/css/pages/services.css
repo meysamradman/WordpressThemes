@@ -1,8 +1,8 @@
 @import '../ui/faq.css';
 @import '../ui/project-marquee.css';
-.rdc-svc-show { --rdc-ctr:100%; --rdc-svc-ttl-sz:clamp(1.35rem,2.2vw,2.5rem); --rdc-svc-ttl-ln-ht:1.6; padding-block:clamp(2rem,5vw,5rem) clamp(4rem,8vw,8rem); }
+.rdc-svc-show { --rdc-ctr:100%; --rdc-svc-ttl-sz:clamp(1.5rem,2.6vw,3rem); --rdc-svc-ttl-ln-ht:1.6; padding-block:clamp(2rem,5vw,5rem) clamp(4rem,8vw,8rem); }
 .rdc-svc-show__hdr { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-block-end:clamp(2.5rem,5vw,5rem); }
-.rdc-svc-show__hdr h2 { display:flex; align-items:center; gap:.75rem; margin:0; font-size:1rem; font-weight:600; line-height:1.5; }
+.rdc-svc-show__hdr h2 { display:flex; align-items:center; gap:.75rem; margin:0; font-size:clamp(1.75rem,3vw,3rem); font-weight:600; line-height:1.5; }
 .rdc-svc-show__hdr p { margin:0; color:var(--rdc-mut); font-size:var(--rdc-sz-sm); }
 .rdc-svc-show__ly { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr); align-items:start; gap:clamp(2rem,8vw,10rem); direction:ltr; }
 .rdc-svc-show__vis { min-inline-size:0; margin:0; }

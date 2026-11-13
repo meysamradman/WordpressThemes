@@ -121,8 +121,17 @@
     "src": "src/css/pages/portfolio/single.css",
     "isEntry": true
   },
+  "src/css/pages/service.css": {
+    "file": "css/service-DJhU2hmh.min.css",
+    "name": "css-service",
+    "names": [
+      "css-service.css"
+    ],
+    "src": "src/css/pages/service.css",
+    "isEntry": true
+  },
   "src/css/pages/services.css": {
-    "file": "css/services-DmRqvagd.min.css",
+    "file": "css/services-BVsbNi92.min.css",
     "name": "css-services",
     "names": [
       "css-services.css"
@@ -131,7 +140,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-Bhob7p_b.min.css",
+    "file": "css/site-DngYZBxi.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"

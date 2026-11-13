@@ -39,6 +39,7 @@ add_action('wp_enqueue_scripts',static function():void{
  style('site');script('site');
  if(\RadmanCT\PageTitle\is_used())style('layout/page-title',array('rdc-site'));
  if(is_page('services')){style('pages/services',array('rdc-site'));script('pages/services');}
+ elseif(is_page('custom-website-design-development'))style('pages/service',array('rdc-site'));
  elseif(is_front_page()){style('pages/home',array('rdc-site'));script('pages/home');}
  elseif(is_home()||is_category()||is_tag()||is_date()||is_author()||is_search()||is_singular('post')){style('pages/blog',array('rdc-site'));style(is_singular('post')?'pages/blog/single':'pages/blog/archive',array('rdc-pages-blog'));if(!is_singular())script('pages/archive');}
  elseif(is_post_type_archive('project')||is_tax('project_category')||is_singular('project')){style(is_singular('project')?'pages/portfolio/single':'pages/portfolio/archive',array('rdc-site'));if(is_singular('project')){if(!post_password_required())script('ui/gallery');}else{script('pages/archive');script('pages/portfolio');}}

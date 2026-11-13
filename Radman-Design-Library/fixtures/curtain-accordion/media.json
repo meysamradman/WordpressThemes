@@ -1,0 +1,80 @@
+[
+  {
+    "key": "background",
+    "file": "background.webp",
+    "source": "https://nilgoondeniz.com/wp-content/uploads/2026/09/back1.webp",
+    "label": "زمینه پنل"
+  },
+  {
+    "key": "panel-0",
+    "file": "panel-0.webp",
+    "source": "https://nilgoondeniz.com/wp-content/uploads/2026/09/j76jj.webp",
+    "label": "رزین‌ها"
+  },
+  {
+    "key": "panel-1",
+    "file": "panel-1.webp",
+    "source": "https://nilgoondeniz.com/wp-content/uploads/2026/09/hjuk8klwebp.webp",
+    "label": "حلال‌های صنعتی"
+  },
+  {
+    "key": "panel-2",
+    "file": "panel-2.webp",
+    "source": "https://nilgoondeniz.com/wp-content/uploads/2026/09/79ll.webp",
+    "label": "ادتیوهای تخصصی"
+  },
+  {
+    "key": "panel-3",
+    "file": "panel-3.webp",
+    "source": "https://nilgoondeniz.com/wp-content/uploads/2026/09/muymu77.webp",
+    "label": "رنگدانه‌های صنعتی"
+  },
+  {
+    "key": "panel-4",
+    "file": "panel-4.webp",
+    "source": "https://nilgoondeniz.com/wp-content/uploads/2026/09/k76k6.webp",
+    "label": "پودر روی (Zinc Dust)"
+  },
+  {
+    "key": "panel-5",
+    "file": "panel-5.webp",
+    "source": "https://nilgoondeniz.com/wp-content/uploads/2026/09/mumu77u7u.webp",
+    "label": "پرکننده‌ها و مواد کمکی"
+  },
+  {
+    "key": "icon-0",
+    "file": "icon-0.svg",
+    "source": "https://nilgoondeniz.com/chemical-raw-materials-supply/#curtain-icon-0",
+    "label": "رزین‌ها"
+  },
+  {
+    "key": "icon-1",
+    "file": "icon-1.svg",
+    "source": "https://nilgoondeniz.com/chemical-raw-materials-supply/#curtain-icon-1",
+    "label": "حلال‌های صنعتی"
+  },
+  {
+    "key": "icon-2",
+    "file": "icon-2.svg",
+    "source": "https://nilgoondeniz.com/chemical-raw-materials-supply/#curtain-icon-2",
+    "label": "ادتیوهای تخصصی"
+  },
+  {
+    "key": "icon-3",
+    "file": "icon-3.svg",
+    "source": "https://nilgoondeniz.com/chemical-raw-materials-supply/#curtain-icon-3",
+    "label": "رنگدانه‌های صنعتی"
+  },
+  {
+    "key": "icon-4",
+    "file": "icon-4.svg",
+    "source": "https://nilgoondeniz.com/chemical-raw-materials-supply/#curtain-icon-4",
+    "label": "پودر روی (Zinc Dust)"
+  },
+  {
+    "key": "icon-5",
+    "file": "icon-5.svg",
+    "source": "https://nilgoondeniz.com/chemical-raw-materials-supply/#curtain-icon-5",
+    "label": "پرکننده‌ها و مواد کمکی"
+  }
+]

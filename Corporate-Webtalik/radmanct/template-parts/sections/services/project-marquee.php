@@ -11,7 +11,7 @@ if(!$images)return;
 $heading=wp_unique_id('rdc-prj-mq-ttl-');
 ?>
 <section class="rdc-prj-mq rdc-inv" aria-labelledby="<?php echo esc_attr($heading); ?>" data-rdc-prj-mq>
- <header class="rdc-prj-mq__hdr"><a href="<?php echo esc_url($data['url']); ?>"><h2 class="rdc-prj-mq__ttl" id="<?php echo esc_attr($heading); ?>"><?php foreach($data['title'] as $line): ?><span><?php echo esc_html($line); ?></span><?php endforeach; ?></h2></a></header>
+ <header class="rdc-prj-mq__hdr"><a href="<?php echo esc_url($data['url']); ?>"><p class="rdc-prj-mq__ttl" id="<?php echo esc_attr($heading); ?>"><?php foreach($data['title'] as $line): ?><span><?php echo esc_html($line); ?></span><?php endforeach; ?></p></a></header>
  <div class="rdc-prj-mq__win" tabindex="0" aria-label="گالری حوزه‌های طراحی">
   <div class="rdc-prj-mq__trk"><ul class="rdc-prj-mq__grp">
    <?php foreach($images as $item): ?>
