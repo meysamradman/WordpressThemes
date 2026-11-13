@@ -20,7 +20,7 @@ add_filter('show_admin_bar',static fn(bool $show):bool=>Samples\raw()?false:$sho
 add_action('wp_enqueue_scripts',static function():void{
     if(!Samples\raw())return;
     $module=Samples\selected();
-    $base=\RadmanCT\Assets\entry(Preview\canvas()?'src/css/client-base.css':'src/css/sample-base.css');
+    $base=\RadmanCT\Assets\entry(Preview\canvas()?'src/css/canvas-base.css':'src/css/sample-base.css');
     if($base)wp_enqueue_style('rdl-sample-base',\RadmanCT\Assets\url($base['file']),[],null);
     if(Preview\framed()){
         wp_enqueue_script('rdl-device-preview',get_template_directory_uri().'/assets/preview.js',[],filemtime(get_template_directory().'/assets/preview.js'),array('in_footer'=>true,'strategy'=>'defer'));

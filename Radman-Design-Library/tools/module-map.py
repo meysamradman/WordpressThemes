@@ -42,7 +42,7 @@ for slug,module in registry.items():
     if slug=='button-roll':
         out[slug]['vendor']='None; existing shared RadmanCT button renderer and CSS transitions only'
         out[slug]['preview_only']+=['modules/button-roll/style.css']
-    out[slug]['preview_only']+=['inc/preview.php','assets/preview.js','assets/preview.css','template-parts/preview-toolbar.php','template-parts/device-preview.php']
+    out[slug]['preview_only']+=['inc/preview.php','assets/preview.js','assets/preview.css','src/css/canvas-base.css','template-parts/preview-toolbar.php','template-parts/device-preview.php']
     if slug=='particles':
         out[slug].update(vendor='Local particles.js 2.0.0 MIT factory, owned by this module only; no GSAP or sibling sample imports',assets=['modules/particles/LICENSE.txt'],php_contracts=['Native WordPress APIs','rdl/particles/data supplies copy and bounded particle settings; no workshop fixture required'])
     if slug=='robot':
