@@ -146,8 +146,8 @@
       "_gsap-BkNXKQh0.min.js"
     ]
   },
-  "_typography-fields-1RNAXzV3.min.js": {
-    "file": "js/typography-fields-1RNAXzV3.min.js",
+  "_typography-fields-CuRJacd3.min.js": {
+    "file": "js/typography-fields-CuRJacd3.min.js",
     "name": "typography-fields",
     "imports": [
       "_rolldown-runtime-DK3Fl9T5.min.js",
@@ -654,7 +654,7 @@
     ]
   },
   "src/js/admin/color-settings-fields.js": {
-    "file": "js/color-settings-fields-JWhgdxR8.min.js",
+    "file": "js/color-settings-fields-CRpVqolx.min.js",
     "name": "color-settings-fields",
     "src": "src/js/admin/color-settings-fields.js",
     "isDynamicEntry": true,
@@ -663,7 +663,7 @@
     ]
   },
   "src/js/admin/content-typography-fields.js": {
-    "file": "js/content-typography-fields-B1djM7xP.min.js",
+    "file": "js/content-typography-fields-C9k56tq-.min.js",
     "name": "content-typography-fields",
     "src": "src/js/admin/content-typography-fields.js",
     "isDynamicEntry": true,
@@ -671,7 +671,7 @@
       "_controls-h5iHAiOY.min.js",
       "src/js/admin/settings.js",
       "_panel-tabs-DzCh7ti_.min.js",
-      "_typography-fields-1RNAXzV3.min.js"
+      "_typography-fields-CuRJacd3.min.js"
     ]
   },
   "src/js/admin/content-view-fields.js": {
@@ -711,7 +711,7 @@
     ]
   },
   "src/js/admin/page-title-settings.js": {
-    "file": "js/page-title-settings-jB2IOoJL.min.js",
+    "file": "js/page-title-settings-GUllUT8g.min.js",
     "name": "page-title-settings",
     "src": "src/js/admin/page-title-settings.js",
     "isDynamicEntry": true,
@@ -721,7 +721,7 @@
     ]
   },
   "src/js/admin/settings.js": {
-    "file": "js/settings-LTQerMKs.min.js",
+    "file": "js/settings-BK1F8C_Z.min.js",
     "name": "settings",
     "src": "src/js/admin/settings.js",
     "isEntry": true,
@@ -736,7 +736,7 @@
       "src/js/admin/content-typography-fields.js",
       "src/js/admin/content-view-fields.js",
       "src/js/admin/color-settings-fields.js",
-      "_typography-fields-1RNAXzV3.min.js",
+      "_typography-fields-CuRJacd3.min.js",
       "src/js/admin/builder-site-settings.js",
       "src/js/admin/custom-code-fields.js"
     ]

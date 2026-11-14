@@ -1,4 +1,0 @@
-.rdct-post-categories { display: flex; flex-wrap: wrap; gap: .4rem; font-size: .8rem; }
-.rdct-post-categories > :is(a, span) { padding: .15rem .65rem; border-radius: var(--rdct-radius); background: var(--rdct-surface); color: var(--rdct-ink); text-decoration: none; }
-.rdct-post-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 1rem; color: var(--rdct-muted); font-size: .875rem; }
-.rdct-post-meta + h2 { margin-block-start: 0; }

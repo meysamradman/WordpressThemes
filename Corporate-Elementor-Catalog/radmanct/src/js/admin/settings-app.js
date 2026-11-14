@@ -5,7 +5,6 @@ import { saveSettings, mergeSaved } from './settings-save.js';
 import { primaryFontGroup } from './settings-fonts.js';
 import { resetSettings } from './settings-reset.js';
 import { CursorFields, cursorKeys } from './cursor-fields.js';
-import { ContentLayoutFields } from './layout-fields.js';
 import { AnalyticsFields } from './analytics-fields.js';
 
 const { createElement: h, useState, useEffect, useRef } = window.wp.element;
@@ -218,7 +217,7 @@ export function SettingsApp({ config }) {
         h('h3', null, labels.layout), h('p', null, labels.layoutOwnershipHint),
         h(InputField, { name: 'container_width', label: labels.containerWidth, description: labels.widthHint, type: 'number', dir: 'ltr', min: 960, max: 1600, step: 1, value: values.container_width, onChange: change }),
         h(InputField, { name: 'reading_width', label: labels.readingWidth, type: 'number', dir: 'ltr', min: 320, max: 1280, step: 1, value: values.reading_width, onChange: change }),
-        h(ContentLayoutFields, { values, change, config })),
+        null),
       contentTypographyView && h('section', {id:`rdct-panel-${active}`,role:'tabpanel','aria-labelledby':`rdct-tab-${active}`,className:'rdct-stg__panel'},
         h('h3',null,`${labels[active.split('_')[0]]} / ${labels.typography}`),
         ContentTypographyFields ? h(ContentTypographyFields,{key:active,scope:active.split('_')[0],config,values,change}) : panelError === 'content_typography' ? loadError() : loadingPanel),

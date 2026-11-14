@@ -12,9 +12,9 @@ $blog = false;
 $single_post = false;
 
 function get_template_directory() { return dirname( __DIR__ ) . '/radmanct'; }
-function get_stylesheet_directory() { return dirname( __DIR__ ) . '/radmanct-child'; }
+function get_stylesheet_directory() { return dirname( __DIR__ ) . '/radmanct'; }
 function get_template_directory_uri() { return 'https://radman.test/wp-content/themes/radmanct'; }
-function get_stylesheet_directory_uri() { return 'https://radman.test/wp-content/themes/radmanct-child'; }
+function get_stylesheet_directory_uri() { return 'https://radman.test/wp-content/themes/radmanct'; }
 function add_action( ...$args ) {}
 function add_filter( ...$args ) {}
 function apply_filters( $hook, $value ) { if ( 'radmanct/typography/preload' === $hook ) { return $GLOBALS['preload_groups']; } return $hook === 'radmanct/typography/fonts' ? ( $GLOBALS['font_choices'] ?? $value ) : $value; }
@@ -37,36 +37,11 @@ function expect( $condition, $message ) { if ( ! $condition ) { throw new Runtim
 require $workspace . '/radmanct/inc/assets.php';
 require $workspace . '/radmanct/inc/settings.php';
 require $workspace . '/radmanct/inc/typography.php';
-require $workspace . '/radmanct-child/functions.php';
 
 \RadmanCT\Assets\enqueue();
-expect( isset( $styles['rdct-page'], $styles['rdct-theme'] ), 'Default page assets missing.' );
-expect( ! isset( $styles['rdct-blog'] ) && ! isset( $styles['rdct-listing'] ) && ! isset( $styles['rdct-client-page'] ), 'Unrelated page assets loaded.' );
+expect( isset( $styles['rdct-theme'] ) && count( $styles ) === 1, 'The shell must not enqueue customer page designs.' );
 expect( count( $scripts ) === 1, 'Unexpected initial JavaScript modules.' );
 expect( \RadmanCT\Assets\entry( 'missing.css' ) === array(), 'Missing asset did not fail closed.' );
-
-$styles = array();
-$page_template = 'templates/custom-page.php';
-\RadmanCT\Assets\enqueue();
-\RadmanCTChild\assets();
-expect( isset( $styles['radmanct-child'], $styles['rdct-client-page'] ), 'Child styles missing.' );
-expect( ! isset( $styles['rdct-page'] ), 'Default page CSS leaked into a custom page.' );
-expect( str_contains( $styles['rdct-client-page'][0], '/radmanct-child/dist/' ), 'Child manifest resolved to the parent.' );
-expect( str_ends_with( $styles['rdct-client-page'][0], '.min.css' ), 'Readable CSS was enqueued.' );
-
-$styles = array();
-$page = false;
-$blog = true;
-$page_template = '';
-\RadmanCT\Assets\enqueue();
-\RadmanCTChild\assets();
-expect( isset( $styles['rdct-listing'] ) && ! isset( $styles['rdct-page'] ) && ! isset( $styles['rdct-client-page'] ) && ! isset( $styles['rdct-blog'] ), 'Listing asset isolation failed.' );
-
-$styles = array();
-$blog = false;
-$single_post = true;
-\RadmanCT\Assets\enqueue();
-expect( isset( $styles['rdct-blog'] ) && ! isset( $styles['rdct-listing'] ) && ! isset( $styles['rdct-page'] ), 'Single post asset isolation failed.' );
 
 $css = \RadmanCT\Typography\css();
 expect( str_contains( $css, 'IRANSansXV.woff2' ) && ! str_contains( $css, 'PeydaWebVF.woff2' ), 'Unselected font declared.' );
@@ -108,4 +83,4 @@ $translations = new MO();
 expect( $translations->import_from_file( $workspace . '/radmanct/languages/fa_IR.mo' ), 'Persian catalog did not load.' );
 expect( $translations->translate( 'Menu' ) !== 'Menu', 'Persian interface translation missing.' );
 
-echo "Passed: conditional assets, child overrides, font fallback and WordPress MO reader.\n";
+echo "Passed: shell assets, font fallback and WordPress MO reader.\n";

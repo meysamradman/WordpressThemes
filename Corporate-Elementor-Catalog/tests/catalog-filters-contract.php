@@ -38,7 +38,6 @@ function remove_query_arg( $keys, $url ) { $base = strtok( $url, '?' ); parse_st
 function get_pagenum_link( $page, $escape ) { return 'https://local.test/?page_id=42&lang=fa&paged=8&_rdct_fragment=blog&unrelated=secret'; }
 require __DIR__ . '/../radmanct-content/inc/catalog.php';
 require __DIR__ . '/../radmanct/inc/integrations/catalog-filters.php';
-require __DIR__ . '/../radmanct/inc/blog-archive.php';
 function output(): string { ob_start(); \RadmanCT\Content\CatalogFilters\render(); return ob_get_clean(); }
 
 $_GET = array( 'rm_search' => '<b>Pump</b>', 'rm_category' => 'industrial', 'rm_brand' => 'special-brand', 'rm_sort' => 'title', 'paged' => '8', 'unrelated' => 'secret' );
@@ -65,15 +64,4 @@ expect( array() === \RadmanCT\Content\CatalogFilters\routing( 'https://local.tes
 $context = 'blog';
 $before = $term_queries;
 expect( '' === output() && $before === $term_queries, 'Catalog tools ran on an unrelated page.' );
-$_GET = array( 'rdct_search' => '<b>News</b>', 'rdct_category' => 'industrial', 'rdct_tag' => 'extra-tag', 'rdct_sort' => 'title' );
-ob_start(); \RadmanCT\BlogArchive\filters(); $html = ob_get_clean();
-expect( str_contains( $html, 'name="page_id" value="42"' ) && str_contains( $html, 'name="lang" value="fa"' ), 'Blog form lost plain routing or language.' );
-expect( 4 === substr_count( $html, 'aria-label="Remove filter:' ) && ! str_contains( $html, '<Industrial>' ) && str_contains( $html, 'Tag: Selected extra' ), 'Blog active filter labels or escaping failed.' );
-expect( ! str_contains( $html, 'secret' ) && ! str_contains( $html, '_rdct_fragment' ) && ! str_contains( $html, 'paged=8' ), 'Blog links copied unrelated or stale request arguments.' );
-preg_match( '/href="([^"]+)" aria-label="Remove filter: Search articles/', $html, $match );
-parse_str( parse_url( html_entity_decode( $match[1] ), PHP_URL_QUERY ), $removed );
-expect( ! isset( $removed['rdct_search'] ) && 'industrial' === $removed['rdct_category'] && 'extra-tag' === $removed['rdct_tag'] && 'title' === $removed['rdct_sort'] && '42' === $removed['page_id'] && 'fa' === $removed['lang'], 'Blog single-filter removal lost remaining filters or routing.' );
-$before = array( $term_queries, $selected_queries );
-ob_start(); \RadmanCT\BlogArchive\filters(); ob_end_clean();
-expect( $before === array( $term_queries, $selected_queries ), 'Repeated blog rendering repeated term queries.' );
-echo "Passed: blog/catalog active filter removal, escaping, bounded language-scoped term reuse, main result count, GET routing and isolation.\n";
+echo "Passed: catalog active filter removal, escaping, language-scoped term reuse, main result count, GET routing and isolation.\n";

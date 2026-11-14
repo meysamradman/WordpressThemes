@@ -6,6 +6,7 @@ defined( 'ABSPATH' ) || exit;
 require_once __DIR__ . '/content-colors-settings.php';
 
 function current(): array {
+	if ( \RadmanCT\Layout\elementor_content() ) { return array(); }
 	$context = \RadmanCT\Renderers\context();
 	if ( 2 !== count( $context ) ) { return array(); }
 	$scope = implode( '_', $context ); $settings = \RadmanCT\Settings\values();

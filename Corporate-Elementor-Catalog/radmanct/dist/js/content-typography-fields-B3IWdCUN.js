@@ -1,7 +1,7 @@
 import { t as ButtonControl } from "./controls-DqGpx29l.js";
-import { r as FontFaces } from "./settings-BCrDiqNP.js";
+import { r as FontFaces } from "./settings-7-33mTbp.js";
 import { n as TabList } from "./panel-tabs-BJ7bpkAa.js";
-import { t as TypographyFields } from "./typography-fields-B70eGrZZ.js";
+import { t as TypographyFields } from "./typography-fields-CQ24HZ7V.js";
 //#region radmanct/src/js/admin/typography-profile.js
 function resolveProfile(base, raw, roles) {
 	const values = { ...base };

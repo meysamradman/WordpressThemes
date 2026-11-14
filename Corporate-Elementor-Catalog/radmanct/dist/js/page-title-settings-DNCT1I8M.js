@@ -1,5 +1,5 @@
 import { t as PageTitleFields } from "./page-title-fields-DHhcVJML.js";
-import { ContentTypographyFields } from "./content-typography-fields-DHoJLOsp.js";
+import { ContentTypographyFields } from "./content-typography-fields-B3IWdCUN.js";
 //#region radmanct/src/js/admin/page-title-settings.js
 var { createElement: h } = window.wp.element;
 function PageTitleSettings({ config, values, change }) {

@@ -3,33 +3,33 @@ import { a as InputControl, c as SelectControl, i as FieldRow, l as SwitchContro
 import { t as navigateTabs } from "./tab-navigation-BleN_2tI.js";
 import { t as ColorField } from "./color-field-DsbXJp0l.js";
 //#region shared/admin/section-navigation.js
-var { createElement: h$5, useState: useState$1, useEffect: useEffect$1 } = window.wp.element;
+var { createElement: h$4, useState: useState$1, useEffect: useEffect$1 } = window.wp.element;
 function SectionNavigation({ groups, value, onChange, label, id = "rdct" }) {
 	const parent = groups.find((group) => group.items.some((item) => item.id === value))?.id;
 	const [expanded, setExpanded] = useState$1(() => parent ?? null);
 	useEffect$1(() => {
 		setExpanded(parent ?? null);
 	}, [parent]);
-	return h$5("nav", {
+	return h$4("nav", {
 		className: "rdct-adm-menu rdct-adm-scroll",
 		"aria-label": label
 	}, ...groups.map((group) => {
 		const open = expanded === group.id;
-		return h$5("section", { key: group.id }, h$5("h3", null, h$5(ButtonControl, {
+		return h$4("section", { key: group.id }, h$4("h3", null, h$4(ButtonControl, {
 			variant: "ghost",
 			icon: group.icon,
 			className: "rdct-adm-menu__toggle",
 			"aria-expanded": open,
 			"aria-controls": `${id}-group-${group.id}`,
 			onClick: () => setExpanded((current) => current === group.id ? null : group.id)
-		}, h$5("span", null, group.label), h$5("span", {
+		}, h$4("span", null, group.label), h$4("span", {
 			className: "dashicons dashicons-arrow-down-alt2 rdct-adm-menu__arrow",
 			"aria-hidden": true
-		}))), h$5("div", {
+		}))), h$4("div", {
 			className: "rdct-adm-menu__reveal",
 			"data-open": open,
 			"aria-hidden": !open
-		}, h$5("div", {
+		}, h$4("div", {
 			id: `${id}-group-${group.id}`,
 			inert: open ? void 0 : "",
 			className: "rdct-adm-menu__children",
@@ -37,7 +37,7 @@ function SectionNavigation({ groups, value, onChange, label, id = "rdct" }) {
 			"aria-label": group.label,
 			"aria-orientation": "vertical",
 			onKeyDown: (event) => navigateTabs(event, onChange, "vertical")
-		}, ...group.items.map((item, index) => h$5(ButtonControl, {
+		}, ...group.items.map((item, index) => h$4(ButtonControl, {
 			key: item.id,
 			variant: "ghost",
 			className: "rdct-adm-menu__item",
@@ -62,18 +62,18 @@ function fontGroups(config, values) {
 }
 //#endregion
 //#region radmanct/src/js/admin/fields.js
-var { createElement: h$4 } = window.wp.element;
+var { createElement: h$3 } = window.wp.element;
 function ColorSetting({ name, label, value, onChange, fallback, resetLabel, resetValue = "", description }) {
-	return h$4(Field, {
+	return h$3(Field, {
 		name,
 		label,
 		description
-	}, h$4(InputControl, {
+	}, h$3(InputControl, {
 		type: "hidden",
 		name: `radman_settings[${name}]`,
 		value: value ?? "",
 		onChange: () => {}
-	}), h$4(ColorField, {
+	}), h$3(ColorField, {
 		id: `rdct-${name}`,
 		label,
 		showLabel: false,
@@ -84,21 +84,21 @@ function ColorSetting({ name, label, value, onChange, fallback, resetLabel, rese
 	}));
 }
 function Field({ label, name, description, children }) {
-	return h$4(FieldRow, {
+	return h$3(FieldRow, {
 		className: "rdct-stg__field",
 		label,
 		id: `rdct-${name}`
-	}, children, description && h$4("p", {
+	}, children, description && h$3("p", {
 		className: "rdct-stg__hint",
 		id: `rdct-${name}-hint`
 	}, description));
 }
 function InputField({ name, label, description, value, onChange, children, ...attributes }) {
-	return h$4(Field, {
+	return h$3(Field, {
 		name,
 		label,
 		description
-	}, h$4(attributes.type === "number" ? RangeControl : InputControl, {
+	}, h$3(attributes.type === "number" ? RangeControl : InputControl, {
 		...attributes.type === "number" ? { label } : {},
 		id: `rdct-${name}`,
 		name: `radman_settings[${name}]`,
@@ -109,11 +109,11 @@ function InputField({ name, label, description, value, onChange, children, ...at
 	}), children);
 }
 function SelectField({ name, label, description, value, onChange, options, children, ...attributes }) {
-	return h$4(Field, {
+	return h$3(Field, {
 		name,
 		label,
 		description
-	}, h$4(SelectControl, {
+	}, h$3(SelectControl, {
 		id: `rdct-${name}`,
 		name: `radman_settings[${name}]`,
 		value,
@@ -125,14 +125,14 @@ function SelectField({ name, label, description, value, onChange, options, child
 }
 function FontField({ name, label, choices, value, onChange, preview, language, registry, description, previewLabel, inherited, weight }) {
 	const family = registry[value || inherited]?.family ?? "sans-serif";
-	return h$4(SelectField, {
+	return h$3(SelectField, {
 		label,
 		name,
 		description,
 		value,
 		onChange,
 		options: choices
-	}, preview && h$4("p", {
+	}, preview && h$3("p", {
 		className: "rdct-stg__font-preview",
 		lang: language,
 		dir: language === "fa" ? "rtl" : "ltr",
@@ -144,22 +144,22 @@ function FontField({ name, label, choices, value, onChange, preview, language, r
 	}, preview));
 }
 function FontFaces({ config, values, groups = fontGroups(config, values) }) {
-	return h$4("style", null, [...new Set(Object.entries(values).filter(([key, value]) => groups.some((group) => key.endsWith(`${group}_font`)) && value).map(([, value]) => value))].flatMap((key) => {
+	return h$3("style", null, [...new Set(Object.entries(values).filter(([key, value]) => groups.some((group) => key.endsWith(`${group}_font`)) && value).map(([, value]) => value))].flatMap((key) => {
 		const font = config.fonts[key];
 		if (!font) return [];
 		return font.files.map(([file, weight]) => `@font-face{font-family:"${font.family}";src:url("${config.fontBase}${file.split("/").map(encodeURIComponent).join("/")}") format("woff2");font-weight:${weight};font-style:normal;font-display:swap;}`);
 	}).join(""));
 }
 function ToggleField({ name, label, description, value, onChange }) {
-	return h$4(Field, {
+	return h$3(Field, {
 		name,
 		label,
 		description
-	}, h$4("input", {
+	}, h$3("input", {
 		type: "hidden",
 		name: `radman_settings[${name}]`,
 		value: "0"
-	}), h$4(SwitchControl, {
+	}), h$3(SwitchControl, {
 		id: `rdct-${name}`,
 		name: `radman_settings[${name}]`,
 		value: "1",
@@ -222,7 +222,7 @@ function resetSettings(current, defaults, section, sectionKeys = [], canEditCode
 }
 //#endregion
 //#region radmanct/src/js/admin/cursor-fields.js
-var { createElement: h$3 } = window.wp.element;
+var { createElement: h$2 } = window.wp.element;
 var cursorKeys = [
 	"custom_cursor",
 	"cursor_hide_outer",
@@ -239,7 +239,7 @@ var cursorKeys = [
 	"cursor_hover_scale"
 ];
 function CursorFields({ values, change, labels, defaults }) {
-	const input = (name, label, type, extra = {}) => h$3(InputField, {
+	const input = (name, label, type, extra = {}) => h$2(InputField, {
 		name,
 		label,
 		type,
@@ -247,13 +247,13 @@ function CursorFields({ values, change, labels, defaults }) {
 		onChange: change,
 		...extra
 	});
-	return h$3("div", null, h$3("p", null, labels.cursorHint), h$3(ToggleField, {
+	return h$2("div", null, h$2("p", null, labels.cursorHint), h$2(ToggleField, {
 		name: "custom_cursor",
 		label: labels.customCursor,
 		description: labels.customCursorHint,
 		value: values.custom_cursor,
 		onChange: change
-	}), h$3("div", { hidden: !values.custom_cursor }, h$3(ToggleField, {
+	}), h$2("div", { hidden: !values.custom_cursor }, h$2(ToggleField, {
 		name: "cursor_hide_outer",
 		label: labels.cursorHideOuter,
 		value: values.cursor_hide_outer,
@@ -263,12 +263,12 @@ function CursorFields({ values, change, labels, defaults }) {
 		max: 24,
 		step: 1,
 		dir: "ltr"
-	}), h$3("div", { hidden: values.cursor_hide_outer }, input("cursor_outer_size", labels.cursorOuterSize, "number", {
+	}), h$2("div", { hidden: values.cursor_hide_outer }, input("cursor_outer_size", labels.cursorOuterSize, "number", {
 		min: 16,
 		max: 120,
 		step: 1,
 		dir: "ltr"
-	})), ...[["cursor_color", labels.cursorColor], ["cursor_hover_color", labels.cursorHoverColor]].map(([name, label]) => h$3(ColorSetting, {
+	})), ...[["cursor_color", labels.cursorColor], ["cursor_hover_color", labels.cursorHoverColor]].map(([name, label]) => h$2(ColorSetting, {
 		key: name,
 		name,
 		label,
@@ -277,13 +277,13 @@ function CursorFields({ values, change, labels, defaults }) {
 		fallback: defaults[name],
 		resetValue: defaults[name],
 		resetLabel: labels.resetColor
-	})), h$3(SelectField, {
+	})), h$2(SelectField, {
 		name: "cursor_blend",
 		label: labels.cursorBlend,
 		value: values.cursor_blend,
 		onChange: change,
 		options: [["normal", labels.normal], ["difference", labels.difference]]
-	}), h$3(SelectField, {
+	}), h$2(SelectField, {
 		name: "cursor_hover_effect",
 		label: labels.cursorHoverEffect,
 		value: values.cursor_hover_effect,
@@ -309,51 +309,13 @@ function CursorFields({ values, change, labels, defaults }) {
 		max: 4,
 		step: .1,
 		dir: "ltr"
-	}), h$3("div", { hidden: values.cursor_hide_outer }, input("cursor_image_label", labels.cursorImageLabel, "text", {
+	}), h$2("div", { hidden: values.cursor_hide_outer }, input("cursor_image_label", labels.cursorImageLabel, "text", {
 		maxLength: 80,
 		description: labels.cursorLabelHint
 	}), input("cursor_carousel_label", labels.cursorCarouselLabel, "text", {
 		maxLength: 80,
 		description: labels.cursorLabelHint
 	}))));
-}
-//#endregion
-//#region radmanct/src/js/admin/layout-fields.js
-var { createElement: h$2 } = window.wp.element;
-function ContentLayoutFields({ scope = "content", values, change, config }) {
-	const { labels } = config;
-	const mode = `${scope}_layout`;
-	const number = (field, range) => {
-		const name = `${scope}_${field}`;
-		return h$2(InputField, {
-			key: field,
-			name,
-			label: labels[`layout_${field}`],
-			type: "number",
-			dir: "ltr",
-			min: range[0],
-			max: range[1],
-			step: 1,
-			placeholder: labels.inheritAppearance,
-			value: values[name] ?? "",
-			onChange: change
-		});
-	};
-	return h$2("div", null, h$2(SelectField, {
-		name: mode,
-		label: labels.layoutMode,
-		value: values[mode],
-		onChange: change,
-		options: [
-			...scope === "content" ? [] : [["inherit", labels.inheritLayout]],
-			["contained", labels.siteLayoutWidth],
-			["full", labels.fullContentWidth],
-			["custom", labels.customLayoutWidth]
-		]
-	}), h$2("div", { hidden: values[mode] === "inherit" }, ...Object.entries(config.layoutFields).map(([field, range]) => h$2("div", {
-		key: field,
-		hidden: field === "width" && values[mode] !== "custom"
-	}, number(field, range)))));
 }
 //#endregion
 //#region radmanct/src/js/admin/analytics-fields.js
@@ -481,11 +443,11 @@ function SettingsApp({ config }) {
 	const panelKey = contentTypographyView ? "content_typography" : contentView ? "content" : typographyView ? "typography" : active;
 	useEffect(() => {
 		const loaders = {
-			page_title: () => __vitePreload(() => import("./page-title-settings-FhmPMPzB.js"), [], import.meta.url),
-			content_typography: () => __vitePreload(() => import("./content-typography-fields-DHoJLOsp.js"), [], import.meta.url),
+			page_title: () => __vitePreload(() => import("./page-title-settings-DNCT1I8M.js"), [], import.meta.url),
+			content_typography: () => __vitePreload(() => import("./content-typography-fields-B3IWdCUN.js"), [], import.meta.url),
 			content: () => __vitePreload(() => import("./content-view-fields-DFY1plpV.js"), [], import.meta.url),
-			design: () => __vitePreload(() => import("./color-settings-fields-C4waMNTQ.js"), [], import.meta.url),
-			typography: () => __vitePreload(() => import("./typography-fields-B70eGrZZ.js").then((n) => n.n), [], import.meta.url),
+			design: () => __vitePreload(() => import("./color-settings-fields-CpBAdB5k.js"), [], import.meta.url),
+			typography: () => __vitePreload(() => import("./typography-fields-CQ24HZ7V.js").then((n) => n.n), [], import.meta.url),
 			header_footer: () => __vitePreload(() => import("./builder-site-settings-BP62zseL.js"), [], import.meta.url)
 		};
 		if (!loaders[panelKey] || panels[panelKey]) return;
@@ -895,11 +857,7 @@ function SettingsApp({ config }) {
 		step: 1,
 		value: values.reading_width,
 		onChange: change
-	}), h(ContentLayoutFields, {
-		values,
-		change,
-		config
-	})), contentTypographyView && h("section", {
+	}), null), contentTypographyView && h("section", {
 		id: `rdct-panel-${active}`,
 		role: "tabpanel",
 		"aria-labelledby": `rdct-tab-${active}`,

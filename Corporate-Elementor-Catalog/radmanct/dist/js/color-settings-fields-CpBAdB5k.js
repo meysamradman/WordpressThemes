@@ -1,4 +1,4 @@
-import { a as SelectField, t as ColorSetting } from "./settings-BCrDiqNP.js";
+import { a as SelectField, t as ColorSetting } from "./settings-7-33mTbp.js";
 //#region radmanct/src/js/admin/color-settings-fields.js
 var { createElement: h } = window.wp.element;
 function ColorSettingsFields({ config, values, change }) {
