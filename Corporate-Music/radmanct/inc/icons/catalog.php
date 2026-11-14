@@ -9,6 +9,7 @@ return array(
  'headset'=>'<path d="M3 14v-3a9 9 0 0 1 18 0v8a3 3 0 0 1-3 3h-4"/><path d="M3 14h3v7H5a2 2 0 0 1-2-2v-5Zm18 0h-3v7h1a2 2 0 0 0 2-2v-5Z"/>',
  'headphones'=>'<path d="M4 14v-3a8 8 0 0 1 16 0v3M4 12H2v8h4v-8Zm16 0h2v8h-4v-8Z"/>',
  'menu'=>'<path d="M8 6h13M2 12h19M8 18h13"/>','x'=>'<path d="m6 6 12 12M6 18 18 6"/>',
+ 'download'=>'<path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/>','sliders'=>'<path d="M4 7h5m4 0h7M4 17h9m4 0h3"/><circle cx="11" cy="7" r="2"/><circle cx="15" cy="17" r="2"/>',
  'play'=>'<path d="m9 5 11 7-11 7Z"/>','pause'=>'<path d="M8 5v14M16 5v14"/>',
  'music'=>'<path d="M9 18V5l11-2v13M9 8l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/>',
  'file-text'=>'<path d="M14 2H5v20h14V7Zm0 0v5h5M8 12h8M8 16h8"/>',
