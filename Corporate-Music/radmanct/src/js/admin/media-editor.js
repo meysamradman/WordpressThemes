@@ -1,12 +1,12 @@
 document.querySelectorAll('[data-rdc-md]').forEach(root=>{
- let frame;const value=root.querySelector('[name="rdct_card_video"]'),label=root.querySelector('[data-media-label]');
+ let frame;const value=root.querySelector('[data-media-value]'),label=root.querySelector('[data-media-label]');
  root.querySelector('[data-media-choose]').addEventListener('click',()=>{frame??=wp.media({library:{type:'video'},multiple:false});frame.off('select');frame.on('select',()=>{const item=frame.state().get('selection').first().toJSON();value.value=item.id;label.textContent=item.title||item.filename;});frame.open();});
  root.querySelector('[data-media-remove]').addEventListener('click',()=>{value.value='0';label.textContent='';});
 });
 
 document.querySelectorAll('[data-rdc-gal]').forEach(root=>{
  let frame,pending=false;
- const text=window.rdcGal,value=root.querySelector('[name="rdct_project_gallery"]'),list=root.querySelector('[data-gallery-list]'),choose=root.querySelector('[data-gallery-choose]'),clear=root.querySelector('[data-gallery-remove]'),error=root.querySelector('[data-gallery-error]');
+ const text=window.rdcGal,value=root.querySelector('[data-gallery-value]'),list=root.querySelector('[data-gallery-list]'),choose=root.querySelector('[data-gallery-choose]'),clear=root.querySelector('[data-gallery-remove]'),error=root.querySelector('[data-gallery-error]');
  const sync=(changed=false)=>{
   const items=[...list.children];value.value=items.map(item=>item.dataset.galleryId).join(',');
   root.querySelector('[data-gallery-count]').textContent=text.count.replace('%d',items.length);

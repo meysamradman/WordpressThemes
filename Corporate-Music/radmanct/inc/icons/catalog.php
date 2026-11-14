@@ -1,6 +1,7 @@
 <?php
 defined('ABSPATH')||exit;
 return array(
+ 'image'=>'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m21 15-6-6L3 21"/>',
  'plus'=>'<path d="M12 5v14M5 12h14"/>',
  'chat'=>'<path d="M4 4h16v12H9l-5 4V4Z"/><path d="M8 8h8M8 12h5"/>',
  'arrow-right'=>'<path d="M5 12h14m-6-6 6 6-6 6"/>','arrow-up-right'=>'<path d="M6 18 18 6M6 6h12v12"/>',

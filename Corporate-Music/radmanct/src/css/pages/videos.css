@@ -1,0 +1,3 @@
+@import '../ui/media-archive.css';
+@import '../ui/video-grid.css';
+.rdc-clip-player{aspect-ratio:16/9;overflow:hidden;border-radius:var(--rdc-rad-md);background:var(--rdc-clr-blk)}.rdc-clip-player video{display:block;inline-size:100%;block-size:100%;object-fit:contain}

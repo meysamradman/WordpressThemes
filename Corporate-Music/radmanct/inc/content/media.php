@@ -7,7 +7,7 @@ function video_id($value):int {
 function gallery_ids($value):array {
  if(is_string($value))$value=explode(',',$value);
  if(!is_array($value))return array();
- return array_values(array_filter(array_unique(array_map('absint',array_slice($value,0,100))),static fn($id)=>wp_attachment_is_image($id)));
+ return array_values(array_filter(array_unique(array_map('absint',array_filter(array_slice($value,0,100),'is_scalar'))),static fn($id)=>wp_attachment_is_image($id)));
 }
 add_action('init',static function():void{
  foreach(array('post','project')as$type){
@@ -21,14 +21,17 @@ add_action('add_meta_boxes',static function():void{
 });
 function fields(\WP_Post $post):void {
  wp_nonce_field('rdc-card-md','rdct_media_nonce');$id=(int)get_post_meta($post->ID,'_webtalik_card_video',true);$mode=get_post_meta($post->ID,'_webtalik_card_mode',true);
- echo '<div data-rdc-md><p>'.esc_html__('Featured image remains the poster. Video preview is optional.','radmanct').'</p><input type="hidden" name="rdct_card_video" value="'.$id.'"><p data-media-label>'.esc_html($id?get_the_title($id):__('No video selected','radmanct')).'</p><p><button type="button" class="button" data-media-choose>'.esc_html__('Choose video','radmanct').'</button> <button type="button" class="button-link-delete" data-media-remove>'.esc_html__('Remove','radmanct').'</button></p><p><label for="rdc-card-mode">'.esc_html__('Preview behavior','radmanct').'</label></p><select id="rdc-card-mode" name="rdct_card_mode"><option value="auto" '.selected($mode!=='hover',true,false).'>'.esc_html__('Play when visible','radmanct').'</option><option value="hover" '.selected($mode,'hover',false).'>'.esc_html__('Play on hover','radmanct').'</option></select></div>';
+ echo '<div data-rdc-md><p>'.esc_html__('Featured image remains the poster. Video preview is optional.','radmanct').'</p><input type="hidden" name="rdct_card_video" data-media-value value="'.$id.'"><p data-media-label>'.esc_html($id?get_the_title($id):__('No video selected','radmanct')).'</p><p><button type="button" class="button" data-media-choose>'.esc_html__('Choose video','radmanct').'</button> <button type="button" class="button-link-delete" data-media-remove>'.esc_html__('Remove','radmanct').'</button></p><p><label for="rdc-card-mode">'.esc_html__('Preview behavior','radmanct').'</label></p><select id="rdc-card-mode" name="rdct_card_mode"><option value="auto" '.selected($mode!=='hover',true,false).'>'.esc_html__('Play when visible','radmanct').'</option><option value="hover" '.selected($mode,'hover',false).'>'.esc_html__('Play on hover','radmanct').'</option></select></div>';
 }
 function gallery_fields(\WP_Post $post):void {
  wp_nonce_field('rdc-prj-gal','rdct_gallery_nonce');
  $meta=get_post_meta($post->ID,'_webtalik_project',true);$gallery=gallery_ids(is_array($meta)?($meta['gallery']??array()):array());
+ gallery_picker($gallery,'rdct_project_gallery');
+}
+function gallery_picker(array $gallery,string $name):void {
  ?>
  <div class="rdc-adm-gal" data-rdc-gal>
-  <input type="hidden" name="rdct_project_gallery" value="<?php echo esc_attr(implode(',',$gallery)); ?>">
+  <input type="hidden" data-gallery-value name="<?php echo esc_attr($name); ?>" value="<?php echo esc_attr(implode(',',$gallery)); ?>">
   <p class="description"><?php esc_html_e('Add images and drag them into order in the gallery editor. Click a thumbnail to view the original image.','radmanct'); ?></p>
   <div class="rdc-adm-gal__bar">
    <button type="button" class="button button-secondary" data-gallery-choose><?php esc_html_e('Add / edit gallery','radmanct'); ?></button>
@@ -52,14 +55,14 @@ function gallery_fields(\WP_Post $post):void {
     </li>
    <?php endforeach; ?>
   </ol>
-  <p class="description"><?php esc_html_e('Removing an image here keeps it in the media library. Save the project to apply gallery changes.','radmanct'); ?></p>
+  <p class="description"><?php esc_html_e('Removing an image here keeps it in the media library. Save to apply gallery changes.','radmanct'); ?></p>
  </div>
  <?php
 }
 add_action('admin_enqueue_scripts',static function():void{
- $screen=get_current_screen();if(!$screen||$screen->base!=='post'||!in_array($screen->post_type,array('post','project'),true))return;
+ $screen=get_current_screen();if(!$screen||$screen->base!=='post'||!in_array($screen->post_type,array('post','project','album','clip'),true))return;
  wp_enqueue_media();$asset=\RadmanCT\Assets\entry('src/js/admin/media-editor.js');if($asset)wp_enqueue_script('rdc-md-ed',\RadmanCT\Assets\url($asset['file']),array('media-editor'),null,true);
- if($screen->post_type==='project'){
+ if(in_array($screen->post_type,array('project','album'),true)){
   \RadmanCT\Assets\style('admin/gallery');
   wp_localize_script('rdc-md-ed','rdcGal',array('count'=>__('%d images selected','radmanct'),'view'=>__('View original image: %s (opens in a new tab)','radmanct'),'remove'=>__('Remove','radmanct'),'earlier'=>__('Move image earlier','radmanct'),'later'=>__('Move image later','radmanct'),'loadError'=>__('Images could not be loaded. Please try again.','radmanct'),'limit'=>__('A gallery can contain up to 100 images.','radmanct')));
  }

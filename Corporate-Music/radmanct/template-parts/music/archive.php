@@ -4,6 +4,6 @@
  <p class="rdc-arc-sts screen-reader-text" role="status" aria-live="polite" aria-atomic="true"></p>
  <div data-rdc-res tabindex="-1" aria-label="فهرست آهنگ‌ها">
   <div class="rdc-trk-grid"><?php if(have_posts()):while(have_posts()):the_post();\RadmanCT\Music\card(get_post(),'h2',false,'list');endwhile;else: ?><p>آهنگی پیدا نشد.</p><?php endif; ?></div>
-  <?php the_posts_pagination(['prev_text'=>\RadmanCT\icon('chevron-left').'<span class="screen-reader-text">صفحهٔ قبلی</span>','next_text'=>\RadmanCT\icon('chevron-right').'<span class="screen-reader-text">صفحهٔ بعدی</span>','mid_size'=>1,'end_size'=>1]); ?>
+  <?php get_template_part('template-parts/ui/archive-pagination'); ?>
  </div>
 </section>

@@ -3,6 +3,7 @@ namespace RadmanCT;
 defined('ABSPATH')||exit;
 function navigation_target():string {
  if(is_front_page())return home_url('/');
+ foreach(array('track','album','clip')as$type)if(is_post_type_archive($type)||is_singular($type))return get_post_type_archive_link($type)?:'';
  if(is_post_type_archive('project')||is_singular('project')||is_tax('project_category'))return get_post_type_archive_link('project')?:home_url('/projects/');
  if(is_home()||is_singular('post')||is_category()||is_tag()||is_date()||is_author()||is_search())return get_permalink((int)get_option('page_for_posts'))?:home_url('/blog/');
  return is_singular()?get_permalink():'';
