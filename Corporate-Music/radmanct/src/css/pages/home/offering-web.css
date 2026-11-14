@@ -1,0 +1,16 @@
+.rdc-svc__copy { display:flex;flex-direction:column;min-inline-size:0;align-self:center;justify-self:start;justify-content:center;gap:clamp(20px,2.1vw,26px);max-inline-size:680px;inline-size:100%;margin:0; }
+.rdc-svc__eb { display:flex;align-items:center;gap:18px;margin:0;color:var(--rdc-tx);font-size:10px;font-weight:var(--rdc-wt-body);letter-spacing:.28em; }
+.rdc-svc__eb bdi { display:inline-flex;direction:inherit;align-items:center;gap:14px;color:var(--rdc-acc);font-size:12px;letter-spacing:.06em; }
+.rdc-svc__eb bdi::after { content:'';inline-size:32px;block-size:1px;background:var(--rdc-acc); }
+.rdc-site .rdc-svcs .rdc-svc__ttl { font-size:var(--rdc-sz-h2);line-height:var(--rdc-ln-ht-hdg);letter-spacing:normal; }
+.rdc-svc__ttl em { color:var(--rdc-ink);font-style:normal;font-weight:inherit; }
+.rdc-svc__desc { margin:0;color:var(--rdc-tx);font-size:clamp(15px,1.18vw,20px);line-height:var(--rdc-ln-ht-body);text-wrap:pretty; }
+.rdc-svc__fts { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:6px 0 0;padding:0;list-style:none; }
+.rdc-svc__fts li { display:flex;flex-direction:column;align-items:center;gap:13px;padding:0 14px;text-align:center;color:var(--rdc-tx);font-size:clamp(11px,.9vw,15px);line-height:var(--rdc-ln-ht-body); }
+.rdc-svc__fts li + li { border-inline-start:1px solid var(--rdc-clr-ln-warm); }
+.rdc-svc__fts .rdc-ico { flex-shrink:0;box-sizing:content-box;inline-size:27px;block-size:27px;padding:12px;border:1px solid var(--rdc-clr-art-ico-ln);border-radius:var(--rdc-rad);color:var(--rdc-acc); }
+.rdc-svc__cta { display:flex;align-items:center;gap:24px;margin-block-start:8px; }
+.rdc-svc__cta::before { content:'';inline-size:36px;block-size:1px;background:var(--rdc-acc); }
+@media(max-width:1200px) { .rdc-svc__copy { gap:20px; }.rdc-svc__fts li { padding-inline:8px;font-size:12px; } }
+@media(max-width:1023px) { .rdc-svc__copy { max-inline-size:none;gap:24px; }.rdc-svc__desc { max-inline-size:56ch; }.rdc-svc__fts { max-inline-size:640px; }.rdc-svc__fts li { font-size:14px; } }
+@media(max-width:600px) { .rdc-svc__fts li { font-size:11px;padding-inline:7px; }.rdc-svc__fts .rdc-ico { inline-size:23px;block-size:23px;padding:10px; }.rdc-svc__cta { gap:18px; } }

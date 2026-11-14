@@ -1,0 +1,20 @@
+.rdc-btn { --rdc-btn-dir:1; --rdc-btn-bd:var(--rdc-ln); display:inline-flex; align-items:center; justify-content:center; gap:var(--rdc-btn-gap); min-block-size:var(--rdc-btn-ht); max-inline-size:100%; padding:.75rem var(--rdc-btn-pad); border:1px solid var(--rdc-btn-bd); border-radius:calc(var(--rdc-btn-ht) / 2); background:var(--rdc-btn-bg); color:var(--rdc-btn-tx); font-size:var(--rdc-sz-body); font-weight:var(--rdc-wt-hdg); line-height:1.5; text-align:start; }
+.rdc-btn--outline { --rdc-btn-bg:transparent; }
+.rdc-btn--ghost { --rdc-btn-bg:transparent; --rdc-btn-bd:transparent; --rdc-btn-hov-bg:transparent; --rdc-btn-hov-tx:var(--rdc-acc); }
+.rdc-btn__lbl { display:inline-grid; min-inline-size:0; overflow:hidden; padding-block:.12em; margin-block:-.12em; }
+.rdc-btn__lbl > span { grid-area:1/1; }
+.rdc-btn__lbl > span[aria-hidden] { translate:0 120%; }
+.rdc-btn__ico { position:relative; display:block; flex-shrink:0; inline-size:var(--rdc-btn-ico); block-size:var(--rdc-btn-ico); overflow:hidden; }
+.rdc-btn__ico > .rdc-ico { position:absolute; inset:0; inline-size:100%; block-size:100%; }
+.rdc-btn__ico > .rdc-ico:last-child { translate:calc(-130% * var(--rdc-btn-dir)) 130%; }
+.rdc-btn:dir(rtl) { --rdc-btn-dir:-1; }
+.rdc-btn:is(:hover,:focus-visible) { background:var(--rdc-btn-hov-bg); color:var(--rdc-btn-hov-tx); border-color:var(--rdc-btn-hov-bg); }
+@media (prefers-reduced-motion:no-preference) {
+ .rdc-btn { transition:background-color var(--rdc-btn-dur) ease,color var(--rdc-btn-dur) ease,border-color var(--rdc-btn-dur) ease; }
+ .rdc-btn__lbl > span { transition:translate var(--rdc-btn-dur) var(--rdc-btn-ease); }
+ .rdc-btn:is(:hover,:focus-visible) .rdc-btn__lbl > span:first-child { translate:0 -120%; }
+ .rdc-btn:is(:hover,:focus-visible) .rdc-btn__lbl > span[aria-hidden] { translate:0 0; }
+ .rdc-btn__ico > .rdc-ico { transition:translate var(--rdc-btn-dur) cubic-bezier(.22,.61,.36,1); }
+ .rdc-btn:is(:hover,:focus-visible) .rdc-btn__ico > .rdc-ico:first-child { translate:calc(130% * var(--rdc-btn-dir)) -130%; }
+ .rdc-btn:is(:hover,:focus-visible) .rdc-btn__ico > .rdc-ico:last-child { translate:0 0; }
+}

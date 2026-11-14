@@ -15,12 +15,14 @@ $heading=wp_unique_id('rdc-mosaic-ttl-');
    <?php foreach($data['items'] as $item): $image=(int)($item['image']??0);$video=(int)($item['video']??0); ?>
     <article class="rdc-mosaic__itm">
      <div class="rdc-mosaic__copy">
+      <span class="rdc-mosaic__rim" aria-hidden="true"></span>
       <h3><?php echo esc_html($item['title']); ?></h3>
       <div class="rdc-mosaic__cnt"><p><?php echo esc_html($item['desc']); ?></p>
        <?php if(!empty($item['url']))echo \RadmanCT\button($item['link'],$item['url'],array('variant'=>'ghost')); ?>
       </div>
      </div>
      <div class="rdc-mosaic__md">
+      <span class="rdc-mosaic__rim" aria-hidden="true"></span>
       <?php if($video&&\RadmanCT\Service\allowed($video)&&in_array(get_post_mime_type($video),array('video/mp4','video/webm'),true)):
        $url=wp_get_attachment_url($video);$uploads=wp_upload_dir();$meta=wp_get_attachment_metadata($video);
        $poster=\RadmanCT\Service\allowed($image)?wp_get_attachment_image_url($image,'large'):'';

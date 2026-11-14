@@ -1,0 +1,22 @@
+
+@import '../../ui/project-card.css';
+.rdc-prj-arc { --rdc-ctr:100%; }
+.rdc-prj-arc > header { max-inline-size: 48rem; margin-block-end: clamp(2rem,5vw,4rem); }
+.rdc-prjs { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(1.25rem,3vw,2.5rem); }
+.rdc-prjs-pg { display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-block-start: clamp(2rem,5vw,4rem); }
+.rdc-prjs-pg[hidden] { display: none; }
+.rdc-prj-arc.is-load [data-rdc-load-more] { opacity: .6; pointer-events: none; }
+@media (min-width: 960px) {
+  .rdc-prj:first-child { grid-column: 1 / -1; flex-direction: row; }
+  .rdc-prj:first-child .rdc-prj__md { flex: 0 0 55%; aspect-ratio: 16 / 11; }
+  .rdc-prj:first-child .rdc-prj__body { justify-content: center; }
+  .rdc-prj:first-child .rdc-prj__more { margin-block-start: 0; }
+  .rdc-prj:is(:nth-child(8n),:last-child:nth-child(2n)) { grid-column: 1 / -1; flex-direction: row-reverse; }
+  .rdc-prj:is(:nth-child(8n),:last-child:nth-child(2n)) .rdc-prj__md { flex: 0 0 55%; aspect-ratio: 16 / 11; }
+}
+@media (max-width: 639px) { .rdc-prjs { grid-template-columns: minmax(0,1fr); } }
+
+
+.rdc-prj-arc{color:var(--rdc-ink)}.rdc-prjs.is-load{opacity:.7}
+
+

@@ -1,0 +1,8 @@
+.rdc-blog-sec { margin-block:0 3rem; }
+.rdc-blog-sec__ttl { display:flex; align-items:center; gap:.8rem; margin:0 0 1.25rem; font-size:1.25rem; line-height:1.5; }
+.rdc-blog-sec__ttl::after { content:''; flex:1; border-block-start:1px solid var(--rdc-ln); }
+.rdc-blog-sec__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.25rem; }
+.rdc-blog-sec__grid > :first-child { grid-column:1 / -1; }
+@media (max-width:47.99rem) {
+  .rdc-blog-sec__grid { grid-template-columns:minmax(0,1fr); }
+}

@@ -99,6 +99,7 @@ body.tax-project_category,
 body.single-project {
   --rdc-bg:var(--rdc-clr-dark);
   --rdc-ppr:var(--rdc-clr-dark);
+  --rdc-srf:var(--rdc-clr-ink-warm);
   --rdc-ink:var(--rdc-clr-crm);
   --rdc-tx:var(--rdc-clr-crm);
   --rdc-mut:var(--rdc-clr-mut-inv);

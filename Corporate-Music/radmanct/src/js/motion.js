@@ -1,0 +1,1 @@
+let core,animation;export const loadGsap=()=>core??=import('./gsap-vendor.js').catch(e=>{core=undefined;throw e;});export const loadAnimation=()=>animation??=import('./animation-vendor.js').catch(e=>{animation=undefined;throw e;});

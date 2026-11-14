@@ -1,0 +1,6 @@
+.rdc-card-pre-own { position:relative; }
+.rdc-card-pre { position:relative; display:block; inline-size:100%; block-size:100%; overflow:hidden; }
+.rdc-card-pre > img { display:block; inline-size:100%; block-size:100%; object-fit:cover; }
+.rdc-card-pre > video { position:absolute; inset:0; display:block; inline-size:100%; block-size:100%; object-fit:cover; opacity:0; pointer-events:none; }
+.rdc-card-pre.is-play > video { opacity:1; }
+.rdc-card-pre-pst { display:grid; place-items:center; inline-size:100%; block-size:100%; background:var(--rdc-ppr); color:var(--rdc-mut); }

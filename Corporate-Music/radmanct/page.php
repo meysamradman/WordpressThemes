@@ -1,0 +1,2 @@
+<?php defined('ABSPATH')||exit;get_header(); ?>
+<main id="main-content" tabindex="-1"><?php get_template_part('template-parts/layout/page-title'); ?><div class="rdc-ctr rdc-main"><?php while(have_posts()):the_post(); ?><article class="rdc-cnt"><?php if(!\RadmanCT\PageTitle\is_used())get_template_part('template-parts/ui/content-heading'); ?><?php the_content();wp_link_pages(); ?></article><?php endwhile; ?></div></main><?php get_footer(); ?>

@@ -1,7 +1,7 @@
 .rdc-faq { --rdc-ctr:62.5rem; padding-block:clamp(2.5rem,5vw,5rem) var(--rdc-sp); }
 .rdc-faq h2 { margin-block-end:clamp(2rem,4vw,3rem); text-align:center; font-size:clamp(2rem,4vw,3.75rem); }
 .rdc-faq__inr { display:grid; gap:1rem; }
-.rdc-faq__itm { border:1px solid var(--rdc-ln); border-radius:1rem; }
+.rdc-faq__itm { border:1px solid var(--rdc-ln); border-radius:var(--rdc-rad); }
 .rdc-faq__itm summary { display:grid; grid-template-columns:1.875rem minmax(0,1fr) 1rem; align-items:center; gap:.75rem; padding:clamp(1rem,2vw,1.5rem) clamp(1rem,2.5vw,1.875rem); list-style:none; border-radius:inherit; font-size:clamp(1rem,1.6vw,1.5rem); font-weight:700; }
 .rdc-faq__itm summary::-webkit-details-marker { display:none; }
 .rdc-faq__itm summary { cursor:pointer; }

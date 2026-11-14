@@ -5,12 +5,24 @@
 .rdc-mosaic__lbl { margin:0 0 .75rem; color:var(--rdc-acc); font-size:var(--rdc-sz-sm); }
 .rdc-mosaic__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(1rem,1.6vw,2rem); }
 .rdc-mosaic__itm { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(1rem,1.6vw,2rem); min-inline-size:0; }
-.rdc-mosaic__copy { display:flex; flex-direction:column; justify-content:space-between; gap:3rem; padding:clamp(1.25rem,2.15vw,2.75rem); background:var(--rdc-clr-ink-warm); min-inline-size:0; aspect-ratio:1; }
+.rdc-mosaic__copy,.rdc-mosaic__md { position:relative; min-inline-size:0; aspect-ratio:1; border-radius:var(--rdc-rad); overflow:hidden; }
+.rdc-mosaic__copy { display:flex; flex-direction:column; justify-content:space-between; gap:3rem; padding:clamp(1.25rem,2.15vw,2.75rem); background:var(--rdc-srf); }
 .rdc-mosaic__copy h3 { margin:0; max-inline-size:12ch; font-size:clamp(1.35rem,1.75vw,2rem); line-height:1.5; }
 .rdc-mosaic__cnt p { margin:0 0 .5rem; color:var(--rdc-mut); font-size:clamp(.875rem,1vw,1rem); }
 .rdc-mosaic__cnt .rdc-btn { --rdc-btn-pad:0; --rdc-btn-ht:2.5rem; }
-.rdc-mosaic__md { position:relative; aspect-ratio:1; min-inline-size:0; background:var(--rdc-clr-ink); overflow:hidden; }
+.rdc-mosaic__md { background:var(--rdc-bg); }
 .rdc-mosaic__md :is(img,video) { position:absolute; inset:0; display:block; inline-size:100%; block-size:100%; object-fit:cover; }
 @media (min-width:1024px) { .rdc-mosaic__itm:nth-child(4n+3) .rdc-mosaic__md,.rdc-mosaic__itm:nth-child(4n+4) .rdc-mosaic__md { order:-1; } }
 @media (max-width:1023px) { .rdc-mosaic__grid { grid-template-columns:minmax(0,1fr); } .rdc-mosaic__itm:nth-child(even) .rdc-mosaic__md { order:-1; } .rdc-mosaic__copy h3 { font-size:clamp(1.5rem,3vw,2.25rem); } }
 @media (max-width:639px) { .rdc-mosaic__itm { grid-template-columns:minmax(0,1fr); gap:0; } .rdc-mosaic__itm:nth-child(even) .rdc-mosaic__md { order:initial; } .rdc-mosaic__copy { aspect-ratio:auto; min-block-size:19rem; gap:2rem; padding:1.75rem; } .rdc-mosaic__copy h3 { max-inline-size:18ch; } .rdc-mosaic__md { aspect-ratio:4/3; } }
+
+/* The static ring clips a rotating light layer; media and copy are untouched. */
+.rdc-mosaic__rim { position:absolute; inset:0; z-index:1; padding:1px; border-radius:inherit; overflow:hidden; pointer-events:none; background:var(--rdc-ln); mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); mask-composite:exclude; }
+.rdc-mosaic__rim::before { content:''; position:absolute; inset:-50%; background:conic-gradient(from 0deg,transparent 0deg 245deg,color-mix(in srgb,var(--rdc-clr-gold) 16%,transparent) 275deg,var(--rdc-clr-gold) 315deg,var(--rdc-clr-art-orb-lt) 332deg,transparent 345deg); animation:rdc-mosaic-rim 12s linear infinite paused; animation-delay:var(--rdc-mosaic-phase,0s); }
+.rdc-mosaic__itm:nth-child(2) { --rdc-mosaic-phase:-3s; }
+.rdc-mosaic__itm:nth-child(3) { --rdc-mosaic-phase:-6s; }
+.rdc-mosaic__itm:nth-child(4) { --rdc-mosaic-phase:-9s; }
+.rdc-mosaic[data-rdc-rim-ready] [data-rdc-rim-run]>.rdc-mosaic__rim::before { animation-play-state:running; }
+.rdc-mosaic[data-rdc-rim-hidden] [data-rdc-rim-run]>.rdc-mosaic__rim::before { animation-play-state:paused; }
+@keyframes rdc-mosaic-rim { to { transform:rotate(1turn); } }
+@media (prefers-reduced-motion:reduce) { .rdc-mosaic__rim::before { animation:none; } }

@@ -77,7 +77,7 @@
     "isEntry": true
   },
   "src/css/pages/blog/archive.css": {
-    "file": "css/blog-archive-BNorTkMR.min.css",
+    "file": "css/blog-archive-BHz0sTVj.min.css",
     "name": "css-blog-archive",
     "names": [
       "css-blog-archive.css"
@@ -95,7 +95,7 @@
     "isEntry": true
   },
   "src/css/pages/home.css": {
-    "file": "css/home-BpWLNqMX.min.css",
+    "file": "css/home-DDGC4yiw.min.css",
     "name": "css-home",
     "names": [
       "css-home.css"
@@ -122,7 +122,7 @@
     "isEntry": true
   },
   "src/css/pages/service.css": {
-    "file": "css/service-CqXQooOL.min.css",
+    "file": "css/service-CLUY_zOo.min.css",
     "name": "css-service",
     "names": [
       "css-service.css"
@@ -131,7 +131,7 @@
     "isEntry": true
   },
   "src/css/pages/services.css": {
-    "file": "css/services-BVsbNi92.min.css",
+    "file": "css/services-DnTvIYw0.min.css",
     "name": "css-services",
     "names": [
       "css-services.css"
@@ -140,7 +140,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-DZEqM-mR.min.css",
+    "file": "css/site-CPbwUFcv.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -233,6 +233,15 @@
       "_scroll-state-CMcH5pPq.min.js",
       "_lifecycle-CEUUFq-m.min.js",
       "_media-parallax-DVlBKxXS.min.js"
+    ]
+  },
+  "src/js/pages/service.js": {
+    "file": "js/service-xGcYRdFa.min.js",
+    "name": "service",
+    "src": "src/js/pages/service.js",
+    "isEntry": true,
+    "imports": [
+      "_lifecycle-CEUUFq-m.min.js"
     ]
   },
   "src/js/pages/services.js": {

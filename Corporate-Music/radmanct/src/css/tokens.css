@@ -1,0 +1,112 @@
+@font-face {
+  font-family:Peyda;
+  src:url('/PeydaWebVF.woff2') format('woff2');
+  font-weight:100 900;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face {
+  font-family:Hafez;
+  src:url('/Hafez-FD-Regular.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+:root {
+  --rdc-pt-sz:var(--rdc-sz-dsp);
+  --rdc-clr-gold:#C59032;
+  --rdc-clr-ctc:#25d366;
+  --rdc-clr-ctc-dot:#80d852;
+  --rdc-ctc-sz:60px;
+  --rdc-ctc-off:24px;
+  --rdc-top-sz:2.75rem;
+  --rdc-clr-crm:#ece9e2;
+  --rdc-clr-wht:#fff;
+  --rdc-clr-blk:#000;
+  --rdc-clr-ink:#090908;
+  --rdc-clr-dark:#0e0e0d;
+  --rdc-clr-hero:var(--rdc-clr-dark);
+  --rdc-clr-tx:#333;
+  --rdc-clr-mut:#65736e;
+  --rdc-clr-mut-inv:#8d8a83;
+  --rdc-clr-srf:#f4f6f2;
+  --rdc-clr-ln:#d9e2da;
+  --rdc-clr-ln-inv:rgba(236,233,226,.12);
+  --rdc-clr-ink-warm:#20211f;
+  --rdc-clr-tx-warm:#66645f;
+  --rdc-clr-ln-warm:#c5baaa66;
+  --rdc-clr-nav-mut:#9b9b98;
+  --rdc-clr-on-acc:#fffaf0;
+  --rdc-clr-lead-meta:#d5d2cb;
+  --rdc-clr-art-node:#c4a778;
+  --rdc-clr-art-node-mut:#b1afa0;
+  --rdc-art-node-sz:.18%;
+  --rdc-clr-art-orb:#bc914e;
+  --rdc-clr-art-orb-lt:#d5b681;
+  --rdc-clr-art-ico-ln:#d2c7b780;
+  --rdc-acc:var(--rdc-clr-gold);
+  --rdc-srf:var(--rdc-clr-srf);
+  --rdc-on-acc:var(--rdc-clr-on-acc);
+  --rdc-ovl-gal:color-mix(in srgb,var(--rdc-clr-blk) 87%,transparent);
+  --rdc-ovl-md:color-mix(in srgb,var(--rdc-clr-blk) 33.333%,transparent);
+  --rdc-ovl-ln:color-mix(in srgb,var(--rdc-clr-wht) 60%,transparent);
+  --rdc-shd-soft:color-mix(in srgb,var(--rdc-clr-blk) 6.667%,transparent);
+  --rdc-lead-ovl-st:color-mix(in srgb,var(--rdc-clr-ink) 0%,transparent);
+  --rdc-lead-ovl-mid:color-mix(in srgb,var(--rdc-clr-ink) 27.059%,transparent);
+  --rdc-lead-ovl-end:color-mix(in srgb,var(--rdc-clr-ink) 92.941%,transparent);
+  --rdc-font-body:Peyda,sans-serif;
+  --rdc-font-dsp:Hafez,Peyda,sans-serif;
+  --rdc-dsp-ink-sp:.18em;
+  --rdc-sz-body:1rem;
+  --rdc-sz-sm:.875rem;
+  --rdc-sz-dsp:3.125rem;
+  --rdc-sz-hi:2.25rem;
+  --rdc-btn-ht:3.5rem;
+  --rdc-btn-pad:1.5rem;
+  --rdc-btn-gap:1rem;
+  --rdc-btn-ico:1.25rem;
+  --rdc-btn-dur:.4s;
+  --rdc-btn-ease:cubic-bezier(.25,.45,.4,1);
+  --rdc-btn-bg:var(--rdc-clr-wht);
+  --rdc-btn-tx:var(--rdc-clr-ink);
+  --rdc-btn-hov-bg:var(--rdc-clr-ink);
+  --rdc-btn-hov-tx:var(--rdc-clr-crm);
+  --rdc-sz-h1:clamp(2.5rem,4vw,4.375rem);
+  --rdc-sz-h2:clamp(2rem,3.5vw,var(--rdc-sz-dsp));
+  --rdc-sz-h3:clamp(1.4rem,2vw,1.875rem);
+  --rdc-sz-h4:1.25rem;
+  --rdc-sz-h5:1.125rem;
+  --rdc-sz-h6:.9375rem;
+  --rdc-ln-ht-body:1.8;
+  --rdc-ln-ht-hdg:1.4;
+  --rdc-wt-body:400;
+  --rdc-wt-hdg:500;
+  --rdc-wt-dsp:400;
+  --rdc-rad:.875rem;
+  --rdc-ctr:1450px;
+  --rdc-gut:clamp(1.25rem,3.15vw,3.75rem);
+  --rdc-sp:clamp(3rem,6vw,6rem);
+  --rdc-bg:var(--rdc-clr-wht);
+  --rdc-ppr:var(--rdc-clr-wht);
+  --rdc-ink:var(--rdc-clr-ink);
+  --rdc-tx:var(--rdc-clr-tx);
+  --rdc-mut:var(--rdc-clr-mut);
+  --rdc-ln:var(--rdc-clr-ln);
+}
+.rdc-inv,
+body.post-type-archive-project,
+body.tax-project_category,
+body.single-project {
+  --rdc-bg:var(--rdc-clr-dark);
+  --rdc-ppr:var(--rdc-clr-dark);
+  --rdc-srf:var(--rdc-clr-ink-warm);
+  --rdc-ink:var(--rdc-clr-crm);
+  --rdc-tx:var(--rdc-clr-crm);
+  --rdc-mut:var(--rdc-clr-mut-inv);
+  --rdc-ln:var(--rdc-clr-ln-inv);
+  --rdc-btn-bg:color-mix(in srgb,var(--rdc-clr-wht) 15%,transparent);
+  --rdc-btn-tx:var(--rdc-clr-crm);
+  color:var(--rdc-tx);
+}
+
+@media(max-width:48rem) { :root { --rdc-ctc-off:16px; } }

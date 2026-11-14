@@ -6,9 +6,9 @@
 .rdc-ctc__btn::before { content:''; position:absolute; inset:-4px; border:1px solid color-mix(in srgb,var(--rdc-clr-ctc) 40%,transparent); border-radius:inherit; z-index:-1; pointer-events:none; animation:rdc-ctc-ripple 2.8s ease-out infinite; }
 .rdc-ctc__dot { position:absolute; top:5px; right:5px; inline-size:10px; block-size:10px; border:2px solid var(--rdc-clr-ctc); border-radius:50%; background:var(--rdc-clr-ctc-dot); }
 .rdc-ctc:is(.is-open,.is-hide,:hover) .rdc-ctc__btn::before,.rdc-ctc:is(.is-open,.is-hide,:hover) .rdc-ctc__btn>.rdc-ico { animation-play-state:paused; }
-.rdc-ctc__pnl { position:absolute; inset-block-end:calc(var(--rdc-ctc-sz) + 12px); left:0; inline-size:min(320px,calc(100vw - 2 * var(--rdc-ctc-off) - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px))); max-block-size:calc(100dvh - var(--rdc-ctc-off) - var(--rdc-ctc-sz) - 32px - env(safe-area-inset-bottom,0px)); overflow:auto; border-radius:12px; padding:9px 7px; background:var(--rdc-clr-wht); box-shadow:0 12px 32px #0003; transform-origin:bottom left; }
+.rdc-ctc__pnl { position:absolute; inset-block-end:calc(var(--rdc-ctc-sz) + 12px); left:0; inline-size:min(320px,calc(100vw - 2 * var(--rdc-ctc-off) - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px))); max-block-size:calc(100dvh - var(--rdc-ctc-off) - var(--rdc-ctc-sz) - 32px - env(safe-area-inset-bottom,0px)); overflow:auto; border-radius:var(--rdc-rad); padding:9px 7px; background:var(--rdc-clr-wht); box-shadow:0 12px 32px #0003; transform-origin:bottom left; }
 .rdc-ctc__pnl ul { display:grid; gap:2px; list-style:none; }
-.rdc-ctc__pnl a { display:flex; align-items:center; gap:12px; min-block-size:54px; padding:6px 8px; border-radius:9px; color:inherit; }
+.rdc-ctc__pnl a { display:flex; align-items:center; gap:12px; min-block-size:54px; padding:6px 8px; border-radius:calc(var(--rdc-rad) / 2); color:inherit; }
 .rdc-ctc__pnl a:hover { background:var(--rdc-clr-srf); }
 .rdc-ctc__ico { display:grid; place-items:center; flex:none; inline-size:40px; block-size:40px; border-radius:50%; background:var(--rdc-clr-ctc); color:var(--rdc-clr-ink-warm); }
 .rdc-ctc__pnl strong { display:block; font-weight:600; }
