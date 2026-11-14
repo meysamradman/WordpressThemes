@@ -1,7 +1,7 @@
 <?php
 namespace RadmanCT;
 defined('ABSPATH')||exit;
-function media_id(string $name):int { $map=get_option('webtalik_media',array());$id=(int)($map[$name]??0);return $id&&get_post_type($id)==='attachment'?$id:0; }
+function media_id(string $name):int { if($name==='logo'){$logo=(int)get_theme_mod('custom_logo',0);if($logo&&get_post_type($logo)==='attachment')return $logo;} $map=get_option('webtalik_media',array());$id=(int)($map[$name]??0);return $id&&get_post_type($id)==='attachment'?$id:0; }
 function page_heading():string {
  if(is_post_type_archive('project'))return __('Projects','radmanct');
  if(is_category()||is_tax()||is_tag())return single_term_title('',false);

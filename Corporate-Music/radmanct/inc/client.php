@@ -6,7 +6,7 @@ add_filter('radmanct/page-title/enabled','__return_false');
 add_filter('radmanct/contact/data',static fn(array $data):array=>array('channels'=>array()));
 add_filter('radmanct/footer/data',static function(array $data):array {
  $data['links']=array(array('title'=>'خانه','url'=>home_url('/')),array('title'=>'موسیقی','url'=>\RadmanCT\Music\url()),array('title'=>'وبلاگ','url'=>home_url('/blog/')),array('title'=>'درباره ما','url'=>home_url('/about-us/')),array('title'=>'تماس با ما','url'=>home_url('/contact-us/')));
- $data['services']=array();$data['socials']=array(array('title'=>'تلگرام','url'=>'','icon'=>'telegram'),array('title'=>'اینستاگرام','url'=>'','icon'=>'instagram'),array('title'=>'وب‌سایت','url'=>'','icon'=>'globe'),array('title'=>'موسیقی','url'=>'','icon'=>'music'),array('title'=>'ویدئو','url'=>'','icon'=>'play'));$data['phone']='';$data['messenger_phone']='';$data['email']='';$data['address']='';$data['hours']='';return $data;
+ $data['services']=array();$data['socials']=array(array('title'=>'تلگرام','url'=>'','icon'=>'social-telegram'),array('title'=>'پیام‌رسان','url'=>'','icon'=>'social-messenger'),array('title'=>'اینستاگرام','url'=>'','icon'=>'social-instagram'),array('title'=>'وب‌سایت','url'=>'','icon'=>'social-website'),array('title'=>'روبیکا','url'=>'','icon'=>'social-rubika'),array('title'=>'آپارات','url'=>'','icon'=>'social-aparat'));$data['phone']='';$data['messenger_phone']='';$data['email']='';$data['address']='';$data['hours']='';return $data;
 });
 
 // Editorial placeholders until the artist supplies the final media and copy.

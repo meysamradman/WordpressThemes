@@ -1,4 +1,4 @@
-﻿param(
+param(
     [ValidateSet('Start', 'Stop', 'Status')][string]$Action = 'Start',
     [switch]$OpenBrowser
 )
@@ -41,8 +41,8 @@ try {
 
     if (-not (Test-Path -LiteralPath $envFile)) {
         if ($Action -ne 'Start') { throw 'No local site configuration yet. Run WordPress-Start.cmd first.' }
-        $existingDatabase = & docker volume ls --filter name=webtalik-database --format '{{.Name}}'
-        if ($existingDatabase -contains 'webtalik-database') { throw 'The database volume exists but its .env.local-wordpress file is missing. Restore that file; do not generate new credentials.' }
+        $existingDatabase = & docker volume ls --format '{{.Name}}'
+        if ($existingDatabase -contains 'webtalik-database' -or $existingDatabase -contains 'webtalik-mysql84-database') { throw 'The database volume exists but its .env.local-wordpress file is missing. Restore that file; do not generate new credentials.' }
         $dbPassword = New-LocalSecret
         $dbRootPassword = New-LocalSecret
         $adminPassword = New-LocalSecret

@@ -4,6 +4,7 @@ defined( 'ABSPATH' ) || exit;
 add_action( 'after_setup_theme', static function (): void {
     load_theme_textdomain( 'radmanct', get_template_directory() . '/languages' );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'custom-logo', array('flex-width'=>true,'flex-height'=>true) );
     add_post_type_support( 'page', 'excerpt' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'responsive-embeds' );
