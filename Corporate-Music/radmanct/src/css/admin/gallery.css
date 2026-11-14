@@ -14,3 +14,5 @@
 .rdc-adm-gal__acts .button-link-delete { margin-inline-start:auto; }
 .rdc-adm-gal [data-gallery-error] { color:#b32d2e; }
 .rdc-adm-gal [hidden] { display:none; }
+
+.column-rdc_cover{width:64px}.rdc-adm-cover{display:block;width:48px;height:48px;object-fit:cover;border-radius:4px}.column-rdc_media{width:140px}
