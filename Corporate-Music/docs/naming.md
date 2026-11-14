@@ -116,3 +116,5 @@
 ## گالری مدیریت نمونه‌کار
 
 گالری در متاباکس مستقلِ ستون اصلی ویرایش پروژه است؛ در سایدبار رسانهٔ کارت قرار نگیرد. ریزعکس‌ها، مشاهدهٔ اصل تصویر، حذف تکی و جابه‌جایی با کیبورد در همان کادر فراهم باشند. افزودن/مرتب‌سازی با پنجرهٔ بومی گالری WordPress انجام شود؛ برای این کار کتابخانهٔ انتخابگر یا مرتب‌سازی موازی اضافه نشود. CSS فقط در ویرایش پروژه و JS رسانه فقط در ویرایش نوشته/پروژه بارگذاری می‌شود. ذخیرهٔ گالری nonce مستقل دارد، ترتیب attachment IDها و سایر فیلدهای `_webtalik_project` را حفظ می‌کند؛ حذف از گالری، فایل رسانه را حذف نمی‌کند.
+
+Collection module names: `album` owns album cards/photos, `collection` owns common archive/detail layout, `collection-cats` owns the native category disclosure, `clip` owns video detail/downloads and `lb` owns the shared modal image viewer. These are module owners; retain the existing `rdc-` prefix and stored `_rdc_album`/`_rdc_clip` keys.
