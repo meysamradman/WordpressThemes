@@ -7,6 +7,7 @@ require_once __DIR__.'/inc/portfolio.php';
 require_once __DIR__.'/inc/demo-query.php';
 require_once __DIR__.'/inc/blog.php';
 require_once __DIR__.'/inc/music.php';
+require_once __DIR__.'/inc/collections.php';
 require_once __DIR__.'/inc/catalog.php';
 require_once __DIR__.'/inc/library.php';
 add_action('after_setup_theme',static function(){
@@ -38,7 +39,7 @@ function register_content():void {
 add_action('init',__NAMESPACE__.'\\register_content');
 add_action('pre_get_posts',static function(\WP_Query $query){
     if(is_admin()||!$query->is_main_query())return;
-    if(Music\native($query)||Catalog\native($query))return;
+    if(Music\native($query)||Catalog\native($query)||Collections\native($query))return;
     if(Blog\native($query)){if($query->get('rdl_blog'))$query->set('post_type','post');return;}
     if($query->is_home()||$query->is_post_type_archive('rdl_design')||$query->is_tax(['rdl_group','rdl_kind','rdl_fx'])||$query->is_search()){
         $query->set('post_type','rdl_design');

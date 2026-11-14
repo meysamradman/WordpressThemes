@@ -725,5 +725,69 @@
     "scroll_gap": false,
     "icon": "grid",
     "reference": "https://museum.elementra.themerex.net/"
+  },
+  "gallery-archive": {
+    "title": "آرشیو آلبوم‌های عکس · Radman",
+    "slug": "gallery-archive",
+    "group": "gallery",
+    "subgroup": "gallery-grid",
+    "kind": "page",
+    "source": "Corporate-Music/gallery/archive",
+    "motion": "گالری چهارستونه، لایت‌باکس و صفحه‌بندی بومی",
+    "effects": [
+      "native"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "image",
+    "surface": "dark"
+  },
+  "gallery-single": {
+    "title": "جزئیات آلبوم‌های عکس · Radman",
+    "slug": "gallery-single",
+    "group": "gallery",
+    "subgroup": "gallery-detail",
+    "kind": "page",
+    "source": "Corporate-Music/gallery/single",
+    "motion": "گالری چهارستونه، لایت‌باکس و صفحه‌بندی بومی",
+    "effects": [
+      "native"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "image",
+    "surface": "dark"
+  },
+  "video-archive": {
+    "title": "آرشیو ویدئو · Radman",
+    "slug": "video-archive",
+    "group": "video",
+    "subgroup": "video-grid",
+    "kind": "page",
+    "source": "Corporate-Music/video/archive",
+    "motion": "ویدئوی محلی، کاور و دانلود کیفیت‌های واقعی؛ بدون پخش خودکار",
+    "effects": [
+      "native"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "play",
+    "surface": "dark"
+  },
+  "video-single": {
+    "title": "جزئیات ویدئو · Radman",
+    "slug": "video-single",
+    "group": "video",
+    "subgroup": "video-detail",
+    "kind": "page",
+    "source": "Corporate-Music/video/single",
+    "motion": "ویدئوی محلی، کاور و دانلود کیفیت‌های واقعی؛ بدون پخش خودکار",
+    "effects": [
+      "native"
+    ],
+    "image": "projects",
+    "scroll_gap": false,
+    "icon": "play",
+    "surface": "dark"
   }
 }

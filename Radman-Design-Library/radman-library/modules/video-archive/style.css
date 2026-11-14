@@ -1,0 +1,4 @@
+@import '../../src/css/ui/collection.css';
+@import '../../src/css/ui/video-card.css';
+.rdc-collection--videos .rdc-video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}.rdc-collection--videos .rdc-video-card{padding:1.25rem;border-radius:var(--rdc-rad-md)}.rdc-collection--videos .rdc-video-card__copy{padding:1.25rem .4rem .4rem}.rdc-collection--videos .rdc-video-card h2{font-size:1.5rem}.rdc-collection--videos .rdc-video-card p{font-size:1.2rem;line-height:1.65}@media(max-width:700px){.rdc-collection--videos .rdc-video-grid{grid-template-columns:1fr}.rdc-collection--videos .rdc-video-card{padding:.8rem}.rdc-collection--videos .rdc-video-card h2{font-size:1.2rem}.rdc-collection--videos .rdc-video-card p{font-size:1rem}.rdc-clip-downloads{gap:.5rem;margin-block:1rem}.rdc-clip-download{font-size:1rem;min-block-size:3rem;--rdc-btn-ico:1.3rem;padding:.35rem .55rem}.rdc-collection--video-detail{padding-block-start:1.5rem}}
+

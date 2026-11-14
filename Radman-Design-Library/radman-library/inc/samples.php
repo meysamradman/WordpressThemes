@@ -8,6 +8,7 @@ namespace RadmanLibrary\Samples {
         return $links[$slug];
     }
     function selected():?array {
+        if(\RadmanLibrary\Collections\native()){$album=is_singular('album')||is_post_type_archive('album')||is_tax(['album_category','album_tag']);return \RadmanLibrary\modules()[($album?'gallery':'video').(is_singular(['album','clip'])?'-single':'-archive')]??null;}
         if(\RadmanLibrary\Catalog\native())return \RadmanLibrary\modules()[is_singular('radman_product')?'catalog-single':'catalog-archive']??null;
         if(\RadmanLibrary\Music\native())return \RadmanLibrary\modules()[is_singular('track')?'music-single':'music-archive']??null;
         if(\RadmanLibrary\Blog\native())return \RadmanLibrary\modules()[is_singular('post')?'blog-single':'blog-archive']??null;
@@ -15,7 +16,7 @@ namespace RadmanLibrary\Samples {
         if(is_singular('project'))return \RadmanLibrary\modules()['portfolio-single']??null;
         return is_singular('rdl_design')?\RadmanLibrary\module(get_queried_object_id()):null;
     }
-    function raw():bool { return (!isset($_GET['rdl_info'])||'1'!==$_GET['rdl_info'])&&(\RadmanLibrary\Portfolio\native()||\RadmanLibrary\Blog\native()||\RadmanLibrary\Music\native()||\RadmanLibrary\Catalog\native()||!post_password_required())&&isset(selected()['source']); }
+    function raw():bool { return (!isset($_GET['rdl_info'])||'1'!==$_GET['rdl_info'])&&(\RadmanLibrary\Collections\native()||\RadmanLibrary\Portfolio\native()||\RadmanLibrary\Blog\native()||\RadmanLibrary\Music\native()||\RadmanLibrary\Catalog\native()||!post_password_required())&&isset(selected()['source']); }
     function cover_data():array {
         return \RadmanCT\PageTitle\data([
             'title'=>'خدمات','label'=>'آنچه می‌سازیم','desc'=>'طراحی فکرشده، توسعهٔ قابل اتکا و فضایی برای رشد کسب‌وکارت.',
