@@ -19,10 +19,23 @@ add_action('add_meta_boxes_track',static function():void{
 });
 add_action('save_post_track',static function(int $id):void{
     if(wp_is_post_revision($id)||wp_is_post_autosave($id)||!current_user_can('edit_post',$id)||!isset($_POST['rdc_track_nonce'])||!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['rdc_track_nonce'])),'rdc_track_save'))return;
-    $input=isset($_POST['rdc_track'])&&is_array($_POST['rdc_track'])?wp_unslash($_POST['rdc_track']):[];$data=[];
+    $input=isset($_POST['rdc_track'])&&is_array($_POST['rdc_track'])?wp_unslash($_POST['rdc_track']):[];$data=get_post_meta($id,'_rdc_track',true);$data=is_array($data)?$data:[];
     foreach(['artist','poet','arranger','composer','album','released'] as $key)$data[$key]=is_scalar($input[$key]??'')?sanitize_text_field($input[$key]??''):'';
     $data['lyrics']=is_scalar($input['lyrics']??'')?sanitize_textarea_field($input['lyrics']??''):'';
-    foreach(['audio','download'] as $key){$value=is_scalar($input[$key]??0)?absint($input[$key]??0):0;$data[$key]=$value&&file($value)?$value:0;}
+    $uploads=wp_upload_dir(null,false);
+    foreach(['audio','download'] as $key){
+        $value=is_scalar($input[$key]??0)?absint($input[$key]??0):0;
+        $attachment=$value?get_post($value):null;
+        $url=$attachment?wp_get_attachment_url($value):'';
+        // Draft-owned media is editable; the frontend keeps its separate public guard.
+        $allowed=$attachment
+            &&$attachment->post_type==='attachment'
+            &&in_array($attachment->post_status,['inherit','publish'],true)
+            &&str_starts_with((string)$attachment->post_mime_type,'audio/')
+            &&current_user_can('read_post',$value)
+            &&$url&&str_starts_with($url,trailingslashit($uploads['baseurl']));
+        $data[$key]=$allowed?$value:0;
+    }
     update_post_meta($id,'_rdc_track',$data);
 });
 add_action('admin_enqueue_scripts',static function():void{

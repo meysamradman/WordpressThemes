@@ -42,6 +42,6 @@ function credits(array $data,bool $released=false):void {
  $labels=['artist'=>'خواننده','poet'=>'شعر','arranger'=>'تنظیم','composer'=>'آهنگساز'];
  if($released)$labels+=['released'=>'تاریخ تولید','album'=>'آلبوم'];
  echo '<dl class="rdc-trk-credits">';
- foreach($labels as $key=>$label){if(empty($data[$key]))continue;echo '<div><dt>'.esc_html($label).':</dt><dd>'.esc_html($data[$key]).'</dd></div>';}
+ foreach($labels as $key=>$label){if(empty($data[$key])&&!in_array($key,['artist','poet','arranger','composer'],true))continue;echo '<div><dt>'.esc_html($label).':</dt><dd>'.esc_html($data[$key]??'') . (empty($data[$key])?'—':'').'</dd></div>';}
  echo '</dl>';
 }

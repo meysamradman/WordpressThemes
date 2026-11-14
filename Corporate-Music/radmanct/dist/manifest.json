@@ -81,7 +81,7 @@
     "isEntry": true
   },
   "src/css/pages/biography.css": {
-    "file": "css/biography-Bqvus9Zi.min.css",
+    "file": "css/biography-Dzu7d-_Q.min.css",
     "name": "css-biography",
     "names": [
       "css-biography.css"
@@ -134,6 +134,15 @@
     "src": "src/css/pages/home.css",
     "isEntry": true
   },
+  "src/css/pages/music-detail.css": {
+    "file": "css/music-detail-CkusN-9v.min.css",
+    "name": "css-music-detail",
+    "names": [
+      "css-music-detail.css"
+    ],
+    "src": "src/css/pages/music-detail.css",
+    "isEntry": true
+  },
   "src/css/pages/music-home.css": {
     "file": "css/music-home-BbZS7PXw.min.css",
     "name": "css-music-home",
@@ -144,7 +153,7 @@
     "isEntry": true
   },
   "src/css/pages/music.css": {
-    "file": "css/music-BXBbs1ZV.min.css",
+    "file": "css/music-Uwcqozyc.min.css",
     "name": "css-music",
     "names": [
       "css-music.css"
@@ -198,7 +207,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-bciWrY2K.min.css",
+    "file": "css/site-C8wucYTw.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -213,7 +222,7 @@
     "isEntry": true
   },
   "src/js/admin/music-editor.js": {
-    "file": "js/music-editor-D7W7uEjM.min.js",
+    "file": "js/music-editor-Dqi9nV4L.min.js",
     "name": "music-editor",
     "src": "src/js/admin/music-editor.js",
     "isEntry": true

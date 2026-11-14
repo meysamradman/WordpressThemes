@@ -1,0 +1,3 @@
+.rdc-trk-credits{color:var(--rdc-mut);font-size:clamp(.95rem,1.4vw,1.25rem);line-height:1.65}
+.rdc-trk-credits>div{display:flex;flex-wrap:wrap;column-gap:.3em}
+.rdc-trk-credits dt,.rdc-trk-credits dd{display:inline;overflow-wrap:anywhere}
