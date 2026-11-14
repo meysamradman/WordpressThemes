@@ -37,7 +37,7 @@ function module_dependencies(array $asset):array {
 function script(string $name):void { $asset=entry('src/js/'.$name.'.js');if($asset)wp_enqueue_script_module('rdc-'.str_replace('/','-',$name),url($asset['file']),module_dependencies($asset),null); }
 add_action('wp_enqueue_scripts',static function():void{
  style('site');script('site');
- if(is_front_page())style('pages/music-home',array('rdc-site'));
+ if(is_front_page()){style('pages/music-home',array('rdc-site'));script('pages/music-home');}
  elseif(\RadmanCT\Music\native())style('pages/music',array('rdc-site'));
  if(\RadmanCT\Music\native())return;
  if(\RadmanCT\PageTitle\is_used())style('layout/page-title',array('rdc-site'));

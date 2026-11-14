@@ -35,7 +35,7 @@ services:
       WORDPRESS_DEBUG: '1'
       MUSIC_LOCAL_SITE: '1'
       MUSIC_LOCAL_URL: http://127.0.0.1:8098
-      MUSIC_ADMIN_USER: music_owner_26
+      MUSIC_ADMIN_USER: ${MUSIC_ADMIN_USER:?Run Start.cmd first}
       MUSIC_ADMIN_PASSWORD: ${MUSIC_ADMIN_PASSWORD:?Run WordPress-Start.cmd first}
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_HOME', getenv('MUSIC_LOCAL_URL'));

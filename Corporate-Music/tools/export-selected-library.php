@@ -1,7 +1,0 @@
-<?php
-require '/var/www/html/wp-load.php';if(home_url()!=='http://127.0.0.1:8097')exit(1);
-$bundle=['posts'=>[],'media'=>[]];$ids=[];
-foreach(['track','post'] as $type){foreach(get_posts(['post_type'=>$type,'post_status'=>'publish','has_password'=>false,'posts_per_page'=>4]) as $p){$data=$type==='track'?RadmanLibrary\Music\meta($p->ID):[];$cover=(int)get_post_thumbnail_id($p->ID);$entry=['type'=>$type,'title'=>$p->post_title,'slug'=>$p->post_name,'content'=>$p->post_content,'excerpt'=>$p->post_excerpt,'cover'=>$cover,'music'=>$data,'categories'=>wp_get_object_terms($p->ID,$type==='track'?'music_category':'category',['fields'=>'names'])];$bundle['posts'][]=$entry;foreach([$cover,$data['audio']??0,$data['download']??0] as $id)if($id)$ids[$id]=true;}}
-@mkdir('/tmp/music-selected',0755,true);
-foreach(array_keys($ids) as $id){if(!RadmanCT\PageTitle\attachment_allowed($id))continue;$file=get_attached_file($id);if(!$file||!is_file($file))continue;$name=$id.'-'.basename($file);copy($file,'/tmp/music-selected/'.$name);$bundle['media'][$id]=['file'=>$name,'title'=>get_the_title($id),'alt'=>get_post_meta($id,'_wp_attachment_image_alt',true),'mime'=>get_post_mime_type($id)];}
-file_put_contents('/tmp/music-selected/manifest.json',wp_json_encode($bundle,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));echo count($bundle['posts']).' public posts/tracks, '.count($bundle['media']).' selected files'.PHP_EOL;

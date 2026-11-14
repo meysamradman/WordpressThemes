@@ -4,7 +4,7 @@
 
 - سایت: http://127.0.0.1:8098/
 - مدیریت: http://127.0.0.1:8098/wp-admin/
-- ورود: فایل محلی و خارج از Git `.local-admin.txt`
+- ورود: نام کاربری و رمز خام در `.env.local-wordpress` با کلیدهای `MUSIC_ADMIN_USER` و `MUSIC_ADMIN_PASSWORD`؛ خلاصهٔ دسترسی هم در `.local-admin.txt` (هر دو خارج از Git)
 - روشن/خاموش: `Start.cmd` / `Stop.cmd`؛ داده‌ها و رمزها حفظ می‌شوند.
 - ساخت CSS/JS: `npm ci` و سپس `npm run build`؛ روی هاست Node لازم نیست.
 - مسیرها: `/music/`، جزئیات آهنگ، `/blog/`، جزئیات مقاله، `/about-us/` و `/contact-us/`.

@@ -45,11 +45,12 @@ try {
         if ($existingDatabase -contains 'corporate-music-database') { throw 'The database volume exists but its .env.local-wordpress file is missing. Restore that file; do not generate new credentials.' }
         $dbPassword = New-LocalSecret
         $dbRootPassword = New-LocalSecret
-        $adminPassword = New-LocalSecret
-        $configuration = "MUSIC_DB_PASSWORD=$dbPassword`r`nMUSIC_DB_ROOT_PASSWORD=$dbRootPassword`r`nMUSIC_ADMIN_PASSWORD=$adminPassword`r`n"
+        $adminUser = 'music_owner_26'
+        $adminPassword = 'Music!' + (New-LocalSecret).Substring(0, 28)
+        $configuration = "MUSIC_DB_PASSWORD=$dbPassword`r`nMUSIC_DB_ROOT_PASSWORD=$dbRootPassword`r`nMUSIC_ADMIN_PASSWORD=$adminPassword`r`nMUSIC_ADMIN_USER=$adminUser`r`n"
         [System.IO.File]::WriteAllText($envFile, $configuration, [System.Text.Encoding]::ASCII)
         New-Item -ItemType Directory -Path (Split-Path $accessFile) -Force | Out-Null
-        $access = "Corporate Music independent local WordPress`r`n`r`nWebsite: $siteUrl/`r`nAdmin: $siteUrl/wp-admin/`r`nUsername: music_owner_26`r`nInitial password: $adminPassword`r`n`r`nCredentials are local and excluded from Git. If you change the password in WordPress, this initial password is no longer current.`r`n"
+        $access = "Corporate Music independent local WordPress`r`n`r`nWebsite: $siteUrl/`r`nAdmin: $siteUrl/wp-admin/`r`nUsername: $adminUser`r`nInitial password: $adminPassword`r`n`r`nCredentials are local and excluded from Git. If you change the password in WordPress, this initial password is no longer current.`r`n"
         [System.IO.File]::WriteAllText($accessFile, $access, [System.Text.Encoding]::UTF8)
     }
 

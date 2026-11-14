@@ -6,10 +6,11 @@ if(is_blog_installed()){
  wp_installing(false);if(!get_option('music_local_provisioned'))throw new RuntimeException('Existing database is not owned by Corporate Music; nothing reset.');
  echo "Existing Corporate Music data and passwords preserved.\n";exit;
 }
+if(!is_dir(WP_LANG_DIR))wp_mkdir_p(WP_LANG_DIR);foreach(glob('/opt/corporate-music/fixtures/languages/*') as $language)if(is_file($language))copy($language,WP_LANG_DIR.'/'.basename($language));
 $password=getenv('MUSIC_ADMIN_PASSWORD');if(strlen((string)$password)<24)throw new RuntimeException('Strong password required');
 $result=wp_install('رسانهٔ موسیقی',getenv('MUSIC_ADMIN_USER'),'owner@localhost.invalid',false,'',$password,'fa_IR');if(empty($result['user_id']))throw new RuntimeException('Install failed');
 wp_installing(false);wp_cache_flush();wp_set_current_user($result['user_id']);update_user_meta($result['user_id'],'locale','fa_IR');
-update_option('WPLANG','fa_IR');update_option('timezone_string','Asia/Tehran');update_option('blogdescription','آهنگ‌ها و مجلهٔ موسیقی');update_option('blog_public',0);update_option('default_comment_status','closed');
+update_option('WPLANG','fa_IR');update_option('timezone_string','Asia/Tehran');update_option('blogdescription','آهنگ‌ها و مجلهٔ موسیقی');wp_update_term((int)get_option('default_category'),'category',['name'=>'دسته‌بندی‌نشده']);update_option('blog_public',0);update_option('default_comment_status','closed');
 switch_theme('radmanct');require_once get_template_directory().'/inc/music.php';RadmanCT\Music\register();
 require_once ABSPATH.'wp-admin/includes/image.php';require_once ABSPATH.'wp-admin/includes/media.php';
 foreach(get_posts(['post_type'=>['post','page'],'post_status'=>'any','numberposts'=>-1]) as $sample)wp_delete_post($sample->ID,true);
