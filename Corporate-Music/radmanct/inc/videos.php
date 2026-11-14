@@ -12,7 +12,7 @@ function item(\WP_Post $post):array {
  return ['title'=>get_the_title($post),'desc'=>$allowed?get_the_excerpt($post):'ویدئوی محافظت‌شده','video'=>$video['id']??0,'image'=>$allowed?(int)get_post_thumbnail_id($post):0,'url'=>get_permalink($post)];
 }
 function data():array {
- $posts=get_posts(['post_type'=>'clip','post_status'=>'publish','has_password'=>false,'posts_per_page'=>3,'no_found_rows'=>true]);
+ $posts=get_posts(['post_type'=>'clip','post_status'=>'publish','has_password'=>false,'posts_per_page'=>12,'no_found_rows'=>true]);
  return apply_filters('radmanct/videos/data',['title'=>'آخرین ویدئوها','items'=>array_map(__NAMESPACE__.'\\item',$posts)]);
 }
 
