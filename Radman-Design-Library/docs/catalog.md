@@ -52,3 +52,14 @@
 | [ورود سه‌بعدی متن و حرکت نشانگر · Radman](http://127.0.0.1:8097/design/text-3d/) | text / text-3d | flip دووجهی با ورود به دید؛ پارالاکس اختیاری ماوس، اتصال درست حروف فارسی |
 
 media-mosaic: independent gallery/section module, alternating text/media grid with three local WebP images and one native controlled video. Owns view.php, data.php and style.css; no JS or sibling-design dependency. rdl/media-mosaic/data supplies editorial copy and remapped local attachment IDs; fixtures/media-mosaic/PROVENANCE.md records selected demo media and layout reference. Mobile preserves each text/media pair; the video uses preload none and no autoplay.
+
+## گالری و ویدئو
+
+| نمونه | خانواده / سطح | رفتار |
+|---|---|---|
+| [آرشیو آلبوم‌های عکس](http://127.0.0.1:8097/design/gallery-archive/) | gallery / page | گرید چهارستونه، کاور و لینک آلبوم بومی |
+| [جزئیات آلبوم](http://127.0.0.1:8097/design/gallery-single/) | gallery / page | ۱۶ عکس در صفحه، صفحه‌بندی AJAX و لایت‌باکس لمسی/کیبورد |
+| [آرشیو ویدئو](http://127.0.0.1:8097/design/video-archive/) | video / page | دو ستون، پخش اختیاری، کاور و صفحه‌بندی AJAX |
+| [جزئیات ویدئو](http://127.0.0.1:8097/design/video-single/) | video / page | پخش محلی، دانلود فایل واقعی هر کیفیت و متن بومی |
+
+این چهار نمونه از Corporate-Music اقتباس شده‌اند؛ موسیقی موجود تغییر نکرده است. ثبت idempotent با tools/register-collections.php انجام می‌شود؛ منشأ رسانه در fixtures/collections/PROVENANCE.md است. قالب مشتری، لوگو، تصویر هنرمند و دیتابیس آن منتقل نشده‌اند.

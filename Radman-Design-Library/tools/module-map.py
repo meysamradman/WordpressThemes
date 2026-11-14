@@ -31,12 +31,15 @@ for slug,module in registry.items():
     if slug in ['column-gallery','media-stretch','sticky-cards','text-marquee','text-loop']:helpers+=['shared/radmanct/inc/page-title.php']
     if slug in ['image-accordion','card-accordion']:helpers+=['shared/radmanct/inc/page-title.php']
     if slug.startswith('catalog-'):helpers+=['inc/catalog.php','src/js/admin/catalog-editor.js']
+    if slug in ['gallery-archive','gallery-single','video-archive','video-single']:helpers+=['inc/collections.php','src/js/admin/collection-editor.js','shared/radmanct/inc/content/media.php','shared/radmanct/inc/page-title.php']
     if slug.startswith('music-'):helpers+=['inc/music.php','src/js/admin/music-editor.js']
     if slug in ['header-radman','footer-radman','page-home','page-services']:helpers+=['shared/radmanct/inc/brand.php','shared/radmanct/inc/navigation.php']
     if slug in ['services-cover','services-strip','page-services','wellness-scroll','project-marquee']:helpers+=['shared/radmanct/inc/page-title.php']
     if slug in ['home-hero','home-services','services-cover','page-home','page-services']:helpers+=['shared/radmanct/inc/assets.php']
     if slug not in ['robot','text-3d','data-table','particles','particles-float','curtain-accordion']:helpers+=['shared/radmanct/inc/ui/button.php','shared/radmanct/inc/icons.php','shared/radmanct/inc/icons/catalog.php']
     out[slug]={'kind':module.get('kind','section'),'family':module['group'],'effects':module.get('effects',[]),'entries':entries,'source_files':relative_graph(entries+helpers+['src/css/client-base.css']),'css_base':'src/css/client-base.css','php_contracts':['Native WordPress APIs','Use existing RadmanCT helpers once; replace workshop fixture adapters with client data'],'preview_only':['inc/samples.php','inc/portfolio.php','preview.php','assets/bar.css'],'vendor':'local GSAP 3.15.0 only if consumed; never one vendor copy per sample'}
+    if slug in ['gallery-archive','gallery-single','video-archive','video-single']:
+        out[slug].update(vendor='None; native CSS Grid, media controls, fetch pagination and dialog; no GSAP',assets=['fixtures/collections/PROVENANCE.md'],php_contracts=['Native WordPress album/clip, their category/tag taxonomies and _rdl_album/_rdl_clip metadata','Render module templates against the native query; replace Collections.render workshop query adapter in customer builds','Use only destination attachment IDs; preserve media privacy, nonce/capabilities and missing-quality disabled state'])
     if slug=='media-mosaic':
         out[slug].update(vendor='None; native CSS Grid and HTML video controls, no JS',assets=['fixtures/media-mosaic/PROVENANCE.md'],php_contracts=['Native WordPress attachment APIs and privacy guards','rdl/media-mosaic/data supplies copy, links, image and video IDs; replace the workshop media option in customer builds'])
     if slug=='particles-float':

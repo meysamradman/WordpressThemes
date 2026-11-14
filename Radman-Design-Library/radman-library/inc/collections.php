@@ -21,8 +21,13 @@ function clip(int $id):array {if(post_password_required($id))return [];$data=get
 function render(string $type,string $layout,string $template):void {
  $previous=$GLOBALS['wp_query'];$post=$GLOBALS['post']??null;$design=get_queried_object_id();$demo=!native();
  if($demo){$query=['post_type'=>$type,'post_status'=>'publish','has_password'=>false,'posts_per_page'=>$type==='clip'?4:16,'paged'=>max(1,is_scalar($_GET['rdl_pg']??1)?absint($_GET['rdl_pg']??1):1)];if($layout==='single'){$ids=get_posts(['post_type'=>$type,'post_status'=>'publish','has_password'=>false,'posts_per_page'=>1,'fields'=>'ids']);if(!$ids){echo '<p>هنوز محتوایی اضافه نشده است.</p>';return;}$query['p']=$ids[0];unset($query['paged']);}$GLOBALS['wp_query']=new \WP_Query($query);}
- $link=static fn($url,$page)=>add_query_arg('rdl_pg',(int)$page,get_permalink($design));if($demo)add_filter('get_pagenum_link',$link,10,2);
- try{require $template;}finally{if($demo)remove_filter('get_pagenum_link',$link,10);$GLOBALS['wp_query']=$previous;$GLOBALS['post']=$post;if($post)setup_postdata($post);}
+ try{require $template;}finally{$GLOBALS['wp_query']=$previous;$GLOBALS['post']=$post;if($post)setup_postdata($post);}
+}
+function pagination(bool $demo,int $design):void {
+ if(!$demo){the_posts_pagination(['prev_text'=>'قبلی','next_text'=>'بعدی']);return;}
+ $query=$GLOBALS['wp_query'];if($query->max_num_pages<2)return;
+ $base=str_replace('999999999','%#%',add_query_arg('rdl_pg',999999999,get_permalink($design)));
+ echo '<nav class="navigation pagination" aria-label="صفحه‌بندی"><div class="nav-links">'.paginate_links(['base'=>$base,'format'=>'','current'=>max(1,(int)$query->get('paged')),'total'=>(int)$query->max_num_pages,'prev_text'=>'قبلی','next_text'=>'بعدی']).'</div></nav>';
 }
 add_action('pre_get_posts',static function(\WP_Query $q):void{if(!is_admin()&&$q->is_main_query()&&native($q)&&!$q->is_singular())$q->set('posts_per_page',$q->is_post_type_archive('clip')||$q->is_tax(['clip_category','clip_tag'])?4:16);});
 require_once __DIR__.'/collections/editor.php';

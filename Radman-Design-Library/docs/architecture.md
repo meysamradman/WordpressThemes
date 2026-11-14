@@ -61,3 +61,9 @@ project-marquee motion: Match the inspected reference: duration = 70 × card cou
 Library sidebar uses a responsive 320–368px desktop column. Search and the category heading stay outside the native category scroll region (rdl-sb__tree); keep a visible stable scrollbar and keyboard scrolling. AJAX restores the category scroll position and expanded branches when replacing sidebar markup. Below 900px the sidebar returns to normal flow with a bounded category list; no scroll listeners or animation engine.
 
 هدر اصلی و هدر پیش‌نمایش هر دو از assets/bar.css استفاده می‌کنند؛ رنگ، لوگو، متن و فوکوس هدر فقط در همین فایل تعریف شوند. shell.css برای هدر override رنگ جدا نداشته باشد.
+
+## آلبوم عکس و ویدئو
+
+inc/collections.php مالک ثبت بومی album و clip، دسته/برچسب مستقل، اعتبارسنجی رسانه و metadataهای _rdl_album / _rdl_clip است؛ inc/collections/editor.php و src/js/admin/collection-editor.js انتخاب رسانه و ذخیرهٔ nonce/capability را فقط در ویرایشگر مربوط اجرا می‌کنند. مدل، داده و رسانهٔ مشتری کپی نشده است. Collections.render فقط adapter query کارگاه است و query/post قبلی را بازمی‌گرداند؛ قالب مقصد همان template هر ماژول را با query بومی مصرف می‌کند.
+
+gallery-archive، gallery-single، video-archive و video-single هرکدام view/template/style/script مستقل دارند؛ هیچ‌کدام ماژول دیگر را import نمی‌کند. مالکان کوچک مشترک شامل collection.css (رنگ نمونه و قواعد صفحه)، album-grid، collection-archive.js (fetch، abort، history و fallback)، album-gallery.js (dialog، کیبورد/لمس و cleanup) و video-player.js (توقف ویدئوهای دیگر) است. GSAP/ScrollSmoother یا رابط کارگاه به این طراحی‌ها وابسته نیست. صفحه‌بندی عکس از photo_page و پیش‌نمایش آرشیو از rdl_pg استفاده می‌کند؛ لینک بومی بدون JS فعال می‌ماند. فایل کیفیتِ غایب غیرفعال است و کیفیت ساختگی معرفی نمی‌شود. رسانهٔ خصوصی/رمزدار و دانلود آن نمایش داده نمی‌شود.
