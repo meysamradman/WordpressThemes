@@ -103,6 +103,15 @@
     "src": "src/css/pages/home.css",
     "isEntry": true
   },
+  "src/css/pages/music-home.css": {
+    "file": "css/music-home-D6GyftE6.min.css",
+    "name": "css-music-home",
+    "names": [
+      "css-music-home.css"
+    ],
+    "src": "src/css/pages/music-home.css",
+    "isEntry": true
+  },
   "src/css/pages/music.css": {
     "file": "css/music-YLs8ImKm.min.css",
     "name": "css-music",

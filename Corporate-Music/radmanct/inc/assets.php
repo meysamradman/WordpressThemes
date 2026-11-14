@@ -37,12 +37,13 @@ function module_dependencies(array $asset):array {
 function script(string $name):void { $asset=entry('src/js/'.$name.'.js');if($asset)wp_enqueue_script_module('rdc-'.str_replace('/','-',$name),url($asset['file']),module_dependencies($asset),null); }
 add_action('wp_enqueue_scripts',static function():void{
  style('site');script('site');
- if(is_front_page()||\RadmanCT\Music\native())style('pages/music',array('rdc-site'));
+ if(is_front_page())style('pages/music-home',array('rdc-site'));
+ elseif(\RadmanCT\Music\native())style('pages/music',array('rdc-site'));
  if(\RadmanCT\Music\native())return;
  if(\RadmanCT\PageTitle\is_used())style('layout/page-title',array('rdc-site'));
  if(is_page('services')){style('pages/services',array('rdc-site'));script('pages/services');}
  elseif(is_page('custom-website-design-development')){style('pages/service',array('rdc-site'));script('pages/service');}
- elseif(is_front_page()){style('pages/home',array('rdc-site'));script('pages/home');}
+ elseif(is_front_page()){ /* Home composes the native music grid and shared site runtime. */ }
  elseif(is_home()||is_category()||is_tag()||is_date()||is_author()||is_search()||is_singular('post')){style('pages/blog',array('rdc-site'));style(is_singular('post')?'pages/blog/single':'pages/blog/archive',array('rdc-pages-blog'));if(!is_singular())script('pages/archive');}
  elseif(is_post_type_archive('project')||is_tax('project_category')||is_singular('project')){style(is_singular('project')?'pages/portfolio/single':'pages/portfolio/archive',array('rdc-site'));if(is_singular('project')){if(!post_password_required())script('ui/gallery');}else{script('pages/archive');script('pages/portfolio');}}
 });

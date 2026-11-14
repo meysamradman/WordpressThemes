@@ -1,0 +1,2 @@
+<?php defined('ABSPATH')||exit;$data=\RadmanCT\MusicHome\data(); ?>
+<section class="rdc-ctr rdc-main" aria-labelledby="rdc-blog-latest"><h2 id="rdc-blog-latest"><?php echo esc_html($data['posts']); ?></h2><div class="rdc-trk-grid"><?php foreach(\RadmanCT\MusicHome\entries('post',3) as $item)get_template_part('template-parts/blog/preview',null,array('variant'=>'tile','post_id'=>$item->ID)); ?></div></section>
