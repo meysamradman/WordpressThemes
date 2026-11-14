@@ -11,7 +11,6 @@ const logo = logoSource.slice(logoSource.indexOf('<svg')).replace(/<svg([^>]+)>/
 
 for (const [folder, title, kind, subtitle] of [
   ['radmanct', 'RADMAN CT', 'WORDPRESS THEME', 'CORPORATE / PORTFOLIO / CATALOG'],
-  ['radmanct-child', 'RADMAN CT CHILD', 'WORDPRESS CHILD THEME', 'CLIENT TEMPLATES / CUSTOM DESIGN'],
 ]) {
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
   <rect width="1200" height="900" fill="#f7f5f1"/>

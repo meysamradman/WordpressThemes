@@ -35,7 +35,7 @@ if ( is_blog_installed() && get_option( 'radman_local_provisioned' ) ) {
 $password = getenv( 'RADMAN_ADMIN_PASSWORD' );
 if ( ! is_string( $password ) || strlen( $password ) < 24 ) { throw new RuntimeException( 'Missing local administrator password.' ); }
 if ( ! is_blog_installed() ) {
-    $result = wp_install( 'Radman CT Local', getenv( 'RADMAN_ADMIN_USER' ), 'radman@localhost.invalid', false, '', $password, 'fa_IR' );
+    $result = wp_install( 'Radman Elementor Local', getenv( 'RADMAN_ADMIN_USER' ), 'radman@localhost.invalid', false, '', $password, 'fa_IR' );
     if ( empty( $result['user_id'] ) ) { throw new RuntimeException( 'WordPress installation failed.' ); }
 }
 $admin = get_user_by( 'login', getenv( 'RADMAN_ADMIN_USER' ) );
@@ -51,7 +51,7 @@ foreach ( array( 'radmanct-components/radmanct-components.php', 'radmanct-conten
     $activated = activate_plugin( $plugin, '', false, true );
     if ( is_wp_error( $activated ) ) { throw new RuntimeException( $plugin . ': ' . $activated->get_error_message() ); }
 }
-switch_theme( 'radmanct-child' );
+switch_theme( 'radmanct' );
 
 $existing_home = get_page_by_path( 'home' );
 $home = $existing_home ? $existing_home->ID : wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => 'Home', 'post_content' => '<!-- wp:heading --><h2 class="wp-block-heading">Radman CT</h2><!-- /wp:heading -->' ), true );
@@ -62,4 +62,4 @@ if ( ! get_page_by_path( 'elementor-sandbox' ) ) { wp_insert_post( array( 'post_
 update_option( 'permalink_structure', '/%postname%/' );
 flush_rewrite_rules( true );
 update_option( 'radman_local_provisioned', 1, false );
-echo 'Installed WordPress ' . get_bloginfo( 'version' ) . ' with Radman CT Child, Components, Content, MCP and Elementor. Elementor Pro is installed but inactive.' . "\n";
+echo 'Installed WordPress ' . get_bloginfo( 'version' ) . ' with Radman CT, Components, Content, MCP and Elementor. Elementor Pro is installed but inactive.' . "\n";

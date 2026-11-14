@@ -9,7 +9,7 @@ description: Assess or implement authorized Radman CT theme and optional plugin 
 
 Follow root AGENTS. Read essentials once and the affected confirmed contract; `rg` the topic in `radman-doc/README.md` only if its owner is unknown. Read only the relevant section and any matching remaining item in `product/roadmap.md`. Archives and foundation are not startup reading.
 
-Naming direction is documented in engineering/naming.md: shared brand Radman, target Elementor prefix rde-, separate custom edition rdc-. The current source remains rdct- and the existing architecture until an explicit implementation task. Documentation approval does not authorize converting the theme, deleting custom PHP, renaming source/packages or migrating Elementor data. When that work is authorized, use the fixed short vocabulary (tx/ttl/desc/lbl/itm/lnk/wrp/inr/cnt/ent/en/wd) and coordinate renderers, CSS/JS, editor previews, dataset/ARIA and tests; preserve saved IDs/public contracts and avoid runtime rename layers.
+This is the Elementor edition: content pages and single/archive templates use Elementor, while the native Radman header/footer builder remains. Do not restore customer-coded PHP pages or a bundled Child. Preserve the Components library, Classic/V3 + Atomic, existing package identities, stored IDs and `rdct-` contracts. A source-prefix rename remains a separate task.
 
 Inspect nearby source/manifests and the matching supplied reference via `research/reference-map.md`; do not scan unrelated themes. Resolve/query Context7 for actual library/API/version questions. Pure refactoring needs no library lookup.
 

@@ -8,7 +8,6 @@ require_once dirname( __DIR__, 3 ) . '/navigation/panel.php';
 
 function panel_fields(): array {
 	$fields = \RadmanCT\Navigation\Panel\fields();
-	unset( $fields['panelCustomContent'], $fields['panelContentType']['options']['custom'] );
 	$fields['panelContentType']['default'] = 'elementor';
 	foreach ( $fields as &$field ) { $field['group'] ??= 'panel'; }
 	unset( $field ); return $fields;

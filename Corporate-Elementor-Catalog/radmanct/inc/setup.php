@@ -32,11 +32,3 @@ add_action( 'customize_register', static function ( $manager ): void {
 	) ) );
 }, 20 );
 
-add_filter( 'theme_page_templates', static function ( array $templates ): array {
-	$templates['templates/custom.php'] = __( 'Radman CT custom design', 'radmanct' );
-	$templates['templates/full-width.php'] = __( 'Full width', 'radmanct' );
-	if ( ! did_action( 'elementor/loaded' ) ) {
-		unset( $templates['templates/elementor.php'] );
-	}
-	return $templates;
-} );

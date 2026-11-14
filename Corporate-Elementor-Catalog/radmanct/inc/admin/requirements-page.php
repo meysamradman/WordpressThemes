@@ -25,11 +25,11 @@ function enqueue( string $hook ): void {
 
 function registry(): array {
 	return array(
-		'components' => array( 'file' => 'radmanct-components/radmanct-components.php', 'name' => __( 'Radman Components', 'radmanct' ), 'required' => true, 'purpose' => __( 'Required shared components for custom PHP and optional Elementor pages.', 'radmanct' ) ),
+		'components' => array( 'file' => 'radmanct-components/radmanct-components.php', 'name' => __( 'Radman Components', 'radmanct' ), 'required' => true, 'purpose' => __( 'Shared component library for Elementor pages.', 'radmanct' ) ),
 		'content' => array( 'file' => 'radmanct-content/radmanct-content.php', 'name' => __( 'Radman Content', 'radmanct' ), 'purpose' => __( 'Required only for the optional product and portfolio modules.', 'radmanct' ) ),
 		'mcp-adapter' => array( 'file' => 'mcp-adapter/mcp-adapter.php', 'name' => 'MCP Adapter', 'purpose' => __( 'Required only for an enabled MCP connection.', 'radmanct' ) ),
 		'mcp' => array( 'file' => 'radmanct-mcp/radmanct-mcp.php', 'name' => __( 'Radman MCP', 'radmanct' ), 'purpose' => __( 'Optional MCP tools for content and Radman CT layouts.', 'radmanct' ), 'depends' => 'mcp-adapter' ),
-		'elementor' => array( 'file' => 'elementor/elementor.php', 'name' => 'Elementor', 'purpose' => __( 'Required only for pages edited with Elementor.', 'radmanct' ) ),
+		'elementor' => array( 'file' => 'elementor/elementor.php', 'name' => 'Elementor', 'required' => true, 'purpose' => __( 'Page builder for this Elementor edition.', 'radmanct' ) ),
 	);
 }
 
@@ -69,7 +69,7 @@ function render(): void {
 	}
 	$plugins = statuses();
 	echo '<div class="wrap"><h1>' . esc_html__( 'Plugins and requirements', 'radmanct' ) . '</h1>';
-	echo '<p>' . esc_html__( 'The base theme requires no plugins. Install only what your project uses.', 'radmanct' ) . '</p>';
+	echo '<p>' . esc_html__( 'This edition uses Elementor and Radman Components. Elementor Pro provides content single/archive templates; the Radman header/footer builder remains independent.', 'radmanct' ) . '</p>';
 	
 	if ( current_user_can( 'activate_plugins' ) || current_user_can( 'manage_network_plugins' ) ) {
 		$url = is_multisite() && current_user_can( 'manage_network_plugins' ) ? network_admin_url( 'plugins.php' ) : admin_url( 'plugins.php' );
@@ -115,5 +115,10 @@ add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\enqueue' );
 
 add_action( 'admin_notices', static function (): void {
 	if ( ! current_user_can( 'edit_theme_options' ) || defined( 'RDCT_COMPONENTS_FILE' ) ) { return; }
-	echo '<div class="notice notice-warning"><p>' . esc_html__( 'Radman Components is required for this theme, including custom PHP pages. Elementor is optional.', 'radmanct' ) . ' <a href="' . esc_url( \admin_url( 'admin.php?page=rdct-requirements' ) ) . '">' . esc_html__( 'Manage required plugins', 'radmanct' ) . '</a></p></div>';
+	echo '<div class="notice notice-warning"><p>' . esc_html__( 'Radman Components is required for this Elementor edition.', 'radmanct' ) . ' <a href="' . esc_url( \admin_url( 'admin.php?page=rdct-requirements' ) ) . '">' . esc_html__( 'Manage required plugins', 'radmanct' ) . '</a></p></div>';
+} );
+
+add_action( 'admin_notices', static function (): void {
+	if ( ! current_user_can( 'edit_theme_options' ) || did_action( 'elementor/loaded' ) ) { return; }
+	echo '<div class="notice notice-warning"><p>' . esc_html__( 'Elementor is required to design pages in this edition.', 'radmanct' ) . ' <a href="' . esc_url( admin_url( 'admin.php?page=rdct-requirements' ) ) . '">' . esc_html__( 'Manage required plugins', 'radmanct' ) . '</a></p></div>';
 } );

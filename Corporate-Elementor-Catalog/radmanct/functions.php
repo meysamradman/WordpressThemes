@@ -3,14 +3,12 @@
 defined( 'ABSPATH' ) || exit;
 
 require_once __DIR__ . '/inc/legacy-settings.php';
-require_once __DIR__ . '/inc/custom-content.php';
 
 foreach ( array( 'settings', 'renderers', 'layout', 'page-effects', 'setup', 'assets', 'typography', 'template-tags', 'navigation', 'modules', 'builder', 'components', 'template-functions' ) as $rdct_module ) {
 	require_once __DIR__ . '/inc/' . $rdct_module . '.php';
 }
 unset( $rdct_module );
 \RadmanCT\ColorScheme\register();
-require_once __DIR__ . '/inc/archives.php';
 require_once __DIR__ . '/inc/blog-media.php';
 require_once __DIR__ . '/inc/card-media.php';
 require_once __DIR__ . '/inc/sidebars.php';
@@ -50,6 +48,5 @@ if ( is_admin() ) {
 	require_once __DIR__ . '/inc/admin/builder-api.php';
 	require_once __DIR__ . '/inc/admin/builder-assignment.php';
 	require_once __DIR__ . '/inc/admin/page-effects.php';
-	require_once __DIR__ . '/inc/admin/page-layout.php';
 	require_once __DIR__ . '/inc/admin/page-title.php';
 }

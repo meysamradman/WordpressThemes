@@ -1,3 +1,0 @@
-@import '../content/sidebar.css';
-.rdct-content-sidebar .rdct-blog-recent__list { display:grid; gap:1rem; margin:0; padding:0; list-style:none; }
-.rdct-blog-recent__list > li + li { margin:0; padding-block-start:1rem; border-block-start:1px solid var(--rdct-line); }

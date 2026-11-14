@@ -1,6 +1,6 @@
 param(
-    [ValidateSet('radmanct', 'radmanct-child', 'radmanct-content', 'radmanct-mcp', 'radmanct-components')]
-    [string[]]$Packages = @('radmanct', 'radmanct-child', 'radmanct-content', 'radmanct-mcp', 'radmanct-components')
+    [ValidateSet('radmanct', 'radmanct-content', 'radmanct-mcp', 'radmanct-components')]
+    [string[]]$Packages = @('radmanct', 'radmanct-content', 'radmanct-mcp', 'radmanct-components')
 )
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.IO.Compression.FileSystem

@@ -6,7 +6,6 @@
 
 | وضعیت | کار مشخص | مالک |
 |---|---|---|
-| OPEN | دیزاین بعدی Child و صفحات محتوا طبق ورودی مالک؛ تعیین URL نهایی CTAهای Home و سیاست رنگ بوم تیره باز است. ایرادهای بصری فعلی فقط در همان scope اصلاح شوند. | [مشتری](../engineering/client-customization.md)، [محتوا](../scenarios/content.md) |
 | OPEN | پذیرش واقعی Classic/Atomic و کتابخانه: بازکردن، درج، ذخیره/بازخوانی، Undo و خطای React 130 گزارش‌شده؛ موفقیت build/schema به معنی بسته‌شدن نیست. | [Elementor](../engineering/elementor.md)، [کتابخانه](../engineering/component-library.md) |
 | OPEN | شکاف‌های مشخص کنترل‌های بومی و برابری Text/Carousel و دکمه؛ فقط موارد بازِ inventory، نه بازنویسی قابلیت‌های حاضر. | [کامپوننت‌ها](../engineering/components.md)، [Text](../engineering/text.md)، [Carousel](../engineering/carousel.md) |
 | OPEN | پذیرش موبایل، RTL/LTR، کیبورد/Focus/Escape، reduced motion، sticky و Back/Forward آرشیوها در کاربرد واقعی. | [سایدبار](../engineering/sidebars.md)، [AJAX](../engineering/archive-ajax.md)، [ناوبری](../engineering/navigation.md) |

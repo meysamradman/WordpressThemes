@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
 
 function entry( string $key, string $scope = 'parent' ): array {
 	static $manifests = array();
-	$directory = 'child' === $scope ? get_stylesheet_directory() : get_template_directory();
+	$directory = get_template_directory();
 	if ( ! isset( $manifests[ $directory ] ) ) {
 		$path = $directory . '/dist/manifest.json';
 		$data = is_readable( $path ) ? json_decode( file_get_contents( $path ), true ) : array();
@@ -21,7 +21,7 @@ function entry( string $key, string $scope = 'parent' ): array {
 }
 
 function url( string $file, string $scope = 'parent' ): string {
-	$base = 'child' === $scope ? get_stylesheet_directory_uri() : get_template_directory_uri();
+	$base = get_template_directory_uri();
 	return $base . '/dist/' . $file;
 }
 
@@ -37,18 +37,6 @@ function style( string $handle, string $key, string $scope = 'parent', array $de
 function enqueue(): void {
 	style( 'rdct-theme', 'src/css/theme.css' );
 	if ( is_404() && function_exists( '\\RadmanCTComponents\\Components\\enqueue' ) ) { \RadmanCTComponents\Components\enqueue( 'archive-search' ); }
-	if ( is_page() && '' === get_page_template_slug() ) {
-		style( 'rdct-page', 'src/css/page.css', 'parent', array( 'rdct-theme' ) );
-	}
-	$context = \RadmanCT\Renderers\context();
-	$custom_listing = 'archive' === ( $context[1] ?? '' ) && in_array( $context[0] ?? '', array( 'catalog', 'portfolio' ), true );
-	$elementor_location = function_exists( '\\RadmanCT\\Renderers\\uses_elementor' ) && \RadmanCT\Renderers\uses_elementor();
-	if ( ( is_home() || is_archive() || is_search() ) && ! $custom_listing && ! $elementor_location ) {
-		style( 'rdct-listing', 'src/css/listing.css', 'parent', array( 'rdct-theme' ) );
-	}
-	if ( is_singular( 'post' ) && ! $elementor_location ) {
-		style( 'rdct-blog', 'src/css/blog.css', 'parent', array( 'rdct-theme' ) );
-	}
 	$script = entry( 'src/js/frontend.js' );
 	if ( $script ) {
 		wp_enqueue_script_module( 'rdct-frontend', url( $script['file'] ), array(), null );

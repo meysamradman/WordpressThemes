@@ -2,19 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-function rdct_register_content( string $key, array $definition ): void {
-	\RadmanCT\CustomContent\registry( $key, $definition );
-}
-
 function rdct_theme_toggle( array $options = array() ): void { echo \RadmanCT\ColorScheme\toggle( $options ); }
-
-function rdct_prepare_content( string $key ): void {
-	\RadmanCT\CustomContent\prepare( $key );
-}
-
-function rdct_render_content( string $key, array $context = array() ): string {
-	return \RadmanCT\CustomContent\render( $key, $context );
-}
 
 function rdct_menu( int $menu_id = 0, array $options = array() ): void {
 	if ( $menu_id < 0 ) { return; }
@@ -31,10 +19,6 @@ function rdct_panel( $content = null, array $options = array() ): void {
 function rdct_motion_attributes( array $options = array() ): void {
 	require_once __DIR__ . '/components/container-motion.php';
 	echo \RadmanCT\Components\ContainerMotion\attributes( $options );
-}
-
-function rdct_content_layout_attributes( string $scope = 'content' ): void {
-	echo \RadmanCT\Layout\content_attributes( $scope );
 }
 
 if ( ! function_exists( 'rdct_use' ) ) {

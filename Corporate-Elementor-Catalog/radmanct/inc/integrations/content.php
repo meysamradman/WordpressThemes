@@ -37,29 +37,6 @@ function gallery_ids( int $post_id ): array {
 	return $galleries[ $key ] = array_map( static function ( $post ): int { return (int) $post->ID; }, $posts );
 }
 
-function enqueue(): void {
-	if ( \RadmanCT\Renderers\uses_elementor() ) {
-		return;
-	}
-	if ( array( 'catalog', 'archive' ) === \RadmanCT\Renderers\context() ) {
-		require_once __DIR__ . '/catalog-filters.php';
-		CatalogFilters\prepare_fields( apply_filters( 'radmanct/catalog/filter_fields', array_keys( \RadmanCTContent\Catalog\FILTERS ) ) );
-		\RadmanCT\Assets\style( 'rdct-catalog', 'src/css/catalog.css', 'parent', array( 'rdct-theme' ) );
-	} elseif ( is_post_type_archive( 'radman_portfolio' ) || is_tax( 'radman_portfolio_cat' ) ) {
-		\RadmanCT\Assets\style( 'rdct-portfolio', apply_filters( 'radmanct/portfolio/archive_style', 'src/css/portfolio.css' ), 'parent', array( 'rdct-theme' ) );
-	}
-	foreach ( array( 'radman_product' => 'catalog', 'radman_portfolio' => 'portfolio' ) as $type => $name ) {
-		if ( is_singular( $type ) ) {
-			\RadmanCT\Assets\style( 'rdct-' . $name . '-single', 'src/css/' . $name . '-single.css', 'parent', array( 'rdct-theme' ) );
-			require_once __DIR__ . '/content-media.php';
-			$images = Media\ids( get_queried_object_id() );
-			if ( $images ) {
-				\RadmanCT\Assets\style( 'rdct-gallery', 'src/css/gallery.css', 'parent', array( 'rdct-theme' ) );
-			}
-		}
-	}
-}
-
 function gallery_attributes(): string {
 	return 'aria-label="' . esc_attr__( 'Image gallery', 'radmanct' ) . '" data-rdct-gallery data-close="' . esc_attr__( 'Close', 'radmanct' ) . '" data-previous="' . esc_attr__( 'Previous image', 'radmanct' ) . '" data-next="' . esc_attr__( 'Next image', 'radmanct' ) . '" data-loading="' . esc_attr__( 'Loading image...', 'radmanct' ) . '" data-error="' . esc_attr__( 'This image could not be loaded.', 'radmanct' ) . '" data-position="' . esc_attr__( 'Image %1$s of %2$s', 'radmanct' ) . '"';
 }
@@ -106,5 +83,5 @@ function metadata( int $post_id ): void {
 	Meta\render( $post_id );
 }
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue', 20 );
+
 require_once __DIR__ . '/content-shortcodes.php';

@@ -24,15 +24,14 @@ function context(): array {
 	if ( is_home() || is_category() || is_tag() || is_author() || is_date() ) {
 		return array( 'blog', 'archive' );
 	}
+	if ( is_singular() ) { return array( 'page', 'single' ); }
+	if ( is_archive() ) { return array( 'page', 'archive' ); }
 	return array();
 }
 
 function selected( string $location ): bool {
 	$context = context();
-	if ( ! $context || $location !== $context[1] ) {
-		return false;
-	}
-	return 'elementor' === \RadmanCT\Settings\values()[ $context[0] . '_' . $context[1] . '_renderer' ];
+	return $context && $location === $context[1];
 }
 
 function uses_elementor(): bool {

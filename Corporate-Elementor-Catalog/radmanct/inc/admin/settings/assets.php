@@ -55,6 +55,7 @@ function enqueue( string $hook ): void {
 		'fontWeights' => array_map( '\\RadmanCT\\Fonts\\weights', array_combine( array_keys( \RadmanCT\Fonts\registry() ), array_keys( \RadmanCT\Fonts\registry() ) ) ),
 		'fontRoles' => \RadmanCT\Fonts\roles(),
 		'fontChoices' => array( 'persian' => \RadmanCT\Fonts\choices( 'persian' ), 'latin' => \RadmanCT\Fonts\choices( 'latin' ) ),
+		'elementorBuilderUrl' => admin_url( 'edit.php?post_type=elementor_library&tabs_group=theme' ),
 		'elementorPro' => function_exists( 'elementor_theme_do_location' ),
 		'elementor' => did_action( 'elementor/loaded' ) > 0,
 		'elementorAtomic' => function_exists( '\\RadmanCT\\Integrations\\Elementor\\Atomic\\enabled' ) && \RadmanCT\Integrations\Elementor\Atomic\enabled(),

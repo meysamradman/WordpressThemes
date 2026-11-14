@@ -4,7 +4,6 @@ const page = createPageLifecycle(window);
 const features = [
   ['header-contrast', '[data-rdct-header-colors]', () => import('./components/header-contrast.js'), 'initializeHeaderContrasts'],
   ['sticky-header', '[data-rdct-sticky-start]', () => import('./components/sticky-header.js'), 'initializeStickyHeaders'],
-  ['archives', '[data-rdct-archive]', () => import('./archives.js'), 'initializeArchives'],
   ['menus', '[data-rdct-menu]', () => import('./navigation/manager.js'), 'observeMenus'],
   ['gallery', '[data-rdct-gallery]', () => import('./gallery.js'), 'initializeGalleries'],
   ['scroll-progress', '#rdct-scroll-progress', () => import('./scroll-progress.js'), 'initializeScrollProgress'],

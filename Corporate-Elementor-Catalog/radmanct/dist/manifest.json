@@ -146,8 +146,8 @@
       "_gsap-BkNXKQh0.min.js"
     ]
   },
-  "_typography-fields-dS8rFWNL.min.js": {
-    "file": "js/typography-fields-dS8rFWNL.min.js",
+  "_typography-fields-1RNAXzV3.min.js": {
+    "file": "js/typography-fields-1RNAXzV3.min.js",
     "name": "typography-fields",
     "imports": [
       "_rolldown-runtime-DK3Fl9T5.min.js",
@@ -200,15 +200,6 @@
     "src": "src/css/admin/typography.css",
     "isEntry": true
   },
-  "src/css/blog.css": {
-    "file": "css/blog-By437PbT.min.css",
-    "name": "blog",
-    "names": [
-      "blog.css"
-    ],
-    "src": "src/css/blog.css",
-    "isEntry": true
-  },
   "src/css/builder.css": {
     "file": "css/builder-layout-DdpszJYE.min.css",
     "name": "builder-layout",
@@ -225,24 +216,6 @@
       "catalog-filters.css"
     ],
     "src": "src/css/catalog-filters.css",
-    "isEntry": true
-  },
-  "src/css/catalog-single.css": {
-    "file": "css/catalog-single-3D47z00F.min.css",
-    "name": "catalog-single",
-    "names": [
-      "catalog-single.css"
-    ],
-    "src": "src/css/catalog-single.css",
-    "isEntry": true
-  },
-  "src/css/catalog.css": {
-    "file": "css/catalog-DpY3PJF3.min.css",
-    "name": "catalog",
-    "names": [
-      "catalog.css"
-    ],
-    "src": "src/css/catalog.css",
     "isEntry": true
   },
   "src/css/color-scheme.css": {
@@ -443,15 +416,6 @@
     "src": "src/css/content-meta.css",
     "isEntry": true
   },
-  "src/css/content-sidebar.css": {
-    "file": "css/content-sidebar-NY_78XOs.min.css",
-    "name": "content-sidebar",
-    "names": [
-      "content-sidebar.css"
-    ],
-    "src": "src/css/content-sidebar.css",
-    "isEntry": true
-  },
   "src/css/gallery.css": {
     "file": "css/gallery-ASdHwASt.min.css",
     "name": "gallery",
@@ -468,15 +432,6 @@
       "elementor-compatibility.css"
     ],
     "src": "src/css/integrations/elementor.css",
-    "isEntry": true
-  },
-  "src/css/listing.css": {
-    "file": "css/listing-CkGEMPja.min.css",
-    "name": "listing",
-    "names": [
-      "listing.css"
-    ],
-    "src": "src/css/listing.css",
     "isEntry": true
   },
   "src/css/motion/cursor.css": {
@@ -513,42 +468,6 @@
       "smooth-scroll.css"
     ],
     "src": "src/css/motion/smooth-scroll.css",
-    "isEntry": true
-  },
-  "src/css/page.css": {
-    "file": "css/page-CABcA1Rr.min.css",
-    "name": "page",
-    "names": [
-      "page.css"
-    ],
-    "src": "src/css/page.css",
-    "isEntry": true
-  },
-  "src/css/portfolio-shell.css": {
-    "file": "css/portfolio-shell-DYMgZj7k.min.css",
-    "name": "portfolio-shell",
-    "names": [
-      "portfolio-shell.css"
-    ],
-    "src": "src/css/portfolio-shell.css",
-    "isEntry": true
-  },
-  "src/css/portfolio-single.css": {
-    "file": "css/portfolio-single-BM8a2MY_.min.css",
-    "name": "portfolio-single",
-    "names": [
-      "portfolio-single.css"
-    ],
-    "src": "src/css/portfolio-single.css",
-    "isEntry": true
-  },
-  "src/css/portfolio.css": {
-    "file": "css/portfolio-DplMMXxl.min.css",
-    "name": "portfolio",
-    "names": [
-      "portfolio.css"
-    ],
-    "src": "src/css/portfolio.css",
     "isEntry": true
   },
   "src/css/product-display.css": {
@@ -592,7 +511,7 @@
     ]
   },
   "src/js/admin/builder-inspector.js": {
-    "file": "js/builder-inspector-CYiTQOtB.min.js",
+    "file": "js/builder-inspector-BPrg9GuY.min.js",
     "name": "builder-inspector",
     "src": "src/js/admin/builder-inspector.js",
     "isDynamicEntry": true,
@@ -614,7 +533,7 @@
     ]
   },
   "src/js/admin/builder-linked-fields.js": {
-    "file": "js/builder-linked-fields-dCyK9XxV.min.js",
+    "file": "js/builder-linked-fields-CbSLkKGs.min.js",
     "name": "builder-linked-fields",
     "src": "src/js/admin/builder-linked-fields.js",
     "isDynamicEntry": true,
@@ -634,7 +553,7 @@
     ]
   },
   "src/js/admin/builder-menu-fields.js": {
-    "file": "js/builder-menu-fields-Djjg9hLq.min.js",
+    "file": "js/builder-menu-fields-BtI85srR.min.js",
     "name": "builder-menu-fields",
     "src": "src/js/admin/builder-menu-fields.js",
     "isDynamicEntry": true,
@@ -646,7 +565,7 @@
     ]
   },
   "src/js/admin/builder-menu-panel-fields.js": {
-    "file": "js/builder-menu-panel-fields-BfAP_F8K.min.js",
+    "file": "js/builder-menu-panel-fields-fjala1cb.min.js",
     "name": "builder-menu-panel-fields",
     "src": "src/js/admin/builder-menu-panel-fields.js",
     "isDynamicEntry": true,
@@ -658,7 +577,7 @@
     ]
   },
   "src/js/admin/builder-navigator.js": {
-    "file": "js/builder-navigator-CTEpjzy9.min.js",
+    "file": "js/builder-navigator-7zaFLm9R.min.js",
     "name": "builder-navigator",
     "src": "src/js/admin/builder-navigator.js",
     "isDynamicEntry": true,
@@ -685,7 +604,7 @@
     ]
   },
   "src/js/admin/builder-settings-panel.js": {
-    "file": "js/builder-settings-panel-PJ4K0ONn.min.js",
+    "file": "js/builder-settings-panel-84IPKgTd.min.js",
     "name": "builder-settings-panel",
     "src": "src/js/admin/builder-settings-panel.js",
     "isDynamicEntry": true,
@@ -708,7 +627,7 @@
     ]
   },
   "src/js/admin/builder.js": {
-    "file": "js/builder-Bt-JWSav.min.js",
+    "file": "js/builder-788-ZkpU.min.js",
     "name": "builder",
     "src": "src/js/admin/builder.js",
     "isEntry": true,
@@ -735,7 +654,7 @@
     ]
   },
   "src/js/admin/color-settings-fields.js": {
-    "file": "js/color-settings-fields-BeUR3wSR.min.js",
+    "file": "js/color-settings-fields-JWhgdxR8.min.js",
     "name": "color-settings-fields",
     "src": "src/js/admin/color-settings-fields.js",
     "isDynamicEntry": true,
@@ -744,7 +663,7 @@
     ]
   },
   "src/js/admin/content-typography-fields.js": {
-    "file": "js/content-typography-fields-CJa8J4G0.min.js",
+    "file": "js/content-typography-fields-B1djM7xP.min.js",
     "name": "content-typography-fields",
     "src": "src/js/admin/content-typography-fields.js",
     "isDynamicEntry": true,
@@ -752,20 +671,14 @@
       "_controls-h5iHAiOY.min.js",
       "src/js/admin/settings.js",
       "_panel-tabs-DzCh7ti_.min.js",
-      "_typography-fields-dS8rFWNL.min.js"
+      "_typography-fields-1RNAXzV3.min.js"
     ]
   },
   "src/js/admin/content-view-fields.js": {
-    "file": "js/content-view-fields-C82agrnY.min.js",
+    "file": "js/content-view-fields-Cp0b6wYd.min.js",
     "name": "content-view-fields",
     "src": "src/js/admin/content-view-fields.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_controls-h5iHAiOY.min.js",
-      "src/js/admin/settings.js",
-      "_background-field-cGs44q2b.min.js",
-      "_page-title-fields-CGpbEnXy.min.js"
-    ]
+    "isDynamicEntry": true
   },
   "src/js/admin/custom-code-fields.js": {
     "file": "js/custom-code-fields-EFtiuib1.min.js",
@@ -798,7 +711,7 @@
     ]
   },
   "src/js/admin/page-title-settings.js": {
-    "file": "js/page-title-settings-BQW8GaO4.min.js",
+    "file": "js/page-title-settings-jB2IOoJL.min.js",
     "name": "page-title-settings",
     "src": "src/js/admin/page-title-settings.js",
     "isDynamicEntry": true,
@@ -808,7 +721,7 @@
     ]
   },
   "src/js/admin/settings.js": {
-    "file": "js/settings-BHtbUHtE.min.js",
+    "file": "js/settings-LTQerMKs.min.js",
     "name": "settings",
     "src": "src/js/admin/settings.js",
     "isEntry": true,
@@ -823,18 +736,9 @@
       "src/js/admin/content-typography-fields.js",
       "src/js/admin/content-view-fields.js",
       "src/js/admin/color-settings-fields.js",
-      "_typography-fields-dS8rFWNL.min.js",
+      "_typography-fields-1RNAXzV3.min.js",
       "src/js/admin/builder-site-settings.js",
       "src/js/admin/custom-code-fields.js"
-    ]
-  },
-  "src/js/archives.js": {
-    "file": "js/archives-BtpJgeea.min.js",
-    "name": "archives",
-    "src": "src/js/archives.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_preload-helper-khBccGFq.min.js"
     ]
   },
   "src/js/color-scheme.js": {
@@ -902,7 +806,7 @@
     "isDynamicEntry": true
   },
   "src/js/frontend.js": {
-    "file": "js/frontend-DWhHn1v9.min.js",
+    "file": "js/frontend-CPileyo5.min.js",
     "name": "frontend",
     "src": "src/js/frontend.js",
     "isEntry": true,
@@ -913,7 +817,6 @@
     "dynamicImports": [
       "src/js/components/header-contrast.js",
       "src/js/components/sticky-header.js",
-      "src/js/archives.js",
       "_manager-BQF3opbR.min.js",
       "src/js/gallery.js",
       "src/js/scroll-progress.js",

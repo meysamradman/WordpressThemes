@@ -4,7 +4,6 @@ namespace RadmanCT\Navigation\Panel;
 
 defined( 'ABSPATH' ) || exit;
 require_once __DIR__ . '/presentation.php';
-require_once dirname( __DIR__ ) . '/custom-content.php';
 
 function fields(): array {
 	require_once dirname( __DIR__ ) . '/icons.php';
@@ -13,20 +12,19 @@ function fields(): array {
 	return array(
 		'triggerStyle' => array( 'group' => 'style', 'label' => __( 'Panel button appearance', 'radmanct' ), 'default' => 'outline', 'options' => array( 'outline' => __( 'Outline', 'radmanct' ), 'plain' => __( 'Plain', 'radmanct' ), 'solid' => __( 'Solid', 'radmanct' ) ) ),
 		'triggerIcon' => array( 'label' => __( 'Panel button icon', 'radmanct' ), 'default' => 'menu', 'icon' => true, 'options' => \RadmanCT\Icons\labels() ),
-		'panelContentType' => array( 'label' => __( 'Panel content source', 'radmanct' ), 'default' => 'empty', 'options' => array( 'empty' => __( 'Empty', 'radmanct' ), 'custom' => __( 'Child theme design', 'radmanct' ), 'block' => __( 'Reusable block', 'radmanct' ), 'elementor' => __( 'Elementor template', 'radmanct' ) ) ),
-		'panelCustomContent' => array( 'label' => __( 'Custom design', 'radmanct' ), 'default' => '', 'options' => \RadmanCT\CustomContent\options(), 'condition' => array( 'panelContentType' => array( 'custom' ) ) ),
+		'panelContentType' => array( 'label' => __( 'Panel content source', 'radmanct' ), 'default' => 'empty', 'options' => array( 'empty' => __( 'Empty', 'radmanct' ), 'block' => __( 'Reusable block', 'radmanct' ), 'elementor' => __( 'Elementor template', 'radmanct' ) ) ),
 		'panelTemplateId' => array( 'label' => __( 'Panel template', 'radmanct' ), 'default' => 0, 'min' => 0, 'max' => PHP_INT_MAX, 'choices' => 'templates', 'condition' => array( 'panelContentType' => array( 'elementor' ) ) ),
 		'drawerSide' => array( 'label' => __( 'Drawer side (follows RTL/LTR)', 'radmanct' ), 'default' => 'start', 'options' => array( 'start' => __( 'Start', 'radmanct' ), 'end' => __( 'End', 'radmanct' ) ) ),
 	) + $fields;
 }
 
 function settings( array $input ): ?array {
+	if ( 'custom' === ( $input['panelContentType'] ?? '' ) ) { $input['panelContentType'] = 'empty'; }
 	$result = \RadmanCT\Navigation\Presentation\validate( $input );
 	if ( null === $result ) { return null; }
 	foreach ( fields() as $key => $field ) {
 		$value = $input[ $key ] ?? $field['default'];
-		if ( 'panelCustomContent' === $key ) { if ( '' !== $value && ! \RadmanCT\CustomContent\key( $value ) ) { return null; } }
-		elseif ( isset( $field['options'] ) && ( ! is_string( $value ) || ! isset( $field['options'][ $value ] ) ) ) { return null; }
+		if ( isset( $field['options'] ) && ( ! is_string( $value ) || ! isset( $field['options'][ $value ] ) ) ) { return null; }
 		if ( isset( $field['min'] ) && ( ! is_int( $value ) || $value < $field['min'] || $value > $field['max'] ) ) { return null; }
 		$result[ $key ] = $value;
 	}
@@ -39,7 +37,6 @@ function asset_names( array $options ): array {
 }
 
 function assets( array $options ): void {
-	if ( 'custom' === ( $options['panelContentType'] ?? '' ) && is_string( $options['panelCustomContent'] ?? null ) ) { \RadmanCT\CustomContent\prepare( $options['panelCustomContent'] ); }
 	foreach ( asset_names( $options ) as $name ) { \RadmanCT\Components\use_component( $name ); \RadmanCT\Components\print_late_style( $name ); }
 }
 
@@ -52,7 +49,6 @@ function render( array $input = array(), $content = null, string $scope = '' ): 
 	try {
 		if ( ! is_string( $content ) && is_callable( $content ) ) { ob_start(); try { $returned = $content(); $html = (string) ob_get_contents() . ( is_string( $returned ) ? $returned : '' ); } finally { ob_end_clean(); } }
 		elseif ( is_string( $content ) ) { $html = $content; }
-		elseif ( 'custom' === $options['panelContentType'] ) { $html = \RadmanCT\CustomContent\render( $options['panelCustomContent'], array( 'slot' => 'panel', 'panel_id' => $id ) ); }
 		elseif ( 'elementor' === $options['panelContentType'] ) { require_once __DIR__ . '/templates.php'; $html = \RadmanCT\Navigation\Templates\render( $options['panelTemplateId'] ); }
 		elseif ( 'block' === $options['panelContentType'] ) { require_once __DIR__ . '/blocks.php'; $html = \RadmanCT\Navigation\Blocks\render( $options['panelBlockId'], $id ); }
 		else { $html = ''; }

@@ -52,7 +52,6 @@ services:
     volumes:
       - wordpress:/var/www/html
       - ../../radmanct:/var/www/html/wp-content/themes/radmanct:ro
-      - ../../radmanct-child:/var/www/html/wp-content/themes/radmanct-child:ro
       - ../../radmanct-components:/var/www/html/wp-content/plugins/radmanct-components:ro
       - ../../radmanct-content:/var/www/html/wp-content/plugins/radmanct-content:ro
       - ../../radmanct-mcp:/var/www/html/wp-content/plugins/radmanct-mcp:ro

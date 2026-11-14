@@ -1,7 +1,0 @@
-@import './home/hero.css';
-.rdct-clt-home #main-content { --rdct-dark-title:#ece9e2;--rdct-dark-text:#8d8a83;background:#0b0b0a;color:var(--rdct-dark-title);padding-block:0; }
-:is(.rdct-clt-hero,.rdct-clt-offers) { --rdct-client-section-gutter:var(--rdct-content-current-gutter,var(--rdct-content-gutter,var(--rdct-gutter))); }
-.rdct-clt-next { min-block-size:100ch;background:#ece9e2; }
-.rdct-clt-home-content { padding-block:4rem; }
-
-.rdct-clt-home #main-content .rdct-button { font-family:var(--rdct-font-link,var(--rdct-font-body));font-size:var(--rdct-size-link,var(--rdct-size-body,var(--rdct-button-font-size,16px)));font-weight:var(--rdct-weight-link,var(--rdct-weight-body,inherit));line-height:var(--rdct-line-height-link,var(--rdct-line-height-body,1.4)); }

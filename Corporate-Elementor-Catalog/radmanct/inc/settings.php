@@ -29,7 +29,6 @@ function defaults(): array {
 		'svg_uploads' => false, 'block_google_fonts' => true,
 		'font_language' => 'auto', 'mixed_language_fonts' => false,
 		'analytics_enabled' => false, 'analytics_measurement_id' => '',
-		'blog_single_renderer' => 'custom', 'blog_archive_renderer' => 'custom', 'catalog_single_renderer' => 'custom', 'catalog_archive_renderer' => 'custom', 'portfolio_single_renderer' => 'custom', 'portfolio_archive_renderer' => 'custom',
 	);
 	foreach ( \RadmanCT\Fonts\roles() as $role ) {
 		$base[ $role . '_persian_font' ] = '';
@@ -99,8 +98,6 @@ function normalize( $input, array $fallback, bool $report = false ): array {
 			$value = $valid ? strtolower( $value ) : $value;
 		} elseif ( array_key_exists( $key, \RadmanCT\Layout\defaults() ) ) {
 			$value = \RadmanCT\Layout\normalize( $key, $value, $valid );
-		} elseif ( in_array( $key, array( 'blog_single_renderer', 'blog_archive_renderer', 'catalog_single_renderer', 'catalog_archive_renderer', 'portfolio_single_renderer', 'portfolio_archive_renderer' ), true ) ) {
-			$valid = in_array( $value, array( 'custom', 'elementor' ), true );
 		} elseif ( preg_match( '/^(body|headings|h[1-6]|link|span)_(persian|latin)(?:_tablet|_mobile)?_size$/D', $key ) ) {
 			$valid = '' === $value || ( ( is_string( $value ) || is_int( $value ) || is_float( $value ) ) && is_numeric( $value ) && is_finite( (float) $value ) && (float) $value >= 8 && (float) $value <= 200 );
 			$value = $valid && '' !== $value ? (string) round( (float) $value, 2 ) : $value;

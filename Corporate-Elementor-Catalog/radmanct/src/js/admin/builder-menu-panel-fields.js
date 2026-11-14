@@ -18,7 +18,6 @@ export function MenuPanelFields({item,update,config,labels,group = 'content',dev
     let input;
     const choices = (field.choices === 'templates' ? config.panelTemplates : []) ?? [];
     const options = field.options ? Object.entries(field.options) : null;
-    if (key === 'panelCustomContent' && value && !Object.prototype.hasOwnProperty.call(field.options, value)) options.push([value, `#${value}`]);
     if (field.icon) input = h(BuilderIconPicker,{value,onChange:(next)=>update({[key]:next || field.default}),config,labels});
     else if (key === 'panelImageId') input = h('div',null,h(ButtonControl,{type:'button',onClick:image},value > 0 ? labels.changeImage : labels.chooseImage),value > 0 && h(ButtonControl,{type:'button',onClick:() => update({panelImageId:0})},labels.remove));
     else if (field.options || field.choices) input = h(SelectControl,{value,numeric:!!field.choices,options:options ?? [[0,labels.none],...(value && !choices.some((block) => block.id === value) ? [[value,`#${value}`]] : []),...choices.filter((block)=>block.id !== 0).map((block) => [block.id,block.title])],onChange:(next) => update({[key]:next})});

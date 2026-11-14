@@ -4,7 +4,7 @@ import { readFile, readdir } from 'node:fs/promises';
 
 const root = new URL('../', import.meta.url);
 const registry = JSON.parse(await readFile(new URL('tools/css-class-map.json', root), 'utf8'));
-const roots = ['radmanct', 'radmanct-child', 'radmanct-components', 'radmanct-content', 'radmanct-mcp', 'shared'];
+const roots = ['radmanct', 'radmanct-components', 'radmanct-content', 'radmanct-mcp', 'shared'];
 async function* sources(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     if (['dist', 'vendor', 'node_modules'].includes(entry.name)) continue;

@@ -180,7 +180,7 @@ test('GSAP stays exactly pinned across manifest, lockfile and installed build de
 test('all packages build for ES2020 and keep own code independent of jQuery', async () => {
   const build = await readFile(resolve(workspace,'tools/build.mjs'),'utf8');
   assert.match(build,/target:\s*\['es2020'\]/);
-  for (const name of ['radmanct','radmanct-child','radmanct-content','radmanct-components','radmanct-mcp','shared']) {
+  for (const name of ['radmanct','radmanct-content','radmanct-components','radmanct-mcp','shared']) {
     const files = await readdir(resolve(workspace,name),{recursive:true});
     for (const file of files.filter((path) => !path.split(/[\\/]/).includes('dist') && !(name === 'radmanct' && /^vendor[\\/]ace[\\/]/.test(path)) && /\.(?:php|jsx?)$/.test(path))) {
       const source = await readFile(resolve(workspace,name,file),'utf8');
@@ -199,7 +199,7 @@ test('local editor Ace files match the pinned vendor manifest', async () => {
   }
 });
 
-for (const theme of ['radmanct', 'radmanct-child', 'radmanct-content', 'radmanct-components']) {
+for (const theme of ['radmanct', 'radmanct-content', 'radmanct-components']) {
   test(`${theme}: runtime manifest only exposes minified assets with readable counterparts`, async () => {
     const root = resolve(workspace, theme, 'dist');
     const minified = await read(resolve(root, 'manifest.json'));
@@ -296,7 +296,7 @@ test('PHP interface messages have Persian translation entries and no hardcoded P
   for (const messages of Object.values(catalog)) {
     for (const value of Object.values(messages)) assert.doesNotMatch(value, /\uFFFD|\?{4,}/, 'Corrupted translation encoding');
   }
-  for (const theme of ['radmanct', 'radmanct-child', 'radmanct-content', 'radmanct-mcp', 'radmanct-components']) {
+  for (const theme of ['radmanct', 'radmanct-content', 'radmanct-mcp', 'radmanct-components']) {
     const files = await readdir(resolve(workspace, theme), { recursive: true });
     for (const file of files.filter((path) => path.endsWith('.php'))) {
       const source = await readFile(resolve(workspace, theme, file), 'utf8');

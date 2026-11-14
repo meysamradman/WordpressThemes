@@ -7,11 +7,9 @@ require_once dirname( __DIR__ ) . '/icons.php';
 require_once dirname( __DIR__ ) . '/icons/elementor.php';
 
 require_once __DIR__ . '/elementor/editor-media.php';
-require_once __DIR__ . '/elementor/frontend-tools.php';
 require_once __DIR__ . '/elementor/local-editor-assets.php';
 require_once __DIR__ . '/elementor/custom-css.php';
 require_once __DIR__ . '/elementor/atomic.php';
-require_once __DIR__ . '/elementor/pages.php';
 require_once __DIR__ . '/elementor/container-motion.php';
 require_once __DIR__ . '/elementor/header-tone.php';
 require_once __DIR__ . '/elementor/navigation.php';
@@ -104,11 +102,7 @@ add_action( 'elementor/theme/register_locations', static function ( $manager ): 
 	}
 } );
 add_filter( 'elementor/theme/get_location_templates/template_id', static function ( $id, string $location ) {
-	if ( is_admin() || ( current_user_can( 'edit_posts' ) && \RadmanCT\Modules\editor_preview() ) ) {
-		return $id;
-	}
-	if ( in_array( $location, array( 'header', 'footer', 'single', 'archive' ), true ) && ! \RadmanCT\Renderers\selected( $location ) ) {
-		return -1;
-	}
-	return $id;
+	if ( is_admin() || ( current_user_can( 'edit_posts' ) && \RadmanCT\Modules\editor_preview() ) ) { return $id; }
+	// The native Radman header/footer builder retains ownership of the site shell.
+	return in_array( $location, array( 'header', 'footer' ), true ) ? -1 : $id;
 }, 20, 2 );
