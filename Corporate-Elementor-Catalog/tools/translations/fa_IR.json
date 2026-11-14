@@ -443,7 +443,6 @@
     "Underline": "خط زیر",
     "Sidebar on devices": "پنل کناری در دستگاه‌ها",
     "Choose the editor in each page template.": "ویرایشگر را در قالب هر برگه انتخاب کنید.",
-    "Choose custom PHP or Elementor Pro for each view.": "نمایش اختصاصی یا المنتور پرو را انتخاب کنید.",
     "Empty values inherit; zero removes spacing.": "خالی یعنی ارث‌بری؛ صفر یعنی بدون فاصله.",
     "Drag elements onto a row.": "عنصر را روی ردیف بکشید.",
     "Set menus and visibility for each device.": "فهرست و نمایش هر دستگاه را جدا تنظیم کنید.",
@@ -1142,7 +1141,13 @@
     "Manage menu items": "مدیریت آیتم‌های فهرست",
     "Title area shape": "شکل بخش عنوان",
     "Straight edge": "لبهٔ ساده",
-    "Curved edge": "لبهٔ منحنی"
+    "Curved edge": "لبهٔ منحنی",
+    "Design content with Elementor. Single and archive templates use Elementor Pro Theme Builder; the Radman header and footer builder stays independent.": "محتوا را با المنتور طراحی کنید. قالب تکی و آرشیو از Theme Builder المنتور پرو استفاده می‌کند؛ هدر و فوترساز رادمان مستقل می‌ماند.",
+    "This edition uses Elementor and Radman Components. Elementor Pro provides content single/archive templates; the Radman header/footer builder remains independent.": "این نسخه از المنتور و کتابخانهٔ رادمان استفاده می‌کند. قالب تکی و آرشیو با المنتور پرو طراحی می‌شود؛ هدر و فوترساز رادمان مستقل است.",
+    "Shared component library for Elementor pages.": "کتابخانهٔ مشترک کامپوننت‌ها برای صفحات المنتوری.",
+    "Page builder for this Elementor edition.": "صفحه‌ساز این نسخهٔ المنتوری.",
+    "Radman Components is required for this Elementor edition.": "کتابخانهٔ کامپوننت‌های رادمان برای این نسخهٔ المنتوری ضروری است.",
+    "Elementor is required to design pages in this edition.": "برای طراحی صفحات این نسخه، المنتور لازم است."
   },
   "radmanct-content": {
     "Specification label": "عنوان مشخصه",

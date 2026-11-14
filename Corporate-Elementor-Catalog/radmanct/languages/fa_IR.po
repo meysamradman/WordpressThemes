@@ -1330,9 +1330,6 @@ msgstr "پنل کناری در دستگاه‌ها"
 msgid "Choose the editor in each page template."
 msgstr "ویرایشگر را در قالب هر برگه انتخاب کنید."
 
-msgid "Choose custom PHP or Elementor Pro for each view."
-msgstr "نمایش اختصاصی یا المنتور پرو را انتخاب کنید."
-
 msgid "Empty values inherit; zero removes spacing."
 msgstr "خالی یعنی ارث‌بری؛ صفر یعنی بدون فاصله."
 
@@ -3429,3 +3426,21 @@ msgstr "لبهٔ ساده"
 
 msgid "Curved edge"
 msgstr "لبهٔ منحنی"
+
+msgid "Design content with Elementor. Single and archive templates use Elementor Pro Theme Builder; the Radman header and footer builder stays independent."
+msgstr "محتوا را با المنتور طراحی کنید. قالب تکی و آرشیو از Theme Builder المنتور پرو استفاده می‌کند؛ هدر و فوترساز رادمان مستقل می‌ماند."
+
+msgid "This edition uses Elementor and Radman Components. Elementor Pro provides content single/archive templates; the Radman header/footer builder remains independent."
+msgstr "این نسخه از المنتور و کتابخانهٔ رادمان استفاده می‌کند. قالب تکی و آرشیو با المنتور پرو طراحی می‌شود؛ هدر و فوترساز رادمان مستقل است."
+
+msgid "Shared component library for Elementor pages."
+msgstr "کتابخانهٔ مشترک کامپوننت‌ها برای صفحات المنتوری."
+
+msgid "Page builder for this Elementor edition."
+msgstr "صفحه‌ساز این نسخهٔ المنتوری."
+
+msgid "Radman Components is required for this Elementor edition."
+msgstr "کتابخانهٔ کامپوننت‌های رادمان برای این نسخهٔ المنتوری ضروری است."
+
+msgid "Elementor is required to design pages in this edition."
+msgstr "برای طراحی صفحات این نسخه، المنتور لازم است."

@@ -35,7 +35,7 @@ Scope: this WordPress project only. Do not import Django/RealEstate rules or dep
 ## Local work and verification
 
 - Preserve user assets and concurrent edits. Use the persistent `radman-local` installation per `radman-doc/engineering/local-development.md`; do not create another WordPress/DB by default or reset content/settings/volumes. Source is mounted directly; the owner handles later server transfer.
-- All five source packages remain `1.1.1` until completion or explicit version instruction. Source builds may verify changes; keep content hashes. Do not bump versions or create/rebuild/relabel ZIPs unless packaging is explicitly requested.
+- All four source packages remain `1.1.1` until completion or explicit version instruction. Source builds may verify changes; keep content hashes. Do not bump versions or create/rebuild/relabel ZIPs unless packaging is explicitly requested.
 - Use short relevant checks: PHP lint, source build and affected asset/contracts. No long suites, benchmarks or lengthy runtime checks unless requested; do not repeatedly ask. No Chrome/visual browser checks unless requested; prefer the built-in browser then, with no new browser MCP or full CDP by default.
 - Compare delivered behavior with the current contract. Report actual checks and material limits briefly; build/schema/source inspection is not browser, editor, WPML, production or performance acceptance. Documentation-only work runs documentation checks only.
 - Git is owned by the parent repository, remote `https://github.com/meysamradman/WordpressThemes.git`. Save only Corporate-Elementor-Catalog/ for a project request, through ../tools/Save-Project.ps1. No nested Git, mixed-project save, automatic push, workflows, Releases or deployment.

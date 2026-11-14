@@ -1330,9 +1330,6 @@ msgstr ""
 msgid "Choose the editor in each page template."
 msgstr ""
 
-msgid "Choose custom PHP or Elementor Pro for each view."
-msgstr ""
-
 msgid "Empty values inherit; zero removes spacing."
 msgstr ""
 
@@ -3428,4 +3425,22 @@ msgid "Straight edge"
 msgstr ""
 
 msgid "Curved edge"
+msgstr ""
+
+msgid "Design content with Elementor. Single and archive templates use Elementor Pro Theme Builder; the Radman header and footer builder stays independent."
+msgstr ""
+
+msgid "This edition uses Elementor and Radman Components. Elementor Pro provides content single/archive templates; the Radman header/footer builder remains independent."
+msgstr ""
+
+msgid "Shared component library for Elementor pages."
+msgstr ""
+
+msgid "Page builder for this Elementor edition."
+msgstr ""
+
+msgid "Radman Components is required for this Elementor edition."
+msgstr ""
+
+msgid "Elementor is required to design pages in this edition."
 msgstr ""
