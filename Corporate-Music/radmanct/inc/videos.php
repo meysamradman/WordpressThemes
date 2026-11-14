@@ -15,3 +15,10 @@ function data():array {
  $posts=get_posts(['post_type'=>'clip','post_status'=>'publish','has_password'=>false,'posts_per_page'=>3,'no_found_rows'=>true]);
  return apply_filters('radmanct/videos/data',['title'=>'آخرین ویدئوها','items'=>array_map(__NAMESPACE__.'\\item',$posts)]);
 }
+
+function downloads(int $id):array {
+ if(post_password_required($id))return [];
+ $meta=get_post_meta($id,'_rdc_clip',true);$meta=is_array($meta)?$meta:[];$out=[];
+ foreach([1080,720,480] as $quality){$value=$meta['download_'.$quality]??0;$out[$quality]=is_scalar($value)?file(absint($value)):[];}
+ return $out;
+}
