@@ -32,7 +32,7 @@ export function initializeGallery(dialog) {
  });
  listen(image,'load',()=>{if(status)status.textContent='';});
  listen(image,'error',()=>{if(status)status.textContent='تصویر دریافت نشد. دوباره تلاش کنید.';});
- listen(image,'pointerdown',event=>{if(event.pointerType==='touch')touch={x:event.clientX,y:event.clientY};});
+ listen(image,'pointerdown',event=>{if(event.pointerType==='touch'){touch={x:event.clientX,y:event.clientY};image.setPointerCapture?.(event.pointerId);}});
  listen(image,'pointercancel',()=>{touch=undefined;});
  listen(image,'pointerup',event=>{
   if(!touch)return;const dx=event.clientX-touch.x,dy=event.clientY-touch.y;touch=undefined;

@@ -50,7 +50,7 @@
     "name": "text-motion"
   },
   "src/css/admin/gallery.css": {
-    "file": "css/admin-gallery-6L0SL14I.min.css",
+    "file": "css/admin-gallery-Bn5sSMTa.min.css",
     "name": "css-admin-gallery",
     "names": [
       "css-admin-gallery.css"
@@ -68,7 +68,7 @@
     "isEntry": true
   },
   "src/css/pages/artist.css": {
-    "file": "css/artist-DpGdQoBy.min.css",
+    "file": "css/artist-CMuzcizr.min.css",
     "name": "css-artist",
     "names": [
       "css-artist.css"
@@ -113,7 +113,7 @@
     "isEntry": true
   },
   "src/css/pages/gallery.css": {
-    "file": "css/gallery-5aIcsy1Z.min.css",
+    "file": "css/gallery-sBeXymqb.min.css",
     "name": "css-gallery",
     "names": [
       "css-gallery.css"
@@ -185,7 +185,7 @@
     "isEntry": true
   },
   "src/css/pages/videos.css": {
-    "file": "css/videos-_IvOE7Jd.min.css",
+    "file": "css/videos-Bl_aPgJJ.min.css",
     "name": "css-videos",
     "names": [
       "css-videos.css"
@@ -233,7 +233,7 @@
     ]
   },
   "src/js/pages/archive.js": {
-    "file": "js/archive-BznxtT9H.min.js",
+    "file": "js/archive-Si17WpK6.min.js",
     "name": "archive",
     "src": "src/js/pages/archive.js",
     "isEntry": true,
@@ -371,7 +371,7 @@
     ]
   },
   "src/js/ui/gallery.js": {
-    "file": "js/gallery-Cz48FeTD.min.js",
+    "file": "js/gallery-BH1Vux5q.min.js",
     "name": "gallery",
     "src": "src/js/ui/gallery.js",
     "isEntry": true,
