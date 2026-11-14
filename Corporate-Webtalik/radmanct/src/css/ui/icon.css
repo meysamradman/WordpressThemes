@@ -1,0 +1,2 @@
+.rdc-ico{display:inline-block;inline-size:var(--rdc-ico-sz);block-size:var(--rdc-ico-sz);stroke-width:var(--rdc-ico-stroke);vertical-align:middle;flex-shrink:0}
+:dir(rtl) .rdc-ico[data-directional=true]{transform:scaleX(-1)}

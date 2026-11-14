@@ -13,6 +13,8 @@
   font-display:swap;
 }
 :root {
+  --rdc-ico-sz:1.25rem;
+  --rdc-ico-stroke:1.5;
   --rdc-clr-accent:#16cc9f;
   --rdc-clr-accent-text:var(--rdc-clr-accent);
   --rdc-clr-brand:var(--rdc-clr-accent);

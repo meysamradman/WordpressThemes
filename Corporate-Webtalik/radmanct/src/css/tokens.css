@@ -13,6 +13,8 @@
   font-display:swap;
 }
 :root {
+  --rdc-ico-sz:1.25rem;
+  --rdc-ico-stroke:1.5;
   --rdc-pt-sz:var(--rdc-sz-dsp);
   --rdc-clr-gold:#C59032;
   --rdc-clr-ctc:#25d366;
