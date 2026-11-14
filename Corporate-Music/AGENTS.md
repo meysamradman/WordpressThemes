@@ -10,3 +10,5 @@ Independent customer edition of Radman CT in the parent WordpressThemes reposito
 - Yoast SEO owns metadata/canonical/schema; preserve the theme fallback's plugin detection. No duplicate tags, title-specific H2 hacks or plugin-field overrides. One H1 per page; H2 sections, H3 cards, decorative text p/span.
 - All runtime assets are local. Preserve stored metadata, media/privacy guards, native APIs, escaping, nonce/capabilities and author/license notices. No Node runtime on hosting.
 - Credentials remain in ignored `.env.local-wordpress` and `.local-admin.txt`; never commit them. Run short targeted checks only. No long tests, release ZIP, server migration or deployment unless requested.
+
+- Client homepage palette/layout follows the supplied artist mockup, not Webtalik styling: plum/charcoal, pink and mint. Shared tokens remain authoritative. Video is a shared temporary section/page, no video CPT until requested. Theme thumbnail is the original Radman image from Webtalik; never overwrite it with a browser screenshot.

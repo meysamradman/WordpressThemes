@@ -67,6 +67,15 @@
     "src": "src/css/layout/page-title.css",
     "isEntry": true
   },
+  "src/css/pages/artist.css": {
+    "file": "css/artist-Bt2rPRVM.min.css",
+    "name": "css-artist",
+    "names": [
+      "css-artist.css"
+    ],
+    "src": "src/css/pages/artist.css",
+    "isEntry": true
+  },
   "src/css/pages/blog.css": {
     "file": "css/blog-9t29OIPv.min.css",
     "name": "css-blog",
@@ -104,7 +113,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-D6GyftE6.min.css",
+    "file": "css/music-home-Ba1WZRzH.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -113,7 +122,7 @@
     "isEntry": true
   },
   "src/css/pages/music.css": {
-    "file": "css/music-YLs8ImKm.min.css",
+    "file": "css/music-7Iu1lmbt.min.css",
     "name": "css-music",
     "names": [
       "css-music.css"
@@ -158,7 +167,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-CPbwUFcv.min.css",
+    "file": "css/site-ERAKZLan.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -232,6 +241,15 @@
       "_text-motion-BN1O9YIz.min.js",
       "_sticky-DCQqiS6K.min.js",
       "_media-parallax-DVlBKxXS.min.js"
+    ]
+  },
+  "src/js/pages/music-home.js": {
+    "file": "js/music-home-OriFSPrX.min.js",
+    "name": "music-home",
+    "src": "src/js/pages/music-home.js",
+    "isEntry": true,
+    "imports": [
+      "_lifecycle-CEUUFq-m.min.js"
     ]
   },
   "src/js/pages/page-title.js": {

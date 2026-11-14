@@ -14,7 +14,7 @@ function button(string $label,string $url,array $args=array()):string {
  if($icon==='')$icon=icon('arrow-up-right');
  $label_html='<span class="rdc-btn__lbl"><span>'.esc_html($label).'</span><span aria-hidden="true">'.esc_html($label).'</span></span>';
  $icon_html='<span class="rdc-btn__ico" aria-hidden="true">'.$icon.$icon.'</span>';
- $content=($args['icon_position']??'end')==='start'?$icon_html.$label_html:$label_html.$icon_html;
+ $content=!empty($args['icon_only'])?$icon_html:(($args['icon_position']??'end')==='start'?$icon_html.$label_html:$label_html.$icon_html);
  if(!empty($args['audio'])&&is_array($args['audio'])){
   $audio=$args['audio'];return '<button type="button" class="'.esc_attr($classes).'" data-rdc-audio-key="'.(int)($audio['key']??0).'" data-rdc-audio-src="'.esc_url($audio['url']??'').'" aria-pressed="false" aria-label="'.esc_attr($label).'">'.$content.'</button>';
  }

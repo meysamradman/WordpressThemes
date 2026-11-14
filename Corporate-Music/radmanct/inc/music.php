@@ -17,10 +17,14 @@ function file(int $id):array {
 }
 function url():string {return get_post_type_archive_link('track')?:home_url('/music/');}
 
-function card(\WP_Post $post,string $heading='h2'):void {
-    $heading=in_array($heading,['h2','h3'],true)?$heading:'h2';
-    $data=meta($post->ID);$allowed=!post_password_required($post);
-    echo '<article class="rdc-trk-card"><a href="'.esc_url(get_permalink($post)).'">';
-    if($allowed)echo get_the_post_thumbnail($post,'medium_large',['loading'=>'lazy','sizes'=>'(max-width:600px) 100vw,33vw']);
-    echo '<div><'.$heading.'>'.esc_html(get_the_title($post)).'</'.$heading.'>';if($allowed&&$data['artist'])echo '<p>'.esc_html($data['artist']).'</p>';echo '<span>مشاهدهٔ آهنگ ←</span></div></a></article>';
+function card(\WP_Post $post,string $heading='h2',bool $play=false):void {
+ $heading=in_array($heading,['h2','h3'],true)?$heading:'h2';$data=meta($post->ID);$allowed=!post_password_required($post);$url=get_permalink($post);
+ echo '<article class="rdc-trk-card"><a class="rdc-trk-card__cover" href="'.esc_url($url).'">';
+ if($allowed)echo get_the_post_thumbnail($post,'medium_large',['loading'=>'lazy','sizes'=>'(max-width:600px) 44vw,170px','alt'=>get_the_title($post)]);
+ echo '</a><div class="rdc-trk-card__body"><'.$heading.'><a href="'.esc_url($url).'">'.esc_html(get_the_title($post)).'</a></'.$heading.'><div class="rdc-trk-card__meta">';
+ if($allowed){$terms=get_the_terms($post,'music_category');echo '<p>'.esc_html($terms&&!is_wp_error($terms)?$terms[0]->name:$data['artist']).'</p>';}
+ $audio=$allowed?file((int)$data['audio']):[];
+ if($play&&$audio)echo \RadmanCT\button('پخش '.get_the_title($post),'#',['class'=>'rdc-trk-card__play','icon'=>'play','icon_only'=>true,'audio'=>['key'=>$post->ID,'url'=>$audio['url']]]);
+ else echo '<a class="rdc-trk-card__more" href="'.esc_url($url).'" aria-label="'.esc_attr('مشاهدهٔ '.get_the_title($post)).'">'.\RadmanCT\icon('play').'</a>';
+ echo '</div></div></article>';
 }
