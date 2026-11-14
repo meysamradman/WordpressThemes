@@ -132,10 +132,6 @@
     "file": "js/text-motion-Cowicvh-.min.js",
     "name": "text-motion"
   },
-  "_video-player-ROtkFHx-.min.js": {
-    "file": "js/video-player-ROtkFHx-.min.js",
-    "name": "video-player"
-  },
   "modules/blog-archive/script.js": {
     "file": "js/sample-40-C8IoIQhD.min.js",
     "name": "sample-40",
@@ -148,7 +144,7 @@
     ]
   },
   "modules/blog-archive/style.css": {
-    "file": "css/css-blog-archive-CknK18mO.min.css",
+    "file": "css/css-blog-archive-B1POxN4S.min.css",
     "name": "css-blog-archive",
     "names": [
       "css-blog-archive.css"
@@ -333,9 +329,10 @@
     ]
   },
   "modules/gallery-archive/style.css": {
-    "file": "css/css-gallery-archive-Bxh-CLxf.min.css",
-    "name": "css-gallery-archive",
+    "file": "css/css-gallery-archive-m7BCGr6q.min.css",
+    "name": "css-video-archive",
     "names": [
+      "css-video-archive.css",
       "css-gallery-archive.css"
     ],
     "src": "modules/gallery-archive/style.css",
@@ -352,7 +349,7 @@
     ]
   },
   "modules/gallery-single/style.css": {
-    "file": "css/css-gallery-single-BrFJFkAt.min.css",
+    "file": "css/css-gallery-single-X64zpTT0.min.css",
     "name": "css-gallery-single",
     "names": [
       "css-gallery-single.css"
@@ -982,37 +979,35 @@
     "isEntry": true
   },
   "modules/video-archive/script.js": {
-    "file": "js/sample-93-BtsNrGS8.min.js",
+    "file": "js/sample-93-BJ30C3u5.min.js",
     "name": "sample-93",
     "src": "modules/video-archive/script.js",
     "isEntry": true,
     "imports": [
-      "_lifecycle-CEUUFq-m.min.js",
-      "_collection-archive-C3TX87g2.min.js",
-      "_video-player-ROtkFHx-.min.js"
+      "_collection-archive-C3TX87g2.min.js"
     ]
   },
   "modules/video-archive/style.css": {
-    "file": "css/css-video-archive-PTsnpZcy.min.css",
+    "file": "css/css-gallery-archive-m7BCGr6q.min.css",
     "name": "css-video-archive",
     "names": [
-      "css-video-archive.css"
+      "css-video-archive.css",
+      "css-gallery-archive.css"
     ],
-    "src": "modules/video-archive/style.css",
+    "src": "modules/gallery-archive/style.css",
     "isEntry": true
   },
   "modules/video-single/script.js": {
-    "file": "js/sample-95-DQt7q-62.min.js",
+    "file": "js/sample-95-PTDb7nay.min.js",
     "name": "sample-95",
     "src": "modules/video-single/script.js",
     "isEntry": true,
     "imports": [
-      "_lifecycle-CEUUFq-m.min.js",
-      "_video-player-ROtkFHx-.min.js"
+      "_lifecycle-CEUUFq-m.min.js"
     ]
   },
   "modules/video-single/style.css": {
-    "file": "css/css-video-single-07w8pJSz.min.css",
+    "file": "css/css-video-single-C2zrZsxr.min.css",
     "name": "css-video-single",
     "names": [
       "css-video-single.css"

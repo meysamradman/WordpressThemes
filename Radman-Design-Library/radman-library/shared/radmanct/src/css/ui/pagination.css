@@ -1,0 +1,4 @@
+:is(.rdc-blog-arc,.rdc-collection) .pagination .nav-links { align-items:center; }
+:is(.rdc-blog-arc,.rdc-collection) .pagination .page-numbers { display:inline-flex; align-items:center; justify-content:center; min-inline-size:2.75rem; min-block-size:2.75rem; padding:.4rem .8rem; border:1px solid var(--rdc-ln); border-radius:calc(var(--rdc-rad) / 2); text-decoration:none; }
+:is(.rdc-blog-arc,.rdc-collection) .pagination :is(.current,a:hover,a:focus-visible) { border-color:var(--rdc-acc); background:var(--rdc-acc); color:var(--rdc-on-acc); }
+:is(.rdc-blog-arc,.rdc-collection) .pagination .dots { border-color:transparent; }

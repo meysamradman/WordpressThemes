@@ -1,0 +1,5 @@
+@import '../../../shared/radmanct/src/css/pages/blog.css';
+@import '../../../shared/radmanct/src/css/pages/blog/cards.css';
+@import '../../../shared/radmanct/src/css/pages/blog/section.css';
+.rdc-collection .rdc-blog-pv__md{border-radius:calc(var(--rdc-rad) / 2)}
+.rdc-collection .rdc-blog-pv--feature{border-radius:var(--rdc-rad);overflow:hidden}

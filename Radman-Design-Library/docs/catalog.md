@@ -57,9 +57,9 @@ media-mosaic: independent gallery/section module, alternating text/media grid wi
 
 | نمونه | خانواده / سطح | رفتار |
 |---|---|---|
-| [آرشیو آلبوم‌های عکس](http://127.0.0.1:8097/design/gallery-archive/) | gallery / page | گرید چهارستونه، کاور و لینک آلبوم بومی |
+| [آرشیو آلبوم‌های عکس](http://127.0.0.1:8097/design/gallery-archive/) | gallery / page | کارت شاخص و tile هم‌طرح وبلاگ، کاور و لینک آلبوم بومی |
 | [جزئیات آلبوم](http://127.0.0.1:8097/design/gallery-single/) | gallery / page | ۱۶ عکس در صفحه، صفحه‌بندی AJAX و لایت‌باکس لمسی/کیبورد |
-| [آرشیو ویدئو](http://127.0.0.1:8097/design/video-archive/) | video / page | دو ستون، پخش اختیاری، کاور و صفحه‌بندی AJAX |
+| [آرشیو ویدئو](http://127.0.0.1:8097/design/video-archive/) | video / page | کارت شاخص و tile هم‌طرح وبلاگ، کاور و صفحه‌بندی AJAX |
 | [جزئیات ویدئو](http://127.0.0.1:8097/design/video-single/) | video / page | پخش محلی، دانلود فایل واقعی هر کیفیت و متن بومی |
 
-این چهار نمونه از Corporate-Music اقتباس شده‌اند؛ موسیقی موجود تغییر نکرده است. ثبت idempotent با tools/register-collections.php انجام می‌شود؛ منشأ رسانه در fixtures/collections/PROVENANCE.md است. قالب مشتری، لوگو، تصویر هنرمند و دیتابیس آن منتقل نشده‌اند.
+مدل محتوا و رفتار رسانه از Corporate-Music انتخاب شده؛ ظاهر و رنگ‌ها متعلق به نمونه‌های وبلاگ کتابخانه‌اند. موسیقی موجود تغییر نکرده است. ثبت idempotent با tools/register-collections.php انجام می‌شود؛ منشأ رسانه در fixtures/collections/PROVENANCE.md است. قالب مشتری، لوگو، تصویر هنرمند و دیتابیس آن منتقل نشده‌اند.

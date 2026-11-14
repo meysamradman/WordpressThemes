@@ -732,15 +732,15 @@
     "group": "gallery",
     "subgroup": "gallery-grid",
     "kind": "page",
-    "source": "Corporate-Music/gallery/archive",
-    "motion": "گالری چهارستونه، لایت‌باکس و صفحه‌بندی بومی",
+    "source": "native/album/archive",
+    "motion": "کارت شاخص و گرید هم‌طرح وبلاگ کتابخانه؛ کاور و صفحه‌بندی AJAX",
     "effects": [
       "native"
     ],
     "image": "projects",
     "scroll_gap": false,
     "icon": "image",
-    "surface": "dark"
+    "surface": "light"
   },
   "gallery-single": {
     "title": "جزئیات آلبوم‌های عکس · Radman",
@@ -748,15 +748,15 @@
     "group": "gallery",
     "subgroup": "gallery-detail",
     "kind": "page",
-    "source": "Corporate-Music/gallery/single",
-    "motion": "گالری چهارستونه، لایت‌باکس و صفحه‌بندی بومی",
+    "source": "native/album/single",
+    "motion": "گالری عکس، لایت‌باکس و صفحه‌بندی؛ رنگ‌های بومی کتابخانه",
     "effects": [
       "native"
     ],
     "image": "projects",
     "scroll_gap": false,
     "icon": "image",
-    "surface": "dark"
+    "surface": "light"
   },
   "video-archive": {
     "title": "آرشیو ویدئو · Radman",
@@ -764,15 +764,15 @@
     "group": "video",
     "subgroup": "video-grid",
     "kind": "page",
-    "source": "Corporate-Music/video/archive",
-    "motion": "ویدئوی محلی، کاور و دانلود کیفیت‌های واقعی؛ بدون پخش خودکار",
+    "source": "native/clip/archive",
+    "motion": "کارت شاخص و گرید هم‌طرح وبلاگ کتابخانه؛ کاور و صفحه‌بندی AJAX",
     "effects": [
       "native"
     ],
     "image": "projects",
     "scroll_gap": false,
     "icon": "play",
-    "surface": "dark"
+    "surface": "light"
   },
   "video-single": {
     "title": "جزئیات ویدئو · Radman",
@@ -780,14 +780,14 @@
     "group": "video",
     "subgroup": "video-detail",
     "kind": "page",
-    "source": "Corporate-Music/video/single",
-    "motion": "ویدئوی محلی، کاور و دانلود کیفیت‌های واقعی؛ بدون پخش خودکار",
+    "source": "native/clip/single",
+    "motion": "پخش محلی و دانلود کیفیت‌های واقعی؛ ظاهر بومی کتابخانه",
     "effects": [
       "native"
     ],
     "image": "projects",
     "scroll_gap": false,
     "icon": "play",
-    "surface": "dark"
+    "surface": "light"
   }
 }
