@@ -1,13 +1,23 @@
 <?php defined('ABSPATH')||exit; ?>
-<section class="rdc-trk-single rdc-ctr rdc-main"><?php while(have_posts()):the_post(); ?><article><h1><?php the_title(); ?></h1>
-<?php if(post_password_required()){echo get_the_password_form();}else{$data=\RadmanCT\Music\meta(get_the_ID());$audio=\RadmanCT\Music\file((int)$data['audio']);$download=\RadmanCT\Music\file((int)($data['download']?:$data['audio'])); ?>
- <a href="<?php echo esc_url(\RadmanCT\Music\url()); ?>">→ همهٔ آهنگ‌ها</a><div class="rdc-trk-hero"><figure><?php the_post_thumbnail('large',['loading'=>'eager','fetchpriority'=>'high','sizes'=>'(max-width:767px) 100vw,40vw']); ?></figure><div>
- <dl><?php foreach(['artist'=>'هنرمند','album'=>'آلبوم','released'=>'انتشار'] as $key=>$label):if(!$data[$key])continue; ?><div><dt><?php echo esc_html($label); ?></dt><dd><?php echo esc_html($data[$key]); ?></dd></div><?php endforeach; ?><?php if($audio['duration']??''): ?><div><dt>مدت</dt><dd><?php echo esc_html($audio['duration']); ?></dd></div><?php endif; ?></dl>
- <?php if($audio): ?><audio controls preload="none" src="<?php echo esc_url($audio['url']); ?>">مرورگر شما پخش صوت را پشتیبانی نمی‌کند.</audio><?php else: ?><p class="rdc-trk-note">فایل پخش این اثر هنوز اضافه نشده است.</p><?php endif; ?>
- <?php if($download)echo \RadmanCT\button('دانلود آهنگ',$download['url'],['download'=>true]); ?>
- <?php the_terms(get_the_ID(),'music_category','<div class="rdc-tags">',' ','</div>'); ?></div></div>
- <div class="rdc-cnt"><?php if(has_excerpt())the_excerpt();the_content();wp_link_pages(); ?></div>
- <?php if($data['lyrics']): ?><section class="rdc-trk-lyrics"><h2>متن آهنگ</h2><p><?php echo nl2br(esc_html($data['lyrics'])); ?></p></section><?php endif; ?>
- <nav class="rdc-trk-nav" aria-label="آهنگ قبلی و بعدی"><?php foreach([true,false] as $previous):$item=get_adjacent_post(false,'',$previous,'music_category');if(!$item||$item->post_status!=='publish'||$item->post_password)continue; ?><a href="<?php echo esc_url(get_permalink($item)); ?>"><?php echo $previous?'آهنگ قبلی: ':'آهنگ بعدی: ';echo esc_html($item->post_title); ?></a><?php endforeach; ?></nav>
- <?php $terms=wp_get_object_terms(get_the_ID(),'music_category',['fields'=>'ids']);$query=['post_type'=>'track','post_status'=>'publish','has_password'=>false,'posts_per_page'=>3,'post__not_in'=>[get_the_ID()],'no_found_rows'=>true];if($terms&&!is_wp_error($terms))$query['tax_query']=[['taxonomy'=>'music_category','field'=>'term_id','terms'=>$terms]];$related=get_posts($query);if($related): ?><section><h2>آهنگ‌های دیگر</h2><div class="rdc-trk-grid"><?php foreach($related as $item)\RadmanCT\Music\card($item,'h3'); ?></div></section><?php endif; ?>
-<?php } ?></article><?php endwhile; ?></section>
+<section class="rdc-trk-single rdc-ctr rdc-main"><?php while(have_posts()):the_post(); ?>
+ <article>
+ <?php if(post_password_required()): ?><h1><?php the_title(); ?></h1><?php echo get_the_password_form(); ?>
+ <?php else:
+  $data=\RadmanCT\Music\meta(get_the_ID());
+  $audio=\RadmanCT\Music\file((int)$data['audio']);
+  $download=\RadmanCT\Music\file((int)($data['download']?:$data['audio']));
+  $previous=get_adjacent_post(false,'',true,'music_category');$next=get_adjacent_post(false,'',false,'music_category');
+ ?>
+  <div class="rdc-trk-hero">
+   <figure class="rdc-trk-hero__cover"><?php the_post_thumbnail('large',['loading'=>'eager','fetchpriority'=>'high','sizes'=>'(max-width:650px) 90vw,(max-width:900px) 50vw,600px']); ?></figure>
+   <div class="rdc-trk-hero__copy"><h1><?php the_title(); ?></h1>
+    <?php \RadmanCT\Music\credits($data,true); ?>
+    <?php if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-trk-download','icon'=>'download','leading_icon'=>'music','download'=>true]); ?>
+   </div>
+  </div>
+  <?php if($audio):get_template_part('template-parts/music/player',null,['audio'=>$audio,'previous'=>$previous,'next'=>$next]);else: ?><p class="rdc-trk-note">فایل پخش این اثر هنوز اضافه نشده است.</p><?php endif; ?>
+  <?php if(trim(get_the_content())!==''||has_excerpt()): ?><div class="rdc-cnt rdc-trk-intro"><?php if(has_excerpt())the_excerpt();the_content();wp_link_pages(); ?></div><?php endif; ?>
+  <?php if($data['lyrics']): ?><section class="rdc-trk-lyrics" aria-labelledby="rdc-lyrics-title"><h2 id="rdc-lyrics-title">متن شعر</h2><p><?php echo nl2br(esc_html($data['lyrics'])); ?></p></section><?php endif; ?>
+ <?php endif; ?>
+ </article><?php endwhile; ?>
+</section>

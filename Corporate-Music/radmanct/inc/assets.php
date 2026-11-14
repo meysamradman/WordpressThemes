@@ -38,9 +38,10 @@ function script(string $name):void { $asset=entry('src/js/'.$name.'.js');if($ass
 add_action('wp_enqueue_scripts',static function():void{
  style('site');script('site');
  if(is_front_page()){style('pages/music-home',array('rdc-site'));script('pages/music-home');}
- elseif(\RadmanCT\Music\native())style('pages/music',array('rdc-site'));
+ elseif(\RadmanCT\Music\native()){style('pages/music',array('rdc-site'));script(is_singular('track')?'pages/music':'pages/archive');}
  if(\RadmanCT\Music\native())return;
- if(is_page(array('videos','gallery','about-us','contact-us'))){style('pages/artist',array('rdc-site'));return;}
+ if(is_page('about-us')){style('pages/biography',array('rdc-site'));return;}
+ if(is_page(array('videos','gallery','contact-us'))){style('pages/artist',array('rdc-site'));return;}
  if(\RadmanCT\PageTitle\is_used())style('layout/page-title',array('rdc-site'));
  if(is_page('services')){style('pages/services',array('rdc-site'));script('pages/services');}
  elseif(is_page('custom-website-design-development')){style('pages/service',array('rdc-site'));script('pages/service');}

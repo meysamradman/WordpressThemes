@@ -4,7 +4,7 @@ Standalone Radman CT Music, copied from Corporate-Webtalik as a source baseline.
 
 | Owner | Responsibility |
 |---|---|
-| `radmanct/inc/content/music.php` | Native `track`, `music_category`, `_rdc_track`, admin fields and nonce/capability-checked saves |
+| `radmanct/inc/content/music.php` | Native `track`, `music_category`, `_rdc_track`, artist/poet/arranger/composer/release fields and nonce/capability-checked saves |
 | `radmanct/inc/music.php` | Normalized metadata, local audio/privacy guards, one track card renderer |
 | `radmanct/template-parts/music/` | Music archive/category and single content; same main query |
 | `radmanct/inc/pages/music-home.php` | Home editorial filter and bounded native queries |
@@ -14,7 +14,7 @@ Standalone Radman CT Music, copied from Corporate-Webtalik as a source baseline.
 | `radmanct/src/css/tokens.css`, `base.css` | Single palette/font/radius definitions and tag typography; Hafez H1, Peyda body/H2–H6 |
 | `radmanct/src/css/ui/music.css` | Shared archive/single/home music UI |
 | `radmanct/src/css/pages/music{,-home}.css` | Small page entries selecting needed UI; home reuses shared track cards, video cards and the button renderer |
-| `radmanct/src/js/admin/music-editor.js` | Native media picker, only on track editor; frontend audio uses native controls |
+| `radmanct/src/js/admin/music-editor.js` | Native media picker, only on track editor; frontend audio uses the native audio engine with a progressive custom control bar on detail pages |
 | `radmanct/inc/seo.php` | Fallback yields to Yoast SEO; never duplicate canonical/metadata/schema |
 | `tools/local-wordpress/` | Isolated Docker runtime and guarded first-install provisioning |
 
@@ -24,6 +24,10 @@ Local runtime: `http://127.0.0.1:8098`, project `corporate-music`, volumes `corp
 
 For a future server move, transfer this theme including consumed `dist/`, local fonts/languages, WordPress uploads/database and the selected plugins through a normal WordPress migration. Replace local URL references using a serialization-aware migration, supply production database configuration/HTTPS and remove local-only MU restrictions/environment/debug settings from the hosting setup. No deployment is performed by this project setup.
 
-The client homepage follows the supplied artist mockup: charcoal/plum surfaces, pink actions and mint/green brand/hero. All palette values remain in tokens.css. The shared header/navigation/footer are client layouts, not Webtalik clones. Header search targets native track search. Primary destinations are /, /music/, /videos/, /gallery/, /about-us/ and /contact-us/. The biography/contact editor content remains explicitly provisional until supplied; never invent contact details or artist history.
+The client homepage follows the supplied artist mockup: charcoal/plum surfaces, mint #16cc9f actions/brand and a green hero. All palette values remain in tokens.css. The shared header/navigation/footer are client layouts, not Webtalik clones. Header search targets native track search. Primary destinations are /, /music/, /videos/, /gallery/, /about-us/ and /contact-us/. The biography/contact editor content remains explicitly provisional until supplied; never invent contact details or artist history.
 
 inc/videos.php + template-parts/ui/video-grid.php + src/css/ui/video-grid.css own the temporary video cards used by home and /videos/. This is not a new video CPT. Client media IDs/copy come from radmanct/videos/data in inc/client.php. Gallery data belongs to inc/pages/gallery.php and respects attachment privacy. Home JS is a small native feature/rail controller plus one shared ui/music-player.js audio owner. No autoplay; multiple audio players are not instantiated. The original Radman screenshot.png is the approved theme thumbnail and must not be replaced by a page screenshot.
+
+Music archives use eight entries per native main query and the shared pages/archive.js AJAX owner used by blog/project archives; ordinary pagination links work without JavaScript. The list variant of Music\card reuses its metadata/credit renderer; home retains the compact variant. Single tracks compose a cover/credit/download row, template-parts/music/player.php and optional editorial/lyrics sections. src/js/ui/audio-controls.js owns only the native audio control UI, selected by pages/music.js on track singles; native browser controls remain the no-JavaScript fallback. No autoplay or second audio engine. ui/music-archive.css, music-detail.css and audio-player.css belong to the music page entry, not the homepage. Metadata is never fabricated for empty credits.
+
+Biography uses page-about-us.php with route-only pages/biography.css. The native page editor owns the supplied biography paragraphs and semantic works table; its featured attachment owns the replaceable portrait/composite. Keep the page password guard before either content or image. The current local featured image is temporary until the artist supplies the original composite; do not manufacture logos or social URLs.

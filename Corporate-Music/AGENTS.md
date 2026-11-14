@@ -11,4 +11,4 @@ Independent customer edition of Radman CT in the parent WordpressThemes reposito
 - All runtime assets are local. Preserve stored metadata, media/privacy guards, native APIs, escaping, nonce/capabilities and author/license notices. No Node runtime on hosting.
 - Credentials remain in ignored `.env.local-wordpress` and `.local-admin.txt`; never commit them. Run short targeted checks only. No long tests, release ZIP, server migration or deployment unless requested.
 
-- Client homepage palette/layout follows the supplied artist mockup, not Webtalik styling: plum/charcoal, pink and mint. Shared tokens remain authoritative. Video is a shared temporary section/page, no video CPT until requested. Theme thumbnail is the original Radman image from Webtalik; never overwrite it with a browser screenshot.
+- Client homepage palette/layout follows the supplied artist mockup, not Webtalik styling: plum/charcoal, mint #16cc9f. Shared tokens remain authoritative. Video is a shared temporary section/page, no video CPT until requested. Theme thumbnail is the original Radman image from Webtalik; never overwrite it with a browser screenshot.

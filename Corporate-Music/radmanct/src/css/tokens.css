@@ -13,13 +13,15 @@
   font-display:swap;
 }
 :root {
-  --rdc-clr-accent:#f71b59;
-  --rdc-clr-accent-text:#ff6a95;
-  --rdc-clr-brand:#19b59b;
-  --rdc-clr-header:#2b2a36;
+  --rdc-clr-accent:#16cc9f;
+  --rdc-clr-accent-text:var(--rdc-clr-accent);
+  --rdc-clr-brand:var(--rdc-clr-accent);
+  --rdc-btn-play-bg:linear-gradient(270deg,#179d7b,#2d435c);
+  --rdc-clr-header:var(--rdc-clr-srf);
   --rdc-clr-field:#44434e;
-  --rdc-clr-stage-start:#78b8a4;
-  --rdc-clr-stage-end:#405b4d;
+  --rdc-clr-player:#15191d;
+  --rdc-clr-stage-start:#6dae98;
+  --rdc-clr-stage-end:#42604d;
   --rdc-pt-sz:var(--rdc-sz-dsp);
   --rdc-clr-gold:#C59032;
   --rdc-clr-ctc:#25d366;
@@ -30,20 +32,20 @@
   --rdc-clr-crm:#f4f3f7;
   --rdc-clr-wht:#fff;
   --rdc-clr-blk:#000;
-  --rdc-clr-ink:#24242d;
-  --rdc-clr-dark:#24242d;
+  --rdc-clr-ink:#24242c;
+  --rdc-clr-dark:var(--rdc-clr-ink);
   --rdc-clr-hero:var(--rdc-clr-dark);
   --rdc-clr-tx:#333;
   --rdc-clr-mut:#65736e;
   --rdc-clr-mut-inv:#c2bfcb;
-  --rdc-clr-srf:#32313f;
+  --rdc-clr-srf:#323240;
   --rdc-clr-ln:#d9e2da;
   --rdc-clr-ln-inv:rgba(236,233,226,.12);
-  --rdc-clr-ink-warm:#32313f;
+  --rdc-clr-ink-warm:var(--rdc-clr-srf);
   --rdc-clr-tx-warm:#66645f;
   --rdc-clr-ln-warm:#c5baaa66;
   --rdc-clr-nav-mut:#9b9b98;
-  --rdc-clr-on-acc:#fffaf0;
+  --rdc-clr-on-acc:var(--rdc-clr-ink);
   --rdc-clr-lead-meta:#d5d2cb;
   --rdc-clr-art-node:#c4a778;
   --rdc-clr-art-node-mut:#b1afa0;

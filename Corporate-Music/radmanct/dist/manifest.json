@@ -76,6 +76,15 @@
     "src": "src/css/pages/artist.css",
     "isEntry": true
   },
+  "src/css/pages/biography.css": {
+    "file": "css/biography-Bqvus9Zi.min.css",
+    "name": "css-biography",
+    "names": [
+      "css-biography.css"
+    ],
+    "src": "src/css/pages/biography.css",
+    "isEntry": true
+  },
   "src/css/pages/blog.css": {
     "file": "css/blog-9t29OIPv.min.css",
     "name": "css-blog",
@@ -113,7 +122,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-Dydaao-b.min.css",
+    "file": "css/music-home-CV_3u7AI.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -122,7 +131,7 @@
     "isEntry": true
   },
   "src/css/pages/music.css": {
-    "file": "css/music-BggJZSOp.min.css",
+    "file": "css/music-BXBbs1ZV.min.css",
     "name": "css-music",
     "names": [
       "css-music.css"
@@ -167,7 +176,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-Cz_uSAZe.min.css",
+    "file": "css/site-CZoe3v9E.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -206,7 +215,7 @@
     ]
   },
   "src/js/pages/archive.js": {
-    "file": "js/archive-CtV8JOWb.min.js",
+    "file": "js/archive-BznxtT9H.min.js",
     "name": "archive",
     "src": "src/js/pages/archive.js",
     "isEntry": true,
@@ -247,6 +256,15 @@
     "file": "js/music-home-OriFSPrX.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
+    "isEntry": true,
+    "imports": [
+      "_lifecycle-CEUUFq-m.min.js"
+    ]
+  },
+  "src/js/pages/music.js": {
+    "file": "js/music-DlQ2za06.min.js",
+    "name": "music",
+    "src": "src/js/pages/music.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js"

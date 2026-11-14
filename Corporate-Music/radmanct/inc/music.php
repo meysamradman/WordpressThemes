@@ -5,7 +5,7 @@ require_once __DIR__.'/content/music.php';
 function native(?\WP_Query $q=null):bool {$q??=$GLOBALS['wp_query'];return $q->is_singular('track')||$q->is_post_type_archive('track')||$q->is_tax('music_category')||($q->is_search()&&$q->get('post_type')==='track');}
 function meta(int $id):array {
     $value=get_post_meta($id,'_rdc_track',true);$value=is_array($value)?$value:[];$out=[];
-    foreach(['artist','album','released','lyrics'] as $key)$out[$key]=is_scalar($value[$key]??'')?(string)($value[$key]??''):'';
+    foreach(['artist','poet','arranger','composer','album','released','lyrics'] as $key)$out[$key]=is_scalar($value[$key]??'')?(string)($value[$key]??''):'';
     foreach(['audio','download'] as $key)$out[$key]=is_scalar($value[$key]??0)?absint($value[$key]??0):0;
     return $out;
 }
@@ -17,8 +17,17 @@ function file(int $id):array {
 }
 function url():string {return get_post_type_archive_link('track')?:home_url('/music/');}
 
-function card(\WP_Post $post,string $heading='h2',bool $play=false):void {
+function card(\WP_Post $post,string $heading='h2',bool $play=false,string $variant='compact'):void {
  $heading=in_array($heading,['h2','h3'],true)?$heading:'h2';$data=meta($post->ID);$allowed=!post_password_required($post);$url=get_permalink($post);
+ if($variant==='list'){
+  echo '<article class="rdc-trk-card rdc-trk-card--list"><a class="rdc-trk-card__cover" href="'.esc_url($url).'" aria-label="'.esc_attr(get_the_title($post)).'">';
+  if($allowed)echo get_the_post_thumbnail($post,'medium_large',['loading'=>'lazy','sizes'=>'(max-width:600px) 42vw,(max-width:900px) 38vw,300px','alt'=>get_the_title($post)]);
+  echo '</a><div class="rdc-trk-card__body"><'.$heading.'><a href="'.esc_url($url).'">'.esc_html(get_the_title($post)).'</a></'.$heading.'>';
+  if($allowed)credits($data);
+  echo '<div class="rdc-trk-card__action">'.\RadmanCT\icon('music').\RadmanCT\button('گوش کنید',$url,['class'=>'rdc-trk-card__listen','icon'=>'play']).'</div></div></article>';
+  return;
+ }
+
  echo '<article class="rdc-trk-card"><a class="rdc-trk-card__cover" href="'.esc_url($url).'">';
  if($allowed)echo get_the_post_thumbnail($post,'medium_large',['loading'=>'lazy','sizes'=>'(max-width:600px) 44vw,170px','alt'=>get_the_title($post)]);
  echo '</a><div class="rdc-trk-card__body"><'.$heading.'><a href="'.esc_url($url).'">'.esc_html(get_the_title($post)).'</a></'.$heading.'><div class="rdc-trk-card__meta">';
@@ -27,4 +36,12 @@ function card(\WP_Post $post,string $heading='h2',bool $play=false):void {
  if($play&&$audio)echo \RadmanCT\button('پخش '.get_the_title($post),'#',['class'=>'rdc-trk-card__play','icon'=>'play','icon_only'=>true,'audio'=>['key'=>$post->ID,'url'=>$audio['url']]]);
  else echo '<a class="rdc-trk-card__more" href="'.esc_url($url).'" aria-label="'.esc_attr('مشاهدهٔ '.get_the_title($post)).'">'.\RadmanCT\icon('play').'</a>';
  echo '</div></div></article>';
+}
+
+function credits(array $data,bool $released=false):void {
+ $labels=['artist'=>'خواننده','poet'=>'شعر','arranger'=>'تنظیم','composer'=>'آهنگساز'];
+ if($released)$labels+=['released'=>'تاریخ تولید','album'=>'آلبوم'];
+ echo '<dl class="rdc-trk-credits">';
+ foreach($labels as $key=>$label){if(empty($data[$key]))continue;echo '<div><dt>'.esc_html($label).':</dt><dd>'.esc_html($data[$key]).'</dd></div>';}
+ echo '</dl>';
 }
