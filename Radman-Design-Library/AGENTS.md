@@ -25,3 +25,5 @@ Scope: keep existing home/services sections, but do not add full home/services p
 - Browser logs, snapshots and screenshots under .playwright-mcp/ are temporary local artifacts; keep this directory ignored by Git and out of releases.
 
 - Git ownership: this folder is part of the parent WordpressThemes repository (https://github.com/meysamradman/WordpressThemes.git). Follow ../AGENTS.md; normal saves stage/commit only this project path via ../tools/Save-Project.ps1. Never initialize nested Git or include sibling changes in a project save. No automatic push or Releases.
+
+- Audio/video/gallery and archive/detail media changes must follow `docs/media.md`: defer playback media, preserve bounded queries and native responsive images, and keep approved decorative-video guards.

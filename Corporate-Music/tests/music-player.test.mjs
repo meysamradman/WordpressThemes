@@ -33,3 +33,13 @@ test('seek waits for valid metadata; position, duration and volume stay synchron
  release();
 });
 test('time formatting rejects invalid durations',()=>{assert.equal(formatAudioTime(NaN),'0:00');assert.equal(formatAudioTime(Infinity),'0:00');assert.equal(formatAudioTime(125.8),'2:05');});
+
+test('cancelled playback is silent while real playback failure remains actionable',async()=>{
+ for(const name of ['AbortError','NotSupportedError']){
+  const {root,audio,nodes}=fixture();audio.play=()=>Promise.reject(Object.assign(new Error(name),{name}));
+  const release=initializeAudioControls(root);nodes['[data-rdc-player-play]'].dispatchEvent(new Event('click'));await Promise.resolve();
+  const message=nodes['[data-rdc-player-status]'].textContent;
+  if(name==='AbortError')assert.equal(message,'');else assert.ok(message.length>0);
+  release();
+ }
+});
