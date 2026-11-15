@@ -3,7 +3,7 @@
 .rdc-heading__lbl { display:flex; align-items:center; gap:.65rem; margin-block-end:.75rem; color:var(--rdc-ink); font-size:var(--rdc-sz-sm); font-weight:var(--rdc-wt-hdg); }
 .rdc-heading__lbl .rdc-ico { inline-size:1rem; block-size:1rem; flex-shrink:0; }
 .rdc-heading__ttl { margin:0; max-inline-size:24ch; color:var(--rdc-ink); font-size:var(--rdc-sz-section); line-height:var(--rdc-ln-ht-hdg); text-wrap:balance; }
-.rdc-heading__desc { justify-self:end; max-inline-size:46ch; margin:0; color:var(--rdc-tx); font-size:clamp(1rem,1.2vw,1.25rem); line-height:var(--rdc-ln-ht-body); text-align:end; }
+.rdc-heading__desc { justify-self:end; max-inline-size:46ch; margin:0; color:var(--rdc-mut); font-size:clamp(1rem,1.2vw,1.25rem); line-height:var(--rdc-ln-ht-body); text-align:end; }
 @supports (background-clip:text) {
  .rdc-heading__ttl { background:linear-gradient(90deg,var(--rdc-ink) 20%,var(--rdc-mut) 100%); background-clip:text; color:transparent; }
  .rdc-heading__ttl:dir(rtl) { background-image:linear-gradient(270deg,var(--rdc-ink) 20%,var(--rdc-mut) 100%); }

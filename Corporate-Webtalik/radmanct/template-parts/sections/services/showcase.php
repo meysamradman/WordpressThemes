@@ -1,6 +1,12 @@
 <?php defined('ABSPATH')||exit;$items=\RadmanCT\Services\items();$count=wp_count_posts('project'); ?>
 <section class="rdc-ctr rdc-svc-show" data-rdc-svc-show aria-labelledby="services-showcase-title">
- <header class="rdc-svc-show__hdr"><h2 id="services-showcase-title"><?php esc_html_e('Our solutions','radmanct'); ?><?php echo \RadmanCT\icon('arrow-up-right'); ?></h2><p><?php esc_html_e('Design, development and growth','radmanct'); ?></p></header>
+ <header class="rdc-heading">
+  <div class="rdc-heading__inr">
+   <p class="rdc-heading__lbl"><?php esc_html_e('Services','radmanct'); ?><?php echo \RadmanCT\icon('arrow-up-right'); ?></p>
+   <h2 class="rdc-heading__ttl" id="services-showcase-title"><?php esc_html_e('Our solutions','radmanct'); ?></h2>
+  </div>
+  <p class="rdc-heading__desc"><?php esc_html_e('Design, development and growth','radmanct'); ?></p>
+ </header>
  <div class="rdc-svc-show__ly">
   <aside class="rdc-svc-show__vis" dir="<?php echo is_rtl()?'rtl':'ltr'; ?>" aria-label="<?php esc_attr_e('Service preview','radmanct'); ?>">
    <div class="rdc-svc-show__stg" aria-hidden="true">
