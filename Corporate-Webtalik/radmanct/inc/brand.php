@@ -6,8 +6,8 @@ function brand_svg(string $source):string {
  $xml=new \DOMDocument();$previous=libxml_use_internal_errors(true);
  try{$valid=$xml->loadXML($source,LIBXML_NONET);}finally{libxml_clear_errors();libxml_use_internal_errors($previous);}
  if(!$valid||$xml->documentElement->localName!=='svg')return '';
- $tags=array('svg','defs','path','linearGradient','radialGradient','stop','use');
- $attributes=array('xmlns','width','height','viewBox','id','d','fill','stroke','stroke-opacity','stroke-width','stroke-linejoin','href','gradientUnits','gradientTransform','x1','x2','y1','y2','cx','cy','r','offset','stop-color','stop-opacity','transform','fill-rule','data-rdc-logo-kind','data-rdc-logo-part','data-rdc-logo-tone');
+ $tags=array('svg','defs','path','mask','clipPath','linearGradient','radialGradient','stop','use');
+ $attributes=array('xmlns','width','height','viewBox','id','d','fill','stroke','stroke-opacity','stroke-width','stroke-linejoin','stroke-linecap','pathLength','mask','maskUnits','clip-path','x','y','href','gradientUnits','gradientTransform','x1','x2','y1','y2','cx','cy','r','offset','stop-color','stop-opacity','transform','fill-rule','data-rdc-logo-kind','data-rdc-logo-part','data-rdc-logo-tone','data-rdc-logo-write','data-rdc-logo-step');
  $prefix=wp_unique_id('rdc-logo-');$ids=array();
  foreach($xml->getElementsByTagName('*') as $node){
   if($node->namespaceURI!=='http://www.w3.org/2000/svg'||!in_array($node->tagName,$tags,true))return '';
@@ -17,7 +17,13 @@ function brand_svg(string $source):string {
    if($name==='transform'&&!preg_match('/^translate\(-?\d+(?:\.\d+)?(?:[, ]+-?\d+(?:\.\d+)?)?\)$/D',$value))return '';
    if($name==='fill-rule'&&!in_array($value,array('evenodd','nonzero'),true))return '';
    if($name==='data-rdc-logo-kind'&&$value!=='personal')return '';
-   if($name==='data-rdc-logo-part'&&!in_array($value,array('foil','ink','body','word','arc-left','arc-right','dot'),true))return '';
+   if($name==='data-rdc-logo-part'&&!in_array($value,array('foil','ink','body','word','arc-left','arc-right','dot','sign'),true))return '';
+   if($name==='data-rdc-logo-write'&&!in_array($value,array('body','word','arc-left','arc-right','dot','sign'),true))return '';
+   if($name==='data-rdc-logo-step'&&!preg_match('/^(?:[1-9]|1[0-9])$/D',$value))return '';
+   if(in_array($name,array('mask','clip-path'),true)&&!preg_match('/^url\(#[a-zA-Z][a-zA-Z0-9_-]*\)$/D',$value))return '';
+   if($name==='maskUnits'&&$value!=='userSpaceOnUse')return '';
+   if($name==='pathLength'&&$value!=='1')return '';
+   if($name==='stroke-linecap'&&!in_array($value,array('round','butt','square'),true))return '';
    if($name==='data-rdc-logo-tone'&&!in_array($value,array('gold','light'),true))return '';
 
    if($name==='href'&&!preg_match('/^#[a-zA-Z][a-zA-Z0-9_-]*$/D',$value))return '';
@@ -28,7 +34,7 @@ function brand_svg(string $source):string {
  foreach($xml->getElementsByTagName('*') as $node){
   foreach($node->attributes as $attribute){
    if($attribute->nodeName==='id')$attribute->nodeValue=$ids[$attribute->nodeValue];
-   elseif(in_array($attribute->nodeName,array('href','fill','stroke'),true))$attribute->nodeValue=strtr($attribute->nodeValue,array_combine(array_map(static fn($id)=>'#'.$id,array_keys($ids)),array_map(static fn($id)=>'#'.$id,array_values($ids))));
+   elseif(in_array($attribute->nodeName,array('href','fill','stroke','mask','clip-path'),true))$attribute->nodeValue=strtr($attribute->nodeValue,array_combine(array_map(static fn($id)=>'#'.$id,array_keys($ids)),array_map(static fn($id)=>'#'.$id,array_values($ids))));
   }
  }
  $root=$xml->documentElement;$root->setAttribute('class','rdc-logo');$root->setAttribute('data-rdc-logo','');$root->setAttribute('aria-hidden','true');$root->setAttribute('focusable','false');

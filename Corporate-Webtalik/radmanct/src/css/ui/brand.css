@@ -30,46 +30,34 @@
 .rdc-logo[data-rdc-logo-kind=personal] {
  filter:drop-shadow(0 1px 0 color-mix(in srgb,var(--rdc-acc) 35%,var(--rdc-clr-blk))) drop-shadow(0 5px 5px color-mix(in srgb,var(--rdc-clr-blk) 65%,transparent)) drop-shadow(0 0 7px color-mix(in srgb,var(--rdc-acc) 18%,transparent));
 }
-.rdc-logo[data-rdc-logo-kind=personal] path { fill:var(--rdc-acc); }
-.rdc-logo[data-rdc-logo-kind=personal] [data-rdc-logo-part] { transform-box:view-box; transform-origin:213.5px 250px; }
+.rdc-logo[data-rdc-logo-kind=personal] > path { fill:var(--rdc-acc); }
 @media (prefers-reduced-motion:no-preference) {
- .rdc-logo[data-rdc-logo-kind=personal][data-rdc-logo-act] [data-rdc-logo-part] {
-  animation-duration:12s;
-  animation-timing-function:cubic-bezier(.22,.61,.36,1);
-  animation-iteration-count:infinite;
+ .rdc-logo[data-rdc-logo-kind=personal][data-rdc-logo-act] [data-rdc-logo-write] {
+  stroke-dasharray:1;
+  animation-name:rdc-logo-write;
+  animation-timing-function:linear;
+  animation-fill-mode:both;
  }
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-part=body] { animation-name:rdc-logo-personal-body; }
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-part=word] { animation-name:rdc-logo-personal-word; }
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-part=arc-left] { animation-name:rdc-logo-personal-left; }
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-part=arc-right] { animation-name:rdc-logo-personal-right; }
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-part=dot] { animation-name:rdc-logo-personal-dot; }
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-part=dot]:nth-of-type(4) { animation-delay:.08s; }
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-part=dot]:nth-of-type(5) { animation-delay:.16s; }
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-part=dot]:nth-of-type(6) { animation-delay:.24s; }
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-part=dot]:nth-of-type(7) { animation-delay:.32s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="1"] { animation-delay:0s; animation-duration:0.8s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="2"] { animation-delay:0.8s; animation-duration:0.8s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="3"] { animation-delay:1.6s; animation-duration:0.6s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="4"] { animation-delay:2.2s; animation-duration:0.45s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="5"] { animation-delay:2.65s; animation-duration:0.25s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="6"] { animation-delay:2.95s; animation-duration:0.16s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="7"] { animation-delay:3.11s; animation-duration:0.16s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="8"] { animation-delay:3.27s; animation-duration:0.16s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="9"] { animation-delay:3.43s; animation-duration:0.16s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="10"] { animation-delay:3.59s; animation-duration:0.16s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="11"] { animation-delay:3.85s; animation-duration:0.85s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="12"] { animation-delay:4.7s; animation-duration:0.65s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="13"] { animation-delay:5.35s; animation-duration:0.75s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="14"] { animation-delay:6.15s; animation-duration:0.2s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="15"] { animation-delay:6.4s; animation-duration:0.4s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="16"] { animation-delay:6.85s; animation-duration:0.45s; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-step="17"] { animation-delay:7.3s; animation-duration:0.7s; }
 }
-@keyframes rdc-logo-personal-body {
- 0%,24%,100% { transform:none; }
- 6% { transform:translate(-18px,6px) rotate(-3deg); }
- 16% { transform:translate(3px,-1px) rotate(.5deg); }
-}
-@keyframes rdc-logo-personal-word {
- 0%,26%,100% { transform:none; }
- 7% { transform:translate(22px,-5px) rotate(3deg); }
- 18% { transform:translate(-3px,1px) rotate(-.5deg); }
-}
-@keyframes rdc-logo-personal-left {
- 0%,25%,100% { transform:none; }
- 6% { transform:rotate(-9deg); }
- 17% { transform:rotate(1deg); }
-}
-@keyframes rdc-logo-personal-right {
- 0%,27%,100% { transform:none; }
- 7% { transform:rotate(9deg); }
- 19% { transform:rotate(-1deg); }
-}
-@keyframes rdc-logo-personal-dot {
- 0%,25%,100% { transform:none; opacity:1; }
- 7% { transform:translateY(-22px) rotate(-4deg); opacity:.65; }
- 17% { transform:translateY(3px); opacity:1; }
+@keyframes rdc-logo-write {
+ 0% { stroke-dashoffset:1; opacity:0; }
+ 1% { opacity:1; }
+ 100% { stroke-dashoffset:0; opacity:1; }
 }
