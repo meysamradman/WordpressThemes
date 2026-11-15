@@ -15,7 +15,7 @@
 .rdc-home-player__lbl { font-size:.65rem; color:var(--rdc-acc); }
 .rdc-home-player__close { display:grid; place-items:center; inline-size:2rem; block-size:2rem; padding:.35rem; border:0; border-radius:50%; background:transparent; color:var(--rdc-mut); cursor:pointer; }
 .rdc-home-player__close:hover { color:var(--rdc-ink); background:var(--rdc-srf); }
-.rdc-home-player .rdc-player { padding:0; background:transparent; min-inline-size:0; min-block-size:0; position:static; }
+.rdc-home-player .rdc-player { padding:0; background:transparent; min-inline-size:0; min-block-size:0; position:static; border:0; }
 .rdc-home-player [data-rdc-player-status]:not(:empty) { position:static; inline-size:auto; block-size:auto; clip-path:none; white-space:normal; font-size:.8rem; margin-block-start:.4rem; direction:rtl; }
 .rdc-has-player .rdc-music-home { padding-block-end:8rem; }
 @media (max-width:800px) {

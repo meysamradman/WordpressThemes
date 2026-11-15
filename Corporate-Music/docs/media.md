@@ -18,5 +18,5 @@
 ## مالکان این پروژه
 
 - صفحهٔ اول: حداکثر ۱۲ آهنگ و ۱۲ ویدئو؛ audio مشترک در `template-parts/music/home-player.php` بدون src اولیه است. `ui/music-player.js` فقط با کلیک src را انتخاب می‌کند؛ کنترل‌ها متعلق به `ui/audio-controls.js` هستند.
-- آرشیو آهنگ فقط کارت/کاور دارد. جزئیات از `template-parts/music/player.php` با preload=none و همان کنترل‌ها استفاده می‌کند. `template-parts/ui/video-grid.php` و `single-clip.php` نیز preload=none دارند؛ پخش خودکار ندارند.
+- آرشیو آهنگ فقط کارت/کاور دارد. جزئیات از `template-parts/music/player.php` با preload=none و همان کنترل‌ها و موجِ مشترک audio-wave.css به‌صورت داخل صفحه استفاده می‌کند؛ نوار ثابت پایین صفحه فقط متعلق به صفحهٔ اول است. `template-parts/ui/video-grid.php` و `single-clip.php` نیز preload=none دارند؛ پخش خودکار ندارند.
 - آلبوم‌ها صفحه‌بندی عکس دارند؛ مالک gallery.js فقط تصویر انتخاب‌شده را برای لایت‌باکس می‌خواند. تصاویر صفحهٔ جاری تنبل‌اند؛ کاور اصلی جزئیات استثنای بالای صفحه است.
