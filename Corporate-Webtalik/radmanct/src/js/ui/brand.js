@@ -4,7 +4,7 @@ export function initializeBrandMotion(doc=document){
  let observer,alive=true;
  const stop=()=>{observer?.disconnect();observer=undefined;visible.clear();for(const logo of logos)logo.removeAttribute('data-rdc-logo-act');};
  const start=()=>{
-  if(!alive||preference.matches||observer||doc.getElementById('rdc-pre')||!view.IntersectionObserver||!logos.length)return;
+  if(!alive||doc.hidden||preference.matches||observer||doc.getElementById('rdc-pre')||!view.IntersectionObserver||!logos.length)return;
   observer=new view.IntersectionObserver(entries=>{
    for(const entry of entries){
     const shown=entry.isIntersecting&&entry.intersectionRatio>=.65;
@@ -21,6 +21,7 @@ export function initializeBrandMotion(doc=document){
  };
  const changed=()=>{stop();start();};
  doc.addEventListener('rdc:pre-done',start,{once:true});
+ doc.addEventListener('visibilitychange',changed);
  view.addEventListener('pageshow',replay);preference.addEventListener('change',changed);start();
- return()=>{alive=false;stop();view.removeEventListener('pageshow',replay);doc.removeEventListener('rdc:pre-done',start);preference.removeEventListener('change',changed);};
+ return()=>{alive=false;stop();doc.removeEventListener('visibilitychange',changed);view.removeEventListener('pageshow',replay);doc.removeEventListener('rdc:pre-done',start);preference.removeEventListener('change',changed);};
 }
