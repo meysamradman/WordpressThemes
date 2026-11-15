@@ -17,7 +17,7 @@ function brand_svg(string $source):string {
    if($name==='transform'&&!preg_match('/^translate\(-?\d+(?:\.\d+)?(?:[, ]+-?\d+(?:\.\d+)?)?\)$/D',$value))return '';
    if($name==='fill-rule'&&!in_array($value,array('evenodd','nonzero'),true))return '';
    if($name==='data-rdc-logo-kind'&&$value!=='personal')return '';
-   if($name==='data-rdc-logo-part'&&!in_array($value,array('foil','ink'),true))return '';
+   if($name==='data-rdc-logo-part'&&!in_array($value,array('foil','ink','body','word','arc-left','arc-right','dot'),true))return '';
    if($name==='data-rdc-logo-tone'&&!in_array($value,array('gold','light'),true))return '';
 
    if($name==='href'&&!preg_match('/^#[a-zA-Z][a-zA-Z0-9_-]*$/D',$value))return '';
