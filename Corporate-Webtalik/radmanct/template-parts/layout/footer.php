@@ -9,7 +9,7 @@
   </nav>
   <div class="rdc-ftr__cols">
    <div class="rdc-ftr__ctc">
-    <a class="rdc-ftr__brd" aria-label="<?php echo esc_attr(get_bloginfo('name').'؛ نشان شخصی بنیان‌گذار'); ?>" href="<?php echo esc_url(home_url('/')); ?>"><?php $logo=\RadmanCT\media_id('logo_footer')?:\RadmanCT\media_id('logo');if($logo)echo \RadmanCT\brand_logo($logo);else echo esc_html(get_bloginfo('name')); ?></a>
+    <a class="rdc-ftr__brd" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>" href="<?php echo esc_url(home_url('/')); ?>"><?php $logo=\RadmanCT\media_id('logo_footer')?:\RadmanCT\media_id('logo');if($logo)echo \RadmanCT\brand_logo($logo);else echo esc_html(get_bloginfo('name')); ?></a>
     <p class="rdc-ftr__brd-copy"><?php esc_html_e('Thoughtful design, reliable development, and room for your business to grow.','radmanct'); ?></p>
     <p class="rdc-ftr__lbl"><?php esc_html_e('Let’s stay in touch','radmanct'); ?></p>
     <address>

@@ -27,3 +27,10 @@ test('returning to a cached page restarts only visible logo animations and dispo
  f.show(f.logos[0]);f.doc.defaultView.dispatchEvent(new Event('pageshow'));assert.equal(animation.currentTime,0);assert.equal(plays,1);
  release();f.doc.defaultView.dispatchEvent(new Event('pageshow'));assert.equal(plays,1);
 });
+
+test('hidden tabs stop logo motion and restore only through the visibility owner',()=>{
+ const f=fixture(),release=initializeBrandMotion(f.doc);f.loaded();f.show(f.logos[0]);
+ f.doc.hidden=true;f.doc.dispatchEvent(new Event('visibilitychange'));assert.equal(f.observed.size,0);assert.equal(f.seen.size,0);
+ const count=f.started();f.doc.hidden=false;f.doc.dispatchEvent(new Event('visibilitychange'));assert.equal(f.started(),count+1);
+ release();f.doc.dispatchEvent(new Event('visibilitychange'));assert.equal(f.observed.size,0);
+});

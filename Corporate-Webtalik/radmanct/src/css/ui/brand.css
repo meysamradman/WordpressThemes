@@ -27,13 +27,6 @@
  25%,100% { transform:none; opacity:1; }
 }
 
-.rdc-logo[data-rdc-logo-kind=personal]{transform-origin:center}
-.rdc-logo[data-rdc-logo-kind=personal] [data-rdc-logo-tone=gold]{stop-color:var(--rdc-acc)}
-.rdc-logo[data-rdc-logo-kind=personal] [data-rdc-logo-tone=light]{stop-color:var(--rdc-clr-crm)}
-.rdc-logo[data-rdc-logo-kind=personal] [data-rdc-logo-part=ink]{fill:var(--rdc-clr-wht)}
-@media(prefers-reduced-motion:no-preference){
- .rdc-logo[data-rdc-logo-kind=personal][data-rdc-logo-act]{animation:rdc-logo-personal-float 16s cubic-bezier(.22,.61,.36,1) infinite}
- .rdc-logo[data-rdc-logo-kind=personal][data-rdc-logo-act] [data-rdc-logo-part=foil]{animation:rdc-logo-personal-light 16s ease-in-out infinite}
-}
-@keyframes rdc-logo-personal-float{0%,45%,100%{transform:translateY(0)}18%{transform:translateY(-2px)}}
-@keyframes rdc-logo-personal-light{0%,45%,100%{opacity:.82}18%{opacity:1}}
+.rdc-logo[data-rdc-logo-kind=personal]{transform-origin:center}.rdc-logo[data-rdc-logo-kind=personal] path{fill:var(--rdc-acc)}
+@media(prefers-reduced-motion:no-preference){.rdc-logo[data-rdc-logo-kind=personal][data-rdc-logo-act]{animation:rdc-logo-personal-float 16s cubic-bezier(.22,.61,.36,1) infinite}}
+@keyframes rdc-logo-personal-float{0%,45%,100%{transform:translateY(0);opacity:.96}18%{transform:translateY(-1px);opacity:1}}

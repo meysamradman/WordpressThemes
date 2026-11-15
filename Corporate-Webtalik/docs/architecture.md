@@ -225,3 +225,9 @@ Local database runtime uses pinned MySQL 8.4.13 LTS and a separate MySQL volume.
 UI icon contract: inc/icons.php renders only selected entries from inc/icons/catalog.php as local inline SVG with a 24-unit viewBox, rounded caps/joins and currentColor. src/css/ui/icon.css owns base geometry, stroke and directional mirroring once; tokens.css defines --rdc-ico-sz:1.25rem and --rdc-ico-stroke:1.5 consistently in Corporate-Webtalik and Corporate-Music. Component-specific sizes remain explicit at their consuming control (for example hero CTA or social marks). Filled playback glyphs use the catalog path fill instead of a different stroke width. Each customer runtime remains self-contained; no sibling-project imports, icon font, CDN or per-page SVG copies.
 
 Media loading contract for audio/video, gallery, archives and detail pages: [docs/media.md](media.md). Read it before changing a media consumer.
+
+## نشان شخصی فوتر
+
+فقط logo_footer در webtalik_media نشان شخصیِ مالک است؛ logo هدر و هویت شرکت W حفظ می‌شوند. منبع برداری personal-logo.svg از تصویر ارائه‌شدهٔ مالک بازسازی شده و در رسانهٔ وردپرس ذخیره می‌شود؛ زمینه، فونت و raster جاسازی‌شده ندارد. همهٔ مسیرها یکدست طلایی و تابع توکن acc هستند؛ سفید یا گرادینت ندارند. عرض فوتر ۴rem است و حرکت آرام کل نشان با مالک visibility/reduced-motion موجود حفظ می‌شود. فایل منبع PNG دست‌نخورده می‌ماند.
+
+brand_svg همان sanitizer موجود است: تنها markerهای محدود personal/ink/foil و gold/light و translate عددی مسیرها را می‌پذیرد؛ مسیرهای نشان شخصی به مختصات مطلق تبدیل شده‌اند تا گرادینت در همهٔ قطعات یکپارچه باشد؛ gradient IDها برای هر نمونه یکتا می‌مانند. نشان شخصی markerهای حرکت W را نمی‌گیرد. brand.js همان مالک visibility/reduced-motion است و در تب مخفی نیز حرکت را متوقف می‌کند؛ CSS شخصی فقط جابه‌جایی عمودی بسیار کم و تغییر بسیار کم شفافیت کل نشان دارد، بدون RAF، فیلتر یا GSAP اضافی. اندازه فقط در مالک فوتر تعریف می‌شود.
