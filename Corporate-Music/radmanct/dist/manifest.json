@@ -139,7 +139,7 @@
     "isEntry": true
   },
   "src/css/pages/music-detail.css": {
-    "file": "css/music-detail-CkusN-9v.min.css",
+    "file": "css/music-detail-Biw6JSID.min.css",
     "name": "css-music-detail",
     "names": [
       "css-music-detail.css"
@@ -148,7 +148,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-_hkCgDO9.min.css",
+    "file": "css/music-home-gFekQWnw.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -288,7 +288,7 @@
     ]
   },
   "src/js/pages/music-home.js": {
-    "file": "js/music-home-BqkUSW3w.min.js",
+    "file": "js/music-home-D6uJy8MM.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
     "isEntry": true,
