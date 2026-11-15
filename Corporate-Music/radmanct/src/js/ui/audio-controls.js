@@ -1,3 +1,5 @@
+import {initializeAudioWave} from './audio-wave.js';
+
 export function formatAudioTime(value) {
  const seconds=Number.isFinite(value)&&value>0?Math.floor(value):0;
  const minutes=Math.floor(seconds/60);
@@ -37,5 +39,6 @@ export function initializeAudioControls(root) {
  for(const event of ['loadedmetadata','durationchange','timeupdate','play','pause','ended','volumechange','emptied'])listen(audio,event,update);
  listen(audio,'error',()=>{status.textContent='فایل صوتی قابل پخش نیست. می‌توانید از لینک دانلود استفاده کنید.';update();});
  controls.hidden=false;audio.controls=false;audio.hidden=true;root.dataset.rdcPlayerReady='true';update();
+ releases.push(initializeAudioWave(root,audio));
  return()=>{alive=false;request++;audio.pause();for(const release of releases)release();controls.hidden=true;audio.controls=true;audio.hidden=false;delete root.dataset.rdcPlayerReady;};
 }
