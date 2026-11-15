@@ -1,6 +1,6 @@
 <?php defined('ABSPATH')||exit;
-$audio=$args['audio']??[];$compact=!empty($args['compact']);$dock=!empty($args['dock']); ?>
-<div class="rdc-player<?php if($compact)echo ' rdc-player--compact';if($dock||!empty($args['wave']))echo ' rdc-player--wave'; ?>" data-rdc-player role="group" aria-label="پخش‌کنندهٔ آهنگ">
+$audio=$args['audio']??[];$compact=!empty($args['compact']);$dock=!empty($args['dock']);$wave=$dock||!empty($args['wave']); ?>
+<div class="rdc-player<?php if($compact)echo ' rdc-player--compact';if($wave)echo ' rdc-player--wave'; ?>" data-rdc-player role="group" aria-label="پخش‌کنندهٔ آهنگ">
  <audio controls preload="none"<?php if(!empty($audio['url'])): ?> src="<?php echo esc_url($audio['url']); ?>"<?php endif; ?><?php if($compact): ?> data-rdc-music-player<?php endif; ?> aria-label="<?php echo esc_attr('پخش '.get_the_title()); ?>">مرورگر شما پخش صوت را پشتیبانی نمی‌کند.</audio>
  <div class="rdc-player__controls" hidden>
   <div class="rdc-player__transport"><?php foreach(['previous'=>['skip-back','آهنگ قبلی'],'play'=>['play','پخش آهنگ'],'next'=>['skip-forward','آهنگ بعدی']] as $key=>[$icon,$label]):if($compact&&!$dock&&$key!=='play')continue;
@@ -9,7 +9,10 @@ $audio=$args['audio']??[];$compact=!empty($args['compact']);$dock=!empty($args['
    else:$item=$args[$key]??null;if($item&&$item->post_status==='publish'&&!$item->post_password): ?><a href="<?php echo esc_url(get_permalink($item)); ?>" aria-label="<?php echo esc_attr($label); ?>"><?php echo \RadmanCT\icon($icon); ?></a><?php else: ?><button type="button" disabled aria-label="<?php echo esc_attr($label); ?>"><?php echo \RadmanCT\icon($icon); ?></button><?php endif;endif;
   endforeach; ?></div>
   <output data-rdc-player-time aria-label="زمان پخش">0:00</output>
-  <input class="rdc-player__seek" type="range" min="0" max="1000" value="0" step="1" data-rdc-player-seek aria-label="موقعیت پخش" aria-valuetext="۰ دقیقه" disabled>
+  <div class="rdc-player__timeline">
+   <?php if($wave)get_template_part('template-parts/music/wave'); ?>
+   <input class="rdc-player__seek" type="range" min="0" max="1000" value="0" step="1" data-rdc-player-seek aria-label="موقعیت پخش" aria-valuetext="۰ دقیقه" disabled>
+  </div>
   <output data-rdc-player-duration aria-label="مدت آهنگ"><?php echo esc_html(($audio['duration']??'')?:'0:00'); ?></output>
   <button type="button" data-rdc-player-mute aria-label="قطع صدا" aria-pressed="false"><?php echo \RadmanCT\icon('volume'); ?></button>
   <input class="rdc-player__volume" type="range" min="0" max="1" value="1" step=".05" data-rdc-player-volume aria-label="بلندی صدا">
