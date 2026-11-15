@@ -1,8 +1,5 @@
 .rdc-mosaic { padding-block:clamp(3rem,7vw,7rem); }
 .rdc-mosaic__inr { padding-inline:var(--rdc-gut); margin-inline:auto; }
-.rdc-mosaic__hdr { margin-block-end:clamp(2rem,4vw,3.5rem); max-inline-size:50rem; }
-.rdc-mosaic__hdr h2 { margin:0; }
-.rdc-mosaic__lbl { margin:0 0 .75rem; color:var(--rdc-acc); font-size:var(--rdc-sz-sm); }
 .rdc-mosaic__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(1rem,1.6vw,2rem); }
 .rdc-mosaic__itm { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(1rem,1.6vw,2rem); min-inline-size:0; }
 .rdc-mosaic__copy,.rdc-mosaic__md { position:relative; min-inline-size:0; aspect-ratio:1; border-radius:var(--rdc-rad); overflow:hidden; }

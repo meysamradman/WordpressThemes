@@ -75,6 +75,7 @@
   --rdc-btn-hov-tx:var(--rdc-clr-crm);
   --rdc-sz-h1:clamp(2.5rem,4vw,4.375rem);
   --rdc-sz-h2:clamp(2rem,3.5vw,var(--rdc-sz-dsp));
+  --rdc-sz-section:clamp(2rem,3.5vw,4rem);
   --rdc-sz-h3:clamp(1.4rem,2vw,1.875rem);
   --rdc-sz-h4:1.25rem;
   --rdc-sz-h5:1.125rem;

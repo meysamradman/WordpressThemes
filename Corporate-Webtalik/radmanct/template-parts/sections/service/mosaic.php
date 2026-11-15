@@ -7,9 +7,12 @@ $heading=wp_unique_id('rdc-mosaic-ttl-');
 ?>
 <section class="rdc-mosaic" aria-labelledby="<?php echo esc_attr($heading); ?>">
  <div class="rdc-mosaic__inr">
-  <header class="rdc-mosaic__hdr">
-   <p class="rdc-mosaic__lbl"><?php echo esc_html($data['label']); ?></p>
-   <h2 id="<?php echo esc_attr($heading); ?>"><?php echo esc_html($data['title']); ?></h2>
+  <header class="rdc-heading">
+   <div class="rdc-heading__inr">
+    <p class="rdc-heading__lbl"><?php echo esc_html($data['label']); ?><?php echo \RadmanCT\icon('arrow-up-right'); ?></p>
+    <h2 class="rdc-heading__ttl" id="<?php echo esc_attr($heading); ?>"><?php echo esc_html($data['title']); ?></h2>
+   </div>
+   <?php if(!empty($data['desc'])): ?><p class="rdc-heading__desc"><?php echo esc_html($data['desc']); ?></p><?php endif; ?>
   </header>
   <div class="rdc-mosaic__grid">
    <?php foreach($data['items'] as $item): $image=(int)($item['image']??0);$video=(int)($item['video']??0); ?>

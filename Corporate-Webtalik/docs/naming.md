@@ -30,6 +30,7 @@
 | `svc` / `svcs` | Service / Services |
 | `prj-mq` | Continuous bottom-aligned gallery with project CTA; `trk` is its moving track |
 | `faq` | Shared frequently asked questions |
+| `heading` | Shared section heading styles; independent of Page Title (`pt`) |
 | `ctc` | Floating contact launcher and its channel panel |
 | `pnl` | Menu panel |
 | `nav` / `cat` | Navigation / Categories |

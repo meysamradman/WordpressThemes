@@ -2,7 +2,7 @@
 namespace RadmanCT\Service;
 defined('ABSPATH')||exit;
 function data():array {
- return apply_filters('radmanct/service/mosaic',array('label'=>'','title'=>'','items'=>array()));
+ return apply_filters('radmanct/service/mosaic',array('label'=>'','title'=>'','desc'=>'','items'=>array()));
 }
 function allowed(int $id):bool {
  if(!$id||get_post_type($id)!=='attachment'||!in_array(get_post_status($id),array('inherit','publish'),true)||post_password_required($id))return false;

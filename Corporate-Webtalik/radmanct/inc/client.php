@@ -10,7 +10,7 @@ add_filter('radmanct/service/mosaic',static function(array $data):array {
   array('جزئیاتی برای یک تجربهٔ بهتر','خوانایی، دسترسی‌پذیری و نمایش درست در موبایل، بخشی از طراحی و اجرای هر صفحه‌اند.',\RadmanCT\media_id('services-marquee-3'),0),
  );
  $items=array();foreach($copy as $row)$items[]=array('title'=>$row[0],'desc'=>$row[1],'image'=>$row[2],'video'=>$row[3],'link'=>'دربارهٔ پروژه‌ات بگو','url'=>$url);
- return array('label'=>'از ایده تا اجرا','title'=>'وب‌سایتی که برای کسب‌وکار شما ساخته می‌شود','items'=>$items);
+ return array('label'=>'از ایده تا اجرا','title'=>'وب‌سایتی که برای کسب‌وکار شما ساخته می‌شود','desc'=>'از شناخت نیاز و طراحی تجربهٔ کاربری تا توسعه و راه‌اندازی؛ هر بخش بر اساس هویت برند و هدف کسب‌وکار شما شکل می‌گیرد.','items'=>$items);
 });
 add_filter('radmanct/seo/description',static function(string $description):string {
  if(\RadmanCT\SEO\plain($description)!=='')return $description;
