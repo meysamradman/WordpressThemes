@@ -11,7 +11,7 @@ export function initializeAudioControls(root) {
  const time=root.querySelector('[data-rdc-player-time]'),duration=root.querySelector('[data-rdc-player-duration]');
  const mute=root.querySelector('[data-rdc-player-mute]'),volume=root.querySelector('[data-rdc-player-volume]');
  const start=root.querySelector('[data-rdc-player-start]'),pause=root.querySelector('[data-rdc-player-pause]'),status=root.querySelector('[data-rdc-player-status]');
- const releases=[];
+ const releases=[];let alive=true,request=0;
  const listen=(node,type,handler)=>{node.addEventListener(type,handler);releases.push(()=>node.removeEventListener(type,handler));};
  const update=()=>{
   const length=Number.isFinite(audio.duration)&&audio.duration>0?audio.duration:0;
@@ -27,8 +27,8 @@ export function initializeAudioControls(root) {
  };
  listen(play,'click',()=>{
   status.textContent='';
-  if(!audio.paused){audio.pause();return;}
-  Promise.resolve(audio.play()).catch(()=>{status.textContent='پخش انجام نشد؛ دوباره تلاش کنید.';update();});
+  if(!audio.paused){request++;audio.pause();return;}
+  const ticket=++request;Promise.resolve(audio.play()).catch(error=>{if(!alive||ticket!==request||error?.name==='AbortError')return;status.textContent='پخش انجام نشد؛ دوباره تلاش کنید.';update();});
  });
  listen(seek,'input',()=>{if(Number.isFinite(audio.duration)&&audio.duration>0)audio.currentTime=Number(seek.value)/1000*audio.duration;update();});
  listen(mute,'click',()=>{audio.muted=!audio.muted;update();});
@@ -36,5 +36,5 @@ export function initializeAudioControls(root) {
  for(const event of ['loadedmetadata','durationchange','timeupdate','play','pause','ended','volumechange','emptied'])listen(audio,event,update);
  listen(audio,'error',()=>{status.textContent='فایل صوتی قابل پخش نیست. می‌توانید از لینک دانلود استفاده کنید.';update();});
  controls.hidden=false;audio.controls=false;audio.hidden=true;root.dataset.rdcPlayerReady='true';update();
- return()=>{audio.pause();for(const release of releases)release();controls.hidden=true;audio.controls=true;audio.hidden=false;delete root.dataset.rdcPlayerReady;};
+ return()=>{alive=false;request++;audio.pause();for(const release of releases)release();controls.hidden=true;audio.controls=true;audio.hidden=false;delete root.dataset.rdcPlayerReady;};
 }
