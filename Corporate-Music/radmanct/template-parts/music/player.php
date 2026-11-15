@@ -1,6 +1,6 @@
 <?php defined('ABSPATH')||exit;
 $audio=$args['audio']??[];$compact=!empty($args['compact']);$dock=!empty($args['dock']); ?>
-<div class="rdc-player<?php if($compact)echo ' rdc-player--compact'; ?>" data-rdc-player role="group" aria-label="پخش‌کنندهٔ آهنگ">
+<div class="rdc-player<?php if($compact)echo ' rdc-player--compact';if($dock||!empty($args['wave']))echo ' rdc-player--wave'; ?>" data-rdc-player role="group" aria-label="پخش‌کنندهٔ آهنگ">
  <audio controls preload="none"<?php if(!empty($audio['url'])): ?> src="<?php echo esc_url($audio['url']); ?>"<?php endif; ?><?php if($compact): ?> data-rdc-music-player<?php endif; ?> aria-label="<?php echo esc_attr('پخش '.get_the_title()); ?>">مرورگر شما پخش صوت را پشتیبانی نمی‌کند.</audio>
  <div class="rdc-player__controls" hidden>
   <div class="rdc-player__transport"><?php foreach(['previous'=>['skip-back','آهنگ قبلی'],'play'=>['play','پخش آهنگ'],'next'=>['skip-forward','آهنگ بعدی']] as $key=>[$icon,$label]):if($compact&&!$dock&&$key!=='play')continue;

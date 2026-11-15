@@ -28,6 +28,9 @@ function description():string {
         if(''===plain((string)$text)&&$term instanceof \WP_Term)$text=sprintf(__('Browse %1$s on %2$s.','radmanct'),$term->name,get_bloginfo('name'));
     }elseif(is_post_type_archive('project')){
         $text=__('Selected website projects, design and development case studies.','radmanct');
+    }elseif(is_post_type_archive(array('track','album','clip'))){
+        $type=get_post_type_object(get_query_var('post_type'));
+        if($type)$text=sprintf(__('Browse %1$s on %2$s.','radmanct'),$type->labels->name,get_bloginfo('name'));
     }
     if(is_front_page()&&''===plain((string)$text)){
         $tagline=get_bloginfo('description');
@@ -40,7 +43,10 @@ function description():string {
 function archive_canonical():string {
     $url='';
     if(is_home())$url=get_option('page_for_posts')?get_permalink((int)get_option('page_for_posts')):home_url('/');
-    elseif(is_post_type_archive('project'))$url=get_post_type_archive_link('project');
+    elseif(is_post_type_archive(array('project','track','album','clip'))){
+        $type=get_query_var('post_type');
+        if(is_string($type))$url=get_post_type_archive_link($type);
+    }
     elseif(is_category()||is_tag()||is_tax())$url=get_term_link(get_queried_object());
     elseif(is_author())$url=get_author_posts_url(get_queried_object_id());
     elseif(is_day())$url=get_day_link((int)get_query_var('year'),(int)get_query_var('monthnum'),(int)get_query_var('day'));

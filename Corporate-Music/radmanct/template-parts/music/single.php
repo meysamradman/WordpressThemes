@@ -15,7 +15,7 @@
     <?php if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-trk-download','icon'=>'download','leading_icon'=>'music','download'=>true]); ?>
    </div>
   </div>
-  <?php if($audio):get_template_part('template-parts/music/player',null,['audio'=>$audio,'previous'=>$previous,'next'=>$next]);else: ?><p class="rdc-trk-note">فایل پخش این اثر هنوز اضافه نشده است.</p><?php endif; ?>
+  <?php if($audio):get_template_part('template-parts/music/player',null,['audio'=>$audio,'previous'=>$previous,'next'=>$next,'wave'=>true]);else: ?><p class="rdc-trk-note">فایل پخش این اثر هنوز اضافه نشده است.</p><?php endif; ?>
   <?php if(trim(get_the_content())!==''||has_excerpt()): ?><div class="rdc-cnt rdc-trk-intro"><?php if(has_excerpt())the_excerpt();the_content();wp_link_pages(); ?></div><?php endif; ?>
   <?php if($data['lyrics']): ?><section class="rdc-trk-lyrics" aria-labelledby="rdc-lyrics-title"><h2 id="rdc-lyrics-title">متن شعر</h2><p><?php echo nl2br(esc_html($data['lyrics'])); ?></p></section><?php endif; ?>
  <?php endif; ?>

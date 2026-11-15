@@ -12,8 +12,8 @@ function fixture(){
  const audio=nodes.audio;Object.assign(audio,{paused:true,ended:false,currentTime:0,duration:NaN,volume:1,muted:false,controls:true});
  audio.play=()=>{audio.paused=false;audio.dispatchEvent(new Event('play'));return Promise.resolve();};
  audio.pause=()=>{audio.paused=true;audio.dispatchEvent(new Event('pause'));};
- const root={dataset:{},style:{setProperty(){}},querySelector:key=>nodes[key]};
- return {root,audio,nodes};
+ const progress=new Map(),root={dataset:{},style:{setProperty:(key,value)=>progress.set(key,value)},querySelector:key=>nodes[key]};
+ return {root,audio,nodes,progress};
 }
 test('native audio gains accessible controls without autoplay and restores fallback on cleanup',()=>{
  const {root,audio,nodes}=fixture();const release=initializeAudioControls(root);
@@ -24,11 +24,13 @@ test('native audio gains accessible controls without autoplay and restores fallb
  release();assert.equal(audio.controls,true);assert.equal(audio.hidden,false);assert.equal(root.dataset.rdcPlayerReady,undefined);
 });
 test('seek waits for valid metadata; position, duration and volume stay synchronized',()=>{
- const {root,audio,nodes}=fixture();const release=initializeAudioControls(root);
+ const {root,audio,nodes,progress}=fixture();const release=initializeAudioControls(root);
  const seek=nodes['[data-rdc-player-seek]'];assert.equal(seek.disabled,true);
  audio.duration=120;audio.dispatchEvent(new Event('loadedmetadata'));assert.equal(seek.disabled,false);
  seek.value='500';seek.dispatchEvent(new Event('input'));assert.equal(audio.currentTime,60);
  assert.equal(nodes['[data-rdc-player-time]'].textContent,'1:00');
+ assert.equal(progress.get('--rdc-audio-progress'),'50%');
+ audio.currentTime=120;audio.dispatchEvent(new Event('timeupdate'));assert.equal(progress.get('--rdc-audio-progress'),'100%');
  const volume=nodes['[data-rdc-player-volume]'];volume.value='0';volume.dispatchEvent(new Event('input'));assert.equal(audio.muted,true);
  volume.value='.5';volume.dispatchEvent(new Event('input'));assert.equal(audio.volume,.5);assert.equal(audio.muted,false);
  release();
