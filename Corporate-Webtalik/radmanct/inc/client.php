@@ -9,8 +9,32 @@ add_filter('radmanct/service/mosaic',static function(array $data):array {
   array('تجربهٔ واقعی در اجرا','نمونه‌ای از اجرای یک تجربهٔ دیجیتال؛ از ایده و طراحی تا محصولی که روی دستگاه‌های مختلف قابل استفاده است.',23,92),
   array('جزئیاتی برای یک تجربهٔ بهتر','خوانایی، دسترسی‌پذیری و نمایش درست در موبایل، بخشی از طراحی و اجرای هر صفحه‌اند.',\RadmanCT\media_id('services-marquee-3'),0),
  );
+ $title='وب‌سایتی که برای کسب‌وکار شما ساخته می‌شود';
+ $description='از شناخت نیاز و طراحی تجربهٔ کاربری تا توسعه و راه‌اندازی؛ هر بخش بر اساس هویت برند و هدف کسب‌وکار شما شکل می‌گیرد.';
+ $details=array(
+  'specialized-wordpress-design-development'=>array('وردپرسی متناسب با نیاز کسب‌وکار شما','طراحی، توسعه و بهینه‌سازی وردپرس با ساختاری قابل نگهداری؛ از تجربهٔ کاربری تا مدیریت محتوای روزمره.',array(
+   array('طراحی با هویت برند شما','صفحه‌ها و رابط کاربری با توجه به مخاطب، محتوا و شخصیت برند شما طراحی می‌شوند.'),
+   array('توسعهٔ قابلیت‌های اختصاصی','امکانات موردنیاز پروژه با ساختاری روشن و قابل توسعه در وردپرس پیاده‌سازی می‌شوند.'),
+   array('مدیریت محتوای ساده','بخش‌های محتوایی به‌گونه‌ای آماده می‌شوند که ویرایش و انتشار مطالب برای تیم شما آسان باشد.'),
+   array('بهینه‌سازی و نگهداری','نمایش موبایل، بارگذاری رسانه و ساختار کد در کنار نیازهای نگهداری آینده بررسی می‌شوند.'))),
+  'admin-panel-web-systems'=>array('سامانه‌ای متناسب با جریان کار شما','از شناخت فرایندها تا طراحی پنل و اتصال بخش‌های مختلف؛ راهکاری برای مدیریت روشن‌تر کارهای روزانه.',array(
+   array('شناخت فرایندهای کاری','نیاز کاربران، گردش اطلاعات و مراحل انجام کار مبنای طراحی سامانه قرار می‌گیرند.'),
+   array('معماری قابل توسعه','بخش‌های سامانه و ارتباط میان آن‌ها با توجه به نیاز فعلی و مسیر رشد پروژه طراحی می‌شوند.'),
+   array('تجربهٔ کاربردی در اجرا','فرم‌ها، گزارش‌ها و ابزارهای مدیریتی برای انجام روشن و سادهٔ وظایف کاربران آماده می‌شوند.'),
+   array('دسترسی و عملکرد','سطوح دسترسی و رفتار بخش‌های مختلف متناسب با نقش کاربران و نیاز عملیاتی پروژه پیاده‌سازی می‌شوند.'))),
+  'mobile-app-design-development'=>array('اپلیکیشنی برای تجربه‌ای روان و کاربردی','از طراحی مسیرهای کاربر تا توسعه و اتصال به سرویس‌ها؛ تجربه‌ای موبایلی متناسب با محصول و مخاطبان شما.',array(
+   array('طراحی برای کاربر موبایل','مسیرها و رابط کاربری با توجه به اندازهٔ نمایشگر، تعامل لمسی و نیاز مخاطبان طراحی می‌شوند.'),
+   array('توسعه و اتصال سرویس‌ها','قابلیت‌های اپلیکیشن و ارتباط با سامانه‌های موردنیاز بر اساس دامنهٔ پروژه پیاده‌سازی می‌شوند.'),
+   array('تجربهٔ واقعی محصول','سناریوهای اصلی استفاده در طراحی و اجرای محصول در نظر گرفته می‌شوند تا مسیرهای کاربر منسجم باشند.'),
+   array('جزئیات یک تجربهٔ بهتر','خوانایی، بازخورد تعامل‌ها و مدیریت بارگذاری اطلاعات بخشی از اجرای اپلیکیشن هستند.'))),
+ );
+ foreach($details as $slug=>$detail)if(is_page($slug)){
+  $title=$detail[0];$description=$detail[1];
+  foreach($detail[2] as $index=>$text){$copy[$index][0]=$text[0];$copy[$index][1]=$text[1];}
+  break;
+ }
  $items=array();foreach($copy as $row)$items[]=array('title'=>$row[0],'desc'=>$row[1],'image'=>$row[2],'video'=>$row[3],'link'=>'دربارهٔ پروژه‌ات بگو','url'=>$url);
- return array('label'=>'از ایده تا اجرا','title'=>'وب‌سایتی که برای کسب‌وکار شما ساخته می‌شود','desc'=>'از شناخت نیاز و طراحی تجربهٔ کاربری تا توسعه و راه‌اندازی؛ هر بخش بر اساس هویت برند و هدف کسب‌وکار شما شکل می‌گیرد.','items'=>$items);
+ return array('label'=>'از ایده تا اجرا','title'=>$title,'desc'=>$description,'items'=>$items);
 });
 add_filter('radmanct/seo/description',static function(string $description):string {
  if(\RadmanCT\SEO\plain($description)!=='')return $description;
@@ -39,7 +63,7 @@ add_filter('radmanct/services/marquee',static function():array {
 // Current customer's editorial data. Replace this file for the next project;
 // shared renderers, assets and animation code remain independent of this content.
 add_filter('body_class',static function(array $classes):array {
- if(is_page(array('services','custom-website-design-development')))$classes[]='rdc-inv';
+ if(is_page('services')||\RadmanCT\Services\is_detail())$classes[]='rdc-inv';
  return $classes;
 });
 add_filter('radmanct/page-title/enabled',static function(bool $enabled):bool {

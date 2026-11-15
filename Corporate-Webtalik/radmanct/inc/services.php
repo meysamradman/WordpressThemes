@@ -1,6 +1,13 @@
 <?php
 namespace RadmanCT\Services;
 defined('ABSPATH')||exit;
+function is_detail():bool {
+    $slugs=array_column(apply_filters('radmanct/services/specs',array()),'slug');
+    return $slugs&&is_page($slugs);
+}
+add_filter('template_include',static function(string $template):string {
+    return is_detail()?get_template_directory().'/templates/service.php':$template;
+});
 function items():array {
     static $items;
     if(null!==$items)return $items;
