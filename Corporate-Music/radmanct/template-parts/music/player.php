@@ -1,10 +1,11 @@
 <?php defined('ABSPATH')||exit;
-$audio=$args['audio']??[];$compact=!empty($args['compact']); ?>
+$audio=$args['audio']??[];$compact=!empty($args['compact']);$dock=!empty($args['dock']); ?>
 <div class="rdc-player<?php if($compact)echo ' rdc-player--compact'; ?>" data-rdc-player role="group" aria-label="پخش‌کنندهٔ آهنگ">
  <audio controls preload="none"<?php if(!empty($audio['url'])): ?> src="<?php echo esc_url($audio['url']); ?>"<?php endif; ?><?php if($compact): ?> data-rdc-music-player<?php endif; ?> aria-label="<?php echo esc_attr('پخش '.get_the_title()); ?>">مرورگر شما پخش صوت را پشتیبانی نمی‌کند.</audio>
  <div class="rdc-player__controls" hidden>
-  <div class="rdc-player__transport"><?php foreach(['previous'=>['skip-back','آهنگ قبلی'],'play'=>['play','پخش آهنگ'],'next'=>['skip-forward','آهنگ بعدی']] as $key=>[$icon,$label]):if($compact&&$key!=='play')continue;
+  <div class="rdc-player__transport"><?php foreach(['previous'=>['skip-back','آهنگ قبلی'],'play'=>['play','پخش آهنگ'],'next'=>['skip-forward','آهنگ بعدی']] as $key=>[$icon,$label]):if($compact&&!$dock&&$key!=='play')continue;
    if($key==='play'): ?><button class="rdc-player__play" type="button" data-rdc-player-play aria-label="پخش آهنگ" aria-pressed="false"><span data-rdc-player-start><?php echo \RadmanCT\icon('play'); ?></span><span data-rdc-player-pause hidden><?php echo \RadmanCT\icon('pause'); ?></span></button><?php
+   elseif($dock): ?><button type="button" data-rdc-home-<?php echo $key==='previous'?'prev':'next'; ?> aria-label="<?php echo esc_attr($label); ?>"><?php echo \RadmanCT\icon($icon); ?></button><?php
    else:$item=$args[$key]??null;if($item&&$item->post_status==='publish'&&!$item->post_password): ?><a href="<?php echo esc_url(get_permalink($item)); ?>" aria-label="<?php echo esc_attr($label); ?>"><?php echo \RadmanCT\icon($icon); ?></a><?php else: ?><button type="button" disabled aria-label="<?php echo esc_attr($label); ?>"><?php echo \RadmanCT\icon($icon); ?></button><?php endif;endif;
   endforeach; ?></div>
   <output data-rdc-player-time aria-label="زمان پخش">0:00</output>

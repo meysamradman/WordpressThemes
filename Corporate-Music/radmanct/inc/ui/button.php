@@ -18,7 +18,7 @@ function button(string $label,string $url,array $args=array()):string {
  if(!empty($args['leading_icon']))$content=icon((string)$args['leading_icon']).$content;
  if(!empty($args['disabled']))return '<button type="button" class="'.esc_attr($classes).'" disabled aria-disabled="true">'.$content.'</button>';
  if(!empty($args['audio'])&&is_array($args['audio'])){
-  $audio=$args['audio'];return '<button type="button" class="'.esc_attr($classes).'" data-rdc-audio-key="'.(int)($audio['key']??0).'" data-rdc-audio-src="'.esc_url($audio['url']??'').'" data-rdc-audio-title="'.esc_attr(get_the_title((int)($audio['key']??0))).'" aria-pressed="false" aria-label="'.esc_attr($label).'">'.$content.'</button>';
+  $audio=$args['audio'];return '<button type="button" class="'.esc_attr($classes).'" data-rdc-audio-key="'.(int)($audio['key']??0).'" data-rdc-audio-src="'.esc_url($audio['url']??'').'" data-rdc-audio-title="'.esc_attr(get_the_title((int)($audio['key']??0))).'" data-rdc-audio-artist="'.esc_attr($audio['artist']??'').'" data-rdc-audio-cover="'.esc_url($audio['cover']??'').'" data-rdc-audio-duration="'.esc_attr($audio['duration']??'').'" aria-pressed="false" aria-label="'.esc_attr($label).'">'.$content.'</button>';
  }
  return '<a class="'.esc_attr($classes).'" href="'.esc_url($url).'"'.$attributes.'>'.$content.'</a>';
 }

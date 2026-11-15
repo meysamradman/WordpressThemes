@@ -16,6 +16,10 @@ function file(int $id):array {
     $metadata=wp_get_attachment_metadata($id);return ['url'=>$url,'duration'=>$metadata['length_formatted']??''];
 }
 function url():string {return get_post_type_archive_link('track')?:home_url('/music/');}
+function playback(int $id,array $audio,array $data):array {
+ $image=(int)get_post_thumbnail_id($id);
+ return ['key'=>$id,'url'=>$audio['url'],'artist'=>$data['artist'],'duration'=>$audio['duration']??'','cover'=>\RadmanCT\PageTitle\attachment_allowed($image)?(wp_get_attachment_image_url($image,'thumbnail')?:''):''];
+}
 
 function card(\WP_Post $post,string $heading='h2',bool $play=false,string $variant='compact'):void {
  $heading=in_array($heading,['h2','h3'],true)?$heading:'h2';$data=meta($post->ID);$allowed=!post_password_required($post);$url=get_permalink($post);
@@ -33,7 +37,7 @@ function card(\WP_Post $post,string $heading='h2',bool $play=false,string $varia
  echo '</a><div class="rdc-trk-card__body"><'.$heading.'><a href="'.esc_url($url).'">'.esc_html(get_the_title($post)).'</a></'.$heading.'><div class="rdc-trk-card__meta">';
  if($allowed){$terms=get_the_terms($post,'music_category');echo '<p>'.esc_html($terms&&!is_wp_error($terms)?$terms[0]->name:$data['artist']).'</p>';}
  $audio=$allowed?file((int)$data['audio']):[];
- if($play&&$audio)echo \RadmanCT\button('پخش '.get_the_title($post),'#',['class'=>'rdc-trk-card__play','icon'=>'play','icon_only'=>true,'audio'=>['key'=>$post->ID,'url'=>$audio['url']]]);
+ if($play&&$audio)echo \RadmanCT\button('پخش '.get_the_title($post),'#',['class'=>'rdc-trk-card__play','icon'=>'play','icon_only'=>true,'audio'=>playback($post->ID,$audio,$data)]);
  else echo '<a class="rdc-trk-card__more" href="'.esc_url($url).'" aria-label="'.esc_attr('مشاهدهٔ '.get_the_title($post)).'">'.\RadmanCT\icon('play').'</a>';
  echo '</div></div></article>';
 }

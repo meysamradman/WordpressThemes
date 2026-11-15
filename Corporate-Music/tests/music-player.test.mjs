@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {initializeAudioControls,formatAudioTime} from '../radmanct/src/js/ui/audio-controls.js';
+import {homeTracks} from '../radmanct/src/js/ui/music-player.js';
 class Control extends EventTarget {
  constructor(){super();this.hidden=false;this.value='0';this.attributes={};}
  setAttribute(key,value){this.attributes[key]=value;}
@@ -11,7 +12,7 @@ function fixture(){
  const audio=nodes.audio;Object.assign(audio,{paused:true,ended:false,currentTime:0,duration:NaN,volume:1,muted:false,controls:true});
  audio.play=()=>{audio.paused=false;audio.dispatchEvent(new Event('play'));return Promise.resolve();};
  audio.pause=()=>{audio.paused=true;audio.dispatchEvent(new Event('pause'));};
- const root={dataset:{},querySelector:key=>nodes[key]};
+ const root={dataset:{},style:{setProperty(){}},querySelector:key=>nodes[key]};
  return {root,audio,nodes};
 }
 test('native audio gains accessible controls without autoplay and restores fallback on cleanup',()=>{
@@ -42,4 +43,11 @@ test('cancelled playback is silent while real playback failure remains actionabl
   if(name==='AbortError')assert.equal(message,'');else assert.ok(message.length>0);
   release();
  }
+});
+
+test('home queue deduplicates hero/card buttons and rejects missing or foreign media',()=>{
+ const button=(key,url)=>({dataset:{rdcAudioKey:key,rdcAudioSrc:url}});
+ const tracks=homeTracks([button('1','/uploads/one.mp3'),button('1','/uploads/one.mp3'),button('2','https://foreign.example/two.mp3'),button('3',''),button('4','http://127.0.0.1:8098/uploads/four.mp3')],'http://127.0.0.1:8098');
+ assert.deepEqual(tracks.map(track=>track.key),['1','4']);
+ assert.equal(tracks[0].url,'http://127.0.0.1:8098/uploads/one.mp3');
 });

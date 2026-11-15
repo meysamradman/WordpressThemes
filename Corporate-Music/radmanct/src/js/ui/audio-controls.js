@@ -18,6 +18,7 @@ export function initializeAudioControls(root) {
   time.textContent=formatAudioTime(audio.currentTime);
   if(length)duration.textContent=formatAudioTime(length);
   seek.disabled=!length;seek.value=String(length?Math.round(audio.currentTime/length*1000):0);
+  root.style.setProperty('--rdc-audio-progress',`${length?Math.min(100,Math.max(0,audio.currentTime/length*100)):0}%`);
   seek.setAttribute('aria-valuetext',`${formatAudioTime(audio.currentTime)} از ${formatAudioTime(length)}`);
   const playing=!audio.paused&&!audio.ended;
   play.setAttribute('aria-pressed',String(playing));play.setAttribute('aria-label',playing?'توقف پخش':'پخش آهنگ');
