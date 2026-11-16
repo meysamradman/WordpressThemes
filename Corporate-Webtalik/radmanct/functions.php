@@ -1,7 +1,7 @@
 <?php
 namespace RadmanCT;
 defined('ABSPATH')||exit;
-foreach(array('setup','assets','site','page-title','brand','icons','ui/button','ui/contact','navigation','footer','services','seo','content/projects','content/media','preloader','client')as$module)require_once __DIR__.'/inc/'.$module.'.php';
+foreach(array('setup','assets','site','page-title','compact-title','brand','icons','ui/button','ui/contact','navigation','footer','services','seo','content/projects','content/media','preloader','client')as$module)require_once __DIR__.'/inc/'.$module.'.php';
 add_action('wp',static function():void{
  if(is_front_page()){require_once __DIR__.'/inc/home.php';return;}
  $blog=is_home()||is_category()||is_tag()||is_date()||is_author()||is_search()||is_singular('post');

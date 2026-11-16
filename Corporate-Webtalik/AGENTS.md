@@ -37,3 +37,5 @@ Runtime workflow: `.agents/skills/webtalik-work/SKILL.md`. Read `docs/architectu
 ## Customer frontend standard
 
 Read `docs/frontend-standard.md` for HTML/SEO, one responsive DOM, accessibility, media/GSAP loading and the pending incremental review queue. Its full v1.2 source is preserved under `docs/reference/`. Apply this to new/touched customer code; registration is not proof of page compliance and does not authorize wholesale removal of approved motion/preloaders or changes to local noindex/Yoast ownership. The design library is excluded.
+
+- Pages without a hero use the shared compact title (`inc/compact-title.php`, documented in docs/shared-ui.md) through the shared layout/page-title dispatcher before the content container. Keep one H1, modest title size and only two decorative orbit points. Existing cover heroes and plain post/project detail headings remain separate; do not add a second title or duplicate the orbit engine.
