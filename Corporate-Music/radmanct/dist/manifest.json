@@ -56,8 +56,8 @@
     "file": "js/text-motion-BN1O9YIz.min.js",
     "name": "text-motion"
   },
-  "_video-player-hExkDzl-.min.js": {
-    "file": "js/video-player-hExkDzl-.min.js",
+  "_video-player-BjUrfrqP.min.js": {
+    "file": "js/video-player-BjUrfrqP.min.js",
     "name": "video-player"
   },
   "src/css/admin/gallery.css": {
@@ -151,7 +151,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-D5PAZ5T_.min.css",
+    "file": "css/music-home-CYBPExA4.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -205,7 +205,7 @@
     "isEntry": true
   },
   "src/css/pages/videos.css": {
-    "file": "css/videos-Dq3vp9Dp.min.css",
+    "file": "css/videos-D3DN5EjB.min.css",
     "name": "css-videos",
     "names": [
       "css-videos.css"
@@ -291,13 +291,13 @@
     ]
   },
   "src/js/pages/music-home.js": {
-    "file": "js/music-home-C15zd5Yk.min.js",
+    "file": "js/music-home-BSo2xvUC.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_video-player-hExkDzl-.min.js",
+      "_video-player-BjUrfrqP.min.js",
       "_audio-controls-BhqQptpj.min.js"
     ]
   },
@@ -357,13 +357,13 @@
     ]
   },
   "src/js/pages/videos.js": {
-    "file": "js/videos-Dv1Wcmbk.min.js",
+    "file": "js/videos-DIPwdlrB.min.js",
     "name": "videos",
     "src": "src/js/pages/videos.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_video-player-hExkDzl-.min.js"
+      "_video-player-BjUrfrqP.min.js"
     ]
   },
   "src/js/preloader.js": {
