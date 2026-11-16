@@ -1,6 +1,6 @@
 .rdc-home-player {
  position:fixed; z-index:80; inset-inline:clamp(.75rem,2.6vw,3rem); inset-block-end:max(1rem,env(safe-area-inset-bottom));
- display:grid; grid-template-columns:minmax(9rem,14rem) minmax(0,1fr) 2rem; align-items:center; gap:1.25rem;
+ display:grid; grid-template-columns:minmax(9rem,14rem) minmax(0,1fr) auto; align-items:center; gap:1.25rem;
  padding:.75rem 1rem; border:1px solid var(--rdc-ln); border-radius:var(--rdc-rad-lg);
  background:linear-gradient(110deg,color-mix(in srgb,var(--rdc-acc) 6%,var(--rdc-clr-player)),var(--rdc-clr-player) 50%);
  color:var(--rdc-tx); box-shadow:0 .5rem 2rem color-mix(in srgb,var(--rdc-clr-blk) 25%,transparent); direction:ltr;
@@ -19,16 +19,38 @@
 .rdc-home-player [data-rdc-player-status]:not(:empty) { position:static; inline-size:auto; block-size:auto; clip-path:none; white-space:normal; font-size:.8rem; margin-block-start:.4rem; direction:rtl; }
 .rdc-has-player .rdc-music-home { padding-block-end:8rem; }
 @media (max-width:800px) {
- .rdc-home-player { grid-template-columns:minmax(7rem,10rem) minmax(0,1fr) 1.75rem; gap:.6rem; padding:.65rem; }
+ .rdc-home-player { grid-template-columns:minmax(7rem,10rem) minmax(0,1fr) auto; gap:.6rem; padding:.65rem; }
 }
 @media (max-width:550px) {
  .rdc-home-player { grid-template-columns:minmax(0,1fr) auto; gap:.5rem; }
  .rdc-home-player__meta { grid-column:1; grid-row:1; }
  .rdc-home-player__meta img { inline-size:2.5rem; block-size:2.5rem; }
  .rdc-home-player__meta>div { text-align:end; }
- .rdc-home-player__close { grid-column:2; grid-row:1; }
+ .rdc-home-player__actions { grid-column:2; grid-row:1; }
  .rdc-home-player .rdc-player { grid-column:1/-1; grid-row:2; }
  .rdc-home-player .rdc-player__transport { position:static; transform:none; grid-column:1/-1; grid-row:1; justify-self:center; }
  .rdc-home-player .rdc-player__controls { gap:0 .5rem; }
  .rdc-has-player .rdc-music-home { padding-block-end:12rem; }
+}
+
+.rdc-home-player__actions { display:flex; align-items:center; gap:.5rem; }
+.rdc-home-player__toggle { display:flex; align-items:center; justify-content:center; gap:.3rem; min-block-size:2.75rem; padding:.4rem .65rem; border:1px solid var(--rdc-ln); border-radius:var(--rdc-rad-sm); background:var(--rdc-clr-header); color:var(--rdc-tx); font-size:.75rem; white-space:nowrap; cursor:pointer; direction:rtl; }
+.rdc-home-player__toggle:hover { border-color:var(--rdc-acc); color:var(--rdc-acc); }
+.rdc-home-player__toggle .rdc-ico { inline-size:1.15rem; block-size:1.15rem; }
+.rdc-home-player__toggle:focus-visible,.rdc-home-player__close:focus-visible { outline:2px solid var(--rdc-acc); outline-offset:3px; }
+.rdc-home-player[data-rdc-home-fold="true"] { inset-inline-start:auto; inline-size:min(36rem,calc(100% - 1.5rem)); grid-template-columns:minmax(0,1fr) auto auto; gap:.75rem; }
+.rdc-home-player[data-rdc-home-fold="true"] .rdc-home-player__toggle .rdc-ico { transform:rotate(180deg); }
+.rdc-home-player[data-rdc-home-fold="true"] :is(.rdc-home-player__artist,.rdc-home-player__lbl) { display:none; }
+.rdc-home-player[data-rdc-home-fold="true"] .rdc-player { grid-column:2; grid-row:1; }
+.rdc-home-player[data-rdc-home-fold="true"] .rdc-player__controls { display:flex; }
+.rdc-home-player[data-rdc-home-fold="true"] .rdc-player__controls>:not(.rdc-player__transport) { display:none; }
+.rdc-home-player[data-rdc-home-fold="true"] .rdc-player__transport { position:static; transform:none; }
+.rdc-home-player[data-rdc-home-fold="true"] .rdc-home-player__actions { grid-column:3; grid-row:1; }
+@media(max-width:550px) {
+ .rdc-home-player[data-rdc-home-fold="true"] { gap:.4rem; }
+ .rdc-home-player[data-rdc-home-fold="true"] .rdc-player__transport>[data-rdc-home-prev],.rdc-home-player[data-rdc-home-fold="true"] .rdc-player__transport>[data-rdc-home-next] { display:none; }
+ .rdc-home-player[data-rdc-home-fold="true"] .rdc-home-player__meta { gap:.4rem; }
+ .rdc-home-player[data-rdc-home-fold="true"] .rdc-home-player__ttl { font-size:.75rem; }
+ .rdc-home-player__actions { gap:.2rem; }
+ .rdc-home-player__toggle { padding:.35rem .4rem; }
 }
