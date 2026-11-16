@@ -33,3 +33,7 @@ Runtime workflow: `.agents/skills/webtalik-work/SKILL.md`. Read `docs/architectu
 - Git ownership: this folder is part of the parent WordpressThemes repository (https://github.com/meysamradman/WordpressThemes.git). Follow ../AGENTS.md; normal saves stage/commit only this project path via ../tools/Save-Project.ps1. Never initialize nested Git or include sibling changes in a project save. No automatic push or Releases.
 
 - Audio/video/gallery and archive/detail media changes must follow `docs/media.md`: defer playback media, preserve bounded queries and native responsive images, and keep approved decorative-video guards.
+
+## Customer frontend standard
+
+Read `docs/frontend-standard.md` for HTML/SEO, one responsive DOM, accessibility, media/GSAP loading and the pending incremental review queue. Its full v1.2 source is preserved under `docs/reference/`. Apply this to new/touched customer code; registration is not proof of page compliance and does not authorize wholesale removal of approved motion/preloaders or changes to local noindex/Yoast ownership. The design library is excluded.

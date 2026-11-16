@@ -3,6 +3,8 @@ name: webtalik-work
 description: Implement this workspace's standalone Radman CT custom corporate PHP theme; excludes Corporate-Catalog and Elementor work.
 ---
 
+For customer-facing HTML/SEO, responsive layout, loading/media or animation changes, read `docs/frontend-standard.md` from the project root and the relevant section of its linked v1.2 reference. Reuse the current owner; one primary responsive DOM, PHP content, Yoast metadata ownership and local noindex remain authoritative. Preserve approved effects while reviewing legacy pages incrementally; no automatic preloader removal, bulk rewrite or tracking activation. Mark acceptance only for routes actually verified. Documentation-only updates need no runtime build/browser pass.
+
 Read root AGENTS and the affected architecture section. Consult remaining.md only for unfinished work. Inspect the owning module, shared tokens and current user edits before changing it.
 
 For UI work, consult `docs/shared-ui.md` at the project root before creating styles or behavior. That document owns the shared-component inventory; inspect the relevant live owner and its consumers, reuse it, and remove the superseded consumer rules. Section headings share only CSS: split heading and `rdc-heading--stack` beside FAQ; preserve semantic headings and keep Page Title independent. Do not copy the inventory into this skill, force different content into one renderer, or load all UI modules globally. Update the inventory when a shared ownership/consumption contract changes; focused doc-only edits need no runtime build or browser run.

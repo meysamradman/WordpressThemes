@@ -9,3 +9,7 @@ Repository root: this folder. Active remote: https://github.com/meysamradman/Wor
 - New project folders are ordinary subdirectories, covered by this repository. Add their source/docs with a path-scoped commit when requested; no submodules/gitlinks.
 - Keep original author/license notices, source, docs, tests, package manifests/lockfiles, local runtime assets and consumed dist files. Ignore local dependencies, browser output, private environment/credentials, databases, archives, backups and unused reference distributions. Do not use a blanket vendor/dist exclusion that removes required hosting code.
 - No Releases, CI deployment, automatic watcher/push or runtime synchronization is requested. Commit/push only on explicit user instructions. This archive operation does not deploy sites or change Docker data.
+
+## Customer frontend documentation
+
+`GENERAL-HTML-SEO-RESPONSIVE-GSAP-GUIDE-v1.2.md` is the supplied general baseline for customer websites. Corporate-Webtalik and Corporate-Music adopt it through their own `docs/frontend-standard.md`, local reference snapshot, AGENTS and existing work skill. Future custom customer copies should adopt and adapt those docs to their actual owners; this is not a runtime dependency or automatic migration. Radman-Design-Library is explicitly excluded. Do not apply bulk changes to other projects, vendor themes or data from this documentation rule.

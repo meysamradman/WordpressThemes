@@ -14,3 +14,7 @@ Independent customer edition of Radman CT in the parent WordpressThemes reposito
 - Client homepage palette/layout follows the supplied artist mockup, not Webtalik styling: plum/charcoal, mint #16cc9f. Shared tokens remain authoritative. Gallery and videos use native album/clip post types with separate hierarchical categories and tags. Keep their editor, archive and detail owners modular; reuse the native media picker and shared AJAX/lightbox/video behaviors. Theme thumbnail is the original Radman image from Webtalik; never overwrite it with a browser screenshot.
 
 - Audio/video/gallery and archive/detail media changes must follow `docs/media.md`: defer playback media, preserve bounded queries and native responsive images, and keep approved decorative-video guards.
+
+## Customer frontend standard
+
+Read `docs/frontend-standard.md` for HTML/SEO, one responsive DOM, accessibility, media/GSAP loading and the pending incremental review queue. Its full v1.2 source is preserved under `docs/reference/`. Apply this to new/touched customer code; registration is not proof of page compliance and does not authorize wholesale removal of approved motion/preloaders or changes to local noindex/Yoast ownership. The design library is excluded.

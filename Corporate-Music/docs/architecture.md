@@ -56,3 +56,5 @@ The home dock has one icon-only, accessibly labeled collapse/expand button in ho
 Dock fold/open glyphs use the shared local icon catalog and 1.5 stroke. Keep the expanded toggle 20px glyph inside a 40px hit area; the compact capsule uses the existing upward chevron, with no permanent text or large border. Pointer hints reuse the existing cursor label; keyboard focus shows an anchored label. Preserve aria-expanded and the native button.
 
 Folded home dock follows the compact capsule: maximum 17rem width, round cover at right, title and artist, play/pause, upward expand chevron and close. Previous/next, waveform and volume are expanded-only on every viewport. Keep one audio instance and do not pause/reload it when folding.
+
+Frontend implementation and staged review: [frontend-standard.md](frontend-standard.md). The full general v1.2 guide is preserved there; existing project owners and approved designs remain independent.
