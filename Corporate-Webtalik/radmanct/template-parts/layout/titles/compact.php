@@ -4,7 +4,7 @@
   <?php if($data['label']!==''): ?><p class="rdc-mini__lbl"><?php echo esc_html($data['label']); ?></p><?php endif; ?>
   <h1 class="rdc-mini__ttl"><?php echo esc_html($data['title']); ?><?php if($data['accent']!==''): ?> <span class="rdc-mini__acc"><?php echo esc_html($data['accent']); ?></span><?php endif; ?></h1>
   <?php if($data['desc']!==''): ?><p class="rdc-mini__desc"><?php echo esc_html($data['desc']); ?></p><?php endif; ?>
-  <?php if(!empty($data['button']['url'])&&!empty($data['button']['label']))echo \RadmanCT\button($data['button']['label'],$data['button']['url'],['class'=>'rdc-mini__cta','variant'=>'ghost','icon_position'=>'start']); ?>
+  <?php if(!empty($data['button']['url'])&&!empty($data['button']['label']))echo \RadmanCT\button($data['button']['label'],$data['button']['url'],['class'=>'rdc-mini__cta','icon_position'=>'start']); ?>
  </div>
  <?php if($data['image']): ?>
  <div class="rdc-mini__media" aria-hidden="true"><div class="rdc-mini__art" data-rdc-mini-art>

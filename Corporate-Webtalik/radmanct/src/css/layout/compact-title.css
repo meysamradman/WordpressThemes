@@ -1,10 +1,10 @@
-.rdc-mini { position:relative; isolation:isolate; display:flex; align-items:center; min-block-size:25rem; padding:7rem var(--rdc-gut) 2rem; margin:0; overflow:hidden; background:var(--rdc-bg); color:var(--rdc-tx); }
+.rdc-mini { position:relative; isolation:isolate; display:flex; align-items:center; min-block-size:25rem; padding:8.5rem var(--rdc-gut) 2rem; margin:0; overflow:hidden; background:var(--rdc-bg); color:var(--rdc-tx); }
 .rdc-mini__copy { position:relative; z-index:1; inline-size:50%; max-inline-size:46rem; min-inline-size:0; }
 .rdc-mini__lbl { display:flex; align-items:center; gap:.85rem; color:var(--rdc-tx); font-size:.8rem; margin-block-end:.65rem; }
 .rdc-mini__lbl::before { content:''; inline-size:2rem; block-size:1px; background:var(--rdc-acc); }
-.rdc-mini .rdc-mini__ttl { font-size:clamp(2rem,2.6vw,2.75rem); line-height:1.6; color:var(--rdc-ink); margin:0; overflow-wrap:anywhere; }
-.rdc-mini__desc { max-inline-size:49ch; font-size:.9rem; line-height:1.9; color:var(--rdc-mut); margin-block-start:.65rem; }
-.rdc-mini__media { position:absolute; z-index:0; left:0; top:4rem; bottom:0; inline-size:50%; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+.rdc-mini .rdc-mini__ttl { font-size:clamp(2.5rem,3.4vw,3.5rem); line-height:1.6; color:var(--rdc-ink); margin:0; overflow-wrap:anywhere; }
+.rdc-mini__desc { max-inline-size:49ch; font-size:1rem; line-height:1.9; color:var(--rdc-mut); margin-block-start:.65rem; }
+.rdc-mini__media { position:absolute; z-index:0; left:0; top:5.5rem; bottom:0; inline-size:50%; display:flex; align-items:center; justify-content:center; pointer-events:none; }
 .rdc-mini__art { position:relative; inline-size:min(100%,32rem); aspect-ratio:1100/820; isolation:isolate; }
 .rdc-mini__paths { display:block; inline-size:100%; block-size:100%; overflow:hidden; }
 .rdc-mini__paths path { fill:none; stroke:none; }
@@ -13,18 +13,16 @@
 .rdc-mini__dot[data-orbit-track="1"] { left:85.273%; top:67.439%; }
 .rdc-mini + .rdc-main { padding-block-start:clamp(2rem,4vw,3.5rem); }
 @media(max-width:640px) {
- .rdc-mini { min-block-size:19rem; padding-block:7rem 1.5rem; }
+ .rdc-mini { min-block-size:19rem; padding-block:8.25rem 1.5rem; }
  .rdc-mini__copy { inline-size:62%; }
- .rdc-mini .rdc-mini__ttl { font-size:clamp(1.65rem,5vw,2rem); }
+ .rdc-mini .rdc-mini__ttl { font-size:clamp(2rem,5.8vw,2.4rem); }
  .rdc-mini__lbl { font-size:.65rem; gap:.5rem; }
  .rdc-mini__lbl::before { inline-size:1rem; }
- .rdc-mini__desc { font-size:.8rem; }
- .rdc-mini__media { inline-size:40%; top:5rem; }
+ .rdc-mini__desc { font-size:.9rem; }
+ .rdc-mini__media { inline-size:40%; top:6.25rem; }
  .rdc-mini__dot { inline-size:2px; block-size:2px; }
 }
 
 .rdc-mini__acc { color:var(--rdc-acc); }
-.rdc-mini .rdc-mini__cta { min-block-size:2.75rem; padding:0; border:0; gap:.85rem; margin-block-start:.9rem; font-size:.85rem; }
-.rdc-mini__cta .rdc-btn__ico { inline-size:2.5rem; block-size:2.5rem; border:1px solid var(--rdc-acc); border-radius:50%; color:var(--rdc-acc); }
-.rdc-mini__cta .rdc-btn__ico>.rdc-ico { inset:.6rem; inline-size:1.2rem; block-size:1.2rem; }
+.rdc-mini__cta { margin-block-start:.9rem; }
 #rdc-projects { scroll-margin-block-start:6rem; }
