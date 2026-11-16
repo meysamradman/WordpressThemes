@@ -1,5 +1,4 @@
 .rdc-pt { position:relative; isolation:isolate; padding:clamp(10rem,13vw,13rem) var(--rdc-gut) clamp(2.5rem,5vw,5rem); background:var(--rdc-clr-dark); color:var(--rdc-clr-crm); }
-.rdc-pt__top { position:relative; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem 2rem; }
 .rdc-pt__trl ol { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; list-style:none; font-size:var(--rdc-sz-sm); font-weight:600; }
 .rdc-pt__trl li { min-inline-size:0; overflow-wrap:anywhere; }
 .rdc-pt__trl li+li::before { content:'/'; margin-inline-end:.5rem; opacity:.5; }
@@ -11,11 +10,6 @@
 .rdc-pt__copy>p,.rdc-pt__desc { max-inline-size:52ch; color:var(--rdc-clr-crm); opacity:.75; }
 .rdc-pt__acts { display:flex; align-items:center; flex-wrap:wrap; gap:1.5rem; margin-block-start:1.5rem; }
 .rdc-pt__lnk { font-weight:600; text-decoration:underline; text-underline-offset:.4em; }
-.rdc-pt--split { min-block-size:32rem; }
-.rdc-pt--split .rdc-pt__top { padding-block-end:1.25rem; border-block-end:1px solid var(--rdc-clr-ln-inv); }
-.rdc-pt__grid { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); align-items:center; gap:clamp(2rem,7vw,8rem); padding-block-start:2rem; }
-.rdc-pt--split .rdc-pt__ttl { max-inline-size:12ch; }
-.rdc-pt--split .rdc-pt__copy { display:flex; flex-direction:column; align-items:flex-end; padding-block-start:1rem; text-align:end; }
 .rdc-pt__md { position:absolute; inset:0; z-index:-2; overflow:clip; background:var(--rdc-clr-hero); }
 .rdc-pt__inr { position:absolute; inset:0; }
 .rdc-pt__md :is(img,video) { position:absolute; inset:0; inline-size:100%; block-size:100%; object-fit:cover; }
@@ -49,17 +43,13 @@
 .rdc-pt__play[hidden] { display:none; }
 .rdc-pt__play[aria-pressed=false]>.rdc-ico:last-child,.rdc-pt__play[aria-pressed=true]>.rdc-ico:first-child { display:none; }
 @media(max-width:63.9375rem) {
- .rdc-pt__grid { grid-template-columns:1fr; gap:1rem; }
- .rdc-pt--split .rdc-pt__ttl { max-inline-size:18ch; }
  .rdc-pt--cover .rdc-pt__copy { max-inline-size:38rem; }
 }
 @media(max-width:48rem) {
  .rdc-pt .rdc-pt__ttl { font-size:clamp(2rem,6.5vw,var(--rdc-pt-sz)); }
  .rdc-pt { padding-block:9rem 2.5rem; }
- .rdc-pt--split { min-block-size:0; }
  .rdc-pt--cover { min-block-size:max(38rem,100svh); padding-block:8rem 3rem; }
  .rdc-pt--inset { min-block-size:0; }
- .rdc-pt__top { align-items:start; }
  .rdc-pt__cnt { padding-block:1.5rem; }
  .rdc-pt__lead { align-items:flex-start; }
 }
