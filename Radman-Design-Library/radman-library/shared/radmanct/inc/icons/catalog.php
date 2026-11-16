@@ -1,6 +1,10 @@
 <?php
 defined('ABSPATH')||exit;
 return array(
+ 'chevron-left'=>'<path d="m15 6-6 6 6 6"/>','chevron-right'=>'<path d="m9 6 6 6-6 6"/>',
+ 'shield'=>'<path d="m12 3 8 3v5c0 5-4 8-8 10-4-2-8-5-8-10V6l8-3Z"/>',
+ 'coffee'=>'<path d="M4 8h12v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V8Zm12 1h2a3 3 0 0 1 0 6h-2M7 2v3m4-3v3M2 22h18"/>',
+ 'heart'=>'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',
  'plus'=>'<path d="M12 5v14M5 12h14"/>',
  'chat'=>'<path d="M4 4h16v12H9l-5 4V4Z"/><path d="M8 8h8M8 12h5"/>',
  'arrow-right'=>'<path d="M5 12h14m-6-6 6 6-6 6"/>','arrow-up-right'=>'<path d="M6 18 18 6M6 6h12v12"/>',

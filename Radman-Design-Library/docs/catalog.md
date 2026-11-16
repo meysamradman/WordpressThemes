@@ -63,3 +63,5 @@ media-mosaic: independent gallery/section module, alternating text/media grid wi
 | [جزئیات ویدئو](http://127.0.0.1:8097/design/video-single/) | video / page | پخش محلی، دانلود فایل واقعی هر کیفیت و متن بومی |
 
 مدل محتوا و رفتار رسانه از Corporate-Music انتخاب شده؛ ظاهر و رنگ‌ها متعلق به نمونه‌های وبلاگ کتابخانه‌اند. موسیقی موجود تغییر نکرده است. ثبت idempotent با tools/register-collections.php انجام می‌شود؛ منشأ رسانه در fixtures/collections/PROVENANCE.md است. قالب مشتری، لوگو، تصویر هنرمند و دیتابیس آن منتقل نشده‌اند.
+
+- `depth-carousel`: کاروسل سه‌بعدی کارت‌ها، در `carousel / carousel-depth`، با قاب طلایی، کارت فعال مرکزی، drag، فلش و نقطه؛ مستقل از کاروسل خطی و هیرو. مالک و قرارداد انتقال در [carousel.md](carousel.md).

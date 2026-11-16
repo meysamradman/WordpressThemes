@@ -301,6 +301,24 @@
     "src": "modules/data-table/style.css",
     "isEntry": true
   },
+  "modules/depth-carousel/script.js": {
+    "file": "js/sample-97-BJsJ_PNf.min.js",
+    "name": "sample-97",
+    "src": "modules/depth-carousel/script.js",
+    "isEntry": true,
+    "imports": [
+      "_lifecycle-CEUUFq-m.min.js"
+    ]
+  },
+  "modules/depth-carousel/style.css": {
+    "file": "css/css-depth-carousel-CO9EaJ6V.min.css",
+    "name": "css-depth-carousel",
+    "names": [
+      "css-depth-carousel.css"
+    ],
+    "src": "modules/depth-carousel/style.css",
+    "isEntry": true
+  },
   "modules/footer-radman/script.js": {
     "file": "js/sample-30-CJlfLd6u.min.js",
     "name": "sample-30",

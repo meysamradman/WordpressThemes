@@ -789,5 +789,24 @@
     "scroll_gap": false,
     "icon": "play",
     "surface": "light"
+  },
+  "depth-carousel": {
+    "slug": "depth-carousel",
+    "title": "کاروسل سه‌بعدی کارت‌ها با قاب طلایی · Radman",
+    "group": "carousel",
+    "subgroup": "carousel-depth",
+    "kind": "section",
+    "source": "user-reference/gold-depth-cards",
+    "reference": "User supplied carousel screenshot, November 16 2026",
+    "motion": "کارت مرکزی برجسته و کارت‌های کناری صاف با اختلاف مقیاس و عمق؛ درگ، لمس، پیمایش تک‌کارت، فلش، نقطه، کیبورد و کاهش حرکت؛ بدون پخش خودکار",
+    "effects": [
+      "css-3d",
+      "drag",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "surface": "dark",
+    "icon": "layers"
   }
 }
