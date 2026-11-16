@@ -1,7 +1,7 @@
 @import '../../src/css/ui/carousel.css';
 .rdl-venture { background:#dadada; color:#151515; padding-block:2rem; overflow:hidden; }
-.rdl-venture .rdl-cr { --rdl-cr-w:clamp(20rem,26vw,28rem); --rdl-cr-gap:1.25rem; }
-.rdl-venture .rdl-cr__trk { align-items:center; padding-inline-end:max(var(--rdl-cr-inset),calc(100cqi - var(--rdl-cr-w) - var(--rdl-cr-inset))); }
+.rdl-venture .rdl-cr { --rdl-cr-w:clamp(20rem,26vw,28rem); --rdl-cr-gap:1.25rem; --rdl-cr-inset:max(1rem,calc((100cqi - var(--rdl-cr-w))/2)); }
+.rdl-venture .rdl-cr__trk { align-items:center; padding-inline-end:var(--rdl-cr-inset); }
 .rdl-venture .rdl-cr__itm { block-size:clamp(30rem,32.36vw,37rem); display:grid; place-items:center; }
 .rdl-venture .rdl-cr__win { padding-block:.5rem; }
 .rdl-venture__card { position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; inline-size:85%; block-size:24rem; padding:2.5rem 1.5rem; border-radius:0; background:transparent; color:#828282; overflow:hidden; }
