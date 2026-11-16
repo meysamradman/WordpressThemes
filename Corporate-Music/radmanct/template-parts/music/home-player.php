@@ -6,7 +6,7 @@
  </div>
  <?php get_template_part('template-parts/music/player',null,['compact'=>true,'dock'=>true]); ?>
  <div class="rdc-home-player__actions">
-  <button class="rdc-home-player__toggle" type="button" data-rdc-home-player-toggle aria-expanded="true" aria-label="جمع‌کردن پخش‌کننده؛ آهنگ ادامه پیدا می‌کند"><?php echo \RadmanCT\icon('chevron-down'); ?><span>جمع‌کردن</span></button>
+  <button class="rdc-home-player__toggle" type="button" data-rdc-home-player-toggle aria-expanded="true" aria-label="کوچک‌کردن پلیر"><span data-rdc-home-fold-icon><?php echo \RadmanCT\icon('panel-bottom-close'); ?></span><span data-rdc-home-open-icon hidden><?php echo \RadmanCT\icon('chevron-down'); ?></span></button>
   <button class="rdc-home-player__close" type="button" data-rdc-home-player-close aria-label="بستن پخش‌کننده و توقف آهنگ"><?php echo \RadmanCT\icon('x'); ?></button>
  </div>
 </div>

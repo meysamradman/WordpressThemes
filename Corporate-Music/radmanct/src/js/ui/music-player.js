@@ -14,8 +14,9 @@ export function initializeMusicPlayer(root){
  const fold=collapsed=>{
   panel.dataset.rdcHomeFold=String(collapsed);
   toggle.setAttribute('aria-expanded',String(!collapsed));
-  toggle.setAttribute('aria-label',collapsed?'بازکردن پخش‌کننده':'جمع‌کردن پخش‌کننده؛ آهنگ ادامه پیدا می‌کند');
-  toggle.querySelector('span').textContent=collapsed?'بازکردن':'جمع‌کردن';
+  toggle.setAttribute('aria-label',collapsed?'بازکردن پلیر':'کوچک‌کردن پلیر');
+  toggle.querySelector('[data-rdc-home-fold-icon]').hidden=collapsed;
+  toggle.querySelector('[data-rdc-home-open-icon]').hidden=!collapsed;
  };
  const toggleFold=()=>fold(panel.dataset.rdcHomeFold!=='true');
  const duration=panel.querySelector('[data-rdc-player-duration]'),previous=panel.querySelector('[data-rdc-home-prev]'),next=panel.querySelector('[data-rdc-home-next]');

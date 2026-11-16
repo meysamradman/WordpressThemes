@@ -51,4 +51,8 @@ Homepage online playback owns one native audio element in template-parts/music/h
 
 Media loading contract for audio/video, gallery, archives and detail pages: [docs/media.md](media.md). Read it before changing a media consumer.
 
-The home dock has one labeled collapse/expand button in home-player.php, owned by music-player.js and home-player.css. Folding retains the same audio and transport, hides timeline/volume, and keeps the cover/title, play and expand action. It never reloads or pauses audio; closing still stops/releases it and resets the expanded layout. No detail-page folding or parallel mini-player.
+The home dock has one icon-only, accessibly labeled collapse/expand button in home-player.php, owned by music-player.js and home-player.css. Folding retains the same audio and transport, hides timeline/volume, and keeps the cover/title, play and expand action. It never reloads or pauses audio; closing still stops/releases it and resets the expanded layout. No detail-page folding or parallel mini-player.
+
+Dock fold/open glyphs use the shared local icon catalog and 1.5 stroke. Keep the expanded toggle 20px glyph inside a 40px hit area; the compact capsule uses the existing upward chevron, with no permanent text or large border. Pointer hints reuse the existing cursor label; keyboard focus shows an anchored label. Preserve aria-expanded and the native button.
+
+Folded home dock follows the compact capsule: maximum 17rem width, round cover at right, title and artist, play/pause, upward expand chevron and close. Previous/next, waveform and volume are expanded-only on every viewport. Keep one audio instance and do not pause/reload it when folding.
