@@ -2891,5 +2891,60 @@
       "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "venture-carousel": {
+    "kind": "section",
+    "family": "carousel",
+    "effects": [
+      "native",
+      "drag",
+      "smooth"
+    ],
+    "entries": [
+      "modules/venture-carousel/card.php",
+      "modules/venture-carousel/data.php",
+      "modules/venture-carousel/script.js",
+      "modules/venture-carousel/style.css",
+      "modules/venture-carousel/view.php"
+    ],
+    "source_files": [
+      "inc/ui/carousel.php",
+      "modules/venture-carousel/card.php",
+      "modules/venture-carousel/data.php",
+      "modules/venture-carousel/script.js",
+      "modules/venture-carousel/style.css",
+      "modules/venture-carousel/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "src/css/client-base.css",
+      "src/css/ui/carousel.css",
+      "src/js/ui/carousel.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "src/css/canvas-base.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
   }
 }

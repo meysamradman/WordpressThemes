@@ -808,5 +808,24 @@
     "scroll_gap": false,
     "surface": "dark",
     "icon": "layers"
+  },
+  "venture-carousel": {
+    "slug": "venture-carousel",
+    "title": "کاروسل نشان‌ها با کارت بازشونده · Radman",
+    "group": "carousel",
+    "subgroup": "carousel-cards",
+    "kind": "section",
+    "source": "reference/worldquantfoundry-portfolio",
+    "reference": "https://www.worldquantfoundry.com/",
+    "motion": "کاروسل نشان‌های مینیمال؛ کارت فعال بلند و باز، رنگ اختصاصی هنگام اشاره/فوکوس، درگ و لمس، فلش تک‌کارت و کیبورد؛ بدون پخش خودکار",
+    "effects": [
+      "native",
+      "drag",
+      "smooth"
+    ],
+    "image": "none",
+    "scroll_gap": false,
+    "surface": "light",
+    "icon": "layers"
   }
 }

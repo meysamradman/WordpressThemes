@@ -65,3 +65,5 @@ media-mosaic: independent gallery/section module, alternating text/media grid wi
 مدل محتوا و رفتار رسانه از Corporate-Music انتخاب شده؛ ظاهر و رنگ‌ها متعلق به نمونه‌های وبلاگ کتابخانه‌اند. موسیقی موجود تغییر نکرده است. ثبت idempotent با tools/register-collections.php انجام می‌شود؛ منشأ رسانه در fixtures/collections/PROVENANCE.md است. قالب مشتری، لوگو، تصویر هنرمند و دیتابیس آن منتقل نشده‌اند.
 
 - `depth-carousel`: کاروسل سه‌بعدی کارت‌ها، در `carousel / carousel-depth`، با قاب طلایی، کارت فعال مرکزی، drag، فلش و نقطه؛ مستقل از کاروسل خطی و هیرو. مالک و قرارداد انتقال در [carousel.md](carousel.md).
+
+- `venture-carousel`: کاروسل نشان با پنل فعال بازشونده، مرجع WorldQuant Foundry؛ دستهٔ carousel / carousel-cards، با همان موتور پیمایش موجود و داده/ظاهر مستقل.

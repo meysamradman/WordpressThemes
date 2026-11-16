@@ -14,6 +14,13 @@
       "_lifecycle-CEUUFq-m.min.js"
     ]
   },
+  "_carousel-zR1FCRTy.min.js": {
+    "file": "js/carousel-zR1FCRTy.min.js",
+    "name": "carousel",
+    "imports": [
+      "_lifecycle-CEUUFq-m.min.js"
+    ]
+  },
   "_chrome-D7aTyYJj.min.js": {
     "file": "js/chrome-D7aTyYJj.min.js",
     "name": "chrome",
@@ -200,13 +207,14 @@
     "isEntry": true
   },
   "modules/card-carousel/script.js": {
-    "file": "js/sample-74-P86ks6-j.min.js",
+    "file": "js/sample-74-Bh1ikH0l.min.js",
     "name": "sample-74",
     "src": "modules/card-carousel/script.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_scroll-yEMtK_-B.min.js"
+      "_scroll-yEMtK_-B.min.js",
+      "_carousel-zR1FCRTy.min.js"
     ]
   },
   "modules/card-carousel/style.css": {
@@ -994,6 +1002,25 @@
       "css-text-scroll.css"
     ],
     "src": "modules/text-fill/style.css",
+    "isEntry": true
+  },
+  "modules/venture-carousel/script.js": {
+    "file": "js/sample-99-Bwlb_Kyn.min.js",
+    "name": "sample-99",
+    "src": "modules/venture-carousel/script.js",
+    "isEntry": true,
+    "imports": [
+      "_lifecycle-CEUUFq-m.min.js",
+      "_carousel-zR1FCRTy.min.js"
+    ]
+  },
+  "modules/venture-carousel/style.css": {
+    "file": "css/css-venture-carousel-C1QgbiE_.min.css",
+    "name": "css-venture-carousel",
+    "names": [
+      "css-venture-carousel.css"
+    ],
+    "src": "modules/venture-carousel/style.css",
     "isEntry": true
   },
   "modules/video-archive/script.js": {
