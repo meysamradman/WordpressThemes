@@ -17,7 +17,7 @@ function file(int $id):array {
 function item(\WP_Post $post):array {
  $allowed=!post_password_required($post);$meta=$allowed?get_post_meta($post->ID,'_rdc_clip',true):[];
  $id=is_array($meta)&&is_scalar($meta['video']??0)?absint($meta['video']??0):0;$video=$allowed?file($id):[];
- return ['title'=>get_the_title($post),'desc'=>$allowed?get_the_excerpt($post):'ویدئوی محافظت‌شده','aparat'=>$allowed&&is_array($meta)?aparat_id($meta['aparat']??''):'','video'=>$video['id']??0,'image'=>$allowed?(int)get_post_thumbnail_id($post):0,'url'=>get_permalink($post)];
+ return ['id'=>$post->ID,'title'=>get_the_title($post),'desc'=>$allowed?get_the_excerpt($post):'ویدئوی محافظت‌شده','aparat'=>$allowed&&is_array($meta)?aparat_id($meta['aparat']??''):'','video'=>$video['id']??0,'image'=>$allowed?(int)get_post_thumbnail_id($post):0,'url'=>get_permalink($post)];
 }
 function data():array {
  $posts=get_posts(['post_type'=>'clip','post_status'=>'publish','has_password'=>false,'posts_per_page'=>12,'no_found_rows'=>true]);
