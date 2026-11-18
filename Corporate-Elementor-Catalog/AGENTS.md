@@ -13,6 +13,7 @@ Scope: this WordPress project only. Do not import Django/RealEstate rules or dep
 1. Read `radman-doc/product/essentials.md` once. Reuse known context.
 2. If the owner is unknown, `rg` the topic in the single index `radman-doc/README.md`; read the matching owner heading only. Do not read the whole index by default. Do not preload docs, archives or reference themes.
 3. Runtime/feasibility: `.agents/skills/radman-theme-work/SKILL.md`. Documentation: `.agents/skills/radman-documentation/SKILL.md`.
+4. Check [the project profile](radman-doc/product/profile.md) for versions or environment. Use the Elementor route in [the shared standards index](../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md) for shared policy. The existing project index owns component and scenario routing.
 
 ## Ownership and documentation
 

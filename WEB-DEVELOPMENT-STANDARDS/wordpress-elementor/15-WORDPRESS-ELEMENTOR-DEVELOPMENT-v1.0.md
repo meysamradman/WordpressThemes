@@ -16,6 +16,8 @@
 
 ## 3. Assets و Lifecycle ویجت
 
+نسخه، manifest، به‌روزرسانی assets و اندازه‌گیری کش تابع [قرارداد build](../shared/08-BUILD-AND-VERSIONS.md) و [قرارداد کش](../shared/09-PERFORMANCE-AND-CACHE.md) هستند. وابستگی ویجت در front و iframe پیش‌نمایش لازم است. asset مختص پنل ادیتور با hook ادیتور ثبت و مصرف شود.
+
 - دارایی widget را با `wp_register_script()` / `wp_register_style()` ثبت کن، سپس handleهای لازم را از `get_script_depends()` / `get_style_depends()` برگردان. dependencyهای لازم از جمله `elementor-frontend` در صورت نیاز صحیح ثبت شوند؛ فایل‌های widget در صفحات بدون آن نباید بی‌دلیل سراسری enqueue شوند. CSS عمومی فقط موارد واقعاً مشترک؛ editor-only با API/hook مربوط. مثال قرارداد؛ نسخه نصب شده و روش ثبت/مسیر plugin خود پروژه تعیین می‌کند.
 
 ```php

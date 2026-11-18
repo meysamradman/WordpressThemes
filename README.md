@@ -2,10 +2,12 @@
 
 مرجع نگهداری سورس قالب‌ها و مستندات Radman، با همان چیدمان پوشه‌های محلی:
 
+برای شروع از [نسخه‌های مهم پروژه‌ها](WEB-DEVELOPMENT-STANDARDS/00-VERSIONS.md) و [فهرست استانداردها و سناریوها](WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md) استفاده کنید.
+
 | پوشه | کاربرد |
 |---|---|
 | Corporate-Elementor-Catalog | قالب و بسته‌های مستقل نسخهٔ المنتوری/کاتالوگ |
-| Corporate-Music | فضای پروژهٔ موسیقی؛ فعلاً بدون سورس اجرایی |
+| Corporate-Music | قالب PHP سفارشی سایت رسمی علی اسدی |
 | Corporate-Webtalik | قالب PHP سفارشی سایت Webtalik |
 | Hub | سورس و مستندات نگهداری محلی Hub و وابستگی‌های مصرف‌شده |
 | Radman-Design-Library | مرجع مستقل طراحی‌ها و ماژول‌های قابل انتقال |

@@ -25,6 +25,7 @@ my-theme/
 - Theme مالک presentation، قالب، global styles، render helper و asset manifest خود؛ plugin اختصاصی سایت مالک CPT، taxonomy، business rules، داده پایدار، API و migration. امنیت و روش PHP طبق 13؛ هسته و vendor ویرایش مستقیم نشوند. از ساخت framework داخلی غیرضروری یا قالب خالی وابسته به JS پرهیز کن.
 - `functions.php` bootstrap کوچک؛ `after_setup_theme`, `init`, `wp_enqueue_scripts`, `admin_enqueue_scripts`, `rest_api_init` طبق دامنه؛ `language_attributes()`, `body_class()`, `wp_head()`, `wp_body_open()`, `wp_footer()` در محل صحیح. صفحه/آرشیو از query اصلی و Loop مناسب استفاده کند؛ 404 واقعی، pagination و URL استاندارد؛ rewrite flush در هر درخواست ممنوع.
 - عنوان و متادیتا، canonical، sitemap، schema و robots یک مالک داشته باشند؛ تکرار خروجی theme/plugin ممنوع. داده و متن اصلی SSR؛ JS enhancement. routing، لینک‌های مهم و ساختار heading مطابق 01؛ حفظ URLهای موجود مگر مهاجرت تأییدشده.
+- برای پروژه‌ای که CPT یا دادهٔ موجود در قالب دارد، مالکیت و API ذخیره‌شده مطابق Profile حفظ شوند. انتقال داده یا CPT به plugin مستقل کار مهاجرت جداگانه است. noindex محلی، حریم محتوای رمزدار و خروجی Yoast یا افزونهٔ SEO فعال طبق قرارداد پروژه حفظ شوند. Analytics با شناسهٔ واقعی و یک integration، جدا از Search Console بررسی شود.
 
 ## 2. کامپوننت‌ها و Design System
 
@@ -39,6 +40,7 @@ my-theme/
 - Vanilla JS 04 مالک DOM behavior و data، GSAP 05 صرفاً motion؛ Loading 06 مرجع curtain/entrance/scroll/AJAX/media. فقط یک entry orchestration و یک نسخه هر کتابخانه؛ mount/dispose در تغییر root. `matchMedia` برای اجرا و dynamic import برای جلوگیری از دانلود کد غیرضروری. از global listener روی همه nodeها و ساختن موتور دوم منو/کاروسل/scroll-lock خودداری کن.
 - برای ورود عنوان و متن منتخب مشتری از [پروفایل مشترک ورود](../shared/05-GSAP-ANIMATION-STANDARD-v1.1.md#customer-content-entrance) و یک مالک مشترک استفاده کن. پارالاکس دامنه و محرک مستقل دارد. پیاده‌سازی ساده می‌تواند با CSS و یک IntersectionObserver مشترک انجام شود و به Elementor یا Hub وابسته نیست.
 - رسانه از API بومی WordPress؛ image sizes/srcset/sizes/alt/dimensions، hero priority بر اساس LCP و lazy رسانه پایین صفحه، font policy در 16؛ هیچ ویدئو/فونت/فایل سنگین صرفاً به خاطر وجود در پروژه بارگذاری نشود.
+- [قرارداد نسخه و بسته](../shared/08-BUILD-AND-VERSIONS.md) و [کش و سنجش شبکه](../shared/09-PERFORMANCE-AND-CACHE.md) در هر محیط با Profile و Runbook همان پروژه تطبیق داده شوند. در WordPress دارای script module، importهای static و dynamic همان manifest حفظ شوند.
 
 ## 4. پذیرش Codex
 
@@ -47,7 +49,7 @@ my-theme/
 
 - [ ] Template Hierarchy واقعی، چند نوع صفحه، no-JS، 404، archive/search/pagination، RTL/LTR، mobile و admin تست شده؛ URL/داده حفظ شده.
 - [ ] renderer و token تکراری، asset نامرتبط، duplicate metadata، query اضافی و dependency دو نسخه بررسی و اصلاح شده؛ بدون حذف قابلیت لازم.
-- [ ] PHP 8.4/8.5، lint/build و test محیط واقعی (با نسخه stack ثبت‌شده)، security و performance baseline؛ موارد اجرا نشده Not run. Lighthouse و build اثبات کافی برای همه رفتارها نیستند.
+- [ ] نسخهٔ هدف و محیط متناسب با تغییر مطابق Profile بررسی شده‌اند. سازگاری نسخهٔ جدید با تست هدف تأیید می‌شود. نوع تست و محدودهٔ نتیجه طبق [سند بررسی](../shared/12-VERIFICATION.md) گزارش شود.
 - [ ] قبل از انتشار، backup و rollback در Runbook همان پروژه؛ هیچ تنظیم سرور یا نصب کتابخانه خودکار بدون تأیید.
 
 ## منابع رسمی

@@ -19,4 +19,4 @@ Independent customer edition of Radman CT in the parent WordpressThemes reposito
 
 ## Customer frontend standard
 
-Read `docs/frontend-standard.md` for HTML/SEO, one responsive DOM, accessibility, media/GSAP loading and the pending incremental review queue. Its full v1.2 source is preserved under `docs/reference/`. Apply this to new/touched customer code; registration is not proof of page compliance and does not authorize wholesale removal of approved motion/preloaders or changes to local noindex/Yoast ownership. The design library is excluded.
+Use [the project frontend profile](docs/frontend-standard.md), [the affected scenario](docs/scenarios.md) and the matching section in [the shared standards index](../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md). Preserve approved motion, local noindex and Yoast ownership. Check only the affected scope.

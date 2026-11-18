@@ -36,6 +36,6 @@ Runtime workflow: `.agents/skills/webtalik-work/SKILL.md`. Read `docs/architectu
 
 ## Customer frontend standard
 
-Read `docs/frontend-standard.md` for HTML/SEO, one responsive DOM, accessibility, media/GSAP loading and the pending incremental review queue. Its full v1.2 source is preserved under `docs/reference/`. Apply this to new/touched customer code; registration is not proof of page compliance and does not authorize wholesale removal of approved motion/preloaders or changes to local noindex/Yoast ownership. The design library is excluded.
+Use [the project frontend profile](docs/frontend-standard.md) and the matching section in [the shared standards index](../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md). [Project scenarios](docs/scenarios.md) identify affected behavior and acceptance. Preserve approved motion, local noindex and Yoast ownership. Check only the affected scope.
 
 - Pages without a hero use the shared compact title (`inc/compact-title.php`, documented in docs/shared-ui.md) through the shared layout/page-title dispatcher before the content container. Keep one H1 in Hafez at modest size, use the original home 3D W attachment and only two points following its existing lines. Split and alternative Page Title variants are removed; do not recreate them. Existing cover heroes and plain post/project detail headings remain separate; do not add a second title or duplicate the orbit engine.

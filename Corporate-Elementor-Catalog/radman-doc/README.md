@@ -2,6 +2,8 @@
 
 شروع: [AGENTS.md](../AGENTS.md) و یک‌بار [خلاصهٔ محصول](product/essentials.md). این فهرست فقط مسیر‌یاب است؛ سندها را کامل و پشت‌سرهم نخوانید. با `rg` عنوان مرتبط را پیدا کنید و همان بخش را بخوانید.
 
+نسخه‌ها و محیط در [پروفایل پروژه](product/profile.md) ثبت می‌شوند. قواعد عمومی نسخه، CSS/JS، کش و QA در [مرجع مشترک](../../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md) قرار دارند.
+
 | محل | محتوای مجاز |
 |---|---|
 | `scenarios/` | رفتار و دامنهٔ مورد انتظار محصول |
@@ -27,12 +29,13 @@
 | Initial builder schema, storage, rendering and limits | [builder.md](engineering/builder.md) |
 | Mobile sidebar, device-specific menus and navigation lifecycle | [navigation.md](engineering/navigation.md) |
 | Optional Elementor integration, supplied versions and runtime evidence | [elementor.md](engineering/elementor.md) |
+| Widget asset selection and acceptance in frontend, preview and editor panel | [Widget assets scenario](scenarios/widget-assets.md) |
 | Reusable blocks, builder navigation and WPML editing | [reusable-blocks.md](scenarios/reusable-blocks.md) |
 | Optional scroll motion and smooth scrolling | [motion.md](scenarios/motion.md) |
 | Shared PHP/Elementor components and RTL text effects | [components.md](scenarios/components.md) |
 | Shared PHP/Elementor component renderers and asset lifecycle | [components.md](engineering/components.md) |
 | پیش‌نمایش ویدئویی اختیاری کارت‌های وبلاگ/محصول/نمونه‌کار، حالت هاور/دید و Shortcode المنتور | [موتور مشترک](engineering/components.md#پیش‌نمایش-ویدئویی-کارت) |
-| کنترل‌های فرانت: Input/Select/ComboBox، درخت دسته و ویجت‌های Taxonomy/Search در PHP/Classic/Atomic | [کامپوننت‌ها](engineering/components.md#کنترلها-و-داده-مشترک) |
+| کنترل‌های فرانت: Input/Select/ComboBox، درخت دسته و ویجت‌های Taxonomy/Search در PHP/Classic/Atomic | [کامپوننت‌ها](engineering/components.md#کنترل‌ها-و-داده-مشترک) |
 | Text effects, native controls, rotating words and Hub parity gaps | [text.md](engineering/text.md) |
 | Shared animated hover border on widgets, containers and PHP wrappers | [component-effects.md](engineering/component-effects.md) |
 | Shared carousel, arbitrary template content, item height and RTL controls | [carousel.md](engineering/carousel.md) |
