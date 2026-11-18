@@ -119,7 +119,7 @@
     "isEntry": true
   },
   "src/css/pages/gallery.css": {
-    "file": "css/gallery-DVEX-6Xh.min.css",
+    "file": "css/gallery-D8oKdWDj.min.css",
     "name": "css-gallery",
     "names": [
       "css-gallery.css"
@@ -155,7 +155,7 @@
     "isEntry": true
   },
   "src/css/pages/music.css": {
-    "file": "css/music-D1hxYCdn.min.css",
+    "file": "css/music-CE0I7rwR.min.css",
     "name": "css-music",
     "names": [
       "css-music.css"
@@ -182,7 +182,7 @@
     "isEntry": true
   },
   "src/css/pages/video-detail.css": {
-    "file": "css/video-detail-DAe008S8.min.css",
+    "file": "css/video-detail--WyJ23vs.min.css",
     "name": "css-video-detail",
     "names": [
       "css-video-detail.css"
@@ -191,7 +191,7 @@
     "isEntry": true
   },
   "src/css/pages/videos.css": {
-    "file": "css/videos-z1iheKfn.min.css",
+    "file": "css/videos-ssst-Y90.min.css",
     "name": "css-videos",
     "names": [
       "css-videos.css"
@@ -200,7 +200,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-BRbKb3Vt.min.css",
+    "file": "css/site-0E2HY9Ih.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -245,7 +245,7 @@
     ]
   },
   "src/js/pages/archive.js": {
-    "file": "js/archive-2yY_7rXk.min.js",
+    "file": "js/archive-CDCA4fQj.min.js",
     "name": "archive",
     "src": "src/js/pages/archive.js",
     "isEntry": true,
@@ -343,14 +343,8 @@
       "_video-player-hExkDzl-.min.js"
     ]
   },
-  "src/js/preloader.js": {
-    "file": "js/preloader-WlSXfF37.min.js",
-    "name": "preloader",
-    "src": "src/js/preloader.js",
-    "isEntry": true
-  },
   "src/js/site.js": {
-    "file": "js/site-D1xlntQ8.min.js",
+    "file": "js/site-UOBcBZzh.min.js",
     "name": "site",
     "src": "src/js/site.js",
     "isEntry": true,

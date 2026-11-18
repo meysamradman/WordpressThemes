@@ -4,7 +4,7 @@ export function initializeBrandMotion(doc=document){
  let observer,alive=true;
  const stop=()=>{observer?.disconnect();observer=undefined;visible.clear();for(const logo of logos)logo.removeAttribute('data-rdc-logo-act');};
  const start=()=>{
-  if(!alive||preference.matches||observer||doc.getElementById('rdc-pre')||!view.IntersectionObserver||!logos.length)return;
+  if(!alive||preference.matches||observer||!view.IntersectionObserver||!logos.length)return;
   observer=new view.IntersectionObserver(entries=>{
    for(const entry of entries){
     const shown=entry.isIntersecting&&entry.intersectionRatio>=.65;
@@ -16,11 +16,10 @@ export function initializeBrandMotion(doc=document){
  };
  const replay=()=>{
   start();
-  if(!alive||preference.matches||doc.getElementById('rdc-pre'))return;
+  if(!alive||preference.matches)return;
   for(const logo of visible)for(const animation of logo.getAnimations?.({subtree:true})||[]){animation.currentTime=0;animation.play();}
  };
  const changed=()=>{stop();start();};
- doc.addEventListener('rdc:pre-done',start,{once:true});
  view.addEventListener('pageshow',replay);preference.addEventListener('change',changed);start();
- return()=>{alive=false;stop();view.removeEventListener('pageshow',replay);doc.removeEventListener('rdc:pre-done',start);preference.removeEventListener('change',changed);};
+ return()=>{alive=false;stop();view.removeEventListener('pageshow',replay);preference.removeEventListener('change',changed);};
 }

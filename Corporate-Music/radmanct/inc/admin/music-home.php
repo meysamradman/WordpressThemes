@@ -17,7 +17,7 @@ add_action('add_meta_boxes_page',static function(\WP_Post $post):void {
    'update_post_meta_cache'=>false,'update_post_term_cache'=>false,'no_found_rows'=>true,
   ]);
   ?>
-  <p>حداکثر چهار آهنگ انتخاب کنید. جایگاه ۱ اولین اسلاید است. اگر همهٔ جایگاه‌ها خالی باشند، انتخاب پیش‌فرض نمایش داده می‌شود.</p>
+  <p>حداکثر چهار آهنگ انتخاب کنید. جایگاه ۱ اولین اسلاید است. اگر همهٔ جایگاه‌ها خالی باشند، تا سه آهنگِ آخر بر اساس تاریخ انتشار نمایش داده می‌شوند.</p>
   <?php for($index=0;$index<FEATURED_LIMIT;$index++):$field='rdc-home-featured-'.$index; ?>
    <p>
     <label for="<?php echo esc_attr($field); ?>">جایگاه <?php echo esc_html(number_format_i18n($index+1)); ?></label>

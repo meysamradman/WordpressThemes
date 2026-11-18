@@ -7,7 +7,7 @@ const settle=()=>new Promise(resolve=>setImmediate(resolve));
 function fixture(){
  const handlers={},windowHandlers={},requests=[],pushes=[],location={href:'http://site.test/music/',origin:'http://site.test'};
  const link={href:'http://site.test/music/page/2/',dataset:{},target:'',hasAttribute:()=>false,matches:()=>true};
- const view={childNodes:[],replaceChildren(...nodes){this.childNodes=nodes;},setAttribute(){},focus(){this.focused=true;},getBoundingClientRect:()=>({top:30})};
+ const view={childNodes:[],replaceChildren(...nodes){this.childNodes=nodes;},setAttribute(){},removeAttribute(){},focus(){this.focused=true;},getBoundingClientRect:()=>({top:30})};
  const status={textContent:''};
  const root={dataset:{},classList:{add(){},remove(){}},setAttribute(){},removeAttribute(){},querySelector:s=>s==='[data-rdc-res]'?view:s==='.rdc-arc-sts'?status:null,querySelectorAll:s=>s.includes('.pagination a')?[link]:[],addEventListener:(key,callback)=>{handlers[key]=callback;},dispatchEvent(){}};
  const incoming={childNodes:['page-two-results']};

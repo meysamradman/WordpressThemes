@@ -1,0 +1,15 @@
+html[data-rdc-page-load]::before{
+ content:'';position:fixed;z-index:9999;inset:0 0 auto;block-size:3px;
+ pointer-events:none;background:var(--rdc-acc);transform:scaleX(.8);transform-origin:left;
+}
+html[dir=rtl][data-rdc-page-load]::before{transform-origin:right}
+html[data-rdc-page-load] .rdc-scr-prog{visibility:hidden}
+html:not([data-rdc-page-load]) [data-rdc-arc].is-load [data-rdc-res]{opacity:.72}
+@media (prefers-reduced-motion:no-preference){
+ html[data-rdc-page-load]::before{animation:rdc-page-load .7s ease-out both}
+ [data-rdc-arc] [data-rdc-res]{transition:opacity .15s ease}
+}
+@keyframes rdc-page-load{
+ from{transform:scaleX(.12)}
+ to{transform:scaleX(.8)}
+}

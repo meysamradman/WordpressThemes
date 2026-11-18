@@ -26,6 +26,6 @@ function featured():array {
   $tracks=get_posts($query+['post__in'=>$ids,'posts_per_page'=>FEATURED_LIMIT,'orderby'=>'post__in']);
   if($tracks)return $tracks;
  }
- return get_posts($query+['posts_per_page'=>3,'orderby'=>'ID','order'=>'ASC']);
+ return get_posts($query+['posts_per_page'=>3,'orderby'=>['date'=>'DESC','ID'=>'DESC']]);
 }
 function image(int $id,string $size='medium_large',array $attributes=array()):string {return \RadmanCT\PageTitle\attachment_allowed($id)?wp_get_attachment_image($id,$size,false,$attributes):'';}
