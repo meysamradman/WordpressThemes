@@ -29,7 +29,7 @@ function setup(useNavigation=false,reducedMotion=false){
  };
  return {click,navigate,view,tick,release,storage,visible:()=>attrs.has('data-rdc-page-load')};
 }
-test('native link fallback shows feedback as soon as an internal navigation starts',()=>{
+test('native link fallback records the arrival ticket without an exit overlay',()=>{
  const fixture=setup();
  for(const [href,options] of [
   ['https://site.test/videos/',{handled:true}],
@@ -41,14 +41,15 @@ test('native link fallback shows feedback as soon as an internal navigation star
   fixture.click(href,options);fixture.tick();assert.equal(fixture.visible(),false);
  }
  fixture.click('https://site.test/videos/');
- assert.equal(fixture.visible(),true);
+ assert.equal(fixture.visible(),false);
+ assert.equal(JSON.parse(fixture.storage.get('rdc:page-curtain')).destination,'/videos/');
  fixture.view.dispatchEvent(new Event('pagehide'));
  assert.equal(fixture.visible(),false);
  assert.equal(fixture.storage.has('rdc:page-curtain'),true);
  fixture.view.dispatchEvent(new Event('pageshow'));
  fixture.click('https://site.test/gallery/');
- assert.equal(fixture.visible(),true);
- fixture.tick();assert.equal(fixture.visible(),false);
+ assert.equal(JSON.parse(fixture.storage.get('rdc:page-curtain')).destination,'/gallery/');
+ fixture.tick();assert.equal(fixture.storage.size,0);
  fixture.release();
 });
 
@@ -59,7 +60,7 @@ test('browser navigation ignores same-document updates and clears cancelled docu
  fixture.navigate({downloadRequest:'file.mp3'});
  assert.equal(fixture.visible(),false);
  fixture.navigate({signal:controller.signal});
- assert.equal(fixture.visible(),true);
+ assert.equal(fixture.storage.has('rdc:page-curtain'),true);
  controller.abort();
  assert.equal(fixture.visible(),false);
  assert.equal(fixture.storage.has('rdc:page-curtain'),false);

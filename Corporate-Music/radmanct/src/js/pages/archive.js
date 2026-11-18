@@ -47,7 +47,7 @@ if(root&&view){
    view.replaceChildren(...incoming.childNodes);const heading=doc.querySelector('.rdc-pg-ttl');const oldHeading=document.querySelector('.rdc-pg-ttl');if(heading&&oldHeading)oldHeading.replaceWith(heading);
    for(const link of root.querySelectorAll('[data-rdc-categories] a,.rdc-cat-tree a')){const active=[...doc.querySelectorAll('[data-rdc-categories] a[aria-current],.rdc-cat-tree a[aria-current]')].some(item=>item.href===link.href);active?link.setAttribute('aria-current','page'):link.removeAttribute('aria-current');}document.title=doc.title;
    for(const node of document.head.querySelectorAll(metadata))node.remove();
-   document.head.append(...doc.querySelectorAll(metadata));
+   document.head.append(...doc.head.querySelectorAll(metadata));
    const newTitle=doc.querySelector('[data-rdc-arc] h1'),oldTitle=root.querySelector('h1');if(newTitle&&oldTitle)oldTitle.replaceWith(newTitle);
    if(final.href!==location.href){
     if(push)history.pushState({...history.state,rdcArchive:true},'',final.href);

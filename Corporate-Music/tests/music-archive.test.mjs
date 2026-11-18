@@ -11,8 +11,9 @@ function fixture(){
  const status={textContent:''};
  const root={dataset:{},classList:{add:key=>classes.add(key),remove:key=>classes.delete(key)},setAttribute(){},removeAttribute(){},querySelector:s=>s==='[data-rdc-res]'?view:s==='.rdc-arc-sts'?status:null,querySelectorAll:s=>s.includes('.pagination a')?[link]:[],addEventListener:(key,callback)=>{handlers[key]=callback;},dispatchEvent(){}};
  const incoming={childNodes:['page-two-results']};
- const document={title:'First page',head:{querySelector:()=>null,append(){}},querySelector:s=>s==='[data-rdc-arc]'?root:null,querySelectorAll:()=>[],dispatchEvent(){}};
- const context={document,window:{addEventListener:(key,callback)=>{windowHandlers[key]=callback;}},location,URL,AbortController,setTimeout,clearTimeout,CustomEvent:class{},history:{state:{keep:true},pushState(state,unused,url){pushes.push({state,url});location.href=url;}},DOMParser:class{parseFromString(){return {title:'Second page',querySelector:s=>s.includes('[data-rdc-res]')?incoming:null,querySelectorAll:()=>[]};}},fetch:async url=>{requests.push(url);return {ok:true,text:async()=>'<server-results>'};}};
+ let metadata=[];
+ const document={title:'First page',head:{querySelectorAll:()=>metadata,append(...nodes){metadata=nodes;}},querySelector:s=>s==='[data-rdc-arc]'?root:null,querySelectorAll:()=>[],dispatchEvent(){}};
+ const context={document,window:{addEventListener:(key,callback)=>{windowHandlers[key]=callback;}},location,URL,AbortController,setTimeout,clearTimeout,CustomEvent:class{},history:{state:{keep:true},pushState(state,unused,url){pushes.push({state,url});location.href=url;}},DOMParser:class{parseFromString(){return {title:'Second page',head:{querySelectorAll:()=>[]},querySelector:s=>s.includes('[data-rdc-res]')?incoming:null,querySelectorAll:()=>[]};}},fetch:async url=>{requests.push(url);return {ok:true,text:async()=>'<server-results>'};}};
  vm.runInNewContext(source,context);
  const click=(options={})=>{let prevented=false;handlers.click({target:{closest:()=>link},button:0,preventDefault(){prevented=true;},...options});return prevented;};
  return {context,link,view,document,requests,pushes,windowHandlers,location,click,classes,viewAttrs,status};
@@ -27,6 +28,13 @@ test('modified clicks keep native navigation; failed fetch makes the real link u
  const f=fixture();assert.equal(f.click({ctrlKey:true}),false);assert.equal(f.requests.length,0);
  f.context.fetch=async()=>{throw new Error('offline');};assert.equal(f.click(),true);await settle();
  assert.equal(f.link.dataset.fallback,'true');assert.equal(f.click(),false);
+});
+
+test('pagination commits the final redirected URL',async()=>{
+ const f=fixture(),url='http://site.test/music/?paged=2';
+ f.context.fetch=async()=>({ok:true,url,text:async()=>'<server-results>'});
+ assert.equal(f.click(),true);await settle();
+ assert.equal(f.location.href,url);
 });
 
 test('a slow request marks only the result region busy and clears the delayed indicator on pagehide',async()=>{
