@@ -3,8 +3,7 @@ namespace RadmanCT\Media;
 defined('ABSPATH')||exit;
 function frame(int $post_id,string $image):array {
  $out=array('html'=>$image,'control'=>'');if(post_password_required($post_id))return array('html'=>'','control'=>'');
- $id=(int)get_post_meta($post_id,'_webtalik_card_video',true);if(!$id||!wp_attachment_is('video',$id))return $out;
- $attachment=get_post($id);$parent=$attachment?get_post($attachment->post_parent):null;if(get_post_status($id)==='private'||($parent&&(!in_array($parent->post_status,array('publish','inherit'),true)||post_password_required($parent))))return $out;
+ $id=(int)get_post_meta($post_id,'_webtalik_card_video',true);if(!\RadmanCT\PageTitle\attachment_allowed($id)||!wp_attachment_is('video',$id))return $out;
  $url=wp_get_attachment_url($id);$uploads=wp_upload_dir(null,false);$mime=get_post_mime_type($id);
  if(!$url||!str_starts_with($url,trailingslashit($uploads['baseurl']))||!in_array($mime,array('video/mp4','video/webm','video/ogg'),true))return $out;
  $image=$image?:'<span class="rdc-card-pre-pst" aria-hidden="true"></span>';

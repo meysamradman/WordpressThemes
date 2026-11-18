@@ -2,7 +2,7 @@ import {build} from 'vite';
 import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
 const root=fileURLToPath(new URL('../',import.meta.url));
-const entries=['css/site','css/layout/page-title','css/admin/gallery','css/pages/home','css/pages/services','css/pages/blog','css/pages/blog/archive','css/pages/blog/single','js/site','js/ui/gallery','js/admin/media-editor','js/pages/home','js/pages/services','js/pages/archive','js/pages/page-title','js/gsap-vendor','js/animation-vendor'];
+const entries=['css/site','css/layout/page-title','css/admin/gallery','css/pages/services','css/pages/blog','css/pages/blog/archive','css/pages/blog/single','js/site','js/ui/gallery','js/admin/media-editor','js/pages/services','js/pages/archive','js/pages/page-title','js/gsap-vendor','js/animation-vendor'];
 entries.push('css/pages/service','js/pages/service','css/pages/music','css/pages/music-detail','css/pages/music-home','css/pages/artist','css/pages/biography','css/pages/gallery','css/pages/videos','css/pages/video-detail','js/pages/music-home','js/pages/music','js/pages/videos','js/admin/music-editor','js/admin/biography-editor');
 entries.push('css/ui/text-entrance','js/ui/text-entrance');
 const input=Object.fromEntries(entries.map(name=>[name.startsWith('css/')?'css-'+name.slice(4).replace(/^pages\//,'').replaceAll('/','-'):name.split('/').at(-1),resolve(root,`radmanct/src/${name}.${name.startsWith('css/')?'css':'js'}`)]));
