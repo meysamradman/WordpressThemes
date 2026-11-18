@@ -24,7 +24,7 @@ function playback(int $id,array $audio,array $data):array {
 function card(\WP_Post $post,string $heading='h2',bool $play=false,string $variant='compact'):void {
  $heading=in_array($heading,['h2','h3'],true)?$heading:'h2';$data=meta($post->ID);$allowed=!post_password_required($post);$url=get_permalink($post);
  if($variant==='list'){
-  echo '<article class="rdc-trk-card rdc-trk-card--list"><a class="rdc-trk-card__cover rdc-media-frame" href="'.esc_url($url).'" aria-label="'.esc_attr(get_the_title($post)).'">';
+  echo '<article class="rdc-trk-card rdc-trk-card--list rdc-media-frame-own"><a class="rdc-trk-card__cover rdc-media-frame" href="'.esc_url($url).'" aria-label="'.esc_attr(get_the_title($post)).'">';
   if($allowed)echo get_the_post_thumbnail($post,'medium_large',['loading'=>'lazy','sizes'=>'(max-width:600px) 42vw,(max-width:900px) 38vw,300px','alt'=>get_the_title($post)]);
   echo '</a><div class="rdc-trk-card__body"><'.$heading.'><a href="'.esc_url($url).'">'.esc_html(get_the_title($post)).'</a></'.$heading.'>';
   if($allowed)credits($data);
@@ -32,7 +32,7 @@ function card(\WP_Post $post,string $heading='h2',bool $play=false,string $varia
   return;
  }
 
- echo '<article class="rdc-trk-card"><a class="rdc-trk-card__cover rdc-media-frame" href="'.esc_url($url).'">';
+ echo '<article class="rdc-trk-card rdc-media-frame-own"><a class="rdc-trk-card__cover rdc-media-frame" href="'.esc_url($url).'">';
  if($allowed)echo get_the_post_thumbnail($post,'medium_large',['loading'=>'lazy','sizes'=>'(max-width:600px) 44vw,170px','alt'=>get_the_title($post)]);
  echo '</a><div class="rdc-trk-card__body"><'.$heading.'><a href="'.esc_url($url).'">'.esc_html(get_the_title($post)).'</a></'.$heading.'><div class="rdc-trk-card__meta">';
  if($allowed){$terms=get_the_terms($post,'music_category');echo '<p>'.esc_html($terms&&!is_wp_error($terms)?$terms[0]->name:$data['artist']).'</p>';}
