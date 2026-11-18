@@ -10,7 +10,7 @@ function images(int $id):array {
 function card(\WP_Post $post):void {
  $allowed=!post_password_required($post);$images=$allowed?images($post->ID):[];$cover=$allowed?(int)get_post_thumbnail_id($post):0;
  if(!\RadmanCT\PageTitle\attachment_allowed($cover))$cover=$images[0]??0;
- $preview=count($images)===1&&$cover!==$images[0]?wp_get_attachment_image_url($images[0],'full'):false;
+ $preview=count($images)===1?wp_get_attachment_image_url($images[0],'full'):false;
  $label=($preview?'نمایش عکس ':'مشاهدهٔ آلبوم ').get_the_title($post);
  echo '<article class="rdc-album-card"><a class="rdc-album-card__cover" href="'.esc_url($preview?:get_permalink($post)).'" aria-label="'.esc_attr($label).'"'.($preview?' data-rdc-gal data-rdc-caption="'.esc_attr(get_the_title($post)).'"':'').'>';
  if($cover)echo wp_get_attachment_image($cover,'medium_large',false,['loading'=>'lazy','sizes'=>'(max-width:600px) 90vw,(max-width:900px) 45vw,400px']);else echo '<span class="rdc-album-card__empty">'.\RadmanCT\icon('image').'</span>';

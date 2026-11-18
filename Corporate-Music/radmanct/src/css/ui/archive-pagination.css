@@ -1,0 +1,6 @@
+.navigation.pagination{margin-block-start:3rem}
+.pagination .nav-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.25rem}
+.pagination .page-numbers{display:grid;place-items:center;min-inline-size:2.5rem;min-block-size:2.5rem;padding-inline:.25rem;border-radius:50%;color:var(--rdc-mut);line-height:1}
+.pagination .page-numbers.current,.pagination a.page-numbers:is(:hover,:focus-visible){color:var(--rdc-acc)}
+.pagination :is(.prev,.next){background:var(--rdc-srf);color:var(--rdc-ink)}
+.pagination :is(.prev,.next)>.rdc-ico{display:block;inline-size:1rem;block-size:1rem}

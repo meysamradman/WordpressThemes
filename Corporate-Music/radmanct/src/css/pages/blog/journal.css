@@ -16,10 +16,6 @@
 .rdc-jrn-card__exc { margin-block:1rem 1.25rem; color:var(--rdc-mut); }
 .rdc-jrn-card__exc p { margin:0; }
 .rdc-jrn-card__more { align-self:start; justify-self:start; font-size:.8125rem; }
-.rdc-blog-arc .pagination .nav-links { align-items:center; }
-.rdc-blog-arc .pagination .page-numbers { display:inline-flex; align-items:center; justify-content:center; min-inline-size:2.75rem; min-block-size:2.75rem; padding:.4rem .8rem; border:1px solid var(--rdc-ln); border-radius:calc(var(--rdc-rad) / 2); text-decoration:none; }
-.rdc-blog-arc .pagination :is(.current,a:hover,a:focus-visible) { border-color:var(--rdc-acc); background:var(--rdc-acc); color:var(--rdc-on-acc); }
-.rdc-blog-arc .pagination .dots { border-color:transparent; }
 @media (max-width:47.99rem) {
   .rdc-jrn-card { grid-template-columns:minmax(0,1fr); }
 }
