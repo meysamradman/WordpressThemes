@@ -9,20 +9,21 @@
 <?php
 wp_print_inline_script_tag(<<<'JS'
 (() => {
+ const reload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+ let expires = 0;
  try {
   const key = 'rdc:page-curtain';
-  const expires = Number(sessionStorage.getItem(key));
+  expires = Number(sessionStorage.getItem(key));
   sessionStorage.removeItem(key);
-  if (!(expires > Date.now()) || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-  const root = document.documentElement;
-  root.setAttribute('data-rdc-page-load', 'enter');
-  const finish = () => {
-   if (root.getAttribute('data-rdc-page-load') !== 'enter') return;
-   root.removeAttribute('data-rdc-page-load');
-   document.dispatchEvent(new Event('rdc:curtain-end'));
-  };
-  setTimeout(finish, 350);
  } catch {}
+ if ((!reload && !(expires > Date.now())) || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+ const root = document.documentElement;
+ root.setAttribute('data-rdc-page-load', 'enter');
+ setTimeout(() => {
+  if (root.getAttribute('data-rdc-page-load') !== 'enter') return;
+  root.removeAttribute('data-rdc-page-load');
+  document.dispatchEvent(new Event('rdc:curtain-end'));
+ }, 350);
 })();
 JS, ['id'=>'rdc-curtain-entry','data-nowprocket'=>true]);
 ?>
