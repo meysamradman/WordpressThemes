@@ -22,14 +22,14 @@
 | 02 | [Modern CSS & Minimal DOM](shared/02-CSS-STANDARDS-v1.0.md) | جدید |
 | 03 | [Responsive & RTL](shared/03-RESPONSIVE-DESIGN-STANDARD-v1.0.md) | جدید |
 | 04 | [Vanilla JS](shared/04-VANILLA-JS-DEVELOPMENT-STANDARD-v1.1.md) | موجود؛ scope هماهنگ |
-| 05 | [GSAP](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md) | [پروفایل ورود عنوان و متن مشتری](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md#customer-content-entrance) برای Elementor و قالب سفارشی |
+| 05 | [GSAP](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md) | [انیمیشن ورود عنوان و متن](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md#customer-content-entrance)، جدا از پارالاکس و پرده |
 | 08 | [نسخه‌ها، ماژول‌های CSS/JS و Build](shared/08-BUILD-AND-VERSIONS.md) | نسخهٔ اعلام‌شده، نصب‌شده و آزموده، entry، manifest و ZIP |
 | 09 | [عملکرد و کش](shared/09-PERFORMANCE-AND-CACHE.md) | waterfall، LCP/TTFB، کش فایل/HTML/ویجت و purge |
 | 10 | [امنیت WordPress](shared/10-SECURITY.md) | ورودی، خروجی، مجوز، دادهٔ خصوصی و بسته |
 | 11 | [دسترس‌پذیری](shared/11-ACCESSIBILITY.md) | فوکوس، لمس، RTL، فرم، کاروسل و reduced-motion |
 | 12 | [تأیید و QA](shared/12-VERIFICATION.md) | انتخاب کوتاه‌ترین بررسی برای دامنهٔ تغییر |
 | 13 | [PHP 8.4+](shared/13-PHP-DEVELOPMENT-STANDARD-v1.1.md) | موجود؛ scope هماهنگ |
-| 16 | [Design System & UI Components](shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md) | جدید؛ token، font، renderer، variant، reuse |
+| 16 | [Design System & UI Components](shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md) | [Input و فرم](shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md#ui-input)، [Card](shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md#ui-card)، token، renderer و variant |
 
 ## مسیر WordPress Custom (wordpress-custom/)
 

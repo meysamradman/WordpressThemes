@@ -32,6 +32,9 @@
 | آهنگ | `radmanct/inc/content/music.php`، `radmanct/inc/music.php`، `template-parts/music/`؛ credits/date/lyrics در editor |
 | ویدئو/گالری | `radmanct/inc/content/collections.php`، `radmanct/inc/videos.php`، `radmanct/inc/albums.php`؛ archive/detail بومی و API رسانه |
 | پلیر/کاروسل/AJAX | `radmanct/src/js/ui/audio-controls.js`، `music-player.js`، `carousel.js`، `pages/archive.js` و `docs/media.md` |
+| Input جست‌وجو | `radmanct/template-parts/layout/header.php` برای آهنگ، `radmanct/searchform.php` برای نوشته، `radmanct/inc/setup.php` برای واگذاری query به وردپرس و کنترل ورودی نامعتبر. رنگ و فوکوس از CSS صاحب همان فرم خوانده شوند. |
+| Card و قاب رسانه | `radmanct/inc/music.php` و `radmanct/template-parts/ui/video-grid.php`؛ سطح مشترک در `radmanct/src/css/ui/media-card.css` و قاب، hover و focus در `radmanct/src/css/ui/media-frame.css`. |
+| انیمیشن ورود | `radmanct/inc/ui/text-entrance.php`، `radmanct/src/css/ui/text-entrance.css` و `radmanct/src/js/ui/text-entrance.js`. هدف‌های تأییدشده با `data-rdc-en` انتخاب می‌شوند. ردیف‌های کاروسل، شعر و جدول مستقیم نمایش داده می‌شوند. |
 | دارایی/حرکت/ظاهر | `radmanct/inc/assets.php`، `radmanct/src/js/runtime/lifecycle.js`، tokens/base و page entryهای واقعی |
 
 مسیرهای نماینده: خانه، بیوگرافی/تماس، آرشیو/جزئیات track، clip و album، taxonomy و صفحه‌بندی آن‌ها. نام/کاور/اطلاعات اثر، متن شعرِ موجود در جزئیات و لینک دانلود عمومی در HTML بمانند؛ این به معنی دریافت خودکار فایل پخش نیست. پلیر ثابت فقط خانه و پلیر inline فقط جزئیات آهنگ، با یک مالک مشترک و preload=none؛ کنترل شعر به dock اضافه نشود. پالت اختصاصی مشتری حفظ و CSS از Webtalik بی‌اجازه کپی نشود. این ثبت اثبات انطباق همهٔ مسیرها نیست.

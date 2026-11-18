@@ -11,6 +11,7 @@
 | دکمه و آیکون CTA | `inc/ui/button.php`، `src/css/ui/button.css` | renderer موجود با گزینه‌های خودش؛ رفتار hover و markup جدا در هر صفحه نسازید. |
 | آیکون‌ها | `inc/icons.php`، `inc/icons/catalog.php`، `src/css/ui/icon.css` | SVG محلی از catalog، اندازه/ضخامت پایه از tokens؛ فقط نماد جهت‌دار در RTL معکوس شود. |
 | متن و پیش‌نمایش کارت | `src/css/ui/card-text.css`، `src/css/ui/card-preview.css`، `src/js/ui/card-preview.js` | متن کامل حفظ شود؛ clamp و رفتار رسانه دوباره نوشته نشوند. برای پخش و منابع، media.md را رعایت کنید. |
+| Input جست‌وجوی نوشته | `searchform.php` و استایل `.rdc-srch` در `src/css/ui/sidebar.css` | label، فوکوس کیبورد، فرم GET بومی و escape خروجی در همان مسیر بررسی شوند. [قرارداد مشترک Input](../../WEB-DEVELOPMENT-STANDARDS/shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md#ui-input) |
 | سؤال‌های متداول | `template-parts/ui/faq.php`، `src/css/ui/faq.css` | یک renderer با items/title/label/desc مستقل در هر مصرف؛ details/summary بومی و گروه یکتا حفظ شوند. |
 | دسته‌بندی و سایدبار | `inc/ui/category-tree.php`، `src/css/ui/category-tree.css`، `src/css/ui/sidebar.css` | مالک موجود و لینک‌های واقعی استفاده شوند؛ منطق جدا برای هر آرشیو نسازید. |
 | جستجو و صفحه‌بندی آرشیو | `src/js/pages/archive.js` | رفتار موجود با لینک بومی، history و پاسخ هم‌مبدأ؛ query اصلی، حفاظت محتوا و lifecycle حفظ شوند. |
