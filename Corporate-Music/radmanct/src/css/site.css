@@ -2,3 +2,6 @@
 
 
 #rdc-scr-cnt { position:relative; }
+
+:is(.rdc-collection,.rdc-trk-arc) .pagination .nav-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:var(--rdc-pagination-gap,.4rem)}
+:is(.rdc-collection,.rdc-trk-arc) .pagination .page-numbers.current{color:var(--rdc-acc)}

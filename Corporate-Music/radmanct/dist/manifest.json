@@ -124,7 +124,7 @@
     "isEntry": true
   },
   "src/css/pages/gallery.css": {
-    "file": "css/gallery-V9SIAk7Q.min.css",
+    "file": "css/gallery-B76x-dT5.min.css",
     "name": "css-gallery",
     "names": [
       "css-gallery.css"
@@ -160,7 +160,7 @@
     "isEntry": true
   },
   "src/css/pages/music.css": {
-    "file": "css/music-CgytjY9w.min.css",
+    "file": "css/music-2DLb_lU1.min.css",
     "name": "css-music",
     "names": [
       "css-music.css"
@@ -205,7 +205,7 @@
     "isEntry": true
   },
   "src/css/pages/videos.css": {
-    "file": "css/videos-CurOgtBL.min.css",
+    "file": "css/videos-CTqROSLd.min.css",
     "name": "css-videos",
     "names": [
       "css-videos.css"
@@ -214,7 +214,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-uHZ1pMvb.min.css",
+    "file": "css/site-Dxs7M8tw.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -379,7 +379,7 @@
     "isEntry": true
   },
   "src/js/site.js": {
-    "file": "js/site-CilHMBnN.min.js",
+    "file": "js/site-BuO8veoH.min.js",
     "name": "site",
     "src": "src/js/site.js",
     "isEntry": true,
@@ -389,7 +389,6 @@
     ],
     "dynamicImports": [
       "src/js/ui/menu-hover.js",
-      "src/js/ui/menu-panel.js",
       "src/js/smoother-vendor.js",
       "src/js/ui/card-preview.js"
     ]
@@ -423,27 +422,5 @@
     "name": "menu-hover",
     "src": "src/js/ui/menu-hover.js",
     "isDynamicEntry": true
-  },
-  "src/js/ui/menu-panel.js": {
-    "file": "js/menu-panel-DPXQwxez.min.js",
-    "name": "menu-panel",
-    "src": "src/js/ui/menu-panel.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_scroll-state-CMcH5pPq.min.js",
-      "_lifecycle-CEUUFq-m.min.js"
-    ],
-    "dynamicImports": [
-      "src/js/ui/panel/wave.js"
-    ]
-  },
-  "src/js/ui/panel/wave.js": {
-    "file": "js/wave-BF8ftxLw.min.js",
-    "name": "wave",
-    "src": "src/js/ui/panel/wave.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_gsap-vendor-CvDoa17S.min.js"
-    ]
   }
 }

@@ -9,9 +9,9 @@
 .rdc-trk-card__action>.rdc-ico{inline-size:2.2rem;block-size:2.2rem}
 .rdc-trk-card__listen{flex:1;min-inline-size:0;--rdc-btn-bg:var(--rdc-acc);--rdc-btn-tx:var(--rdc-on-acc);--rdc-btn-hov-bg:var(--rdc-acc);--rdc-btn-hov-tx:var(--rdc-on-acc);min-block-size:2.3rem;padding:.15rem .8rem;font-size:1.05rem}
 .rdc-trk-card__listen .rdc-btn__ico{display:none}
-.rdc-trk-arc .nav-links{display:flex;align-items:center;justify-content:center;gap:.25rem;direction:rtl}
+.rdc-trk-arc .pagination{--rdc-pagination-gap:.25rem}
 .rdc-trk-arc .page-numbers{display:inline-grid;place-items:center;min-inline-size:2rem;min-block-size:2rem;color:var(--rdc-mut)}
-.rdc-trk-arc .page-numbers.current{color:var(--rdc-acc)}
+
 .rdc-trk-arc .page-numbers:is(.prev,.next){border-radius:50%;background:var(--rdc-clr-field);color:var(--rdc-bg);min-inline-size:1.5rem;min-block-size:1.5rem}
 .rdc-trk-arc [data-rdc-res]{scroll-margin-block-start:6rem}
 .rdc-trk-arc.is-load [data-rdc-res]{opacity:.55;pointer-events:none}

@@ -5,7 +5,7 @@ export function initializePanelBranches(dialog){
  const content=stage.querySelector('[data-rdc-pnl-br-cnt]');
  const title=stage.querySelector('[data-rdc-pnl-br-ttl]');
  const backButton=stage.querySelector('[data-rdc-pnl-back]');
- const nav=dialog.querySelector('.rdc-nav'),info=dialog.querySelector('.rdc-pnl__info');
+ const nav=dialog.querySelector('.rdc-nav');
  const entries=new Map();
  let active=null;
  for(const button of dialog.querySelectorAll('[data-rdc-pnl-tgl]')){
@@ -17,7 +17,6 @@ export function initializePanelBranches(dialog){
  const restore=entry=>{entry.menu.hidden=true;entry.button.setAttribute('aria-expanded','false');entry.marker.after(entry.menu);};
  const sync=()=>{
   nav.inert=Boolean(active);
-  info.hidden=Boolean(active);info.inert=info.hidden;
  };
  const select=(entry,focus=true)=>{
   if(active)restore(active);

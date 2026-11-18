@@ -1,5 +1,5 @@
 *,*::before,*::after { box-sizing:border-box; }
-html { overflow-x:clip; }
+html { overflow-x:clip; scrollbar-gutter:stable; }
 :where(h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dt,dd,figure,blockquote) { margin:0; padding:0; }
 body { margin:0; padding:0; background:var(--rdc-bg); color:var(--rdc-tx); font-family:var(--rdc-font-body); font-size:var(--rdc-sz-body); font-weight:var(--rdc-wt-body); line-height:var(--rdc-ln-ht-body); }
 a { color:inherit; text-decoration:none; }
