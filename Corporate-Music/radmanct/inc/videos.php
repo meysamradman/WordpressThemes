@@ -13,8 +13,8 @@ function embed_url(mixed $value):string {
  $hash=aparat_id($value);
  return $hash?'https://www.aparat.com/video/video/embed/videohash/'.$hash.'/vt/frame':'';
 }
-function aparat_download_button(string $hash,string $class):string {
- $hash=aparat_id($hash);
+function aparat_download_button(mixed $value,string $class):string {
+ $hash=aparat_id($value);
  return $hash?\RadmanCT\button('دانلود از آپارات','https://www.aparat.com/v/'.$hash,[
   'class'=>$class,'variant'=>'download','new_tab'=>true,
  ]):'';
