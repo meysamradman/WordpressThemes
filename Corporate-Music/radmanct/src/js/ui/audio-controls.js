@@ -1,5 +1,5 @@
 import {initializeAudioWave} from './audio-wave.js';
-import {mediaWaitEvents,updateMediaWait} from './media-wait.js';
+const playbackEvents=['play','waiting','playing','pause','ended','error','emptied'];
 
 export function formatAudioTime(value) {
  const seconds=Number.isFinite(value)&&value>0?Math.floor(value):0;
@@ -38,8 +38,9 @@ export function initializeAudioControls(root) {
  listen(mute,'click',()=>{audio.muted=!audio.muted;update();});
  listen(volume,'input',()=>{audio.volume=Number(volume.value);audio.muted=audio.volume===0;update();});
  for(const event of ['loadedmetadata','durationchange','timeupdate','volumechange'])listen(audio,event,update);
- for(const event of mediaWaitEvents)listen(audio,event,()=>{
-  waiting=updateMediaWait(audio,play,event);
+ for(const event of playbackEvents)listen(audio,event,()=>{
+  waiting=!audio.paused&&!audio.ended&&(event==='waiting'||(event==='play'&&audio.readyState<3));
+  play.toggleAttribute('data-rdc-media-wait',waiting);
   update();
  });
  listen(audio,'error',()=>{status.textContent='فایل صوتی قابل پخش نیست. می‌توانید از لینک دانلود استفاده کنید.';update();});
