@@ -24,7 +24,7 @@
 ## ۱. HTML، محتوا و SEO
 
 - محتوای اصلی از PHP با API بومی WordPress رندر شود؛ عنوان/متن/لینک مهم وابسته به اجرای JS، hover یا اولین swipe نباشد. لینک مقصد `<a href>` واقعی و کنترل عملیات `<button type="button">` باشد. فرم label و خطای قابل‌فهم داشته باشد؛ placeholder جای label نیست.
-- یک main اصلی، landmarks مناسب، H1 صفحه، H2 سکشن و H3 کارت/زیرموضوع؛ H4–H6 فقط بر اساس محتوا. section محتوایی عنوان مناسب داشته باشد؛ wrapper صرفاً چیدمانی را section بی‌معنا نکنید. برای ظاهر، سطح heading تغییر نکند و فونت‌های Hafez/Peyda طبق tokens/base حفظ شوند.
+- یک main اصلی، landmarks مناسب، H1 صفحه، H2 سکشن و H3 کارت/زیرموضوع؛ H4–H6 فقط بر اساس محتوا. section محتوایی عنوان مناسب داشته باشد؛ wrapper صرفاً چیدمانی را section بی‌معنا نکنید. برای ظاهر، سطح heading تغییر نکند. علی اسدی برای عنوان و بدنه فقط Peyda دارد و اندازه و وزن از tokens/base خوانده می‌شود.
 - title و description مختص موضوع URL، طبیعی و بدون keyword stuffing باشند؛ طول قطعی snippet یا تعداد کلمه/heading وعده داده نشود. فوتر لینک‌های مهم و تماس معتبر داشته باشد؛ برای SEO لینک یا متن تکراری نسازید.
 - **Yoast فعال مالک title/description/canonical، OG/social metadata، schema و sitemap است.** فیلد خالی افزونه را قالب دور نزند؛ helper fallback `inc/seo.php` فقط بدون افزونهٔ شناخته‌شده یا طبق قرارداد فعلی خودش کار کند. `wp_head`، `wp_body_open` و `wp_footer` حفظ شوند. تحلیل متن افزونه ممکن است محتوای template را نشناسد؛ برای سبزکردن امتیاز افزونه، HTML تکراری یا متن مخفی اضافه نکنید.
 - Canonical، redirect، status HTTP، robots و sitemap باید با URL نهایی سازگار باشند؛ هر صفحهٔ آرشیوِ صفحه‌بندی‌شده قابل دسترسی و canonical متناسب خودش داشته باشد. صفحه‌بندی AJAX همان href واقعی و fallback بومی را حفظ کند. robots.txt جای noindex نیست؛ noindex باید برای crawler قابل دریافت باشد.

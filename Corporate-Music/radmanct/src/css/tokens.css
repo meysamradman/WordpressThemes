@@ -5,13 +5,6 @@
   font-style:normal;
   font-display:swap;
 }
-@font-face {
-  font-family:Hafez;
-  src:url('/Hafez-FD-Regular.woff2') format('woff2');
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
 :root {
   --rdc-ico-sz:1.25rem;
   --rdc-ico-stroke:1.5;
@@ -66,7 +59,6 @@
   --rdc-lead-ovl-mid:color-mix(in srgb,var(--rdc-clr-ink) 27.059%,transparent);
   --rdc-lead-ovl-end:color-mix(in srgb,var(--rdc-clr-ink) 92.941%,transparent);
   --rdc-font-body:Peyda,sans-serif;
-  --rdc-font-dsp:Hafez,Peyda,sans-serif;
   --rdc-dsp-ink-sp:.18em;
   --rdc-sz-body:1rem;
   --rdc-sz-sm:.875rem;

@@ -67,6 +67,7 @@ add_action('wp_head',static function():void{
  for (const href of $urls) {
   const link = document.createElement('link');
   link.rel = 'modulepreload';
+  link.fetchPriority = 'low';
   link.href = href;
   document.head.append(link);
  }

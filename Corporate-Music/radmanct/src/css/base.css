@@ -9,7 +9,7 @@ img,video { max-inline-size:100%; block-size:auto; }
 button,input,select,textarea { font:inherit; }
 button { cursor:pointer; }
 h1,h2,h3,h4,h5,h6 { color:var(--rdc-ink); font-weight:var(--rdc-wt-hdg); line-height:var(--rdc-ln-ht-hdg); }
-h1,.rdc-dsp-ttl { font-family:var(--rdc-font-dsp); font-weight:var(--rdc-wt-dsp); padding-inline:var(--rdc-dsp-ink-sp); padding-block:.08em; }
+h1,.rdc-dsp-ttl { font-family:var(--rdc-font-body); font-weight:var(--rdc-wt-dsp); padding-inline:var(--rdc-dsp-ink-sp); padding-block:.08em; }
 h2:not(.rdc-dsp-ttl),h3,h4,h5,h6 { font-family:var(--rdc-font-body); }
 h1 { font-size:var(--rdc-sz-h1); }
 h2 { font-size:var(--rdc-sz-h2); }
