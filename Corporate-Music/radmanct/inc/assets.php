@@ -77,7 +77,7 @@ add_action('wp_enqueue_scripts',static function():void{
  style('site');script('site');
  if((is_front_page()||is_page(array('about-us','contact-us')))&&!post_password_required(get_queried_object_id())){
   style('ui/text-entrance',array('rdc-site'));
-  if(is_page('about-us'))script('ui/text-entrance');
+  script('ui/text-entrance');
  }
  if(is_front_page()){style('pages/music-home',array('rdc-site'));script('pages/music-home');}
  elseif(\RadmanCT\Music\native()){style(is_singular('track')?'pages/music-detail':'pages/music',array('rdc-site'));script(is_singular('track')?'pages/music':'pages/archive');}

@@ -1,24 +1,35 @@
-const heading = document.querySelector('main [data-rdc-en="viewport"]');
 const motion = matchMedia('(prefers-reduced-motion: no-preference)');
 
-if (heading?.animate && motion.matches && window.IntersectionObserver) {
-  let entrance;
-  const observer = new IntersectionObserver(entries => {
-    if (!motion.matches || !entries.some(entry => entry.isIntersecting)) return;
-    observer.disconnect();
-    entrance = heading.animate(
-      { translate: ['0 .55em', '0 0'], opacity: [.65, 1] },
-      { duration: 650, easing: 'cubic-bezier(.22,1,.36,1)' }
-    );
-    entrance.onfinish = stop;
-  });
-  function stop() {
-    observer.disconnect();
-    entrance?.cancel();
-    motion.removeEventListener('change', stop);
-    window.removeEventListener('pagehide', stop);
+if (motion.matches && window.IntersectionObserver) {
+  // Elements already on screen use the first-paint animation in CSS.
+  const waiting = new Set([...document.querySelectorAll('main [data-rdc-en]')].filter(node => {
+    const target = node.dataset.rdcEn === 'intro' ? node.querySelector(':scope > p') : node;
+    return target && target.getBoundingClientRect().top >= window.innerHeight;
+  }));
+
+  if (waiting.size) {
+    const observer = new IntersectionObserver(entries => {
+      for (const { target, isIntersecting } of entries) {
+        if (!isIntersecting || !waiting.delete(target)) continue;
+        target.classList.replace('is-wait', 'is-vis');
+        observer.unobserve(target);
+      }
+      if (!waiting.size) stop();
+    }, { rootMargin: '0px 0px -5% 0px' });
+
+    function stop() {
+      observer.disconnect();
+      for (const node of waiting) node.classList.remove('is-wait');
+      waiting.clear();
+      motion.removeEventListener('change', stop);
+      window.removeEventListener('pagehide', stop);
+    }
+
+    for (const node of waiting) {
+      node.classList.add('is-wait');
+      observer.observe(node);
+    }
+    motion.addEventListener('change', stop);
+    window.addEventListener('pagehide', stop, { once: true });
   }
-  observer.observe(heading);
-  motion.addEventListener('change', stop);
-  window.addEventListener('pagehide', stop, { once: true });
 }

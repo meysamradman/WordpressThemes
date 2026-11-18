@@ -1,17 +1,20 @@
 @media (prefers-reduced-motion:no-preference) {
   main { --rdc-en-start:100ms; --rdc-en-dur:820ms; }
   html[data-rdc-arrival] main { --rdc-en-start:610ms; }
+  [data-rdc-en].is-vis { --rdc-en-start:0ms; }
   [data-rdc-en="heading"] > .rdc-tx-en__wd {
     display:inline-block;
     animation:rdc-en-heading var(--rdc-en-dur) cubic-bezier(.22,1,.36,1)
       calc(var(--rdc-en-start) + var(--rdc-en-i) * 55ms) backwards;
   }
-  [data-rdc-en="heading"]:not(:has(> .rdc-tx-en__wd)) {
+  [data-rdc-en="heading"]:not(:has(> .rdc-tx-en__wd)),[data-rdc-en="viewport"] {
     animation:rdc-en-heading var(--rdc-en-dur) cubic-bezier(.22,1,.36,1) var(--rdc-en-start) backwards;
   }
   [data-rdc-en="text"],[data-rdc-en="intro"] > p:first-of-type {
     animation:rdc-en-copy var(--rdc-en-dur) cubic-bezier(.22,1,.36,1) calc(var(--rdc-en-start) + 130ms) backwards;
   }
+  [data-rdc-en].is-wait,
+  [data-rdc-en].is-wait > :is(.rdc-tx-en__wd,p:first-of-type) { animation-play-state:paused; }
   @media (max-width:650px) {
     main { --rdc-en-dur:620ms; }
     html[data-rdc-arrival] main { --rdc-en-start:430ms; }
