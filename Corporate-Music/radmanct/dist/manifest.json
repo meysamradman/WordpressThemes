@@ -209,7 +209,7 @@
     "isEntry": true
   },
   "src/css/ui/text-entrance.css": {
-    "file": "css/ui-text-entrance-QzZ70h5U.min.css",
+    "file": "css/ui-text-entrance-BKcJiVsi.min.css",
     "name": "css-ui-text-entrance",
     "names": [
       "css-ui-text-entrance.css"
@@ -399,7 +399,7 @@
     "isDynamicEntry": true
   },
   "src/js/ui/text-entrance.js": {
-    "file": "js/text-entrance-fcOFs7W3.min.js",
+    "file": "js/text-entrance-vxsiXqJ_.min.js",
     "name": "text-entrance",
     "src": "src/js/ui/text-entrance.js",
     "isEntry": true

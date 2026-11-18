@@ -2,10 +2,8 @@ const motion = matchMedia('(prefers-reduced-motion: no-preference)');
 
 if (motion.matches && window.IntersectionObserver) {
   // Elements already on screen use the first-paint animation in CSS.
-  const waiting = new Set([...document.querySelectorAll('main [data-rdc-en]')].filter(node => {
-    const target = node.dataset.rdcEn === 'intro' ? node.querySelector(':scope > p') : node;
-    return target && target.getBoundingClientRect().top >= window.innerHeight;
-  }));
+  const waiting = new Set([...document.querySelectorAll('main [data-rdc-en]')]
+    .filter(node => node.getBoundingClientRect().top >= window.innerHeight));
 
   if (waiting.size) {
     const observer = new IntersectionObserver(entries => {

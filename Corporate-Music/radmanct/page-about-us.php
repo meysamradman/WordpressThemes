@@ -12,8 +12,9 @@
     <div class="rdc-bio__identity" dir="ltr"><p class="rdc-bio__handle"><?php echo esc_html(\RadmanCT\Client\social_handle()); ?></p><?php get_template_part('template-parts/ui/socials',null,['items'=>\RadmanCT\Client\socials()]); ?></div>
    </div>
    <h1 class="rdc-bio__title" data-rdc-en="heading"><?php \RadmanCT\entrance_words(get_the_title()); ?></h1>
-   <div class="rdc-bio__content rdc-reading" data-rdc-en="intro">
-    <?php the_content();wp_link_pages();get_template_part('template-parts/sections/biography/works'); ?>
+   <div class="rdc-bio__content rdc-reading">
+    <div data-rdc-en="text"><?php the_content(); ?></div>
+    <?php wp_link_pages();get_template_part('template-parts/sections/biography/works'); ?>
    </div>
   <?php endif; ?>
  </article>

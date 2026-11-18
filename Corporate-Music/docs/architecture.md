@@ -13,7 +13,7 @@ Standalone Radman CT Music, copied from Corporate-Webtalik as a source baseline.
 | `radmanct/inc/assets.php` | Conditional entry loading and shared static/dynamic module graph |
 | `radmanct/src/css/tokens.css`, `base.css` | Single palette/font/radius definitions and tag typography; Hafez H1, Peyda body/H2–H6 |
 | `radmanct/src/css/ui/music.css` | Shared archive/single/home music UI |
-| `radmanct/src/css/ui/text-entrance.css` | First-paint entrance for marked titles and introductions on home, biography and contact. The biography index heading uses the shared page-specific observer in `src/js/ui/text-entrance.js`. |
+| `radmanct/src/css/ui/text-entrance.css` | Shared entrance for the selected titles and full introductions on home, biography and contact. `src/js/ui/text-entrance.js` starts offscreen targets once as they reach the viewport. Titles preserve Persian word boundaries and the selected introductions animate as complete blocks. |
 | `radmanct/src/css/pages/music{,-home}.css` | Small page entries selecting needed UI; home reuses shared track cards, video cards and the button renderer |
 | `radmanct/src/js/admin/music-editor.js` | Native media picker, only on track editor; frontend audio uses the native audio engine with a progressive custom control bar on detail pages |
 | `radmanct/inc/seo.php` | Fallback yields to Yoast SEO; never duplicate canonical/metadata/schema |

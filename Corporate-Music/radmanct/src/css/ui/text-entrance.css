@@ -1,30 +1,33 @@
 @media (prefers-reduced-motion:no-preference) {
-  main { --rdc-en-start:100ms; --rdc-en-dur:820ms; }
+  main {
+    --rdc-en-start:100ms;
+    --rdc-en-dur:1.6s;
+    --rdc-en-y:30px;
+    --rdc-en-angle:30deg;
+    --rdc-en-ease:cubic-bezier(.22,1,.36,1);
+  }
   html[data-rdc-arrival] main { --rdc-en-start:610ms; }
   [data-rdc-en].is-vis { --rdc-en-start:0ms; }
   [data-rdc-en="heading"] > .rdc-tx-en__wd {
     display:inline-block;
-    animation:rdc-en-heading var(--rdc-en-dur) cubic-bezier(.22,1,.36,1)
-      calc(var(--rdc-en-start) + var(--rdc-en-i) * 55ms) backwards;
+    animation:rdc-en-reveal var(--rdc-en-dur) var(--rdc-en-ease)
+      calc(var(--rdc-en-start) + var(--rdc-en-i) * 80ms) backwards;
   }
   [data-rdc-en="heading"]:not(:has(> .rdc-tx-en__wd)),[data-rdc-en="viewport"] {
-    animation:rdc-en-heading var(--rdc-en-dur) cubic-bezier(.22,1,.36,1) var(--rdc-en-start) backwards;
+    animation:rdc-en-reveal var(--rdc-en-dur) var(--rdc-en-ease) var(--rdc-en-start) backwards;
   }
-  [data-rdc-en="text"],[data-rdc-en="intro"] > p:first-of-type {
-    animation:rdc-en-copy var(--rdc-en-dur) cubic-bezier(.22,1,.36,1) calc(var(--rdc-en-start) + 130ms) backwards;
+  [data-rdc-en="text"] {
+    animation:rdc-en-reveal var(--rdc-en-dur) var(--rdc-en-ease) calc(var(--rdc-en-start) + 160ms) backwards;
   }
   [data-rdc-en].is-wait,
-  [data-rdc-en].is-wait > :is(.rdc-tx-en__wd,p:first-of-type) { animation-play-state:paused; }
+  [data-rdc-en].is-wait > .rdc-tx-en__wd { animation-play-state:paused; }
+  [data-rdc-en]:focus-within { animation:none; }
   @media (max-width:650px) {
-    main { --rdc-en-dur:620ms; }
+    main { --rdc-en-dur:860ms; --rdc-en-y:18px; --rdc-en-angle:15deg; }
     html[data-rdc-arrival] main { --rdc-en-start:430ms; }
   }
 }
-@keyframes rdc-en-heading {
-  from { opacity:.15; transform:translateX(-.55em) perspective(600px) rotateX(10deg); }
-  to { opacity:1; transform:none; }
-}
-@keyframes rdc-en-copy {
-  from { opacity:.45; transform:translateY(.7em); }
+@keyframes rdc-en-reveal {
+  from { opacity:.15; transform:perspective(900px) translateY(var(--rdc-en-y)) rotateX(var(--rdc-en-angle)); }
   to { opacity:1; transform:none; }
 }
