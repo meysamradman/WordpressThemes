@@ -1,0 +1,8 @@
+@import './media-frame.css';
+:where(.rdc-trk-card,.rdc-video-card){
+ min-inline-size:0;
+ border-radius:var(--rdc-card-radius,var(--rdc-rad));
+ background:var(--rdc-srf);
+}
+:where(.rdc-trk-card,.rdc-video-card) :is(h2,h3){color:var(--rdc-clr-accent-text)}
+:where(.rdc-trk-card,.rdc-video-card) p{color:var(--rdc-mut)}

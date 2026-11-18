@@ -119,7 +119,7 @@
     "isEntry": true
   },
   "src/css/pages/gallery.css": {
-    "file": "css/gallery-BYQHUW1W.min.css",
+    "file": "css/gallery-DVEX-6Xh.min.css",
     "name": "css-gallery",
     "names": [
       "css-gallery.css"
@@ -146,7 +146,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-C23P0J-s.min.css",
+    "file": "css/music-home-CXraxbmI.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -155,7 +155,7 @@
     "isEntry": true
   },
   "src/css/pages/music.css": {
-    "file": "css/music-BOQ_HvCn.min.css",
+    "file": "css/music-D1hxYCdn.min.css",
     "name": "css-music",
     "names": [
       "css-music.css"
@@ -181,8 +181,17 @@
     "src": "src/css/pages/services.css",
     "isEntry": true
   },
+  "src/css/pages/video-detail.css": {
+    "file": "css/video-detail-DAe008S8.min.css",
+    "name": "css-video-detail",
+    "names": [
+      "css-video-detail.css"
+    ],
+    "src": "src/css/pages/video-detail.css",
+    "isEntry": true
+  },
   "src/css/pages/videos.css": {
-    "file": "css/videos-pxaz3oPN.min.css",
+    "file": "css/videos-z1iheKfn.min.css",
     "name": "css-videos",
     "names": [
       "css-videos.css"

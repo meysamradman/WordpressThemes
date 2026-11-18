@@ -1,8 +1,7 @@
 .rdc-trk-arc{padding-block:2.5rem 3rem}
 .rdc-trk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
-.rdc-trk-card--list{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);gap:1.5rem;padding:1.25rem;border-radius:var(--rdc-rad-md)}
-.rdc-trk-card--list .rdc-trk-card__cover{aspect-ratio:1;background:var(--rdc-bg)}
-.rdc-trk-card--list img{block-size:100%}
+.rdc-trk-card--list{--rdc-card-radius:var(--rdc-rad-md);display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);gap:1.5rem;padding:1.25rem}
+.rdc-trk-card--list .rdc-trk-card__cover{background:var(--rdc-bg)}
 .rdc-trk-card--list .rdc-trk-card__body{display:flex;flex-direction:column;justify-content:center;min-inline-size:0;padding:0}
 .rdc-trk-card--list :is(h2,h3){font-size:var(--rdc-sz-archive-card);margin-block-end:.6rem}
 .rdc-trk-card__action{display:flex;align-items:center;gap:.65rem;margin-block-start:1rem;color:var(--rdc-acc)}

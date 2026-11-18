@@ -1,0 +1,16 @@
+@import '../ui/download-button.css';
+@import '../ui/media-archive.css';
+@import '../ui/aparat.css';
+
+.rdc-collection--video-detail{padding-block-start:3rem}
+.rdc-clip-player{aspect-ratio:16/9;overflow:hidden;background:var(--rdc-clr-blk)}
+.rdc-clip-player video{display:block;inline-size:100%;block-size:100%;object-fit:contain}
+.rdc-clip-downloads{display:flex;flex-wrap:wrap;gap:.9rem;margin-block:2rem 1.25rem}
+.rdc-clip-download{--rdc-download-sz:1.2rem;--rdc-download-ht:3.25rem;--rdc-download-ico:2rem}
+.rdc-collection--video-detail h1{font-size:clamp(1.6rem,2.6vw,2.2rem);padding-inline:0;margin-block-start:clamp(1.25rem,2vw,2rem)}
+.rdc-clip-content{max-inline-size:none}
+@media (max-width:700px){
+ .rdc-collection--video-detail{padding-block-start:1.5rem}
+ .rdc-clip-downloads{gap:.5rem;margin-block:1rem}
+ .rdc-clip-download{--rdc-download-sz:1rem;--rdc-download-ht:3rem;--rdc-download-ico:1.65rem}
+}
