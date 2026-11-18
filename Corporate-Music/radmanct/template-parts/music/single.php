@@ -12,7 +12,7 @@
    <figure class="rdc-trk-hero__cover"><?php the_post_thumbnail('large',['loading'=>'eager','fetchpriority'=>'high','sizes'=>'(max-width:650px) 90vw,(max-width:900px) 50vw,600px']); ?></figure>
    <div class="rdc-trk-hero__copy"><h1><?php the_title(); ?></h1>
     <?php \RadmanCT\Music\credits($data,true); ?>
-    <?php if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-trk-download','icon'=>'download','leading_icon'=>'music','download'=>true]); ?>
+    <?php if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-trk-download','variant'=>'download','download'=>true]); ?>
    </div>
   </div>
   <?php if($audio):get_template_part('template-parts/music/player',null,['audio'=>$audio,'previous'=>$previous,'next'=>$next,'wave'=>true]);else: ?><p class="rdc-trk-note">فایل پخش این اثر هنوز اضافه نشده است.</p><?php endif; ?>

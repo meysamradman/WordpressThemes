@@ -4,7 +4,8 @@ defined('ABSPATH')||exit;
 function button(string $label,string $url,array $args=array()):string {
  // All variants share the same markup and motion; solid preserves existing calls.
  $variant=$args['variant']??'solid';
- $variant=in_array($variant,array('solid','outline','ghost'),true)?$variant:'solid';
+ $variant=in_array($variant,array('solid','outline','ghost','download'),true)?$variant:'solid';
+ if($variant==='download')$args+=array('icon'=>'download','leading_icon'=>'music');
  $classes='rdc-btn';
  if($variant!=='solid')$classes.=' rdc-btn--'.$variant;
  foreach(preg_split('/\s+/',trim($args['class']??''))as$class)if($class!=='')$classes.=' '.sanitize_html_class($class);

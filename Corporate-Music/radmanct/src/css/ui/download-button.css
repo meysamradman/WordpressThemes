@@ -1,0 +1,16 @@
+.rdc-btn--download {
+ --rdc-btn-bg:var(--rdc-bg); --rdc-btn-hov-bg:var(--rdc-bg);
+ --rdc-btn-tx:var(--rdc-acc); --rdc-btn-hov-tx:var(--rdc-clr-wht); --rdc-btn-bd:var(--rdc-acc);
+ --rdc-btn-ico:var(--rdc-download-ico,1.65rem);
+ justify-content:space-between; gap:.65rem;
+ min-block-size:var(--rdc-download-ht,2.75rem); padding:var(--rdc-download-pad,.3rem .4rem);
+ border-radius:var(--rdc-rad-sm); font-size:var(--rdc-download-sz,.9rem);
+}
+.rdc-btn--download>.rdc-ico {
+ flex:none; inline-size:var(--rdc-download-mark,1.45rem); block-size:var(--rdc-download-mark,1.45rem);
+ padding:.3rem; border-radius:calc(var(--rdc-rad-sm) / 2);
+ background:var(--rdc-clr-field); color:var(--rdc-clr-crm);
+}
+.rdc-btn--download .rdc-btn__ico { background:var(--rdc-acc); color:var(--rdc-on-acc); border-radius:calc(var(--rdc-rad-sm) / 2); }
+.rdc-btn--download .rdc-btn__ico>.rdc-ico { inset:18%; inline-size:64%; block-size:64%; }
+.rdc-btn--download:disabled { --rdc-btn-bd:var(--rdc-clr-field); --rdc-btn-tx:var(--rdc-mut); cursor:not-allowed; opacity:.6; }
