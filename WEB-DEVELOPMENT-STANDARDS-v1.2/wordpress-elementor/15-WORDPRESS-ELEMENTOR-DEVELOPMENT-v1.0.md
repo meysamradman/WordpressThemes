@@ -32,6 +32,11 @@ public function get_style_depends(): array {
 - هر instance state مستقل؛ runtime و کتابخانه یک بار. کاروسل/منو/فرم موجود با API معتبر reuse شود؛ نسخه دوم GSAP، Swiper یا scroll manager اضافه نشود. native motion و GSAP روی یک property/عنصر هم‌زمان مالک نباشند. GSAP مشترک 05 برای کد ما؛ سراسری ScrollSmoother/curtain روی builder DOM تحمیل نشود. Loading محلی/Skeleton به درخواست واقعی وصل شود؛ page transition موجود تنها مالک چرخه نمایش و scroll lock باشد. Reduced motion و preview بدون پرده مسدودکننده.
 - Build/Vite اختیاری فقط برای moduleهای متعلق به تیم؛ Dev server در prod ممنوع. manifest و chunk dependencyهای معتبر؛ CSS SSR ضروری قبل از paint. تنظیمات Performance/Cache خودکار فعال/غیرفعال نشوند؛ اثر هر گزینه در staging با محتوای واقعی اندازه‌گیری شود.
 
+### Hub و تنظیم ورود محتوا در Elementor
+
+- روی Container منتخب، `Animations & Parallax → Animate contents = On`، `Animation Targets = All contents` و `Include inner containers content? = On` مطابق مرجع ارسالی. انتخاب `All contents` فقط در کانتینری انجام شود که همهٔ محتوای آن برای ورود انتخاب شده است. اعداد دقیق `Settings` و `Animate from` در [پروفایل مشترک ورود مشتری](../shared/05-GSAP-ANIMATION-STANDARD-v1.1.md#customer-content-entrance) ثبت شده‌اند.
+- `Play animations` برای پیش‌نمایش ویرایشگر است. اولین paint، ورود با اسکرول، opacity اولیه و خوانایی فارسی در frontend واقعی هم بررسی شوند. برای همین پروفایل `Parallax = Off` است. اگر طرح پارالاکس جدا دارد، آن را روی لایهٔ مستقل فعال کن و مالکیت transform را به همان لایه بده. تنظیمات بومی Hub کفایت می‌کند و اجرای دوبارهٔ همان افکت با اسکریپت تیم لازم نیست.
+
 ## 4. تست و تحویل
 
 - [ ] نسخه نصب‌شده و license/requirements ثبت؛ PHP lint و build؛ frontend و editor/preview، اضافه/حذف/duplicate widget، responsive controls، ذخیره/بازگشایی، dynamic content، حالت RTL/LTR و خطاهای console.

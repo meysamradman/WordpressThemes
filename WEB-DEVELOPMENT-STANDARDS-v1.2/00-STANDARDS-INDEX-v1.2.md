@@ -10,7 +10,7 @@
 | 02 | [Modern CSS & Minimal DOM](shared/02-CSS-STANDARDS-v1.0.md) | جدید |
 | 03 | [Responsive & RTL](shared/03-RESPONSIVE-DESIGN-STANDARD-v1.0.md) | جدید |
 | 04 | [Vanilla JS](shared/04-VANILLA-JS-DEVELOPMENT-STANDARD-v1.1.md) | موجود؛ scope هماهنگ |
-| 05 | [GSAP](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md) | موجود؛ scope هماهنگ |
+| 05 | [GSAP](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md) | [پروفایل ورود عنوان و متن مشتری](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md#customer-content-entrance) برای Elementor و قالب سفارشی |
 | 08 | Vite & Build | در برنامه؛ قواعد پایه در 02/04/07/15 |
 | 09 | Performance | در برنامه؛ قواعد پایه در اسناد مرتبط |
 | 10 | Security | در برنامه؛ اصول 04/13 |
