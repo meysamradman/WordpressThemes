@@ -1,5 +1,6 @@
 <?php defined('ABSPATH')||exit;get_header(); ?>
 <main id="main-content" class="rdc-music-home rdc-ctr" tabindex="-1" data-rdc-music-home>
+ <h1 class="screen-reader-text"><?php echo esc_html(get_bloginfo('name')); ?></h1>
  <?php while(have_posts()):the_post();if(post_password_required()){echo get_the_password_form();continue;}
  get_template_part('template-parts/sections/home/music-intro');
  get_template_part('template-parts/sections/home/latest-tracks'); ?>

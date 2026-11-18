@@ -2,7 +2,7 @@ const CLEAR_DELAY=8000;
 const CURTAIN_KEY='rdc:page-curtain';
 
 export function initializePageLoading(view=window){
- const doc=view.document,html=doc.documentElement;
+ const doc=view.document;
  const preference=view.matchMedia('(prefers-reduced-motion:reduce)');
  let clearTimer,signal,ticket;
  const reset=(keepTicket=false)=>{
@@ -15,10 +15,6 @@ export function initializePageLoading(view=window){
    }catch{}
   }
   ticket=undefined;
-  if(html.hasAttribute('data-rdc-page-load')){
-   html.removeAttribute('data-rdc-page-load');
-   if(!keepTicket)doc.dispatchEvent(new Event('rdc:curtain-end'));
-  }
  };
  const cancel=()=>reset();
  const leave=()=>reset(true);
@@ -36,7 +32,6 @@ export function initializePageLoading(view=window){
   signal?.addEventListener('abort',cancel,{once:true});
   ticket=JSON.stringify({expires:Date.now()+CLEAR_DELAY,destination:url.pathname+url.search});
   try{view.sessionStorage.setItem(CURTAIN_KEY,ticket);}catch{}
-  html.setAttribute('data-rdc-page-load','leave');
   clearTimer=view.setTimeout(cancel,CLEAR_DELAY);
  };
  const navigate=event=>{

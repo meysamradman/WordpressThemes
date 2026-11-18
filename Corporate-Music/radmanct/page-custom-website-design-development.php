@@ -2,6 +2,7 @@
 <main id="main-content" class="rdc-inv" tabindex="-1">
  <?php get_template_part('template-parts/layout/page-title'); ?>
  <?php while(have_posts()):the_post(); ?>
+  <?php if(!\RadmanCT\PageTitle\is_used()): ?><h1 class="screen-reader-text"><?php the_title(); ?></h1><?php endif; ?>
   <?php if(post_password_required()): ?>
    <div class="rdc-ctr rdc-main"><?php echo get_the_password_form(); ?></div>
   <?php else: ?>

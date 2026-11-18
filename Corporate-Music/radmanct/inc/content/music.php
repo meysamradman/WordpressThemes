@@ -18,7 +18,9 @@ add_action('add_meta_boxes_track',static function():void{
     },'track','normal','high');
 });
 add_action('save_post_track',static function(int $id):void{
-    if(wp_is_post_revision($id)||wp_is_post_autosave($id)||!current_user_can('edit_post',$id)||!isset($_POST['rdc_track_nonce'])||!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['rdc_track_nonce'])),'rdc_track_save'))return;
+    if(wp_is_post_revision($id)||wp_is_post_autosave($id)||!current_user_can('edit_post',$id))return;
+    $nonce=$_POST['rdc_track_nonce']??null;
+    if(!is_string($nonce)||!wp_verify_nonce(sanitize_text_field(wp_unslash($nonce)),'rdc_track_save'))return;
     $input=isset($_POST['rdc_track'])&&is_array($_POST['rdc_track'])?wp_unslash($_POST['rdc_track']):[];$data=get_post_meta($id,'_rdc_track',true);$data=is_array($data)?$data:[];
     foreach(['artist','poet','arranger','composer','album','released'] as $key)$data[$key]=is_scalar($input[$key]??'')?sanitize_text_field($input[$key]??''):'';
     $data['lyrics']=is_scalar($input['lyrics']??'')?sanitize_textarea_field($input['lyrics']??''):'';
