@@ -15,9 +15,11 @@ function initializeFeatured(feature) {
  const doc = feature.ownerDocument;
  const view = doc.defaultView;
  const reduced = view.matchMedia('(prefers-reduced-motion: reduce)');
+ const keyboardFocus = element => !doc.documentElement.hasAttribute('data-rdc-pointer') &&
+  element?.matches(':focus-visible');
  let current = -1;
  let timer;
- let rotating = !reduced.matches && !feature.contains(doc.activeElement);
+ let rotating = !reduced.matches && !(feature.contains(doc.activeElement) && keyboardFocus(doc.activeElement));
  let hovering = view.matchMedia('(hover: hover)').matches && feature.matches(':hover');
  let touching = false;
  let inView = !view.IntersectionObserver;
@@ -68,20 +70,25 @@ function initializeFeatured(feature) {
   rotating = false;
   view.clearTimeout(timer);
  };
+ const onFocus = event => { if (keyboardFocus(event.target)) stopRotation(); };
  const onFocusOut = event => syncSlides(event.relatedTarget);
  const onEnter = event => { if (event.pointerType === 'mouse') { hovering = true; schedule(); } };
  const onLeave = event => { if (event.pointerType === 'mouse') { hovering = false; schedule(); } };
  const onTouch = () => { touching = true; schedule(); };
- const onTouchEnd = event => { touching = event.touches.length > 0; schedule(); };
+ const onTouchEnd = event => {
+  if (!touching || event.touches.length) return;
+  touching = false;
+  schedule();
+ };
  const onPreference = () => { if (reduced.matches) stopRotation(); };
  const observer = view.IntersectionObserver && new view.IntersectionObserver(([entry]) => {
   inView = entry.intersectionRatio >= 0.25;
   schedule();
  }, {threshold: 0.25});
  const listeners = {
-  click: onClick, keydown: onKey, focusin: stopRotation, focusout: onFocusOut,
+  click: onClick, keydown: onKey, focusin: onFocus, focusout: onFocusOut,
   pointerenter: onEnter, pointerleave: onLeave,
-  touchstart: onTouch, touchend: onTouchEnd, touchcancel: onTouchEnd,
+  touchstart: onTouch,
  };
 
  nav.hidden = false;
@@ -89,6 +96,8 @@ function initializeFeatured(feature) {
  observer?.observe(feature);
  track.addEventListener('scroll', syncPosition, {passive: true});
  doc.addEventListener('visibilitychange', schedule);
+ doc.addEventListener('touchend', onTouchEnd, {capture:true,passive:true});
+ doc.addEventListener('touchcancel', onTouchEnd, {capture:true,passive:true});
  reduced.addEventListener('change', onPreference);
  for (const [event, listener] of Object.entries(listeners)) {
   feature.addEventListener(event, listener, {passive: event.startsWith('touch')});
@@ -98,6 +107,8 @@ function initializeFeatured(feature) {
   observer?.disconnect();
   track.removeEventListener('scroll', syncPosition);
   doc.removeEventListener('visibilitychange', schedule);
+  doc.removeEventListener('touchend', onTouchEnd, true);
+  doc.removeEventListener('touchcancel', onTouchEnd, true);
   reduced.removeEventListener('change', onPreference);
   for (const [event, listener] of Object.entries(listeners)) feature.removeEventListener(event, listener);
   for (const slide of slides) slide.inert = false;

@@ -128,7 +128,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-D56LR3Qi.min.css",
+    "file": "css/music-home-B7YdprIA.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -173,7 +173,7 @@
     "isEntry": true
   },
   "src/css/pages/videos.css": {
-    "file": "css/videos-DaU_kWWp.min.css",
+    "file": "css/videos-Nk-6A6V1.min.css",
     "name": "css-videos",
     "names": [
       "css-videos.css"
@@ -182,7 +182,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-TB2nwpfz.min.css",
+    "file": "css/site-Bvx5sOis.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -258,7 +258,7 @@
     ]
   },
   "src/js/pages/music-home.js": {
-    "file": "js/music-home-g15v8Whv.min.js",
+    "file": "js/music-home-CpM8iJpW.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
     "isEntry": true,
@@ -334,7 +334,7 @@
     ]
   },
   "src/js/site.js": {
-    "file": "js/site-Pjjs4jeN.min.js",
+    "file": "js/site-1e0HjMmL.min.js",
     "name": "site",
     "src": "src/js/site.js",
     "isEntry": true,

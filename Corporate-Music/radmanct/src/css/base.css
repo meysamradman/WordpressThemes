@@ -5,9 +5,17 @@ body { margin:0; padding:0; background:var(--rdc-bg); color:var(--rdc-tx); font-
 a { color:inherit; text-decoration:none; }
 a:hover { color:var(--rdc-acc); }
 :focus-visible { outline:2px solid var(--rdc-acc); outline-offset:4px; }
+:root[data-rdc-pointer] :focus-visible:where(:not(input,textarea,select,[contenteditable],[role="textbox"])) {
+ outline-style:none;
+}
 img,video { max-inline-size:100%; block-size:auto; }
 button,input,select,textarea { font:inherit; }
 button { cursor:pointer; }
+@media (any-pointer:coarse) {
+ :where(a[href],button,summary,[role="button"],input[type="button"],input[type="submit"],input[type="reset"]) {
+  -webkit-tap-highlight-color:transparent;
+ }
+}
 h1,h2,h3,h4,h5,h6 { color:var(--rdc-ink); font-weight:var(--rdc-wt-hdg); line-height:var(--rdc-ln-ht-hdg); }
 h1,.rdc-dsp-ttl { font-family:var(--rdc-font-body); font-weight:var(--rdc-wt-dsp); padding-inline:var(--rdc-dsp-ink-sp); padding-block:.08em; }
 h2:not(.rdc-dsp-ttl),h3,h4,h5,h6 { font-family:var(--rdc-font-body); }

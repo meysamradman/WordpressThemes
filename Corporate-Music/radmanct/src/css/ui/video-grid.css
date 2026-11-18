@@ -6,7 +6,7 @@
 
 .rdc-video-card__toggle{position:absolute;inset:50% auto auto 50%;translate:-50% -50%;display:grid;place-items:center;inline-size:3.25rem;block-size:3.25rem;padding:.75rem;border:1px solid var(--rdc-ovl-ln);border-radius:50%;background:var(--rdc-ovl-md);color:var(--rdc-clr-wht)}.rdc-video-card__toggle .rdc-ico{inline-size:1.6rem;block-size:1.6rem}.rdc-video-card__toggle[hidden]{display:none}
 
-.rdc-video-card:focus-within .rdc-video-card__media{box-shadow:0 0 0 1px var(--rdc-acc)}
+:root:not([data-rdc-pointer]) .rdc-video-card:has(:focus-visible) .rdc-video-card__media{box-shadow:0 0 0 1px var(--rdc-acc)}
 @media (hover:hover) and (pointer:fine){
  .rdc-video-card:hover .rdc-video-card__media{box-shadow:0 0 0 1px var(--rdc-acc)}
 }
