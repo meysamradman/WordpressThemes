@@ -200,7 +200,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-PJlUiywb.min.css",
+    "file": "css/site-CFTVvbrG.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -388,5 +388,11 @@
     "name": "menu-hover",
     "src": "src/js/ui/menu-hover.js",
     "isDynamicEntry": true
+  },
+  "src/js/ui/text-entrance.js": {
+    "file": "js/text-entrance-buiQ0a5m.min.js",
+    "name": "text-entrance",
+    "src": "src/js/ui/text-entrance.js",
+    "isEntry": true
   }
 }

@@ -2,9 +2,9 @@
 <main id="main-content" class="rdc-ctr rdc-artist" tabindex="-1">
  <?php while(have_posts()):the_post(); ?>
   <article>
-   <h1><?php the_title(); ?></h1>
+   <h1 data-rdc-en="heading"><?php the_title(); ?></h1>
    <?php if(post_password_required()):echo get_the_password_form();else:$booking=\RadmanCT\Client\booking(); ?>
-    <div class="rdc-reading"><?php the_content();wp_link_pages(); ?></div>
+    <div class="rdc-reading" data-rdc-en="intro"><?php the_content();wp_link_pages(); ?></div>
     <div class="rdc-artist__channels">
      <?php if($booking['phone']): ?>
       <a class="rdc-artist__channel" href="<?php echo esc_url('tel:'.$booking['phone']); ?>">

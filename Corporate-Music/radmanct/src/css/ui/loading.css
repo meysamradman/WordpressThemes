@@ -7,7 +7,7 @@
 @media (prefers-reduced-motion:no-preference){
  html[data-rdc-page-load=enter] .rdc-page-curtain{display:block}
  html[data-rdc-page-load=enter] .rdc-page-curtain>span{
-  animation:rdc-curtain-open 1.4s cubic-bezier(.22,.68,.36,1) calc(var(--rdc-panel)*8.27ms) both;
+  animation:rdc-curtain-open 1.15s cubic-bezier(.42,0,.60,.78) calc(var(--rdc-panel)*8.27ms) both;
  }
 }
 [data-rdc-arc] [data-rdc-res]{position:relative}
@@ -17,7 +17,7 @@
 }
 @media (max-width:650px) and (prefers-reduced-motion:no-preference){
  html[data-rdc-page-load=enter] .rdc-page-curtain>span{
-  animation-duration:.9s;animation-delay:calc(var(--rdc-panel)*5.38ms);
+  animation-duration:.72s;animation-delay:calc(var(--rdc-panel)*5.38ms);
  }
 }
 @keyframes rdc-curtain-open{from{transform:scaleY(1)}to{transform:scaleY(0);visibility:hidden}}
