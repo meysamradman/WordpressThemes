@@ -7,20 +7,14 @@ const FEATURE_INTERVAL = 8000;
 
 function initializeFeatured(feature) {
  if (!feature) return () => {};
- const track = feature.querySelector('[data-rdc-feature-track]');
- const rotation = feature.querySelector('[data-rdc-feature-rotation]');
- if (!rotation) return () => {};
-
  const nav = feature.querySelector('[data-rdc-feature-nav]');
- const toggle = rotation.querySelector('[data-rdc-feature-toggle]');
- const playIcon = toggle.querySelector('[data-rdc-feature-play]');
- const pauseIcon = toggle.querySelector('[data-rdc-feature-pause]');
- const position = rotation.querySelector('[data-rdc-feature-position]');
+ if (!nav) return () => {};
+
+ const track = feature.querySelector('[data-rdc-feature-track]');
  const slides = [...track.children];
  const doc = feature.ownerDocument;
  const view = doc.defaultView;
  const reduced = view.matchMedia('(prefers-reduced-motion: reduce)');
- const format = new Intl.NumberFormat(doc.documentElement.lang || 'fa-IR');
  let current = -1;
  let timer;
  let rotating = !reduced.matches && !feature.contains(doc.activeElement);
@@ -44,7 +38,6 @@ function initializeFeatured(feature) {
   const index = Math.min(slides.length - 1, Math.round(Math.abs(track.scrollLeft) / track.clientWidth));
   if (current === index) return;
   current = index;
-  position.textContent = `${format.format(index + 1)} از ${format.format(slides.length)}`;
   syncSlides();
   schedule();
  };
@@ -57,21 +50,8 @@ function initializeFeatured(feature) {
   });
   schedule();
  };
- const syncRotation = () => {
-  const label = rotating ? 'توقف حرکت خودکار اسلایدها' : 'شروع حرکت خودکار اسلایدها';
-  toggle.setAttribute('aria-label', label);
-  toggle.title = label;
-  toggle.disabled = reduced.matches;
-  playIcon.hidden = rotating;
-  pauseIcon.hidden = !rotating;
-  position.setAttribute('aria-live', rotating ? 'off' : 'polite');
-  schedule();
- };
  const onClick = event => {
-  if (toggle.contains(event.target)) {
-   rotating = !rotating;
-   syncRotation();
-  } else if (event.target.closest('[data-rdc-feature-prev]')) {
+  if (event.target.closest('[data-rdc-feature-prev]')) {
    move(current - 1);
   } else if (event.target.closest('[data-rdc-feature-next]')) {
    move(current + 1);
@@ -84,29 +64,27 @@ function initializeFeatured(feature) {
    move(current + (event.key === 'ArrowRight' ? 1 : -1) * direction());
   }
  };
- const stopOnFocus = event => {
-  if (!rotating || (event.target === toggle && !toggle.matches(':focus-visible'))) return;
+ const stopRotation = () => {
   rotating = false;
-  syncRotation();
+  view.clearTimeout(timer);
  };
  const onFocusOut = event => syncSlides(event.relatedTarget);
  const onEnter = event => { if (event.pointerType === 'mouse') { hovering = true; schedule(); } };
  const onLeave = event => { if (event.pointerType === 'mouse') { hovering = false; schedule(); } };
  const onTouch = () => { touching = true; schedule(); };
  const onTouchEnd = event => { touching = event.touches.length > 0; schedule(); };
- const onPreference = () => { if (reduced.matches) rotating = false; syncRotation(); };
+ const onPreference = () => { if (reduced.matches) stopRotation(); };
  const observer = view.IntersectionObserver && new view.IntersectionObserver(([entry]) => {
   inView = entry.intersectionRatio >= 0.25;
   schedule();
  }, {threshold: 0.25});
  const listeners = {
-  click: onClick, keydown: onKey, focusin: stopOnFocus, focusout: onFocusOut,
+  click: onClick, keydown: onKey, focusin: stopRotation, focusout: onFocusOut,
   pointerenter: onEnter, pointerleave: onLeave,
   touchstart: onTouch, touchend: onTouchEnd, touchcancel: onTouchEnd,
  };
 
- rotation.hidden = nav.hidden = false;
- syncRotation();
+ nav.hidden = false;
  syncPosition();
  observer?.observe(feature);
  track.addEventListener('scroll', syncPosition, {passive: true});
@@ -123,7 +101,7 @@ function initializeFeatured(feature) {
   reduced.removeEventListener('change', onPreference);
   for (const [event, listener] of Object.entries(listeners)) feature.removeEventListener(event, listener);
   for (const slide of slides) slide.inert = false;
-  rotation.hidden = nav.hidden = true;
+  nav.hidden = true;
  };
 }
 

@@ -1,13 +1,6 @@
 <?php defined('ABSPATH')||exit;$data=\RadmanCT\MusicHome\data();$tracks=\RadmanCT\MusicHome\featured();if(!$tracks)return;$multiple=count($tracks)>1; ?>
 <section class="rdc-feature" aria-label="جدیدترین آثار" data-rdc-feature>
 <?php if($multiple): ?>
- <div class="rdc-feature__rotation" data-rdc-feature-rotation hidden>
-  <button type="button" data-rdc-feature-toggle aria-label="توقف حرکت خودکار اسلایدها">
-   <span data-rdc-feature-pause><?php echo \RadmanCT\icon('pause'); ?></span>
-   <span data-rdc-feature-play hidden><?php echo \RadmanCT\icon('play'); ?></span>
-  </button>
-  <span data-rdc-feature-position aria-live="off"></span>
- </div>
  <div class="rdc-feature__nav" data-rdc-feature-nav hidden>
   <button type="button" data-rdc-feature-prev aria-label="اثر قبلی"><?php echo \RadmanCT\icon('chevron-right'); ?></button>
   <button type="button" data-rdc-feature-next aria-label="اثر بعدی"><?php echo \RadmanCT\icon('chevron-left'); ?></button>

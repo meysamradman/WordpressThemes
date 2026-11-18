@@ -128,7 +128,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-DXpiHPml.min.css",
+    "file": "css/music-home-D56LR3Qi.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -258,7 +258,7 @@
     ]
   },
   "src/js/pages/music-home.js": {
-    "file": "js/music-home-Cpro9cyP.min.js",
+    "file": "js/music-home-g15v8Whv.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
     "isEntry": true,

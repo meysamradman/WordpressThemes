@@ -17,18 +17,5 @@
 
 .rdc-feature__nav .rdc-ico{inline-size:1.8rem;block-size:1.8rem}.rdc-music-section__arrows .rdc-ico{inline-size:1rem;block-size:1rem}.rdc-music-section__badge>.rdc-ico{inline-size:1.25rem;block-size:1.25rem}
 
-.rdc-feature:has(>.rdc-feature__rotation){padding-block-end:3rem}
 .rdc-feature__track:focus-visible{outline-offset:-3px}
-.rdc-feature__rotation{
- position:absolute;inset-inline:0;inset-block-end:.25rem;z-index:1;
- display:flex;align-items:center;justify-content:center;gap:.5rem;
- color:var(--rdc-clr-wht);font-size:var(--rdc-sz-caption);pointer-events:none;
-}
-.rdc-feature__rotation button{
- display:grid;place-items:center;inline-size:2.75rem;block-size:2.75rem;
- border:0;border-radius:50%;background:transparent;color:inherit;pointer-events:auto;
-}
-.rdc-feature__rotation button:not(:disabled):is(:hover,:focus-visible){background:var(--rdc-srf)}
-.rdc-feature__rotation button:disabled{opacity:.45}
-.rdc-feature__rotation .rdc-ico{display:block;inline-size:1rem;block-size:1rem}
-.rdc-feature__rotation[hidden],.rdc-feature__nav[hidden]{display:none}
+.rdc-feature__nav[hidden]{display:none}
