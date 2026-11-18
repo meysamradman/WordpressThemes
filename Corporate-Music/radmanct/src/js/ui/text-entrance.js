@@ -1,44 +1,24 @@
-export function initializeTextEntrance(view = window) {
-  const doc = view.document;
-  const preference = view.matchMedia('(prefers-reduced-motion: reduce)');
-  if (preference.matches || !view.IntersectionObserver || !view.Element.prototype.animate) return;
+const heading = document.querySelector('main [data-rdc-en="viewport"]');
+const motion = matchMedia('(prefers-reduced-motion: no-preference)');
 
-  const targets = [...doc.querySelectorAll('main [data-rdc-en]')].map(node =>
-    node.dataset.rdcEn === 'intro' ? node.querySelector(':scope > p') : node
-  ).filter(node => node?.textContent.trim());
-  if (!targets.length) return;
-
-  const active = new Set();
-  let remaining = targets.length;
-  const observer = new view.IntersectionObserver(entries => {
-    for (const { target, isIntersecting } of entries) {
-      if (!isIntersecting || preference.matches) continue;
-      observer.unobserve(target);
-      if (!--remaining) observer.disconnect();
-      const animation = target.animate(
-        { translate: ['0 10px', '0 0'], opacity: [.75, 1] },
-        { duration: 460, easing: 'cubic-bezier(.22,.65,.36,1)' }
-      );
-      active.add(animation);
-      animation.onfinish = () => active.delete(animation);
-    }
-  });
-
-  const start = () => { for (const target of targets) observer.observe(target); };
-  const stop = () => {
+if (heading?.animate && motion.matches && window.IntersectionObserver) {
+  let entrance;
+  const observer = new IntersectionObserver(entries => {
+    if (!motion.matches || !entries.some(entry => entry.isIntersecting)) return;
     observer.disconnect();
-    for (const animation of active) animation.cancel();
-    active.clear();
-    doc.removeEventListener('rdc:curtain-end', start);
-    preference.removeEventListener('change', stop);
-    view.removeEventListener('pagehide', stop);
-  };
-
-  preference.addEventListener('change', stop, { once: true });
-  view.addEventListener('pagehide', stop, { once: true });
-  if (doc.documentElement.getAttribute('data-rdc-page-load') === 'enter') {
-    doc.addEventListener('rdc:curtain-end', start, { once: true });
-  } else start();
+    entrance = heading.animate(
+      { translate: ['0 .55em', '0 0'], opacity: [.65, 1] },
+      { duration: 650, easing: 'cubic-bezier(.22,1,.36,1)' }
+    );
+    entrance.onfinish = stop;
+  });
+  function stop() {
+    observer.disconnect();
+    entrance?.cancel();
+    motion.removeEventListener('change', stop);
+    window.removeEventListener('pagehide', stop);
+  }
+  observer.observe(heading);
+  motion.addEventListener('change', stop);
+  window.addEventListener('pagehide', stop, { once: true });
 }
-
-initializeTextEntrance();

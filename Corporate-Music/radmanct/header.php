@@ -33,10 +33,11 @@ wp_print_inline_script_tag(<<<'JS'
   root.removeAttribute('data-rdc-page-load');
   document.dispatchEvent(new Event('rdc:curtain-end'));
  };
- const safety = setTimeout(finish, 1600);
+ const safety = setTimeout(finish, 1150);
  panel.addEventListener('animationend', finish, {once:true});
  preference.addEventListener('change', finish, {once:true});
  window.addEventListener('pagehide', finish, {once:true});
+ root.setAttribute('data-rdc-arrival', '');
  root.setAttribute('data-rdc-page-load', 'enter');
 })();
 JS, ['id'=>'rdc-curtain-entry','data-nowprocket'=>true]);

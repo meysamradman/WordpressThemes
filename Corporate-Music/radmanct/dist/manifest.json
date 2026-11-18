@@ -200,12 +200,21 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-CFTVvbrG.min.css",
+    "file": "css/site-W_gua6cb.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
     ],
     "src": "src/css/site.css",
+    "isEntry": true
+  },
+  "src/css/ui/text-entrance.css": {
+    "file": "css/ui-text-entrance-odnXfeAy.min.css",
+    "name": "css-ui-text-entrance",
+    "names": [
+      "css-ui-text-entrance.css"
+    ],
+    "src": "src/css/ui/text-entrance.css",
     "isEntry": true
   },
   "src/js/admin/biography-editor.js": {
@@ -390,7 +399,7 @@
     "isDynamicEntry": true
   },
   "src/js/ui/text-entrance.js": {
-    "file": "js/text-entrance-buiQ0a5m.min.js",
+    "file": "js/text-entrance-CPKNTs_t.min.js",
     "name": "text-entrance",
     "src": "src/js/ui/text-entrance.js",
     "isEntry": true
