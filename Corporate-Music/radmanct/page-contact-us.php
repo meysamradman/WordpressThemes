@@ -7,10 +7,16 @@
     <div class="rdc-artist__content"><?php the_content();wp_link_pages(); ?></div>
     <div class="rdc-artist__channels">
      <?php if($booking['phone']): ?>
-      <a class="rdc-artist__channel" href="<?php echo esc_url('tel:'.$booking['phone']); ?>"><?php echo \RadmanCT\icon('phone'); ?><bdi><?php echo esc_html($booking['phone']); ?></bdi></a>
+      <a class="rdc-artist__channel" href="<?php echo esc_url('tel:'.$booking['phone']); ?>">
+       <?php echo \RadmanCT\icon('phone'); ?>
+       <span class="rdc-artist__channel-copy"><small>هماهنگی اجرا · <?php echo esc_html($booking['name']); ?></small><bdi dir="ltr"><?php echo esc_html($booking['phone']); ?></bdi></span>
+      </a>
      <?php endif; ?>
-     <div class="rdc-artist__channel" aria-label="شناسهٔ هماهنگی در تلگرام و ایتا">
-      <?php echo \RadmanCT\icon('social-telegram').\RadmanCT\icon('social-messenger'); ?><bdi dir="ltr"><?php echo esc_html('@'.$booking['handle']); ?></bdi>
+     <div class="rdc-artist__channel">
+      <?php $handle=rawurlencode($booking['handle']); ?>
+      <a href="<?php echo esc_url('https://t.me/'.$handle); ?>" aria-label="هماهنگی اجرا در تلگرام"><?php echo \RadmanCT\icon('social-telegram'); ?></a>
+      <a href="<?php echo esc_url('https://eitaa.com/'.$handle); ?>" aria-label="هماهنگی اجرا در ایتا"><?php echo \RadmanCT\icon('social-messenger'); ?></a>
+      <span class="rdc-artist__channel-copy" dir="ltr"><small><?php echo esc_html($booking['label']); ?></small><bdi><?php echo esc_html('@'.$booking['handle']); ?></bdi></span>
      </div>
     </div>
     <?php if(has_excerpt()): ?><p class="rdc-artist__content"><?php echo esc_html(get_the_excerpt()); ?></p><?php endif; ?>

@@ -27,5 +27,5 @@ add_filter('radmanct/music-home/data',static function(array $data):array {
 
 function social_handle():string {return 'Aliasadioriginal';}
 function booking():array {
- return ['phone'=>'','handle'=>'SarvGraphi'];
+ return ['phone'=>'09358067887','name'=>'آقای رحیمی','handle'=>'SarvGraphi','label'=>'Sarv ali asadi Graghic'];
 }

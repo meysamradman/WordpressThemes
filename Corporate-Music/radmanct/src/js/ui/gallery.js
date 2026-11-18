@@ -2,7 +2,7 @@ import {createPageLifecycle} from '../runtime/lifecycle.js';
 
 export function initializeGallery(dialog) {
  const doc=dialog.ownerDocument,image=dialog.querySelector('img'),close=dialog.querySelector('[data-rdc-lb-cls]');
- if(!image||!close||typeof dialog.showModal!=='function'||!doc.querySelector('[data-rdc-gal]'))return()=>{};
+ if(!image||!close||typeof dialog.showModal!=='function')return()=>{};
  const previous=dialog.querySelector('[data-rdc-lb-prev]'),next=dialog.querySelector('[data-rdc-lb-next]');
  const counter=dialog.querySelector('[data-rdc-lb-count]'),caption=dialog.querySelector('[data-rdc-lb-caption]'),status=dialog.querySelector('[data-rdc-lb-status]');
  const releases=[];let items=[],index=0,opener,touch;

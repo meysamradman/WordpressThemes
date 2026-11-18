@@ -79,7 +79,7 @@
     "isEntry": true
   },
   "src/css/pages/artist.css": {
-    "file": "css/artist-C8UaaRfI.min.css",
+    "file": "css/artist-2YtHeUUH.min.css",
     "name": "css-artist",
     "names": [
       "css-artist.css"
@@ -88,7 +88,7 @@
     "isEntry": true
   },
   "src/css/pages/biography.css": {
-    "file": "css/biography-BD4D4x-T.min.css",
+    "file": "css/biography-KeWWqOrc.min.css",
     "name": "css-biography",
     "names": [
       "css-biography.css"
@@ -214,12 +214,18 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-CCj6NDMB.min.css",
+    "file": "css/site-BtvY-BeK.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
     ],
     "src": "src/css/site.css",
+    "isEntry": true
+  },
+  "src/js/admin/biography-editor.js": {
+    "file": "js/biography-editor-CHS0u2eX.min.js",
+    "name": "biography-editor",
+    "src": "src/js/admin/biography-editor.js",
     "isEntry": true
   },
   "src/js/admin/media-editor.js": {

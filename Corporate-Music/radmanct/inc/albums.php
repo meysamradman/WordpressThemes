@@ -10,7 +10,9 @@ function images(int $id):array {
 function card(\WP_Post $post):void {
  $allowed=!post_password_required($post);$images=$allowed?images($post->ID):[];$cover=$allowed?(int)get_post_thumbnail_id($post):0;
  if(!\RadmanCT\PageTitle\attachment_allowed($cover))$cover=$images[0]??0;
- echo '<article class="rdc-album-card"><a class="rdc-album-card__cover" href="'.esc_url(get_permalink($post)).'" aria-label="'.esc_attr('مشاهدهٔ آلبوم '.get_the_title($post)).'" title="'.esc_attr(get_the_title($post)).'">';
+ $preview=count($images)===1&&$cover!==$images[0]?wp_get_attachment_image_url($images[0],'full'):false;
+ $label=($preview?'نمایش عکس ':'مشاهدهٔ آلبوم ').get_the_title($post);
+ echo '<article class="rdc-album-card"><a class="rdc-album-card__cover" href="'.esc_url($preview?:get_permalink($post)).'" aria-label="'.esc_attr($label).'"'.($preview?' data-rdc-gal data-rdc-caption="'.esc_attr(get_the_title($post)).'"':'').'>';
  if($cover)echo wp_get_attachment_image($cover,'medium_large',false,['loading'=>'lazy','sizes'=>'(max-width:600px) 90vw,(max-width:900px) 45vw,400px']);else echo '<span class="rdc-album-card__empty">'.\RadmanCT\icon('image').'</span>';
  echo '</a><div class="rdc-album-card__copy"><h2>'.esc_html(get_the_title($post)).'</h2>';
  if($allowed)echo '<p>'.esc_html(number_format_i18n(count($images)).' عکس').'</p>';

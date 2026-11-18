@@ -5,6 +5,9 @@
 .rdc-artist__channels{display:flex;flex-wrap:wrap;gap:1rem;margin-block:1.25rem}
 .rdc-artist__channel{display:inline-flex;align-items:center;gap:.55rem;min-block-size:3rem;padding:.45rem .95rem;border:1px solid var(--rdc-ln);border-radius:var(--rdc-rad);background:var(--rdc-srf);font-size:clamp(1rem,1.7vw,1.4rem)}
 .rdc-artist__channel .rdc-ico{color:var(--rdc-acc);inline-size:1.6rem;block-size:1.6rem}
+.rdc-artist__channel>a{display:grid;place-items:center;min-inline-size:2.75rem;min-block-size:2.75rem}
+.rdc-artist__channel-copy{display:grid;line-height:1.45}
+.rdc-artist__channel-copy small{color:var(--rdc-mut);font-size:.75em}
 .rdc-ftr--contact .rdc-ftr__handle{font-size:clamp(1rem,2.1vw,1.5rem);color:var(--rdc-mut);margin-block:1rem}
 .rdc-ftr--contact .rdc-socials{--rdc-social-size:clamp(2rem,8.5vw,4.5rem);--rdc-social-icon:clamp(1.3rem,5vw,2.7rem);--rdc-social-radius:var(--rdc-rad);--rdc-social-gap:clamp(.3rem,1.4vw,.8rem);flex-wrap:wrap}
 .rdc-ftr--contact .rdc-socials__itm{border:1px solid var(--rdc-ln);box-shadow:inset 0 1px 0 var(--rdc-ovl-ln),0 .3rem .65rem var(--rdc-clr-ink)}

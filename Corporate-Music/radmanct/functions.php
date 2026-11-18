@@ -1,6 +1,7 @@
 <?php
 namespace RadmanCT;
 defined('ABSPATH')||exit;
+require_once __DIR__.'/inc/content/biography.php';
 foreach(array('setup','music','videos','albums','content/collections','assets','site','page-title','brand','icons','ui/button','ui/contact','navigation','footer','services','seo','content/projects','content/media','preloader','client')as$module)require_once __DIR__.'/inc/'.$module.'.php';
 add_action('wp',static function():void{
  if(is_front_page()){require_once __DIR__.'/inc/pages/music-home.php';require_once __DIR__.'/inc/media.php';return;}
