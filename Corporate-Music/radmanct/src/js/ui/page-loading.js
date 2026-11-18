@@ -15,7 +15,10 @@ export function initializePageLoading(view=window){
    }catch{}
   }
   ticket=undefined;
-  html.removeAttribute('data-rdc-page-load');
+  if(html.hasAttribute('data-rdc-page-load')){
+   html.removeAttribute('data-rdc-page-load');
+   if(!keepTicket)doc.dispatchEvent(new Event('rdc:curtain-end'));
+  }
  };
  const cancel=()=>reset();
  const leave=()=>reset(true);

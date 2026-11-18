@@ -8,11 +8,12 @@
       "_lifecycle-CEUUFq-m.min.js"
     ]
   },
-  "_audio-controls-BhqQptpj.min.js": {
-    "file": "js/audio-controls-BhqQptpj.min.js",
+  "_audio-controls-BC-GFtMF.min.js": {
+    "file": "js/audio-controls-BC-GFtMF.min.js",
     "name": "audio-controls",
     "imports": [
-      "_lifecycle-CEUUFq-m.min.js"
+      "_lifecycle-CEUUFq-m.min.js",
+      "_media-wait-CEBUdDi-.min.js"
     ]
   },
   "_gsap-vendor-CvDoa17S.min.js": {
@@ -22,6 +23,10 @@
   "_lifecycle-CEUUFq-m.min.js": {
     "file": "js/lifecycle-CEUUFq-m.min.js",
     "name": "lifecycle"
+  },
+  "_media-wait-CEBUdDi-.min.js": {
+    "file": "js/media-wait-CEBUdDi-.min.js",
+    "name": "media-wait"
   },
   "_preload-helper-CRzLMJPS.min.js": {
     "file": "js/preload-helper-CRzLMJPS.min.js",
@@ -51,9 +56,12 @@
       "_refresh-BqO6rLFb.min.js"
     ]
   },
-  "_video-player-hExkDzl-.min.js": {
-    "file": "js/video-player-hExkDzl-.min.js",
-    "name": "video-player"
+  "_video-player-CRrjcdvY.min.js": {
+    "file": "js/video-player-CRrjcdvY.min.js",
+    "name": "video-player",
+    "imports": [
+      "_media-wait-CEBUdDi-.min.js"
+    ]
   },
   "src/css/admin/gallery.css": {
     "file": "css/admin-gallery-Bn5sSMTa.min.css",
@@ -137,7 +145,7 @@
     "isEntry": true
   },
   "src/css/pages/music-detail.css": {
-    "file": "css/music-detail-CibpKNy7.min.css",
+    "file": "css/music-detail-CnLgRJlV.min.css",
     "name": "css-music-detail",
     "names": [
       "css-music-detail.css"
@@ -146,7 +154,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-CXraxbmI.min.css",
+    "file": "css/music-home-D8MDYpNc.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -182,7 +190,7 @@
     "isEntry": true
   },
   "src/css/pages/video-detail.css": {
-    "file": "css/video-detail--WyJ23vs.min.css",
+    "file": "css/video-detail-BhFZtOjb.min.css",
     "name": "css-video-detail",
     "names": [
       "css-video-detail.css"
@@ -191,7 +199,7 @@
     "isEntry": true
   },
   "src/css/pages/videos.css": {
-    "file": "css/videos-ssst-Y90.min.css",
+    "file": "css/videos-OA8CFVCD.min.css",
     "name": "css-videos",
     "names": [
       "css-videos.css"
@@ -200,7 +208,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-DxzNXXz7.min.css",
+    "file": "css/site-DnV0VM5a.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -279,24 +287,24 @@
     ]
   },
   "src/js/pages/music-home.js": {
-    "file": "js/music-home-C15zd5Yk.min.js",
+    "file": "js/music-home-BwGkpWCG.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_video-player-hExkDzl-.min.js",
-      "_audio-controls-BhqQptpj.min.js"
+      "_video-player-CRrjcdvY.min.js",
+      "_audio-controls-BC-GFtMF.min.js"
     ]
   },
   "src/js/pages/music.js": {
-    "file": "js/music-CNzc5O0m.min.js",
+    "file": "js/music-B8alBnDE.min.js",
     "name": "music",
     "src": "src/js/pages/music.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_audio-controls-BhqQptpj.min.js"
+      "_audio-controls-BC-GFtMF.min.js"
     ]
   },
   "src/js/pages/page-title.js": {
@@ -334,17 +342,17 @@
     ]
   },
   "src/js/pages/videos.js": {
-    "file": "js/videos-Dv1Wcmbk.min.js",
+    "file": "js/videos-x1lASyvx.min.js",
     "name": "videos",
     "src": "src/js/pages/videos.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_video-player-hExkDzl-.min.js"
+      "_video-player-CRrjcdvY.min.js"
     ]
   },
   "src/js/site.js": {
-    "file": "js/site-CbpNgLOI.min.js",
+    "file": "js/site-Bwrxc2GR.min.js",
     "name": "site",
     "src": "src/js/site.js",
     "isEntry": true,

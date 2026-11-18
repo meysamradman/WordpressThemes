@@ -5,7 +5,7 @@ import {initializePageLoading} from '../radmanct/src/js/ui/page-loading.js';
 function setup(useNavigation=false,reducedMotion=false){
  const doc=new EventTarget(),view=new EventTarget(),timers=new Map(),attrs=new Set(),storage=new Map();
  let next=0;
- doc.documentElement={setAttribute:key=>attrs.add(key),removeAttribute:key=>attrs.delete(key)};
+ doc.documentElement={hasAttribute:key=>attrs.has(key),setAttribute:key=>attrs.add(key),removeAttribute:key=>attrs.delete(key)};
  view.document=doc;view.location=new URL('https://site.test/music/');
  view.matchMedia=()=>({matches:reducedMotion});
  view.sessionStorage={getItem:key=>storage.get(key),setItem:(key,value)=>storage.set(key,value),removeItem:key=>storage.delete(key)};

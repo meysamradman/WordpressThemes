@@ -5,6 +5,7 @@ import {homeTracks} from '../radmanct/src/js/ui/music-player.js';
 class Control extends EventTarget {
  constructor(){super();this.hidden=false;this.value='0';this.attributes={};}
  setAttribute(key,value){this.attributes[key]=value;}
+ toggleAttribute(key,on){if(on)this.attributes[key]='';else delete this.attributes[key];}
 }
 function fixture(){
  const selectors=['audio','.rdc-player__controls','[data-rdc-player-play]','[data-rdc-player-seek]','[data-rdc-player-time]','[data-rdc-player-duration]','[data-rdc-player-mute]','[data-rdc-player-volume]','[data-rdc-player-start]','[data-rdc-player-pause]','[data-rdc-player-status]'];
@@ -52,4 +53,22 @@ test('home queue deduplicates hero/card buttons and rejects missing or foreign m
  const tracks=homeTracks([button('1','/uploads/one.mp3'),button('1','/uploads/one.mp3'),button('2','https://foreign.example/two.mp3'),button('3',''),button('4','http://127.0.0.1:8098/uploads/four.mp3')],'http://127.0.0.1:8098');
  assert.deepEqual(tracks.map(track=>track.key),['1','4']);
  assert.equal(tracks[0].url,'http://127.0.0.1:8098/uploads/one.mp3');
+});
+
+test('audio wait state follows native playback and clears on pause or error',()=>{
+ const {root,audio,nodes}=fixture(),play=nodes['[data-rdc-player-play]'];
+ const release=initializeAudioControls(root);
+ audio.readyState=2;
+ audio.play();
+ assert.equal(play.attributes['data-rdc-media-wait'],'');
+ audio.dispatchEvent(new Event('playing'));
+ assert.equal(play.attributes['data-rdc-media-wait'],undefined);
+ audio.dispatchEvent(new Event('waiting'));
+ assert.equal(play.attributes['data-rdc-media-wait'],'');
+ audio.pause();
+ assert.equal(play.attributes['data-rdc-media-wait'],undefined);
+ audio.play();
+ audio.dispatchEvent(new Event('error'));
+ assert.equal(play.attributes['data-rdc-media-wait'],undefined);
+ release();
 });

@@ -16,9 +16,15 @@ wp_print_inline_script_tag(<<<'JS'
   if (!(expires > Date.now()) || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   const root = document.documentElement;
   root.setAttribute('data-rdc-page-load', 'enter');
-  setTimeout(() => {
-   if (root.getAttribute('data-rdc-page-load') === 'enter') root.removeAttribute('data-rdc-page-load');
-  }, 310);
+  const finish = () => {
+   clearTimeout(timer);
+   window.removeEventListener('scroll', finish);
+   if (root.getAttribute('data-rdc-page-load') !== 'enter') return;
+   root.removeAttribute('data-rdc-page-load');
+   document.dispatchEvent(new Event('rdc:curtain-end'));
+  };
+  const timer = setTimeout(finish, 310);
+  window.addEventListener('scroll', finish, {passive:true});
  } catch {}
 })();
 JS, ['id'=>'rdc-curtain-entry','data-nowprocket'=>true]);
