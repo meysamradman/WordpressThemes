@@ -34,7 +34,7 @@ export function initializePageLoading(view=window){
   reset();
   signal=event.signal;
   signal?.addEventListener('abort',cancel,{once:true});
-  ticket=String(Date.now()+CLEAR_DELAY);
+  ticket=JSON.stringify({expires:Date.now()+CLEAR_DELAY,destination:url.pathname+url.search});
   try{view.sessionStorage.setItem(CURTAIN_KEY,ticket);}catch{}
   html.setAttribute('data-rdc-page-load','leave');
   clearTimer=view.setTimeout(cancel,CLEAR_DELAY);

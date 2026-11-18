@@ -10,20 +10,34 @@
 wp_print_inline_script_tag(<<<'JS'
 (() => {
  const reload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
- let expires = 0;
+ let ticket;
  try {
   const key = 'rdc:page-curtain';
-  expires = Number(sessionStorage.getItem(key));
+  const stored = sessionStorage.getItem(key);
   sessionStorage.removeItem(key);
+  ticket = JSON.parse(stored);
  } catch {}
- if ((!reload && !(expires > Date.now())) || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+ const destination = location.pathname + location.search;
+ const internal = ticket?.destination === destination && ticket.expires > Date.now();
+ const preference = matchMedia('(prefers-reduced-motion:reduce)');
+ if ((!reload && !internal) || preference.matches) return;
  const root = document.documentElement;
- root.setAttribute('data-rdc-page-load', 'enter');
- setTimeout(() => {
+ const panel = document.querySelector('.rdc-page-curtain > :last-child');
+ if (!panel) return;
+ const finish = () => {
+  clearTimeout(safety);
+  panel.removeEventListener('animationend', finish);
+  preference.removeEventListener('change', finish);
+  window.removeEventListener('pagehide', finish);
   if (root.getAttribute('data-rdc-page-load') !== 'enter') return;
   root.removeAttribute('data-rdc-page-load');
   document.dispatchEvent(new Event('rdc:curtain-end'));
- }, 350);
+ };
+ const safety = setTimeout(finish, 420);
+ panel.addEventListener('animationend', finish, {once:true});
+ preference.addEventListener('change', finish, {once:true});
+ window.addEventListener('pagehide', finish, {once:true});
+ root.setAttribute('data-rdc-page-load', 'enter');
 })();
 JS, ['id'=>'rdc-curtain-entry','data-nowprocket'=>true]);
 ?>

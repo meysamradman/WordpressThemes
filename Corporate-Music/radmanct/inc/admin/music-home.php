@@ -28,7 +28,9 @@ add_action('add_meta_boxes_page',static function(\WP_Post $post):void {
      <?php endforeach; ?>
     </select>
    </p>
-  <?php endfor;
+  <?php endfor; ?>
+  <p class="description">کاور هر اسلاید از تصویر شاخص همان آهنگ می‌آید.</p>
+  <?php
  },'page','normal','high');
 });
 

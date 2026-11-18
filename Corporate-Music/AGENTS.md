@@ -8,6 +8,7 @@ Independent customer edition of Radman CT in the parent WordpressThemes reposito
 - Shared fonts/colors/radius belong to `src/css/tokens.css`, tag typography to `base.css`; reuse button, icons, lifecycle and blog cards. CSS/JS entries load only on their consumers. Keep audio native, local and without autoplay.
 - `inc/content/music.php` owns track registration and editor writes; `inc/music.php` owns frontend data/privacy/card helpers. Home composes named sections with data owned by `inc/pages/music-home.php`. Workshop UI and demo-query adapters never ship.
 - Yoast SEO owns metadata/canonical/schema; preserve the theme fallback's plugin detection. No duplicate tags, title-specific H2 hacks or plugin-field overrides. One H1 per page; H2 sections, H3 cards, decorative text p/span.
+- Fixed design artwork for custom pages such as home and biography is owned by their templates and packaged as WebP under `radmanct/images/pages/`. Do not bind it to a page featured image. Editorial covers for posts, tracks, projects, videos and albums keep their native attachment IDs.
 - All runtime assets are local. Preserve stored metadata, media/privacy guards, native APIs, escaping, nonce/capabilities and author/license notices. No Node runtime on hosting.
 - Credentials remain in ignored `.env.local-wordpress` and `.local-admin.txt`; never commit them. Run short targeted checks only. No long tests, release ZIP, server migration or deployment unless requested.
 

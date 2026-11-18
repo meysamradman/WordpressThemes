@@ -5,15 +5,20 @@
  background:var(--rdc-clr-ink);transform-origin:center bottom;
 }
 @media (prefers-reduced-motion:no-preference){
- html[data-rdc-page-load] .rdc-page-curtain{display:block}
+ html[data-rdc-page-load=enter] .rdc-page-curtain{display:block}
  html[data-rdc-page-load=enter] .rdc-page-curtain>span{
-  animation:rdc-curtain-open .18s cubic-bezier(.22,.68,.36,1) calc(.025s + var(--rdc-panel)*.004s) both;
+  animation:rdc-curtain-open .18s cubic-bezier(.22,.68,.36,1) calc(var(--rdc-panel)*.004s) both;
  }
- html[data-rdc-page-load] .rdc-scr-prog{visibility:hidden}
+ html[data-rdc-page-load=enter] .rdc-scr-prog{visibility:hidden}
 }
 [data-rdc-arc] [data-rdc-res]{position:relative}
-html:not([data-rdc-page-load]) [data-rdc-arc].is-load [data-rdc-res]::before{
+html:not([data-rdc-page-load=enter]) [data-rdc-arc].is-load [data-rdc-res]::before{
  content:'';position:absolute;z-index:1;inset-block-start:0;inset-inline:0;
  block-size:2px;background:var(--rdc-acc);pointer-events:none;
+}
+@media (max-width:650px) and (prefers-reduced-motion:no-preference){
+ html[data-rdc-page-load=enter] .rdc-page-curtain>span{
+  animation-duration:.13s;animation-delay:calc(var(--rdc-panel)*.002s);
+ }
 }
 @keyframes rdc-curtain-open{from{transform:scaleY(1)}to{transform:scaleY(0);visibility:hidden}}
