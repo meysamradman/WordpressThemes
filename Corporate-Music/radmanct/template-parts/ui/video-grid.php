@@ -10,9 +10,12 @@
   </a>
   <?php if($aparat): ?><template data-rdc-aparat-tpl><?php get_template_part('template-parts/ui/aparat',null,$item); ?></template><?php endif; ?>
  <?php endif; ?>
- </div><div class="rdc-video-card__copy"><<?php echo $tag; ?>><a href="<?php echo esc_url($url); ?>"><?php echo esc_html($item['title']); ?></a></<?php echo $tag; ?>><p><?php echo esc_html($item['desc']); ?></p><?php if(!empty($args['actions'])&&empty($item['aparat'])):
+ </div><div class="rdc-video-card__copy"><<?php echo $tag; ?>><a href="<?php echo esc_url($url); ?>"><?php echo esc_html($item['title']); ?></a></<?php echo $tag; ?>><p><?php echo esc_html($item['desc']); ?></p><?php if(!empty($args['actions'])):
+ if(!empty($item['aparat'])):
+  echo \RadmanCT\Videos\aparat_download_button($item['aparat'],'rdc-video-card__download');
+ else:
  $downloads=\RadmanCT\Videos\downloads((int)($item['id']??0));
  $download=$downloads[1080]?:($downloads[720]?:($downloads[480]?:$file));
  if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-video-card__download','variant'=>'download','download'=>true]);
- endif; ?></div></article>
+ endif; endif; ?></div></article>
 <?php endforeach; ?></div>
