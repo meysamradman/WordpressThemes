@@ -5,12 +5,14 @@ export function initializeGallery(dialog) {
  if(!image||!close||typeof dialog.showModal!=='function')return()=>{};
  const previous=dialog.querySelector('[data-rdc-lb-prev]'),next=dialog.querySelector('[data-rdc-lb-next]');
  const counter=dialog.querySelector('[data-rdc-lb-count]'),caption=dialog.querySelector('[data-rdc-lb-caption]'),status=dialog.querySelector('[data-rdc-lb-status]');
+ const download=dialog.querySelector('.rdc-lb__download'),downloadLink=download?.querySelector('a');
  const releases=[];let items=[],index=0,opener,touch;
  const listen=(node,type,handler)=>{if(!node)return;node.addEventListener(type,handler);releases.push(()=>node.removeEventListener(type,handler));};
  const lock=locked=>doc.dispatchEvent(new doc.defaultView.CustomEvent('rdc:pnl-lock',{detail:{locked}}));
  const display=position=>{
   if(!items.length)return;index=Math.max(0,Math.min(items.length-1,position));const link=items[index];
   if(status)status.textContent='در حال دریافت تصویر…';image.alt=link.querySelector('img')?.alt||'';image.src=link.href;
+  if(downloadLink){downloadLink.href=link.href;download.hidden=false;}
   if(counter)counter.textContent=`${(index+1).toLocaleString('fa-IR')} / ${items.length.toLocaleString('fa-IR')}`;
   if(caption)caption.textContent=link.dataset.rdcCaption||'';
   if(previous)previous.disabled=index===0;if(next)next.disabled=index===items.length-1;
@@ -21,7 +23,11 @@ export function initializeGallery(dialog) {
   const group=link.closest('[data-rdc-gallery]')||doc;items=[...group.querySelectorAll('a[data-rdc-gal]')];const position=items.indexOf(link);if(position<0)return;
   event.preventDefault();opener=link;display(position);dialog.showModal();lock(true);
  };
- const closed=()=>{image.removeAttribute('src');touch=undefined;lock(false);opener?.focus({preventScroll:true});};
+ const closed=()=>{
+  image.removeAttribute('src');
+  if(downloadLink){downloadLink.removeAttribute('href');download.hidden=true;}
+  touch=undefined;lock(false);opener?.focus({preventScroll:true});
+ };
  listen(doc,'click',open);listen(close,'click',()=>dialog.close());
  listen(previous,'click',()=>display(index-1));listen(next,'click',()=>display(index+1));
  listen(dialog,'click',event=>{if(event.target===dialog)dialog.close();});

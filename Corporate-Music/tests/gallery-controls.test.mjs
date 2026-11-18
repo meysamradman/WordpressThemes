@@ -5,18 +5,23 @@ class Element extends EventTarget{constructor(){super();this.hidden=false;this.d
 function fixture(){
  const doc=new Element();doc.documentElement={dir:'rtl'};doc.defaultView={CustomEvent};
  const image=new Element(),close=new Element(),previous=new Element(),next=new Element(),counter=new Element(),caption=new Element(),status=new Element();
- const nodes={'img':image,'[data-rdc-lb-cls]':close,'[data-rdc-lb-prev]':previous,'[data-rdc-lb-next]':next,'[data-rdc-lb-count]':counter,'[data-rdc-lb-caption]':caption,'[data-rdc-lb-status]':status};
+ const download=new Element(),downloadLink=new Element();
+ download.hidden=true;download.querySelector=()=>downloadLink;
+ const nodes={'img':image,'[data-rdc-lb-cls]':close,'[data-rdc-lb-prev]':previous,'[data-rdc-lb-next]':next,'[data-rdc-lb-count]':counter,'[data-rdc-lb-caption]':caption,'[data-rdc-lb-status]':status,'.rdc-lb__download':download};
  const dialog=new Element();dialog.ownerDocument=doc;dialog.querySelector=key=>nodes[key];dialog.showModal=()=>{dialog.open=true;};dialog.close=()=>{dialog.open=false;dialog.dispatchEvent(new Event('close'));};
  const group={querySelectorAll:()=>links};
  const links=[0,1,2].map(index=>({href:`http://local.test/${index}.webp`,dataset:{rdcCaption:`Caption ${index}`},querySelector:()=>({alt:`Photo ${index}`}),closest:()=>group,focus(){this.focused=true;}}));
  doc.querySelector=()=>links[0];
  function open(index=0){const event=new Event('click',{cancelable:true});Object.defineProperty(event,'target',{value:{closest:()=>links[index]}});doc.dispatchEvent(event);return event;}
- const release=initializeGallery(dialog);return {doc,image,close,previous,next,counter,caption,status,dialog,links,open,release};
+ const release=initializeGallery(dialog);return {doc,image,close,previous,next,counter,caption,status,download,downloadLink,dialog,links,open,release};
 }
 test('gallery opens one image, moves within its album and restores focus',()=>{
  const f=fixture();assert.equal(f.open().defaultPrevented,true);assert.equal(f.dialog.open,true);assert.equal(f.image.src,f.links[0].href);assert.equal(f.previous.disabled,true);
+ assert.equal(f.download.hidden,false);assert.equal(f.downloadLink.href,f.image.src);
  f.next.dispatchEvent(new Event('click'));assert.equal(f.image.src,f.links[1].href);assert.equal(f.caption.textContent,'Caption 1');
+ assert.equal(f.downloadLink.href,f.image.src);
  f.close.dispatchEvent(new Event('click'));assert.equal(f.dialog.open,false);assert.equal(f.links[0].focused,true);assert.equal(f.image.src,undefined);f.release();
+ assert.equal(f.download.hidden,true);assert.equal(f.downloadLink.href,undefined);
 });
 test('RTL keyboard and touch navigation respect gallery boundaries',()=>{
  const f=fixture();f.open();const key=new Event('keydown',{cancelable:true});key.key='ArrowLeft';f.dialog.dispatchEvent(key);assert.equal(f.image.src,f.links[1].href);

@@ -2,5 +2,5 @@
 <main id="main-content" class="rdc-ctr rdc-collection" data-rdc-arc tabindex="-1">
  <h1 class="screen-reader-text"><?php if(is_tax())single_term_title();else echo 'گالری تصاویر'; ?></h1>
  <p class="rdc-arc-sts screen-reader-text" role="status" aria-live="polite" aria-atomic="true"></p>
- <div data-rdc-res tabindex="-1" aria-label="آلبوم‌های عکس"><div class="rdc-album-grid" data-rdc-gallery><?php if(have_posts()):while(have_posts()):the_post();\RadmanCT\Albums\card(get_post());endwhile;else: ?><p>هنوز آلبومی منتشر نشده است.</p><?php endif; ?></div><?php get_template_part('template-parts/ui/archive-pagination'); ?></div>
+ <div data-rdc-res tabindex="-1" aria-label="آلبوم‌های عکس"><div class="rdc-album-grid" data-rdc-gallery data-rdc-arc-items><?php if(have_posts()):while(have_posts()):the_post();\RadmanCT\Albums\card(get_post());endwhile;else: ?><p>هنوز آلبومی منتشر نشده است.</p><?php endif; ?></div><?php get_template_part('template-parts/ui/archive-pagination',null,['more'=>'عکس‌های بیشتر']); ?></div>
 </main><?php get_footer(); ?>

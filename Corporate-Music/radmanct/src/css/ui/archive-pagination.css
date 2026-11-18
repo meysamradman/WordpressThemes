@@ -4,3 +4,6 @@
 .pagination .page-numbers.current,.pagination a.page-numbers:is(:hover,:focus-visible){color:var(--rdc-acc)}
 .pagination :is(.prev,.next){background:var(--rdc-srf);color:var(--rdc-ink)}
 .pagination :is(.prev,.next)>.rdc-ico{display:block;inline-size:1rem;block-size:1rem}
+.pagination[data-rdc-arc-auto] .page-numbers:not(.next){display:none}
+.pagination[data-rdc-arc-auto] .next{display:inline-flex;gap:.3em;padding-inline:1rem;border-radius:var(--rdc-rad)}
+.pagination[data-rdc-arc-auto] .next[aria-busy=true]::after{content:'…'}

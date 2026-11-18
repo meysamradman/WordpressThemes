@@ -2,14 +2,17 @@ import {observeSizes} from '../runtime/observers.js';
 
 export function initializeCarousel(root){
  const doc=root.ownerDocument,view=doc.defaultView,win=root.querySelector('[data-rdc-rail-track]');
- const slides=[...win.children],prev=root.querySelector('[data-rdc-rail-prev]'),next=root.querySelector('[data-rdc-rail-next]'),nav=root.querySelector('[data-rdc-rail-nav]'),status=root.querySelector('[data-rdc-rail-status]');
- if(!slides.length||!prev||!next||!nav||!status)return()=>{};
+ if(!win)return()=>{};
+ const slides=[...win.children],prev=root.querySelectorAll('[data-rdc-rail-prev]'),next=root.querySelectorAll('[data-rdc-rail-next]'),nav=root.querySelectorAll('[data-rdc-rail-nav]'),status=root.querySelector('[data-rdc-rail-status]');
+ if(!slides.length||!prev.length||!next.length||!status)return()=>{};
  const reduced=view.matchMedia('(prefers-reduced-motion:reduce)');
- let sign=1,max=0,pages=[0],offsets=[],current=0,raf=0,timer=0,drag=null,motion=null;
+ let sign=1,max=0,pages=[0],offsets=[],current=0,raf=0,timer=0,drag=null,motion=null,suppressClick=false;
  const position=()=>Math.max(0,Math.min(max,sign*win.scrollLeft));
  const pageAt=value=>pages.reduce((best,offset,index)=>Math.abs(offset-value)<Math.abs(pages[best]-value)?index:best,0);
  const indicate=()=>{
-  raf=0;const value=position();current=pageAt(value);prev.disabled=value<2;next.disabled=value>max-2;
+  raf=0;const value=position();current=pageAt(value);
+  for(const button of prev)button.disabled=value<2;
+  for(const button of next)button.disabled=value>max-2;
  };
  const announce=()=>{timer=0;indicate();status.textContent=`صفحهٔ ${current+1} از ${pages.length}`;};
  const scroll=()=>{if(!raf)raf=view.requestAnimationFrame(indicate);view.clearTimeout(timer);timer=view.setTimeout(announce,150);};
@@ -41,7 +44,9 @@ export function initializeCarousel(root){
   sign=nextSign;max=nextMax;offsets=nextOffsets;
   const nextPages=[0];for(let index=1;index<slides.length;index++){const value=Math.min(max,offsets[index]);if(value>nextPages.at(-1)+2)nextPages.push(value);}
   if(max>nextPages.at(-1)+2)nextPages.push(max);
-  pages=nextPages;nav.hidden=false;win.tabIndex=pages.length<2?-1:0;indicate();
+  pages=nextPages;
+  for(const controls of nav)controls.hidden=pages.length<2&&controls.dataset.rdcRailNav==='side';
+  win.tabIndex=pages.length<2?-1:0;indicate();
  };
  const key=event=>{
   if(event.target!==win)return;
@@ -49,8 +54,9 @@ export function initializeCarousel(root){
   else if(event.key==='Home'||event.key==='End'){event.preventDefault();go(event.key==='Home'?0:pages.length-1);}
  };
  const start=event=>{
+  suppressClick=false;
   cancelMotion();
-  if(event.pointerType!=='mouse'||!event.isPrimary||event.button!==0||event.target.closest('a,button,input,select,textarea,video,[contenteditable]'))return;
+  if(event.pointerType!=='mouse'||!event.isPrimary||event.button!==0||event.target.closest('button,input,select,textarea,video,iframe,[contenteditable]'))return;
   drag={id:event.pointerId,x:event.clientX,start:win.scrollLeft,moved:false};
  };
  const move=event=>{
@@ -63,15 +69,24 @@ export function initializeCarousel(root){
   if(event.pointerId!==drag?.id)return;
   const moved=drag.moved;drag=null;win.classList.remove('is-drag');
   if(win.hasPointerCapture(event.pointerId))win.releasePointerCapture(event.pointerId);
-  if(moved){const value=position(),target=offsets.reduce((best,offset)=>Math.abs(Math.min(max,offset)-value)<Math.abs(best-value)?Math.min(max,offset):best,0);glide(target);}
+  if(moved){suppressClick=true;go(pageAt(position()));}
+ };
+ const preventNativeDrag=event=>{if(drag)event.preventDefault();};
+ const preventDragClick=event=>{
+  if(!suppressClick||!event.detail)return;
+  suppressClick=false;
+  event.preventDefault();event.stopImmediatePropagation();
  };
  const focus=event=>{
+  if(drag)return;
   const index=slides.findIndex(slide=>slide.contains(event.target));const slide=slides[index];if(index<0)return;
   const value=position(),width=slide.offsetWidth,padding=Number.parseFloat(view.getComputedStyle(win).paddingInlineStart)||0;
   if(offsets[index]<value||offsets[index]+width>value+win.clientWidth-padding){cancelMotion();win.scrollLeft=sign*Math.min(max,offsets[index]);}
  };
- prev.addEventListener('click',back);next.addEventListener('click',forward);
- const listeners={scroll,keydown:key,pointerdown:start,pointermove:move,pointerup:finish,pointercancel:finish,lostpointercapture:finish,focusin:focus,wheel:cancelMotion,touchstart:cancelMotion};
+ for(const button of prev)button.addEventListener('click',back);
+ for(const button of next)button.addEventListener('click',forward);
+ win.addEventListener('click',preventDragClick,true);
+ const listeners={scroll,keydown:key,pointerdown:start,pointermove:move,pointerup:finish,pointercancel:finish,lostpointercapture:finish,dragstart:preventNativeDrag,focusin:focus,wheel:cancelMotion,touchstart:cancelMotion};
  for(const [name,fn] of Object.entries(listeners))win.addEventListener(name,fn,['scroll','wheel','touchstart'].includes(name)?{passive:true}:undefined);
  const reduce=()=>{if(reduced.matches&&motion){const target=motion.target;cancelMotion();win.scrollLeft=sign*target;}};
  reduced.addEventListener('change',reduce);
@@ -79,9 +94,13 @@ export function initializeCarousel(root){
  const release=observeSizes(view,[win,slides[0]],measure);
  return()=>{
   release();cancelMotion();reduced.removeEventListener('change',reduce);view.clearTimeout(timer);if(raf)view.cancelAnimationFrame(raf);
-  prev.removeEventListener('click',back);next.removeEventListener('click',forward);view.removeEventListener('pointerup',finish);
+  for(const button of prev)button.removeEventListener('click',back);
+  for(const button of next)button.removeEventListener('click',forward);
+  win.removeEventListener('click',preventDragClick,true);view.removeEventListener('pointerup',finish);
   for(const [name,fn] of Object.entries(listeners))win.removeEventListener(name,fn);
   if(drag&&win.hasPointerCapture(drag.id))win.releasePointerCapture(drag.id);
-  win.classList.remove('is-enh','is-drag');nav.hidden=true;status.textContent='';
+  win.classList.remove('is-enh','is-drag');
+  for(const controls of nav)controls.hidden=true;
+  status.textContent='';
  };
 }
