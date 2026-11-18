@@ -1,6 +1,7 @@
 <?php
 namespace RadmanCT\Music;
 defined('ABSPATH')||exit;
+const NEWEST_FIRST=['date'=>'DESC','ID'=>'DESC'];
 function register():void {
     register_post_type('track',['labels'=>['name'=>'آهنگ‌ها','singular_name'=>'آهنگ','add_new_item'=>'افزودن آهنگ','edit_item'=>'ویرایش آهنگ','featured_image'=>'کاور آهنگ','set_featured_image'=>'انتخاب کاور'],'public'=>true,'show_in_rest'=>true,'has_archive'=>'music','rewrite'=>['slug'=>'music','with_front'=>false],'menu_icon'=>'dashicons-format-audio','supports'=>['title','editor','thumbnail','excerpt','revisions']]);
     register_taxonomy('music_category','track',['labels'=>['name'=>'دسته‌های موسیقی','singular_name'=>'دستهٔ موسیقی'],'public'=>true,'show_in_rest'=>true,'hierarchical'=>true,'show_admin_column'=>true,'rewrite'=>['slug'=>'music-category','with_front'=>false]]);
@@ -14,7 +15,7 @@ add_action('add_meta_boxes_track',static function():void{
         foreach(['audio'=>'فایل پخش','download'=>'فایل دانلود (اختیاری؛ پیش‌فرض همان فایل پخش)'] as $key=>$label){
             echo '<div data-rdc-audio><p>'.esc_html($label).'</p><input type="hidden" name="rdc_track['.$key.']" value="'.(int)$data[$key].'"><p data-rdc-audio-lbl>'.esc_html($data[$key]?get_the_title($data[$key]):'فایلی انتخاب نشده').'</p><button type="button" class="button" data-rdc-audio-pick>انتخاب فایل صوتی</button> <button type="button" class="button-link-delete" data-rdc-audio-clear>پاک‌کردن انتخاب</button></div>';
         }
-        echo '<p><label for="rdc-track-lyrics">متن آهنگ (اختیاری)</label><textarea class="widefat" id="rdc-track-lyrics" name="rdc_track[lyrics]" rows="6">'.esc_textarea($data['lyrics']).'</textarea></p><p class="description">نام آهنگ در عنوان، تصویر در کاور و معرفی در خلاصه/ویرایشگر بومی ثبت می‌شود. فایل‌ها در همین رسانهٔ وردپرس نگه داشته می‌شوند.</p>';
+        echo '<p><label for="rdc-track-lyrics">متن شعر (اختیاری)</label><textarea class="widefat" id="rdc-track-lyrics" name="rdc_track[lyrics]" rows="8" dir="rtl" aria-describedby="rdc-track-lyrics-help" placeholder="'.esc_attr("سطر اول شعر\nسطر دوم شعر\n\nسطر اول بند بعدی").'">'.esc_textarea($data['lyrics']).'</textarea><span class="description" id="rdc-track-lyrics-help">هر سطر را در خط جدا بنویسید. برای جدا کردن بندها یک خط خالی بگذارید. شعر زیر پلیر و بعد از توضیحات نمایش داده می‌شود.</span></p><p class="description">نام آهنگ در عنوان، تصویر در کاور و معرفی کوتاه یک یا دو خطی در بخش خلاصه یا ویرایشگر اصلی ثبت می‌شود. فایل‌ها در همین رسانهٔ وردپرس نگه داشته می‌شوند.</p>';
     },'track','normal','high');
 });
 add_action('save_post_track',static function(int $id):void{
@@ -47,5 +48,8 @@ add_action('admin_enqueue_scripts',static function():void{
 
 add_action('pre_get_posts',static function(\WP_Query $query):void{
  if(is_admin()||!$query->is_main_query()||$query->is_feed()||$query->is_singular())return;
- if(native($query))$query->set('posts_per_page',8);
+ if(native($query)){
+  $query->set('posts_per_page',8);
+  $query->set('orderby',NEWEST_FIRST);
+ }
 });

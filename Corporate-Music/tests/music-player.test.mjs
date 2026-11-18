@@ -6,6 +6,10 @@ class Control extends EventTarget {
  constructor(){super();this.hidden=false;this.value='0';this.attributes={};}
  setAttribute(key,value){this.attributes[key]=value;}
  toggleAttribute(key,on){if(on)this.attributes[key]='';else delete this.attributes[key];}
+ getBoundingClientRect(){return {left:100,width:200};}
+ setPointerCapture(id){this.captured=id;}
+ hasPointerCapture(id){return this.captured===id;}
+ releasePointerCapture(){this.captured=undefined;}
 }
 function fixture(){
  const selectors=['audio','.rdc-player__controls','[data-rdc-player-play]','[data-rdc-player-seek]','[data-rdc-player-time]','[data-rdc-player-duration]','[data-rdc-player-mute]','[data-rdc-player-volume]','[data-rdc-player-start]','[data-rdc-player-pause]','[data-rdc-player-status]'];
@@ -38,6 +42,34 @@ test('seek waits for valid metadata; position, duration and volume stay synchron
 });
 test('time formatting rejects invalid durations',()=>{assert.equal(formatAudioTime(NaN),'0:00');assert.equal(formatAudioTime(Infinity),'0:00');assert.equal(formatAudioTime(125.8),'2:05');});
 
+test('waveform drag previews the target, commits once on release and discards a cancelled touch',()=>{
+ const {root,audio,nodes,progress}=fixture();
+ const release=initializeAudioControls(root);
+ const seek=nodes['[data-rdc-player-seek]'];
+ const pointer=(type,x)=>seek.dispatchEvent(Object.assign(new Event(type,{cancelable:true}),
+  {pointerId:1,isPrimary:true,button:0,clientX:x}));
+ pointer('pointerdown',200);
+ assert.equal(seek.captured,undefined);
+ audio.duration=120;
+ audio.dispatchEvent(new Event('loadedmetadata'));
+ pointer('pointerdown',200);
+ pointer('pointermove',250);
+ assert.equal(progress.get('--rdc-audio-progress'),'75%');
+ assert.equal(audio.currentTime,0);
+ audio.dispatchEvent(new Event('timeupdate'));
+ assert.equal(seek.value,'750');
+ pointer('pointerup',250);
+ assert.equal(audio.currentTime,90);
+ assert.equal(audio.paused,true);
+ assert.equal(seek.captured,undefined);
+ pointer('pointerdown',120);
+ pointer('pointercancel',120);
+ assert.equal(audio.currentTime,90);
+ assert.equal(seek.value,'750');
+ assert.equal(root.dataset.rdcSeeking,undefined);
+ release();
+});
+
 test('cancelled playback is silent while real playback failure remains actionable',async()=>{
  for(const name of ['AbortError','NotSupportedError']){
   const {root,audio,nodes}=fixture();audio.play=()=>Promise.reject(Object.assign(new Error(name),{name}));
@@ -46,6 +78,33 @@ test('cancelled playback is silent while real playback failure remains actionabl
   if(name==='AbortError')assert.equal(message,'');else assert.ok(message.length>0);
   release();
  }
+});
+
+test('first waveform gesture starts playback at the selected time once metadata arrives',()=>{
+ const {root,audio,nodes}=fixture();
+ audio.src='https://example.test/song.mp3';
+ nodes['[data-rdc-player-duration]'].textContent='2:00';
+ const release=initializeAudioControls(root);
+ const seek=nodes['[data-rdc-player-seek]'];
+ const pointer=(type,x)=>seek.dispatchEvent(Object.assign(new Event(type,{cancelable:true}),
+  {pointerId:1,isPrimary:true,button:0,clientX:x}));
+ assert.equal(seek.disabled,false);
+ pointer('pointerdown',240);
+ assert.equal(audio.paused,true);
+ assert.equal(nodes['[data-rdc-player-time]'].textContent,'1:24');
+ pointer('pointerup',250);
+ assert.equal(audio.paused,false);
+ audio.dispatchEvent(new Event('emptied'));
+ audio.duration=121;
+ audio.dispatchEvent(new Event('loadedmetadata'));
+ assert.equal(audio.currentTime,90.75);
+ audio.dispatchEvent(new Event('playing'));
+ audio.pause();
+ pointer('pointerdown',200);
+ pointer('pointerup',200);
+ assert.equal(audio.currentTime,60.5);
+ assert.equal(audio.paused,true);
+ release();
 });
 
 test('home queue deduplicates hero/card buttons and rejects missing or foreign media',()=>{

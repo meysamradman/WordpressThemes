@@ -2,7 +2,11 @@
 namespace RadmanCT\MusicHome;
 defined('ABSPATH')||exit;
 function data():array {static $data;return $data??=apply_filters('radmanct/music-home/data',array('label'=>'جدیدترین آثار','title'=>get_bloginfo('name'),'desc'=>get_bloginfo('description'),'tracks'=>'آخرین موزیک‌ها'));}
-function entries(string $type,int $limit):array {return get_posts(array('post_type'=>$type==='track'?'track':'post','post_status'=>'publish','has_password'=>false,'posts_per_page'=>$limit,'no_found_rows'=>true));}
+function entries(string $type,int $limit):array {
+ $query=['post_type'=>$type==='track'?'track':'post','post_status'=>'publish','has_password'=>false,'posts_per_page'=>$limit,'no_found_rows'=>true];
+ if($type==='track')$query['orderby']=\RadmanCT\Music\NEWEST_FIRST;
+ return get_posts($query);
+}
 const FEATURED_META='_rdc_home_feature_tracks';
 const FEATURED_LIMIT=4;
 
@@ -26,6 +30,6 @@ function featured():array {
   $tracks=get_posts($query+['post__in'=>$ids,'posts_per_page'=>FEATURED_LIMIT,'orderby'=>'post__in']);
   if($tracks)return $tracks;
  }
- return get_posts($query+['posts_per_page'=>3,'orderby'=>['date'=>'DESC','ID'=>'DESC']]);
+ return get_posts($query+['posts_per_page'=>3,'orderby'=>\RadmanCT\Music\NEWEST_FIRST]);
 }
 function image(int $id,string $size='medium_large',array $attributes=array()):string {return \RadmanCT\PageTitle\attachment_allowed($id)?wp_get_attachment_image($id,$size,false,$attributes):'';}

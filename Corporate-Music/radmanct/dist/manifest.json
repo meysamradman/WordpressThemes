@@ -1,6 +1,6 @@
 {
-  "_audio-controls-D59kuHEm.min.js": {
-    "file": "js/audio-controls-D59kuHEm.min.js",
+  "_audio-controls-UesPtTzb.min.js": {
+    "file": "js/audio-controls-UesPtTzb.min.js",
     "name": "audio-controls",
     "imports": [
       "_lifecycle-CEUUFq-m.min.js"
@@ -119,7 +119,7 @@
     "isEntry": true
   },
   "src/css/pages/music-detail.css": {
-    "file": "css/music-detail-NqY1tc83.min.css",
+    "file": "css/music-detail-BefG1_NW.min.css",
     "name": "css-music-detail",
     "names": [
       "css-music-detail.css"
@@ -128,7 +128,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-B7YdprIA.min.css",
+    "file": "css/music-home-Dg0G69RS.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -258,24 +258,24 @@
     ]
   },
   "src/js/pages/music-home.js": {
-    "file": "js/music-home-CpM8iJpW.min.js",
+    "file": "js/music-home-ScUICoVr.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
       "_video-player--vA5mwNT.min.js",
-      "_audio-controls-D59kuHEm.min.js"
+      "_audio-controls-UesPtTzb.min.js"
     ]
   },
   "src/js/pages/music.js": {
-    "file": "js/music-B-O1S_j4.min.js",
+    "file": "js/music-S-YmfOhy.min.js",
     "name": "music",
     "src": "src/js/pages/music.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_audio-controls-D59kuHEm.min.js"
+      "_audio-controls-UesPtTzb.min.js"
     ]
   },
   "src/js/pages/page-title.js": {
