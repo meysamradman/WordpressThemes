@@ -70,6 +70,9 @@
   --rdc-dsp-ink-sp:.18em;
   --rdc-sz-body:1rem;
   --rdc-sz-sm:.875rem;
+  --rdc-sz-caption:.8125rem;
+  --rdc-sz-reading:clamp(1.0625rem,1.55vw,1.375rem);
+  --rdc-sz-heading-compact:clamp(1.8rem,3vw,2.5rem);
   --rdc-sz-dsp:3.125rem;
   --rdc-sz-hi:2.25rem;
   --rdc-btn-ht:2.65rem;

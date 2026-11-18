@@ -18,5 +18,7 @@ h4 { font-size:var(--rdc-sz-h4); }
 h5 { font-size:var(--rdc-sz-h5); }
 h6 { font-size:var(--rdc-sz-h6); }
 p { overflow-wrap:break-word; }
+.rdc-reading { color:var(--rdc-mut); font-size:var(--rdc-sz-reading); }
+.rdc-reading p+p { margin-block-start:.4rem; }
 
 .rdc-cnt-ttl { margin-block-end:2rem; font-size:var(--rdc-sz-h1); }

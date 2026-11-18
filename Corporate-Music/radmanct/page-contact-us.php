@@ -4,7 +4,7 @@
   <article>
    <h1><?php the_title(); ?></h1>
    <?php if(post_password_required()):echo get_the_password_form();else:$booking=\RadmanCT\Client\booking(); ?>
-    <div class="rdc-artist__content"><?php the_content();wp_link_pages(); ?></div>
+    <div class="rdc-reading"><?php the_content();wp_link_pages(); ?></div>
     <div class="rdc-artist__channels">
      <?php if($booking['phone']): ?>
       <a class="rdc-artist__channel" href="<?php echo esc_url('tel:'.$booking['phone']); ?>">
@@ -19,7 +19,7 @@
       <span class="rdc-artist__channel-copy" dir="ltr"><small><?php echo esc_html($booking['label']); ?></small><bdi><?php echo esc_html('@'.$booking['handle']); ?></bdi></span>
      </div>
     </div>
-    <?php if(has_excerpt()): ?><p class="rdc-artist__content"><?php echo esc_html(get_the_excerpt()); ?></p><?php endif; ?>
+    <?php if(has_excerpt()): ?><p class="rdc-reading"><?php echo esc_html(get_the_excerpt()); ?></p><?php endif; ?>
    <?php endif; ?>
   </article>
  <?php endwhile; ?>
