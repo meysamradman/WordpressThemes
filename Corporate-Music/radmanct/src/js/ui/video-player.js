@@ -25,10 +25,6 @@ export function initializeExclusiveVideos(root){
    closeEmbed();
    for(const video of root.querySelectorAll('video'))video.pause();
    player.setAttribute('data-rdc-aparat-player','');
-   const source=new URL(frame.src);
-   source.searchParams.set('autoplay','true');
-   frame.src=source.href;
-   frame.allow+='; autoplay';
    frame.loading='eager';
    cover.hidden=true;
    cover.after(player);
