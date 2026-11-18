@@ -73,3 +73,62 @@ add_filter('wp_robots',static function(array $robots):array{
     if(is_search()||is_404()||is_preview()||$private){$robots['noindex']=true;unset($robots['index']);}
     return $robots;
 });
+
+function clip_schema():array {
+    if(!is_singular('clip')||is_preview())return [];
+    $post=get_queried_object();
+    if(!$post instanceof \WP_Post||$post->post_status!=='publish'||$post->post_password!=='')return [];
+    $clip=\RadmanCT\Videos\item($post);
+    $image=$clip['image'];
+    if(!\RadmanCT\PageTitle\attachment_allowed($image)||!wp_attachment_is_image($image))return [];
+    $poster=wp_get_attachment_image_url($image,'large');
+    $description=plain($post->post_excerpt?:$post->post_content);
+    $title=plain($clip['title']);
+    if(!$poster||$description===''||$title==='')return [];
+
+    $source=[];
+    $date=get_post_datetime($post,'date','gmt');
+    if($clip['aparat']){
+        // The channel import stores Aparat's publication timestamp as the post date.
+        // An embed entered manually has no verified original publication date.
+        if(!get_post_meta($post->ID,'_rdc_aparat_poster',true))return [];
+        $source=['embedUrl'=>\RadmanCT\Videos\embed_url($clip['aparat'])];
+    }elseif($file=\RadmanCT\Videos\file($clip['video'])){
+        $uploaded=get_post_datetime($file['id'],'date','gmt');
+        if($uploaded&&$date&&$uploaded>$date)$date=$uploaded;
+        $source=['contentUrl'=>$file['url']];
+    }
+    if(!$source||!$date)return [];
+    return [
+        '@type'=>'VideoObject',
+        '@id'=>$clip['url'].'#video',
+        'name'=>$title,
+        'description'=>$description,
+        'thumbnailUrl'=>$poster,
+        'uploadDate'=>$date->format(DATE_W3C),
+    ]+$source;
+}
+
+add_filter('wpseo_schema_graph',static function(array $graph):array {
+    $video=clip_schema();
+    if(!$video)return $graph;
+    foreach($graph as $node)if(in_array('VideoObject',(array)($node['@type']??[]),true))return $graph;
+    $page_id=$video['@id'];
+    foreach($graph as &$node){
+        if(!in_array('WebPage',(array)($node['@type']??[]),true))continue;
+        $links=$node['video']??[];
+        if(isset($links['@id']))$links=[$links];
+        $node['video']=array_merge((array)$links,[['@id'=>$page_id]]);
+        break;
+    }
+    unset($node);
+    $graph[]=$video;
+    return $graph;
+},20);
+
+add_action('wp_head',static function():void {
+    if(!enabled())return;
+    $video=clip_schema();
+    if(!$video)return;
+    echo '<script type="application/ld+json">'.wp_json_encode(['@context'=>'https://schema.org']+$video,JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT).'</script>'."\n";
+},6);

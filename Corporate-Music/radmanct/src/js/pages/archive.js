@@ -2,6 +2,9 @@ const root=document.querySelector('[data-rdc-arc]');
 const view=root?.querySelector('[data-rdc-res]');
 if(root&&view){
  const status=root.querySelector('.rdc-arc-sts');
+ const metadata='link[rel="canonical"],link[rel="prev"],link[rel="next"],meta[name="description"],meta[name="robots"],meta[property^="og:"],meta[property^="article:"],meta[name^="twitter:"],script.yoast-schema-graph,script.rank-math-schema';
+ const key=url=>url.origin+url.pathname+url.search;
+ let rendered=key(new URL(location.href));
  let pending;
  const clearLoading=()=>{
   root.classList.remove('is-load');
@@ -34,6 +37,8 @@ if(root&&view){
   try{
    const response=await fetch(target.href,{signal:controller.signal,credentials:'same-origin'});
    if(!response.ok)throw new Error('Archive request failed');
+   const final=new URL(response.url||target.href);
+   if(final.origin!==location.origin)throw new Error('Archive response has a different origin');
    const doc=new DOMParser().parseFromString(await response.text(),'text/html');
    const incoming=doc.querySelector('[data-rdc-arc] [data-rdc-res]');
    if(!incoming)throw new Error('Archive response is incomplete');
@@ -41,16 +46,19 @@ if(root&&view){
    for(const media of view.querySelectorAll?.('audio,video')||[])media.pause();
    view.replaceChildren(...incoming.childNodes);const heading=doc.querySelector('.rdc-pg-ttl');const oldHeading=document.querySelector('.rdc-pg-ttl');if(heading&&oldHeading)oldHeading.replaceWith(heading);
    for(const link of root.querySelectorAll('[data-rdc-categories] a,.rdc-cat-tree a')){const active=[...doc.querySelectorAll('[data-rdc-categories] a[aria-current],.rdc-cat-tree a[aria-current]')].some(item=>item.href===link.href);active?link.setAttribute('aria-current','page'):link.removeAttribute('aria-current');}document.title=doc.title;
-   for(const selector of ['link[rel="canonical"]','meta[name="description"]','meta[property="og:title"]','meta[property="og:url"]','meta[name="twitter:title"]','script.yoast-schema-graph']){
-    const fresh=doc.querySelector(selector),old=document.head.querySelector(selector);
-    if(fresh){if(old)old.replaceWith(fresh);else document.head.append(fresh);}else old?.remove();
-   }
+   for(const node of document.head.querySelectorAll(metadata))node.remove();
+   document.head.append(...doc.querySelectorAll(metadata));
    const newTitle=doc.querySelector('[data-rdc-arc] h1'),oldTitle=root.querySelector('h1');if(newTitle&&oldTitle)oldTitle.replaceWith(newTitle);
-   if(push&&target.href!==location.href)history.pushState({...history.state,rdcArchive:true},'',target.href);
+   if(final.href!==location.href){
+    if(push)history.pushState({...history.state,rdcArchive:true},'',final.href);
+    else history.replaceState(history.state,'',final.href);
+   }
+   rendered=key(final);
    if(push){view.setAttribute('tabindex','-1');view.focus({preventScroll:true});if(view.getBoundingClientRect().top<0)view.scrollIntoView({block:'start',behavior:'instant'});}
    if(status)status.textContent='نتایج به‌روز شد.';document.dispatchEvent(new CustomEvent('rdc:arc-upd'));root.dispatchEvent(new CustomEvent('rdc:arc-upd'));
   }catch(error){
    if(pending===request&&(error.name!=='AbortError'||request.timedOut)){
+    if(!push){location.reload();return;}
     for(const link of root.querySelectorAll('.pagination a,[data-rdc-categories] a,.rdc-cat-tree a,.rdc-tags a')){
      if(link.href===target.href)link.dataset.fallback='true';
     }
@@ -69,5 +77,8 @@ if(root&&view){
  if(root.dataset.rdcArc==='blog'){
   import('./blog.js').then(({initializeBlogArchive})=>initializeBlogArchive(root,navigate)).catch(()=>{});
  }
- window.addEventListener('popstate',()=>navigate(location.href,false));window.addEventListener('pagehide',cancel);
+ window.addEventListener('popstate',()=>{
+  if(key(new URL(location.href))===rendered){cancel();return;}
+  navigate(location.href,false);
+ });window.addEventListener('pagehide',cancel);
 }

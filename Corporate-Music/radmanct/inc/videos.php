@@ -9,6 +9,10 @@ function aparat_id($value):string {
  if(!is_array($parts)||($parts['scheme']??'')!=='https'||!in_array(strtolower($parts['host']??''),['aparat.com','www.aparat.com'],true)||isset($parts['user'])||isset($parts['port']))return '';
  return preg_match('~^/v/([a-zA-Z0-9]{5,32})/?$~D',$parts['path']??'',$match)?$match[1]:'';
 }
+function embed_url(mixed $value):string {
+ $hash=aparat_id($value);
+ return $hash?'https://www.aparat.com/video/video/embed/videohash/'.$hash.'/vt/frame':'';
+}
 function file(int $id):array {
  if(!\RadmanCT\PageTitle\attachment_allowed($id)||!in_array(get_post_mime_type($id),['video/mp4','video/webm'],true))return [];
  $url=wp_get_attachment_url($id);$uploads=wp_upload_dir(null,false);if(!$url||!str_starts_with($url,trailingslashit($uploads['baseurl'])))return [];
