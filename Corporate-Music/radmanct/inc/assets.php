@@ -35,6 +35,44 @@ function module_dependencies(array $asset):array {
     return $dependencies;
 }
 function script(string $name):void { $asset=entry('src/js/'.$name.'.js');if($asset)wp_enqueue_script_module('rdc-'.str_replace('/','-',$name),url($asset['file']),module_dependencies($asset),null); }
+add_action('wp_head',static function():void{
+ $preloads=array();
+ foreach(array('src/js/animation-vendor.js','src/js/smoother-vendor.js') as $key){
+  $asset=entry($key);
+  if(!$asset)continue;
+  foreach($asset['imports']??array() as $import){
+   $dependency=entry($import);
+   if($dependency)$preloads[]=url($dependency['file']);
+  }
+  $preloads[]=url($asset['file']);
+ }
+ if(!$preloads)return;
+ $urls=wp_json_encode(array_values(array_unique($preloads)),JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT);
+ wp_print_inline_script_tag(<<<JS
+(() => {
+ if (!matchMedia('(min-width:48rem) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches) return;
+ const root = document.documentElement;
+ const guard = new AbortController();
+ const chooseNative = () => {
+  root.setAttribute('data-rdc-scr-native', '');
+  guard.abort();
+ };
+ const options = {passive:true, signal:guard.signal};
+ addEventListener('wheel', event => {
+  if (!event.ctrlKey && Math.abs(event.deltaY) > Math.abs(event.deltaX)) chooseNative();
+ }, options);
+ addEventListener('scroll', () => { if (scrollY !== 0) chooseNative(); }, options);
+ addEventListener('pagehide', () => guard.abort(), options);
+ document.addEventListener('rdc:scr-init', () => guard.abort(), {signal:guard.signal});
+ for (const href of $urls) {
+  const link = document.createElement('link');
+  link.rel = 'modulepreload';
+  link.href = href;
+  document.head.append(link);
+ }
+})();
+JS,array('id'=>'rdc-scroll-entry','data-nowprocket'=>true));
+},2);
 add_action('wp_enqueue_scripts',static function():void{
  style('site');script('site');
  if(is_front_page()){style('pages/music-home',array('rdc-site'));script('pages/music-home');}

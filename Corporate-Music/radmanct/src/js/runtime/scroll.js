@@ -17,10 +17,11 @@ export function initializeScroll(view=window){
  const preference=view.matchMedia('(min-width:48rem) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
  const hasArt=!!doc.querySelector('[data-rdc-ofr-art]');
  const html=doc.documentElement;
- const curtainActive=()=>html.hasAttribute('data-rdc-page-load');
  // Choose the scroll mode before the first movement. An optional enhancement
  // must never change the feel of scrolling partway through a page visit.
- let nativeChosen=view.scrollY!==0,vendors;
+ let nativeChosen=view.scrollY!==0||html.hasAttribute('data-rdc-scr-native'),vendors;
+ html.removeAttribute('data-rdc-scr-native');
+ doc.dispatchEvent(new view.Event('rdc:scr-init'));
  const chooseNative=()=>{if(!smoother)nativeChosen=true;};
  const wheel=event=>{if(!event.ctrlKey&&Math.abs(event.deltaY)>Math.abs(event.deltaX))chooseNative();};
  let alive=true,smoother,media,pending=false,range=0,measureFrame=0,paintFrame=0,last=-1,lastArt=-1,locked=false,geometry,overflow='',wasPaused=false;
@@ -50,7 +51,7 @@ export function initializeScroll(view=window){
   else{doc.documentElement.style.overflow=overflow;if(geometry)Object.assign(wrapper.style,geometry);smoother?.paused(wasPaused);queueMeasure();}
  };
  const mount=()=>{
-  if(!alive||!preference.matches||nativeChosen||media||curtainActive()||!vendors)return;
+  if(!alive||!preference.matches||nativeChosen||media||!vendors)return;
   const [{gsap,ScrollTrigger},{ScrollSmoother}]=vendors;
   gsap.registerPlugin(ScrollTrigger,ScrollSmoother);media=gsap.matchMedia();
   media.add('(min-width:48rem) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)',()=>{
@@ -81,6 +82,6 @@ export function initializeScroll(view=window){
   }finally{pending=false;}
  };
  const releaseSize=observeSizes(view,[content],queueMeasure);doc.fonts?.ready.then(queueMeasure).catch(()=>{});
- doc.addEventListener('rdc:curtain-end',start);doc.addEventListener('rdc:fcs-aln',alignFocus);doc.addEventListener('rdc:pnl-lock',lock);doc.addEventListener('rdc:arc-upd',queueMeasure);view.addEventListener('scroll',nativeScroll,{passive:true});view.addEventListener('wheel',wheel,{passive:true});view.addEventListener('resize',queueMeasure);preference.addEventListener('change',start);measure();start();
- return{toTop(){if(smoother)smoother.scrollTo(0,true);else nativeTop();},refresh(){smoother?.refresh();queueMeasure();},destroy(){if(!alive)return;alive=false;doc.removeEventListener('rdc:curtain-end',start);preference.removeEventListener('change',start);doc.removeEventListener('rdc:fcs-aln',alignFocus);doc.removeEventListener('rdc:pnl-lock',lock);doc.removeEventListener('rdc:arc-upd',queueMeasure);view.removeEventListener('scroll',nativeScroll);view.removeEventListener('wheel',wheel);view.removeEventListener('resize',queueMeasure);releaseSize();media?.revert();if(measureFrame)view.cancelAnimationFrame(measureFrame);if(paintFrame)view.cancelAnimationFrame(paintFrame);if(locked){doc.documentElement.style.overflow=overflow;locked=false;}if(progress)progress.hidden=true;}};
+ doc.addEventListener('rdc:fcs-aln',alignFocus);doc.addEventListener('rdc:pnl-lock',lock);doc.addEventListener('rdc:arc-upd',queueMeasure);view.addEventListener('scroll',nativeScroll,{passive:true});view.addEventListener('wheel',wheel,{passive:true});view.addEventListener('resize',queueMeasure);preference.addEventListener('change',start);measure();start();
+ return{toTop(){if(smoother)smoother.scrollTo(0,true);else nativeTop();},refresh(){smoother?.refresh();queueMeasure();},destroy(){if(!alive)return;alive=false;preference.removeEventListener('change',start);doc.removeEventListener('rdc:fcs-aln',alignFocus);doc.removeEventListener('rdc:pnl-lock',lock);doc.removeEventListener('rdc:arc-upd',queueMeasure);view.removeEventListener('scroll',nativeScroll);view.removeEventListener('wheel',wheel);view.removeEventListener('resize',queueMeasure);releaseSize();media?.revert();if(measureFrame)view.cancelAnimationFrame(measureFrame);if(paintFrame)view.cancelAnimationFrame(paintFrame);if(locked){doc.documentElement.style.overflow=overflow;locked=false;}if(progress)progress.hidden=true;}};
 }

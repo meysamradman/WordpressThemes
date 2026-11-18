@@ -13,8 +13,8 @@ h1,.rdc-dsp-ttl { font-family:var(--rdc-font-dsp); font-weight:var(--rdc-wt-dsp)
 h2:not(.rdc-dsp-ttl),h3,h4,h5,h6 { font-family:var(--rdc-font-body); }
 h1 { font-size:var(--rdc-sz-h1); }
 h2 { font-size:var(--rdc-sz-h2); }
-h3 { font-size:var(--rdc-sz-h3); }
-h4 { font-size:var(--rdc-sz-h4); }
+h3,.rdc-cnt .rdc-cnt-sz-h3 { font-size:var(--rdc-sz-h3); }
+h4,.rdc-cnt .rdc-cnt-sz-h4 { font-size:var(--rdc-sz-h4); }
 h5 { font-size:var(--rdc-sz-h5); }
 h6 { font-size:var(--rdc-sz-h6); }
 p { overflow-wrap:break-word; }
