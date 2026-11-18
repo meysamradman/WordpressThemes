@@ -5,5 +5,6 @@
  get_template_part('template-parts/sections/home/latest-tracks'); ?>
  <?php get_template_part('template-parts/sections/home/latest-videos');
  if(trim(get_the_content())): ?><section class="rdc-cnt"><?php the_content();wp_link_pages(); ?></section><?php endif;
+ get_template_part('template-parts/sections/home/social-promo');
  get_template_part('template-parts/music/home-player');endwhile; ?>
 </main><?php get_footer(); ?>

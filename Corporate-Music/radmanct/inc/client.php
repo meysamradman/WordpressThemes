@@ -10,7 +10,11 @@ add_filter('radmanct/footer/data',static function(array $data):array {
  $data['services']=array();$data['socials']=socials();$data['phone']='';$data['messenger_phone']='';$data['email']='';$data['address']='';$data['hours']='';return $data;
 });
 
-// Editorial placeholders until the artist supplies the final media and copy.
 add_filter('radmanct/music-home/data',static function(array $data):array {
- return array_merge($data,array('label'=>'جدیدترین آثار','tracks'=>'آخرین موزیک‌ها','hero_desc'=>'صدایی برای روایت لحظه‌ها؛ تازه‌ترین آثار، موسیقی و تصویر را اینجا دنبال کنید. این متن و تصاویر پس از دریافت محتوای نهایی هنرمند تکمیل می‌شوند.'));
+ return array_merge($data,array('label'=>'جدیدترین آثار','tracks'=>'آخرین موزیک‌ها'));
 });
+
+function social_handle():string {return 'AliAsadiOriginal';}
+function booking():array {
+ return ['phone'=>'','handle'=>'SarvGraphi'];
+}
