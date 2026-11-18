@@ -9,16 +9,16 @@
      <?php wp_link_pages(); ?>
     </div>
     <div class="rdc-artist__channels">
-     <?php if($booking['phone']): ?>
-      <a class="rdc-artist__channel" href="<?php echo esc_url('tel:'.$booking['phone']); ?>">
+     <?php if($booking['phone']): $phone_label=preg_replace('/^\+98(\d{3})(\d{3})(\d{4})$/D','0$1 $2 $3',$booking['phone']); ?>
+      <a class="rdc-artist__channel" href="<?php echo esc_url('tel:'.$booking['phone'],['tel']); ?>">
        <?php echo \RadmanCT\icon('phone'); ?>
-       <span class="rdc-artist__channel-copy"><small>هماهنگی اجرا · <?php echo esc_html($booking['name']); ?></small><bdi dir="ltr"><?php echo esc_html($booking['phone']); ?></bdi></span>
+       <span class="rdc-artist__channel-copy"><small>هماهنگی اجرا · <?php echo esc_html($booking['name']); ?></small><bdi dir="ltr"><?php echo esc_html($phone_label); ?></bdi></span>
       </a>
      <?php endif; ?>
      <div class="rdc-artist__channel">
       <?php $handle=rawurlencode($booking['handle']); ?>
-      <a href="<?php echo esc_url('https://t.me/'.$handle); ?>" aria-label="هماهنگی اجرا در تلگرام"><?php echo \RadmanCT\icon('social-telegram'); ?></a>
-      <a href="<?php echo esc_url('https://eitaa.com/'.$handle); ?>" aria-label="هماهنگی اجرا در ایتا"><?php echo \RadmanCT\icon('social-messenger'); ?></a>
+      <a href="<?php echo esc_url('https://t.me/'.$handle); ?>" target="_blank" rel="noopener noreferrer" aria-label="هماهنگی اجرا در تلگرام (تب جدید)"><?php echo \RadmanCT\icon('social-telegram'); ?></a>
+      <a href="<?php echo esc_url('https://eitaa.com/'.$handle); ?>" target="_blank" rel="noopener noreferrer" aria-label="هماهنگی اجرا در ایتا (تب جدید)"><?php echo \RadmanCT\icon('social-messenger'); ?></a>
       <span class="rdc-artist__channel-copy" dir="ltr"><small><?php echo esc_html($booking['label']); ?></small><bdi><?php echo esc_html('@'.$booking['handle']); ?></bdi></span>
      </div>
     </div>

@@ -15,6 +15,7 @@
 - محتوا با editor بومی و API وردپرس مصرف شود. صفحهٔ رمزدار/خصوصی، تصویر و excerpt محافظت‌شده را عمومی نکند؛ خروجی با esc_html/esc_attr/esc_url و HTML مجاز متناسب با محل چاپ شود.
 - نوشتن در مدیریت به capability + nonce نیاز دارد؛ endpoint سفارشی بدون قرارداد مجوز و محدودیت ساخته نشود. ورود مدیر را WordPress مدیریت می‌کند. در صورت نیاز به تغییر نشانی ورود روی هاست، AIOS مالک این تنظیم است و قالب مسیر ورود مستقلی نمی‌سازد. فرم عضویت عمومی فعلاً نداریم.
 - جست‌وجوی عمومی با `WP_Query` و پارامتر `s` انجام می‌شود. عبارت خالی یا ورودی‌ای که هسته به‌دلیل نوع یا طول نامعتبر خالی کرده است، نتیجهٔ خالی دارد. عبارت فقط در محل چاپ با `esc_html` برای عنوان و `esc_attr` برای فیلد فرم escape می‌شود. [مرجع escaping وردپرس](https://developer.wordpress.org/apis/security/escaping/).
+- در علی اسدی، مقصدهای وبِ شبکه‌های اجتماعی و پیام‌رسان هماهنگی با `target="_blank"` و `rel="noopener noreferrer"` باز می‌شوند. تماس شمارهٔ بین‌المللی را از `Client\\booking()` در لینک بومی `tel:` می‌گیرد و شکل محلیِ گروه‌بندی‌شده را نمایش می‌دهد. شمارهٔ عمومی در HTML برای تماس در دسترس است و فاصله‌گذاری صرفاً خوانایی را بهتر می‌کند.
 - نصب محلی فقط loopback است؛ ایمیل و HTTP خارجی محدودند. رمزها، uploads، دیتابیس و backup وارد Git نشوند. انتقال سرور شامل رسانه و دیتابیسِ مجاز به شکل جدا از سورس است.
 - PHP 8.x و منابع محلی مطابق قرارداد دارایی‌های architecture.md؛ Node فقط build. srcset، ابعاد ذاتی، بارگذاری انتخابی رسانه و افکت، cleanup و reduced-motion حفظ شوند.
 
@@ -34,5 +35,11 @@ Music edition SEO: public track/album/clip and their native taxonomy/archive/det
 On public clip detail pages, the verified clip can extend Yoast's existing graph with one VideoObject, or use the theme fallback when there is no SEO plugin. Existing VideoObject pieces take precedence. Use the visible player source, an allowed thumbnail and a real publication date. The Aparat import preserves the source date in the WordPress publication date. A manually entered Aparat link by itself has no verified publication date for this purpose.
 
 Album photo pages complement the same album and share its base canonical. The first page uses the album URL. Invalid, redundant or out-of-range gallery_page values redirect to the normalized album URL or last valid photo page. AJAX archives keep working per-URL HTML and update the validated final same-origin URL, title and SEO head together.
+
+## قواعد بستهٔ هاست
+
+- برای سایت نصب‌شده فقط فایل‌های موردنیازِ به‌روزرسانی بسته‌بندی شوند. برای تغییرات قالب، ZIP فقط مسیر `wp-content/themes/radmanct/` و فایل‌های مصرف‌شدهٔ manifest را داشته باشد. دیتابیس، رسانه، هسته، افزونه‌ها و قواعد `.htaccess` هاست جدا بمانند. هنگام تغییر خروجی قالب نیازی به ایمپورت مجدد SQL نیست.
+- `wp-config.php` روی هاست مدیریت می‌شود. آن را همراه نمونهٔ پیکربندی، متغیرهای محیطی و رمزهای محیط توسعه از ZIP تحویل حذف کنید. فایل پیکربندی فعلی سرور هنگام به‌روزرسانی حفظ شود.
+- داخل ZIP مجوز یونیکس پوشه‌ها `0755` و فایل‌ها `0644` باشد. بعد از استخراج، مالکیت و مجوز مؤثر روی هاست با AIOS یا فایل‌منیجر بررسی شود. برای `wp-config.php` مجوز پیشنهادی هاست یا AIOS را همراه با امکان خواندن فایل توسط PHP بررسی کنید. [مرجع مجوزهای وردپرس](https://developer.wordpress.org/advanced-administration/server/file-permissions/)
 
 Frontend implementation and staged review: [frontend-standard.md](frontend-standard.md). Release decisions for the audit are recorded in [release-audit.md](release-audit.md).
