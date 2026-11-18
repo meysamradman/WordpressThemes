@@ -21,7 +21,21 @@ function card(\WP_Post $post):void {
 
 function page(int $id):array {
  $images=images($id);$total=count($images);$pages=max(1,(int)ceil($total/16));$raw=get_query_var('gallery_page',1);
- $current=is_scalar($raw)?max(1,min($pages,absint($raw))):1;
+ $current=is_scalar($raw)&&ctype_digit((string)$raw)?max(1,min($pages,(int)$raw)):1;
  $base=str_replace('999999999','%#%',add_query_arg('gallery_page',999999999,get_permalink($id)));
  return ['images'=>array_slice($images,($current-1)*16,16),'current'=>$current,'total'=>$pages,'base'=>$base];
 }
+
+add_action('template_redirect',static function():void {
+ if(!is_singular('album')||is_preview()||post_password_required())return;
+ $raw=get_query_var('gallery_page',null);
+ if($raw===null)return;
+ $id=get_queried_object_id();
+ $page=page($id);
+ $current=$page['current'];
+ if($current>1&&is_scalar($raw)&&(string)$raw===(string)$current)return;
+ $url=get_permalink($id);
+ if($current>1)$url=add_query_arg('gallery_page',$current,$url);
+ wp_safe_redirect($url,302);
+ exit;
+},9);
