@@ -29,8 +29,8 @@ function item(\WP_Post $post):array {
  $id=is_array($meta)&&is_scalar($meta['video']??0)?absint($meta['video']??0):0;$video=$allowed?file($id):[];
  return ['id'=>$post->ID,'title'=>get_the_title($post),'desc'=>$allowed?get_the_excerpt($post):'ویدئوی محافظت‌شده','aparat'=>$allowed&&is_array($meta)?aparat_id($meta['aparat']??''):'','video'=>$video['id']??0,'image'=>$allowed?(int)get_post_thumbnail_id($post):0,'url'=>get_permalink($post)];
 }
-function data():array {
- $posts=get_posts(['post_type'=>'clip','post_status'=>'publish','has_password'=>false,'posts_per_page'=>12,'no_found_rows'=>true]);
+function data(int $limit=12):array {
+ $posts=get_posts(['post_type'=>'clip','post_status'=>'publish','has_password'=>false,'posts_per_page'=>$limit,'no_found_rows'=>true]);
  return apply_filters('radmanct/videos/data',['title'=>'آخرین ویدئوها','items'=>array_map(__NAMESPACE__.'\\item',$posts)]);
 }
 
