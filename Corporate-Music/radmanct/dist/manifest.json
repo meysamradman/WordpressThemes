@@ -23,15 +23,6 @@
     "file": "js/lifecycle-CEUUFq-m.min.js",
     "name": "lifecycle"
   },
-  "_media-parallax-DcMdant5.min.js": {
-    "file": "js/media-parallax-DcMdant5.min.js",
-    "name": "media-parallax",
-    "imports": [
-      "_scroll-state-DCQ9sG3W.min.js",
-      "_lifecycle-CEUUFq-m.min.js",
-      "_refresh-BqO6rLFb.min.js"
-    ]
-  },
   "_preload-helper-CRzLMJPS.min.js": {
     "file": "js/preload-helper-CRzLMJPS.min.js",
     "name": "preload-helper"
@@ -59,10 +50,6 @@
       "_lifecycle-CEUUFq-m.min.js",
       "_refresh-BqO6rLFb.min.js"
     ]
-  },
-  "_text-motion-BN1O9YIz.min.js": {
-    "file": "js/text-motion-BN1O9YIz.min.js",
-    "name": "text-motion"
   },
   "_video-player-hExkDzl-.min.js": {
     "file": "js/video-player-hExkDzl-.min.js",
@@ -141,7 +128,7 @@
     "isEntry": true
   },
   "src/css/pages/home.css": {
-    "file": "css/home-DDGC4yiw.min.css",
+    "file": "css/home-Baqi5leq.min.css",
     "name": "css-home",
     "names": [
       "css-home.css"
@@ -176,24 +163,6 @@
     "src": "src/css/pages/music.css",
     "isEntry": true
   },
-  "src/css/pages/portfolio/archive.css": {
-    "file": "css/portfolio-archive-BJpDzzA2.min.css",
-    "name": "css-portfolio-archive",
-    "names": [
-      "css-portfolio-archive.css"
-    ],
-    "src": "src/css/pages/portfolio/archive.css",
-    "isEntry": true
-  },
-  "src/css/pages/portfolio/single.css": {
-    "file": "css/portfolio-single-oGx03vhA.min.css",
-    "name": "css-portfolio-single",
-    "names": [
-      "css-portfolio-single.css"
-    ],
-    "src": "src/css/pages/portfolio/single.css",
-    "isEntry": true
-  },
   "src/css/pages/service.css": {
     "file": "css/service-CLUY_zOo.min.css",
     "name": "css-service",
@@ -204,7 +173,7 @@
     "isEntry": true
   },
   "src/css/pages/services.css": {
-    "file": "css/services-DnTvIYw0.min.css",
+    "file": "css/services-Biar3l0u.min.css",
     "name": "css-services",
     "names": [
       "css-services.css"
@@ -222,7 +191,7 @@
     "isEntry": true
   },
   "src/css/site.css": {
-    "file": "css/site-Dxs7M8tw.min.css",
+    "file": "css/site-Bss9QNFb.min.css",
     "name": "css-site",
     "names": [
       "css-site.css"
@@ -267,7 +236,7 @@
     ]
   },
   "src/js/pages/archive.js": {
-    "file": "js/archive-BZ_vV2-B.min.js",
+    "file": "js/archive-2yY_7rXk.min.js",
     "name": "archive",
     "src": "src/js/pages/archive.js",
     "isEntry": true,
@@ -289,32 +258,15 @@
     ]
   },
   "src/js/pages/home.js": {
-    "file": "js/home-o9I6LTUE.min.js",
+    "file": "js/home-Cl6Q8mC-.min.js",
     "name": "home",
     "src": "src/js/pages/home.js",
     "isEntry": true,
     "imports": [
       "_art-orbit-KkfpHNe_.min.js",
-      "_preload-helper-CRzLMJPS.min.js",
       "_scroll-state-DCQ9sG3W.min.js",
       "_lifecycle-CEUUFq-m.min.js",
-      "_refresh-BqO6rLFb.min.js",
-      "_text-motion-BN1O9YIz.min.js"
-    ],
-    "dynamicImports": [
-      "src/js/pages/home/projects.js"
-    ]
-  },
-  "src/js/pages/home/projects.js": {
-    "file": "js/projects-C7El9dbB.min.js",
-    "name": "projects",
-    "src": "src/js/pages/home/projects.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_lifecycle-CEUUFq-m.min.js",
-      "_text-motion-BN1O9YIz.min.js",
-      "_sticky-g2SdWr9B.min.js",
-      "_media-parallax-DcMdant5.min.js"
+      "_refresh-BqO6rLFb.min.js"
     ]
   },
   "src/js/pages/music-home.js": {
@@ -339,7 +291,7 @@
     ]
   },
   "src/js/pages/page-title.js": {
-    "file": "js/page-title-DxvYv-p1.min.js",
+    "file": "js/page-title-BxgvLtRC.min.js",
     "name": "page-title",
     "src": "src/js/pages/page-title.js",
     "isEntry": true,
@@ -347,21 +299,10 @@
       "_preload-helper-CRzLMJPS.min.js",
       "_scroll-state-DCQ9sG3W.min.js",
       "_lifecycle-CEUUFq-m.min.js",
-      "_media-parallax-DcMdant5.min.js"
+      "_refresh-BqO6rLFb.min.js"
     ],
     "dynamicImports": [
       "_art-orbit-KkfpHNe_.min.js"
-    ]
-  },
-  "src/js/pages/portfolio.js": {
-    "file": "js/portfolio-D0rXI-6I.min.js",
-    "name": "portfolio",
-    "src": "src/js/pages/portfolio.js",
-    "isEntry": true,
-    "imports": [
-      "_scroll-state-DCQ9sG3W.min.js",
-      "_lifecycle-CEUUFq-m.min.js",
-      "_media-parallax-DcMdant5.min.js"
     ]
   },
   "src/js/pages/service.js": {
@@ -374,12 +315,11 @@
     ]
   },
   "src/js/pages/services.js": {
-    "file": "js/services-DE7lSwng.min.js",
+    "file": "js/services-Z0-6p6s_.min.js",
     "name": "services",
     "src": "src/js/pages/services.js",
     "isEntry": true,
     "imports": [
-      "_scroll-state-DCQ9sG3W.min.js",
       "_lifecycle-CEUUFq-m.min.js",
       "_sticky-g2SdWr9B.min.js"
     ]

@@ -2,7 +2,6 @@
 namespace RadmanCT\Home;
 defined( 'ABSPATH' ) || exit;
 require_once __DIR__ . '/home/art.php';
-require_once __DIR__ . '/home/projects.php';
 function image_id( int $post_id = 0 ): int { return \RadmanCT\media_id( 'hero' ); }
 function data( int $post_id = 0 ): array {
  return apply_filters('radmanct/home/data',array(

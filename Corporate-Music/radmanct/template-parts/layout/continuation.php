@@ -22,10 +22,10 @@ if(!$more['previous']&&!$more['next']&&!$has_related)return;
  <?php endif; ?>
  <?php if($has_related): ?>
  <section class="rdc-sgl-more__rel" aria-labelledby="rdc-sgl-more-title">
-  <h2 id="rdc-sgl-more-title"><?php echo esc_html($more['matched']?($more['project']?__('Related projects','radmanct'):__('Related articles','radmanct')):($more['project']?__('More projects','radmanct'):__('More articles','radmanct'))); ?></h2>
+  <h2 id="rdc-sgl-more-title"><?php echo esc_html($more['matched']?__('Related articles','radmanct'):__('More articles','radmanct')); ?></h2>
   <div class="rdc-sgl-more__grid">
    <?php try{while($more['related']->have_posts()):$more['related']->the_post();
-    get_template_part($more['project']?'template-parts/cards/project':'template-parts/blog/preview',null,array('variant'=>'tile'));
+    get_template_part('template-parts/blog/preview',null,array('variant'=>'tile'));
    endwhile;}finally{wp_reset_postdata();} ?>
   </div>
  </section>

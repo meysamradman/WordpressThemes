@@ -10,23 +10,15 @@ function gallery_ids($value):array {
  return array_values(array_filter(array_unique(array_map('absint',array_filter(array_slice($value,0,100),'is_scalar'))),static fn($id)=>wp_attachment_is_image($id)));
 }
 add_action('init',static function():void{
- foreach(array('post','project')as$type){
-  register_post_meta($type,'_webtalik_card_video',array('type'=>'integer','single'=>true,'default'=>0,'sanitize_callback'=>__NAMESPACE__.'\\video_id','auth_callback'=>static fn($allowed,$key,$id)=>current_user_can('edit_post',(int)$id)));
-  register_post_meta($type,'_webtalik_card_mode',array('type'=>'string','single'=>true,'default'=>'auto','sanitize_callback'=>static fn($value)=>$value==='hover'?'hover':'auto','auth_callback'=>static fn($allowed,$key,$id)=>current_user_can('edit_post',(int)$id)));
- }
+ register_post_meta('post','_webtalik_card_video',array('type'=>'integer','single'=>true,'default'=>0,'sanitize_callback'=>__NAMESPACE__.'\\video_id','auth_callback'=>static fn($allowed,$key,$id)=>current_user_can('edit_post',(int)$id)));
+ register_post_meta('post','_webtalik_card_mode',array('type'=>'string','single'=>true,'default'=>'auto','sanitize_callback'=>static fn($value)=>$value==='hover'?'hover':'auto','auth_callback'=>static fn($allowed,$key,$id)=>current_user_can('edit_post',(int)$id)));
 },20);
 add_action('add_meta_boxes',static function():void{
- foreach(array('post','project')as$type)add_meta_box('rdc-card-md',__('Card media','radmanct'),__NAMESPACE__.'\\fields',$type,'side');
- add_meta_box('rdc-prj-gal',__('Project gallery','radmanct'),__NAMESPACE__.'\\gallery_fields','project','normal','high');
+ add_meta_box('rdc-card-md',__('Card media','radmanct'),__NAMESPACE__.'\\fields','post','side');
 });
 function fields(\WP_Post $post):void {
  wp_nonce_field('rdc-card-md','rdct_media_nonce');$id=(int)get_post_meta($post->ID,'_webtalik_card_video',true);$mode=get_post_meta($post->ID,'_webtalik_card_mode',true);
  echo '<div data-rdc-md><p>'.esc_html__('Featured image remains the poster. Video preview is optional.','radmanct').'</p><input type="hidden" name="rdct_card_video" data-media-value value="'.$id.'"><p data-media-label>'.esc_html($id?get_the_title($id):__('No video selected','radmanct')).'</p><p><button type="button" class="button" data-media-choose>'.esc_html__('Choose video','radmanct').'</button> <button type="button" class="button-link-delete" data-media-remove>'.esc_html__('Remove','radmanct').'</button></p><p><label for="rdc-card-mode">'.esc_html__('Preview behavior','radmanct').'</label></p><select id="rdc-card-mode" name="rdct_card_mode"><option value="auto" '.selected($mode!=='hover',true,false).'>'.esc_html__('Play when visible','radmanct').'</option><option value="hover" '.selected($mode,'hover',false).'>'.esc_html__('Play on hover','radmanct').'</option></select></div>';
-}
-function gallery_fields(\WP_Post $post):void {
- wp_nonce_field('rdc-prj-gal','rdct_gallery_nonce');
- $meta=get_post_meta($post->ID,'_webtalik_project',true);$gallery=gallery_ids(is_array($meta)?($meta['gallery']??array()):array());
- gallery_picker($gallery,'rdct_project_gallery');
 }
 function gallery_picker(array $gallery,string $name):void {
  ?>
@@ -60,21 +52,15 @@ function gallery_picker(array $gallery,string $name):void {
  <?php
 }
 add_action('admin_enqueue_scripts',static function():void{
- $screen=get_current_screen();if(!$screen||$screen->base!=='post'||!in_array($screen->post_type,array('post','project','album','clip'),true))return;
+ $screen=get_current_screen();if(!$screen||$screen->base!=='post'||!in_array($screen->post_type,array('post','album','clip'),true))return;
  wp_enqueue_media();$asset=\RadmanCT\Assets\entry('src/js/admin/media-editor.js');if($asset)wp_enqueue_script('rdc-md-ed',\RadmanCT\Assets\url($asset['file']),array('media-editor'),null,true);
- if(in_array($screen->post_type,array('project','album'),true)){
+ if($screen->post_type==='album'){
   \RadmanCT\Assets\style('admin/gallery');
   wp_localize_script('rdc-md-ed','rdcGal',array('count'=>__('%d images selected','radmanct'),'view'=>__('View original image: %s (opens in a new tab)','radmanct'),'remove'=>__('Remove','radmanct'),'earlier'=>__('Move image earlier','radmanct'),'later'=>__('Move image later','radmanct'),'loadError'=>__('Images could not be loaded. Please try again.','radmanct'),'limit'=>__('A gallery can contain up to 100 images.','radmanct')));
  }
 });
 add_action('save_post',static function(int $id):void{
- if((defined('DOING_AUTOSAVE')&&DOING_AUTOSAVE)||wp_is_post_revision($id)||!in_array(get_post_type($id),array('post','project'),true)||!current_user_can('edit_post',$id))return;
- $gallery_nonce=$_POST['rdct_gallery_nonce']??null;
- if(get_post_type($id)==='project'&&is_string($gallery_nonce)&&wp_verify_nonce(wp_unslash($gallery_nonce),'rdc-prj-gal')&&isset($_POST['rdct_project_gallery'])&&is_string($_POST['rdct_project_gallery'])){
-  $gallery=gallery_ids(wp_unslash($_POST['rdct_project_gallery']));
-  $gallery=array_values(array_filter($gallery,static fn($media)=>current_user_can('read_post',$media)));
-  $meta=get_post_meta($id,'_webtalik_project',true);if(!is_array($meta))$meta=array();$meta['gallery']=$gallery;update_post_meta($id,'_webtalik_project',$meta);
- }
+ if((defined('DOING_AUTOSAVE')&&DOING_AUTOSAVE)||wp_is_post_revision($id)||get_post_type($id)!=='post'||!current_user_can('edit_post',$id))return;
  $nonce=$_POST['rdct_media_nonce']??null;if(!is_string($nonce)||!wp_verify_nonce(wp_unslash($nonce),'rdc-card-md'))return;
  $value=$_POST['rdct_card_video']??null;if(!is_scalar($value))return;$video=video_id(wp_unslash((string)$value));if($video&&!current_user_can('read_post',$video))return;
  update_post_meta($id,'_webtalik_card_video',$video);update_post_meta($id,'_webtalik_card_mode',($_POST['rdct_card_mode']??'')==='hover'?'hover':'auto');

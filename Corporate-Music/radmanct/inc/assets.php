@@ -48,7 +48,6 @@ add_action('wp_enqueue_scripts',static function():void{
  elseif(is_page('custom-website-design-development')){style('pages/service',array('rdc-site'));script('pages/service');}
  elseif(is_front_page()){ /* Home composes the native music grid and shared site runtime. */ }
  elseif(is_home()||is_category()||is_tag()||is_date()||is_author()||is_search()||is_singular('post')){style('pages/blog',array('rdc-site'));style(is_singular('post')?'pages/blog/single':'pages/blog/archive',array('rdc-pages-blog'));if(!is_singular())script('pages/archive');}
- elseif(is_post_type_archive('project')||is_tax('project_category')||is_singular('project')){style(is_singular('project')?'pages/portfolio/single':'pages/portfolio/archive',array('rdc-site'));if(is_singular('project')){if(!post_password_required())script('ui/gallery');}else{script('pages/archive');script('pages/portfolio');}}
 });
 add_filter( 'wp_preload_resources', static function ( array $resources ): array {
     if ( is_readable( get_template_directory() . '/fonts/PeydaWebVF.woff2' ) ) { $resources[] = array( 'href' => get_template_directory_uri() . '/fonts/PeydaWebVF.woff2', 'as' => 'font', 'type' => 'font/woff2', 'crossorigin' => 'anonymous' ); }

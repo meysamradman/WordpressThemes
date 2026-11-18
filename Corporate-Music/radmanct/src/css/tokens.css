@@ -108,10 +108,7 @@
   --rdc-mut:var(--rdc-clr-mut);
   --rdc-ln:var(--rdc-clr-ln);
 }
-.rdc-inv,
-body.post-type-archive-project,
-body.tax-project_category,
-body.single-project {
+.rdc-inv {
   --rdc-bg:var(--rdc-clr-dark);
   --rdc-ppr:var(--rdc-clr-dark);
   --rdc-srf:var(--rdc-clr-ink-warm);

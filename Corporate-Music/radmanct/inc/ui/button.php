@@ -10,7 +10,7 @@ function button(string $label,string $url,array $args=array()):string {
  if($variant!=='solid')$classes.=' rdc-btn--'.$variant;
  foreach(preg_split('/\s+/',trim($args['class']??''))as$class)if($class!=='')$classes.=' '.sanitize_html_class($class);
  $attributes=!empty($args['download'])?' download':'';
- foreach(array('data-rdc-load-more','data-rdc-pnl-rvl','data-rdc-en')as$key)if(!empty($args[$key]))$attributes.=' '.$key;
+ foreach(array('data-rdc-pnl-rvl','data-rdc-en')as$key)if(!empty($args[$key]))$attributes.=' '.$key;
  $icon=icon($args['icon']??'arrow-up-right');
  if($icon==='')$icon=icon('arrow-up-right');
  $label_html='<span class="rdc-btn__lbl"><span>'.esc_html($label).'</span><span aria-hidden="true">'.esc_html($label).'</span></span>';

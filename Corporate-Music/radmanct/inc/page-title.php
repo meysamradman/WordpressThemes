@@ -18,7 +18,7 @@ function data(array $args=array()):array {
  if(is_singular('post')){
   $blog=(int)get_option('page_for_posts');
   if($blog&&get_post_status($blog)==='publish')$trail[]=array('title'=>get_the_title($blog),'url'=>get_permalink($blog));
- }elseif(is_singular('project'))$trail[]=array('title'=>__('Projects','radmanct'),'url'=>get_post_type_archive_link('project'));
+ }
  $trail[]=array('title'=>$title,'url'=>'');
  $defaults=array('type'=>'cover','title'=>$title,'accent'=>'','desc'=>$public&&$id?wp_strip_all_tags(get_post_field('post_excerpt',$id)):'','label'=>'','button'=>array(),'link'=>array(),'image'=>$public&&$id?(int)get_post_thumbnail_id($id):0,'video'=>0,'media_inset'=>false,'media_flat'=>false,'art_tracks'=>array(),'art_nodes'=>array(),'art_draw'=>false,'art_matrix'=>array(),'trail'=>$trail);
  $data=array_replace($defaults,apply_filters('radmanct/page-title/data',$defaults),$args);

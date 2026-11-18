@@ -4,8 +4,8 @@ defined('ABSPATH')||exit;
 
 function data():array {
  $current=get_post();
- if(!$current||!in_array($current->post_type,array('post','project'),true)||!is_post_publicly_viewable($current)||post_password_required($current))return array();
- $taxonomy=$current->post_type==='project'?'project_category':'category';
+ if(!$current||$current->post_type!=='post'||!is_post_publicly_viewable($current)||post_password_required($current))return array();
+ $taxonomy='category';
  // Core owns adjacency, date/ID ordering and caching. Limit suggestions to public, unprotected content even for signed-in editors.
  $public=static fn(string $where):string=>$where." AND p.post_status = 'publish' AND p.post_password = ''";
  add_filter('get_previous_post_where',$public);add_filter('get_next_post_where',$public);
@@ -27,5 +27,5 @@ function data():array {
  if($matched&&!$related->have_posts()){
   $matched=false;unset($query['tax_query']);$related=new \WP_Query($query);
  }
- return array('previous'=>$previous,'next'=>$next,'related'=>$related,'matched'=>$matched,'project'=>$current->post_type==='project');
+ return array('previous'=>$previous,'next'=>$next,'related'=>$related,'matched'=>$matched);
 }

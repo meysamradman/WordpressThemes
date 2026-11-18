@@ -1,4 +1,4 @@
-<?php defined('ABSPATH')||exit;$items=\RadmanCT\Services\items();$count=wp_count_posts('project'); ?>
+<?php defined('ABSPATH')||exit;$items=\RadmanCT\Services\items();?>
 <section class="rdc-ctr rdc-svc-show" data-rdc-svc-show aria-labelledby="services-showcase-title">
  <header class="rdc-svc-show__hdr"><h2 id="services-showcase-title"><?php esc_html_e('Our solutions','radmanct'); ?><?php echo \RadmanCT\icon('arrow-up-right'); ?></h2><p><?php esc_html_e('Design, development and growth','radmanct'); ?></p></header>
  <div class="rdc-svc-show__ly">
@@ -6,7 +6,6 @@
    <div class="rdc-svc-show__stg" aria-hidden="true">
     <?php foreach($items as $index=>$item): ?><figure data-rdc-svc-im="<?php echo (int)$index; ?>" <?php if($index)echo 'hidden'; ?>><?php if($item['image'])echo wp_get_attachment_image($item['image'],'large',false,array('alt'=>'','loading'=>'lazy','decoding'=>'async','sizes'=>'(max-width: 767px) 100vw, 32vw')); ?></figure><?php endforeach; ?>
    </div>
-   <p class="rdc-svc-show__stat"><strong><?php echo esc_html(number_format_i18n((int)($count->publish??0))); ?></strong><a href="<?php echo esc_url(get_post_type_archive_link('project')); ?>"><?php esc_html_e('Website projects','radmanct'); ?></a></p>
   </aside>
   <div class="rdc-svc-show__list" dir="<?php echo is_rtl()?'rtl':'ltr'; ?>">
    <?php foreach($items as $index=>$item): ?>

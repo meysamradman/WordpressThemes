@@ -9,7 +9,6 @@ function data():array {
     $contact=isset($by_slug['contact-us'])?get_permalink($by_slug['contact-us']):'';
     $links=array(array('title'=>__('Home','radmanct'),'url'=>home_url('/')));
     foreach(array('about-us','services') as $slug)if(isset($by_slug[$slug]))$links[]=array('title'=>$by_slug[$slug]->post_title,'url'=>get_permalink($by_slug[$slug]));
-    $links[]=array('title'=>__('Projects','radmanct'),'url'=>get_post_type_archive_link('project'));
     $blog=(int)get_option('page_for_posts');if($blog&&'publish'===get_post_status($blog))$links[]=array('title'=>__('Blog','radmanct'),'url'=>get_permalink($blog));
     if($contact)$links[]=array('title'=>__('Contact us','radmanct'),'url'=>$contact);
     return $data=apply_filters('radmanct/footer/data',array(
