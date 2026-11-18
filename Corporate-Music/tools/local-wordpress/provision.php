@@ -24,12 +24,12 @@ foreach($manifest['media'] as $old=>$entry){$file=wp_upload_bits($entry['file'],
  $id=wp_insert_attachment(['post_title'=>$entry['title'],'post_mime_type'=>$entry['mime'],'post_status'=>'inherit'],$file['file'],0,true);if(is_wp_error($id))throw new RuntimeException($id->get_error_message());
  wp_update_attachment_metadata($id,wp_generate_attachment_metadata($id,$file['file']));update_post_meta($id,'_wp_attachment_image_alt',$entry['alt']);update_post_meta($id,'_rdc_demo_source','Selected public Radman Design Library demonstration media; replace for final customer content.');$map[$old]=$id;
 }
-foreach($manifest['posts'] as $entry){$id=wp_insert_post(['post_type'=>$entry['type'],'post_status'=>'publish','post_title'=>$entry['title'],'post_name'=>$entry['slug'],'post_content'=>str_replace('http://127.0.0.1:8097','http://127.0.0.1:8098',$entry['content']),'post_excerpt'=>$entry['excerpt'],'post_author'=>$result['user_id']],true);if(is_wp_error($id))throw new RuntimeException($id->get_error_message());
+foreach($manifest['posts'] as $entry){if($entry['type']==='post')continue;$id=wp_insert_post(['post_type'=>$entry['type'],'post_status'=>'publish','post_title'=>$entry['title'],'post_name'=>$entry['slug'],'post_content'=>str_replace('http://127.0.0.1:8097','http://127.0.0.1:8098',$entry['content']),'post_excerpt'=>$entry['excerpt'],'post_author'=>$result['user_id']],true);if(is_wp_error($id))throw new RuntimeException($id->get_error_message());
  if(!empty($map[$entry['cover']]))set_post_thumbnail($id,$map[$entry['cover']]);$taxonomy=$entry['type']==='track'?'music_category':'category';
  foreach($entry['categories'] as $label){$term=term_exists($label,$taxonomy);if(!$term)$term=wp_insert_term($label,$taxonomy);if(!is_wp_error($term))wp_set_object_terms($id,[(int)$term['term_id']],$taxonomy,true);}
  if($entry['type']==='track'){$meta=$entry['music'];foreach(['audio','download'] as $key)$meta[$key]=(int)($map[$meta[$key]??0]??0);update_post_meta($id,'_rdc_track',$meta);}
 }
 $menu=wp_create_nav_menu('Primary');if(is_wp_error($menu))throw new RuntimeException($menu->get_error_message());
-foreach([['خانه',home_url('/')],['موسیقی',home_url('/music/')],['وبلاگ',home_url('/blog/')],['درباره ما',home_url('/about-us/')],['تماس با ما',home_url('/contact-us/')]] as [$label,$url])wp_update_nav_menu_item($menu,0,['menu-item-title'=>$label,'menu-item-url'=>$url,'menu-item-type'=>'custom','menu-item-status'=>'publish']);
+foreach([['خانه',home_url('/')],['موسیقی',home_url('/music/')],['درباره ما',home_url('/about-us/')],['تماس با ما',home_url('/contact-us/')]] as [$label,$url])wp_update_nav_menu_item($menu,0,['menu-item-title'=>$label,'menu-item-url'=>$url,'menu-item-type'=>'custom','menu-item-status'=>'publish']);
 set_theme_mod('nav_menu_locations',['primary'=>$menu]);update_option('permalink_structure','/%postname%/');flush_rewrite_rules(true);update_option('music_local_provisioned',1,false);
-echo "Independent Corporate Music WordPress installed; theme activated, selected demo music/blog and pages ready.\n";
+echo "Independent Corporate Music WordPress installed; theme activated, selected demo music and pages ready.\n";
