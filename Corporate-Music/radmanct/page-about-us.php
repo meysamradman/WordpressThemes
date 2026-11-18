@@ -7,8 +7,7 @@
    <div class="rdc-bio__hero">
     <?php if(\RadmanCT\PageTitle\attachment_allowed($image)&&wp_attachment_is_image($image)): ?>
      <figure class="rdc-bio__portrait">
-      <?php echo wp_get_attachment_image($image,'full',false,['class'=>'rdc-bio__photo','loading'=>'eager','fetchpriority'=>'high','sizes'=>'(max-width:650px) 41vw,288px']); ?>
-      <img class="rdc-bio__mark" src="<?php echo esc_url(get_theme_file_uri('images/biography-emblem.svg')); ?>" width="70" height="40" alt="" decoding="async">
+      <?php echo wp_get_attachment_image($image,'full',false,['class'=>'rdc-bio__photo','loading'=>'eager','fetchpriority'=>'high','sizes'=>'(max-width:420px) calc(100vw - 2rem), (max-width:720px) 56vw, 404px']); ?>
      </figure>
     <?php endif; ?>
     <div class="rdc-bio__identity" dir="ltr"><p class="rdc-bio__handle"><?php echo esc_html(\RadmanCT\Client\social_handle()); ?></p><?php get_template_part('template-parts/ui/socials',null,['items'=>\RadmanCT\Client\socials()]); ?></div>
