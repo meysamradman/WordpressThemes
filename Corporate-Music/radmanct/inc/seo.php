@@ -82,7 +82,7 @@ function clip_schema():array {
     $image=$clip['image'];
     if(!\RadmanCT\PageTitle\attachment_allowed($image)||!wp_attachment_is_image($image))return [];
     $poster=wp_get_attachment_image_url($image,'large');
-    $description=plain($post->post_excerpt?:$post->post_content);
+    $description=plain($clip['desc']);
     $title=plain($clip['title']);
     if(!$poster||$description===''||$title==='')return [];
 
@@ -110,15 +110,16 @@ function clip_schema():array {
 }
 
 add_filter('wpseo_schema_graph',static function(array $graph):array {
+    if(!is_singular('clip'))return $graph;
+    foreach($graph as $node)if(in_array('VideoObject',(array)($node['@type']??[]),true))return $graph;
     $video=clip_schema();
     if(!$video)return $graph;
-    foreach($graph as $node)if(in_array('VideoObject',(array)($node['@type']??[]),true))return $graph;
-    $page_id=$video['@id'];
+    $video_id=$video['@id'];
     foreach($graph as &$node){
         if(!in_array('WebPage',(array)($node['@type']??[]),true))continue;
         $links=$node['video']??[];
         if(isset($links['@id']))$links=[$links];
-        $node['video']=array_merge((array)$links,[['@id'=>$page_id]]);
+        $node['video']=array_merge((array)$links,[['@id'=>$video_id]]);
         break;
     }
     unset($node);
@@ -127,7 +128,7 @@ add_filter('wpseo_schema_graph',static function(array $graph):array {
 },20);
 
 add_action('wp_head',static function():void {
-    if(!enabled())return;
+    if(defined('WPSEO_VERSION')||!enabled())return;
     $video=clip_schema();
     if(!$video)return;
     echo '<script type="application/ld+json">'.wp_json_encode(['@context'=>'https://schema.org']+$video,JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT).'</script>'."\n";
