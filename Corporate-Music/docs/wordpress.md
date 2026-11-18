@@ -34,4 +34,4 @@ On public clip detail pages, the verified clip can extend Yoast's existing graph
 
 Album photo pages complement the same album and share its base canonical. The first page uses the album URL. Invalid, redundant or out-of-range gallery_page values redirect to the normalized album URL or last valid photo page. AJAX archives keep working per-URL HTML and update the validated final same-origin URL, title and SEO head together.
 
-Frontend implementation and staged review: [frontend-standard.md](frontend-standard.md). The full general v1.2 guide is preserved there; existing project owners and approved designs remain independent.
+Frontend implementation and staged review: [frontend-standard.md](frontend-standard.md). Release decisions for the audit are recorded in [release-audit.md](release-audit.md).

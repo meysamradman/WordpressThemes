@@ -1,13 +1,4 @@
 {
-  "_art-orbit-KkfpHNe_.min.js": {
-    "file": "js/art-orbit-KkfpHNe_.min.js",
-    "name": "art-orbit",
-    "imports": [
-      "_preload-helper-CRzLMJPS.min.js",
-      "_scroll-state-DCQ9sG3W.min.js",
-      "_lifecycle-CEUUFq-m.min.js"
-    ]
-  },
   "_audio-controls-D59kuHEm.min.js": {
     "file": "js/audio-controls-D59kuHEm.min.js",
     "name": "audio-controls",
@@ -125,15 +116,6 @@
       "css-gallery.css"
     ],
     "src": "src/css/pages/gallery.css",
-    "isEntry": true
-  },
-  "src/css/pages/home.css": {
-    "file": "css/home-Baqi5leq.min.css",
-    "name": "css-home",
-    "names": [
-      "css-home.css"
-    ],
-    "src": "src/css/pages/home.css",
     "isEntry": true
   },
   "src/css/pages/music-detail.css": {
@@ -275,18 +257,6 @@
       "_sticky-g2SdWr9B.min.js"
     ]
   },
-  "src/js/pages/home.js": {
-    "file": "js/home-Cl6Q8mC-.min.js",
-    "name": "home",
-    "src": "src/js/pages/home.js",
-    "isEntry": true,
-    "imports": [
-      "_art-orbit-KkfpHNe_.min.js",
-      "_scroll-state-DCQ9sG3W.min.js",
-      "_lifecycle-CEUUFq-m.min.js",
-      "_refresh-BqO6rLFb.min.js"
-    ]
-  },
   "src/js/pages/music-home.js": {
     "file": "js/music-home-BvzcejQE.min.js",
     "name": "music-home",
@@ -309,7 +279,7 @@
     ]
   },
   "src/js/pages/page-title.js": {
-    "file": "js/page-title-BxgvLtRC.min.js",
+    "file": "js/page-title-DMkL36pD.min.js",
     "name": "page-title",
     "src": "src/js/pages/page-title.js",
     "isEntry": true,
@@ -320,7 +290,7 @@
       "_refresh-BqO6rLFb.min.js"
     ],
     "dynamicImports": [
-      "_art-orbit-KkfpHNe_.min.js"
+      "src/js/runtime/art-orbit.js"
     ]
   },
   "src/js/pages/service.js": {
@@ -350,6 +320,17 @@
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
       "_video-player-hExkDzl-.min.js"
+    ]
+  },
+  "src/js/runtime/art-orbit.js": {
+    "file": "js/art-orbit-BXlgYNYf.min.js",
+    "name": "art-orbit",
+    "src": "src/js/runtime/art-orbit.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_preload-helper-CRzLMJPS.min.js",
+      "_scroll-state-DCQ9sG3W.min.js",
+      "_lifecycle-CEUUFq-m.min.js"
     ]
   },
   "src/js/site.js": {
