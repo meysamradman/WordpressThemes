@@ -1,3 +1,4 @@
+@import './media-wait.css';
 .rdc-player{padding:.8rem 1rem;border-radius:var(--rdc-rad-md);background:var(--rdc-clr-player)}
 .rdc-player audio{display:block;inline-size:100%;color-scheme:dark}
 .rdc-player audio[hidden],.rdc-player__controls[hidden],.rdc-player [hidden]{display:none}
@@ -5,7 +6,8 @@
 .rdc-player__transport{display:flex;align-items:center;gap:.5rem}
 .rdc-player button,.rdc-player__transport a{display:grid;place-items:center;inline-size:2.25rem;block-size:2.25rem;border:0;border-radius:50%;background:var(--rdc-clr-header);color:var(--rdc-clr-crm);padding:.5rem}
 .rdc-player button:disabled{opacity:.35;cursor:default}
-.rdc-player .rdc-player__play{inline-size:3.25rem;block-size:3.25rem;background:var(--rdc-acc);color:var(--rdc-on-acc)}
+.rdc-player .rdc-player__play{position:relative;--rdc-wait-size:calc(100% + 2px);--rdc-wait-shade:0rem;inline-size:3.25rem;block-size:3.25rem;background:var(--rdc-acc);color:var(--rdc-on-acc)}
+.rdc-player__play[data-rdc-media-wait]::after{border-color:transparent;border-inline-start-color:var(--rdc-clr-wht)}
 .rdc-player__play .rdc-ico{inline-size:1.8rem;block-size:1.8rem}
 .rdc-player [data-rdc-player-start] .rdc-ico{fill:currentColor}
 .rdc-player output{font-size:.8rem;color:var(--rdc-mut);font-variant-numeric:tabular-nums;white-space:nowrap}

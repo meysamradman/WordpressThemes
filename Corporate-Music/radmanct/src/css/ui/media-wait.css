@@ -1,0 +1,10 @@
+[data-rdc-media-wait]::after{
+ content:'';position:absolute;inset:50% auto auto 50%;translate:-50% -50%;
+ inline-size:var(--rdc-wait-size,2rem);aspect-ratio:1;border:2px solid var(--rdc-ln);
+ border-inline-start-color:var(--rdc-acc);border-radius:50%;pointer-events:none;
+ box-shadow:0 0 0 var(--rdc-wait-shade,.25rem) var(--rdc-ovl-md);
+}
+@media (prefers-reduced-motion:no-preference){
+ [data-rdc-media-wait]::after{animation:rdc-media-wait .65s linear infinite}
+}
+@keyframes rdc-media-wait{to{transform:rotate(1turn)}}

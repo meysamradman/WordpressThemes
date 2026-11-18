@@ -19,7 +19,7 @@ export function initializeBlogArchive(root,navigate){
    clearTimeout(timer);
    timer=setTimeout(()=>form.requestSubmit(),450);
   });
-  window.addEventListener('pagehide',()=>clearTimeout(timer),{once:true});
+  window.addEventListener('pagehide',()=>clearTimeout(timer));
  }
 
  const sidebar=root.querySelector('.rdc-blog-sb__cnt');

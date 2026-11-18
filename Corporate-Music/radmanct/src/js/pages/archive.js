@@ -13,6 +13,7 @@ if(root&&view){
    clearTimeout(pending.timeout);
    pending.controller.abort();
    pending=undefined;
+   if(status)status.textContent='';
   }
   clearLoading();
  };

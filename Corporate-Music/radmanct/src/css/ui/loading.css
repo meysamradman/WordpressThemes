@@ -1,15 +1,20 @@
-html[data-rdc-page-load]::before{
- content:'';position:fixed;z-index:9999;inset:0 0 auto;block-size:3px;
- pointer-events:none;background:var(--rdc-acc);transform:scaleX(.8);transform-origin:left;
+.rdc-page-curtain{display:none;position:fixed;inset:0;z-index:10001;overflow:hidden;pointer-events:none}
+.rdc-page-curtain>span{
+ position:absolute;inset-inline:0;inset-block-start:calc(var(--rdc-panel)*100%/12);
+ block-size:calc(100%/12 + 1px);
+ background:linear-gradient(105deg,var(--rdc-bg),var(--rdc-srf) 82%,color-mix(in srgb,var(--rdc-srf) 94%,var(--rdc-acc)));transform-origin:center bottom;
 }
-html[dir=rtl][data-rdc-page-load]::before{transform-origin:right}
-html[data-rdc-page-load] .rdc-scr-prog{visibility:hidden}
-html:not([data-rdc-page-load]) [data-rdc-arc].is-load [data-rdc-res]{opacity:.72}
 @media (prefers-reduced-motion:no-preference){
- html[data-rdc-page-load]::before{animation:rdc-page-load .7s ease-out both}
+ html[data-rdc-page-load] .rdc-page-curtain{display:block}
+ html[data-rdc-page-load=leave] .rdc-page-curtain>span{
+  animation:rdc-curtain-close .14s cubic-bezier(.22,.68,.36,1) calc(var(--rdc-panel)*.005s) both;
+ }
+ html[data-rdc-page-load=enter] .rdc-page-curtain>span{
+  animation:rdc-curtain-open .18s cubic-bezier(.22,.68,.36,1) calc(var(--rdc-panel)*.009s) both;
+ }
+ html[data-rdc-page-load] .rdc-scr-prog{visibility:hidden}
  [data-rdc-arc] [data-rdc-res]{transition:opacity .15s ease}
 }
-@keyframes rdc-page-load{
- from{transform:scaleX(.12)}
- to{transform:scaleX(.8)}
-}
+html:not([data-rdc-page-load]) [data-rdc-arc].is-load [data-rdc-res]{opacity:.72}
+@keyframes rdc-curtain-close{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes rdc-curtain-open{from{transform:scaleY(1)}to{transform:scaleY(0);visibility:hidden}}

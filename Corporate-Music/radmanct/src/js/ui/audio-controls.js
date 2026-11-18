@@ -1,4 +1,5 @@
 import {initializeAudioWave} from './audio-wave.js';
+import {mediaWaitEvents,updateMediaWait} from './media-wait.js';
 
 export function formatAudioTime(value) {
  const seconds=Number.isFinite(value)&&value>0?Math.floor(value):0;
@@ -13,7 +14,7 @@ export function initializeAudioControls(root) {
  const time=root.querySelector('[data-rdc-player-time]'),duration=root.querySelector('[data-rdc-player-duration]');
  const mute=root.querySelector('[data-rdc-player-mute]'),volume=root.querySelector('[data-rdc-player-volume]');
  const start=root.querySelector('[data-rdc-player-start]'),pause=root.querySelector('[data-rdc-player-pause]'),status=root.querySelector('[data-rdc-player-status]');
- const releases=[];let alive=true,request=0;
+ const releases=[];let alive=true,request=0,waiting=false;
  const listen=(node,type,handler)=>{node.addEventListener(type,handler);releases.push(()=>node.removeEventListener(type,handler));};
  const update=()=>{
   const length=Number.isFinite(audio.duration)&&audio.duration>0?audio.duration:0;
@@ -23,7 +24,7 @@ export function initializeAudioControls(root) {
   root.style.setProperty('--rdc-audio-progress',`${length?Math.min(100,Math.max(0,audio.currentTime/length*100)):0}%`);
   seek.setAttribute('aria-valuetext',`${formatAudioTime(audio.currentTime)} از ${formatAudioTime(length)}`);
   const playing=!audio.paused&&!audio.ended;
-  play.setAttribute('aria-pressed',String(playing));play.setAttribute('aria-label',playing?'توقف پخش':'پخش آهنگ');
+  play.setAttribute('aria-pressed',String(playing));play.setAttribute('aria-label',playing?(waiting?'در انتظار پخش؛ برای توقف کلیک کنید':'توقف پخش'):'پخش آهنگ');
   start.hidden=playing;pause.hidden=!playing;
   mute.setAttribute('aria-pressed',String(audio.muted));mute.setAttribute('aria-label',audio.muted?'وصل صدا':'قطع صدا');
   volume.value=String(audio.muted?0:audio.volume);
@@ -36,9 +37,13 @@ export function initializeAudioControls(root) {
  listen(seek,'input',()=>{if(Number.isFinite(audio.duration)&&audio.duration>0)audio.currentTime=Number(seek.value)/1000*audio.duration;update();});
  listen(mute,'click',()=>{audio.muted=!audio.muted;update();});
  listen(volume,'input',()=>{audio.volume=Number(volume.value);audio.muted=audio.volume===0;update();});
- for(const event of ['loadedmetadata','durationchange','timeupdate','play','pause','ended','volumechange','emptied'])listen(audio,event,update);
+ for(const event of ['loadedmetadata','durationchange','timeupdate','volumechange'])listen(audio,event,update);
+ for(const event of mediaWaitEvents)listen(audio,event,()=>{
+  waiting=updateMediaWait(audio,play,event);
+  update();
+ });
  listen(audio,'error',()=>{status.textContent='فایل صوتی قابل پخش نیست. می‌توانید از لینک دانلود استفاده کنید.';update();});
  controls.hidden=false;audio.controls=false;audio.hidden=true;root.dataset.rdcPlayerReady='true';update();
  releases.push(initializeAudioWave(root,audio));
- return()=>{alive=false;request++;audio.pause();for(const release of releases)release();controls.hidden=true;audio.controls=true;audio.hidden=false;delete root.dataset.rdcPlayerReady;};
+ return()=>{alive=false;request++;audio.pause();for(const release of releases)release();play.toggleAttribute('data-rdc-media-wait',false);controls.hidden=true;audio.controls=true;audio.hidden=false;delete root.dataset.rdcPlayerReady;};
 }

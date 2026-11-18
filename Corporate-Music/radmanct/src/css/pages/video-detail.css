@@ -1,9 +1,10 @@
+@import '../ui/media-wait.css';
 @import '../ui/download-button.css';
 @import '../ui/media-archive.css';
 @import '../ui/aparat.css';
 
 .rdc-collection--video-detail{padding-block-start:3rem}
-.rdc-clip-player{aspect-ratio:16/9;overflow:hidden;background:var(--rdc-clr-blk)}
+.rdc-clip-player{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--rdc-clr-blk)}
 .rdc-clip-player video{display:block;inline-size:100%;block-size:100%;object-fit:contain}
 .rdc-clip-downloads{display:flex;flex-wrap:wrap;gap:.9rem;margin-block:2rem 1.25rem}
 .rdc-clip-download{--rdc-download-sz:1.2rem;--rdc-download-ht:3.25rem;--rdc-download-ico:2rem}
