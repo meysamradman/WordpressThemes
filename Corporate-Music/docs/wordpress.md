@@ -36,6 +36,8 @@ On public clip detail pages, the verified clip can extend Yoast's existing graph
 
 Album photo pages complement the same album and share its base canonical. The first page uses the album URL. Invalid, redundant or out-of-range gallery_page values redirect to the normalized album URL or last valid photo page. AJAX archives keep working per-URL HTML and update the validated final same-origin URL, title and SEO head together.
 
+<a id="hosting-packages"></a>
+
 ## قواعد بستهٔ هاست
 
 - [استاندارد مشترک تحویل وردپرس](../../WEB-DEVELOPMENT-STANDARDS/shared/08-BUILD-AND-VERSIONS.md#تحویل-وردپرس-بر-اساس-دامنه) برای دامنهٔ `aliasadioriginal.ir` اجرا می‌شود. بستهٔ نصب تازه، SQL آمادهٔ دامنه و `public_html.zip` را جداگانه دارد. بعد از بررسی بستهٔ جدید، خروجی قبلی در پوشهٔ تحویل جایگزین می‌شود و بکاپ‌های بازیابی در مسیر جدا می‌مانند.

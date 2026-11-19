@@ -34,8 +34,8 @@
 | Optional scroll motion and smooth scrolling | [motion.md](scenarios/motion.md) |
 | Shared PHP/Elementor components and RTL text effects | [components.md](scenarios/components.md) |
 | Shared PHP/Elementor component renderers and asset lifecycle | [components.md](engineering/components.md) |
-| پیش‌نمایش ویدئویی اختیاری کارت‌های وبلاگ/محصول/نمونه‌کار، حالت هاور/دید و Shortcode المنتور | [موتور مشترک](engineering/components.md#پیش‌نمایش-ویدئویی-کارت) |
-| کنترل‌های فرانت: Input/Select/ComboBox، درخت دسته و ویجت‌های Taxonomy/Search در PHP/Classic/Atomic | [کامپوننت‌ها](engineering/components.md#کنترل‌ها-و-داده-مشترک) |
+| پیش‌نمایش ویدئویی اختیاری کارت‌های وبلاگ/محصول/نمونه‌کار، حالت هاور/دید و Shortcode المنتور | [موتور مشترک](engineering/components.md#card-video-preview) |
+| کنترل‌های فرانت: Input/Select/ComboBox، درخت دسته و ویجت‌های Taxonomy/Search در PHP/Classic/Atomic | [کامپوننت‌ها](engineering/components.md#shared-controls) |
 | Text effects, native controls, rotating words and Hub parity gaps | [text.md](engineering/text.md) |
 | Shared animated hover border on widgets, containers and PHP wrappers | [component-effects.md](engineering/component-effects.md) |
 | Shared carousel, arbitrary template content, item height and RTL controls | [carousel.md](engineering/carousel.md) |

@@ -1,5 +1,7 @@
 # قرارداد کامپوننت‌های نمایشی مشترک
 
+<a id="shared-controls"></a>
+
 ## کنترل‌ها و داده مشترک
 
 - مالک UI عمومی `radmanct-components/inc/ui/` و `src/css/controls/` است: `fields.php` و `category-tree.php` رندر بومی را می‌سازند؛ `src/js/controls/combobox.js` موتور محلی Tom Select 2.6.2 را فقط با marker مصرفی و plugin منتخب بارگذاری می‌کند. مدیریت/Elementor editor از این UI فرانت مستقل‌اند.
@@ -9,6 +11,8 @@
 - `rdct_taxonomy_list()` درخت یا chips را از taxonomy عمومی ثبت‌شده، با حداکثر ۲۰۰ term می‌سازد. `rdct_archive_search()` فرم GET بومی برای نوع محتوای عمومیِ قابل جست‌وجو می‌سازد؛ نوع ناموجود/خصوصی خروجی ندارد. مالک ثبت taxonomy/CPT محصول و نمونه‌کار Content است؛ این کامپوننت‌ها بدون آن نیز برای وبلاگ کار می‌کنند.
 - ویجت‌های Classic `rdct-taxonomy-list`/`rdct-archive-search` و Atomic `rdct-atomic-taxonomy-list`/`rdct-atomic-archive-search` همین fields/renderer را مصرف می‌کنند؛ Atomic دارای props بومی، قالب Twig و preview سروری محدود به endpoint احراز‌شدهٔ موجود است. انتخاب نامعتبرِ داده با پیش‌فرض نامرتبط جایگزین نشود. typography در editor بومی می‌ماند؛ frontend خانواده/اندازه را ارث می‌برد و override محلی اختیاری است.
 - جست‌وجو فقط داخل مقصد آرشیو رادمان به AJAX آن متصل می‌شود؛ بیرون آن GET معتبر دارد. ساخت ویجت‌های ترکیبی فیلتر/نتایج و adapter برای Loop Grid بومی Pro کار باز جداست؛ این ویجت‌ها جای API یا چرخهٔ query/History المنتور را خودکار نمی‌گیرند. [مرز renderer](renderers.md).
+
+<a id="card-video-preview"></a>
 
 ## پیش‌نمایش ویدئویی کارت
 

@@ -15,7 +15,7 @@ Independent customer edition of Radman CT in the parent WordpressThemes reposito
 - Client homepage palette/layout follows the supplied artist mockup, not Webtalik styling: plum/charcoal, mint #16cc9f. Shared tokens remain authoritative. Gallery and videos use native album/clip post types with separate hierarchical categories and tags. Keep their editor, archive and detail owners modular; reuse the native media picker and shared AJAX/lightbox/video behaviors. Theme thumbnail is the original Radman image from Webtalik; never overwrite it with a browser screenshot.
 
 - Audio/video/gallery and archive/detail media changes must follow `docs/media.md`: defer playback media, preserve bounded queries and native responsive images, and keep approved decorative-video guards.
-- Explicit external-media exception: use only validated Aparat embeds through the shared renderer in docs/media.md. Home and archive cards load a single player on selection using their local covers. Detail pages retain the native Aparat poster and Play. Local videos keep preload=none.
+- Explicit external-media exception: use only validated Aparat embeds through the shared renderer in docs/media.md. Home prepares the provider player for visible cards to enable one-click play. The archive opens one player on selection. Details retain the provider's poster and Play. Local videos keep preload=none.
 
 ## Customer frontend standard
 
