@@ -7,7 +7,7 @@
 .rdc-work-summary__stats dt { color:var(--rdc-mut); font-size:var(--rdc-sz-sm); }
 .rdc-work-summary__stats dd { margin:0; color:var(--rdc-ink); font-size:clamp(2rem,3.3vw,3.75rem); line-height:1; }
 .rdc-work-summary__row { border-block:1px solid var(--rdc-ln); }
-.rdc-work-summary .rdc-mtx { --rdc-mtx-gut:clamp(1rem,3vw,3rem); --rdc-mtx-gap:clamp(1.25rem,3vw,3rem); }
+.rdc-work-summary .rdc-mtx { --rdc-mtx-gut:clamp(1rem,3vw,3rem); --rdc-mtx-gap:clamp(1.25rem,3vw,3rem); --rdc-mtx-fade:clamp(1rem,3vw,3rem); }
 .rdc-work-summary .rdc-mtx__lbl { min-block-size:2.5rem; font-size:var(--rdc-sz-sm); font-weight:var(--rdc-wt-hdg); }
 .rdc-work-summary .rdc-mtx__lbl::before { content:''; inline-size:.4rem; block-size:.4rem; flex:none; border-radius:50%; background:var(--rdc-acc); }
 .rdc-work-summary__link { display:flex; align-items:center; min-block-size:3.5rem; color:var(--rdc-ink); font-size:var(--rdc-sz-sm); font-weight:var(--rdc-wt-hdg); line-height:1.5; }
