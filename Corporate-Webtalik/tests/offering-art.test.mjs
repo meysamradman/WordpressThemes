@@ -10,6 +10,19 @@ test('pipe particles interpolate the actual pipe and disappear at both endpoints
   assert.deepEqual(orbitPoint(.25, track), orbitPoint(1.25, track));
 });
 
+test('rolling pipe particles travel faster downhill and wrap without fading', () => {
+  const track = {wrap: true, radius: 10, points: [
+    {x: 0, y: 30, distance: 0, travelTime: 0},
+    {x: 40, y: 0, distance: 50, travelTime: 65},
+    {x: 80, y: 30, distance: 100, travelTime: 100},
+  ]};
+  assert.ok(Math.abs(orbitPoint(.65, track).rotation - 5) < 1e-9);
+  assert.ok(orbitPoint(.5, track).x < 40);
+  assert.ok(orbitPoint(.9, track).x > 65);
+  assert.equal(orbitPoint(.999, track).opacity, 1);
+  assert.equal(orbitPoint(1, track).x, 0);
+});
+
 test('network spheres follow their cubic connection and fade at loop boundaries', () => {
   const route = [375,290,330,240,300,240,285,183];
   const point = orbitPoint(.5,{route});

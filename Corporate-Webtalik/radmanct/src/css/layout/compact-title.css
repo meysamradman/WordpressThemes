@@ -10,6 +10,28 @@
  color:var(--rdc-tx);
 }
 .rdc-mini__art { position:absolute; z-index:-1; inset:0; inline-size:100%; block-size:100%; object-fit:cover; pointer-events:none; }
+.rdc-mini__motion { position:absolute; z-index:-1; inset:0; overflow:clip; container-type:size; pointer-events:none; }
+.rdc-mini__scene {
+ position:absolute;
+ left:50%;
+ top:50%;
+ translate:-50% -50%;
+ width:max(100%,300cqh);
+ height:max(100%,calc(100cqw / 3));
+ visibility:hidden;
+}
+.rdc-mini__scene[data-rdc-mini-ready] { visibility:visible; }
+.rdc-mini__scene[data-rdc-mini-off] { display:none; }
+.rdc-mini__tracks { position:absolute; inset:0; width:100%; height:100%; }
+.rdc-mini__roll { position:absolute; inset:0; }
+.rdc-mini__orb,.rdc-mini__point { position:absolute; left:0; top:0; overflow:hidden; }
+.rdc-mini__orb { width:5.0645%; height:auto; }
+.rdc-mini__point { width:3.5%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,#fff8df 0 12%,#ffda8b 15%,#ee9b32a0 22%,#d4782630 42%,transparent 70%); }
+.rdc-mini__motion-btn:not([hidden]) { position:absolute; inset-inline-start:var(--rdc-gut); inset-block-end:.75rem; display:grid; place-items:center; inline-size:2.75rem; block-size:2.75rem; border:1px solid var(--rdc-ln); border-radius:50%; background:var(--rdc-bg); color:var(--rdc-tx); cursor:pointer; }
+.rdc-mini__motion-btn span { display:grid; place-items:center; }
+.rdc-mini__motion-btn[aria-pressed='false'] .rdc-mini__play,.rdc-mini__motion-btn[aria-pressed='true'] .rdc-mini__pause { display:none; }
+.rdc-mini__motion-btn:focus-visible { outline:2px solid var(--rdc-acc); outline-offset:3px; }
+@media (prefers-reduced-motion:reduce) { .rdc-mini__motion,.rdc-mini__motion-btn:not([hidden]) { display:none; } }
 .rdc-mini__copy { inline-size:50%; max-inline-size:46rem; min-inline-size:0; }
 .rdc-mini__lbl { display:flex; align-items:center; gap:.85rem; color:var(--rdc-tx); font-size:.8rem; margin-block-end:.65rem; }
 .rdc-mini__lbl::before { content:''; inline-size:2rem; block-size:1px; background:var(--rdc-acc); }
@@ -19,6 +41,7 @@
 @media(max-width:640px) {
  .rdc-mini { min-block-size:19rem; padding-block:8.25rem 1.5rem; }
  .rdc-mini__art { object-position:65% center; }
+ .rdc-mini__scene { left:65%; translate:-65% -50%; }
  .rdc-mini__copy { inline-size:100%; }
  .rdc-mini .rdc-mini__ttl { font-size:clamp(2rem,5.8vw,2.4rem); }
  .rdc-mini__lbl { font-size:.65rem; gap:.5rem; }

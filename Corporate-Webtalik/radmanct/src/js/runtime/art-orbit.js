@@ -2,13 +2,53 @@ import {reportRuntimeError} from './lifecycle.js';
 import {observeSizes} from './observers.js';
 import {getSmoothScroller} from './scroll-state.js';
 
+function samplePipe(node, radius) {
+  const length = node.getTotalLength();
+  const box = node.ownerSVGElement.viewBox.baseVal;
+  const count = 120;
+  const step = length / count;
+  let travelTime = 0;
+  const points = Array.from({length: count + 1}, (_, index) => {
+    const distance = step * index;
+    const point = node.getPointAtLength(distance);
+    let {x, y} = point;
+    if (radius) {
+      const before = node.getPointAtLength(Math.max(0, distance - step));
+      const after = node.getPointAtLength(Math.min(length, distance + step));
+      const dx = after.x - before.x, dy = after.y - before.y;
+      const magnitude = Math.hypot(dx, dy) || 1;
+      x += radius * dy / magnitude;
+      y -= radius * dx / magnitude;
+      if (index) travelTime += step / Math.max(.7, Math.min(1.35, 1 + .85 * dy / magnitude));
+    }
+    return {x: (x - box.x) / box.width * 1000, y: (y - box.y) / box.height * 625, distance, travelTime};
+  });
+  return points;
+}
+
 export function orbitPoint(turn, track) {
   if (track.points) {
     const t = ((turn % 1) + 1) % 1;
-    const position = t * (track.points.length - 1), index = Math.floor(position);
-    const a = track.points[index], b = track.points[Math.min(index + 1, track.points.length - 1)];
-    return { x: a.x + (b.x - a.x) * (position - index), y: a.y + (b.y - a.y) * (position - index),
-      scale: 1, opacity: Math.min(1, t * 12, (1 - t) * 12), front: true };
+    const last = track.points.length - 1;
+    const position = t * last;
+    let index = Math.floor(position), blend = position - index;
+    if (track.radius) {
+      const time = t * track.points[last].travelTime;
+      let lo = 0, hi = last;
+      while (hi - lo > 1) {
+        const mid = (lo + hi) >> 1;
+        if (track.points[mid].travelTime <= time) lo = mid;
+        else hi = mid;
+      }
+      index = lo;
+      const start = track.points[lo].travelTime, end = track.points[hi].travelTime;
+      blend = end > start ? (time - start) / (end - start) : 0;
+    }
+    const a = track.points[index], b = track.points[Math.min(index + 1, last)];
+    const point = { x: a.x + (b.x - a.x) * blend, y: a.y + (b.y - a.y) * blend,
+      scale: 1, opacity: track.wrap ? 1 : Math.min(1, t * 12, (1 - t) * 12), front: true };
+    if (track.radius) point.rotation = (a.distance + (b.distance - a.distance) * blend) / track.radius;
+    return point;
   }
   if (track.route) {
     const t = ((turn % 1) + 1) % 1, u = 1 - t, p = track.route;
@@ -32,13 +72,14 @@ export function orbitPoint(turn, track) {
   };
 }
 
-export function initializeOfferingArt(root, load) {
+export function initializeOfferingArt(root, load, onReady = () => {}) {
   const doc = root.ownerDocument;
   const view = doc.defaultView;
   const preference = view.matchMedia('(prefers-reduced-motion: reduce)');
   const parent = root.closest('.rdc-ss__inr');
   let alive = true; let visible = !view.IntersectionObserver; let pending = false; let failed = false;
   let context; let vendor; let tweens = []; let paint = () => {}; let restoreOrbs=()=>{}; let promoteOrbs=()=>{}; let previousRunning=null;
+  let releaseReady = () => {};
   let width = root.clientWidth; let height = root.clientHeight;
   const loadVendor = load || (() => {
     const url = new URL(root.dataset.gsapSrc, view.location.href);
@@ -54,15 +95,10 @@ export function initializeOfferingArt(root, load) {
       rx: Number(node.dataset.orbitRx), ry: Number(node.dataset.orbitRy),
       tilt: Number(node.dataset.orbitTilt),
       route: node.dataset.orbitRoute ? node.dataset.orbitRoute.split(',').map(Number) : null,
-      points: node.hasAttribute('data-orbit-pipe') ? (() => {
-        const length = node.getTotalLength();
-        const box = node.ownerSVGElement.viewBox.baseVal;
-        return Array.from({ length: 121 }, (_, index) => {
-          const point = node.getPointAtLength(length * index / 120);
-          return { x: (point.x - box.x) / box.width * 1000, y: (point.y - box.y) / box.height * 625 };
-        });
-      })() : null,
+      points: node.hasAttribute('data-orbit-pipe') ? samplePipe(node, Number(node.dataset.orbitRoll) || 0) : null,
+      radius: Number(node.dataset.orbitRoll) || 0,
       duration: Number(node.dataset.orbitDuration) || 0,
+      wrap: node.hasAttribute('data-orbit-wrap'),
     }));
     const states = tracks.map(() => ({ turn: 0 }));
     const orbs = [...root.querySelectorAll('[data-orbit-track]')].map(node => ({
@@ -78,7 +114,8 @@ export function initializeOfferingArt(root, load) {
         for (const orb of (trackIndex===null?orbs:groups[trackIndex])) {
           const point = orbitPoint(states[orb.track].turn + orb.phase, tracks[orb.track]);
           const x=Math.round(point.x/1000*width*1000)/1000,y=Math.round(point.y/625*height*1000)/1000;
-          orb.node.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%) scale(${point.scale})`;
+          const rotation = point.rotation ? ` rotate(${point.rotation}rad)` : '';
+          orb.node.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%) scale(${point.scale})${rotation}`;
           orb.node.style.opacity=String(point.opacity);
           if (orb.front !== point.front) { orb.node.style.zIndex = point.front ? '4' : '1'; orb.front = point.front; }
         }
@@ -94,12 +131,13 @@ export function initializeOfferingArt(root, load) {
       }
       paint();
     }, root);
+    releaseReady = onReady() || (() => {});
   }
 
   function sync() {
     if (!alive) return;
     if (preference.matches && context) {
-      context.revert(); restoreOrbs();restoreOrbs=()=>{};promoteOrbs=()=>{}; context = null; tweens = []; paint = () => {};previousRunning=null;
+      releaseReady(); context.revert(); restoreOrbs();restoreOrbs=()=>{};promoteOrbs=()=>{}; context = null; tweens = []; paint = () => {};previousRunning=null;
     }
     const running = active();
     if(running!==previousRunning){for(const tween of tweens)tween.paused(!running);promoteOrbs(running);previousRunning=running;}
@@ -114,7 +152,7 @@ export function initializeOfferingArt(root, load) {
       if (active()) { mount(vendor.gsap);promoteOrbs(true); for (const tween of tweens) tween.play(); }
     } catch (error) {
       failed = true;
-      context?.revert();restoreOrbs();restoreOrbs=()=>{};promoteOrbs=()=>{}; context = null; tweens = []; paint = () => {};previousRunning=null;
+      releaseReady(); context?.revert();restoreOrbs();restoreOrbs=()=>{};promoteOrbs=()=>{}; context = null; tweens = []; paint = () => {};previousRunning=null;
       reportRuntimeError('client-offering-art', error, view);
     } finally { pending = false; }
   }
@@ -139,7 +177,7 @@ export function initializeOfferingArt(root, load) {
   sync();
   return () => {
     if (!alive) return;
-    alive = false; observer?.disconnect(); releaseSize(); context?.revert(); restoreOrbs();
+    alive = false; observer?.disconnect(); releaseSize(); releaseReady(); context?.revert(); restoreOrbs();
     view.removeEventListener('resize', measure); view.removeEventListener('scroll', nativeSync);
     doc.removeEventListener('visibilitychange', sync); doc.removeEventListener('rdc:smth-upd', sync);
     preference.removeEventListener('change', sync);
