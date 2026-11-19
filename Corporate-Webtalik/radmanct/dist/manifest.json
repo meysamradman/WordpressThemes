@@ -49,10 +49,6 @@
     "file": "js/text-motion-BN1O9YIz.min.js",
     "name": "text-motion"
   },
-  "src/art/compact-title.webp": {
-    "file": "assets/compact-title-ed-EU84x.webp",
-    "src": "src/art/compact-title.webp"
-  },
   "src/css/admin/gallery.css": {
     "file": "css/admin-gallery-6L0SL14I.min.css",
     "name": "css-admin-gallery",
@@ -63,16 +59,13 @@
     "isEntry": true
   },
   "src/css/layout/compact-title.css": {
-    "file": "css/layout-compact-title-CfoFmbHx.min.css",
+    "file": "css/layout-compact-title-Cu8dUJlr.min.css",
     "name": "css-layout-compact-title",
     "names": [
       "css-layout-compact-title.css"
     ],
     "src": "src/css/layout/compact-title.css",
-    "isEntry": true,
-    "assets": [
-      "assets/compact-title-ed-EU84x.webp"
-    ]
+    "isEntry": true
   },
   "src/css/layout/page-title.css": {
     "file": "css/layout-page-title-DXepOBso.min.css",
