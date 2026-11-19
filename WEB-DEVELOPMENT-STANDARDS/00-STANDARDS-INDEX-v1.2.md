@@ -23,7 +23,7 @@
 | 03 | [Responsive & RTL](shared/03-RESPONSIVE-DESIGN-STANDARD-v1.0.md) | جدید |
 | 04 | [Vanilla JS](shared/04-VANILLA-JS-DEVELOPMENT-STANDARD-v1.1.md) | موجود؛ scope هماهنگ |
 | 05 | [GSAP](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md) | [انیمیشن ورود عنوان و متن](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md#customer-content-entrance)، جدا از پارالاکس و پرده |
-| 08 | [نسخه‌ها، ماژول‌های CSS/JS و Build](shared/08-BUILD-AND-VERSIONS.md) | نسخهٔ اعلام‌شده، نصب‌شده و آزموده، entry، manifest و ZIP |
+| 08 | [نسخه‌ها، ماژول‌های CSS/JS و Build](shared/08-BUILD-AND-VERSIONS.md) | نسخهٔ اعلام‌شده، نصب‌شده و آزموده، entry، manifest، تحویل بر اساس دامنه و اصلاح محدود دیتابیس |
 | 09 | [عملکرد و کش](shared/09-PERFORMANCE-AND-CACHE.md) | waterfall، LCP/TTFB، کش فایل/HTML/ویجت و purge |
 | 10 | [امنیت WordPress](shared/10-SECURITY.md) | ورودی، خروجی، مجوز، دادهٔ خصوصی و بسته |
 | 11 | [دسترس‌پذیری](shared/11-ACCESSIBILITY.md) | فوکوس، لمس، RTL، فرم، کاروسل و reduced-motion |
