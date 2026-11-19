@@ -29,7 +29,7 @@
 | `prj` / `prjs` | Project / Projects |
 | `svc` / `svcs` | Service / Services |
 | `prj-mq` | Continuous bottom-aligned gallery with project CTA; `trk` is its moving track |
-| `cr` | Shared manual carousel for consumer-rendered items |
+| `mtx` | Shared continuous text marquee for consumer-rendered items |
 | `faq` | Shared frequently asked questions |
 | `heading` | Shared section heading styles; independent of Page Title (`pt`) |
 | `ctc` | Floating contact launcher and its channel panel |

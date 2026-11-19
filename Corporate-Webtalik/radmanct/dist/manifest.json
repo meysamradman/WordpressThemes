@@ -1,11 +1,11 @@
 {
-  "_art-orbit-KkfpHNe_.min.js": {
-    "file": "js/art-orbit-KkfpHNe_.min.js",
+  "_art-orbit-CtSNPDtu.min.js": {
+    "file": "js/art-orbit-CtSNPDtu.min.js",
     "name": "art-orbit",
     "imports": [
       "_preload-helper-CRzLMJPS.min.js",
-      "_scroll-state-DCQ9sG3W.min.js",
-      "_lifecycle-CEUUFq-m.min.js"
+      "_lifecycle-CEUUFq-m.min.js",
+      "_scroll-state--t-o0eZ-.min.js"
     ]
   },
   "_gsap-vendor-CvDoa17S.min.js": {
@@ -16,13 +16,24 @@
     "file": "js/lifecycle-CEUUFq-m.min.js",
     "name": "lifecycle"
   },
-  "_media-parallax-DcMdant5.min.js": {
-    "file": "js/media-parallax-DcMdant5.min.js",
+  "_media-parallax-2NGg26Vh.min.js": {
+    "file": "js/media-parallax-2NGg26Vh.min.js",
     "name": "media-parallax",
     "imports": [
-      "_scroll-state-DCQ9sG3W.min.js",
       "_lifecycle-CEUUFq-m.min.js",
+      "_scroll-state--t-o0eZ-.min.js",
       "_refresh-BqO6rLFb.min.js"
+    ]
+  },
+  "_motion-D4Tdse9I.min.js": {
+    "file": "js/motion-D4Tdse9I.min.js",
+    "name": "motion",
+    "imports": [
+      "_preload-helper-CRzLMJPS.min.js"
+    ],
+    "dynamicImports": [
+      "src/js/gsap-vendor.js",
+      "src/js/animation-vendor.js"
     ]
   },
   "_preload-helper-CRzLMJPS.min.js": {
@@ -33,23 +44,17 @@
     "file": "js/refresh-BqO6rLFb.min.js",
     "name": "refresh"
   },
-  "_scroll-state-DCQ9sG3W.min.js": {
-    "file": "js/scroll-state-DCQ9sG3W.min.js",
-    "name": "scroll-state",
-    "imports": [
-      "_preload-helper-CRzLMJPS.min.js"
-    ],
-    "dynamicImports": [
-      "src/js/gsap-vendor.js",
-      "src/js/animation-vendor.js"
-    ]
+  "_scroll-state--t-o0eZ-.min.js": {
+    "file": "js/scroll-state--t-o0eZ-.min.js",
+    "name": "scroll-state"
   },
-  "_sticky-g2SdWr9B.min.js": {
-    "file": "js/sticky-g2SdWr9B.min.js",
+  "_sticky-BRjPnNas.min.js": {
+    "file": "js/sticky-BRjPnNas.min.js",
     "name": "sticky",
     "imports": [
-      "_scroll-state-DCQ9sG3W.min.js",
+      "_motion-D4Tdse9I.min.js",
       "_lifecycle-CEUUFq-m.min.js",
+      "_scroll-state--t-o0eZ-.min.js",
       "_refresh-BqO6rLFb.min.js"
     ]
   },
@@ -139,7 +144,7 @@
     "isEntry": true
   },
   "src/css/pages/service-portfolio-summary.css": {
-    "file": "css/service-portfolio-summary-CE6Muz-p.min.css",
+    "file": "css/service-portfolio-summary--Vv4oDjv.min.css",
     "name": "css-service-portfolio-summary",
     "names": [
       "css-service-portfolio-summary.css"
@@ -199,24 +204,24 @@
     ]
   },
   "src/js/pages/archive.js": {
-    "file": "js/archive-1d9wmKtY.min.js",
+    "file": "js/archive-N_AsJFwv.min.js",
     "name": "archive",
     "src": "src/js/pages/archive.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_sticky-g2SdWr9B.min.js"
+      "_sticky-BRjPnNas.min.js"
     ]
   },
   "src/js/pages/home.js": {
-    "file": "js/home-o9I6LTUE.min.js",
+    "file": "js/home-KTooMSDO.min.js",
     "name": "home",
     "src": "src/js/pages/home.js",
     "isEntry": true,
     "imports": [
-      "_art-orbit-KkfpHNe_.min.js",
+      "_art-orbit-CtSNPDtu.min.js",
       "_preload-helper-CRzLMJPS.min.js",
-      "_scroll-state-DCQ9sG3W.min.js",
+      "_motion-D4Tdse9I.min.js",
       "_lifecycle-CEUUFq-m.min.js",
       "_refresh-BqO6rLFb.min.js",
       "_text-motion-BN1O9YIz.min.js"
@@ -226,45 +231,45 @@
     ]
   },
   "src/js/pages/home/projects.js": {
-    "file": "js/projects-C7El9dbB.min.js",
+    "file": "js/projects-DYncyO15.min.js",
     "name": "projects",
     "src": "src/js/pages/home/projects.js",
     "isDynamicEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
       "_text-motion-BN1O9YIz.min.js",
-      "_sticky-g2SdWr9B.min.js",
-      "_media-parallax-DcMdant5.min.js"
+      "_sticky-BRjPnNas.min.js",
+      "_media-parallax-2NGg26Vh.min.js"
     ]
   },
   "src/js/pages/page-title.js": {
-    "file": "js/page-title-DxvYv-p1.min.js",
+    "file": "js/page-title-Cr_2rQkQ.min.js",
     "name": "page-title",
     "src": "src/js/pages/page-title.js",
     "isEntry": true,
     "imports": [
       "_preload-helper-CRzLMJPS.min.js",
-      "_scroll-state-DCQ9sG3W.min.js",
+      "_motion-D4Tdse9I.min.js",
       "_lifecycle-CEUUFq-m.min.js",
-      "_media-parallax-DcMdant5.min.js"
+      "_media-parallax-2NGg26Vh.min.js"
     ],
     "dynamicImports": [
-      "_art-orbit-KkfpHNe_.min.js"
+      "_art-orbit-CtSNPDtu.min.js"
     ]
   },
   "src/js/pages/portfolio.js": {
-    "file": "js/portfolio-D0rXI-6I.min.js",
+    "file": "js/portfolio-DRgNWdJ8.min.js",
     "name": "portfolio",
     "src": "src/js/pages/portfolio.js",
     "isEntry": true,
     "imports": [
-      "_scroll-state-DCQ9sG3W.min.js",
+      "_motion-D4Tdse9I.min.js",
       "_lifecycle-CEUUFq-m.min.js",
-      "_media-parallax-DcMdant5.min.js"
+      "_media-parallax-2NGg26Vh.min.js"
     ]
   },
   "src/js/pages/service.js": {
-    "file": "js/service-nK9KtTLt.min.js",
+    "file": "js/service-DygIvFht.min.js",
     "name": "service",
     "src": "src/js/pages/service.js",
     "isEntry": true,
@@ -273,18 +278,18 @@
       "_lifecycle-CEUUFq-m.min.js"
     ],
     "dynamicImports": [
-      "src/js/ui/carousel.js"
+      "src/js/ui/text-marquee.js"
     ]
   },
   "src/js/pages/services.js": {
-    "file": "js/services-DE7lSwng.min.js",
+    "file": "js/services-BB-tug2Y.min.js",
     "name": "services",
     "src": "src/js/pages/services.js",
     "isEntry": true,
     "imports": [
-      "_scroll-state-DCQ9sG3W.min.js",
+      "_motion-D4Tdse9I.min.js",
       "_lifecycle-CEUUFq-m.min.js",
-      "_sticky-g2SdWr9B.min.js"
+      "_sticky-BRjPnNas.min.js"
     ]
   },
   "src/js/preloader.js": {
@@ -294,14 +299,15 @@
     "isEntry": true
   },
   "src/js/site.js": {
-    "file": "js/site-7vpxBfqR.min.js",
+    "file": "js/site-CdOo7QvQ.min.js",
     "name": "site",
     "src": "src/js/site.js",
     "isEntry": true,
     "imports": [
       "_preload-helper-CRzLMJPS.min.js",
-      "_scroll-state-DCQ9sG3W.min.js",
-      "_lifecycle-CEUUFq-m.min.js"
+      "_motion-D4Tdse9I.min.js",
+      "_lifecycle-CEUUFq-m.min.js",
+      "_scroll-state--t-o0eZ-.min.js"
     ],
     "dynamicImports": [
       "src/js/ui/menu-hover.js",
@@ -320,15 +326,6 @@
     "file": "js/card-preview-D6O5mlJY.min.js",
     "name": "card-preview",
     "src": "src/js/ui/card-preview.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_lifecycle-CEUUFq-m.min.js"
-    ]
-  },
-  "src/js/ui/carousel.js": {
-    "file": "js/carousel-DqcAsUAt.min.js",
-    "name": "carousel",
-    "src": "src/js/ui/carousel.js",
     "isDynamicEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js"
@@ -369,6 +366,16 @@
     "isDynamicEntry": true,
     "imports": [
       "_gsap-vendor-CvDoa17S.min.js"
+    ]
+  },
+  "src/js/ui/text-marquee.js": {
+    "file": "js/text-marquee-CZWTxods.min.js",
+    "name": "text-marquee",
+    "src": "src/js/ui/text-marquee.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_motion-D4Tdse9I.min.js",
+      "_lifecycle-CEUUFq-m.min.js"
     ]
   }
 }

@@ -13,7 +13,7 @@
 | متن و پیش‌نمایش کارت | `src/css/ui/card-text.css`، `src/css/ui/card-preview.css`، `src/js/ui/card-preview.js` | متن کامل حفظ شود؛ clamp و رفتار رسانه دوباره نوشته نشوند. برای پخش و منابع، media.md را رعایت کنید. |
 | Input جست‌وجوی نوشته | `searchform.php` و استایل `.rdc-srch` در `src/css/ui/sidebar.css` | label، فوکوس کیبورد، فرم GET بومی و escape خروجی در همان مسیر بررسی شوند. [قرارداد مشترک Input](../../WEB-DEVELOPMENT-STANDARDS/shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md#ui-input) |
 | سؤال‌های متداول | `template-parts/ui/faq.php`، `src/css/ui/faq.css` | یک renderer با items/title/label/desc مستقل در هر مصرف؛ details/summary بومی و گروه یکتا حفظ شوند. |
-| کاروسل محتوای آزاد | `inc/ui/carousel.php`، `src/css/ui/carousel.css`، `src/js/ui/carousel.js` | انتقال ماژول کاروسل Radman Design Library به قالب مستقل. renderer فقط قاب و کنترل‌ها را می‌سازد و مصرف‌کننده محتوای هر اسلاید را می‌دهد. پیمایش دستی، تک‌اسلاید، RTL/LTR و reduced-motion حفظ شوند. |
+| نوار متن متحرک | `inc/ui/text-marquee.php`، `src/css/ui/text-marquee.css`، `src/js/ui/text-marquee.js` | الگوی `text-marquee` از Radman Design Library. مصرف‌کننده مالک متن و لینک است. حرکت پیوسته، بدون فلش، با مکث دستی، توقف بیرون دید، پشتیبانی RTL/LTR و reduced-motion. |
 | دسته‌بندی و سایدبار | `inc/ui/category-tree.php`، `src/css/ui/category-tree.css`، `src/css/ui/sidebar.css` | مالک موجود و لینک‌های واقعی استفاده شوند؛ منطق جدا برای هر آرشیو نسازید. |
 | جستجو و صفحه‌بندی آرشیو | `src/js/pages/archive.js` | رفتار موجود با لینک بومی، history و پاسخ هم‌مبدأ؛ query اصلی، حفاظت محتوا و lifecycle حفظ شوند. |
 | ادامهٔ جزئیات | `inc/content/continuation.php`، `template-parts/layout/continuation.php` | داده و نمایش مشترک نوشته/نمونه‌کار؛ قواعد نوع محتوا و fallback فعلی حفظ شوند. |

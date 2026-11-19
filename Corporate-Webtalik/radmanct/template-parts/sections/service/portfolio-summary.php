@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH')||exit;
 require_once get_template_directory().'/inc/pages/service.php';
-require_once get_template_directory().'/inc/ui/carousel.php';
+require_once get_template_directory().'/inc/ui/text-marquee.php';
 $summary=\RadmanCT\Service\portfolio_summary();
 ?>
 <section class="rdc-ctr rdc-work-summary" aria-labelledby="rdc-work-summary-ttl">
@@ -18,10 +18,9 @@ $summary=\RadmanCT\Service\portfolio_summary();
  </div>
  <?php if($summary['projects']): ?>
   <div class="rdc-work-summary__row">
-   <p class="rdc-work-summary__lbl">نمونه‌کارها</p>
-   <?php \RadmanCT\UI\Carousel\render($summary['projects'],static function(WP_Post $project):void { ?>
+   <?php \RadmanCT\UI\text_marquee($summary['projects'],static function(WP_Post $project):void { ?>
     <a class="rdc-work-summary__link" href="<?php echo esc_url(get_permalink($project)); ?>"><?php echo esc_html(get_the_title($project)); ?></a>
-   <?php },array('label'=>'نمونه‌کارهای وب‌تالیک')); ?>
+   <?php },'نمونه‌کارها'); ?>
   </div>
  <?php endif; ?>
 </section>
