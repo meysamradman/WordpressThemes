@@ -4,15 +4,10 @@ defined('ABSPATH')||exit;
 function is_used():bool {
  return !is_front_page()&&!\RadmanCT\PageTitle\is_used()&&!is_singular(['post','project'])&&(is_page()||is_home()||is_archive()||is_search());
 }
-function artwork(string $key='compact-title'):array {
- $id=\RadmanCT\media_id($key);
+function artwork():array {
+ $id=\RadmanCT\media_id('compact-title');
  if(!\RadmanCT\PageTitle\attachment_allowed($id))return [];
  return wp_get_attachment_image_src($id,'full')?:[];
-}
-function motion_patches():array {
- $art=artwork();
- $patches=artwork('compact-title-patches');
- return ($art[1]??0)===2172&&($art[2]??0)===724&&($patches[1]??0)===238&&($patches[2]??0)===332?$patches:[];
 }
 function data():array {
  $id=is_page()?get_queried_object_id():0;
