@@ -1,5 +1,8 @@
 import {createPageLifecycle} from '../runtime/lifecycle.js';
 const page=createPageLifecycle(window);
+for(const root of document.querySelectorAll('[data-rdc-cr]')){
+ page.mountRoot(root,'carousel',()=>import('../ui/carousel.js'),({initializeCarousel})=>initializeCarousel(root));
+}
 for(const root of document.querySelectorAll('.rdc-mosaic'))page.mountRoot(root,'mosaic-border',()=>({}),()=>{
  const doc=root.ownerDocument,view=doc.defaultView,preference=view.matchMedia('(prefers-reduced-motion:reduce)');
  const boxes=[...root.querySelectorAll('.rdc-mosaic__copy,.rdc-mosaic__md')];

@@ -1,0 +1,18 @@
+.rdc-cr{position:relative;container-type:inline-size;--rdc-cr-gap:28px;--rdc-cr-w:clamp(18rem,19vw,21rem);--rdc-cr-max:1600px;--rdc-cr-inset:max(var(--rdc-gut),calc((100cqi - var(--rdc-cr-max))/2));--rdc-cr-nav-inset:var(--rdc-cr-inset)}
+.rdc-cr[data-rdc-cr-layout=boxed]{max-inline-size:var(--rdc-cr-max);inline-size:calc(100% - 2*var(--rdc-gut));margin-inline:auto;--rdc-cr-inset:0px;--rdc-cr-nav-inset:1rem}
+.rdc-cr__win{overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--rdc-cr-inset);padding-inline-start:var(--rdc-cr-inset);scrollbar-width:thin;cursor:grab}
+.rdc-cr__trk{display:flex;gap:var(--rdc-cr-gap);inline-size:max-content;min-inline-size:100%;padding:0;padding-inline-end:var(--rdc-cr-inset);margin:0;list-style:none}
+.rdc-cr__itm{flex:0 0 var(--rdc-cr-w);inline-size:var(--rdc-cr-w);scroll-snap-align:start;min-inline-size:0}
+.rdc-cr__win:is(.is-drag,.is-moving){scroll-snap-type:none}.rdc-cr__win.is-drag{cursor:grabbing;user-select:none}
+.rdc-cr__win.is-enh{scrollbar-width:none}.rdc-cr__win.is-enh::-webkit-scrollbar{display:none}
+.rdc-cr__nav{position:absolute;inset:50% var(--rdc-cr-nav-inset) auto;display:flex;justify-content:space-between;pointer-events:none;transform:translateY(-50%)}
+.rdc-cr__nav button{display:grid;place-items:center;inline-size:3rem;block-size:3rem;border:1px solid var(--rdc-ln);border-radius:50%;background:var(--rdc-bg);color:var(--rdc-ink);cursor:pointer;pointer-events:auto}
+.rdc-cr__nav button:disabled{visibility:hidden;pointer-events:none}
+.rdc-cr__prev svg{transform:scaleX(-1)}.rdc-cr[dir=rtl] .rdc-cr__prev svg{transform:none}.rdc-cr[dir=rtl] .rdc-cr__next svg{transform:scaleX(-1)}
+.rdc-cr__dots{display:flex;justify-content:center;gap:.35rem;margin-block-start:1rem}
+.rdc-cr__dots button{display:grid;place-items:center;inline-size:2rem;block-size:2rem;padding:0;border:0;background:transparent;cursor:pointer}
+.rdc-cr__dots button::after{content:'';inline-size:.4rem;block-size:.4rem;background:var(--rdc-mut);border-radius:1rem}
+.rdc-cr__dots button[aria-current=true]::after{inline-size:1.2rem;background:var(--rdc-acc)}
+.rdc-cr [hidden]{display:none}.rdc-cr__sr{position:absolute;inline-size:1px;block-size:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.rdc-cr :is(button,.rdc-cr__win):focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media(max-width:600px){.rdc-cr{--rdc-cr-w:82vw;--rdc-cr-gap:16px}}

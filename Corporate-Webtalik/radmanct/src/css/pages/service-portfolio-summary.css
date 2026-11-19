@@ -1,0 +1,24 @@
+@import '../ui/carousel.css';
+
+.rdc-work-summary { --rdc-ctr:106.5rem; padding-block:clamp(3.5rem,8vw,8rem) clamp(3rem,6vw,6rem); }
+.rdc-work-summary__hdg { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.rdc-work-summary__stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(6rem,1fr)); gap:1.25rem; margin:0; }
+.rdc-work-summary__stats > div { display:flex; flex-direction:column-reverse; gap:.25rem; }
+.rdc-work-summary__stats dt { color:var(--rdc-mut); font-size:var(--rdc-sz-sm); }
+.rdc-work-summary__stats dd { margin:0; color:var(--rdc-ink); font-size:clamp(2rem,3.3vw,3.75rem); line-height:1; }
+.rdc-work-summary__row { display:grid; grid-template-columns:max-content minmax(0,1fr); align-items:start; column-gap:clamp(1rem,3vw,3rem); border-block:1px solid var(--rdc-ln); }
+.rdc-work-summary__lbl { display:flex; align-items:center; gap:.65rem; min-block-size:3.5rem; margin:0; font-size:var(--rdc-sz-sm); font-weight:var(--rdc-wt-hdg); }
+.rdc-work-summary__lbl::before { content:''; inline-size:.4rem; block-size:.4rem; flex:none; border-radius:50%; background:var(--rdc-acc); }
+.rdc-work-summary .rdc-cr { --rdc-cr-w:clamp(14rem,20vw,20rem); --rdc-cr-gap:0px; --rdc-cr-inset:0px; --rdc-cr-nav-inset:0px; min-inline-size:0; }
+.rdc-work-summary .rdc-cr__itm { display:flex; position:relative; }
+.rdc-work-summary .rdc-cr__itm + .rdc-cr__itm::before { content:''; position:absolute; inset-inline-start:0; inset-block-start:50%; inline-size:.25rem; block-size:.25rem; border-radius:50%; background:var(--rdc-mut); translate:0 -50%; }
+.rdc-work-summary__link { display:flex; align-items:center; justify-content:center; flex:1; text-align:center; min-inline-size:0; min-block-size:3.5rem; padding:.5rem 2.25rem; color:var(--rdc-ink); font-size:var(--rdc-sz-sm); font-weight:var(--rdc-wt-hdg); line-height:1.5; overflow-wrap:anywhere; }
+.rdc-work-summary__link:is(:hover,:focus-visible) { color:var(--rdc-acc); }
+.rdc-work-summary .rdc-cr__nav { inset-block-start:1.75rem; }
+.rdc-work-summary .rdc-cr__nav button { inline-size:2.5rem; block-size:2.5rem; }
+.rdc-work-summary .rdc-cr__dots { display:none; }
+
+@media (max-width:767px) {
+ .rdc-work-summary__hdg,.rdc-work-summary__row { grid-template-columns:minmax(0,1fr); }
+ .rdc-work-summary__lbl { min-block-size:2.5rem; }
+}
