@@ -1,6 +1,18 @@
 <?php
 namespace RadmanCT\Client;
 defined('ABSPATH')||exit;
+add_filter('radmanct/service/intro',static function(array $data):array {
+ return [
+  'label'=>'روش کار ما',
+  'title'=>'وب‌سایت اختصاصی را با شناخت کسب‌وکارتان شروع می‌کنیم و با طراحی، حرکت و توسعه به نتیجه می‌رسانیم.',
+  'lead'=>'از اولین طرح رابط تا راه‌اندازی سایت، تجربه‌ای هماهنگ با هویت و نیازهای کسب‌وکارتان می‌سازیم.',
+  'link'=>home_url('/contact-us/'),
+  'cards'=>[
+   ['title'=>'طراحی با هویت شما','desc'=>'ساختار صفحه‌ها، تایپوگرافی و جزئیات رابط را با توجه به مخاطب و هویت برند شما طراحی می‌کنیم.','image'=>\RadmanCT\media_id('service-intro-design'),'alt'=>'دو نفر در حال بررسی ترکیب کاغذهای رنگی'],
+   ['title'=>'توسعه برای استفادهٔ واقعی','desc'=>'از عملکرد در موبایل تا مدیریت محتوا، سایت را با ساختاری می‌سازیم که تیم شما بتواند از آن استفاده کند و آن را توسعه دهد.','image'=>\RadmanCT\media_id('service-intro-experience'),'alt'=>'پرترهٔ سیاه‌وسفید در فضای استودیو'],
+  ],
+ ];
+});
 add_filter('radmanct/service/mosaic',static function(array $data):array {
  $url=home_url('/contact-us/');
  $copy=array(

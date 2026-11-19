@@ -144,7 +144,7 @@
     "isEntry": true
   },
   "src/css/pages/service-portfolio-summary.css": {
-    "file": "css/service-portfolio-summary-BxbZAngx.min.css",
+    "file": "css/service-portfolio-summary-BqxomyXk.min.css",
     "name": "css-service-portfolio-summary",
     "names": [
       "css-service-portfolio-summary.css"
@@ -269,7 +269,7 @@
     ]
   },
   "src/js/pages/service.js": {
-    "file": "js/service-DMeWmxZ9.min.js",
+    "file": "js/service-CkX89Cqn.min.js",
     "name": "service",
     "src": "src/js/pages/service.js",
     "isEntry": true,
@@ -278,6 +278,7 @@
       "_lifecycle-CEUUFq-m.min.js"
     ],
     "dynamicImports": [
+      "src/js/ui/service-intro.js",
       "src/js/ui/text-marquee.js",
       "src/js/ui/service-image-strip.js",
       "src/js/ui/project-list.js"
@@ -388,6 +389,18 @@
     "imports": [
       "_motion-D4Tdse9I.min.js",
       "_lifecycle-CEUUFq-m.min.js"
+    ]
+  },
+  "src/js/ui/service-intro.js": {
+    "file": "js/service-intro-CY1aHR4H.min.js",
+    "name": "service-intro",
+    "src": "src/js/ui/service-intro.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_motion-D4Tdse9I.min.js",
+      "_lifecycle-CEUUFq-m.min.js",
+      "_text-motion-BN1O9YIz.min.js",
+      "_media-parallax-2NGg26Vh.min.js"
     ]
   },
   "src/js/ui/text-marquee.js": {

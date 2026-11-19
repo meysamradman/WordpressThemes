@@ -5,11 +5,14 @@
   <?php if(post_password_required()): ?>
    <div class="rdc-ctr rdc-main"><?php echo get_the_password_form(); ?></div>
   <?php else: ?>
+   <?php if(\RadmanCT\Services\has_portfolio_summary()): ?>
+    <?php $summary=\RadmanCT\Service\portfolio_summary(); ?>
+    <?php get_template_part('template-parts/sections/service/intro',null,['projects'=>$summary['projects']]); ?>
+   <?php endif; ?>
    <?php if(trim(get_the_content())): ?><article class="rdc-ctr rdc-main rdc-cnt"><?php the_content();wp_link_pages(); ?></article><?php endif; ?>
    <?php get_template_part('template-parts/sections/service/mosaic'); ?>
    <?php get_template_part('template-parts/ui/faq',null,array('items'=>apply_filters('radmanct/services/faq',array()))); ?>
    <?php if(\RadmanCT\Services\has_portfolio_summary()): ?>
-    <?php $summary=\RadmanCT\Service\portfolio_summary(); ?>
     <?php get_template_part('template-parts/sections/service/portfolio-summary',null,['summary'=>$summary]); ?>
     <?php get_template_part('template-parts/sections/service/project-list',null,['projects'=>array_slice($summary['projects'],0,5)]); ?>
     <?php get_template_part('template-parts/sections/service/image-strip'); ?>

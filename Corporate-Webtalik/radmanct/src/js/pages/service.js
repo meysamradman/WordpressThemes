@@ -1,5 +1,8 @@
 import {createPageLifecycle} from '../runtime/lifecycle.js';
 const page=createPageLifecycle(window);
+for(const root of document.querySelectorAll('[data-rdc-svc-intro]')){
+ page.mountRoot(root,'service-intro',()=>import('../ui/service-intro.js'),({initializeServiceIntro})=>initializeServiceIntro(root));
+}
 for(const root of document.querySelectorAll('[data-rdc-mtx]')){
  page.mountRoot(root,'text-marquee',()=>import('../ui/text-marquee.js'),({initializeTextMarquee})=>initializeTextMarquee(root));
 }
