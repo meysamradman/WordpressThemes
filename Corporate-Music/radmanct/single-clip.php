@@ -1,5 +1,5 @@
 <?php defined('ABSPATH')||exit;get_header(); ?>
-<main id="main-content" class="rdc-ctr rdc-collection rdc-collection--video-detail" data-rdc-video-page tabindex="-1"><?php while(have_posts()):the_post(); ?><article>
+<main id="main-content" class="rdc-ctr rdc-collection rdc-collection--video-detail" tabindex="-1"><?php while(have_posts()):the_post(); ?><article>
  <?php if(post_password_required()): ?><h1><?php the_title(); ?></h1><?php echo get_the_password_form();else:$item=\RadmanCT\Videos\item(get_post());$file=\RadmanCT\Videos\file($item['video']);$downloads=\RadmanCT\Videos\downloads(get_the_ID()); ?>
  <?php if($item['aparat']): ?><div class="rdc-clip-player"><?php get_template_part('template-parts/ui/aparat',null,$item); ?></div><?php elseif($file): ?><div class="rdc-clip-player"><video controls playsinline preload="none" width="1920" height="1080"<?php if(\RadmanCT\PageTitle\attachment_allowed($item['image'])): ?> poster="<?php echo esc_url(wp_get_attachment_image_url($item['image'],'large')); ?>"<?php endif; ?> aria-label="<?php the_title_attribute(); ?>"><source src="<?php echo esc_url($file['url']); ?>" type="<?php echo esc_attr($file['type']); ?>"></video></div><?php else: ?><p>فایل ویدئو به‌زودی اضافه می‌شود.</p><?php endif; ?>
  <nav class="rdc-clip-downloads" aria-label="دانلود ویدئو با کیفیت دلخواه">

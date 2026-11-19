@@ -80,16 +80,31 @@ add_action('wp_enqueue_scripts',static function():void{
   style('ui/text-entrance',array('rdc-site'));
   script('ui/text-entrance');
  }
- if(is_front_page()){style('pages/music-home',array('rdc-site'));script('pages/music-home');}
- elseif(\RadmanCT\Music\native()){style(is_singular('track')?'pages/music-detail':'pages/music',array('rdc-site'));script(is_singular('track')?'pages/music':'pages/archive');}
- if(\RadmanCT\Music\native())return;
- if(is_post_type_archive(array('album','clip'))||is_singular(array('album','clip'))||is_tax(array('album_category','album_tag','clip_category','clip_tag'))){$album=is_post_type_archive('album')||is_singular('album')||is_tax(array('album_category','album_tag'));style($album?'pages/gallery':(is_singular('clip')?'pages/video-detail':'pages/videos'),array('rdc-site'));if(is_archive()){script('pages/archive');if($album)script('ui/gallery');}elseif($album&&!post_password_required()){script('ui/gallery');script('pages/archive');}if(!$album)script('pages/videos');return;}
+ if(is_front_page()){
+  style('pages/music-home',array('rdc-site'));
+  if(!post_password_required(get_queried_object_id()))script('pages/music-home');
+  return;
+ }
+ if(\RadmanCT\Music\native()){
+  $detail=is_singular('track');
+  style($detail?'pages/music-detail':'pages/music',array('rdc-site'));
+  if(!$detail||!post_password_required())script($detail?'pages/music':'pages/archive');
+  return;
+ }
+ if(is_singular('clip')){style('pages/video-detail',array('rdc-site'));return;}
+ if(is_post_type_archive('clip')||is_tax(array('clip_category','clip_tag'))){
+  style('pages/videos',array('rdc-site'));script('pages/archive');script('pages/videos');return;
+ }
+ if(is_singular('album')||is_post_type_archive('album')||is_tax(array('album_category','album_tag'))){
+  style('pages/gallery',array('rdc-site'));
+  if(!is_singular()||!post_password_required()){script('pages/archive');script('ui/gallery');}
+  return;
+ }
  if(is_page('about-us')){style('pages/biography',array('rdc-site'));return;}
  if(is_page('contact-us')){style('pages/artist',array('rdc-site'));return;}
  if(\RadmanCT\PageTitle\is_used())style('layout/page-title',array('rdc-site'));
  if(is_page('services')){style('pages/services',array('rdc-site'));script('pages/services');}
  elseif(is_page('custom-website-design-development')){style('pages/service',array('rdc-site'));script('pages/service');}
- elseif(is_front_page()){ /* Home composes the native music grid and shared site runtime. */ }
  elseif(is_home()||is_category()||is_tag()||is_date()||is_author()||is_search()||is_singular('post')){style('pages/blog',array('rdc-site'));style(is_singular('post')?'pages/blog/single':'pages/blog/archive',array('rdc-pages-blog'));if(!is_singular())script('pages/archive');}
 });
 add_filter( 'wp_preload_resources', static function ( array $resources ): array {
