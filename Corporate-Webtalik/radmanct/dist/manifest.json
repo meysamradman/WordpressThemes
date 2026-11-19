@@ -144,7 +144,7 @@
     "isEntry": true
   },
   "src/css/pages/service-portfolio-summary.css": {
-    "file": "css/service-portfolio-summary-DfgkgboG.min.css",
+    "file": "css/service-portfolio-summary-BxbZAngx.min.css",
     "name": "css-service-portfolio-summary",
     "names": [
       "css-service-portfolio-summary.css"
@@ -269,7 +269,7 @@
     ]
   },
   "src/js/pages/service.js": {
-    "file": "js/service-TYbtCua-.min.js",
+    "file": "js/service-DMeWmxZ9.min.js",
     "name": "service",
     "src": "src/js/pages/service.js",
     "isEntry": true,
@@ -279,7 +279,8 @@
     ],
     "dynamicImports": [
       "src/js/ui/text-marquee.js",
-      "src/js/ui/service-image-strip.js"
+      "src/js/ui/service-image-strip.js",
+      "src/js/ui/project-list.js"
     ]
   },
   "src/js/pages/services.js": {
@@ -367,6 +368,16 @@
     "isDynamicEntry": true,
     "imports": [
       "_gsap-vendor-CvDoa17S.min.js"
+    ]
+  },
+  "src/js/ui/project-list.js": {
+    "file": "js/project-list-CiVQfDJr.min.js",
+    "name": "project-list",
+    "src": "src/js/ui/project-list.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_motion-D4Tdse9I.min.js",
+      "_lifecycle-CEUUFq-m.min.js"
     ]
   },
   "src/js/ui/service-image-strip.js": {

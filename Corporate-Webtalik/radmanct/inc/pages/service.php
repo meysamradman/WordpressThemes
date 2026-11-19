@@ -5,7 +5,7 @@ function data():array {
  return apply_filters('radmanct/service/mosaic',array('label'=>'','title'=>'','desc'=>'','items'=>array()));
 }
 function portfolio_summary():array {
- $projects=get_posts(array('post_type'=>'project','post_status'=>'publish','has_password'=>false,'posts_per_page'=>8,'no_found_rows'=>true,'update_post_meta_cache'=>false,'update_post_term_cache'=>false));
+ $projects=get_posts(array('post_type'=>'project','post_status'=>'publish','has_password'=>false,'posts_per_page'=>8,'no_found_rows'=>true));
  $categories=get_terms(array('taxonomy'=>'project_category','hide_empty'=>true,'fields'=>'count'));
  $services=array_filter(\RadmanCT\Services\items(),static fn(array $service):bool=>!empty($service['url']));
  $metrics=array(

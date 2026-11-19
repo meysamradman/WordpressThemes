@@ -1,4 +1,4 @@
-<?php defined('ABSPATH')||exit;get_header(); ?>
+<?php defined('ABSPATH')||exit;require_once get_template_directory().'/inc/pages/service.php';get_header(); ?>
 <main id="main-content" class="rdc-inv" tabindex="-1">
  <?php get_template_part('template-parts/layout/page-title'); ?>
  <?php while(have_posts()):the_post(); ?>
@@ -9,7 +9,9 @@
    <?php get_template_part('template-parts/sections/service/mosaic'); ?>
    <?php get_template_part('template-parts/ui/faq',null,array('items'=>apply_filters('radmanct/services/faq',array()))); ?>
    <?php if(\RadmanCT\Services\has_portfolio_summary()): ?>
-    <?php get_template_part('template-parts/sections/service/portfolio-summary'); ?>
+    <?php $summary=\RadmanCT\Service\portfolio_summary(); ?>
+    <?php get_template_part('template-parts/sections/service/portfolio-summary',null,['summary'=>$summary]); ?>
+    <?php get_template_part('template-parts/sections/service/project-list',null,['projects'=>array_slice($summary['projects'],0,5)]); ?>
     <?php get_template_part('template-parts/sections/service/image-strip'); ?>
    <?php endif; ?>
   <?php endif; ?>

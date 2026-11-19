@@ -1,8 +1,7 @@
 <?php
 defined('ABSPATH')||exit;
-require_once get_template_directory().'/inc/pages/service.php';
 require_once get_template_directory().'/inc/ui/text-marquee.php';
-$summary=\RadmanCT\Service\portfolio_summary();
+$summary=$args['summary'];
 ?>
 <section class="rdc-ctr rdc-work-summary" aria-labelledby="rdc-work-summary-ttl">
  <div class="rdc-heading rdc-work-summary__hdg">

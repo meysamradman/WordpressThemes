@@ -6,6 +6,9 @@ for(const root of document.querySelectorAll('[data-rdc-mtx]')){
 for(const root of document.querySelectorAll('[data-rdc-svc-strip]')){
  page.mountRoot(root,'services-strip',()=>import('../ui/service-image-strip.js'),({mountServicesStrip})=>mountServicesStrip(root));
 }
+for(const root of document.querySelectorAll('[data-rdc-prj-list]')){
+ page.mountRoot(root,'project-list',()=>import('../ui/project-list.js'),({initializeProjectList})=>initializeProjectList(root));
+}
 for(const root of document.querySelectorAll('.rdc-mosaic'))page.mountRoot(root,'mosaic-border',()=>({}),()=>{
  const doc=root.ownerDocument,view=doc.defaultView,preference=view.matchMedia('(prefers-reduced-motion:reduce)');
  const boxes=[...root.querySelectorAll('.rdc-mosaic__copy,.rdc-mosaic__md')];
