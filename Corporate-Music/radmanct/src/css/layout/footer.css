@@ -1,2 +1,2 @@
-.rdc-ftr{padding-block:1.5rem 2rem;text-align:center;color:var(--rdc-tx)}.rdc-ftr__social-title{margin:0 0 .7rem;padding:.4rem 1rem;background:var(--rdc-srf);font-size:.875rem;font-weight:650}.rdc-ftr__social-title span{color:var(--rdc-acc)}
+.rdc-ftr{padding-block:1.5rem 2rem;text-align:center;color:var(--rdc-tx)}.rdc-ftr__social-title{margin:0 0 .7rem;padding:.4rem 1rem;background:var(--rdc-srf);font-size:var(--rdc-sz-body);font-weight:650}.rdc-ftr__social-title span{color:var(--rdc-acc)}
 .rdc-ftr .rdc-socials{--rdc-social-bg:var(--rdc-clr-header);--rdc-social-radius:50%}

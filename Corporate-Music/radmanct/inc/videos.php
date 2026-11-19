@@ -13,11 +13,11 @@ function embed_url(mixed $value):string {
  $hash=aparat_id($value);
  return $hash?'https://www.aparat.com/video/video/embed/videohash/'.$hash.'/vt/frame':'';
 }
-function aparat_download_button(mixed $value,string $class):string {
+function aparat_download_button(mixed $value,string $class,array $appearance=[]):string {
  $hash=aparat_id($value);
  return $hash?\RadmanCT\button('دانلود از آپارات','https://www.aparat.com/v/'.$hash,[
-  'class'=>$class,'variant'=>'download','new_tab'=>true,
- ]):'';
+  'class'=>$class,'new_tab'=>true,
+ ]+$appearance+['variant'=>'download']):'';
 }
 function file(int $id):array {
  if(!\RadmanCT\PageTitle\attachment_allowed($id)||!in_array(get_post_mime_type($id),['video/mp4','video/webm'],true))return [];

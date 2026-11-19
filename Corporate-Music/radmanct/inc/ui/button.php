@@ -22,5 +22,6 @@ function button(string $label,string $url,array $args=array()):string {
  if(!empty($args['audio'])&&is_array($args['audio'])){
   $audio=$args['audio'];return '<button type="button" class="'.esc_attr($classes).'" data-rdc-audio-key="'.(int)($audio['key']??0).'" data-rdc-audio-src="'.esc_url($audio['url']??'').'" data-rdc-audio-title="'.esc_attr(get_the_title((int)($audio['key']??0))).'" data-rdc-audio-artist="'.esc_attr($audio['artist']??'').'" data-rdc-audio-cover="'.esc_url($audio['cover']??'').'" data-rdc-audio-duration="'.esc_attr($audio['duration']??'').'" aria-pressed="false" aria-label="'.esc_attr($label).'">'.$content.'</button>';
  }
+ if(!empty($args['icon_only']))$attributes.=' aria-label="'.esc_attr($label).'"';
  return '<a class="'.esc_attr($classes).'" href="'.esc_url($url).'"'.$attributes.'>'.$content.'</a>';
 }

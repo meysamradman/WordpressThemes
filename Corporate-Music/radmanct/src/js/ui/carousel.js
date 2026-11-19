@@ -56,7 +56,7 @@ export function initializeCarousel(root){
  const start=event=>{
   suppressClick=false;
   cancelMotion();
-  if(event.pointerType!=='mouse'||!event.isPrimary||event.button!==0||event.target.closest('button,input,select,textarea,video,iframe,[contenteditable]'))return;
+  if(event.pointerType!=='mouse'||!event.isPrimary||event.button!==0||event.target.closest('button,a.rdc-btn,input,select,textarea,video,iframe,[contenteditable]'))return;
   drag={id:event.pointerId,x:event.clientX,start:win.scrollLeft,moved:false};
  };
  const move=event=>{

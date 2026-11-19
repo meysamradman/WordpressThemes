@@ -6,3 +6,9 @@
 }
 :where(.rdc-trk-card,.rdc-video-card) :is(h2,h3){color:var(--rdc-clr-accent-text)}
 :where(.rdc-trk-card,.rdc-video-card) p{color:var(--rdc-mut)}
+:is(.rdc-trk-card__play,.rdc-trk-card__more,.rdc-video-card__download--compact){
+ display:grid;place-items:center;flex:none;inline-size:1.9rem;min-block-size:1.9rem;block-size:1.9rem;
+ padding:0;border:0;border-radius:50%;background:var(--rdc-acc);color:var(--rdc-clr-wht);
+}
+:is(.rdc-trk-card__play,.rdc-video-card__download--compact){--rdc-btn-ico:1rem}
+.rdc-trk-card__more .rdc-ico{inline-size:1rem;block-size:1rem}
