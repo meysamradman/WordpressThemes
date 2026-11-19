@@ -5,6 +5,7 @@
 @import '../ui/audio-player.css';
 @import '../ui/audio-wave.css';
 @import '../ui/home-player.css';
+.rdc-music-rail .rdc-video-card__media{border-radius:var(--rdc-rad-sm)}
 .rdc-music-rail :is(.rdc-trk-card__body,.rdc-video-card__copy){position:relative;display:grid;gap:.45rem;padding-block-start:.65rem}
 .rdc-music-rail h3{font-size:var(--rdc-sz-body);line-height:var(--rdc-ln-ht-hdg)}
 .rdc-music-rail p{font-size:var(--rdc-sz-sm);line-height:var(--rdc-ln-ht-body)}
