@@ -2,7 +2,7 @@
 
 مرجع نگهداری سورس قالب‌ها و مستندات Radman، با همان چیدمان پوشه‌های محلی:
 
-برای شروع از [نسخه‌های مهم پروژه‌ها](WEB-DEVELOPMENT-STANDARDS/00-VERSIONS.md) و [فهرست استانداردها و سناریوها](WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md) استفاده کنید.
+برای شروع از [نسخه‌های مهم پروژه‌ها](WEB-DEVELOPMENT-STANDARDS/00-VERSIONS.md) و [فهرست استانداردها و سناریوها](WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.3.md) استفاده کنید.
 
 | پوشه | کاربرد |
 |---|---|

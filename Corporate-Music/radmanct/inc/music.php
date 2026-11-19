@@ -16,6 +16,9 @@ function file(int $id):array {
     $metadata=wp_get_attachment_metadata($id);return ['url'=>$url,'duration'=>$metadata['length_formatted']??''];
 }
 function url():string {return get_post_type_archive_link('track')?:home_url('/music/');}
+function download(array $data,array $audio):array {
+ return $data['download']&&$data['download']!==$data['audio']?file($data['download']):$audio;
+}
 function playback(int $id,array $audio,array $data):array {
  $image=(int)get_post_thumbnail_id($id);
  return ['key'=>$id,'url'=>$audio['url'],'artist'=>$data['artist'],'duration'=>$audio['duration']??'','cover'=>\RadmanCT\PageTitle\attachment_allowed($image)?(wp_get_attachment_image_url($image,'thumbnail')?:''):''];
@@ -26,8 +29,7 @@ function card(\WP_Post $post,string $heading='h2',bool $play=false,string $varia
  $title=get_the_title($post);
  $size=['sizes'=>$variant==='list'?'(max-width:600px) 42vw,(max-width:900px) 38vw,300px':'(max-width:600px) 44vw,170px'];
  if($variant!=='list')$size['loading']='lazy';
- $image=$allowed?(int)get_post_thumbnail_id($post):0;
- $cover=\RadmanCT\PageTitle\attachment_allowed($image)?get_the_post_thumbnail($post,'medium_large',$size):'';
+ $cover=$allowed?\RadmanCT\Content\Media\thumbnail($post,'medium_large',$size):'';
  $frame='rdc-trk-card__cover rdc-media-frame';
  $cover_markup=$cover
   ? '<a class="'.$frame.'" href="'.esc_url($url).'" aria-label="'.esc_attr('مشاهدهٔ '.$title).'">'.$cover.'</a>'
@@ -41,9 +43,9 @@ function card(\WP_Post $post,string $heading='h2',bool $play=false,string $varia
 
  echo '<article class="rdc-trk-card">'.$cover_markup.'<div class="rdc-trk-card__body"><'.$heading.'><a href="'.esc_url($url).'">'.esc_html($title).'</a></'.$heading.'><div class="rdc-trk-card__meta">';
  if($allowed){$terms=get_the_terms($post,'music_category');echo '<p>'.esc_html($terms&&!is_wp_error($terms)?$terms[0]->name:$data['artist']).'</p>';}
- $audio=$allowed?file((int)$data['audio']):[];
- if($play&&$audio)echo \RadmanCT\button('پخش '.get_the_title($post),'#',['class'=>'rdc-trk-card__play','icon'=>'play','icon_only'=>true,'audio'=>playback($post->ID,$audio,$data)]);
- else echo '<a class="rdc-trk-card__more" href="'.esc_url($url).'" aria-label="'.esc_attr('مشاهدهٔ '.get_the_title($post)).'">'.\RadmanCT\icon('play').'</a>';
+ $audio=$play&&$allowed?file($data['audio']):[];
+ if($audio)echo \RadmanCT\button('پخش '.$title,'#',['class'=>'rdc-trk-card__play','icon'=>'play','icon_only'=>true,'audio'=>playback($post->ID,$audio,$data)]);
+ else echo '<a class="rdc-trk-card__more" href="'.esc_url($url).'" aria-label="'.esc_attr('مشاهدهٔ '.$title).'">'.\RadmanCT\icon('play').'</a>';
  echo '</div></div></article>';
 }
 

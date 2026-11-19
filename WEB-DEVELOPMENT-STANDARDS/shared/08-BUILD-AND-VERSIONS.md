@@ -1,5 +1,7 @@
 # نسخه‌ها، CSS/JS و ساخت بسته
 
+> بازبینی بسته 1.3 — 2026-11-19؛ نام مسیر برای سازگاری ارجاع‌های موجود حفظ شده است. تاریخچه در CHANGELOG-v1.3.md.
+
 - حداقل اعلام‌شدهٔ قالب، نسخهٔ هدف، نسخهٔ نصب‌شده و نسخه‌ای که واقعاً تست شده چهار دادهٔ جدا هستند. نسخه و منبع واقعی در Profile همان پروژه ثبت شود. runtime را از PHP وب/CLI و محیط نصب‌شده بررسی کنید و ابزار ساخت را از manifest و lockfile بخوانید. مقدار تأییدنشده را مشخص کنید. تغییر نسخه، مهاجرت یا تولید بسته بخشی از یک ویرایش عادی نیست.
 - CSS یک پایهٔ سبک و مالک token دارد. استایل هر کامپوننت و صفحه کنار همان ماژول بماند. JS سراسری فقط زیرساختی را داشته باشد که مصرف سراسری دارد. import ثابت برای وابستگی لازم همان entry، import پویا برای قابلیت شرطی و cleanup با مالک فعلی. تعداد فایل به‌تنهایی معیار معماری نیست.
 - انتخاب entry و ثبت وابستگی‌ها با مسیر [قالب سفارشی](../wordpress-custom/07-WORDPRESS-CUSTOM-DEVELOPMENT-v1.0.md) یا [Elementor](../wordpress-elementor/15-WORDPRESS-ELEMENTOR-DEVELOPMENT-v1.0.md) انجام شود. CSS لازم برای HTML اولیه به‌موقع برسد و نبود مصرف‌کننده به معنی نبود درخواست کد اختیاری باشد.
@@ -22,3 +24,5 @@
 - بعد از صحت‌سنجی ZIP و SQL جدید، نسخه‌های قدیمی همان خروجی را از **پوشهٔ تحویل همان دامنه** پاک کنید. در پوشهٔ تحویل فقط بستهٔ جاری و فایل‌های اصلاحی لازم همان تحویل بمانند. بکاپ بازیابی یا منبع مشتری در مسیر جدا نگه داشته شود.
 
 [WordPress enqueue](https://developer.wordpress.org/reference/functions/wp_enqueue_script/) · [Vite manifest](https://vite.dev/guide/backend-integration.html) · [مجوز فایل WordPress](https://developer.wordpress.org/advanced-administration/server/file-permissions/)
+
+فرایند و کنترل دامنه انتشار، DB migration، backup/rollback: [21](21-DEPLOYMENT-DATA-MIGRATION-v1.0.md). قرارداد فایل‌های تحویل همین سند باقی می‌ماند.

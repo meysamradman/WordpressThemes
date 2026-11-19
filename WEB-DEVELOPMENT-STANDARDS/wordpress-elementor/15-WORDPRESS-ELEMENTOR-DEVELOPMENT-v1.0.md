@@ -1,5 +1,7 @@
 # WordPress Elementor Development — v1.0
 
+> بازبینی بسته 1.3 — 2026-11-19؛ نام مسیر برای سازگاری ارجاع‌های موجود حفظ شده است. تاریخچه در CHANGELOG-v1.3.md.
+
 **تاریخ:** 2026-11-18 | **دامنه:** فقط پروژه‌های Elementor و توسعه ویجت/افزونه/قالب پایه مرتبط. مستقل از برند. اسناد مشترک برای کد متعلق به تیم اعمال می‌شوند، نه بازنویسی markup/runtime تولیدشده توسط Elementor.
 
 ## 1. مرز پروژه و نسخه
@@ -53,3 +55,6 @@ public function get_style_depends(): array {
 - [JS hooks](https://developers.elementor.com/docs/hooks/js.html)، [Widget JavaScript](https://developers.elementor.com/add-javascript-to-elementor-widgets/)
 
 منبع داخلی: radman-doc/engineering/elementor.md، architecture.md، typography.md و components.md برای اصول تفکیک ownership و preview؛ ویژگی‌های محصول قبلی، کلیدها و شماره نسخه‌ها به این سند عمومی منتقل نشده‌اند.
+
+## تکمیل قرارداد media و SEO
+[17](../shared/17-IMAGES-AND-MEDIA-v1.0.md) برای نقش تصویر و اولویت، [20](../shared/20-TECHNICAL-SEO-SCHEMA-v1.0.md) برای مالک SEO. تصویر شاخص فقط وقتی dynamic tag/template شرط مصوب دارد در Hero نمایش داده شود. کنترل‌های image بومی و attachment ID/widget renderer متناسب با نسخه؛ editor data و Global Styles حفظ شود. موتور رندر یا carousel دوم اضافه نشود. تست frontend/preview؛ wrapper/asset خود builder کوکورانه حذف نشود.

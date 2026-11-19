@@ -47,3 +47,6 @@ Album photo pages complement the same album and share its base canonical. The fi
 - داخل ZIP مجوز یونیکس پوشه‌ها `0755` و فایل‌ها `0644` باشد. بعد از استخراج، مالکیت و مجوز مؤثر روی هاست با AIOS یا فایل‌منیجر بررسی شود. برای `wp-config.php` مجوز پیشنهادی هاست یا AIOS را همراه با امکان خواندن فایل توسط PHP بررسی کنید. [مرجع مجوزهای وردپرس](https://developer.wordpress.org/advanced-administration/server/file-permissions/)
 
 Frontend implementation and staged review: [frontend-standard.md](frontend-standard.md). Release decisions for the audit are recorded in [release-audit.md](release-audit.md).
+
+## بازبینی قراردادهای تصویر و SEO
+برگهٔ اختصاصی دارای تصویر شاخص، خودکار Hero/Page Title تصویری نمی‌گیرد. Asset برگه از renderer و فایل طراحی همان مسیر؛ داده رسانه برای کارت/جزئیات/OG مستقل باقی می‌ماند. [17](../../WEB-DEVELOPMENT-STANDARDS/shared/17-IMAGES-AND-MEDIA-v1.0.md) و [20](../../WEB-DEVELOPMENT-STANDARDS/shared/20-TECHNICAL-SEO-SCHEMA-v1.0.md) مرجع مشترک‌اند. Canonical فعلی آلبوم تصمیم ثبت‌شده پروژه است؛ برای gallery_page با تصاویر متفاوت، self-canonical توصیه مشترک است؛ تغییر بدون تأیید/بررسی GSC و HTML مجاز نیست. [review-decisions.md](review-decisions.md).

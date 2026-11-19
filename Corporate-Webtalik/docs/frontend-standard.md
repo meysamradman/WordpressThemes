@@ -2,7 +2,7 @@
 
 ## مسیر سریع
 
-- این پروژه [قالب سفارشی](../../WEB-DEVELOPMENT-STANDARDS/wordpress-custom/07-WORDPRESS-CUSTOM-DEVELOPMENT-v1.0.md) است. برای CSS/JS، GSAP، لودینگ، کش و QA فقط ردیف موضوع در [مرجع ریشه](../../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md) را باز کنید.
+- این پروژه [قالب سفارشی](../../WEB-DEVELOPMENT-STANDARDS/wordpress-custom/07-WORDPRESS-CUSTOM-DEVELOPMENT-v1.0.md) است. برای CSS/JS، GSAP، لودینگ، کش و QA فقط ردیف موضوع در [مرجع ریشه](../../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.3.md) را باز کنید.
 - [سناریوها](scenarios.md)، [قراردادهای ویژهٔ فرانت‌اند](frontend-contracts.md)، [معماری](architecture.md)، [رسانه](media.md) و [قرارداد وردپرس](wordpress.md) جزئیات این نصب را دارند.
 
 ## نسخه و محیط
@@ -19,6 +19,8 @@
 
 - تایپوگرافی H1 با Hafez و متن و H2–H6 با Peyda طبق tokens/base است. دکمه، آیکون، heading و عنوان صفحه از [مالک‌های UI](shared-ui.md) خوانده شوند.
 - عنوان کوتاه برای مسیرهای مشمولِ بدون هیرو، و Cover برای صفحات تعیین‌شده استفاده می‌شود. پارالاکس، ورود و اسکرول از مالک‌های [معماری](architecture.md) خوانده شوند.
+- منبع تصویر هیرو و عنوان کوتاه طبق قرارداد همان بخش ویبتالیک است. تصویر شاخص برگه فقط برای نقش محتوایی تأییدشده مصرف می‌شود. [استاندارد تصویر](../../WEB-DEVELOPMENT-STANDARDS/shared/17-IMAGES-AND-MEDIA-v1.0.md) و [قرارداد قالب سفارشی](../../WEB-DEVELOPMENT-STANDARDS/wordpress-custom/07-WORDPRESS-CUSTOM-DEVELOPMENT-v1.0.md).
+- برای ممیزی فقط سند مرتبط با [کوئری](../../WEB-DEVELOPMENT-STANDARDS/shared/18-DATABASE-QUERY-OPTIMIZATION-v1.0.md)، [کیفیت کد](../../WEB-DEVELOPMENT-STANDARDS/shared/19-CODE-QUALITY-REFACTORING-v1.0.md)، [سئو](../../WEB-DEVELOPMENT-STANDARDS/shared/20-TECHNICAL-SEO-SCHEMA-v1.0.md) یا [تحویل و مهاجرت](../../WEB-DEVELOPMENT-STANDARDS/shared/21-DEPLOYMENT-DATA-MIGRATION-v1.0.md) را کنار سناریوی خود ویبتالیک بخوانید.
 - Yoast در صورت فعال بودن مالک metadata است. noindex محلی حفظ شود. انطباق کامل صفحات با این ثبت تأیید نشده است. برای بازبینی، مسیر نماینده را با [روش QA](../../WEB-DEVELOPMENT-STANDARDS/shared/12-VERIFICATION.md) و معیارهای سناریوی همان پروژه بررسی کنید.
 
 ## مالک‌های این پروژه

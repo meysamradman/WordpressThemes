@@ -19,4 +19,4 @@ Independent customer edition of Radman CT in the parent WordpressThemes reposito
 
 ## Customer frontend standard
 
-Use [the project frontend profile](docs/frontend-standard.md), [the affected scenario](docs/scenarios.md) and the matching section in [the shared standards index](../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md). Preserve approved motion, local noindex and Yoast ownership. Check only the affected scope.
+Use [the project frontend profile](docs/frontend-standard.md), [the affected scenario](docs/scenarios.md) and the matching section in [the shared standards index](../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.3.md). Preserve approved motion, local noindex and Yoast ownership. Check only the affected scope.

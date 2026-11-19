@@ -5,11 +5,12 @@
  <?php else:
   $data=\RadmanCT\Music\meta(get_the_ID());
   $audio=\RadmanCT\Music\file((int)$data['audio']);
-  $download=\RadmanCT\Music\file((int)($data['download']?:$data['audio']));
-  $previous=get_adjacent_post(false,'',true,'music_category');$next=get_adjacent_post(false,'',false,'music_category');
+  $download=\RadmanCT\Music\download($data,$audio);
+  $previous=$audio?get_adjacent_post(false,'',true,'music_category'):null;
+  $next=$audio?get_adjacent_post(false,'',false,'music_category'):null;
  ?>
   <div class="rdc-trk-hero">
-   <figure class="rdc-trk-hero__cover"><?php the_post_thumbnail('large',['loading'=>'eager','fetchpriority'=>'high','sizes'=>'(max-width:650px) 90vw,(max-width:900px) 50vw,600px']); ?></figure>
+   <figure class="rdc-trk-hero__cover"><?php echo \RadmanCT\Content\Media\thumbnail(get_the_ID(),'large',['loading'=>'eager','fetchpriority'=>'high','sizes'=>'(max-width:650px) min(90vw,480px),min(42vw,580px)']); ?></figure>
    <div class="rdc-trk-hero__copy"><h1><?php the_title(); ?></h1>
     <?php \RadmanCT\Music\credits($data,true); ?>
     <?php if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-trk-download','variant'=>'download','download'=>true]); ?>

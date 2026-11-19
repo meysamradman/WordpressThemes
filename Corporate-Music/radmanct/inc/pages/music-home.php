@@ -32,4 +32,3 @@ function featured():array {
  }
  return get_posts($query+['posts_per_page'=>3,'orderby'=>\RadmanCT\Music\NEWEST_FIRST]);
 }
-function image(int $id,string $size='medium_large',array $attributes=array()):string {return \RadmanCT\PageTitle\attachment_allowed($id)?wp_get_attachment_image($id,$size,false,$attributes):'';}

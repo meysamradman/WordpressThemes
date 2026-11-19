@@ -1,5 +1,7 @@
 # عملکرد، کش و آزمون شبکه
 
+> بازبینی بسته 1.3 — 2026-11-19؛ نام مسیر برای سازگاری ارجاع‌های موجود حفظ شده است. تاریخچه در CHANGELOG-v1.3.md.
+
 ## تشخیص و اندازه‌گیری
 
 - URL، viewport، موقعیت، دستگاه، مهمان/مدیر و کش سرد/گرم را ثبت کنید. اول waterfall و عنصر LCP را پیدا کنید. TTFB شامل مسیر اتصال و انتظار پاسخ است. `load`، LCP و پایان آخرین درخواست متفاوت‌اند. درخواست دیرهنگام را با زمان شروع، نوع و Initiator بررسی کنید.
@@ -18,3 +20,6 @@
 در میزبان، کش سرد/گرم را با GET مهمان و هدرهای پاسخ مقایسه کنید. نبود هدر HIT اثبات نبود کش نیست. تغییر انتشار/محتوا purge متناسب می‌خواهد. روش تنظیم، TTL واقعی، سازگاری CDN و rollback فقط در Runbook همان سایت ثبت شوند.
 
 [HTTP caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching) · [Core Web Vitals](https://web.dev/articles/vitals) · [بهینه‌سازی LCP](https://web.dev/articles/optimize-lcp) · [Elementor widget caching](https://developers.elementor.com/docs/widgets/widget-output-caching/)
+
+## مرز مسئولیت
+تصاویر و مدیا در [17](17-IMAGES-AND-MEDIA-v1.0.md)، query/cache داده در [18](18-DATABASE-QUERY-OPTIMIZATION-v1.0.md)، انتشار در [21](21-DEPLOYMENT-DATA-MIGRATION-v1.0.md). مورد cache frontend/preview و editor فقط برای مسیر مربوط بررسی شود.

@@ -2,7 +2,7 @@
 
 ## مسیر سریع
 
-- این پروژه [قالب سفارشی](../../WEB-DEVELOPMENT-STANDARDS/wordpress-custom/07-WORDPRESS-CUSTOM-DEVELOPMENT-v1.0.md) است. برای CSS/JS، GSAP، لودینگ، کش و QA فقط ردیف موضوع در [مرجع ریشه](../../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md) را باز کنید.
+- این پروژه [قالب سفارشی](../../WEB-DEVELOPMENT-STANDARDS/wordpress-custom/07-WORDPRESS-CUSTOM-DEVELOPMENT-v1.0.md) است. برای CSS/JS، GSAP، لودینگ، کش و QA فقط ردیف موضوع در [مرجع ریشه](../../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.3.md) را باز کنید.
 - [سناریوهای پروژه](scenarios.md)، [معماری](architecture.md)، [رسانه](media.md) و [قرارداد وردپرس](wordpress.md) جزئیات این نصب را دارند.
 
 ## نسخه و محیط
@@ -38,3 +38,6 @@
 | دارایی/حرکت/ظاهر | `radmanct/inc/assets.php`، `radmanct/src/js/runtime/lifecycle.js`، tokens/base و page entryهای واقعی |
 
 مسیرهای نماینده: خانه، بیوگرافی/تماس، آرشیو/جزئیات track، clip و album، taxonomy و صفحه‌بندی آن‌ها. نام/کاور/اطلاعات اثر، متن شعرِ موجود در جزئیات و لینک دانلود عمومی در HTML بمانند؛ این به معنی دریافت خودکار فایل پخش نیست. پلیر ثابت فقط خانه و پلیر inline فقط جزئیات آهنگ، با یک مالک مشترک و preload=none؛ کنترل شعر به dock اضافه نشود. پالت اختصاصی مشتری حفظ و CSS از Webtalik بی‌اجازه کپی نشود. این ثبت اثبات انطباق همهٔ مسیرها نیست.
+
+## رجوع به استاندارد تکمیلی
+[17 تصاویر](../../WEB-DEVELOPMENT-STANDARDS/shared/17-IMAGES-AND-MEDIA-v1.0.md)، [20 متادیتا](../../WEB-DEVELOPMENT-STANDARDS/shared/20-TECHNICAL-SEO-SCHEMA-v1.0.md) و [قرارداد تصاویر قالب اختصاصی 07](../../WEB-DEVELOPMENT-STANDARDS/wordpress-custom/07-WORDPRESS-CUSTOM-DEVELOPMENT-v1.0.md). در برگه‌های ثابت، افزودن thumbnail به برگه نباید خودکار Page Title/Hero را عوض کند. کاور آثار/نوشته/آلبوم از attachment باقی می‌ماند. موارد نیازمند تأیید در [review-decisions.md](review-decisions.md).

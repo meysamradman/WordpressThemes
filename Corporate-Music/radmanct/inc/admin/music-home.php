@@ -16,6 +16,8 @@ add_action('add_meta_boxes_page',static function(\WP_Post $post):void {
    'posts_per_page'=>-1,'orderby'=>['title'=>'ASC','ID'=>'ASC'],
    'update_post_meta_cache'=>false,'update_post_term_cache'=>false,'no_found_rows'=>true,
   ]);
+  $titles=[];
+  foreach($tracks as $track)$titles[$track->ID]=get_the_title($track);
   ?>
   <p>حداکثر چهار آهنگ انتخاب کنید. جایگاه ۱ اولین اسلاید است. اگر همهٔ جایگاه‌ها خالی باشند، تا سه آهنگِ آخر بر اساس تاریخ انتشار نمایش داده می‌شوند.</p>
   <?php for($index=0;$index<FEATURED_LIMIT;$index++):$field='rdc-home-featured-'.$index; ?>
@@ -23,8 +25,8 @@ add_action('add_meta_boxes_page',static function(\WP_Post $post):void {
     <label for="<?php echo esc_attr($field); ?>">جایگاه <?php echo esc_html(number_format_i18n($index+1)); ?></label>
     <select class="widefat" id="<?php echo esc_attr($field); ?>" name="rdc_home_feature_tracks[]">
      <option value="">بدون انتخاب</option>
-     <?php foreach($tracks as $track): ?>
-      <option value="<?php echo esc_attr((string)$track->ID); ?>" <?php selected($selected[$index]??0,$track->ID); ?>><?php echo esc_html(get_the_title($track)); ?></option>
+     <?php foreach($titles as $id=>$title): ?>
+      <option value="<?php echo esc_attr((string)$id); ?>" <?php selected($selected[$index]??0,$id); ?>><?php echo esc_html($title); ?></option>
      <?php endforeach; ?>
     </select>
    </p>

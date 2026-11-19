@@ -1,5 +1,7 @@
 # Design System & Reusable UI Components — v1.0
 
+> بازبینی بسته 1.3 — 2026-11-19؛ نام مسیر برای سازگاری ارجاع‌های موجود حفظ شده است. تاریخچه در CHANGELOG-v1.3.md.
+
 **تاریخ:** 2026-11-18 | **دامنه:** استاندارد مشترک تمام سایت‌های مشتریان؛ مستقل از برند و روش رندر. هدف: نقش‌های مرکزی، تغییر آسان، UI یکدست، ماژول‌های قابل استفاده مجدد و هزینه runtime پایین. CSS 02، responsive 03، JS 04، GSAP 05 و PHP 13 مسئول جزئیات خود هستند.
 
 ## 1. یک منبع حقیقت برای طراحی
@@ -125,3 +127,5 @@
 - [WAI APG patterns](https://www.w3.org/WAI/ARIA/apg/patterns/)، [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 
 مبنای داخلی: radman-doc/engineering/typography.md، components.md، component-library.md، markup-css.md و assets.md؛ اصول مالکیت و reuse استخراج شده‌اند، نام‌ها و نسخه‌های محصول قبلی منتقل نشده‌اند.
+
+**ارجاع:** کامپوننت تصویر/کاور و placeholder از یک قرارداد نقش و اندازه در [17](17-IMAGES-AND-MEDIA-v1.0.md) پیروی کنند. انتخاب renderer موجود و بررسی حذف کد در [19](19-CODE-QUALITY-REFACTORING-v1.0.md).

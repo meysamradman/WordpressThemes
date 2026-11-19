@@ -1,5 +1,7 @@
 # PHP 8.4+ Development Standard — v1.1
 
+> بازبینی بسته 1.3 — 2026-11-19؛ نام مسیر برای سازگاری ارجاع‌های موجود حفظ شده است. تاریخچه در CHANGELOG-v1.3.md.
+
 **بازبینی منابع:** 2026-11-18 | **مخاطب:** Codex / توسعه‌دهنده | **دامنه:** کد PHP اختصاصی وب‌سایت‌ها، قالب‌ها و افزونه‌های وردپرس مشتریان. مستقل از برند و صفحه‌ساز. این سند استاندارد کدنویسی است، نه دستور تنظیم هاست یا نصب افزونه.
 
 **MUST:** قرارداد الزامی تیم؛ **SHOULD:** پیش‌فرض قابل تغییر با دلیل و تست. ابتدا سورس و نسخه واقعی پروژه را بررسی کن؛ معماری موجود را بی‌دلیل بازنویسی نکن.
@@ -37,7 +39,7 @@
 - `functions.php` ترکیب‌کننده ماژول‌ها؛ `after_setup_theme` برای supports/menu، `init` برای ثبت type/taxonomy، `wp_enqueue_scripts` برای دارایی frontend، `admin_enqueue_scripts` محدود به صفحه مدیریت مورد نیاز، `rest_api_init` برای REST. query main را در `pre_get_posts` با guard مناسب frontend/main query تغییر بده. `flush_rewrite_rules()` در هر درخواست ممنوع؛ فقط activation/migration کنترل‌شده در زمان مناسب.
 - از `wp_head()`, `wp_body_open()`, `wp_footer()`, `language_attributes()`, `body_class()` در قالب classic حسب محل صحیح استفاده کن؛ hook یا wrapper را دوباره تولید نکن. خروجی سئو فقط یک مالک؛ جزئیات سند 01.
 - متن frontend به صورت SSR قابل خواندن باشد؛ لینک و pagination استاندارد قبل از JS. PHP داده معتبر و markup می‌سازد؛ Vanilla JS رفتار و AJAX، GSAP حرکت، چرخه Loading طبق قرارداد مسیر پروژه (06 برای قالب PHP اختصاصی). روی PHP لودینگ ساختگی یا انتظار GSAP نساز.
-- از WordPress asset API با handle یکتا و dependencies درست استفاده کن؛ کد صفحه فقط همان‌جا enqueue شود. نسخه‌بندی asset با build manifest در صورت استفاده از Vite؛ core dependency را حدسی حذف نکن. جزئیات Build در سند 08 آینده.
+- از WordPress asset API با handle یکتا و dependencies درست استفاده کن؛ کد صفحه فقط همان‌جا enqueue شود. نسخه‌بندی asset با build manifest در صورت استفاده از Vite؛ core dependency را حدسی حذف نکن. جزئیات Build در [08](08-BUILD-AND-VERSIONS.md).
 
 ## 4. امنیت — در هر ورودی و خروجی
 
@@ -110,6 +112,8 @@ $recent = new WP_Query( array(
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 ```
+
+جزئیات query و توسعه‌پذیری داده در [18](18-DATABASE-QUERY-OPTIMIZATION-v1.0.md)، کیفیت و حذف کد در [19](19-CODE-QUALITY-REFACTORING-v1.0.md)؛ نمونه‌های این سند مرجع نحو PHP هستند.
 
 ## 6. وابستگی‌ها، نسخه‌بندی و ابزار کیفیت
 

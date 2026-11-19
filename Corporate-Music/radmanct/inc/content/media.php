@@ -1,6 +1,12 @@
 <?php
 namespace RadmanCT\Content\Media;
 defined('ABSPATH')||exit;
+function thumbnail(int|\WP_Post $post,string|array $size='post-thumbnail',array $attributes=[]):string {
+ if(post_password_required($post))return '';
+ $image=(int)get_post_thumbnail_id($post);
+ if(!\RadmanCT\PageTitle\attachment_allowed($image)||!wp_attachment_is_image($image))return '';
+ return get_the_post_thumbnail($post,$size,$attributes);
+}
 function video_id($value):int {
  $id=filter_var($value,FILTER_VALIDATE_INT);return $id&&$id>0&&wp_attachment_is('video',$id)&&in_array(get_post_mime_type($id),array('video/mp4','video/webm','video/ogg'),true)?$id:0;
 }

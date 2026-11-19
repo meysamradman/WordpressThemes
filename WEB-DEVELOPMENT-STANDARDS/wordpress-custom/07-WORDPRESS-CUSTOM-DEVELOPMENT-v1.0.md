@@ -1,5 +1,7 @@
 # WordPress Custom Theme Development — v1.0
 
+> بازبینی بسته 1.3 — 2026-11-19؛ نام مسیر برای سازگاری ارجاع‌های موجود حفظ شده است. تاریخچه در CHANGELOG-v1.3.md.
+
 **تاریخ:** 2026-11-18 | **دامنه:** قالب‌های واقعاً اختصاصی WordPress با PHP/HTML/CSS، Vanilla JS و در صورت نیاز GSAP/Vite. PHP 8.4+ طبق 13؛ نسخه دقیق WordPress و ابزارها در Profile. این فایل برای پروژه‌های صفحه‌ساز نیست.
 
 ## 1. معماری و مالکیت
@@ -27,6 +29,35 @@ my-theme/
 - عنوان و متادیتا، canonical، sitemap، schema و robots یک مالک داشته باشند؛ تکرار خروجی theme/plugin ممنوع. داده و متن اصلی SSR؛ JS enhancement. routing، لینک‌های مهم و ساختار heading مطابق 01؛ حفظ URLهای موجود مگر مهاجرت تأییدشده.
 - برای پروژه‌ای که CPT یا دادهٔ موجود در قالب دارد، مالکیت و API ذخیره‌شده مطابق Profile حفظ شوند. انتقال داده یا CPT به plugin مستقل کار مهاجرت جداگانه است. noindex محلی، حریم محتوای رمزدار و خروجی Yoast یا افزونهٔ SEO فعال طبق قرارداد پروژه حفظ شوند. Analytics با شناسهٔ واقعی و یک integration، جدا از Search Console بررسی شود.
 
+## 1.1. قرارداد قطعی تصویر برگه‌های با طراحی اختصاصی (بازبینی 2026-11-19)
+- در `page.php`، templateهای اختصاصی درباره/تماس/خدمات/صفحه اصلی و Page Title renderer، از `the_post_thumbnail()` یا `get_post_thumbnail_id()` به‌عنوان fallback خودکار Hero/Background استفاده نکن. عنوان/H1 و توضیح مستقل از وجود عکس؛ تصویر نداشتن طرح یک حالت معتبر است. برگه همچنان می‌تواند featured image برای social/کارت مستقل داشته باشد؛ داده را حذف یا global support را غیرفعال نکن.
+- artwork ثابت بخش از asset path و ابعاد واقعی در کد؛ از `get_theme_file_uri()` برای فایل ثابت و manifest helper مالک پروژه برای فایل build استفاده کن. برای تصویر قابل تنظیم فقط فیلد همان section با attachment ID، validate و fallback مصوب. مسیر parent/child مطابق مالکیت واقعی. مسیر مطلق localhost/uploads hardcode نشود.
+- آرشیو و کارت نمونه‌کار/مقاله/محصول/اثر: تصویر شاخص همان آیتم، نه تصویر شاخص برگه آرشیو؛ single detail طبق طرح می‌تواند همان کاور و گالری را داشته باشد. Header/Footer/Page Title عمومی نباید هم‌زمان کاور تکراری چاپ کنند. تصاویر تزئینی از content image جدا باشند. جزئیات حفاظت و بهینه‌سازی در [17](../shared/17-IMAGES-AND-MEDIA-v1.0.md).
+
+نمونه تصویر ثابت در PHP (فایل و اندازه مثال هستند؛ تطبیق با asset واقعی):
+```php
+<img src="<?php echo esc_url( get_theme_file_uri( 'images/pages/about.webp' ) ); ?>"
+     width="800" height="600" alt="" loading="lazy" decoding="async">
+```
+این مثال برای تصویر تزئینی پایین صفحه است؛ برای تصویر محتوایی alt مناسب، برای LCP بدون lazy و اولویت اندازه‌گیری‌شده. اگر تصویر LCP است از همان asset واقعی و نه تصویر شاخص برگه استفاده کن. برای چند اندازه ثابت `srcset` واقعی تولید کن؛ تصویر ساختگی به catalog اضافه نکن.
+
+نمونه کارت محتوایی از ID پست عمومیِ از پیش تأییدشده در query/guard:
+```php
+<?php
+$cover_id = get_post_thumbnail_id( $post_id );
+if ( $cover_id ) {
+    // WordPress builds src/srcset, dimensions and loading attributes.
+    echo wp_get_attachment_image( $cover_id, 'medium_large', false, array(
+        'class' => 'card__image',
+        'sizes' => '(max-width: 600px) 100vw, 360px',
+    ) );
+}
+?>
+```
+`sizes` و class فقط مثال‌اند؛ width واقعی کارت، سیاست alt و fallback پروژه تعیین‌کننده‌اند. guard عمومی بودن پست/attachment قبل از renderer؛ برای رسانه خصوصی URL مستقیم نیز محافظت شود. در renderer واحد کارت، نبود کاور با placeholder تزئینی/طرح بدون عکس مدیریت شود. خروجی HTML از API بومی دوباره `esc_html` نشود؛ attributes پویا قبل از ارسال validate و API escape را رعایت کنند.
+
+پذیرش: یک برگه سفارشی با featured image و بدون آن باز شود؛ ظاهر Hero و Page Title ثابت بماند. کارت و detail همان داده در مسیرهای مصوب عکس درست داشته باشند. HTTP/HTML/Network بدون تصویر تکراری، alt/width/height/sizes درست و no-JS؛ WP editor و social metadata دست نخورده. این قرارداد ممنوعیت تصویر شاخص در تمام WordPress نیست.
+
 ## 2. کامپوننت‌ها و Design System
 
 - قرارداد مشترک 02/03/16 اجرا شود: token مرکزی، CSS پایه کوچک، component variants، font registry، renderer reusable. PHP `get_template_part()` با args یا render helper برای خانواده‌های واقعی؛ صفحه فقط data/layout/variant بدهد. هدر، فوتر، عنوان صفحه، کارت blog و آرشیو دوباره از صفر کپی نشوند؛ قطعه اختصاصی واقعی در مسیر feature خودش بماند.
@@ -38,7 +69,7 @@ my-theme/
 - `wp_enqueue_style/script` و dependency handles یکتا؛ از تزریق script/link در چند template پرهیز. در صورت Vite از manifest و CSS لازمِ entry/static dependencies استفاده کن؛ runtime import فقط قابلیت لازم. CSS حیاتی markup SSR باید قبل از نمایش آماده شود. enqueue همه chunkها ممنوع، `dist` دستی تغییر نکند، Node dev server در prod نباشد. بدون build نیز enqueue صحیح و versioning لازم است.
 - پیش از `wp_head` نیازهای صفحه را با template/route و داده قابل اتکا تشخیص بده؛ به اجرا شدن دیرهنگام renderer برای CSS حیاتی متکی نباش. asset کوچکِ واقعاً سراسری می‌تواند مشترک باشد؛ تصمیم با Network/Coverage. تمایز style.css metadata و CSS خروجی را رعایت کن. handle/dependency هسته را حدسی حذف نکن.
 - Vanilla JS 04 مالک DOM behavior و data، GSAP 05 صرفاً motion؛ Loading 06 مرجع curtain/entrance/scroll/AJAX/media. فقط یک entry orchestration و یک نسخه هر کتابخانه؛ mount/dispose در تغییر root. `matchMedia` برای اجرا و dynamic import برای جلوگیری از دانلود کد غیرضروری. از global listener روی همه nodeها و ساختن موتور دوم منو/کاروسل/scroll-lock خودداری کن.
-- برای ورود عنوان و متن منتخب مشتری از [پروفایل مشترک ورود](../shared/05-GSAP-ANIMATION-STANDARD-v1.1.md#customer-content-entrance) و یک مالک مشترک استفاده کن. پارالاکس دامنه و محرک مستقل دارد. پیاده‌سازی ساده می‌تواند با CSS و یک IntersectionObserver مشترک انجام شود و به Elementor یا Hub وابسته نیست.
+- برای ورود عنوان و متن منتخب مشتری از [پروفایل مشترک ورود](../shared/05-GSAP-ANIMATION-STANDARD-v1.1.md#customer-content-entrance) و یک مالک مشترک استفاده کن. پارالاکس دامنه و محرک مستقل دارد. پیاده‌سازی ساده می‌تواند با CSS و یک IntersectionObserver مشترک انجام شود و به موتور یا پروژه دیگری وابسته نیست.
 - رسانه از API بومی WordPress؛ image sizes/srcset/sizes/alt/dimensions، hero priority بر اساس LCP و lazy رسانه پایین صفحه، font policy در 16؛ هیچ ویدئو/فونت/فایل سنگین صرفاً به خاطر وجود در پروژه بارگذاری نشود.
 - [قرارداد نسخه و بسته](../shared/08-BUILD-AND-VERSIONS.md) و [کش و سنجش شبکه](../shared/09-PERFORMANCE-AND-CACHE.md) در هر محیط با Profile و Runbook همان پروژه تطبیق داده شوند. در WordPress دارای script module، importهای static و dynamic همان manifest حفظ شوند.
 

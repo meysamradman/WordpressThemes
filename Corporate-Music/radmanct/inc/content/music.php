@@ -22,12 +22,22 @@ add_action('save_post_track',static function(int $id):void{
     if(wp_is_post_revision($id)||wp_is_post_autosave($id)||!current_user_can('edit_post',$id))return;
     $nonce=$_POST['rdc_track_nonce']??null;
     if(!is_string($nonce)||!wp_verify_nonce(sanitize_text_field(wp_unslash($nonce)),'rdc_track_save'))return;
-    $input=isset($_POST['rdc_track'])&&is_array($_POST['rdc_track'])?wp_unslash($_POST['rdc_track']):[];$data=get_post_meta($id,'_rdc_track',true);$data=is_array($data)?$data:[];
-    foreach(['artist','poet','arranger','composer','album','released'] as $key)$data[$key]=is_scalar($input[$key]??'')?sanitize_text_field($input[$key]??''):'';
-    $data['lyrics']=is_scalar($input['lyrics']??'')?sanitize_textarea_field($input['lyrics']??''):'';
+    $input=$_POST['rdc_track']??null;
+    if(!is_array($input)||!$input)return;
+    $input=wp_unslash($input);
+    $text_keys=['artist','poet','arranger','composer','album','released','lyrics'];
+    $file_keys=['audio','download'];
+    foreach($text_keys as $key)if(array_key_exists($key,$input)&&!is_string($input[$key]))return;
+    foreach($file_keys as $key)if(array_key_exists($key,$input)&&(!is_string($input[$key])||!ctype_digit($input[$key])))return;
+    $data=get_post_meta($id,'_rdc_track',true);$data=is_array($data)?$data:[];
+    foreach($text_keys as $key){
+        if(!isset($input[$key]))continue;
+        $data[$key]=$key==='lyrics'?sanitize_textarea_field($input[$key]):sanitize_text_field($input[$key]);
+    }
     $uploads=wp_upload_dir(null,false);
-    foreach(['audio','download'] as $key){
-        $value=is_scalar($input[$key]??0)?absint($input[$key]??0):0;
+    foreach($file_keys as $key){
+        if(!isset($input[$key]))continue;
+        $value=absint($input[$key]);
         $attachment=$value?get_post($value):null;
         $url=$attachment?wp_get_attachment_url($value):'';
         // Draft-owned media is editable; the frontend keeps its separate public guard.

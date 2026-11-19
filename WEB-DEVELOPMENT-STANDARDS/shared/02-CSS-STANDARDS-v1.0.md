@@ -1,5 +1,7 @@
 # Modern CSS & Minimal DOM — v1.0
 
+> بازبینی بسته 1.3 — 2026-11-19؛ نام مسیر برای سازگاری ارجاع‌های موجود حفظ شده است. تاریخچه در CHANGELOG-v1.3.md.
+
 **تاریخ:** 2026-11-18 | **دامنه:** مشترک؛ CSS و HTML متعلق به تیم در پروژه‌های مشتریان. مستقل از برند و فناوری رندر. این سند روش کدنویسی است، نه پالت، فونت یا breakpoint ثابت برای همه مشتری‌ها.
 
 **MUST** = قانون داخلی تیم؛ **SHOULD** = پیش‌فرض قابل تغییر با دلیل. سند 16 مالک Design System؛ 03 مالک responsive؛ 04 رفتار؛ 05 حرکت. CSS مسئول چیدمان و ظاهر است، نه دریافت داده یا مدیریت وضعیت business.
@@ -85,3 +87,5 @@ src/css/
 - [MDN CSS performance](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Performance/CSS)، [web.dev resource loading](https://web.dev/learn/performance/optimize-resource-loading)، [Vite features](https://vite.dev/guide/features.html).
 
 مبنای قواعد داخلی: radman-doc/engineering/markup-css.md، assets.md و naming.md (اصول عمومی استخراج شده؛ تصمیمات هویتی و API محصول قبلی تعمیم داده نشده‌اند).
+
+**ارجاع تخصصی:** [17 — تصاویر](17-IMAGES-AND-MEDIA-v1.0.md) و [19 — refactoring](19-CODE-QUALITY-REFACTORING-v1.0.md). از CSS background برای محتوای لازم جهت image search به جای img استفاده نشود؛ CSS اندازه/ratio را تعیین می‌کند، نقش و منبع تصویر در 17.

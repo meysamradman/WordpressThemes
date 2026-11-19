@@ -2,7 +2,7 @@
 namespace RadmanCT;
 defined('ABSPATH')||exit;
 function brand_svg(string $source):string {
- if(strlen($source)>32768||preg_match('/<!DOCTYPE|<!ENTITY/i',$source))return '';
+ if($source===''||strlen($source)>32768||preg_match('/<!DOCTYPE|<!ENTITY/i',$source))return '';
  $xml=new \DOMDocument();$previous=libxml_use_internal_errors(true);
  try{$valid=$xml->loadXML($source,LIBXML_NONET);}finally{libxml_clear_errors();libxml_use_internal_errors($previous);}
  if(!$valid||$xml->documentElement->localName!=='svg')return '';
@@ -19,10 +19,12 @@ function brand_svg(string $source):string {
    if($name==='id')$ids[$value]=$prefix.$value;
   }
  }
+ $references=[];
+ foreach($ids as $id=>$rewritten)$references['#'.$id]='#'.$rewritten;
  foreach($xml->getElementsByTagName('*') as $node){
   foreach($node->attributes as $attribute){
    if($attribute->nodeName==='id')$attribute->nodeValue=$ids[$attribute->nodeValue];
-   elseif(in_array($attribute->nodeName,array('href','fill','stroke'),true))$attribute->nodeValue=strtr($attribute->nodeValue,array_combine(array_map(static fn($id)=>'#'.$id,array_keys($ids)),array_map(static fn($id)=>'#'.$id,array_values($ids))));
+   elseif($references&&in_array($attribute->nodeName,array('href','fill','stroke'),true))$attribute->nodeValue=strtr($attribute->nodeValue,$references);
   }
  }
  $root=$xml->documentElement;$root->setAttribute('class','rdc-logo');$root->setAttribute('data-rdc-logo','');$root->setAttribute('aria-hidden','true');$root->setAttribute('focusable','false');

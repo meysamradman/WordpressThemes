@@ -6,7 +6,7 @@ if($rail){
  $download_appearance=['variant'=>'solid','icon'=>'download','icon_only'=>true];
 } ?>
 <div class="rdc-video-grid<?php if($rail)echo ' rdc-music-rail rdc-music-rail--video'; ?>"<?php if($rail): ?> data-rdc-rail-track tabindex="0" role="group" aria-label="ویدئوها؛ جابه‌جایی با کلیدهای چپ و راست"<?php endif; ?>>
-<?php foreach($data['items'] as $item):$file=\RadmanCT\Videos\file((int)$item['video']);$poster=(int)($item['image']??0);$url=$item['url']??''; ?>
+<?php foreach($data['items'] as $item):$file=empty($item['aparat'])?\RadmanCT\Videos\file((int)$item['video']):[];$poster=(int)($item['image']??0);$url=$item['url']??''; ?>
  <article class="rdc-video-card"><div class="rdc-video-card__media">
  <?php if($inline&&empty($item['aparat'])&&$file): ?><video controls playsinline preload="none" width="1920" height="1080"<?php if(\RadmanCT\PageTitle\attachment_allowed($poster)): ?> poster="<?php echo esc_url(wp_get_attachment_image_url($poster,'medium_large')); ?>"<?php endif; ?> aria-label="<?php echo esc_attr($item['title']); ?>"><source src="<?php echo esc_url($file['url']); ?>" type="<?php echo esc_attr($file['type']); ?>"></video><button class="rdc-video-card__toggle" type="button" data-rdc-video-toggle hidden aria-label="<?php echo esc_attr('پخش '.$item['title']); ?>"><?php echo \RadmanCT\icon('play'); ?></button>
  <?php else: $aparat=$inline&&!empty($item['aparat']);$observe=$aparat&&$rail; ?>

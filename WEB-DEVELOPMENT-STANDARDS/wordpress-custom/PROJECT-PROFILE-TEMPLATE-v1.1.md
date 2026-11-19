@@ -1,5 +1,7 @@
 # WordPress Custom — Project Profile Template v1.1
 
+> بازبینی بسته 1.3 — 2026-11-19؛ نام مسیر برای سازگاری ارجاع‌های موجود حفظ شده است. تاریخچه در CHANGELOG-v1.3.md.
+
 > قالب خام؛ برای هر مشتری یک کپی. مقدار TBD یعنی هنوز تأیید نشده. این فایل تنظیمات آماده نصب نیست.
 
 - Project / environment: TBD (local / staging / production)
@@ -23,3 +25,6 @@
 
 **Docs:** Index؛ 01، 02، 03، 04، 13، 16، 07؛ 05 و 06 در صورت کاربرد؛ 14 برای سناریوها.
 - Design tokens / component registry / theme variants / asset budgets: TBD
+
+- Image roles / source registry (static artwork / editable section / editorial covers / OG) / renderer / media sizes / LCP budget: TBD؛ قانون برگه سفارشی در 07، جزئیات مدیا در 17.
+- Index/pagination policy / deployment rollback owner: TBD (20/21).
