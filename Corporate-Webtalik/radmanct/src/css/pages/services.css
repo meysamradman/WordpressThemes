@@ -15,7 +15,7 @@
 .rdc-svc-itm summary { padding-block:clamp(1.25rem,2.5vw,2rem); cursor:pointer; list-style:none; }
 .rdc-svc-itm summary::-webkit-details-marker { display:none; }
 .rdc-svc-itm h3 { display:grid; grid-template-columns:3.5rem minmax(0,1fr) clamp(6rem,12vw,12rem); align-items:center; gap:clamp(.75rem,2vw,2rem); margin:0; color:var(--rdc-mut); font-size:var(--rdc-svc-ttl-sz); line-height:var(--rdc-svc-ttl-ln-ht); }
-.rdc-svc-itm__ttl { padding-inline:.12em; overflow-wrap:anywhere; }
+.rdc-svc-itm__ttl { font-family:var(--rdc-font-dsp); font-weight:var(--rdc-wt-dsp); padding-inline:.12em; overflow-wrap:anywhere; }
 .rdc-svc-itm__num { color:inherit; font-size:clamp(1rem,1.4vw,1.5rem); line-height:var(--rdc-ln-ht-hdg); direction:ltr; }
 .rdc-svc-itm__thm { justify-self:end; inline-size:72%; aspect-ratio:1.65; overflow:hidden; border-radius:calc(var(--rdc-rad) / 2); }
 .rdc-svc-itm__thm img { display:block; inline-size:100%; block-size:100%; object-fit:cover; }

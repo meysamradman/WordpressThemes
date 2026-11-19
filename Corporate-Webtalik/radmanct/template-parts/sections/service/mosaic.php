@@ -19,7 +19,7 @@ $heading=wp_unique_id('rdc-mosaic-ttl-');
     <article class="rdc-mosaic__itm">
      <div class="rdc-mosaic__copy">
       <span class="rdc-mosaic__rim" aria-hidden="true"></span>
-      <h3><?php echo esc_html($item['title']); ?></h3>
+      <h3><?php echo esc_html(implode("\n",$item['title_lines']??array($item['title']))); ?></h3>
       <div class="rdc-mosaic__cnt"><p><?php echo esc_html($item['desc']); ?></p>
        <?php if(!empty($item['url']))echo \RadmanCT\button($item['link'],$item['url'],array('variant'=>'ghost')); ?>
       </div>

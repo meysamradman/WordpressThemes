@@ -38,7 +38,7 @@ function script(string $name):void { $asset=entry('src/js/'.$name.'.js');if($ass
 add_action('wp_enqueue_scripts',static function():void{
  style('site');script('site');
  if(\RadmanCT\PageTitle\is_used())style('layout/page-title',array('rdc-site'));
- if(\RadmanCT\CompactTitle\is_used()){style('layout/compact-title',array('rdc-site'));if(\RadmanCT\CompactTitle\data()['image'])script('pages/compact-title');}
+ if(\RadmanCT\CompactTitle\is_used())style('layout/compact-title',array('rdc-site'));
  if(is_page('services')){style('pages/services',array('rdc-site'));script('pages/services');}
  elseif(\RadmanCT\Services\is_detail()){style('pages/service',array('rdc-site'));script('pages/service');}
  elseif(is_front_page()){style('pages/home',array('rdc-site'));script('pages/home');}
