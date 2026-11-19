@@ -15,6 +15,17 @@ function portfolio_summary():array {
  );
  return array('projects'=>$projects,'metrics'=>array_filter($metrics,static fn($value):bool=>null!==$value));
 }
+function case_study(array $projects):array {
+ foreach($projects as $project){
+  $excerpt=trim((string)$project->post_excerpt);
+  $image_id=(int)get_post_thumbnail_id($project);
+  if($excerpt&&\RadmanCT\PageTitle\attachment_allowed($image_id)){
+   return ['project'=>$project,'excerpt'=>$excerpt,'image'=>$image_id];
+  }
+ }
+ return [];
+}
+
 function allowed(int $id):bool {
  if(!$id||get_post_type($id)!=='attachment'||!in_array(get_post_status($id),array('inherit','publish'),true)||post_password_required($id))return false;
  $parent=wp_get_post_parent_id($id);

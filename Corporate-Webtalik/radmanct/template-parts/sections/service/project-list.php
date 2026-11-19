@@ -3,13 +3,7 @@ defined('ABSPATH')||exit;
 $projects=$args['projects']??[];
 if(!$projects)return;
 ?>
-<section class="rdc-ctr rdc-prj-list" id="rdc-prj-list" aria-labelledby="rdc-prj-list-ttl" data-rdc-prj-list>
- <header class="rdc-heading">
-  <div class="rdc-heading__inr">
-   <h2 class="rdc-heading__ttl" id="rdc-prj-list-ttl">نمونه‌کارهای اخیر</h2>
-  </div>
-  <?php echo \RadmanCT\button('همهٔ نمونه‌کارها',get_post_type_archive_link('project'),['class'=>'rdc-prj-list__cta']); ?>
- </header>
+<section class="rdc-ctr rdc-prj-list" id="rdc-prj-list" aria-label="نمونه‌کارهای اخیر" data-rdc-prj-list>
  <ul class="rdc-prj-list__rows">
   <?php foreach($projects as $project):
    $image_id=(int)get_post_thumbnail_id($project);
