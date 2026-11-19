@@ -3,6 +3,9 @@ const page=createPageLifecycle(window);
 for(const root of document.querySelectorAll('[data-rdc-mtx]')){
  page.mountRoot(root,'text-marquee',()=>import('../ui/text-marquee.js'),({initializeTextMarquee})=>initializeTextMarquee(root));
 }
+for(const root of document.querySelectorAll('[data-rdc-svc-strip]')){
+ page.mountRoot(root,'services-strip',()=>import('../ui/service-image-strip.js'),({mountServicesStrip})=>mountServicesStrip(root));
+}
 for(const root of document.querySelectorAll('.rdc-mosaic'))page.mountRoot(root,'mosaic-border',()=>({}),()=>{
  const doc=root.ownerDocument,view=doc.defaultView,preference=view.matchMedia('(prefers-reduced-motion:reduce)');
  const boxes=[...root.querySelectorAll('.rdc-mosaic__copy,.rdc-mosaic__md')];

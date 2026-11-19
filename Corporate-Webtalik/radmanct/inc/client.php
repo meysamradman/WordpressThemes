@@ -60,6 +60,9 @@ add_filter('radmanct/services/marquee',static function():array {
  $images=array();foreach($labels as $index=>$label)$images[]=array('id'=>\RadmanCT\media_id('services-marquee-'.($index+1)),'label'=>$label);
  return array('title'=>array('دربارهٔ پروژه‌ات','گفت‌وگو کنیم'),'url'=>\RadmanCT\Footer\data()['contact'],'images'=>$images);
 });
+add_filter('radmanct/services/strip',static function():array {
+ return array_map(static fn(int $number):int=>\RadmanCT\media_id('services-strip-'.$number),[48,45,46,47,49]);
+});
 // Current customer's editorial data. Replace this file for the next project;
 // shared renderers, assets and animation code remain independent of this content.
 add_filter('body_class',static function(array $classes):array {

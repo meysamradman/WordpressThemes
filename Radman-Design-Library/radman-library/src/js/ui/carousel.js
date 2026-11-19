@@ -78,13 +78,13 @@ export function initializeCarousel(root){
  for(const [name,fn] of Object.entries(listeners))win.addEventListener(name,fn,['scroll','wheel','touchstart'].includes(name)?{passive:true}:undefined);
  const reduce=()=>{if(reduced.matches&&motion){const target=motion.target;cancelMotion();win.scrollLeft=sign*target;}};
  reduced.addEventListener('change',reduce);
- view.addEventListener('pointerup',finish);win.classList.add('is-enh');measure();
+ view.addEventListener('pointerup',finish);measure();
  const release=observeSizes(view,[win,slides[0]],measure);
  return()=>{
   release();cancelMotion();reduced.removeEventListener('change',reduce);view.clearTimeout(timer);if(raf)view.cancelAnimationFrame(raf);
   prev.removeEventListener('click',back);next.removeEventListener('click',forward);dots.removeEventListener('click',choose);view.removeEventListener('pointerup',finish);
   for(const [name,fn] of Object.entries(listeners))win.removeEventListener(name,fn);
   if(drag&&win.hasPointerCapture(drag.id))win.releasePointerCapture(drag.id);
-  win.classList.remove('is-enh','is-drag');nav.hidden=dots.hidden=true;dots.replaceChildren();status.textContent='';
+  win.classList.remove('is-drag');nav.hidden=dots.hidden=true;dots.replaceChildren();status.textContent='';
  };
 }

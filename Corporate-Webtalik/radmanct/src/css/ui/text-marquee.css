@@ -1,6 +1,7 @@
 .rdc-mtx { display:grid; grid-template-columns:max-content minmax(0,1fr); align-items:center; gap:var(--rdc-mtx-gut,1rem); min-inline-size:0; }
 .rdc-mtx__lbl { display:flex; align-items:center; gap:.65rem; }
-.rdc-mtx__win { overflow-x:auto; overscroll-behavior-x:contain; container-type:inline-size; scrollbar-width:thin; }
+.rdc-mtx__win { overflow-x:auto; overscroll-behavior-x:contain; container-type:inline-size; scrollbar-width:none; }
+.rdc-mtx__win::-webkit-scrollbar { display:none; }
 .rdc-mtx__grp { display:flex; align-items:center; justify-content:space-around; gap:var(--rdc-mtx-gap,2rem); inline-size:max-content; min-inline-size:100cqi; margin:0; padding:0; list-style:none; white-space:nowrap; }
 .rdc-mtx__grp > li { display:flex; align-items:center; gap:inherit; }
 .rdc-mtx__grp > li::before { content:''; inline-size:.25rem; block-size:.25rem; flex:none; border-radius:50%; background:var(--rdc-mut); }
