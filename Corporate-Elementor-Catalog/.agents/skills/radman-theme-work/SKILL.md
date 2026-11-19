@@ -9,7 +9,7 @@ description: Assess or implement authorized Radman CT theme and optional plugin 
 
 Follow root AGENTS. Read essentials once and the affected confirmed contract; `rg` the topic in `radman-doc/README.md` only if its owner is unknown. Read only the relevant section and any matching remaining item in `product/roadmap.md`. Archives and foundation are not startup reading.
 
-For version or environment questions, read the [project profile](../../../radman-doc/product/profile.md). Use the Elementor branch in the [shared standards index](../../../../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.2.md). For widget asset/lifecycle changes, use the [widget assets scenario](../../../radman-doc/scenarios/widget-assets.md).
+For version or environment questions, read the [project profile](../../../radman-doc/product/profile.md). Use the Elementor branch in the [shared standards index](../../../../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.3.md). For widget asset/lifecycle changes, use the [widget assets scenario](../../../radman-doc/scenarios/widget-assets.md).
 
 This is the Elementor edition: content pages and single/archive templates use Elementor, while the native Radman header/footer builder remains. Do not restore customer-coded PHP pages or a bundled Child. Preserve the Components library, Classic/V3 + Atomic, existing package identities, stored IDs and `rdct-` contracts. A source-prefix rename remains a separate task.
 
