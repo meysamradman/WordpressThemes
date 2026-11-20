@@ -6,6 +6,7 @@
 @import './service-sticky-rows.css';
 
 main.rdc-inv h2 { font-family:var(--rdc-font-dsp); font-weight:var(--rdc-wt-dsp); }
+main.rdc-inv .rdc-heading__ttl { max-inline-size:none; text-wrap:wrap; }
 
 .rdc-work-summary { padding-block:clamp(3.5rem,8vw,8rem) clamp(3rem,6vw,6rem); }
 .rdc-work-summary__hdg { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
@@ -25,7 +26,6 @@ main.rdc-inv h2 { font-family:var(--rdc-font-dsp); font-weight:var(--rdc-wt-dsp)
  gap:2rem clamp(2rem,4vw,4.5rem);
  padding-block:clamp(3rem,6vw,6rem);
 }
-.rdc-svc-case .rdc-heading__ttl { max-inline-size:20ch; }
 .rdc-svc-case .rdc-heading__desc { max-inline-size:56ch; }
 .rdc-svc-case .rdc-heading__lbl::before {
  content:'';
