@@ -6,3 +6,4 @@
 - سایت: http://127.0.0.1:8095/ ؛ مدیریت: http://127.0.0.1:8095/wp-admin/
 - مشخصات ورود: `artifacts/local-wordpress-access.txt`؛ فقط محلی و خارج از Git.
 - build: `npm run build`؛ Node فقط ابزار توسعه است.
+- [سناریوهای محتوایی وب‌تالیک](docs/content/README.md) مرجع چیدمان، نگارش، سئو و تصمیم‌های انتشار صفحات سایت است.

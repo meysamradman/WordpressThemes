@@ -101,6 +101,7 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
   if(is_page($service['slug'])){$description=$service['description'];break;}
  }
  if(is_page('custom-website-design-development')){
+  $data['desc']='وب‌سایت کسب‌وکار شما را با طراحی اختصاصی و برنامه‌نویسی از صفر توسعه می‌دهیم. رابط کاربری را با Next.js و React می‌سازیم و در صورت نیاز، بک‌اند و APIهای اختصاصی را با Django یا FastAPI توسعه می‌دهیم. عملکرد، امنیت و امکان توسعهٔ آینده را بر اساس نیازهای پروژه در نظر می‌گیریم.';
   $data['media_inset']=true;
   $data['media_flat']=true;
   $data['art_draw']=true;
