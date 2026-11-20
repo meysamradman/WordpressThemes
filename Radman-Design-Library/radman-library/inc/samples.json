@@ -481,20 +481,6 @@
     "scroll_gap": false,
     "icon": "layers"
   },
-  "sticky-rows": {
-    "slug": "sticky-rows",
-    "title": "ردیف‌های استیکی لایه‌ای · Radman",
-    "group": "panels",
-    "subgroup": "panels-sticky",
-    "kind": "section",
-    "source": "reference/sticky-rows",
-    "reference": "https://helo.crowdytheme-demo.com/design-studio/",
-    "motion": "ردیف‌های مستقل با پین پله‌ای. هر ردیف روی بدنهٔ ردیف قبلی می‌آید و سرعنوان‌ها قابل مشاهده می‌مانند.",
-    "effects": ["gsap", "scrolltrigger", "pin", "sticky", "smooth"],
-    "image": "none",
-    "scroll_gap": false,
-    "icon": "layers"
-  },
   "text-marquee": {
     "slug": "text-marquee",
     "title": "نوار متن متحرک و قاب تصویر · Radman",
@@ -840,6 +826,20 @@
     "image": "none",
     "scroll_gap": false,
     "surface": "light",
+    "icon": "layers"
+  },
+  "sticky-rows": {
+    "slug": "sticky-rows",
+    "title": "ردیف‌های استیکی لایه‌ای · Radman",
+    "group": "panels",
+    "subgroup": "panels-sticky",
+    "kind": "section",
+    "source": "reference/sticky-rows",
+    "reference": "https://helo.crowdytheme-demo.com/design-studio/",
+    "motion": "ردیف‌های مستقل با پین پله‌ای. هر ردیف روی بدنهٔ ردیف قبلی می‌آید و سرعنوان‌ها قابل مشاهده می‌مانند.",
+    "effects": ["gsap", "scrolltrigger", "pin", "sticky", "smooth"],
+    "image": "none",
+    "scroll_gap": false,
     "icon": "layers"
   }
 }

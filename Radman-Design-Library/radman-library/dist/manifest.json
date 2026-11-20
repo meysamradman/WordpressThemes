@@ -207,8 +207,8 @@
     "isEntry": true
   },
   "modules/card-carousel/script.js": {
-    "file": "js/sample-76-UBsNme85.min.js",
-    "name": "sample-76",
+    "file": "js/sample-74-UBsNme85.min.js",
+    "name": "sample-74",
     "src": "modules/card-carousel/script.js",
     "isEntry": true,
     "imports": [
@@ -286,8 +286,8 @@
     "isEntry": true
   },
   "modules/curtain-accordion/script.js": {
-    "file": "js/sample-86-Bo5faoN-.min.js",
-    "name": "sample-86",
+    "file": "js/sample-84-Bo5faoN-.min.js",
+    "name": "sample-84",
     "src": "modules/curtain-accordion/script.js",
     "isEntry": true
   },
@@ -310,8 +310,8 @@
     "isEntry": true
   },
   "modules/depth-carousel/script.js": {
-    "file": "js/sample-99-BJsJ_PNf.min.js",
-    "name": "sample-99",
+    "file": "js/sample-97-BJsJ_PNf.min.js",
+    "name": "sample-97",
     "src": "modules/depth-carousel/script.js",
     "isEntry": true,
     "imports": [
@@ -346,8 +346,8 @@
     "isEntry": true
   },
   "modules/gallery-archive/script.js": {
-    "file": "js/sample-91-BJ30C3u5.min.js",
-    "name": "sample-91",
+    "file": "js/sample-89-BJ30C3u5.min.js",
+    "name": "sample-89",
     "src": "modules/gallery-archive/script.js",
     "isEntry": true,
     "imports": [
@@ -365,8 +365,8 @@
     "isEntry": true
   },
   "modules/gallery-single/script.js": {
-    "file": "js/sample-93-Dhxg3s4O.min.js",
-    "name": "sample-93",
+    "file": "js/sample-91-Dhxg3s4O.min.js",
+    "name": "sample-91",
     "src": "modules/gallery-single/script.js",
     "isEntry": true,
     "imports": [
@@ -402,8 +402,8 @@
     "isEntry": true
   },
   "modules/hero-slider/script.js": {
-    "file": "js/sample-78-DolaRPYc.min.js",
-    "name": "sample-78",
+    "file": "js/sample-76-DolaRPYc.min.js",
+    "name": "sample-76",
     "src": "modules/hero-slider/script.js",
     "isEntry": true,
     "imports": [
@@ -422,8 +422,8 @@
     "isEntry": true
   },
   "modules/hero-typography/script.js": {
-    "file": "js/sample-80-TG5Bg4C9.min.js",
-    "name": "sample-80",
+    "file": "js/sample-78-TG5Bg4C9.min.js",
+    "name": "sample-78",
     "src": "modules/hero-typography/script.js",
     "isEntry": true,
     "imports": [
@@ -597,8 +597,8 @@
     "isEntry": true
   },
   "modules/particles-float/script.js": {
-    "file": "js/sample-88-a-qBLXvd.min.js",
-    "name": "sample-88",
+    "file": "js/sample-86-a-qBLXvd.min.js",
+    "name": "sample-86",
     "src": "modules/particles-float/script.js",
     "isEntry": true
   },
@@ -618,8 +618,8 @@
     "isDynamicEntry": true
   },
   "modules/particles/script.js": {
-    "file": "js/sample-84-DihMXGSX.min.js",
-    "name": "sample-84",
+    "file": "js/sample-82-DihMXGSX.min.js",
+    "name": "sample-82",
     "src": "modules/particles/script.js",
     "isEntry": true,
     "imports": [
@@ -739,8 +739,8 @@
     "isEntry": true
   },
   "modules/robot/script.js": {
-    "file": "js/sample-70-BrnTyDut.min.js",
-    "name": "sample-70",
+    "file": "js/sample-68-BrnTyDut.min.js",
+    "name": "sample-68",
     "src": "modules/robot/script.js",
     "isEntry": true,
     "imports": [
@@ -857,8 +857,8 @@
     "isEntry": true
   },
   "modules/sticky-rows/script.js": {
-    "file": "js/sample-64-D_4NjgYf.min.js",
-    "name": "sample-64",
+    "file": "js/sample-101-D_4NjgYf.min.js",
+    "name": "sample-101",
     "src": "modules/sticky-rows/script.js",
     "isEntry": true,
     "imports": [
@@ -879,8 +879,8 @@
     "isEntry": true
   },
   "modules/text-3d/script.js": {
-    "file": "js/sample-72-X6lYsoCL.min.js",
-    "name": "sample-72",
+    "file": "js/sample-70-X6lYsoCL.min.js",
+    "name": "sample-70",
     "src": "modules/text-3d/script.js",
     "isEntry": true,
     "imports": [
@@ -922,8 +922,8 @@
     "isEntry": true
   },
   "modules/text-images/script.js": {
-    "file": "js/sample-74-C1c0WOl2.min.js",
-    "name": "sample-74",
+    "file": "js/sample-72-C1c0WOl2.min.js",
+    "name": "sample-72",
     "src": "modules/text-images/script.js",
     "isEntry": true,
     "imports": [
@@ -941,8 +941,8 @@
     "isEntry": true
   },
   "modules/text-loop/script.js": {
-    "file": "js/sample-68-BF06ykit.min.js",
-    "name": "sample-68",
+    "file": "js/sample-66-BF06ykit.min.js",
+    "name": "sample-66",
     "src": "modules/text-loop/script.js",
     "isEntry": true,
     "imports": [
@@ -960,8 +960,8 @@
     "isEntry": true
   },
   "modules/text-marquee/script.js": {
-    "file": "js/sample-66-eyeNUbHq.min.js",
-    "name": "sample-66",
+    "file": "js/sample-64-eyeNUbHq.min.js",
+    "name": "sample-64",
     "src": "modules/text-marquee/script.js",
     "isEntry": true,
     "imports": [
@@ -1027,8 +1027,8 @@
     "isEntry": true
   },
   "modules/venture-carousel/script.js": {
-    "file": "js/sample-101-CmQSmCUe.min.js",
-    "name": "sample-101",
+    "file": "js/sample-99-CmQSmCUe.min.js",
+    "name": "sample-99",
     "src": "modules/venture-carousel/script.js",
     "isEntry": true,
     "imports": [
@@ -1046,8 +1046,8 @@
     "isEntry": true
   },
   "modules/video-archive/script.js": {
-    "file": "js/sample-95-BJ30C3u5.min.js",
-    "name": "sample-95",
+    "file": "js/sample-93-BJ30C3u5.min.js",
+    "name": "sample-93",
     "src": "modules/video-archive/script.js",
     "isEntry": true,
     "imports": [
@@ -1065,8 +1065,8 @@
     "isEntry": true
   },
   "modules/video-single/script.js": {
-    "file": "js/sample-97-PTDb7nay.min.js",
-    "name": "sample-97",
+    "file": "js/sample-95-PTDb7nay.min.js",
+    "name": "sample-95",
     "src": "modules/video-single/script.js",
     "isEntry": true,
     "imports": [
