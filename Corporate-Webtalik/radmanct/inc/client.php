@@ -78,6 +78,18 @@ add_filter('radmanct/contact/data',static function(array $data):array {
  $data['channels']=array(array('label'=>__('Phone call','radmanct'),'url'=>'tel:'.$number,'value'=>$number,'icon'=>'phone'));
  return $data;
 });
+add_filter('radmanct/service/sticky-rows',static function():array {
+    return array(
+        'title'=>'از بررسی تا انتشار',
+        'items'=>array(
+            array('title'=>'شناخت مسئله','desc'=>'با بررسی هدف پروژه و مسیر فعلی کاربران، مشخص می‌کنیم کدام نیازها در اولویت‌اند و نسخهٔ اول باید چه کاری انجام دهد.'),
+            array('title'=>'طراحی مسیر کاربر','desc'=>'ساختار صفحات یا مراحل انجام کار را طراحی می‌کنیم. پیش از توسعه، مسیرهای اصلی را با نمونهٔ اولیه مرور می‌کنیم.'),
+            array('title'=>'ساخت و یکپارچه‌سازی','desc'=>'رابط و قابلیت‌ها را پیاده می‌کنیم و ارتباطشان با محتوا، داده و بخش‌های دیگر پروژه را در محیط آزمایشی بررسی می‌کنیم.'),
+            array('title'=>'آزمون و انتشار','desc'=>'مسیرهای اصلی را روی دستگاه‌های هدف بررسی می‌کنیم، ایرادهای ضروری را رفع می‌کنیم و نسخهٔ آمادهٔ انتشار را تحویل می‌دهیم.'),
+        ),
+    );
+});
+
 add_filter('radmanct/services/faq',static function():array {
  return array(
   array(__('What are the steps in a design project?','radmanct'),__('We start by understanding your goals, then plan the structure, design the interface, review your feedback, and prepare the project for launch.','radmanct')),

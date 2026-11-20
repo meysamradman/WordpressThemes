@@ -1,4 +1,4 @@
-.rdc-ftr { --rdc-ctr:100%; position:relative; isolation:isolate; overflow:clip; background:var(--rdc-clr-ink); color:var(--rdc-ink); padding-block:clamp(2rem,4vw,4rem) 1.25rem; }
+.rdc-ftr { position:relative; isolation:isolate; overflow:clip; background:var(--rdc-clr-ink); color:var(--rdc-ink); padding-block:clamp(2rem,4vw,4rem) 1.25rem; }
 .rdc-ftr__bg { position:absolute; z-index:-2; inset:0; inline-size:100%; block-size:100%; max-inline-size:none; object-fit:cover; object-position:center; opacity:.10; pointer-events:none; }
 .rdc-ftr__nav { padding-block-end:1.5rem; border-block-end:1px solid var(--rdc-ln); }
 .rdc-ftr__menu { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.75rem 2rem; list-style:none; }

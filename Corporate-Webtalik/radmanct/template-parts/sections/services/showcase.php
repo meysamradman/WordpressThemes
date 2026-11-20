@@ -1,5 +1,5 @@
 <?php defined('ABSPATH')||exit;$items=\RadmanCT\Services\items();$count=wp_count_posts('project'); ?>
-<section class="rdc-ctr rdc-svc-show" data-rdc-svc-show aria-labelledby="services-showcase-title">
+<section class="rdc-ctr rdc-ctr--full rdc-svc-show" data-rdc-svc-show aria-labelledby="services-showcase-title">
  <header class="rdc-heading">
   <div class="rdc-heading__inr">
    <p class="rdc-heading__lbl"><?php esc_html_e('Services','radmanct'); ?><?php echo \RadmanCT\icon('arrow-up-right'); ?></p>

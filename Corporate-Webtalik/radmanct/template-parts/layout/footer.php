@@ -1,7 +1,7 @@
 <?php defined('ABSPATH')||exit;$footer=\RadmanCT\Footer\data();$privacy=get_privacy_policy_url(); ?>
 <footer class="rdc-ftr rdc-inv">
  <?php $background=\RadmanCT\media_id('footer_background');if($background)echo wp_get_attachment_image($background,'full',false,array('class'=>'rdc-ftr__bg','alt'=>'','aria-hidden'=>'true','loading'=>'lazy','fetchpriority'=>'low','decoding'=>'async','sizes'=>'100vw')); ?>
- <div class="rdc-ctr">
+ <div class="rdc-ctr rdc-ctr--full">
   <nav class="rdc-ftr__nav" aria-label="<?php esc_attr_e('Footer navigation','radmanct'); ?>">
    <?php if(has_nav_menu('footer'))wp_nav_menu(array('theme_location'=>'footer','container'=>false,'fallback_cb'=>false,'menu_class'=>'rdc-ftr__menu','depth'=>1));else{ ?>
    <ul class="rdc-ftr__menu"><?php foreach($footer['links'] as $link): ?><li><a href="<?php echo esc_url($link['url']); ?>"><?php echo esc_html($link['title']); ?></a></li><?php endforeach; ?></ul>

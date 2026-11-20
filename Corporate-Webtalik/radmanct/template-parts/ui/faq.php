@@ -5,7 +5,7 @@ if(!$questions)return;
 $group=wp_unique_id('rdc-faq-');
 $heading=$group.'-ttl';
 ?>
-<section class="rdc-faq rdc-ctr" aria-labelledby="<?php echo esc_attr($heading); ?>">
+<section class="rdc-faq rdc-ctr rdc-ctr--full" aria-labelledby="<?php echo esc_attr($heading); ?>">
  <header class="rdc-heading rdc-heading--stack">
   <div class="rdc-heading__inr">
    <p class="rdc-heading__lbl"><?php echo esc_html($args['label']??__('FAQ','radmanct')); ?><?php echo \RadmanCT\icon('arrow-up-right'); ?></p>

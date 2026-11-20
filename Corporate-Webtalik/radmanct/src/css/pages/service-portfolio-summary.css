@@ -3,6 +3,7 @@
 @import '../ui/project-list.css';
 @import '../ui/service-intro.css';
 @import '../ui/service-process.css';
+@import './service-sticky-rows.css';
 
 .rdc-work-summary { --rdc-ctr:106.5rem; padding-block:clamp(3.5rem,8vw,8rem) clamp(3rem,6vw,6rem); }
 .rdc-work-summary__hdg { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }

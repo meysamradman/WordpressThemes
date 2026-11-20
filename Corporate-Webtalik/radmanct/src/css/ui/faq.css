@@ -1,5 +1,5 @@
 @import './section-heading.css';
-.rdc-faq { --rdc-ctr:100%; display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr); align-items:start; gap:clamp(2rem,6vw,7rem); padding-block:clamp(2.5rem,5vw,5rem) var(--rdc-sp); }
+.rdc-faq { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr); align-items:start; gap:clamp(2rem,6vw,7rem); padding-block:clamp(2.5rem,5vw,5rem) var(--rdc-sp); }
 .rdc-faq__inr { display:grid; min-inline-size:0; gap:clamp(1rem,2vw,2.25rem); }
 @media (max-width:1023px) { .rdc-faq { grid-template-columns:minmax(0,1fr); } }
 .rdc-faq__itm { border:1px solid var(--rdc-ln); border-radius:var(--rdc-rad); }

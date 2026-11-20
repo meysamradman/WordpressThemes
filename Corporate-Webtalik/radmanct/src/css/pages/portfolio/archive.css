@@ -1,6 +1,5 @@
 
 @import '../../ui/project-card.css';
-.rdc-prj-arc { --rdc-ctr:100%; }
 .rdc-prjs { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(1.25rem,3vw,2.5rem); }
 .rdc-prjs-pg { display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-block-start: clamp(2rem,5vw,4rem); }
 .rdc-prjs-pg[hidden] { display: none; }

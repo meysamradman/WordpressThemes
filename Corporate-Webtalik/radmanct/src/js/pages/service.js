@@ -1,5 +1,8 @@
 import {createPageLifecycle} from '../runtime/lifecycle.js';
 const page=createPageLifecycle(window);
+for(const root of document.querySelectorAll('[data-rdc-stk-rows]')){
+ page.mountRoot(root,'service-sticky-rows',()=>import('./service-sticky-rows.js'),({mountServiceRows})=>mountServiceRows(root));
+}
 for(const root of document.querySelectorAll('[data-rdc-svc-intro]')){
  page.mountRoot(root,'service-intro',()=>import('../ui/service-intro.js'),({initializeServiceIntro})=>initializeServiceIntro(root));
 }
