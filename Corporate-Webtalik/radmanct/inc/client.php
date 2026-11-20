@@ -24,7 +24,13 @@ add_filter('radmanct/service/mosaic',static function(array $data):array {
  );
  $title='وب‌سایتی که برای کسب‌وکار شما ساخته می‌شود';
  $description='از شناخت نیاز و طراحی تجربهٔ کاربری تا توسعه و راه‌اندازی؛ هر بخش بر اساس هویت برند و هدف کسب‌وکار شما شکل می‌گیرد.';
+ $display_heading=is_page('custom-website-design-development');
  $details=array(
+  'custom-website-design-development'=>array('وب‌سایتی اختصاصی، متناسب با نیاز کسب‌وکار شما','در طراحی وب‌سایت اختصاصی، ساختار صفحات، امکانات و تجربه کاربری بر اساس نیاز هر پروژه شکل می‌گیرد. هدف، ساخت وب‌سایتی است که علاوه بر ظاهر حرفه‌ای، استفاده آسان، مدیریت مناسب و امکان توسعه در آینده را فراهم کند.',array(
+   array(array('رابط کاربری','اختصاصی و هدفمند'),'ساختار صفحات، مسیرهای دسترسی و عناصر تعاملی با توجه به نیاز کاربران طراحی می‌شوند تا بازدیدکنندگان بتوانند راحت‌تر خدمات، اطلاعات و امکانات موردنظرشان را پیدا کنند.'),
+   array(array('امکانات سفارشی','و توسعه‌پذیر'),'از فرم‌ها و پنل‌های مدیریتی تا قابلیت‌های تخصصی، امکانات وب‌سایت متناسب با نیاز پروژه و با ساختاری پیاده‌سازی می‌شوند که امکان افزودن قابلیت‌های جدید را فراهم کند.'),
+   array(array('تجربه کاربری','در همه دستگاه‌ها'),'صفحات و اجزای وب‌سایت به‌صورت واکنش‌گرا طراحی می‌شوند تا کاربران در موبایل، تبلت و دسکتاپ، محتوایی خوانا، دسترسی مناسب و تجربه‌ای یکپارچه داشته باشند.'),
+   array(array('مدیریت آسان','و ساختار بهینه'),'مدیریت محتوا و بخش‌های قابل‌ویرایش سایت متناسب با نیاز پروژه طراحی می‌شود. همچنین ساختار فنی با توجه به اصول عملکرد، دسترس‌پذیری و بهینه‌سازی برای موتورهای جست‌وجو پیاده‌سازی خواهد شد.'))),
   'specialized-wordpress-design-development'=>array('وردپرسی متناسب با نیاز کسب‌وکار شما','طراحی، توسعه و بهینه‌سازی وردپرس با ساختاری قابل نگهداری؛ از تجربهٔ کاربری تا مدیریت محتوای روزمره.',array(
    array(array('طراحی با هویت','برند شما'),'صفحه‌ها و رابط کاربری با توجه به مخاطب، محتوا و شخصیت برند شما طراحی می‌شوند.'),
    array(array('توسعهٔ قابلیت‌های','اختصاصی'),'امکانات موردنیاز پروژه با ساختاری روشن و قابل توسعه در وردپرس پیاده‌سازی می‌شوند.'),
@@ -46,8 +52,8 @@ add_filter('radmanct/service/mosaic',static function(array $data):array {
   foreach($detail[2] as $index=>$text){$copy[$index][0]=$text[0];$copy[$index][1]=$text[1];}
   break;
  }
- $items=array();foreach($copy as $row)$items[]=array('title'=>implode(' ',$row[0]),'title_lines'=>$row[0],'desc'=>$row[1],'image'=>$row[2],'video'=>$row[3],'link'=>'دربارهٔ پروژه‌ات بگو','url'=>$url);
- return array('label'=>'از ایده تا اجرا','title'=>$title,'desc'=>$description,'items'=>$items);
+ $items=array();foreach($copy as $row)$items[]=array('title'=>implode(' ',$row[0]),'title_lines'=>$row[0],'desc'=>$row[1],'image'=>$row[2],'video'=>$row[3],'link'=>'دربارهٔ پروژه‌ات بگو','url'=>$display_heading?'':$url);
+ return array('label'=>'از ایده تا اجرا','title'=>$title,'desc'=>$description,'items'=>$items,'display_heading'=>$display_heading);
 });
 add_filter('radmanct/seo/description',static function(string $description):string {
  if(\RadmanCT\SEO\plain($description)!=='')return $description;

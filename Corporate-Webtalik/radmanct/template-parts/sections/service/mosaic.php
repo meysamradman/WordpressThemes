@@ -9,8 +9,8 @@ $heading=wp_unique_id('rdc-mosaic-ttl-');
  <div class="rdc-mosaic__inr">
   <header class="rdc-heading">
    <div class="rdc-heading__inr">
-    <p class="rdc-heading__lbl"><?php echo esc_html($data['label']); ?><?php echo \RadmanCT\icon('arrow-up-right'); ?></p>
-    <h2 class="rdc-heading__ttl" id="<?php echo esc_attr($heading); ?>"><?php echo esc_html($data['title']); ?></h2>
+    <span class="rdc-heading__lbl"><?php echo esc_html($data['label']); ?><?php echo \RadmanCT\icon('arrow-up-right'); ?></span>
+    <h2 class="rdc-heading__ttl<?php if(!empty($data['display_heading']))echo ' rdc-dsp-ttl'; ?>" id="<?php echo esc_attr($heading); ?>"><?php echo esc_html($data['title']); ?></h2>
    </div>
    <?php if(!empty($data['desc'])): ?><p class="rdc-heading__desc"><?php echo esc_html($data['desc']); ?></p><?php endif; ?>
   </header>
