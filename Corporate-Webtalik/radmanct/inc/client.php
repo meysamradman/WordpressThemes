@@ -81,6 +81,11 @@ add_filter('body_class',static function(array $classes):array {
  if(is_page('services')||\RadmanCT\Services\is_detail())$classes[]='rdc-inv';
  return $classes;
 });
+add_filter('radmanct/breadcrumb/section-page',static function(string $slug):string {
+ if(\RadmanCT\Services\is_detail())return 'services';
+ if(is_page(['custom-real-estate-platform','custom-e-commerce-platform','custom-corporate-website']))return 'products';
+ return $slug;
+});
 add_filter('radmanct/page-title/enabled',static function(bool $enabled):bool {
  $services=array_column(apply_filters('radmanct/services/specs',array()),'slug');
  return $enabled&&is_page(array_merge(array('services','contact-us','about-us'),$services));
@@ -101,7 +106,14 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
   if(is_page($service['slug'])){$description=$service['description'];break;}
  }
  if(is_page('custom-website-design-development')){
-  $data['desc']='وب‌سایت کسب‌وکار شما را با طراحی اختصاصی و برنامه‌نویسی از صفر توسعه می‌دهیم. رابط کاربری را با Next.js و React می‌سازیم و در صورت نیاز، بک‌اند و APIهای اختصاصی را با Django یا FastAPI توسعه می‌دهیم. عملکرد، امنیت و امکان توسعهٔ آینده را بر اساس نیازهای پروژه در نظر می‌گیریم.';
+  $data['subheading']='وب‌سایتی فراتر از یک قالب آماده، متناسب با اهداف کسب‌وکار شما';
+  $data['desc']='در وبتالیک، وب‌سایت شما بر اساس نیازهای واقعی کسب‌وکارتان طراحی و توسعه داده می‌شود. از طراحی رابط کاربری و تجربه کاربری تا برنامه‌نویسی اختصاصی، بهینه‌سازی فنی و پیاده‌سازی امکانات موردنیاز، با تمرکز بر عملکرد، توسعه‌پذیری و تجربه‌ای حرفه‌ای برای کاربران.';
+  $data['button']['label']='مشاوره طراحی سایت';
+  $data['link']=array(
+   'label'=>'مشاهده نمونه‌کارها',
+   'url'=>get_post_type_archive_link('project')?:'',
+   'variant'=>'outline',
+  );
   $data['media_inset']=true;
   $data['media_flat']=true;
   $data['art_draw']=true;

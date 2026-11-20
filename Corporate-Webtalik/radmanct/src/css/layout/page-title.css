@@ -37,6 +37,11 @@
 .rdc-pt__lead { display:flex; align-items:center; flex-wrap:wrap; gap:1.25rem 1.5rem; margin-block-start:1.25rem; }
 .rdc-pt--cover .rdc-pt__desc { flex:0 1 24rem; max-inline-size:38ch; opacity:.85; }
 .rdc-pt--cover .rdc-pt__acts { flex:none; margin:0; }
+.rdc-pt--inset.rdc-pt--stack { block-size:auto; min-block-size:100vh; min-block-size:100svh; }
+.rdc-pt--cover .rdc-pt__sub { max-inline-size:none; margin-block-start:.5rem; color:var(--rdc-acc); font-size:clamp(1.125rem,1.7vw,1.5rem); font-weight:var(--rdc-wt-hdg); opacity:1; }
+.rdc-pt--stack .rdc-pt__lead { flex-direction:column; align-items:flex-start; margin-block-start:1rem; }
+.rdc-pt--stack .rdc-pt__desc { flex:none; inline-size:100%; max-inline-size:none; color:var(--rdc-mut); font-size:1rem; font-weight:var(--rdc-wt-body); line-height:var(--rdc-ln-ht-body); opacity:1; }
+.rdc-pt--stack .rdc-pt__acts { gap:.75rem; max-inline-size:100%; }
 .rdc-pt--cover .rdc-pt__lbl { display:flex; align-items:center; gap:.75rem; color:var(--rdc-acc); }
 .rdc-pt--cover .rdc-pt__lbl::before { content:''; inline-size:1.75rem; block-size:1px; background:currentColor; }
 .rdc-pt__play { position:absolute; inset-inline-end:var(--rdc-gut); inset-block-end:1rem; display:grid; place-items:center; padding:.65rem; color:inherit; background:var(--rdc-clr-ink); border:1px solid var(--rdc-clr-ln-inv); border-radius:50%; }

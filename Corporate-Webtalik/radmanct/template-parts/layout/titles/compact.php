@@ -2,6 +2,7 @@
 <header class="rdc-mini rdc-inv">
  <?php if($artwork): ?><img class="rdc-mini__art" src="<?php echo esc_url($artwork[0]); ?>" width="<?php echo (int)$artwork[1]; ?>" height="<?php echo (int)$artwork[2]; ?>" alt=""><?php endif; ?>
  <div class="rdc-mini__copy">
+  <?php \RadmanCT\Breadcrumb\render(\RadmanCT\Breadcrumb\data($data['title'])); ?>
   <?php if($data['label']!==''): ?><p class="rdc-mini__lbl"><?php echo esc_html($data['label']); ?></p><?php endif; ?>
   <h1 class="rdc-mini__ttl"><?php echo esc_html($data['title']); ?><?php if($data['accent']!==''): ?> <span class="rdc-mini__acc"><?php echo esc_html($data['accent']); ?></span><?php endif; ?></h1>
   <?php if($data['desc']!==''): ?><p class="rdc-mini__desc"><?php echo esc_html($data['desc']); ?></p><?php endif; ?>
