@@ -75,3 +75,12 @@ Meta Description دقیق هر صفحه در ابتدای همان فایل نو
 - [SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
 - [SEO Link Best Practices](https://developers.google.com/search/docs/crawling-indexing/links-crawlable)
 - [Title Links in Search](https://developers.google.com/search/docs/appearance/title-link)
+
+
+## افزوده نسخه 1.4 — مرزبندی محصولات
+
+- `13-products-index.md`: نیت برندمحور «محصولات نرم‌افزاری وبتالیک»، نه کسب رتبه برای همه عبارت‌های عمومی «خرید نرم‌افزار».
+- `14-product-admin-panel.md`: نیت معرفی محصول واقعی «پنل مدیریت وبتالیک»، نه جایگزینی لندینگ خدمت `03-admin-panel-web-app.md`.
+- لینک‌های دوطرفه خدمات ↔ محصولات و محصولات ↔ پنل، مطابق `15-products-seo-linkmap.md`.
+- عبارت «طراحی پنل مدیریت اختصاصی» هدف صفحه خدمت است؛ استفاده طبیعی در انکر لینک از محصول اشکالی ندارد، ولی کل متن محصول نباید به صفحه خدمت دوم تبدیل شود.
+- URLهای قدیمی فروشگاه آموزش با URL محصولات نرم‌افزاری جدید یکسان تلقی نشوند.
