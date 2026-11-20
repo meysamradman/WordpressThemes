@@ -31,6 +31,7 @@
   let entryInput;
   let destination;
   let navigating = false;
+  const animationFallback = 850;
 
   function reset() {
     const entered = root.classList.contains('is-in');
@@ -90,7 +91,7 @@
     destination = url.href;
     root.classList.add('is-out');
     root.hidden = false;
-    timeout = setTimeout(navigate, 450);
+    timeout = setTimeout(navigate, animationFallback);
   });
 
   if (shouldEnter) {
@@ -100,6 +101,6 @@
     document.addEventListener('keydown', reset, options);
     root.classList.add('is-in');
     root.hidden = false;
-    timeout = setTimeout(reset, 650);
+    timeout = setTimeout(reset, animationFallback);
   }
 })();

@@ -1,6 +1,5 @@
 #rdc-pre {
-  --rdc-pre-in: .5s;
-  --rdc-pre-out: .3s;
+  --rdc-pre-motion: .7s cubic-bezier(.87, 0, .13, 1);
   position: fixed;
   inset: 0;
   z-index: 9996;
@@ -9,8 +8,8 @@
   transform: translateY(100%);
 }
 #rdc-pre[hidden] { display:none; }
-#rdc-pre.is-in { animation: rdc-pre-in var(--rdc-pre-in) cubic-bezier(.65, 0, .25, 1) both; }
-#rdc-pre.is-out { animation: rdc-pre-out var(--rdc-pre-out) cubic-bezier(.65, 0, .25, 1) both; }
+#rdc-pre.is-in { animation: rdc-pre-in var(--rdc-pre-motion) both; }
+#rdc-pre.is-out { animation: rdc-pre-out var(--rdc-pre-motion) both; }
 @keyframes rdc-pre-in {
   from { transform: translateY(0); }
   to { transform: translateY(-100%); }
@@ -18,8 +17,5 @@
 @keyframes rdc-pre-out {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
-}
-@media (max-width: 767px) {
-  #rdc-pre { --rdc-pre-in: .38s; --rdc-pre-out: .24s; }
 }
 @media (prefers-reduced-motion:reduce) { #rdc-pre { display:none; } }

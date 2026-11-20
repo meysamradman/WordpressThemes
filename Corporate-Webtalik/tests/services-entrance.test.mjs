@@ -7,7 +7,7 @@ test('only the active pinned service plays its timed entrance; other panels rema
  view.innerWidth=1440;view.innerHeight=900;view.matchMedia=q=>q.includes('prefers-reduced-motion:reduce')?reduced:media;
  view.getComputedStyle=()=>({position:'static'});view.requestAnimationFrame=fn=>{scheduled=fn;return 1;};view.cancelAnimationFrame=()=>{scheduled=undefined;};
  view.IntersectionObserver=class{constructor(fn){this.fn=fn;}observe(root){observed.push({root,show:()=>this.fn([{isIntersecting:true}])});}disconnect(){}};
- doc.defaultView=view;doc.querySelectorAll=()=>[];doc.getElementById=()=>null;
+ doc.defaultView=view;doc.querySelectorAll=()=>[];doc.querySelector=()=>null;
  const classes=()=>({contains:name=>name==='rdc-ss__itm',add(){},remove(){},toggle(){}});
  const items=Array.from({length:4},(_,index)=>{
   const item=Object.assign(new EventTarget(),{ownerDocument:doc,isConnected:true,classList:classes()});const inner={offsetHeight:500};const title={index};
