@@ -5,7 +5,7 @@ if(!$more)return;
 $has_related=$more['related']&&$more['related']->have_posts();
 if(!$more['previous']&&!$more['next']&&!$has_related)return;
 ?>
-<div class="rdc-sgl-more rdc-ctr">
+<div class="rdc-sgl-more rdc-ctr<?php if(!$more['project'])echo ' rdc-ctr--read'; ?>">
  <?php if($more['previous']||$more['next']): ?>
  <nav class="rdc-sgl-more__nav" aria-label="<?php esc_attr_e('Previous and next','radmanct'); ?>">
   <?php foreach(array('previous','next') as $direction): $item=$more[$direction];if(!$item instanceof WP_Post)continue;$previous=$direction==='previous'; ?>

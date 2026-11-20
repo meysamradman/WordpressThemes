@@ -10,7 +10,7 @@ $image=wp_get_attachment_image($study['image'],'large',false,[
 ]);
 if(!$image)return;
 ?>
-<section class="rdc-ctr rdc-svc-case" aria-labelledby="rdc-svc-case-ttl">
+<section class="rdc-ctr rdc-ctr--wide rdc-svc-case" aria-labelledby="rdc-svc-case-ttl">
  <header class="rdc-heading rdc-heading--stack">
   <div class="rdc-heading__inr">
    <p class="rdc-heading__lbl"><?php esc_html_e('نگاهی به یک نمونه‌کار','radmanct'); ?></p>

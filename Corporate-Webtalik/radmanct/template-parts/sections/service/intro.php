@@ -3,7 +3,7 @@ defined('ABSPATH')||exit;
 $data=apply_filters('radmanct/service/intro',[]);
 if(empty($data['title'])||empty($data['cards']))return;
 ?>
-<section class="rdc-ctr rdc-svc-intro" id="rdc-svc-intro" aria-labelledby="rdc-svc-intro-ttl" data-rdc-svc-intro>
+<section class="rdc-ctr rdc-ctr--wide rdc-svc-intro" id="rdc-svc-intro" aria-labelledby="rdc-svc-intro-ttl" data-rdc-svc-intro>
  <header class="rdc-heading rdc-svc-intro__hdg">
   <span class="rdc-heading__lbl"><?php echo \RadmanCT\icon('arrow-up-right'); ?><?php echo esc_html($data['label']); ?></span>
   <h2 class="rdc-heading__ttl rdc-dsp-ttl" id="rdc-svc-intro-ttl"><?php echo esc_html($data['title']); ?></h2>

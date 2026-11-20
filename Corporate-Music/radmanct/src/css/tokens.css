@@ -95,6 +95,7 @@
   --rdc-rad-lg:1.5rem;
   --rdc-rad-xl:2rem;
   --rdc-ctr:1300px;
+  --rdc-ctr-read:75rem;
   --rdc-gut:clamp(1.25rem,3.15vw,3.75rem);
   --rdc-sp:clamp(3rem,6vw,6rem);
   --rdc-bg:var(--rdc-clr-wht);

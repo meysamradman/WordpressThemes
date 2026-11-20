@@ -3,7 +3,7 @@ defined('ABSPATH')||exit;
 $data=apply_filters('radmanct/service/process',[]);
 if(empty($data['title'])||empty($data['steps']))return;
 ?>
-<section class="rdc-ctr rdc-svc-process" id="rdc-svc-process" aria-labelledby="rdc-svc-process-ttl">
+<section class="rdc-ctr rdc-ctr--wide rdc-svc-process" id="rdc-svc-process" aria-labelledby="rdc-svc-process-ttl">
  <header class="rdc-heading">
   <div class="rdc-heading__inr">
    <span class="rdc-heading__lbl"><?php echo \RadmanCT\icon('arrow-up-right'); ?><?php esc_html_e('قدم‌به‌قدم','radmanct'); ?></span>

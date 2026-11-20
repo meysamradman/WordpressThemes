@@ -1,4 +1,4 @@
-.rdc-svc-process { --rdc-ctr:106.5rem; padding-block:clamp(3rem,6vw,6rem); }
+.rdc-svc-process { padding-block:clamp(3rem,6vw,6rem); }
 .rdc-svc-process__list { margin:0; padding:0; list-style:none; border-block-end:1px solid var(--rdc-ln); }
 .rdc-svc-process__itm {
  display:grid;

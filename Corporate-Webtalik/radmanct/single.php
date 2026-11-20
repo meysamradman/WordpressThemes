@@ -1,6 +1,6 @@
 <?php defined('ABSPATH')||exit;get_header(); ?>
 <main id="main-content" tabindex="-1"><?php get_template_part('template-parts/layout/page-title'); ?>
-<div class="rdc-ctr rdc-main rdc-cnt-ly rdc-blog-sgl"><?php while(have_posts()):the_post(); ?>
+<div class="rdc-ctr rdc-ctr--read rdc-main rdc-cnt-ly rdc-blog-sgl"><?php while(have_posts()):the_post(); ?>
 <article <?php post_class('rdc-cnt'); ?>><?php get_template_part('template-parts/ui/content-heading'); ?><?php if(post_password_required()){echo get_the_password_form();}else{ ?>
 <a class="rdc-sgl__back" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"><?php esc_html_e('Back to articles','radmanct'); ?></a><div class="rdc-post-meta"><?php get_template_part('template-parts/blog/meta'); ?></div>
 <?php if(has_excerpt())the_excerpt();the_content();wp_link_pages();} ?></article>

@@ -1,8 +1,4 @@
-@import '../../ui/card-preview.css';
-@import './cards.css';
 @import '../../layout/continuation.css';
-.rdc-blog-sgl,.single-post .rdc-sgl-more { --rdc-ctr:75rem; }
-.rdc-blog-sgl > .rdc-cnt { min-inline-size:0; }
 .rdc-artc-cvr { padding:1rem; color:var(--rdc-ink); }
 .rdc-artc-cvr__md { position:relative; margin:0 0 4rem; }
 .rdc-artc-cvr__im { display:block; inline-size:100%; block-size:auto; aspect-ratio:1; object-fit:cover; border-radius:clamp(1.5rem,3vw,2.75rem); box-shadow:-1rem 0 3rem color-mix(in srgb,var(--rdc-acc) 15%,transparent); }

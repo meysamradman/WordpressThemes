@@ -3,7 +3,7 @@ defined('ABSPATH')||exit;
 $projects=$args['projects']??[];
 if(!$projects)return;
 ?>
-<section class="rdc-ctr rdc-prj-list" id="rdc-prj-list" aria-label="نمونه‌کارهای اخیر" data-rdc-prj-list>
+<section class="rdc-ctr rdc-ctr--wide rdc-prj-list" id="rdc-prj-list" aria-label="نمونه‌کارهای اخیر" data-rdc-prj-list>
  <ul class="rdc-prj-list__rows">
   <?php foreach($projects as $project):
    $image_id=(int)get_post_thumbnail_id($project);

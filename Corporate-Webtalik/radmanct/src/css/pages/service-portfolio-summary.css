@@ -5,7 +5,7 @@
 @import '../ui/service-process.css';
 @import './service-sticky-rows.css';
 
-.rdc-work-summary { --rdc-ctr:106.5rem; padding-block:clamp(3.5rem,8vw,8rem) clamp(3rem,6vw,6rem); }
+.rdc-work-summary { padding-block:clamp(3.5rem,8vw,8rem) clamp(3rem,6vw,6rem); }
 .rdc-work-summary__hdg { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
 .rdc-work-summary__stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(6rem,1fr)); gap:1.25rem; margin:0; }
 .rdc-work-summary__stats > div { display:flex; flex-direction:column-reverse; gap:.25rem; }
@@ -19,7 +19,6 @@
 .rdc-work-summary__link:is(:hover,:focus-visible) { color:var(--rdc-acc); }
 
 .rdc-svc-case {
- --rdc-ctr:106.5rem;
  display:grid;
  gap:2rem clamp(2rem,4vw,4.5rem);
  padding-block:clamp(3rem,6vw,6rem);

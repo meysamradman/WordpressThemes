@@ -3,7 +3,7 @@ defined('ABSPATH')||exit;
 require_once get_template_directory().'/inc/ui/text-marquee.php';
 $summary=$args['summary'];
 ?>
-<section class="rdc-ctr rdc-work-summary" aria-labelledby="rdc-work-summary-ttl">
+<section class="rdc-ctr rdc-ctr--wide rdc-work-summary" aria-labelledby="rdc-work-summary-ttl">
  <div class="rdc-heading rdc-work-summary__hdg">
   <div class="rdc-heading__inr">
    <p class="rdc-heading__lbl"><?php echo \RadmanCT\icon('arrow-up-right'); ?>کارنامهٔ وب‌تالیک</p>

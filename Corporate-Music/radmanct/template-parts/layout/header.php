@@ -1,5 +1,5 @@
 <?php defined('ABSPATH')||exit;$logo=\RadmanCT\media_id('logo'); ?>
-<header id="rdc-page-st" class="rdc-hdr rdc-inv"><div class="rdc-hdr__inr">
+<header id="rdc-page-st" class="rdc-hdr rdc-inv"><div class="rdc-hdr__inr rdc-ctr">
  <button type="button" class="rdc-menu-tgl" data-rdc-menu-open aria-haspopup="dialog" aria-controls="rdc-menu-dlg" aria-expanded="false" aria-label="بازکردن فهرست"><?php echo \RadmanCT\icon('menu'); ?></button>
  <div class="rdc-hdr__brd"><a class="rdc-brd" href="<?php echo esc_url(home_url('/')); ?>"><?php if($logo)echo \RadmanCT\brand_logo($logo);else echo esc_html(get_bloginfo('name')); ?></a></div>
  <nav class="rdc-nav-desk" data-rdc-menu data-menu-hover="roll" aria-label="فهرست اصلی"><?php wp_nav_menu(array('theme_location'=>'primary','container'=>false,'fallback_cb'=>false,'menu_class'=>'rdc-menu','depth'=>2)); ?></nav>

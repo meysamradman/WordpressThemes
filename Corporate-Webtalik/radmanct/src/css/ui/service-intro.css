@@ -1,4 +1,4 @@
-.rdc-svc-intro { --rdc-ctr:106.5rem; padding-block:clamp(3rem,6vw,6.25rem); }
+.rdc-svc-intro { padding-block:clamp(3rem,6vw,6.25rem); }
 .rdc-svc-intro .rdc-svc-intro__hdg { display:block; max-inline-size:75rem; margin-block-end:clamp(2.75rem,6vw,6rem); }
 .rdc-svc-intro__hdg .rdc-heading__ttl { max-inline-size:none; font-size:clamp(1.85rem,2.85vw,3.5rem); line-height:1.45; }
 .rdc-svc-intro .rdc-svc-intro__hdg .rdc-heading__ttl { background:none; color:var(--rdc-ink); }
