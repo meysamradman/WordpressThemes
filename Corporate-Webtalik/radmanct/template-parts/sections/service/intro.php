@@ -2,27 +2,16 @@
 defined('ABSPATH')||exit;
 $data=apply_filters('radmanct/service/intro',[]);
 if(empty($data['title'])||empty($data['cards']))return;
-$projects=array_slice($args['projects']??[],0,5);
 ?>
 <section class="rdc-ctr rdc-svc-intro" id="rdc-svc-intro" aria-labelledby="rdc-svc-intro-ttl" data-rdc-svc-intro>
  <header class="rdc-heading rdc-svc-intro__hdg">
-  <p class="rdc-heading__lbl"><?php echo \RadmanCT\icon('arrow-up-right'); ?><?php echo esc_html($data['label']); ?></p>
-  <h2 class="rdc-heading__ttl" id="rdc-svc-intro-ttl"><?php echo esc_html($data['title']); ?></h2>
-  <?php echo \RadmanCT\button('گفت‌وگو دربارهٔ پروژه', $data['link'],['class'=>'rdc-svc-intro__cta']); ?>
+  <span class="rdc-heading__lbl"><?php echo \RadmanCT\icon('arrow-up-right'); ?><?php echo esc_html($data['label']); ?></span>
+  <h2 class="rdc-heading__ttl rdc-dsp-ttl" id="rdc-svc-intro-ttl"><?php echo esc_html($data['title']); ?></h2>
+  <?php echo \RadmanCT\button($data['cta'], $data['link'],['class'=>'rdc-svc-intro__cta']); ?>
  </header>
  <div class="rdc-svc-intro__grid">
   <div class="rdc-svc-intro__lead">
    <p><?php echo esc_html($data['lead']); ?></p>
-   <?php if($projects): ?>
-    <a class="rdc-svc-intro__work" href="<?php echo esc_url(get_post_type_archive_link('project')); ?>">
-     <span class="rdc-svc-intro__previews" aria-hidden="true">
-      <?php foreach($projects as $project): $id=(int)get_post_thumbnail_id($project);
-       if(\RadmanCT\PageTitle\attachment_allowed($id))echo wp_get_attachment_image($id,'thumbnail',false,['alt'=>'','loading'=>'lazy','decoding'=>'async','sizes'=>'52px']);
-      endforeach; ?>
-     </span>
-     <span>دیدن نمونه‌کارها</span>
-    </a>
-   <?php endif; ?>
    <div class="rdc-svc-intro__art" aria-hidden="true" data-rdc-intro-art>
     <span></span><span></span><span></span>
    </div>
