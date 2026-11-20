@@ -14,6 +14,18 @@ add_filter('radmanct/service/intro',static function(array $data):array {
   ],
  ];
 });
+add_filter('radmanct/service/process',static function():array {
+ return [
+  'title'=>'مسیر طراحی و توسعه وب‌سایت اختصاصی',
+  'desc'=>'از نخستین گفت‌وگو تا راه‌اندازی، در هر مرحله روشن است چه چیزی بررسی می‌شود، چه خروجی‌ای آماده می‌شود و شما کجا بازخورد می‌دهید.',
+  'steps'=>[
+   ['title'=>'بررسی و تحلیل نیازها','desc'=>'اهداف، مخاطبان، صفحه‌ها و امکانات ضروری را مشخص می‌کنیم تا محدودهٔ اجرا و اولویت‌ها روشن شوند.','result'=>'محدوده و اولویت‌های پروژه','image'=>\RadmanCT\media_id('service-intro-experience')],
+   ['title'=>'طراحی ساختار و رابط کاربری','desc'=>'مسیرهای اصلی، ناوبری و نمونهٔ صفحه‌های کلیدی را طراحی و با بازخورد شما بازبینی می‌کنیم.','result'=>'طرح صفحه‌های کلیدی','image'=>\RadmanCT\media_id('service-intro-design')],
+   ['title'=>'توسعهٔ فرانت‌اند و بک‌اند','desc'=>'صفحه‌ها و تعاملات را پیاده می‌کنیم و در صورت نیاز، API، پایگاه داده و اتصال به سرویس‌ها را توسعه می‌دهیم.','result'=>'نسخهٔ قابل بررسی','image'=>\RadmanCT\media_id('services-web')],
+   ['title'=>'آزمون، انتشار و تحویل','desc'=>'نمایش روی دستگاه‌های مختلف، فرم‌ها، کنترل دسترسی، بارگذاری و موارد مرتبط با سئوی فنی را بررسی می‌کنیم. سپس سایت را در محیط توافق‌شده منتشر می‌کنیم و محدودهٔ پشتیبانی طبق توافق مشخص می‌شود.','result'=>'سایت آمادهٔ استفاده','image'=>\RadmanCT\media_id('services-systems')],
+  ],
+ ];
+});
 add_filter('radmanct/service/mosaic',static function(array $data):array {
  $url=home_url('/contact-us/');
  $copy=array(
