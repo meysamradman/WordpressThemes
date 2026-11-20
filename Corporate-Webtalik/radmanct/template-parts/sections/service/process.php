@@ -6,7 +6,7 @@ if(empty($data['title'])||empty($data['steps']))return;
 <section class="rdc-ctr rdc-ctr--wide rdc-svc-process" id="rdc-svc-process" aria-labelledby="rdc-svc-process-ttl">
  <header class="rdc-heading">
   <div class="rdc-heading__inr">
-   <span class="rdc-heading__lbl"><?php echo \RadmanCT\icon('arrow-up-right'); ?><?php esc_html_e('قدم‌به‌قدم','radmanct'); ?></span>
+   <?php if(!empty($data['label'])): ?><span class="rdc-heading__lbl"><?php echo \RadmanCT\icon('arrow-up-right'); ?><?php echo esc_html($data['label']); ?></span><?php endif; ?>
    <h2 class="rdc-heading__ttl" id="rdc-svc-process-ttl"><?php echo esc_html($data['title']); ?></h2>
   </div>
   <p class="rdc-heading__desc"><?php echo esc_html($data['desc']); ?></p>

@@ -50,7 +50,6 @@ src/css/
 
 ```css
 /* نمونه عمومی؛ رنگ و spacing از سند 16 و توکن‌های پروژه */
-.layout-container { max-inline-size: var(--container-max); margin-inline: auto; padding-inline: var(--gutter); }
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
@@ -58,6 +57,24 @@ src/css/
 }
 .card-grid > * { min-inline-size: 0; }
 .action-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+```
+
+<a id="layout-container"></a>
+
+### کانتینر جعبه‌ای، تمام‌عرض و عرض خواندن
+
+- در هر قالب یک کلاس پایه مالک عرض و تراز کانتینر باشد. سقف جعبه‌ای، فاصلهٔ کنار صفحه (`gutter`) و سقف‌های مشترکِ مصرف‌شده در توکن‌های روت همان قالب تعریف شوند. مقادیر px/rem در پروفایل طراحی مشتری مشخص شوند.
+- حالت تمام‌عرضِ دارای gutter فقط سقف را برمی‌دارد. حالت خواندن و سایر عرض‌های مشترک فقط سقف را تغییر می‌دهند. modifier را روی همان عنصر دارای کلاس پایه قرار دهید. عرض پایه و تراز در CSS صفحه یا هدر دوباره تعریف نشوند. پس‌زمینه یا رسانهٔ لبه‌به‌لبه می‌تواند در لایهٔ بیرونی قرار بگیرد. فاصلهٔ کناری محتوا را یک‌بار اعمال کنید.
+- فهرست وبلاگ، دسته‌بندی و جست‌وجو از همان کانتینر و Grid مشترک محتوا و سایدبار استفاده کنند. بدنهٔ نوشته، قبلی/بعدی و مطالب مرتبط در صورت هم‌عرض بودن یک modifier خواندن داشته باشند. Grid و CSS کارت مشترک در ورودی پایهٔ وبلاگ قرار بگیرند. تنظیمات اختصاصی آرشیو و جزئیات در ورودی همان مسیر بمانند.
+- پس از تغییر، عرض و تراز را در viewport عریض و باریک، در RTL/LTR و در یک مسیر فهرست و جزئیات بررسی کنید. در قالب‌ساز، wrapper و gutter بومی را در صورت برابری دوباره نسازید.
+
+```css
+.layout-container {
+  inline-size: min(calc(100% - 2 * var(--gutter)), var(--container-max));
+  margin-inline: auto;
+}
+.layout-container--full { --container-max: 100%; }
+.layout-container--read { --container-max: var(--container-read-max); }
 ```
 
 ## 3. RTL و CSS مدرن

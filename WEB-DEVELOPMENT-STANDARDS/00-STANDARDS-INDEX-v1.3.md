@@ -19,7 +19,7 @@
 | ID | سند فعال | وضعیت |
 |---|---|---|
 | 01 | [HTML/SEO](shared/01-HTML-SEO-RESPONSIVE-GUIDE-v1.2.md) | موجود؛ راهنمای ترکیبی عمومی قبلی، جزئیات responsive و motion با 03/05 |
-| 02 | [Modern CSS & Minimal DOM](shared/02-CSS-STANDARDS-v1.0.md) | جدید |
+| 02 | [Modern CSS & Minimal DOM](shared/02-CSS-STANDARDS-v1.0.md) | [کانتینر جعبه‌ای، تمام‌عرض و عرض خواندن](shared/02-CSS-STANDARDS-v1.0.md#layout-container) |
 | 03 | [Responsive & RTL](shared/03-RESPONSIVE-DESIGN-STANDARD-v1.0.md) | جدید |
 | 04 | [Vanilla JS](shared/04-VANILLA-JS-DEVELOPMENT-STANDARD-v1.1.md) | موجود؛ scope هماهنگ |
 | 05 | [GSAP](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md) | [انیمیشن ورود عنوان و متن](shared/05-GSAP-ANIMATION-STANDARD-v1.1.md#customer-content-entrance)، جدا از پارالاکس و پرده |
