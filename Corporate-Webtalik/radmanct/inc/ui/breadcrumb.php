@@ -46,7 +46,7 @@ function render(array $items):void {
  $last=array_key_last($items);
  echo '<nav class="rdc-breadcrumb" aria-label="'.esc_attr__('Breadcrumb','radmanct').'"><ol>';
  foreach($items as $index=>$item){
-  if(!isset($item['title']))continue;
+  if(!is_array($item)||!isset($item['title']))continue;
   echo '<li>';
   if($index===$last)echo '<span aria-current="page">'.esc_html($item['title']).'</span>';
   elseif(!empty($item['url']))echo '<a href="'.esc_url($item['url']).'">'.esc_html($item['title']).'</a>';

@@ -8,6 +8,7 @@
 | تایپوگرافی تگ‌ها و بدنه | `src/css/base.css` | Hafez برای H1 و Peyda برای بدنه و H2–H6؛ سطح عنوان از محتوا تعیین شود، نه اندازهٔ بصری. |
 | عنوان سکشن | `src/css/ui/section-heading.css` | دو مدل زیر؛ اشتراک فقط CSS، بدون renderer یا JS جدید. متن در مالک سکشن باقی می‌ماند. |
 | Page Title و H1 محتوایی | `inc/page-title.php`، `template-parts/layout/page-title.php`، `template-parts/ui/content-heading.php` | مستقل از عنوان سکشن؛ cover برای هیروهای فعلی؛ مدل Split حذف شده است؛ عنوان compact برای آرشیو/وبلاگ و برگه‌های بدون هیرو از `inc/compact-title.php` و `layout/titles/compact.php` مصرف می‌شود. جزئیات نوشته/پروژه H1 محتوایی ساده دارند. H1 تکراری اضافه نشود. |
+| مسیر راهنما | `inc/ui/breadcrumb.php` و `src/css/ui/breadcrumb.css` | رندر واحد برای Cover، عنوان جمع‌وجور و بالای عنوان جزئیات. Cover مسیر را سمت متن می‌چیند و عنوان جمع‌وجور آن را وسط‌چین می‌کند. `inc/client.php` والد منطقی خدمات و محصولات را برای مسیرهای مستقل معرفی می‌کند. همان والد از مسیر فیلتر به BreadcrumbList یواست می‌رسد. |
 | دکمه و آیکون CTA | `inc/ui/button.php`، `src/css/ui/button.css` | renderer موجود با گزینه‌های خودش؛ رفتار hover و markup جدا در هر صفحه نسازید. |
 | آیکون‌ها | `inc/icons.php`، `inc/icons/catalog.php`، `src/css/ui/icon.css` | SVG محلی از catalog، اندازه/ضخامت پایه از tokens؛ فقط نماد جهت‌دار در RTL معکوس شود. |
 | متن و پیش‌نمایش کارت | `src/css/ui/card-text.css`، `src/css/ui/card-preview.css`، `src/js/ui/card-preview.js` | متن کامل حفظ شود؛ clamp و رفتار رسانه دوباره نوشته نشوند. برای پخش و منابع، media.md را رعایت کنید. |

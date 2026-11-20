@@ -12,6 +12,7 @@
 }
 .rdc-mini__art { position:absolute; z-index:-1; inset:0; inline-size:100%; block-size:100%; object-fit:cover; pointer-events:none; }
 .rdc-mini__copy { inline-size:100%; max-inline-size:46rem; min-inline-size:0; text-align:center; }
+.rdc-mini .rdc-breadcrumb ol { justify-content:center; }
 .rdc-mini__lbl { display:flex; align-items:center; justify-content:center; gap:.85rem; color:var(--rdc-tx); font-size:.8rem; margin-block-end:.65rem; }
 .rdc-mini__lbl::before,.rdc-mini__lbl::after { content:''; inline-size:2rem; block-size:1px; background:var(--rdc-acc); }
 .rdc-mini .rdc-mini__ttl { font-size:clamp(2.5rem,3.4vw,3.5rem); line-height:1.6; color:var(--rdc-ink); margin:0; overflow-wrap:anywhere; }
