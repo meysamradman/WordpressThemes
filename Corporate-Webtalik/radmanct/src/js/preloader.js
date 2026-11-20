@@ -101,6 +101,7 @@
     document.addEventListener('keydown', reset, options);
     root.classList.add('is-in');
     root.hidden = false;
-    timeout = setTimeout(reset, animationFallback);
+    // Allow the covered pause and the full reveal before failing open.
+    timeout = setTimeout(reset, 1400);
   }
 })();

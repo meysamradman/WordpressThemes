@@ -8,7 +8,8 @@
   transform: translateY(100%);
 }
 #rdc-pre[hidden] { display:none; }
-#rdc-pre.is-in { animation: rdc-pre-in var(--rdc-pre-motion) both; }
+/* Keep the first frame painted during the pause before uncovering the page. */
+#rdc-pre.is-in { animation: rdc-pre-in var(--rdc-pre-motion) .5s both; }
 #rdc-pre.is-out { animation: rdc-pre-out var(--rdc-pre-motion) both; }
 @keyframes rdc-pre-in {
   from { transform: translateY(0); }

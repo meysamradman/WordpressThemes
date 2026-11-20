@@ -100,7 +100,7 @@ test('preserves special links and previously handled interactions', () => {
 
 test('safety timers recover missing animation events and canceled navigation', () => {
   const page = fixture();
-  page.runTimer(850);
+  page.runTimer(1400);
   assert.equal(page.root.hidden, true);
   page.click('/target/');
   page.runTimer(850);
