@@ -73,7 +73,7 @@ export function initializeEntrance(root,{gsap},{viewport=false,manual=false,targ
   });}catch(error){clear();throw error;}
  };
  const start=()=>{
-  if(!alive||!requested||played||preference.matches||!root.isConnected||doc.getElementById('rdc-pre'))return;
+  if(!alive||!requested||played||preference.matches||!root.isConnected||doc.querySelector('#rdc-pre.is-in'))return;
   // If loading already fell back to readable text, never hide it for a late entrance.
   if(gate?.dataset?.rdcEnt==='fallback'){clear();played=true;enteredRoots.add(root);return;}
   if(!targets.length){releaseGate('fallback');return;}
