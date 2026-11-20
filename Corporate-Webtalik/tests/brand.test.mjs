@@ -5,7 +5,7 @@ function fixture(reduced=false){
  const doc=new EventTarget(),preference=new EventTarget();preference.matches=reduced;
  let callback,started=0,disconnected=0;const seen=new Set(),logos=[0,1].map(()=>({toggleAttribute:(name,on)=>on?seen.add(name):seen.delete(name),removeAttribute:name=>seen.delete(name)}));
  const observed=new Set();doc.defaultView=Object.assign(new EventTarget(),{matchMedia:()=>preference,IntersectionObserver:class{constructor(fn){callback=fn;started++;}observe(node){observed.add(node);}unobserve(node){observed.delete(node);}disconnect(){observed.clear();disconnected++;}}});
- let preloader=true;doc.getElementById=()=>preloader?{}:null;doc.querySelectorAll=()=>logos;
+ let preloader=true;doc.querySelector=()=>preloader?{}:null;doc.querySelectorAll=()=>logos;
  return {doc,preference,logos,observed,seen,started:()=>started,disconnected:()=>disconnected,loaded(){preloader=false;doc.dispatchEvent(new Event('rdc:pre-done'));},show(node,visible=true){callback([{target:node,isIntersecting:visible,intersectionRatio:visible?1:0}]);}};
 }
 test('repeating logo motion waits for preloader and runs only while visible',()=>{

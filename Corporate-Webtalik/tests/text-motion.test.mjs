@@ -39,7 +39,7 @@ test('pinned text fill fits its allotted scroll interval without changing shared
 
 function entryFixture(reduced=false){
  const doc=new EventTarget(),media=new EventTarget();media.matches=reduced;doc.defaultView={matchMedia:()=>media};let loading=true,plays=0,reverts=0;
- doc.getElementById=()=>loading?{}:null;const root={ownerDocument:doc,isConnected:true,querySelectorAll:()=>[{}]};
+ doc.querySelector=()=>loading?{}:null;const root={ownerDocument:doc,isConnected:true,querySelectorAll:()=>[{}]};
  const states=[];doc.documentElement={dataset:{}};
  const gsap={set(nodes,state){states.push(state);},context:fn=>{fn();return {add:fn=>fn(),revert(){reverts++;}};},timeline:options=>{assert.equal(options.paused,true);return {fromTo(nodes,from){states.push(from);},play(){plays++;}};}};
  return {doc,media,root,gsap,states,plays:()=>plays,reverts:()=>reverts,ready(){loading=false;doc.dispatchEvent(new Event('rdc:pre-done'));}};
@@ -84,7 +84,7 @@ test('paragraph preset has its own lower entrance and start delay without splitt
 
 test('changing reduced motion restores split heading nodes during an entrance',()=>{
  const f=fixture(),events=new EventTarget(),preference=new EventTarget();preference.matches=false;
- Object.assign(f.root.ownerDocument,{defaultView:{matchMedia:()=>preference},getElementById:()=>null,addEventListener:events.addEventListener.bind(events),removeEventListener:events.removeEventListener.bind(events)});
+ Object.assign(f.root.ownerDocument,{defaultView:{matchMedia:()=>preference},querySelector:()=>null,addEventListener:events.addEventListener.bind(events),removeEventListener:events.removeEventListener.bind(events)});
  f.root.isConnected=true;f.root.querySelectorAll=()=>[f.root];f.root.matches=selector=>selector.startsWith('h1,');
  const gsap={set(){},context:fn=>{fn();return {add:fn=>fn(),revert(){}};},timeline:()=>f.timeline};
  const release=initializeEntrance(f.root,{gsap});assert.notEqual(f.root.childNodes[0],f.first);
@@ -106,7 +106,7 @@ test('entrances prepare autoAlpha zero before the preloader or viewport trigger 
 test('heading parent stays visible while words enter, with one timeline and no revert between prepare and start',()=>{
  const f=fixture(),events=new EventTarget(),preference=Object.assign(new EventTarget(),{matches:false});
  let loading=true,contexts=0,reverts=0,plays=0;const tweens=[];
- Object.assign(f.root.ownerDocument,{defaultView:{matchMedia:()=>preference},documentElement:{dataset:{rdcEnt:'pending'}},getElementById:()=>loading?{}:null,addEventListener:events.addEventListener.bind(events),removeEventListener:events.removeEventListener.bind(events),dispatchEvent:events.dispatchEvent.bind(events)});
+ Object.assign(f.root.ownerDocument,{defaultView:{matchMedia:()=>preference},documentElement:{dataset:{rdcEnt:'pending'}},querySelector:()=>loading?{}:null,addEventListener:events.addEventListener.bind(events),removeEventListener:events.removeEventListener.bind(events),dispatchEvent:events.dispatchEvent.bind(events)});
  f.root.isConnected=true;f.root.querySelectorAll=()=>[f.root];f.root.matches=selector=>selector.startsWith('h1,');
  const apply=(nodes,vars)=>{for(const node of Array.isArray(nodes)?nodes:[nodes])if('autoAlpha' in vars){node.style??={};node.style.opacity=vars.autoAlpha;node.style.visibility=vars.autoAlpha?'inherit':'hidden';}};
  const gsap={set:apply,context(fn){contexts++;fn();return{add:fn=>fn(),revert(){reverts++;}};},timeline(options){assert.equal(options.paused,true);return{fromTo(nodes,from,to){apply(nodes,from);tweens.push({nodes,to});},play(){plays++;for(const {nodes,to}of tweens)apply(nodes,to);}};}};

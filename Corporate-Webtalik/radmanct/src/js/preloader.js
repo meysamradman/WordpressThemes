@@ -70,12 +70,13 @@
     if (preference.matches || event.defaultPrevented || event.button !== 0 ||
         event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     const link = event.target.closest?.('a[href]');
-    if (!link || link.matches('[download], [ping], [attributionsrc], [referrerpolicy], [rel~="external"], [rel~="noreferrer"], [data-rdc-gal], #wpadminbar a')) return;
+    if (!link || typeof link.href !== 'string' || link.matches('[download], [ping], [attributionsrc], [referrerpolicy], [rel~="external"], [rel~="noreferrer"], [data-rdc-gal], #wpadminbar a')) return;
     const target = link.getAttribute('target') ?? document.querySelector('base[target]')?.target;
     if (target && target.toLowerCase() !== '_self') return;
     if (!link.getAttribute('href').trim()) return;
 
-    const url = new URL(link.href);
+    let url;
+    try { url = new URL(link.href); } catch { return; }
     const current = window.location;
     if (url.origin !== current.origin || !/^https?:$/.test(url.protocol) ||
         url.hash || link.getAttribute('href').includes('#') ||
