@@ -1,0 +1,35 @@
+.rdl-pre {
+  --rdl-pre-ease: cubic-bezier(.87, 0, .13, 1);
+  position: fixed;
+  inset: 0;
+  z-index: var(--rdl-pre-z, 9996);
+  background: var(--rdl-pre-bg, #000);
+  pointer-events: none;
+  transform: translateY(100%);
+}
+
+.rdl-pre[hidden] { display: none; }
+
+.rdl-pre.is-in {
+  animation: rdl-pre-in var(--rdl-pre-in, .7s) var(--rdl-pre-ease) var(--rdl-pre-hold, 0s) both;
+}
+
+.rdl-pre.is-out {
+  animation: rdl-pre-out var(--rdl-pre-out, .7s) var(--rdl-pre-ease) both;
+}
+
+.rdl-pre--pause { --rdl-pre-hold: .5s; }
+
+@keyframes rdl-pre-in {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+@keyframes rdl-pre-out {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rdl-pre { display: none; }
+}

@@ -32,6 +32,12 @@
 
 فقط بررسی کوتاهِ تغییر لازم انجام شود. برای تغییر داده/مستندات، benchmark یا تست تکراری مرورگر اجرا نکنید. فایل‌های build، نقشه و catalog بعد از تغییر dependencyها به‌روز شوند؛ منبع مشتری یا نمونهٔ دیگر بازنویسی نشود.
 
+## استایل انتقال صفحه
+
+[page-curtain.css](../radman-library/src/css/ui/page-curtain.css) را فقط در ورودی استایل قالبی import کنید که پرده را انتخاب کرده است. روی یک عنصر ثابت بیرون از wrapper اسکرول از `<div class="rdl-pre" aria-hidden="true" inert hidden></div>` استفاده کنید. افزودن `rdl-pre--pause` مکث ۵۰۰ میلی‌ثانیه‌ای قبل از بازشدن را فعال می‌کند. هر دو حالت برای حرکت پیش‌فرض ۷۰۰ میلی‌ثانیه و منحنی `cubic-bezier(.87, 0, .13, 1)` دارند. رنگ، لایه و مدت ورود و خروج با متغیرهای همان فایل تنظیم می‌شوند.
+
+کنترل‌کنندهٔ ناوبری قالب `hidden` و یکی از حالت‌های `is-out` برای پوشاندن یا `is-in` برای بازشدن را مدیریت می‌کند. پایان `rdl-pre-out` ناوبری را ادامه می‌دهد و پایان `rdl-pre-in` پرده را پنهان می‌کند. برای قطع حرکت و بازیابی تاریخچه از قرارداد [لودینگ سفارشی](../../WEB-DEVELOPMENT-STANDARDS/wordpress-custom/06-LOADING-SYSTEM-v1.1.md) پیروی کنید. منشأ منحنی و مکث، [دموی Azurio](https://demo.artureanec.com/themes/azurio/about-me/) است.
+
 ## کاتالوگ محصول
 `inc/catalog.php` ثبت CPT/طبقه‌بندی/رندر؛ `inc/catalog/model.php` مدل منتخب منبع، `query.php` فیلتر بومی، `admin.php` و `fields.php` ویرایش امن محتوا؛ `src/js/admin/catalog-editor.js` فقط مدیریت محصول. دو ماژول `catalog-archive` و `catalog-single` مالک نمایش و CSS مشترک `src/css/catalog.css` هستند. گالری از مالک کوچک موجود `ui/gallery.js` و `ui/gallery.css` استفاده می‌کند. قرارداد و منشأ در [catalog-products.md](catalog-products.md).
 

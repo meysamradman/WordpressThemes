@@ -38,6 +38,7 @@ src/js/motion/
 
 - `from`/`fromTo` ممکن است وضعیت اولیه را هنگام ایجاد اعمال کنند (`immediateRender`)؛ ساخت هم‌زمان چند tween شروع روی یک property می‌تواند پرش ایجاد کند. قبل از ترکیب timelineها ترتیب را بررسی کن؛ `immediateRender:false` فقط در موارد لازم.
 - پایان واقعی افکت با `onComplete` یا callback مالک هماهنگ شود، نه timer مستقل. در صورت kill/cancel/error نیز مسیر آزادسازی وضعیت داشته باش. افکت مالک ناوبری یا شبکه نیست.
+- برای تطبیق حرکت با مرجع، `easing` (نحوهٔ تغییر سرعت)، `duration` (مدت حرکت) و `delay` یا مکث (مدت ثابت‌ماندن) را جدا ثبت و تست کن. اگر `CustomEase` مرجع چهار مختصات Bézier دارد، برای حرکت سادهٔ CSS همان مقادیر را به `cubic-bezier()` بده. برای منحنی چندبخشی یا مکث واقعی، شکل مسیر یا توقف صریح را هم بررسی کن. قرارداد پرده در [لودینگ سفارشی](../wordpress-custom/06-LOADING-SYSTEM-v1.1.md) است.
 - از `gsap.context()` برای scope و rollback استفاده کن. tweenهایی که بعدها در event یا callback ساخته می‌شوند باید با `context.add()` یا callback مدیریت‌شده ثبت شوند، یا صریحاً kill/revert شوند. برای responsive از `gsap.matchMedia()` (دارای context داخلی) استفاده کن؛ ثبت listener خارجی و timer همچنان cleanup صریح می‌خواهد. استفاده از `killAll()` سراسری در ماژول محلی ممنوع.
 
 ## 3. ScrollTrigger و ScrollSmoother
