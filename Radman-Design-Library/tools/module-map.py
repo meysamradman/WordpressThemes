@@ -28,7 +28,7 @@ for slug,module in registry.items():
     if slug in ['portfolio-archive','portfolio-single']:
         helpers+=['shared/radmanct/inc/content/projects.php','shared/radmanct/inc/media.php','shared/radmanct/inc/content/continuation.php','shared/radmanct/templates/portfolio-'+slug.split('-')[1]+'.php']
     if slug.startswith('blog-'):helpers+=['shared/radmanct/inc/blog.php','shared/radmanct/inc/media.php','shared/radmanct/inc/content/continuation.php','shared/radmanct/templates/blog-'+slug.split('-')[1]+'.php']
-    if slug in ['column-gallery','media-stretch','sticky-cards','text-marquee','text-loop']:helpers+=['shared/radmanct/inc/page-title.php']
+    if slug in ['column-gallery','media-stretch','sticky-cards','sticky-rows','text-marquee','text-loop']:helpers+=['shared/radmanct/inc/page-title.php']
     if slug in ['image-accordion','card-accordion']:helpers+=['shared/radmanct/inc/page-title.php']
     if slug.startswith('catalog-'):helpers+=['inc/catalog.php','src/js/admin/catalog-editor.js']
     if slug in ['gallery-archive','gallery-single','video-archive','video-single']:helpers+=['inc/collections.php','src/js/admin/collection-editor.js','shared/radmanct/inc/content/media.php','shared/radmanct/inc/page-title.php']
@@ -51,6 +51,8 @@ for slug,module in registry.items():
     if slug=='button-roll':
         out[slug]['vendor']='None; existing shared RadmanCT button renderer and CSS transitions only'
         out[slug]['preview_only']+=['modules/button-roll/style.css']
+    if slug=='sticky-rows':
+        out[slug]['php_contracts']+=['rdl/sticky-rows/data supplies the title and row data with optional local image, link label and URL']
     out[slug]['preview_only']+=['inc/preview.php','assets/preview.js','assets/preview.css','src/css/canvas-base.css','template-parts/preview-toolbar.php','template-parts/device-preview.php']
     if slug=='particles':
         out[slug].update(vendor='Local particles.js 2.0.0 MIT factory, owned by this module only; no GSAP or sibling sample imports',assets=['modules/particles/LICENSE.txt'],php_contracts=['Native WordPress APIs','rdl/particles/data supplies copy and bounded particle settings; no workshop fixture required'])
