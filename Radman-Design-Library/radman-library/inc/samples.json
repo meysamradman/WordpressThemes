@@ -841,5 +841,39 @@
     "image": "none",
     "scroll_gap": false,
     "icon": "layers"
+  },
+  "portfolio-rows": {
+    "title": "ردیف نمونه‌کار با پیش‌نمایش شناور · Radman",
+    "slug": "portfolio-rows",
+    "group": "portfolio",
+    "subgroup": "portfolio-rows",
+    "kind": "section",
+    "source": "webtalik/template-parts/sections/service/project-list.php",
+    "motion": "حرکت عمودی ردیف‌ها با اسکرول و پیش‌نمایش تصویری همراه نشانگر در دسکتاپ.",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "parallax",
+      "smooth"
+    ],
+    "image": "none",
+    "surface": "dark",
+    "icon": "layers"
+  },
+  "process-rows": {
+    "title": "مراحل تصویری با خروجی هر مرحله · Radman",
+    "slug": "process-rows",
+    "group": "process",
+    "subgroup": "process-rows",
+    "kind": "section",
+    "source": "webtalik/template-parts/sections/service/process.php",
+    "motion": "پنج ردیف شماره‌دار با تصویر، توضیح و خروجی مشخص. چیدمان واکنش‌گرا با CSS Grid.",
+    "effects": [
+      "native"
+    ],
+    "image": "none",
+    "surface": "dark",
+    "scroll_gap": false,
+    "icon": "timeline"
   }
 }

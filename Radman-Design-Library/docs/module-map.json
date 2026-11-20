@@ -3009,5 +3009,117 @@
       "template-parts/device-preview.php"
     ],
     "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "portfolio-rows": {
+    "kind": "section",
+    "family": "portfolio",
+    "effects": [
+      "gsap",
+      "scrolltrigger",
+      "parallax",
+      "smooth"
+    ],
+    "entries": [
+      "modules/portfolio-rows/data.php",
+      "modules/portfolio-rows/script.js",
+      "modules/portfolio-rows/style.css",
+      "modules/portfolio-rows/view.php"
+    ],
+    "source_files": [
+      "modules/portfolio-rows/data.php",
+      "modules/portfolio-rows/script.js",
+      "modules/portfolio-rows/style.css",
+      "modules/portfolio-rows/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/js/animation-vendor.js",
+      "shared/radmanct/src/js/gsap-vendor.js",
+      "shared/radmanct/src/js/motion.js",
+      "shared/radmanct/src/js/runtime/lifecycle.js",
+      "shared/radmanct/src/js/runtime/observers.js",
+      "shared/radmanct/src/js/runtime/scroll-state.js",
+      "shared/radmanct/src/js/runtime/scroll.js",
+      "shared/radmanct/src/js/smoother-vendor.js",
+      "src/css/client-base.css",
+      "src/js/scroll.js"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data",
+      "Provide published public project posts via args/projects or rdl/portfolio-rows/projects; thumbnails and category remain native WordPress data"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css",
+      "rdl-scr-gap (workshop scroll runway)",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "src/css/canvas-base.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
+    ],
+    "vendor": "local GSAP 3.15.0 only if consumed; never one vendor copy per sample"
+  },
+  "process-rows": {
+    "kind": "section",
+    "family": "process",
+    "effects": [
+      "native"
+    ],
+    "entries": [
+      "modules/process-rows/data.php",
+      "modules/process-rows/style.css",
+      "modules/process-rows/view.php"
+    ],
+    "source_files": [
+      "modules/process-rows/data.php",
+      "modules/process-rows/style.css",
+      "modules/process-rows/view.php",
+      "shared/radmanct/inc/icons.php",
+      "shared/radmanct/inc/icons/catalog.php",
+      "shared/radmanct/inc/page-title.php",
+      "shared/radmanct/inc/ui/button.php",
+      "shared/radmanct/src/css/base.css",
+      "shared/radmanct/src/css/site-utilities.css",
+      "shared/radmanct/src/css/tokens.css",
+      "shared/radmanct/src/css/ui/button.css",
+      "shared/radmanct/src/css/ui/card-text.css",
+      "shared/radmanct/src/css/ui/section-heading.css",
+      "src/css/client-base.css"
+    ],
+    "css_base": "src/css/client-base.css",
+    "php_contracts": [
+      "Native WordPress APIs",
+      "Use existing RadmanCT helpers once; replace workshop fixture adapters with client data",
+      "Provide data through args/data or rdl/process-rows/data; replace the workshop attachment map with destination IDs"
+    ],
+    "preview_only": [
+      "inc/samples.php",
+      "inc/portfolio.php",
+      "preview.php",
+      "assets/bar.css",
+      "inc/preview.php",
+      "assets/preview.js",
+      "assets/preview.css",
+      "src/css/canvas-base.css",
+      "template-parts/preview-toolbar.php",
+      "template-parts/device-preview.php"
+    ],
+    "vendor": "None; static responsive Grid section without motion in the source",
+    "assets": [
+      "fixtures/process-rows/media.json",
+      "fixtures/process-rows/PROVENANCE.md"
+    ]
   }
 }

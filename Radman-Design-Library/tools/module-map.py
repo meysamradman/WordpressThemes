@@ -51,6 +51,14 @@ for slug,module in registry.items():
     if slug=='button-roll':
         out[slug]['vendor']='None; existing shared RadmanCT button renderer and CSS transitions only'
         out[slug]['preview_only']+=['modules/button-roll/style.css']
+    if slug in ['portfolio-rows','process-rows']:
+        out[slug]['source_files']=relative_graph(entries+helpers+['src/css/client-base.css','shared/radmanct/inc/page-title.php'])
+        if slug=='portfolio-rows':
+            out[slug]['php_contracts']+=['Provide published public project posts via args/projects or rdl/portfolio-rows/projects; thumbnails and category remain native WordPress data']
+            out[slug]['preview_only']+=['rdl-scr-gap (workshop scroll runway)']
+        else:
+            out[slug].update(vendor='None; static responsive Grid section without motion in the source',assets=['fixtures/process-rows/media.json','fixtures/process-rows/PROVENANCE.md'])
+            out[slug]['php_contracts']+=['Provide data through args/data or rdl/process-rows/data; replace the workshop attachment map with destination IDs']
     if slug=='sticky-rows':
         out[slug]['php_contracts']+=['rdl/sticky-rows/data supplies the title and row data with optional local image, link label and URL']
     out[slug]['preview_only']+=['inc/preview.php','assets/preview.js','assets/preview.css','src/css/canvas-base.css','template-parts/preview-toolbar.php','template-parts/device-preview.php']

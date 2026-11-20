@@ -661,6 +661,26 @@
     "src": "modules/portfolio-archive/style.css",
     "isEntry": true
   },
+  "modules/portfolio-rows/script.js": {
+    "file": "js/sample-103-BeXJ2oQD.min.js",
+    "name": "sample-103",
+    "src": "modules/portfolio-rows/script.js",
+    "isEntry": true,
+    "imports": [
+      "_lifecycle-CEUUFq-m.min.js",
+      "_motion-DXAnPQlC.min.js",
+      "_scroll-yEMtK_-B.min.js"
+    ]
+  },
+  "modules/portfolio-rows/style.css": {
+    "file": "css/css-portfolio-rows-DvlivcRe.min.css",
+    "name": "css-portfolio-rows",
+    "names": [
+      "css-portfolio-rows.css"
+    ],
+    "src": "modules/portfolio-rows/style.css",
+    "isEntry": true
+  },
   "modules/portfolio-single/script.js": {
     "file": "js/sample-26-qtBP3NHC.min.js",
     "name": "sample-26",
@@ -698,6 +718,15 @@
       "css-process-phases.css"
     ],
     "src": "modules/process-phases/style.css",
+    "isEntry": true
+  },
+  "modules/process-rows/style.css": {
+    "file": "css/css-process-rows-ClWG9soo.min.css",
+    "name": "css-process-rows",
+    "names": [
+      "css-process-rows.css"
+    ],
+    "src": "modules/process-rows/style.css",
     "isEntry": true
   },
   "modules/process-steps/script.js": {

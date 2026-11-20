@@ -18,6 +18,8 @@
 | [آکاردئون شماره‌دار · Radman](http://127.0.0.1:8097/design/services-faq/) | accordion | CSS + details بومی · باز و بسته شدن؛ بدون GSAP |
 | [مراحل شماره‌دار · Radman](http://127.0.0.1:8097/design/process-steps/) | process | GSAP · ورود تدریجی پنج مرحله و معرفی مسیر همکاری |
 | [گالری پیوسته با تیتر · Radman](http://127.0.0.1:8097/design/project-marquee/) | gallery | GSAP · گالری پیوسته با سرعت واکنش‌پذیر به اسکرول و امکان توقف |
+| [ردیف نمونه‌کار با پیش‌نمایش شناور · Radman](http://127.0.0.1:8097/design/portfolio-rows/) | portfolio → portfolio-rows | ردیف با تصویر، تاریخ و دسته؛ اسکرول عمودی تا ۷۲ پیکسل با scrub 1 و پیش‌نمایش شناور اشاره‌گر |
+| [مراحل تصویری با خروجی هر مرحله · Radman](http://127.0.0.1:8097/design/process-rows/) | process → process-rows | پنج ردیف با تصویر، توضیح و خروجی؛ چیدمان بومی Grid |
 | [آرشیو نمونه‌کار · Radman](http://127.0.0.1:8097/design/portfolio-archive/) | portfolio | آرشیو بومی، بارگذاری بیشتر AJAX و پارالاکس GSAP |
 | [جزئیات نمونه‌کار · Radman](http://127.0.0.1:8097/design/portfolio-single/) | portfolio | جزئیات، گالری، قبلی/بعدی و مشابه؛ اسکرول مشترک |
 | [هدر و منوی کامل · Radman](http://127.0.0.1:8097/design/header-radman/) | header | هدر با منوی Roll و پنل Wave؛ GSAP |
