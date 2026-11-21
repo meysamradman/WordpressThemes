@@ -1,4 +1,5 @@
 .rdc-prj-list { --rdc-ctr:106.5rem; padding-block:clamp(1rem,3vw,3rem) clamp(3rem,7vw,7rem); }
+.rdc-inv .rdc-prj-list { --rdc-srf:var(--rdc-clr-ink-warm); }
 .rdc-prj-list__rows { display:grid; gap:1.5rem; padding:0; list-style:none; }
 .rdc-prj-list__row { display:grid; grid-template-columns:minmax(7rem,.55fr) minmax(0,1.5fr) minmax(0,1fr) auto; align-items:center; gap:1rem clamp(1rem,2.5vw,2.75rem); min-block-size:6.5rem; padding:1.15rem clamp(1rem,2.25vw,2.5rem); border-radius:var(--rdc-rad); background:var(--rdc-srf); color:var(--rdc-ink); }
 .rdc-prj-list__row time,.rdc-prj-list__cat { color:var(--rdc-mut); }
