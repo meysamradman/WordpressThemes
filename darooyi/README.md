@@ -8,3 +8,5 @@
 وردپرس ۷.۱.۵ و قالب WoodMart از فایل‌های مشتری بارگذاری می‌شوند. PHP 8.3 با Loader رسمی ionCube برای افزونهٔ Digits و MySQL 8.4 اجرا می‌شود. فایل‌های کمکی `.local/wp-cli.phar` و `.local/ioncube_loader_lin_8.3.so` برای همین محیط محلی‌اند. Elementor Pro مطابق بکاپ نصب و غیرفعال است.
 
 به‌روزرسانی دستی و نصب افزونه از مخزن WordPress.org و بارگذاری ZIP از پیشخوان امکان‌پذیر است. سرویس داخلی `plugin-repository` فقط API و بسته‌های رسمی افزونه را می‌گیرد. [راهنمای Digits و مجوز محیط آزمایشی](docs/digits.md)
+
+[راهنمای محتوا، سئو و رسانهٔ دارویی](docs/content.md)
