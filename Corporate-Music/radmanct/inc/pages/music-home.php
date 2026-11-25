@@ -10,6 +10,7 @@ function entries(string $type,int $limit):array {
 const FEATURED_META='_rdc_home_feature_tracks';
 const BANNERS_META='_rdc_home_feature_banners';
 const FEATURED_LIMIT=3;
+const ART_SIZES='min(calc(100vw - clamp(2.5rem, 6.3vw, 7.5rem)), 1300px)';
 const BANNER_DEVICES=[
  'desktop'=>'دسکتاپ',
  'tablet'=>'تبلت',
@@ -27,11 +28,10 @@ function banner_id(mixed $value):int {
 }
 
 function banner_picture(\WP_Post $track,array $images,bool $first):void {
- $sizes='(max-width: 1348px) 95vw, 1300px';
  $images=array_map(__NAMESPACE__.'\\banner_id',array_intersect_key($images,BANNER_DEVICES));
  $desktop=$images['desktop']??0;
  $default=$desktop?:banner_id(get_post_thumbnail_id($track))?:($images['tablet']??0)?:($images['mobile']??0);
- $attrs=['alt'=>'','sizes'=>$sizes,'loading'=>$first?'eager':'lazy','fetchpriority'=>$first?'high':'low'];
+ $attrs=['alt'=>'','sizes'=>ART_SIZES,'loading'=>$first?'eager':'lazy','fetchpriority'=>$first?'high':'low'];
  $html=$default?wp_get_attachment_image($default,'large',false,$attrs):'';
  $sources=[];
  foreach(['mobile'=>'(max-width: 767px)','tablet'=>'(767px < width <= 900px)'] as $device=>$query){
@@ -45,7 +45,7 @@ function banner_picture(\WP_Post $track,array $images,bool $first):void {
  ?>
  <picture class="rdc-feature__art<?php if(!$desktop)echo ' rdc-feature__art--cvr'; ?>">
   <?php foreach($sources as [$media,$srcset,$width,$height]): ?>
-   <source media="<?php echo esc_attr($media); ?>" srcset="<?php echo esc_attr($srcset); ?>" sizes="<?php echo esc_attr($sizes); ?>" width="<?php echo esc_attr($width); ?>" height="<?php echo esc_attr($height); ?>">
+   <source media="<?php echo esc_attr($media); ?>" srcset="<?php echo esc_attr($srcset); ?>" sizes="<?php echo esc_attr(ART_SIZES); ?>" width="<?php echo esc_attr($width); ?>" height="<?php echo esc_attr($height); ?>">
   <?php endforeach; ?>
   <?php echo $html; ?>
  </picture>
