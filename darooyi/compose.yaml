@@ -44,8 +44,17 @@ services:
       - site:/var/www/html
       - ./docker/ioncube.ini:/usr/local/etc/php/conf.d/00-darooyi-ioncube.ini:ro
       - ./.local/ioncube_loader_lin_8.3.so:/opt/ioncube/ioncube_loader_lin_8.3.so:ro
+      - ./docker/local-only.php:/var/www/html/wp-content/mu-plugins/darooyi-local-only.php:ro
       - ./docker/php.ini:/usr/local/etc/php/conf.d/zz-darooyi.ini:ro
       - ./docker/local-apache.conf:/etc/apache2/conf-enabled/zz-darooyi.conf:ro
+  plugin-repository:
+    <<: *wordpress-runtime
+    environment: {}
+    user: www-data
+    entrypoint: ["php", "-S", "0.0.0.0:8081", "/opt/plugin-repository.php"]
+    volumes:
+      - ./docker/plugin-repository.php:/opt/plugin-repository.php:ro
+    networks: [isolated, loopback-ingress]
   gateway:
     image: nginx:1.28.0-alpine@sha256:30f1c0d78e0ad60901648be663a710bdadf19e4c10ac6782c235200619158284
     depends_on:
