@@ -53,6 +53,7 @@ add_action('add_meta_boxes_page',static function(\WP_Post $post):void {
   foreach($shown as $song)$shown_titles[$song->ID]=get_the_title($song);
   ?>
   <p>تا سه آهنگ انتخاب کنید. اگر انتخاب دستی نداشته باشید، سه آهنگ تازه نمایش داده می‌شوند. برای تبلت و موبایل، اگر تصویر جدا انتخاب نکنید، تصویر دسکتاپ همان اسلاید نمایش داده می‌شود.</p>
+  <p class="description">اندازهٔ پیشنهادی تصویر موبایل: ۱۰۸۰ پیکسل عرض و ۶۰۰ پیکسل ارتفاع، با فرمت WebP.</p>
   <?php for($index=0;$index<FEATURED_LIMIT;$index++):
    $field='rdc-home-featured-'.$index;
    $track=$selected[$index]??(!$selected?($shown[$index]->ID??0):0);

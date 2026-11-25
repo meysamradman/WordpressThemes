@@ -34,7 +34,7 @@ function banner_picture(\WP_Post $track,array $images,bool $first):void {
  $attrs=['alt'=>'','sizes'=>$sizes,'loading'=>$first?'eager':'lazy','fetchpriority'=>$first?'high':'low'];
  $html=$default?wp_get_attachment_image($default,'large',false,$attrs):'';
  $sources=[];
- foreach(['mobile'=>'(max-width: 650px)','tablet'=>'(650px < width <= 900px)'] as $device=>$query){
+ foreach(['mobile'=>'(max-width: 767px)','tablet'=>'(767px < width <= 900px)'] as $device=>$query){
   $id=$images[$device]??0;
   if(!$id||$id===$default)continue;
   $src=wp_get_attachment_image_src($id,'large');
@@ -43,7 +43,7 @@ function banner_picture(\WP_Post $track,array $images,bool $first):void {
  }
  if(!$html)return;
  ?>
- <picture class="rdc-feature__art<?php if(!$desktop)echo ' rdc-feature__art--cvr';if(isset($sources['mobile']))echo ' rdc-feature__art--mob'; ?>">
+ <picture class="rdc-feature__art<?php if(!$desktop)echo ' rdc-feature__art--cvr'; ?>">
   <?php foreach($sources as [$media,$srcset,$width,$height]): ?>
    <source media="<?php echo esc_attr($media); ?>" srcset="<?php echo esc_attr($srcset); ?>" sizes="<?php echo esc_attr($sizes); ?>" width="<?php echo esc_attr($width); ?>" height="<?php echo esc_attr($height); ?>">
   <?php endforeach; ?>

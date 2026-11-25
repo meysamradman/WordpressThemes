@@ -10,6 +10,7 @@ $multiple=count($tracks)>1;
  <div id="rdc-feature-track" class="rdc-feature__track" data-rdc-feature-track<?php if($multiple): ?> tabindex="0" role="group" aria-label="اسلایدهای آهنگ"<?php endif; ?>>
   <?php foreach($tracks as $index=>$track):
    $title=get_the_title($track);
+   $details=get_permalink($track);
    $meta=\RadmanCT\Music\meta($track->ID);
    $audio=\RadmanCT\Music\file($meta['audio']);
    $download=\RadmanCT\Music\download($track->ID,$meta,$audio);
@@ -18,13 +19,13 @@ $multiple=count($tracks)>1;
     <?php \RadmanCT\MusicHome\banner_picture($track,(array)($banners[$track->ID]??[]),$index===0); ?>
     <div class="rdc-feature__copy">
      <p class="rdc-feature__badge"><?php echo \RadmanCT\icon('music'); ?> <?php echo esc_html($data['label']); ?></p>
-     <h2<?php if($index===0): ?> data-rdc-en="heading"<?php endif; ?>><?php if($index===0)\RadmanCT\entrance_words($title);else echo esc_html($title); ?></h2>
+     <h2<?php if($index===0): ?> data-rdc-en="heading"<?php endif; ?>><a href="<?php echo esc_url($details); ?>"><?php if($index===0)\RadmanCT\entrance_words($title);else echo esc_html($title); ?></a></h2>
      <p class="rdc-feature__desc"<?php if($index===0): ?> data-rdc-en="text"<?php endif; ?>><?php echo esc_html($data['hero_desc']??get_the_excerpt($track)); ?></p>
      <div class="rdc-feature__actions">
       <?php
       if($audio)echo \RadmanCT\button('پخش آنلاین','#',['class'=>'rdc-feature__play','icon'=>'music','audio'=>\RadmanCT\Music\playback($track->ID,$audio,$meta)]);
-      if($download)echo \RadmanCT\button('دانلود',$download['url'],['variant'=>'outline','icon'=>'download','download'=>$download['filename']]);
-      echo \RadmanCT\button('شناسنامه',get_permalink($track),['variant'=>'outline','icon'=>'sliders']);
+      if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-feature__secondary','variant'=>'outline','icon'=>'download','download'=>$download['filename']]);
+      echo \RadmanCT\button('شناسنامه',$details,['class'=>$audio?'rdc-feature__secondary':'','variant'=>'outline','icon'=>'sliders']);
       ?>
      </div>
     </div>
