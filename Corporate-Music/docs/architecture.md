@@ -7,7 +7,7 @@ Standalone Radman CT Music, copied from Corporate-Webtalik as a source baseline.
 | `radmanct/inc/content/music.php` | Native `track`, `music_category`, `_rdc_track`, artist/poet/arranger/composer/release fields and nonce/capability-checked saves |
 | `radmanct/inc/music.php` | Normalized metadata, local audio/privacy guards, one track card renderer |
 | `radmanct/template-parts/music/` | Music archive/category and single content; same main query |
-| `radmanct/inc/pages/music-home.php` | Home editorial filter and bounded native queries |
+| `radmanct/inc/pages/music-home.php` | Home editorial filter, bounded native queries and responsive hero artwork |
 | `radmanct/template-parts/sections/home/{music-intro,latest-tracks,latest-videos}.php` | Named home composition; shared track/blog card renderers |
 | `radmanct/inc/client.php` | Current customer copy, footer links and selected fixed dark sections; no settings framework |
 | `radmanct/inc/assets.php` | Conditional entry loading and shared static/dynamic module graph |
