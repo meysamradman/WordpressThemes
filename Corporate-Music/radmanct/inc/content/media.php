@@ -26,6 +26,14 @@ function fields(\WP_Post $post):void {
  wp_nonce_field('rdc-card-md','rdct_media_nonce');$id=(int)get_post_meta($post->ID,'_webtalik_card_video',true);$mode=get_post_meta($post->ID,'_webtalik_card_mode',true);
  echo '<div data-rdc-md><p>'.esc_html__('Featured image remains the poster. Video preview is optional.','radmanct').'</p><input type="hidden" name="rdct_card_video" data-media-value value="'.$id.'"><p data-media-label>'.esc_html($id?get_the_title($id):__('No video selected','radmanct')).'</p><p><button type="button" class="button" data-media-choose>'.esc_html__('Choose video','radmanct').'</button> <button type="button" class="button-link-delete" data-media-remove>'.esc_html__('Remove','radmanct').'</button></p><p><label for="rdc-card-mode">'.esc_html__('Preview behavior','radmanct').'</label></p><select id="rdc-card-mode" name="rdct_card_mode"><option value="auto" '.selected($mode!=='hover',true,false).'>'.esc_html__('Play when visible','radmanct').'</option><option value="hover" '.selected($mode,'hover',false).'>'.esc_html__('Play on hover','radmanct').'</option></select></div>';
 }
+function single_picker(string $name,int $id,string $type,string $label):void { ?>
+ <p data-rdc-md="<?php echo esc_attr($type); ?>">
+  <input type="hidden" name="<?php echo esc_attr($name); ?>" data-media-value value="<?php echo esc_attr($id); ?>">
+  <button type="button" class="button" data-media-choose><?php echo esc_html($label); ?></button>
+  <span data-media-label><?php if($id)echo esc_html(get_the_title($id)); ?></span>
+  <button type="button" class="button-link-delete" data-media-remove <?php if(!$id)echo 'hidden'; ?>><?php esc_html_e('Remove','radmanct'); ?></button>
+ </p>
+<?php }
 function gallery_picker(array $gallery,string $name):void {
  ?>
  <div class="rdc-adm-gal" data-rdc-gal>
@@ -58,7 +66,9 @@ function gallery_picker(array $gallery,string $name):void {
  <?php
 }
 add_action('admin_enqueue_scripts',static function():void{
- $screen=get_current_screen();if(!$screen||$screen->base!=='post'||!in_array($screen->post_type,array('post','album','clip'),true))return;
+ $screen=get_current_screen();if(!$screen||$screen->base!=='post')return;
+ $home=$screen->post_type==='page' && \RadmanCT\MusicHome\is_home_editor((int)get_the_ID());
+ if(!$home&&!in_array($screen->post_type,array('post','album','clip'),true))return;
  wp_enqueue_media();$asset=\RadmanCT\Assets\entry('src/js/admin/media-editor.js');if($asset)wp_enqueue_script('rdc-md-ed',\RadmanCT\Assets\url($asset['file']),array('media-editor'),null,true);
  if($screen->post_type==='album'){
   \RadmanCT\Assets\style('admin/gallery');

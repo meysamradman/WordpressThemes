@@ -12,6 +12,7 @@ function initializeFeatured(feature) {
 
  const track = feature.querySelector('[data-rdc-feature-track]');
  const slides = [...track.children];
+ const dots = [...nav.querySelectorAll('[data-rdc-feature-dot]')];
  const doc = feature.ownerDocument;
  const view = doc.defaultView;
  const reduced = view.matchMedia('(prefers-reduced-motion: reduce)');
@@ -40,6 +41,10 @@ function initializeFeatured(feature) {
   const index = Math.min(slides.length - 1, Math.round(Math.abs(track.scrollLeft) / track.clientWidth));
   if (current === index) return;
   current = index;
+  dots.forEach((dot, position) => {
+   if (position === current) dot.setAttribute('aria-current', 'true');
+   else dot.removeAttribute('aria-current');
+  });
   syncSlides();
   schedule();
  };
@@ -53,11 +58,8 @@ function initializeFeatured(feature) {
   schedule();
  };
  const onClick = event => {
-  if (event.target.closest('[data-rdc-feature-prev]')) {
-   move(current - 1);
-  } else if (event.target.closest('[data-rdc-feature-next]')) {
-   move(current + 1);
-  }
+  const dot = event.target.closest('[data-rdc-feature-dot]');
+  if (dot) move(Number(dot.dataset.rdcFeatureDot));
  };
  const onKey = event => {
   if (event.target !== track || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;

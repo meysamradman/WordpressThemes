@@ -8,6 +8,7 @@
 .rdc-bio__title{font-size:var(--rdc-sz-heading-compact);color:var(--rdc-acc);margin-block-end:.6rem;padding-inline:0}
 .rdc-bio__content h2{font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.6;color:var(--rdc-acc);margin-block:2.5rem 1rem}
 .rdc-bio-works{overflow-x:auto;padding-block-start:1rem;border-block-start:.35rem solid var(--rdc-clr-field);scrollbar-color:var(--rdc-clr-field) transparent}
+#rdc-bio-works-title span{color:var(--rdc-mut);font-size:var(--rdc-sz-sm);font-weight:400}
 .rdc-bio-works table{inline-size:100%;border-collapse:separate;border-spacing:.5rem .2rem;line-height:1.65}
 .rdc-bio__content .rdc-bio-works :is(th,td){border:0}
 .rdc-bio-works th{background:color-mix(in srgb,var(--rdc-acc) 75%,var(--rdc-srf));color:var(--rdc-clr-wht);font-weight:700;padding:.05rem .6rem;text-align:center;white-space:nowrap}

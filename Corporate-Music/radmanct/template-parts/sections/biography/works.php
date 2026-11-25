@@ -3,7 +3,7 @@ $rows = \RadmanCT\Biography\rows(get_the_ID());
 if (!$rows) return;
 ?>
 <section aria-labelledby="rdc-bio-works-title">
- <h2 id="rdc-bio-works-title" data-rdc-en="viewport">آثار تولیدشده:</h2>
+ <h2 id="rdc-bio-works-title" data-rdc-en="viewport">آثار تولید شده تا این لحظه: <span>(به ترتیب سال تولید)</span></h2>
  <figure class="rdc-bio-works">
   <table aria-labelledby="rdc-bio-works-title">
    <thead><tr><th scope="col">نام قطعه</th><th scope="col">موضوع</th><th scope="col">سال تولید</th></tr></thead>

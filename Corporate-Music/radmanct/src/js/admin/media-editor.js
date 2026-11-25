@@ -1,7 +1,27 @@
+const frames = new Map();
 document.querySelectorAll('[data-rdc-md]').forEach(root=>{
- let frame;const value=root.querySelector('[data-media-value]'),label=root.querySelector('[data-media-label]');
- root.querySelector('[data-media-choose]').addEventListener('click',()=>{frame??=wp.media({library:{type:'video'},multiple:false});frame.off('select');frame.on('select',()=>{const item=frame.state().get('selection').first().toJSON();value.value=item.id;label.textContent=item.title||item.filename;});frame.open();});
- root.querySelector('[data-media-remove]').addEventListener('click',()=>{value.value='0';label.textContent='';});
+ const type = root.dataset.rdcMd || 'video';
+ const value = root.querySelector('[data-media-value]');
+ const label = root.querySelector('[data-media-label]');
+ const choose = root.querySelector('[data-media-choose]');
+ const remove = root.querySelector('[data-media-remove]');
+ const update = (id, name) => {
+  value.value = String(id);
+  label.textContent = name;
+  remove.hidden = !id;
+  value.dispatchEvent(new Event('change', {bubbles: true}));
+ };
+ choose.addEventListener('click', () => {
+  if (!frames.has(type)) frames.set(type, wp.media({library:{type},multiple:false}));
+  const frame = frames.get(type);
+  frame.off('select');
+  frame.on('select', () => {
+   const item = frame.state().get('selection').first()?.toJSON();
+   if (item) update(item.id, item.title || item.filename);
+  });
+  frame.open();
+ });
+ remove.addEventListener('click', () => { update(0, ''); choose.focus(); });
 });
 
 document.querySelectorAll('[data-rdc-gal]').forEach(root=>{

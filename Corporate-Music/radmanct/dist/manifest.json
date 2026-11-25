@@ -128,7 +128,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-ChLGLfrO.min.css",
+    "file": "css/music-home-DFLi0yYI.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -206,7 +206,7 @@
     "isEntry": true
   },
   "src/js/admin/media-editor.js": {
-    "file": "js/media-editor-DWNA5iBW.min.js",
+    "file": "js/media-editor-BFN3qMv7.min.js",
     "name": "media-editor",
     "src": "src/js/admin/media-editor.js",
     "isEntry": true
@@ -258,7 +258,7 @@
     ]
   },
   "src/js/pages/music-home.js": {
-    "file": "js/music-home-DcqonBEM.min.js",
+    "file": "js/music-home-BLxHR8yp.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
     "isEntry": true,
