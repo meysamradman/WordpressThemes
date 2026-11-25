@@ -39,11 +39,11 @@ function banner_picture(\WP_Post $track,array $images,bool $first):void {
   if(!$id||$id===$default)continue;
   $src=wp_get_attachment_image_src($id,'large');
   if(!$src)continue;
-  $sources[]=[$query,wp_get_attachment_image_srcset($id,'large')?:esc_url_raw($src[0]),$src[1],$src[2]];
+  $sources[$device]=[$query,wp_get_attachment_image_srcset($id,'large')?:esc_url_raw($src[0]),$src[1],$src[2]];
  }
  if(!$html)return;
  ?>
- <picture class="rdc-feature__art<?php if(!$desktop)echo ' rdc-feature__art--cvr'; ?>">
+ <picture class="rdc-feature__art<?php if(!$desktop)echo ' rdc-feature__art--cvr';if(isset($sources['mobile']))echo ' rdc-feature__art--mob'; ?>">
   <?php foreach($sources as [$media,$srcset,$width,$height]): ?>
    <source media="<?php echo esc_attr($media); ?>" srcset="<?php echo esc_attr($srcset); ?>" sizes="<?php echo esc_attr($sizes); ?>" width="<?php echo esc_attr($width); ?>" height="<?php echo esc_attr($height); ?>">
   <?php endforeach; ?>

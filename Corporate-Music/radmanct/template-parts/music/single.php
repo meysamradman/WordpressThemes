@@ -5,7 +5,7 @@
  <?php else:
   $data=\RadmanCT\Music\meta(get_the_ID());
   $audio=\RadmanCT\Music\file((int)$data['audio']);
-  $download=\RadmanCT\Music\download($data,$audio);
+  $download=\RadmanCT\Music\download(get_the_ID(),$data,$audio);
   $previous=$audio?get_adjacent_post(false,'',true,'music_category'):null;
   $next=$audio?get_adjacent_post(false,'',false,'music_category'):null;
  ?>
@@ -13,7 +13,7 @@
    <figure class="rdc-trk-hero__cover"><?php echo \RadmanCT\Content\Media\thumbnail(get_the_ID(),'large',['loading'=>'eager','fetchpriority'=>'high','sizes'=>'(max-width:650px) min(90vw,480px),min(42vw,580px)']); ?></figure>
    <div class="rdc-trk-hero__copy"><h1><?php the_title(); ?></h1>
     <?php \RadmanCT\Music\credits($data,true); ?>
-    <?php if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-trk-download','variant'=>'download','download'=>true]); ?>
+    <?php if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-trk-download','variant'=>'download','download'=>$download['filename']]); ?>
    </div>
   </div>
   <?php if($audio):get_template_part('template-parts/music/player',null,['audio'=>$audio,'previous'=>$previous,'next'=>$next,'wave'=>true]);else: ?><p class="rdc-trk-note">فایل پخش این اثر هنوز اضافه نشده است.</p><?php endif; ?>

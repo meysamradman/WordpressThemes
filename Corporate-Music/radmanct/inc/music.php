@@ -16,8 +16,13 @@ function file(int $id):array {
     $metadata=wp_get_attachment_metadata($id);return ['url'=>$url,'duration'=>$metadata['length_formatted']??''];
 }
 function url():string {return get_post_type_archive_link('track')?:home_url('/music/');}
-function download(array $data,array $audio):array {
- return $data['download']&&$data['download']!==$data['audio']?file($data['download']):$audio;
+function download(int $track,array $data,array $audio):array {
+ $file=$data['download']&&$data['download']!==$data['audio']?file($data['download']):$audio;
+ if(!$file)return [];
+ $extension=pathinfo((string)wp_parse_url($file['url'],PHP_URL_PATH),PATHINFO_EXTENSION);
+ $title=sanitize_file_name(html_entity_decode(get_the_title($track),ENT_QUOTES,'UTF-8'));
+ $file['filename']=$title!==''&&$extension!==''?$title.'.'.$extension:true;
+ return $file;
 }
 function playback(int $id,array $audio,array $data):array {
  $image=(int)get_post_thumbnail_id($id);

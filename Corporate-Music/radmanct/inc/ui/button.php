@@ -9,7 +9,8 @@ function button(string $label,string $url,array $args=array()):string {
  $classes='rdc-btn';
  if($variant!=='solid')$classes.=' rdc-btn--'.$variant;
  foreach(preg_split('/\s+/',trim($args['class']??''))as$class)if($class!=='')$classes.=' '.sanitize_html_class($class);
- $attributes=!empty($args['download'])?' download':'';
+ $download=$args['download']??false;
+ $attributes=$download?(is_string($download)?' download="'.esc_attr($download).'"':' download'):'';
  if(!empty($args['new_tab']))$attributes.=' target="_blank" rel="noopener noreferrer"';
  foreach(array('data-rdc-pnl-rvl','data-rdc-en')as$key)if(!empty($args[$key]))$attributes.=' '.$key;
  $icon=icon($args['icon']??'arrow-up-right');

@@ -12,7 +12,7 @@ $multiple=count($tracks)>1;
    $title=get_the_title($track);
    $meta=\RadmanCT\Music\meta($track->ID);
    $audio=\RadmanCT\Music\file($meta['audio']);
-   $download=\RadmanCT\Music\download($meta,$audio);
+   $download=\RadmanCT\Music\download($track->ID,$meta,$audio);
   ?>
    <article class="rdc-feature__slide">
     <?php \RadmanCT\MusicHome\banner_picture($track,(array)($banners[$track->ID]??[]),$index===0); ?>
@@ -23,7 +23,7 @@ $multiple=count($tracks)>1;
      <div class="rdc-feature__actions">
       <?php
       if($audio)echo \RadmanCT\button('پخش آنلاین','#',['class'=>'rdc-feature__play','icon'=>'music','audio'=>\RadmanCT\Music\playback($track->ID,$audio,$meta)]);
-      if($download)echo \RadmanCT\button('دانلود',$download['url'],['variant'=>'outline','icon'=>'download','download'=>true]);
+      if($download)echo \RadmanCT\button('دانلود',$download['url'],['variant'=>'outline','icon'=>'download','download'=>$download['filename']]);
       echo \RadmanCT\button('شناسنامه',get_permalink($track),['variant'=>'outline','icon'=>'sliders']);
       ?>
      </div>

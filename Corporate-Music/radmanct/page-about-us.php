@@ -6,8 +6,8 @@
   <?php else: ?>
    <div class="rdc-bio__hero">
     <figure class="rdc-bio__portrait">
-     <img class="rdc-bio__photo" src="<?php echo esc_url(get_theme_file_uri('images/pages/biography.webp')); ?>"
-      width="402" height="357" alt="پرتره و نشان علی اسدی" fetchpriority="high" decoding="async">
+     <img class="rdc-bio__photo" src="<?php echo esc_url(get_theme_file_uri('images/pages/ali-asadi-biography.webp')); ?>"
+      width="409" height="352" alt="پرترهٔ علی اسدی در کنار نشان فیروزه‌ای او" fetchpriority="high" decoding="async">
     </figure>
     <div class="rdc-bio__identity" dir="ltr"><p class="rdc-bio__handle"><?php echo esc_html(\RadmanCT\Client\social_handle()); ?></p><?php get_template_part('template-parts/ui/socials',null,['items'=>\RadmanCT\Client\socials()]); ?></div>
    </div>

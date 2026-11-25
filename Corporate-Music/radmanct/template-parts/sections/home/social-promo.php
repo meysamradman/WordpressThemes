@@ -1,6 +1,8 @@
 <?php defined('ABSPATH')||exit;
-$wide=get_theme_file_uri('images/pages/home-social.webp');
-$medium=get_theme_file_uri('images/pages/home-social-768.webp');
+$wide_path='images/pages/home-social.webp';
+$medium_path='images/pages/home-social-768.webp';
+$wide=add_query_arg('ver',(string)filemtime(get_theme_file_path($wide_path)),get_theme_file_uri($wide_path));
+$medium=add_query_arg('ver',(string)filemtime(get_theme_file_path($medium_path)),get_theme_file_uri($medium_path));
 ?>
 <figure class="rdc-home-promo">
  <img src="<?php echo esc_url($wide); ?>"
