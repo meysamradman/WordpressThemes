@@ -12,7 +12,7 @@
      <?php if($booking['phone']): $phone_label=preg_replace('/^\+98(\d{3})(\d{3})(\d{4})$/D','0$1 $2 $3',$booking['phone']); ?>
       <a class="rdc-artist__channel" href="<?php echo esc_url('tel:'.$booking['phone'],['tel']); ?>">
        <?php echo \RadmanCT\icon('phone'); ?>
-       <span class="rdc-artist__channel-copy"><small>هماهنگی اجرا · <?php echo esc_html($booking['name']); ?></small><bdi dir="ltr"><?php echo esc_html($phone_label); ?></bdi></span>
+       <span class="rdc-artist__channel-copy"><small>هماهنگی اجرا · <?php echo esc_html($booking['name']); ?></small><bdi dir="ltr"><?php echo esc_html(strtr($phone_label,['0'=>'۰','1'=>'۱','2'=>'۲','3'=>'۳','4'=>'۴','5'=>'۵','6'=>'۶','7'=>'۷','8'=>'۸','9'=>'۹'])); ?></bdi></span>
       </a>
      <?php endif; ?>
      <div class="rdc-artist__channel">

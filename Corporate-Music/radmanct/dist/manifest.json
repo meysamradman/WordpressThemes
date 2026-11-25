@@ -42,8 +42,8 @@
       "_refresh-BqO6rLFb.min.js"
     ]
   },
-  "_video-player-CvsavIZM.min.js": {
-    "file": "js/video-player-CvsavIZM.min.js",
+  "_video-player-BPbQf5_s.min.js": {
+    "file": "js/video-player-BPbQf5_s.min.js",
     "name": "video-player"
   },
   "src/css/admin/gallery.css": {
@@ -65,7 +65,7 @@
     "isEntry": true
   },
   "src/css/pages/artist.css": {
-    "file": "css/artist-CtOBqMtz.min.css",
+    "file": "css/artist-BvQLVuKo.min.css",
     "name": "css-artist",
     "names": [
       "css-artist.css"
@@ -205,6 +205,12 @@
     "src": "src/js/admin/biography-editor.js",
     "isEntry": true
   },
+  "src/js/admin/home-track-picker.js": {
+    "file": "js/home-track-picker-BAnGNlHU.min.js",
+    "name": "home-track-picker",
+    "src": "src/js/admin/home-track-picker.js",
+    "isEntry": true
+  },
   "src/js/admin/media-editor.js": {
     "file": "js/media-editor-BFN3qMv7.min.js",
     "name": "media-editor",
@@ -258,13 +264,13 @@
     ]
   },
   "src/js/pages/music-home.js": {
-    "file": "js/music-home-BLxHR8yp.min.js",
+    "file": "js/music-home-RWtJnp6Z.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_video-player-CvsavIZM.min.js",
+      "_video-player-BPbQf5_s.min.js",
       "_audio-controls-UesPtTzb.min.js"
     ]
   },
@@ -313,13 +319,13 @@
     ]
   },
   "src/js/pages/videos.js": {
-    "file": "js/videos-BX-Ln-hD.min.js",
+    "file": "js/videos-BO1yMbyo.min.js",
     "name": "videos",
     "src": "src/js/pages/videos.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_video-player-CvsavIZM.min.js"
+      "_video-player-BPbQf5_s.min.js"
     ]
   },
   "src/js/runtime/art-orbit.js": {

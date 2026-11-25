@@ -1,5 +1,5 @@
 export function initializeExclusiveVideos(root){
- const buttons=[...root.querySelectorAll('[data-rdc-video-toggle]')];
+ const buttons=()=>root.querySelectorAll('[data-rdc-video-toggle]');
  const visibleCovers=root.querySelectorAll('[data-rdc-aparat-visible]');
  const visiblePlayers=new Map();
  let observer;
@@ -66,7 +66,11 @@ export function initializeExclusiveVideos(root){
   const video=button.parentElement.querySelector('video');
   if(video)Promise.resolve(video.play()).catch(()=>sync(video));
  };
- for(const button of buttons){const video=button.parentElement.querySelector('video');if(video)sync(video);}
+ const syncButtons=()=>{
+  for(const button of buttons()){const video=button.parentElement.querySelector('video');if(video)sync(video);}
+ };
+ syncButtons();
+ root.addEventListener('rdc:arc-upd',syncButtons);
  root.addEventListener('play',play,true);
  root.addEventListener('pause',pause,true);
  root.addEventListener('ended',pause,true);
@@ -76,11 +80,12 @@ export function initializeExclusiveVideos(root){
   root.removeEventListener('pause',pause,true);
   root.removeEventListener('ended',pause,true);
   root.removeEventListener('click',click);
+  root.removeEventListener('rdc:arc-upd',syncButtons);
   closeEmbed();
   observer?.disconnect();
   for(const [cover,player] of visiblePlayers){player.remove();cover.hidden=false;}
   visiblePlayers.clear();
   for(const video of root.querySelectorAll('video'))video.pause();
-  for(const button of buttons)button.hidden=true;
+  for(const button of buttons())button.hidden=true;
  };
 }

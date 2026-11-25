@@ -2,7 +2,7 @@
 .rdc-artist h1{color:var(--rdc-acc);font-size:var(--rdc-sz-heading-compact);margin-block-end:.7rem;padding-inline:0}
 .rdc-artist__channels{display:flex;flex-wrap:wrap;gap:1rem;margin-block:1.25rem}
 .rdc-artist__channel{display:inline-flex;align-items:center;gap:.55rem;min-block-size:3rem;padding:.45rem .95rem;border:1px solid var(--rdc-ln);border-radius:var(--rdc-rad);background:var(--rdc-srf);font-size:clamp(1rem,1.7vw,1.4rem)}
-.rdc-artist__channel .rdc-ico{color:var(--rdc-acc);inline-size:1.6rem;block-size:1.6rem}
+.rdc-artist__channel .rdc-ico{color:var(--rdc-acc);inline-size:1.9rem;block-size:1.9rem}
 .rdc-artist__channel>a{display:grid;place-items:center;min-inline-size:2.75rem;min-block-size:2.75rem}
 .rdc-artist__channel-copy{display:grid;line-height:1.45}
 .rdc-artist__channel-copy small{color:var(--rdc-mut);font-size:.75em}
