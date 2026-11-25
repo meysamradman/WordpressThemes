@@ -24,4 +24,6 @@ if($rail){
  $download=$downloads[1080]?:($downloads[720]?:($downloads[480]?:$file));
  if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>$download_class,'download'=>true]+$download_appearance+['variant'=>'download']);
  endif; endif; ?></div></article>
-<?php endforeach; ?></div>
+<?php endforeach;
+if($rail&&!empty($args['more']))get_template_part('template-parts/sections/home/rail-more',null,$args['more']);
+?></div>
