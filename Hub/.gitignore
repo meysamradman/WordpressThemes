@@ -2,6 +2,10 @@
 .local-deps/
 backups/
 releases/
+update/new/*
+!update/new/.gitkeep
+update/old/*
+!update/old/.gitkeep
 
 # Source archive: local-only files stay outside Git.
 .playwright-mcp/

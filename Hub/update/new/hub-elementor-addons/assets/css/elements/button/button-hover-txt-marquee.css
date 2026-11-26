@@ -1,1 +1,0 @@
-.btn-hover-txt-marquee .btn-txt:after{content:attr(data-text);white-space:nowrap;display:inline-block;position:absolute;top:50%}

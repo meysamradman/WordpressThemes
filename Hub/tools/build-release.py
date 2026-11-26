@@ -5,6 +5,7 @@ import difflib
 import hashlib
 import json
 import re
+import tempfile
 import zipfile
 from pathlib import Path
 
@@ -61,26 +62,36 @@ def main():
         "files": records,
     })
     (docs / "license-changes.patch").write_text("".join(patch), encoding="utf-8", newline="\n")
-    packages = []
-    for folder, filename in (
-        ("hub", f"hub-{theme_version}.zip"),
-        ("hub-elementor-addons", f"hub-elementor-addons-{addon_version}-local1.zip"),
-        ("hub-core", f"hub-core-{core_version}-original.zip"),
-    ):
-        target = releases / filename
-        with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as archive:
-            for path in sorted((root / folder).rglob("*")):
-                if path.is_file():
-                    archive.write(path, path.relative_to(root).as_posix())
-        with zipfile.ZipFile(target) as archive:
+    with tempfile.TemporaryDirectory(dir=releases) as work:
+        work = Path(work)
+        packages = []
+        for folder, filename in (
+            ("hub", f"hub-{theme_version}.zip"),
+            ("hub-elementor-addons", f"hub-elementor-addons-{addon_version}-local1.zip"),
+            ("hub-core", f"hub-core-{core_version}-original.zip"),
+        ):
+            target = work / filename
+            with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as archive:
+                for path in sorted((root / folder).rglob("*")):
+                    if path.is_file():
+                        archive.write(path, path.relative_to(root).as_posix())
+            with zipfile.ZipFile(target) as archive:
+                if archive.testzip() is not None:
+                    raise ValueError(f"Invalid archive {filename}")
+                count = len(archive.namelist())
+            with target.open("rb") as file:
+                checksum = hashlib.file_digest(file, "sha256").hexdigest()
+            packages.append({"file": filename, "sha256": checksum, "bytes": target.stat().st_size, "entries": count})
+            print(f"PASS: {filename}, {count} files")
+        write_json(work / "manifest.json", packages)
+        bundle = work / f"Hub-{theme_version}-package.zip"
+        with zipfile.ZipFile(bundle, "w") as archive:
+            for filename in [row["file"] for row in packages] + ["manifest.json"]:
+                archive.write(work / filename, filename)
+        with zipfile.ZipFile(bundle) as archive:
             if archive.testzip() is not None:
-                raise ValueError(f"Invalid archive {filename}")
-            count = len(archive.namelist())
-        with target.open("rb") as file:
-            checksum = hashlib.file_digest(file, "sha256").hexdigest()
-        packages.append({"file": filename, "sha256": checksum, "bytes": target.stat().st_size, "entries": count})
-        print(f"PASS: {filename}, {count} files")
-    write_json(releases / "manifest.json", packages)
+                raise ValueError(f"Invalid delivery package {bundle.name}")
+        bundle.replace(releases / bundle.name)
 
 
 if __name__ == "__main__":

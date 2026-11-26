@@ -1,1 +1,0 @@
-.filter-list-decorated li>span{position:relative}.filter-list-decorated li>span:after{content:"";transform-origin:100%;background-color:#16171e;height:.0909091em;min-height:1px;transition:transform .3s;position:absolute;transform:scaleX(0)}.filter-list-decorated li.active span:after,.filter-list-decorated li:hover span:after{transform-origin:0;transform:scaleX(1)}

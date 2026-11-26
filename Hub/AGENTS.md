@@ -17,9 +17,9 @@ For Hub maintenance also apply `.agents/skills/hub-maintenance/SKILL.md`.
 - Do not install a blanket HTTP/CSP/CDN blocker. External-connection optimization
   is a report until the user separately requests implementation.
 - `hub-core` and `elementor` are unchanged upstream copies. Keep unrelated files intact.
-- Future upstream releases are supplied in `update/incoming/` (or directly in
-  `update/`). Compare first; preserve the supplied original, then reapply only
-  applicable changes. Use the change manifest and focused diff in `docs/`.
+- Put upstream inputs in `update/new/`. Use `update/old/` for rollback during
+  replacement. Empty both after verification and keep only one delivery ZIP in
+  `releases/`. See `update/README.md` for the swap workflow.
 - Use bounded PHP and Docker checks. Do not run long test suites or open a browser
   unless requested. Distinguish mocked library API checks from live vendor proof.
 - Docker project is `hub`, exposed only on `localhost:8096`; other Docker projects
