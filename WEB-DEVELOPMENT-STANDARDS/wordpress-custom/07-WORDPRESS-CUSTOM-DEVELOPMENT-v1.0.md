@@ -32,7 +32,7 @@ my-theme/
 ## 1.1. قرارداد قطعی تصویر برگه‌های با طراحی اختصاصی (بازبینی 2026-11-19)
 - در `page.php`، templateهای اختصاصی درباره/تماس/خدمات/صفحه اصلی و Page Title renderer، از `the_post_thumbnail()` یا `get_post_thumbnail_id()` به‌عنوان fallback خودکار Hero/Background استفاده نکن. عنوان/H1 و توضیح مستقل از وجود عکس؛ تصویر نداشتن طرح یک حالت معتبر است. برگه همچنان می‌تواند featured image برای social/کارت مستقل داشته باشد؛ داده را حذف یا global support را غیرفعال نکن.
 - artwork ثابت بخش از asset path و ابعاد واقعی در کد؛ از `get_theme_file_uri()` برای فایل ثابت و manifest helper مالک پروژه برای فایل build استفاده کن. برای تصویر قابل تنظیم فقط فیلد همان section با attachment ID، validate و fallback مصوب. مسیر parent/child مطابق مالکیت واقعی. مسیر مطلق localhost/uploads hardcode نشود.
-- آرشیو و کارت نمونه‌کار/مقاله/محصول/اثر: تصویر شاخص همان آیتم، نه تصویر شاخص برگه آرشیو؛ single detail طبق طرح می‌تواند همان کاور و گالری را داشته باشد. Header/Footer/Page Title عمومی نباید هم‌زمان کاور تکراری چاپ کنند. تصاویر تزئینی از content image جدا باشند. جزئیات حفاظت و بهینه‌سازی در [17](../shared/17-IMAGES-AND-MEDIA-v1.0.md).
+- در آرشیو و کارت نمونه‌کار، مقاله، محصول یا اثر، تصویر شاخص همان آیتم مصرف شود. جزئیات طبق طرح می‌تواند همان کاور و گالری را داشته باشد. Header، Footer و Page Title عمومی نباید هم‌زمان کاور تکراری چاپ کنند. [حفاظت و بهینه‌سازی تصویر](../shared/17-IMAGES-AND-MEDIA-v1.0.md) · [نام فایل و Alt](../shared/17-IMAGES-AND-MEDIA-v1.0.md#image-naming-and-alt) · [سئوی تصویر](../shared/20-TECHNICAL-SEO-SCHEMA-v1.0.md#image-seo)
 
 نمونه تصویر ثابت در PHP (فایل و اندازه مثال هستند؛ تطبیق با asset واقعی):
 ```php

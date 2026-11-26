@@ -30,10 +30,10 @@
 | 12 | [تأیید و QA](shared/12-VERIFICATION.md) | انتخاب کوتاه‌ترین بررسی برای دامنهٔ تغییر |
 | 13 | [PHP 8.4+](shared/13-PHP-DEVELOPMENT-STANDARD-v1.1.md) | موجود؛ scope هماهنگ |
 | 16 | [Design System & UI Components](shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md) | [Input و فرم](shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md#ui-input)، [Card](shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md#ui-card)، token، renderer و variant |
-| 17 | [Images & Media](shared/17-IMAGES-AND-MEDIA-v1.0.md) | مالک نقش، منبع، اولویت، responsive و مدیا |
+| 17 | [Images & Media](shared/17-IMAGES-AND-MEDIA-v1.0.md) | مالک نقش، منبع، اولویت، responsive و [نام فایل و Alt](shared/17-IMAGES-AND-MEDIA-v1.0.md#image-naming-and-alt) |
 | 18 | [Database & Query](shared/18-DATABASE-QUERY-OPTIMIZATION-v1.0.md) | مالک query و cache داده |
 | 19 | [Code Quality & Refactoring](shared/19-CODE-QUALITY-REFACTORING-v1.0.md) | مالک reuse/audit/dead code |
-| 20 | [Technical SEO & Schema](shared/20-TECHNICAL-SEO-SCHEMA-v1.0.md) | مالک HTTP/index/metadata/schema/URL migration |
+| 20 | [Technical SEO & Schema](shared/20-TECHNICAL-SEO-SCHEMA-v1.0.md) | مالک HTTP/index/metadata/schema/URL migration و [سئوی تصویر](shared/20-TECHNICAL-SEO-SCHEMA-v1.0.md#image-seo) |
 | 21 | [Deployment & Data Migration](shared/21-DEPLOYMENT-DATA-MIGRATION-v1.0.md) | مالک فرایند تحویل/migration/rollback |
 
 ## مسیر WordPress Custom (wordpress-custom/)
