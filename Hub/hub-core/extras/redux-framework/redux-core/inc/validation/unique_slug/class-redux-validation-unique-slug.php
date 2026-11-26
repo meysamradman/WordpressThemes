@@ -31,6 +31,8 @@ if ( ! class_exists( 'Redux_Validation_Unique_Slug', false ) ) {
 
 			$slug = $this->value;
 
+			$post_name_check = '';
+
 			$feeds = $wp_rewrite->feeds;
 			if ( ! is_array( $feeds ) ) {
 				$feeds = array();
@@ -54,7 +56,7 @@ if ( ! class_exists( 'Redux_Validation_Unique_Slug', false ) ) {
 			 * @param string $slug      The post slug.
 			 * @param string $post_type Post type.
 			 */
-			if ( $post_name_check || in_array( $slug, $feeds, true ) || apply_filters( 'wp_unique_post_slug_is_bad_attachment_slug', false, $slug ) ) {
+			if ( $post_name_check || in_array( $slug, $feeds, true ) || apply_filters( 'wp_unique_post_slug_is_bad_attachment_slug', false, $slug ) ) { // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals -- WordPress hook. Cannot be changed to plugin prefix.
 				$suffix = 2;
 
 				do {
@@ -68,7 +70,7 @@ if ( ! class_exists( 'Redux_Validation_Unique_Slug', false ) ) {
 						wp_cache_set( 'redux-alt-post-name', $result );
 					}
 
-					$suffix ++;
+					++$suffix;
 				} while ( $post_name_check );
 
 				$slug                   = $alt_post_name;

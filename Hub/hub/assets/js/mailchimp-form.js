@@ -26,6 +26,7 @@ jQuery(document).ready(function($) {
         data: { 
           'action': 'add_mailchimp_user',
           'list_id': $('.ld_sf_list_id', sf).val(),
+          'list_sig': $('.ld_sf_list_sig', sf).val(),
           'email': $('.ld_sf_email', sf).val(),
           'fname': $('.ld_sf_name', sf).val(), 
           'lname': $('.ld_sf_lname', sf).val(),

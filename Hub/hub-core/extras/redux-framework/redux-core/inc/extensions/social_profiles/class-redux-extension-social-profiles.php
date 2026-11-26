@@ -5,7 +5,9 @@
  * @package Redux
  * @author  Kevin Provance <kevin.provance@gmail.com>
  * @class   Redux_Extension_Social_Profiles
- * @version 4.3.17
+ * @version 4.5.8
+ *
+ * @noinspection PhpIgnoredClassAliasDeclaration
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -25,14 +27,14 @@ if ( ! class_exists( 'Redux_Extension_Social_Profiles' ) ) {
 		 *
 		 * @var string
 		 */
-		public static $version = '4.3.17';
+		public static $version = '4.5.8';
 
 		/**
 		 * Extension friendly name.
 		 *
 		 * @var string
 		 */
-		public $extension_name = 'Social Profiles';
+		public string $extension_name = 'Social Profiles';
 
 		/**
 		 * Field ID.
@@ -44,16 +46,16 @@ if ( ! class_exists( 'Redux_Extension_Social_Profiles' ) ) {
 		/**
 		 * Field array.
 		 *
-		 * @var array|mixed
+		 * @var array|null
 		 */
-		public $field = array();
+		public ?array $field = array();
 
 		/**
 		 * Panel opt_name.
 		 *
 		 * @var string
 		 */
-		public $opt_name = '';
+		public string $opt_name;
 
 		/**
 		 * Class Constructor. Defines the args for the extensions class
@@ -89,7 +91,7 @@ if ( ! class_exists( 'Redux_Extension_Social_Profiles' ) ) {
 			$upload_dir = Redux_Social_Profiles_Functions::$upload_dir;
 
 			if ( ! is_dir( $upload_dir ) ) {
-				$redux->filesystem->execute( 'mkdir', $upload_dir );
+				Redux_Core::$filesystem->execute( 'mkdir', $upload_dir );
 			}
 
 			if ( ! class_exists( 'Redux_Social_Profiles_Widget' ) ) {
@@ -233,6 +235,7 @@ if ( ! class_exists( 'Redux_Extension_Social_Profiles' ) ) {
 
 						$save_data[] = array(
 							'id'         => $data['id'],
+							'class'      => $data['class'] ?? 'fa',
 							'icon'       => $data['icon'],
 							'enabled'    => $data['enabled'],
 							'url'        => $data['url'],
@@ -278,6 +281,6 @@ if ( ! class_exists( 'Redux_Extension_Social_Profiles' ) ) {
 			);
 		}
 	}
-}
 
-class_alias( 'Redux_Extension_Social_Profiles', 'ReduxFramework_Extension_social_profiles' );
+	class_alias( Redux_Extension_Social_Profiles::class, 'ReduxFramework_Extension_social_profiles' );
+}

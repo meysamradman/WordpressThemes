@@ -35,6 +35,12 @@ class Liquid_Theme extends Liquid_Base {
 	protected $theme_options_values = array();
 
 	/**
+	 * Theme options key
+	 * @var string
+	 */
+	protected $theme_options_name = '';
+
+	/**
 	 * Hold an instance of Liquid_Theme class.
 	 * @var Liquid_Theme
 	 */
@@ -117,6 +123,11 @@ class Liquid_Theme extends Liquid_Base {
 
 		// Load Register and updater classes
 		include_once( get_template_directory() . '/liquid/admin/updater/liquid-register-admin.php' );
+
+		// The All-Access promotion in wp-admin (admins only)
+		if ( is_admin() ) {
+			include_once( get_template_directory() . '/liquid/admin/views/liquid-promote.php' );
+		}
 
 		// Front-end
 		if ( ! is_admin() ) {
@@ -426,10 +437,10 @@ class Liquid_Theme extends Liquid_Base {
 		if ( version_compare( $theme_version, '2.0', '>=' ) ){
 
 			if (
-				($tgmpa->is_plugin_active( 'hub-elementor-addons' ) && version_compare( LD_ELEMENTOR_VERSION, '6.0.3', '<' )) ||
+				($tgmpa->is_plugin_active( 'hub-elementor-addons' ) && version_compare( LD_ELEMENTOR_VERSION, '7.0.1', '<' )) ||
 				(
 				  ( class_exists('Liquid_Addons') && !defined('LD_ADDONS_VERSION') ) ||
-				  ( class_exists('Liquid_Addons') && (defined('LD_ADDONS_VERSION') && version_compare( LD_ADDONS_VERSION, '6.0.3', '<' )) )
+				  ( class_exists('Liquid_Addons') && (defined('LD_ADDONS_VERSION') && version_compare( LD_ADDONS_VERSION, '7.0.1', '<' )) )
 				)
 			){
 				if ( $url != '?page=liquid-about' )  {

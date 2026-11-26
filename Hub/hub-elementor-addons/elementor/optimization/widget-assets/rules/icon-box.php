@@ -55,8 +55,15 @@ if ( $element_name === 'ld_icon_box' ) {
   $widget_utils['lqdsep-utils-pos-rel'] = array();
   $widget_utils['lqdsep-utils-pos-abs'] = array(
     'conditions' =>
-      $element->get_settings('show_label') === 'yes' &&
-      ! empty( $element->get_settings('label') )
+        (
+            $element->get_settings('show_label') === 'yes' &&
+            ! empty( $element->get_settings('label') )
+        ) ||
+        $element->get_settings('enable_gradient_icon') === 'yes'
+  );
+  $widget_utils['lqdsep-utils-pos-tl'] = array(
+    'conditions' =>
+        $element->get_settings('enable_gradient_icon') === 'yes'
   );
   $widget_utils['lqdsep-utils-overlay'] = array(
     'conditions' =>

@@ -9,4 +9,5 @@ $section = array(
   'lqdsep-header-stickybar-right' => 'header/stickybar/stickybar-right.css',
   'lqdsep-shape-cutout-base' => 'theme-features/cutout/cutout.css',
   'lqdsep-shape-cutout-style-1' => 'theme-features/cutout/cutout-style-1.css',
+  'lqdsep-shape-cutout-style-2' => 'theme-features/cutout/cutout-style-2.css',
 );

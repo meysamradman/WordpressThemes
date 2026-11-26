@@ -25,7 +25,7 @@ if ( ! class_exists( 'Redux_Framework_Plugin', false ) ) {
 		 * @var         array $options Array of config options, used to check for demo mode
 		 * @since       3.0.0
 		 */
-		protected $options = array();
+		protected array $options = array();
 
 		/**
 		 * Use this value as the text domain when translating strings from this plugin. It should match
@@ -37,25 +37,25 @@ if ( ! class_exists( 'Redux_Framework_Plugin', false ) ) {
 		 * @var         string $plugin_slug The unique ID (slug) of this plugin
 		 * @since       3.0.0
 		 */
-		protected $plugin_slug = 'redux-framework';
+		protected string $plugin_slug = 'redux-framework';
 
 		/**
 		 * Set on network activate.
 		 *
 		 * @access      protected
-		 * @var         string $plugin_network_activated Check for plugin network activation
+		 * @var         null|string $plugin_network_activated Check for plugin network activation
 		 * @since       3.0.0
 		 */
-		protected $plugin_network_activated = null;
+		protected ?string $plugin_network_activated = null;
 
 		/**
 		 * Class instance.
 		 *
 		 * @access      private
-		 * @var         Redux_Framework_Plugin $instance The one true Redux_Framework_Plugin
+		 * @var         ?Redux_Framework_Plugin $instance The one true Redux_Framework_Plugin
 		 * @since       3.0.0
 		 */
-		private static $instance;
+		private static ?Redux_Framework_Plugin $instance = null;
 
 		/**
 		 * Crash flag.
@@ -78,17 +78,15 @@ if ( ! class_exists( 'Redux_Framework_Plugin', false ) ) {
 			$res  = false;
 
 			if ( function_exists( 'get_plugin_data' ) && file_exists( $path ) ) {
-				// $data = get_plugin_data( $path );
-				$data = [
-					'Version' => '4.4.12.2',
-				];
+				$data = get_plugin_data( $path, true, false );
 
 				if ( isset( $data['Version'] ) && '' !== $data['Version'] ) {
 					$res = version_compare( $data['Version'], '4', '<' );
 				}
 
-				if ( is_plugin_active( 'redux-framework/redux-framework.php' ) && true === $res ) {
-					echo '<div class="error"><p>' . esc_html__( 'Redux Framework version 4 is activated but not loaded. Redux Framework version 3 is still installed and activated.  Please deactivate Redux Framework version 3.', 'redux-framework' ) . '</p></div>'; // phpcs:ignore WordPress.Security.EscapeOutput
+				// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals -- active_plugins is a WP hook.
+				if ( true === $res && ! in_array( 'redux-framework/redux-framework.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
+					echo '<div class="error"><p>' . esc_html__( 'Redux Framework version 4 is activated but not loaded. Redux Framework version 3 is still installed and activated.  Please deactivate Redux Framework version 3.', 'redux-framework' ) . '</p></div>';
 					return null;
 				}
 			}
@@ -153,7 +151,7 @@ if ( ! class_exists( 'Redux_Framework_Plugin', false ) ) {
 		}
 
 		/**
-		 * Include necessary files
+		 * Include the necessary files
 		 *
 		 * @access      public
 		 * @since       3.1.3
@@ -324,7 +322,7 @@ if ( ! class_exists( 'Redux_Framework_Plugin', false ) ) {
 			if ( false === $result ) {
 
 				// WordPress says get_col is discouraged?  I found no alternative.  So...ignore! - kp.
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 				$result = $wpdb->get_col( $wpdb->prepare( "SELECT blog_id FROM $wpdb->blogs WHERE archived = %s AND spam = %s AND deleted = %s", $var, $var, $var ) );
 
 				wp_cache_set( 'redux-blog-ids', $result );
@@ -415,14 +413,13 @@ if ( ! class_exists( 'Redux_Framework_Plugin', false ) ) {
 		/**
 		 * Add a settings link to the Redux entry in the plugin overview screen
 		 *
-		 * @param array  $links Links array.
-		 * @param string $file  Plugin filename/slug.
+		 * @param array $links Links array.
 		 *
 		 * @return array
 		 * @see   filter:plugin_action_links
 		 * @since 1.0
 		 */
-		public function add_settings_link( array $links, string $file ): array {
+		public function add_settings_link( array $links ): array {
 			return $links;
 		}
 
@@ -445,6 +442,7 @@ if ( ! class_exists( 'Redux_Framework_Plugin', false ) ) {
 			return $links;
 		}
 	}
+
 	if ( ! class_exists( 'ReduxFrameworkPlugin' ) ) {
 		class_alias( 'Redux_Framework_Plugin', 'ReduxFrameworkPlugin' );
 	}

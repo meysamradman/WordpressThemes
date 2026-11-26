@@ -1,11 +1,12 @@
 <?php
 /**
  * Redux User Meta config.
- * For full documentation, please visit: http:https://devs.redux.io/
+ * For full documentation, please visit: https://devs.redux.io
  *
  * @package Redux
  */
 
+// phpcs:disable
 defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Redux_Users' ) ) {
@@ -37,10 +38,9 @@ Redux_Users::set_profile(
 						'title' => esc_html__( 'Input 1', 'your-textdomain-here' ),
 					),
 					array(
-						'id'       => 'user-text-2',
-						'type'     => 'text',
-						'required' => array( 'user-text', '=', 'two' ),
-						'title'    => esc_html__( 'Input 2', 'your-textdomain-here' ),
+						'id'    => 'user-text-2',
+						'type'  => 'text',
+						'title' => esc_html__( 'Input 2', 'your-textdomain-here' ),
 					),
 					array(
 						'id'    => 'user-text-3',
@@ -137,13 +137,13 @@ Redux_Users::set_profile(
 						'title'    => esc_html__( 'Switch - Nested Children, Enable to show', 'your-textdomain-here' ),
 						'subtitle' => esc_html__( 'Look, it\'s on! Also hidden child elements!', 'your-textdomain-here' ),
 						'default'  => 0,
-						'on'       => 'Enabled',
-						'off'      => 'Disabled',
+						'on'       => esc_html__( 'Enabled', 'your-textdomain-here' ),
+						'off'      => esc_html__( 'Disabled', 'your-textdomain-here' ),
 					),
 					array(
 						'id'       => 'user-switch-child',
 						'type'     => 'switch',
-						'required' => array( 'switch-parent', '=', '1' ),
+						'required' => array( 'user-switch-parent', '=', '1' ),
 						'title'    => esc_html__( 'Switch - This and the next switch required for patterns to show', 'your-textdomain-here' ),
 						'subtitle' => esc_html__( 'Also called a "fold" parent.', 'your-textdomain-here' ),
 						'desc'     => esc_html__( 'Items set with a fold to this ID will hide unless this is set to the appropriate value.', 'your-textdomain-here' ),
@@ -212,3 +212,4 @@ $data = Redux_Users::get_user_meta(
 		'user'     => '',          // User id, else current user ID is returned.
 	)
 );
+// phpcs:enable

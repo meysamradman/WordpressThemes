@@ -1,8 +1,8 @@
-<?php 
-	
+<?php
+
 	$theme = liquid_helper()->get_current_theme();
 	$logo_url = apply_filters( 'liquid_admin_logo', get_template_directory_uri() . '/liquid/assets/img/dashboard/hubbig.svg' );
-	
+
 ?>
 <nav class="lqd-dsd-menubard">
 
@@ -45,6 +45,7 @@
 				<span><?php esc_html_e( 'Documentations', 'hub' ); ?></span>
 			</a>
 		</li>
+		<?php echo liquid_promote_menu(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in the menu item. ?>
 	</ul>
 
 </nav>

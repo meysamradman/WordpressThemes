@@ -12,9 +12,9 @@
  * Text Domain: 'hub'
  * Domain Path: /languages/
  */
-// This local build has no theme activation or license gate.
+
 // Starting The Engine / Load the Liquid Framework ----------------
 include_once( get_template_directory() . '/liquid/liquid-init.php' );
-// Keep vendor updates available without activation or domain locks.
+
 require_once get_template_directory() . '/liquid/admin/updater/liquid-updater-class.php';
 new Liquid_Updater();

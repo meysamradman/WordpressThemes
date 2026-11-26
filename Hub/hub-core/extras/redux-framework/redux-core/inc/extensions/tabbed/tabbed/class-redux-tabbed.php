@@ -34,7 +34,7 @@ if ( ! class_exists( 'Redux_Tabbed', false ) ) {
 		 * @since ReduxFramework 0.0.4
 		 */
 		public function render() {
-			$unallowed = array( 'tabbed', 'social_profiles', 'color_schemes', 'repeater' );
+			$unallowed = array( 'tabbed', 'social_profiles', 'color_schemes', 'repeater', 'icon_select' );
 
 			echo '<div id="' . esc_attr( $this->field['id'] ) . '-tabbed" class="redux-tabbed" rel="' . esc_attr( $this->field['id'] ) . '">';
 			echo '<div class="redux-tabbed-nav" data-id="' . esc_attr( $this->field['id'] ) . '">';
@@ -117,14 +117,17 @@ if ( ! class_exists( 'Redux_Tabbed', false ) ) {
 						if ( ! isset( $field['args'][ $key ] ) ) {
 							$field['args'][ $key ] = array();
 						}
-						$field['options'][ $key ] = $this->parent->get_wordpress_data( $data, $field['args'][ $key ] );
+
+						$field['options'][ $key ] = $this->parent->wordpress_data->get( $data, $field['args'][ $key ], $this->parent->args['opt_name'] );
 					}
 				}
 			}
 
-			$default = $field['default'] ?? '';
+			$default = $field['default'] ?? null;
 
-			$value = empty( $this->parent->options[ $orig_field_id ] ) ? $default : $this->parent->options[ $orig_field_id ];
+			// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
+			// $value = isset( $this->parent->options[ $orig_field_id ] ) && 0 !== (int) $this->parent->options[ $orig_field_id ] ? $this->parent->options[ $orig_field_id ] : $default;
+			$value = $this->parent->options[ $orig_field_id ] ?? $default;
 
 			$this->parent->render_class->field_input( $field, $value );
 
@@ -195,6 +198,8 @@ if ( ! class_exists( 'Redux_Tabbed', false ) ) {
 		 * @since ReduxFramework 0.0.4
 		 */
 		public function enqueue() {
+			wp_print_styles( 'editor-buttons' );
+
 			wp_enqueue_script(
 				'redux-field-tabbed',
 				Redux_Core::$url . 'inc/extensions/tabbed/tabbed/redux-tabbed' . Redux_Functions::is_min() . '.js',

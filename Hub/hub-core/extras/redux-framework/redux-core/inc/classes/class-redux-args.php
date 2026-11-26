@@ -26,38 +26,38 @@ if ( ! class_exists( 'Redux_Args', false ) ) {
 		/**
 		 * ReduxFramework object.
 		 *
-		 * @var null
+		 * @var ReduxFramework|null
 		 */
-		private $parent;
+		private ?ReduxFramework $parent;
 
 		/**
 		 * Switch to omit social icons if dev_mode is set to true and Redux defaults are used.
 		 *
 		 * @var bool
 		 */
-		public $omit_icons = false;
+		public bool $omit_icons = false;
 
 		/**
 		 * Switch to omit support menu items if dev_mode is set to true and redux defaults are used.
 		 *
 		 * @var bool
 		 */
-		public $omit_items = false;
+		public bool $omit_items = false;
 
 		/**
 		 * Flag to force dev_mod to true if in localhost or WP_DEBUG is set to true.
 		 *
 		 * @var bool
 		 */
-		public $dev_mode_forced = false;
+		public bool $dev_mode_forced = false;
 
 		/**
 		 * Redux_Args constructor.
 		 *
-		 * @param     object $redux ReduxFramework object.
-		 * @param     array  $args Global arguments array.
+		 * @param ReduxFramework $redux ReduxFramework object.
+		 * @param array          $args  Global arguments array.
 		 */
-		public function __construct( $redux, array $args ) {
+		public function __construct( ReduxFramework $redux, array $args ) {
 			$this->parent = $redux;
 
 			$default = array(
@@ -163,10 +163,9 @@ if ( ! class_exists( 'Redux_Args', false ) ) {
 				'font_display'                     => 'swap', // block|swap|fallback|optional.
 				'load_on_cron'                     => false,
 				'search'                           => false,
+				'widget_area'                      => false,
+				'custom_fonts'                     => true,
 			);
-
-			// phpcs:ignore WordPress.NamingConventions.ValidHookName
-			$default = apply_filters( 'redux/pro/args/defaults', $default );
 
 			$args = Redux_Functions::parse_args( $args, $default );
 
@@ -265,9 +264,9 @@ if ( ! class_exists( 'Redux_Args', false ) ) {
 
 				$footer_text = sprintf(
 				/* translators: 1: Redux, 2: Link to plugin review */
-					__( 'Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!', 'redux-framework' ),
+					__( 'Enjoyed %1$s? Please leave us a %2$s. We really appreciate your support!', 'redux-framework' ),
 					'<strong>' . __( 'Redux', 'redux-framework' ) . '</strong>',
-					'<a href="https://wordpress.org/support/plugin/redux-framework/reviews/?filter=5/#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>'
+					'<a href="https://wordpress.org/support/plugin/redux-framework/reviews/#new-post" target="_blank">' . __( 'review', 'redux-framework' ) . '</a>'
 				);
 				$args['footer_credit'] = '<span id="footer-thankyou">' . $footer_text . '</span>';
 			}

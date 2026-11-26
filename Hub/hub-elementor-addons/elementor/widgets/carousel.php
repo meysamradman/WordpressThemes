@@ -98,7 +98,7 @@ class LD_Carousel extends Widget_Base {
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'carousel', 'slider' ];
+		return [ 'carousel', 'slider', 'marquee' ];
 	}
 
 	/*
@@ -321,7 +321,7 @@ class LD_Carousel extends Widget_Base {
 				'label' => __( 'Templates', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'default' => '0',
 				'condition' => [
@@ -370,7 +370,7 @@ class LD_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'width: {{SIZE}}{{UNIT}}; flex: 0 0 auto;',
+					'{{WRAPPER}} .carousel-item{{CURRENT_ITEM}}' => 'width: {{SIZE}}{{UNIT}}; flex: 0 0 auto;',
 				],
 				'render_type' => 'template',
 			]
@@ -2064,6 +2064,17 @@ class LD_Carousel extends Widget_Base {
         );
 
 		$this->add_control(
+			'carousel_item_color',
+			[
+				'label' => __( 'Items color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .carousel-item-inner' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
 			'carousel_item_bg_color',
 			[
 				'label' => __( 'Items background', 'hub-elementor-addons' ),
@@ -2253,7 +2264,7 @@ class LD_Carousel extends Widget_Base {
 										if ($item['content_type'] === 'tinymce'){
 											echo $item['list_content'];
 										}else{
-											echo \Elementor\Plugin::instance()->frontend->get_builder_content( $item['templates'], true );
+											echo \LiquidElementor\Template_Renderer::render( $item['templates'] );
 										}
 										?>
 									</div>
@@ -2522,7 +2533,6 @@ class LD_Carousel extends Widget_Base {
 			$raw['lqd_parallax_settings_trigger_start'],
 			$raw['lqd_parallax_settings_trigger_end'],
 			$raw['lqd_parallax_settings_duration'],
-			$raw['lqd_parallax_settings_perspective'],
 			$raw['lqd_parallax_from_x'],
 			$raw['lqd_parallax_from_y'],
 			$raw['lqd_parallax_from_z'],

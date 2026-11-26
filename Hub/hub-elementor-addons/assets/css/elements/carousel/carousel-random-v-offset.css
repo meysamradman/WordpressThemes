@@ -1,1 +1,1 @@
-.carousel-items-random-v-offset .carousel-item.has-one-child .carousel-item-inner{display:block;flex-grow:0}
+.carousel-items.carousel-low-opacity-others .carousel-item{transition:opacity .5s}.carousel-items.carousel-low-opacity-others .carousel-item:not(.is-selected){opacity:.2}.carousel-items-random-v-offset .carousel-item.has-one-child .carousel-item-inner{flex-grow:0;display:block}

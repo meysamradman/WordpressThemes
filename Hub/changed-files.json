@@ -8,5 +8,7 @@
   "hub/liquid/libs/merlin/class-merlin.php",
   "hub/liquid/libs/merlin/merlin-config.php",
   "hub-elementor-addons/elementor/template-library/template-library.php",
-  "hub/liquid/admin/updater/liquid-updater-class.php"
+  "hub/liquid/admin/updater/liquid-updater-class.php",
+  "hub/liquid/admin/views/liquid-features.php",
+  "hub/liquid/admin/views/liquid-promote.php"
 ]

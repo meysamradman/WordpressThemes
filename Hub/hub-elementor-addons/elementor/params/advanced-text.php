@@ -69,6 +69,7 @@ function ld_el_advanced_text( $prefix, $condition = '' ){
             ],
             'selectors' => [
                 '{{WRAPPER}} {{CURRENT_ITEM}} img' => 'width: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} {{CURRENT_ITEM}} svg' => 'width: {{SIZE}}{{UNIT}}; height: auto;',
             ],
             'condition' => [
                 'image[url]!' => ''
@@ -116,7 +117,7 @@ function ld_el_advanced_text( $prefix, $condition = '' ){
             ],
             'default' => 'bottom',
             'selectors' => [
-                '{{WRAPPER}} {{CURRENT_ITEM}} figure' => 'vertical-align: {{VALUE}};',
+                '{{WRAPPER}} {{CURRENT_ITEM}} .lqd-adv-txt-fig' => 'vertical-align: {{VALUE}};',
             ],
             'condition' => [
                 'image[url]!' => ''
@@ -132,7 +133,7 @@ function ld_el_advanced_text( $prefix, $condition = '' ){
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em' ],
             'selectors' => [
-                '{{WRAPPER}} {{CURRENT_ITEM}} img' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};border-style: solid;',
+                '{{WRAPPER}} {{CURRENT_ITEM}} img, {{WRAPPER}} {{CURRENT_ITEM}} svg' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};border-style: solid;',
             ],
             'condition' => [
                 'image[url]!' => ''
@@ -147,7 +148,7 @@ function ld_el_advanced_text( $prefix, $condition = '' ){
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em' ],
             'selectors' => [
-                '{{WRAPPER}} {{CURRENT_ITEM}} img, {{WRAPPER}} {{CURRENT_ITEM}} figure' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} {{CURRENT_ITEM}} img, {{WRAPPER}} {{CURRENT_ITEM}} svg, {{WRAPPER}} {{CURRENT_ITEM}} .lqd-adv-txt-fig' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'condition' => [
                 'image[url]!' => ''
@@ -161,7 +162,7 @@ function ld_el_advanced_text( $prefix, $condition = '' ){
             'label' => esc_html__( 'Border Color', 'textdomain' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} {{CURRENT_ITEM}} img' => 'border-color: {{VALUE}}',
+                '{{WRAPPER}} {{CURRENT_ITEM}} img, {{WRAPPER}} {{CURRENT_ITEM}} svg' => 'border-color: {{VALUE}}',
             ],
             'condition' => [
                 'image[url]!' => ''
@@ -176,7 +177,7 @@ function ld_el_advanced_text( $prefix, $condition = '' ){
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em' ],
             'selectors' => [
-                '{{WRAPPER}} {{CURRENT_ITEM}} figure' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} {{CURRENT_ITEM}} .lqd-adv-txt-fig' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'condition' => [
                 'image[url]!' => ''
@@ -261,6 +262,42 @@ function ld_el_advanced_text( $prefix, $condition = '' ){
 		]
 	);
 
+	$repeater_advanced_text->add_responsive_control(
+		'advanced_text_opacity',
+		[
+			'label' => esc_html__( 'Opacity', 'hub-elementor-addons' ),
+			'type' => Controls_Manager::SLIDER,
+			'range' => [
+				'px' => [
+					'min' => 0,
+					'max' => 1,
+					'step' => 0.01,
+				],
+			],
+			'selectors' => [
+				'{{WRAPPER}} {{CURRENT_ITEM}}' => 'opacity: {{SIZE}};',
+			],
+		]
+	);
+
+	$repeater_advanced_text->add_responsive_control(
+		'advanced_text_rotate',
+		[
+			'label' => esc_html__( 'Rotate', 'hub-elementor-addons' ),
+			'type' => Controls_Manager::SLIDER,
+			'px' => [
+				'deg' => [
+					'min' => -360,
+					'max' => 360,
+					'step' => 1,
+				],
+			],
+			'selectors' => [
+				'{{WRAPPER}} {{CURRENT_ITEM}}' => 'display: inline-flex; transform: rotate({{SIZE}}deg); transform-origin: center;',
+			],
+		]
+	);
+
     $prefix->add_control(
         'advanced_text_content',
         [
@@ -284,6 +321,79 @@ function ld_el_advanced_text( $prefix, $condition = '' ){
 
 }
 
+/**
+ * Allowed HTML for advanced text output.
+ *
+ * `wp_kses_post()` strips `<svg>` and every SVG child tag, which would wipe out the
+ * inline SVG markup returned by Elementor's SVG handler. This extends the standard
+ * post allowlist with the SVG tags/attributes Elementor's sanitizer can emit.
+ */
+function ld_el_advanced_text_allowed_html(){
+
+    $allowed = wp_kses_allowed_html( 'post' );
+
+    // Attributes shared by every SVG element. Note: kses lowercases tag and attribute
+    // names, which is fine because the HTML parser re-maps them for SVG (viewbox ->
+    // viewBox, clippath -> clipPath, and so on).
+    $shared_attrs = array(
+        'class' => true,
+        'id' => true,
+        'style' => true,
+        'role' => true,
+        'aria-hidden' => true,
+        'aria-label' => true,
+        'data-*' => true,
+        'fill' => true,
+        'fill-rule' => true,
+        'fill-opacity' => true,
+        'stroke' => true,
+        'stroke-width' => true,
+        'stroke-linecap' => true,
+        'stroke-linejoin' => true,
+        'stroke-dasharray' => true,
+        'stroke-dashoffset' => true,
+        'stroke-miterlimit' => true,
+        'stroke-opacity' => true,
+        'opacity' => true,
+        'transform' => true,
+        'clip-path' => true,
+        'clip-rule' => true,
+        'mask' => true,
+        'filter' => true,
+    );
+
+    $svg_tags = array(
+        'svg' => array( 'xmlns' => true, 'xmlns:xlink' => true, 'viewbox' => true, 'width' => true, 'height' => true, 'preserveaspectratio' => true, 'x' => true, 'y' => true, 'version' => true, 'xml:space' => true ),
+        'g' => array(),
+        'path' => array( 'd' => true, 'pathlength' => true ),
+        'circle' => array( 'cx' => true, 'cy' => true, 'r' => true ),
+        'ellipse' => array( 'cx' => true, 'cy' => true, 'rx' => true, 'ry' => true ),
+        'rect' => array( 'x' => true, 'y' => true, 'width' => true, 'height' => true, 'rx' => true, 'ry' => true ),
+        'line' => array( 'x1' => true, 'y1' => true, 'x2' => true, 'y2' => true ),
+        'polyline' => array( 'points' => true ),
+        'polygon' => array( 'points' => true ),
+        'defs' => array(),
+        'symbol' => array( 'viewbox' => true ),
+        'use' => array( 'href' => true, 'xlink:href' => true, 'x' => true, 'y' => true, 'width' => true, 'height' => true ),
+        'clippath' => array( 'clippathunits' => true ),
+        'lineargradient' => array( 'x1' => true, 'y1' => true, 'x2' => true, 'y2' => true, 'gradientunits' => true, 'gradienttransform' => true ),
+        'radialgradient' => array( 'cx' => true, 'cy' => true, 'r' => true, 'fx' => true, 'fy' => true, 'gradientunits' => true, 'gradienttransform' => true ),
+        'stop' => array( 'offset' => true, 'stop-color' => true, 'stop-opacity' => true ),
+        'pattern' => array( 'x' => true, 'y' => true, 'width' => true, 'height' => true, 'patternunits' => true, 'patterncontentunits' => true, 'patterntransform' => true, 'viewbox' => true ),
+        'text' => array( 'x' => true, 'y' => true, 'dx' => true, 'dy' => true, 'text-anchor' => true, 'font-size' => true, 'font-family' => true, 'font-weight' => true ),
+        'tspan' => array( 'x' => true, 'y' => true, 'dx' => true, 'dy' => true ),
+        'title' => array(),
+        'desc' => array(),
+    );
+
+    foreach ( $svg_tags as $tag => $attrs ) {
+        $allowed[ $tag ] = array_merge( $shared_attrs, $attrs );
+    }
+
+    return $allowed;
+
+}
+
 function ld_el_get_advanced_text( $widget ){
 
     $items = $widget->get_settings_for_display('advanced_text_content');
@@ -295,7 +405,22 @@ function ld_el_get_advanced_text( $widget ){
             $content .= sprintf( '<span class="lqd-adv-txt-item elementor-repeater-item-%s">', $item['_id'] );
 
             if ( !empty($item['image']['url']) ){
-                $img_html = '<figure class="lqd-adv-txt-fig pos-rel d-inline-flex">' . wp_get_attachment_image( $item['image']['id'], 'full', false ) . '</figure>';
+                $image_id = ! empty( $item['image']['id'] ) ? $item['image']['id'] : 0;
+                $is_svg = $image_id
+                    ? get_post_mime_type( $image_id ) === 'image/svg+xml'
+                    : 'svg' === strtolower( pathinfo( $item['image']['url'], PATHINFO_EXTENSION ) );
+
+                $image_markup = '';
+
+                if ( $is_svg && $image_id && class_exists( '\Elementor\Core\Files\File_Types\Svg' ) ) {
+                    $image_markup = \Elementor\Core\Files\File_Types\Svg::get_inline_svg( $image_id );
+                }
+
+                if ( empty( $image_markup ) ) {
+                    $image_markup = wp_get_attachment_image( $image_id, 'full', false );
+                }
+
+                $img_html = '<span class="lqd-adv-txt-fig pos-rel d-inline-flex">' . $image_markup . '</span>';
                 $content = $item['image_align'] === 'left' ? $content . $img_html . $item['text'] : $content . $item['text'] . $img_html;
             } else {
                 $content .= $item['text'];

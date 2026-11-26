@@ -22,35 +22,35 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 		 *
 		 * @var array
 		 */
-		public $no_panel = array();
+		public array $no_panel = array();
 
 		/**
 		 * Array to hold single panel sections.
 		 *
 		 * @var array
 		 */
-		private $no_panel_section = array();
+		private array $no_panel_section = array();
 
 		/**
 		 * Array to hold hidden fields.
 		 *
 		 * @var array
 		 */
-		private $hidden_perm_fields = array();
+		private array $hidden_perm_fields = array();
 
 		/**
 		 * Array to hold hidden sections.
 		 *
 		 * @var array
 		 */
-		public $hidden_perm_sections = array();
+		public array $hidden_perm_sections = array();
 
 		/**
 		 * Array to hold default options.
 		 *
 		 * @var array
 		 */
-		private $options_defaults = array();
+		private array $options_defaults = array();
 
 		/**
 		 * Redux_Options constructor.
@@ -77,6 +77,7 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 				if ( 'fields' === $key ) {
 					foreach ( $section as $field ) {
 						if ( ! empty( $field['id'] ) && ! empty( $field['data'] ) && ! empty( $options_values[ $field['id'] ] ) && Redux_Helpers::is_integer( $options_values[ $field['id'] ] ) ) {
+							//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals -- Third party hook. Cannot change.
 							$options_values[ $field['id'] ] = apply_filters( 'wpml_object_id', $options_values[ $field['id'] ], $field['data'], true );
 						}
 					}
@@ -118,6 +119,10 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 				default:
 					$result = get_option( $core->args['opt_name'], array() );
 
+			}
+
+			if ( ! is_array( $result ) ) {
+				return;
 			}
 
 			if ( empty( $result ) && empty( $defaults ) ) {
@@ -211,14 +216,14 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 		/**
 		 * Set a global variable by the global_variable argument
 		 *
-		 * @param object $core ReduxFramework core object.
+		 * @param null|ReduxFramework $core ReduxFramework core object.
 		 *
 		 * @return  void          (global was set)
 		 * @since   3.1.5
 		 */
-		private function set_global_variable( $core ): void {
+		private function set_global_variable( ?ReduxFramework $core ): void {
 			if ( ! empty( $core->args['global_variable'] ) ) {
-				$options_global = $core->args['global_variable'];
+				$redux_options_global = $core->args['global_variable'];
 
 				/**
 				 * Filter 'redux/options/{opt_name}/global_variable'
@@ -226,8 +231,8 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 				 * @param array $value option value to set global_variable with
 				 */
 
-				// phpcs:ignore WordPress.NamingConventions.ValidHookName
-				$GLOBALS[ $options_global ] = apply_filters( "redux/options/{$core->args['opt_name']}/global_variable", $core->options );
+				// phpcs:ignore WordPress.NamingConventions.ValidHookName, WordPress.NamingConventions.PrefixAllGlobals -- Misflag, variable begins with plugin name.
+				$GLOBALS[ $redux_options_global ] = apply_filters( "redux/options/{$core->args['opt_name']}/global_variable", $core->options );
 			}
 		}
 
@@ -461,7 +466,7 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 
 						// CORRECT URLS if media URLs are wrong, but attachment IDs are present.
 						if ( 'media' === $field['type'] ) {
-							if ( isset( $core->options[ $field['id'] ]['id'] ) && isset( $core->options[ $field['id'] ]['url'] ) && ! empty( $core->options[ $field['id'] ]['url'] ) && strpos( $core->options[ $field['id'] ]['url'], str_replace( 'http://', '', WP_CONTENT_URL ) ) === false ) {
+							if ( isset( $core->options[ $field['id'] ]['id'] ) && isset( $core->options[ $field['id'] ]['url'] ) && ! empty( $core->options[ $field['id'] ]['url'] ) && strpos( $core->options[ $field['id'] ]['url'], str_replace( 'https://', '', WP_CONTENT_URL ) ) === false ) {
 								$data = wp_get_attachment_url( $core->options[ $field['id'] ]['id'] );
 
 								if ( isset( $data ) && ! empty( $data ) ) {
@@ -482,7 +487,7 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 						}
 
 						if ( 'background' === $field['type'] ) {
-							if ( isset( $core->options[ $field['id'] ]['media']['id'] ) && isset( $core->options[ $field['id'] ]['background-image'] ) && ! empty( $core->options[ $field['id'] ]['background-image'] ) && strpos( $core->options[ $field['id'] ]['background-image'], str_replace( array( 'http://', 'https://' ), '', WP_CONTENT_URL ) ) === false ) {
+							if ( isset( $core->options[ $field['id'] ]['media']['id'] ) && isset( $core->options[ $field['id'] ]['background-image'] ) && ! empty( $core->options[ $field['id'] ]['background-image'] ) && strpos( $core->options[ $field['id'] ]['background-image'], str_replace( array( 'https://', 'https://' ), '', WP_CONTENT_URL ) ) === false ) {
 								$data = wp_get_attachment_url( $core->options[ $field['id'] ]['media']['id'] );
 
 								if ( isset( $data ) && ! empty( $data ) ) {
@@ -503,7 +508,7 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 						}
 
 						if ( 'slides' === $field['type'] ) {
-							if ( isset( $core->options[ $field['id'] ] ) && is_array( $core->options[ $field['id'] ] ) && isset( $core->options[ $field['id'] ][0]['attachment_id'] ) && isset( $core->options[ $field['id'] ][0]['image'] ) && ! empty( $core->options[ $field['id'] ][0]['image'] ) && strpos( $core->options[ $field['id'] ][0]['image'], str_replace( array( 'http://', 'https://' ), '', WP_CONTENT_URL ) ) === false ) {
+							if ( isset( $core->options[ $field['id'] ] ) && is_array( $core->options[ $field['id'] ] ) && isset( $core->options[ $field['id'] ][0]['attachment_id'] ) && isset( $core->options[ $field['id'] ][0]['image'] ) && ! empty( $core->options[ $field['id'] ][0]['image'] ) && strpos( $core->options[ $field['id'] ][0]['image'], str_replace( array( 'https://', 'https://' ), '', WP_CONTENT_URL ) ) === false ) {
 								foreach ( $core->options[ $field['id'] ] as $key => $val ) {
 									$data = wp_get_attachment_url( $val['attachment_id'] );
 
@@ -549,11 +554,11 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 							continue;
 						}
 
-						if ( ! empty( $core->folds[ $field['id'] ]['parent'] ) ) { // This has some fold items, hide it by default.
+						if ( ! empty( Redux_Core::$folds[ $field['id'] ]['parent'] ) ) { // This has some fold items, hide it by default.
 							$field['class'] .= ' fold';
 						}
 
-						if ( ! empty( $core->folds[ $field['id'] ]['children'] ) ) { // Sets the values you shoe fold children on.
+						if ( ! empty( Redux_Core::$folds[ $field['id'] ]['children'] ) ) { // Sets the values you shoe fold children on.
 							$field['class'] .= ' fold-parent';
 						}
 
@@ -629,8 +634,9 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 
 			if ( isset( $core->transients['run_compiler'] ) && $core->transients['run_compiler'] ) {
 
-				$core->no_output = true;
-				$temp            = $core->args['output_variables_prefix'];
+				Redux_Core::$no_output = true;
+				$temp                  = $core->args['output_variables_prefix'];
+
 				// Allow the override of variable's prefix for use by SCSS or LESS.
 				if ( isset( $core->args['compiler_output_variables_prefix'] ) ) {
 					$core->args['output_variables_prefix'] = $core->args['compiler_output_variables_prefix'];
@@ -707,11 +713,11 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 		public function validate_options( array $plugin_options ) {
 			$core = $this->core();
 
-			if ( isset( $core->validation_ran ) ) {
+			if ( true === Redux_Core::$validation_ran ) {
 				return $plugin_options;
 			}
 
-			$core->validation_ran = 1;
+			Redux_Core::$validation_ran = true;
 
 			// Save the values not in the panel.
 			if ( isset( $plugin_options['redux-no_panel'] ) ) {
@@ -741,10 +747,6 @@ if ( ! class_exists( 'Redux_Options_Constructor', false ) ) {
 
 			$imported_options = array();
 
-			if ( isset( $plugin_options['import_link'] ) && '' !== $plugin_options['import_link'] && ! ! wp_http_validate_url( $plugin_options['import_link'] ) ) {
-				$import           = wp_remote_retrieve_body( wp_remote_get( $plugin_options['import_link'] ) );
-				$imported_options = json_decode( $import, true );
-			}
 			if ( isset( $plugin_options['import_code'] ) && '' !== $plugin_options['import_code'] ) {
 				$imported_options = json_decode( $plugin_options['import_code'], true );
 			}

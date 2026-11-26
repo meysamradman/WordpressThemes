@@ -31,6 +31,21 @@ if ( ! class_exists( 'Redux_Helpers', false ) ) {
 		public static $array_units = array( '', '%', 'in', 'cm', 'mm', 'em', 'rem', 'ex', 'pt', 'pc', 'px', 'vh', 'vw', 'vmin', 'vmax', 'ch' );
 
 		/**
+		 * Is customizer loaded.
+		 *
+		 * @return bool
+		 */
+		public static function is_customizer_loaded(): bool {
+			global $wp_customize;
+
+			if ( isset( $wp_customize ) ) {
+				return true;
+			}
+
+			return false;
+		}
+
+		/**
 		 * Retrieve the section array from field ID.
 		 *
 		 * @param string $opt_name Panel opt_name.
@@ -466,16 +481,6 @@ if ( ! class_exists( 'Redux_Helpers', false ) ) {
 		}
 
 		/**
-		 * Create unique hash.
-		 *
-		 * @return string
-		 */
-		public static function get_hash(): string {
-			$remote_addr = Redux_Core::$server['REMOTE_ADDR'] ?? '127.0.0.1';
-			return md5( network_site_url() . '-' . $remote_addr );
-		}
-
-		/**
 		 * Get info for specified file.
 		 *
 		 * @param string $file File to check.
@@ -619,9 +624,11 @@ if ( ! class_exists( 'Redux_Helpers', false ) ) {
 		 * @param array $localize Array of localized strings.
 		 *
 		 * @return array
+		 *
+		 * @deprecated 4.5.17
 		 */
 		public static function localize( array $localize ): array {
-
+			_deprecated_function( __METHOD__, 'Redux 4.5.17' );
 			return $localize;
 		}
 
@@ -776,7 +783,7 @@ if ( ! class_exists( 'Redux_Helpers', false ) ) {
 		 *        user_can( 42, 'edit_page', 17433 );                  // Checks if user ID 42 has the 'edit_page' cap for post-ID 17433.
 		 *        user_can( 42, array( 'edit_pages', 'edit_posts' ) ); // Checks if user ID 42 has both the 'edit_pages' and 'edit_posts' caps.
 		 */
-		public static function user_can( $user, $capabilities, int $object_id = null ): bool {
+		public static function user_can( $user, $capabilities, ?int $object_id = null ): bool {
 			static $depth = 0;
 
 			if ( $depth >= 30 ) {
@@ -914,8 +921,8 @@ if ( ! class_exists( 'Redux_Helpers', false ) ) {
 		 * @return array|WP_Error
 		 */
 		public static function google_fonts_array( bool $download = false ) {
-			if ( ! empty( Redux_Core::$google_fonts ) && ! self::google_fonts_update_needed() ) {
-				return Redux_Core::$google_fonts;
+			if ( ! empty( Redux_Core::$updated_google_fonts ) && ! self::google_fonts_update_needed() ) {
+				return Redux_Core::$updated_google_fonts;
 			}
 
 			$filesystem = Redux_Filesystem::get_instance();
@@ -938,20 +945,20 @@ if ( ! class_exists( 'Redux_Helpers', false ) ) {
 						$body = wp_remote_retrieve_body( $request );
 						if ( ! empty( $body ) ) {
 							$filesystem->put_contents( $path, $body );
-							Redux_Core::$google_fonts = json_decode( $body, true );
+							Redux_Core::$updated_google_fonts = json_decode( $body, true );
 						}
 					} else {
 						return $request;
 					}
 				}
 			} elseif ( file_exists( $path ) ) {
-				Redux_Core::$google_fonts = json_decode( $filesystem->get_contents( $path ), true );
-				if ( empty( Redux_Core::$google_fonts ) ) {
+				Redux_Core::$updated_google_fonts = json_decode( $filesystem->get_contents( $path ), true );
+				if ( empty( Redux_Core::$updated_google_fonts ) ) {
 					$filesystem->unlink( $path );
 				}
 			}
 
-			return Redux_Core::$google_fonts;
+			return Redux_Core::$updated_google_fonts;
 		}
 
 		/**
@@ -1100,25 +1107,29 @@ if ( ! class_exists( 'Redux_Helpers', false ) ) {
 		/**
 		 * Sanitize array keys and values.
 		 *
-		 * @param array $arr Array to sanitize.
+		 * @param array $arr                     Array to sanitize.
+		 * @param bool  $sanitize_top_level_keys Whether to sanitize top level array keys.
 		 */
-		public static function sanitize_array( array $arr ): array {
-			return self::array_map_r( 'wp_kses_post', $arr );
+		public static function sanitize_array( array $arr, bool $sanitize_top_level_keys = false ): array {
+			return self::array_map_r( 'wp_kses_post', $arr, $sanitize_top_level_keys );
 		}
 
 		/**
 		 * Recursive array map.
 		 *
-		 * @param string $func function to run.
-		 * @param array  $arr  Array to clean.
+		 * @param callable $func                    Function to run.
+		 * @param array    $arr                     Array to clean.
+		 * @param bool     $sanitize_top_level_keys Whether to sanitize top level array keys.
 		 *
 		 * @return array
 		 */
-		private static function array_map_r( string $func, array $arr ): array {
+		private static function array_map_r( callable $func, array $arr, bool $sanitize_top_level_keys ): array {
 			$new_arr = array();
 
 			foreach ( $arr as $key => $value ) {
-				$new_arr[ $key ] = ( is_array( $value ) ? self::array_map_r( $func, $value ) : ( is_array( $func ) ? call_user_func_array( $func, $value ) : $func( $value ) ) );
+				$new_key = $sanitize_top_level_keys ? sanitize_text_field( (string) $key ) : $key;
+
+				$new_arr[ $new_key ] = ( is_array( $value ) ? self::array_map_r( $func, $value, true ) : $func( $value ) );
 			}
 
 			return $new_arr;

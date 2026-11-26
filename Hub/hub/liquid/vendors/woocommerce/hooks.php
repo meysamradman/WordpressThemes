@@ -215,7 +215,7 @@ function liquid_update_qty_ajax() {
 
 	if ( ! isset( $cart[ $cart_item_key ] ) ) {
 		wp_send_json_error( [
-			'message' => esc_html__( 'Product not found.', 'hub-ai-agent' ),
+			'message' => esc_html__( 'Product not found.', 'hub' ),
 		] );
 	}
 

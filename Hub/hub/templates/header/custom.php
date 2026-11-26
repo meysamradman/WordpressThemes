@@ -47,7 +47,7 @@ if ( ! is_admin() && is_singular() && liquid_helper()->get_option('enable-hub-op
         $header_content = str_replace( '[vc_column]', '[ld_header_column]', $header_content );
         $header_content = str_replace( '[/vc_column]', '[/ld_header_column]', $header_content );
 
-        echo do_shortcode( $header_content );
+        echo liquid_restore_lazyload_src( do_shortcode( $header_content ) );
 
     endif;
 

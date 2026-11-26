@@ -2,18 +2,19 @@
 /**
  * Redux Multi-Media Sample config.
  *
- * For full documentation, please visit: http:https://devs.redux.io/
+ * For full documentation, please visit: https://devs.redux.io
  *
  * @package Redux
  */
 
+// phpcs:disable
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
 	$opt_name,
 	array(
 		'title'      => esc_html__( 'Multi Media', 'your-textdomain-here' ),
-		'desc'       => esc_html__( 'For full documentation on this field, visit: ', 'your-textdomain-here' ) . '<a href="https://devs.redux.io/premium/multi-media.html" target="_blank">https://devs.redux.io/premium/multi-media.html</a>',
+		'desc'       => esc_html__( 'For full documentation on this field, visit: ', 'your-textdomain-here' ) . '<a href="https://devs.redux.io/core-extensions/multi-media.html" target="_blank">https://devs.redux.io/core-extensions/multi-media.html</a>',
 		'subsection' => true,
 		'fields'     => array(
 			array(
@@ -27,3 +28,4 @@ Redux::set_section(
 		),
 	)
 );
+// phpcs:enable

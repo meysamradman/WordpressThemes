@@ -68,7 +68,7 @@ class LD_Stacked_Sections extends Widget_Base {
 				'label' => __( 'Select Content', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '0',
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 			]
 		);
@@ -264,7 +264,7 @@ class LD_Stacked_Sections extends Widget_Base {
                         <div class="lqd-stacked-sections-content">
                             <?php
                             if ( ! empty( $item['content_template'] ) && $item['content_template'] !== '0' ) {
-                                echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $item['content_template'] );
+                                echo \LiquidElementor\Template_Renderer::render( $item['content_template'], false, true );
                             }
                             ?>
                         </div>

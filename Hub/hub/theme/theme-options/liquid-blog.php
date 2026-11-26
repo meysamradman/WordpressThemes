@@ -3,20 +3,6 @@
  * Blog
  */
 
-$single_typography = array();
-if ( !class_exists( 'Liquid_Elementor_Addons' ) && !defined( 'ELEMENTOR_VERSION' )){
-	$single_typography = array(
-		'id'              => 'single_typography',
-		'title'           => esc_html__( 'Single Post Title Typography', 'hub' ),
-		'subtitle'        => esc_html__( 'Manage the typography for the single post headers', 'hub' ),
-		'type'            => 'typography',
-		'letter-spacing'  => true,
-		'text-align'      => false,
-		'compiler'        => true,
-		'units'           => '%',
-	);
-} 
-
 $this->sections[] = array(
 	'title'  => esc_html__( 'Blog', 'hub' ),
 	'icon'   => 'el el-pencil'
@@ -141,7 +127,7 @@ $this->sections[] = array(
 				'blog-meta-type',
 				'equals',
 				'cats'
-			)	
+			)
 		),
 		array(
 			'id'       => 'blog-excerpt-length',
@@ -332,7 +318,7 @@ $this->sections[] = array(
 				'blog-meta-type',
 				'equals',
 				'cats'
-			)	
+			)
 		),
 		array(
 			'id'       => 'category-blog-excerpt-length',
@@ -499,7 +485,7 @@ $this->sections[] = array(
 				'blog-meta-type',
 				'equals',
 				'cats'
-			)	
+			)
 		),
 		array(
 			'id'       => 'tag-blog-excerpt-length',
@@ -666,7 +652,7 @@ $this->sections[] = array(
 				'blog-meta-type',
 				'equals',
 				'cats'
-			)	
+			)
 		),
 		array(
 			'id'       => 'author-blog-excerpt-length',
@@ -711,7 +697,6 @@ $this->sections[] = array(
 			),
 			'default' => 'off'
 		),
-		$single_typography,
 		array(
 			'id'       => 'post-social-box-enable',
 			'type'	   => 'button_set',

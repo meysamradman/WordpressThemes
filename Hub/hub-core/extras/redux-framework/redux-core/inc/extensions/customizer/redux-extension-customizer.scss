@@ -59,8 +59,7 @@
         .accordion-section-title {
             button.accordion-trigger {
                 all: unset;
-                padding: 10px 0px 11px 4px;
-                display: inline;
+                padding: 10px 0 11px 4px;
                 display: inline-flex;
                 width: calc(100% - 50px);
             }
@@ -68,7 +67,7 @@
     }
 
     .accordion-section-title button.accordion-trigger {
-        height: auto;
+        height:auto;
     }
 
     .redux-section .accordion-section-title i,
@@ -76,6 +75,7 @@
     .redux-panel .accordion-section-title i {
         margin-right: 5px;
         margin-left: 12px;
+
         &.legacy {
             margin-left: 0!important;
         }

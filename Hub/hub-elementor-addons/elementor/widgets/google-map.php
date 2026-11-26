@@ -379,7 +379,7 @@ class LD_Google_Map extends Widget_Base {
 				'label' => __( 'Templates', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'default' => '0',
 				'condition' => [
@@ -687,7 +687,7 @@ class LD_Google_Map extends Widget_Base {
 				<div class="ld-gmap-contents">
 
 					<?php if ( $settings['content_type'] === 'el_template' ){
-						echo \Elementor\Plugin::instance()->frontend->get_builder_content( $settings['templates'], true );
+						echo \LiquidElementor\Template_Renderer::render( $settings['templates'] );
 					} else {
 					?>
 

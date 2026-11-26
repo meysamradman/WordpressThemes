@@ -30,10 +30,10 @@ class LD_Throwable extends Widget_Base {
 
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
-  
+
 		wp_register_script( 'matter', get_template_directory_uri() . '/assets/vendors/matter/matter.min.js', [], LD_ELEMENTOR_VERSION, true );
 		wp_register_script( 'liquid-throwable', get_template_directory_uri() . '/assets/js/throwable/liquidThrowable.min.js', [], LD_ELEMENTOR_VERSION, true );
-	 
+
 	}
 
 	/**
@@ -258,6 +258,63 @@ class LD_Throwable extends Widget_Base {
 		);
 
 		$repeater->add_control(
+			'image',
+			[
+				'label' => esc_html__( 'Image', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::MEDIA,
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+
+		$repeater->add_responsive_control(
+			'image_width',
+			[
+				'label' => esc_html__( 'Image Width', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 500,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+					'em' => [
+						'min' => 0,
+						'max' => 20,
+						'step' => 0.1,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} {{CURRENT_ITEM}} .lqd-throwable-element-img' => 'width: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'image[url]!' => '',
+				],
+			]
+		);
+
+		$repeater->add_responsive_control(
+			'image_margin',
+			[
+				'label' => esc_html__( 'Image Margin', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} {{CURRENT_ITEM}} .lqd-throwable-element-img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition' => [
+					'image[url]!' => '',
+				],
+			]
+		);
+
+		$repeater->add_control(
 			'tag',
 			[
 				'label' => esc_html__( 'HTML Tag', 'elementor-pro' ),
@@ -359,13 +416,13 @@ class LD_Throwable extends Widget_Base {
 						'itembgColor' => '#c3f2d1',
 						'textColor' => '#000',
 					],
-	
+
 				],
 				'title_field' => '{{{ label }}}',
 			]
 		);
 
-		
+
 
 		$this->end_controls_section();
 
@@ -383,7 +440,7 @@ class LD_Throwable extends Widget_Base {
 		}
 
 		$this->add_render_attribute( '_wrapper', 'class', $classnames );
-		
+
 	}
 
 	/**
@@ -395,7 +452,7 @@ class LD_Throwable extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-		
+
 		$settings = $this->get_settings_for_display();
 
 		$throwable_opts = [ 'roundness' => $settings['roundness'] ?? '' ];
@@ -407,7 +464,7 @@ class LD_Throwable extends Widget_Base {
 		$this->add_render_attribute(
 			'wrapper',
 			[
-				'class' => [ 'lqd-throwable-scene', 'pos-rel', 'pointer-events-none', 'overflow-hidden' ], 
+				'class' => [ 'lqd-throwable-scene', 'pos-rel', 'pointer-events-none', 'overflow-hidden' ],
 				'data-lqd-throwable-scene' => 'true',
 				'data-throwable-options' => wp_json_encode( $throwable_opts ),
 			]
@@ -420,9 +477,20 @@ class LD_Throwable extends Widget_Base {
 					foreach( $settings['items'] as $item ) {
 						$tag = $settings['tag'];
 						$tag = $item['tag'] !== 'default' ? $item['tag'] : $tag;
+
+						$image_html = '';
+
+						if ( ! empty( $item['image']['id'] ) ) {
+							$image_html = wp_get_attachment_image( $item['image']['id'], 'full', false, [ 'class' => 'lqd-throwable-element-img' ] );
+						} elseif ( ! empty( $item['image']['url'] ) ) {
+							$image_html = sprintf( '<img class="lqd-throwable-element-img" src="%s" alt="" />', esc_url( $item['image']['url'] ) );
+						}
+
+						$rot_classnames = empty( $image_html ) ? 'd-inline-block' : 'd-inline-flex align-items-center';
+
 						printf( '<%1$s class="lqd-throwable-element d-inline-block pos-abs pos-tl ws-nowrap m-0 pointer-events-auto user-select-none elementor-repeater-item-%3$s" data-lqd-throwable-el style="opacity: 0;">
-						<span class="lqd-throwable-element-rot d-inline-block">%2$s</span>
-						</%1$s>', Utils::validate_html_tag( $tag ), $item['label'], esc_attr( $item['_id'] ) );
+						<span class="lqd-throwable-element-rot %4$s">%5$s%2$s</span>
+						</%1$s>', Utils::validate_html_tag( $tag ), $item['label'], esc_attr( $item['_id'] ), esc_attr( $rot_classnames ), $image_html );
 					}
 				?>
 			</div>

@@ -125,7 +125,7 @@ class LD_Header_Sidedrawer extends Widget_Base {
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
 				'default' => '0',
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'separator' => 'after',
 			]
@@ -602,7 +602,8 @@ class LD_Header_Sidedrawer extends Widget_Base {
 				'label' => __( 'Trigger Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger .bar, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger.style-2 .bar:before, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger.style-2 .bar:after' => 'background: {{VALUE}}; color: {{VALUE}}'
+					'{{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger .bar, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger.style-2 .bar:before, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger.style-2 .bar:after' => 'background: {{VALUE}}; color: {{VALUE}}',
+					'{{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger svg' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -614,6 +615,7 @@ class LD_Header_Sidedrawer extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger:hover .bar, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger.style-2:hover .bar:before, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger.style-2:hover .bar:after' => 'background: {{VALUE}}; color: {{VALUE}}',
+					'{{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger:hover svg' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -626,6 +628,7 @@ class LD_Header_Sidedrawer extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger.is-active .bar, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger.style-2.is-active .bar:before, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .nav-trigger.style-2.is-active .bar:after' => 'background: {{VALUE}}; color: {{VALUE}}',
 					'{{WRAPPER}}.lqd-active-row-light .ld-module-sd > .ld-module-dropdown > .nav-trigger.is-active .bar, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .ld-module-dropdown > .nav-trigger.style-2.is-active .bar:before, {{WRAPPER}}.lqd-active-row-light .ld-module-sd > .ld-module-dropdown > .nav-trigger.style-2.is-active .bar:after' => 'background: {{VALUE}} !important; color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-light .ld-module-sd > .ld-module-dropdown > .nav-trigger.is-active svg' => 'color: {{VALUE}} !important',
 				],
 			]
 		);
@@ -718,6 +721,7 @@ class LD_Header_Sidedrawer extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger .bar, {{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger.style-2 .bar:before, {{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger.style-2 .bar:after' => 'background: {{VALUE}}; color: {{VALUE}};',
+					'{{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger svg' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -729,6 +733,7 @@ class LD_Header_Sidedrawer extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger:hover .bar, {{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger.style-2:hover .bar:before, {{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger.style-2:hover .bar:after' => 'background: {{VALUE}}; color: {{VALUE}};',
+					'{{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger:hover svg' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -741,6 +746,7 @@ class LD_Header_Sidedrawer extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger.is-active .bar, {{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger.style-2.is-active .bar:before, {{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .nav-trigger.style-2.is-active .bar:after' => 'background: {{VALUE}}; color: {{VALUE}};',
 					'{{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .ld-module-dropdown > .nav-trigger.is-active .bar, {{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .ld-module-dropdown > .nav-trigger.style-2.is-active .bar:before, {{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .ld-module-dropdown > .nav-trigger.style-2.is-active .bar:after' => 'background: {{VALUE}} !important; color: {{VALUE}} !important;',
+					'{{WRAPPER}}.lqd-active-row-dark .ld-module-sd > .ld-module-dropdown > .nav-trigger.is-active svg' => 'color: {{VALUE}} !important;',
 				],
 			]
 		);
@@ -921,7 +927,7 @@ class LD_Header_Sidedrawer extends Widget_Base {
 				<div class="ld-sd-wrap">
 				<?php if (! \Elementor\Plugin::$instance->preview->is_preview_mode() ) : ?>
 					<div class="<?php echo ld_helper()->sanitize_html_classes( $inner_classes ) ?>">
-					<?php echo \Elementor\Plugin::instance()->frontend->get_builder_content( $settings['modal'], true ); ?>
+					<?php echo \LiquidElementor\Template_Renderer::render( $settings['modal'] ); ?>
 					</div>
 				<?php endif; ?>
 				</div>

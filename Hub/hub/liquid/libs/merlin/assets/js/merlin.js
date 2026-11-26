@@ -42,7 +42,7 @@ var Merlin = (function($){
         });
 
         set_default_plugins();
-        
+
         if (!localStorage.getItem('liquid_setup_builder')){
             localStorage.setItem('liquid_setup_builder', 'elementor');
         }
@@ -63,12 +63,12 @@ var Merlin = (function($){
                 vc_button();
             }
 
-			$("#default_plugins_revslider, #default_plugins_woocommerce, #default_plugins_liquid-gdpr, #default_plugins_wp-bottom-menu, #default_plugins_hub-booking").prop('checked', false);
+			$("#default_plugins_revslider, #default_plugins_woocommerce, #default_plugins_liquid-gdpr, #default_plugins_wp-bottom-menu, #default_plugins_hub-booking, #default_plugins_booking-hub, #default_plugins_booking-hub-hotel-mode, #default_plugins_booking-hub-event-mode, #default_plugins_booking-hub-taxi-mode, #default_plugins_booking-hub-rent-mode").prop('checked', false);
 
             if (current_url.includes("&step=plugins")){
                 body.toggleClass( drawer_opened );
             }
-             
+
         }
 
         function el_button(){

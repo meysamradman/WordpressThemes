@@ -198,7 +198,7 @@ function liquid_wc_filter_ajax() {
 		$html = '<div>' . ob_get_clean() . '</div>';
 	}
 
-	wp_send_json_success( [ 'html' => $html, 'products' => $products, 'args' => $args, 'query' => $query->request ] );
+	wp_send_json_success( [ 'html' => $html, 'products' => $products ] );
 }
 
 function liquid_wc_pagination_args( $args ) {

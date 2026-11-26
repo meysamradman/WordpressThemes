@@ -111,7 +111,8 @@ if ( $element_name === 'ld_blog' ) {
             $element_template === 'style02' ||
             $element_template === 'style02-alt' ||
             $element_template === 'style06' ||
-            $element_template === 'style06-alt'
+            $element_template === 'style06-alt' ||
+            $element_template === 'style08'
     );
     $widget_utils['lqdsep-utils-pt-1'] = array(
         'conditions' =>

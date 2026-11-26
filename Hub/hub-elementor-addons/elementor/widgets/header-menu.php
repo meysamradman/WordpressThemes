@@ -610,7 +610,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Menu Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'.is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li > a' => 'color: {{VALUE}} !important',
+					'.is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -621,7 +621,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Menu Hover Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'.is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li:hover > a, .is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.is-active > a' => 'color: {{VALUE}} !important',
+					'.is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li:hover > a, .is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.is-active > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -632,7 +632,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Menu Active Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'.is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.is-active > a, .is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.current_page_item > a, .is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.current-menu-item > a, .is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.current-menu-ancestor > a' => 'color: {{VALUE}} !important',
+					'.is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.is-active > a, .is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.current_page_item > a, .is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.current-menu-item > a, .is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li.current-menu-ancestor > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -643,7 +643,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Decoration Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'.is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li > a:after' => 'background: {{VALUE}} !important',
+					'.is-stuck {{WRAPPER}} .navbar-collapse .main-nav > li > a:after' => 'background: {{VALUE}}',
 				],
                 'condition' => array(
                     'hover_style' => 'underline-1',
@@ -722,7 +722,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Menu Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li > a' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -733,7 +733,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Menu Hover Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li:hover > a, {{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li.is-active > a' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li:hover > a, {{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li.is-active > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -744,7 +744,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Menu Active Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li.is-active > a, {{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li.current_page_item > a, {{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li.current-menu-item > a, .main-header > .elementor > .elementor-section-wrap > .elementor-section > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light> .navbar-collapse %1$s > li.current-menu-ancestor > a' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li.is-active > a, {{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li.current_page_item > a, {{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li.current-menu-item > a, .main-header > .elementor > .elementor-section-wrap > .elementor-section > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light> .navbar-collapse %1$s > li.current-menu-ancestor > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -755,7 +755,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Decoration Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li > a:after' => 'background: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav > li > a:after' => 'background: {{VALUE}}',
 				],
                 'condition' => array(
                     'hover_style' => 'underline-1',
@@ -795,7 +795,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Menu Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li > a' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -806,7 +806,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Menu Hover Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li:hover > a, {{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.is-active > a' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li:hover > a, {{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.is-active > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -817,7 +817,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Menu Active Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.is-active > a, {{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.current_page_item > a, {{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.current-menu-item > a, {{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.current-menu-ancestor > a' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.is-active > a, {{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.current_page_item > a, {{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.current-menu-item > a, {{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li.current-menu-ancestor > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -828,7 +828,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Decoration Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li > a:after' => 'background: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse .main-nav > li > a:after' => 'background: {{VALUE}}',
 				],
                 'condition' => array(
                     'hover_style' => 'underline-1',
@@ -866,7 +866,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Dropdown Menu Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav .nav-item-children > li > a' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav .nav-item-children > li > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -877,7 +877,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Dropdown Menu Hover Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav .nav-item-children > li > a:hover' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav .nav-item-children > li > a:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -888,7 +888,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Dropdown Menu Background', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav .nav-item-children:before' => 'background: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-light .navbar-collapse .main-nav .nav-item-children:before' => 'background: {{VALUE}}',
 				],
 			]
 		);
@@ -909,7 +909,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Dropdown Menu Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse  .main-nav.nav-item-children > li > a' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse  .main-nav.nav-item-children > li > a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -920,7 +920,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Dropdown Menu Hover Color', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse  .main-nav.nav-item-children > li > a:hover' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse  .main-nav.nav-item-children > li > a:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -931,7 +931,7 @@ class LD_Header_Menu extends Widget_Base {
 				'label' => __( 'Dropdown Menu Background', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse  .main-nav.nav-item-children:before' => 'background: {{VALUE}} !important',
+					'{{WRAPPER}}.lqd-active-row-dark .navbar-collapse  .main-nav.nav-item-children:before' => 'background: {{VALUE}}',
 				],
 			]
 		);
@@ -997,6 +997,7 @@ class LD_Header_Menu extends Widget_Base {
 				if( is_nav_menu( $menu_slug ) ) :
 
 					wp_nav_menu( array(
+						'lqd_local_scroll' => ! empty( $settings['local_scroll'] ),
 						'theme_location' => 'primary',
 						'menu'           => $menu_slug,
 						'container'      => 'ul',
@@ -1031,6 +1032,88 @@ class LD_Header_Menu extends Widget_Base {
 
 	}
 
+	/**
+	 * Strip WordPress "current page/item" classes from in-page anchor links
+	 * inside a local-scroll (one-page) menu.
+	 *
+	 * On the front page WP flags menu items whose URL matches the current page
+	 * (e.g. "/#section") as current-menu-item / current_page_item. Those classes
+	 * share the active-link colour with the scrollspy's .is-active class, so the
+	 * link would highlight on load and then flash off once the JS strips them.
+	 * Removing them here — before the walker renders — lets the scrollspy own the
+	 * active state exclusively, so there is no flash.
+	 *
+	 * Hooked on `wp_nav_menu_objects` (walker-independent; fires after WP has
+	 * computed the current-* classes but before render) and scoped to this
+	 * widget's menu via the custom `lqd_local_scroll` arg.
+	 *
+	 * @param array    $items Menu item objects.
+	 * @param stdClass $args  wp_nav_menu args, carrying our lqd_local_scroll flag.
+	 * @return array
+	 */
+	public static function strip_local_scroll_current_classes( $items, $args ) {
+		if ( empty( $args->lqd_local_scroll ) || empty( $items ) ) {
+			return $items;
+		}
+
+		$remove = array(
+			'current-menu-item',
+			'current_page_item',
+			'current-menu-ancestor',
+			'current-menu-parent',
+			'current_page_parent',
+			'current_page_ancestor',
+		);
+
+		foreach ( $items as $item ) {
+			if ( empty( $item->url ) || empty( $item->classes ) ) {
+				continue;
+			}
+			if ( self::is_local_scroll_url( $item->url ) ) {
+				$item->classes = array_values( array_diff( (array) $item->classes, $remove ) );
+			}
+		}
+
+		return $items;
+	}
+
+	/**
+	 * Whether a menu item URL is an in-page anchor for the page being viewed.
+	 *
+	 * True for relative anchors ("#sec", "/#sec") and absolute links whose path
+	 * points at the front page or the current page ("https://site.com/#sec", or
+	 * "/landing/#sec" while on /landing/). False for links without a fragment and
+	 * for anchors targeting a different page — those keep WP's real current state.
+	 *
+	 * @param string $url
+	 * @return bool
+	 */
+	private static function is_local_scroll_url( $url ) {
+		$url      = trim( (string) $url );
+		$hash_pos = strpos( $url, '#' );
+
+		if ( false === $hash_pos ) {
+			return false;
+		}
+
+		// The part before the fragment identifies the target page.
+		$base = substr( $url, 0, $hash_pos );
+
+		// Pure in-page anchors: "#sec" (base "") or "/#sec" (base "/").
+		if ( '' === $base || '/' === $base ) {
+			return true;
+		}
+
+		// Otherwise compare paths only, so scheme/host/www/trailing-slash
+		// differences don't cause a false negative.
+		$base_path    = untrailingslashit( (string) wp_parse_url( $base, PHP_URL_PATH ) );
+		$home_path    = untrailingslashit( (string) wp_parse_url( home_url(), PHP_URL_PATH ) );
+		$current_path = isset( $_SERVER['REQUEST_URI'] ) ? strtok( wp_unslash( $_SERVER['REQUEST_URI'] ), '?' ) : '';
+		$current_path = untrailingslashit( (string) $current_path );
+
+		return $base_path === $home_path || $base_path === $current_path;
+	}
+
 	protected function add_local_scroll() {
 		$settings = $this->get_settings_for_display();
 
@@ -1038,9 +1121,14 @@ class LD_Header_Menu extends Widget_Base {
 			return;
 		}
 
-		return 'data-localscroll="true" data-localscroll-options=\'{"itemsSelector": "> li > a"}\'';
+		return 'data-localscroll="true" data-localscroll-options=\'{"itemsSelector": "> li > a", "trackWindowScroll": true}\'';
 
 	}
 
 }
 \Elementor\Plugin::instance()->widgets_manager->register( new LD_Header_Menu() );
+
+// Remove WP's "current page/item" classes from one-page anchor links so the
+// active colour is owned solely by the local-scroll scrollspy (.is-active) and
+// doesn't flash on load. Scoped per-menu via the lqd_local_scroll arg.
+add_filter( 'wp_nav_menu_objects', array( LD_Header_Menu::class, 'strip_local_scroll_current_classes' ), 10, 2 );

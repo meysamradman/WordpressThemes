@@ -189,6 +189,18 @@ function liquid_dynamic_css_array() {
 		$css['global'][ liquid_implode( '.lqd-spinner-circular circle' ) ]['stroke'] = $preloader_elements_2;
 	}
 
+	$preloader_image       = liquid_helper()->get_option( 'preloader-image' );
+	$preloader_image_width = liquid_helper()->get_option( 'preloader-image-width', 'raw', 150 );
+
+	if( is_array( $preloader_image ) && !empty( $preloader_image['url'] ) ) {
+		// Keep the image above the curtain/sliding overlays
+		$css['global'][ liquid_implode( '.lqd-preloader-img' ) ]['position'] = 'relative';
+		$css['global'][ liquid_implode( '.lqd-preloader-img' ) ]['z-index'] = '2';
+		$css['global'][ liquid_implode( '.lqd-preloader-img img' ) ]['width'] = absint( $preloader_image_width ) . 'px';
+		$css['global'][ liquid_implode( '.lqd-preloader-img img' ) ]['max-width'] = '80vw';
+		$css['global'][ liquid_implode( '.lqd-preloader-img img' ) ]['height'] = 'auto';
+	}
+
 	/**
 	 * Body
 	 */

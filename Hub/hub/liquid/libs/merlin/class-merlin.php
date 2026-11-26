@@ -312,7 +312,6 @@ class Merlin {
 		add_action( 'wp_ajax_merlin_get_total_content_import_items', array( $this, '_ajax_get_total_content_import_items' ), 10, 0 );
 		add_action( 'wp_ajax_merlin_plugins', array( $this, '_ajax_plugins' ), 10, 0 );
 		add_action( 'wp_ajax_merlin_child_theme', array( $this, 'generate_child' ), 10, 0 );
-		// Theme activation AJAX is not registered in the local build.
 		add_action( 'wp_ajax_merlin_update_selected_import_data_info', array( $this, 'update_selected_import_data_info' ), 10, 0 );
 		add_action( 'wp_ajax_merlin_import_finished', array( $this, 'import_finished' ), 10, 0 );
 		add_filter( 'pt-importer/new_ajax_request_response_data', array( $this, 'pt_importer_new_ajax_request_response_data' ) );
@@ -431,6 +430,32 @@ class Merlin {
 	}
 
 	/**
+	 * Capability needed to open the wizard and to call its AJAX actions.
+	 *
+	 * @return string
+	 */
+	protected function wizard_capability() {
+		return ! empty( $this->capability ) ? sanitize_key( $this->capability ) : 'manage_options';
+	}
+
+	/**
+	 * Stop an AJAX request unless an administrator sent it with the wizard nonce.
+	 */
+	protected function verify_ajax_request() {
+		if ( ! current_user_can( $this->wizard_capability() ) ) {
+			wp_send_json_error(
+				array(
+					'error'   => 1,
+					'message' => esc_html__( 'You are not allowed to do this.', 'merlin-wp' ),
+				),
+				403
+			);
+		}
+
+		check_ajax_referer( 'merlin_nonce', 'wpnonce' );
+	}
+
+	/**
 	 * Add the admin page.
 	 */
 	public function admin_page() {
@@ -440,6 +465,11 @@ class Merlin {
 
 		// Do not proceed, if we're not on the right page.
 		if ( empty( $_GET['page'] ) || $this->merlin_url !== $_GET['page'] ) {
+			return;
+		}
+
+		// The wizard installs plugins and imports content: administrators only.
+		if ( wp_doing_ajax() || ! current_user_can( $this->wizard_capability() ) ) {
 			return;
 		}
 
@@ -507,7 +537,7 @@ class Merlin {
 		<div class="merlin__wrapper">
 
 			<div class="merlin__content merlin__content--<?php echo esc_attr( strtolower( $this->steps[ $this->step ]['name'] ) ); ?>">
-				
+
 				<?php $this->step_output(); ?>
 
 				<?php
@@ -725,7 +755,7 @@ class Merlin {
 	 * Setup steps.
 	 */
 	public function steps() {
-		
+
 		$this->steps = array(
 			'welcome' => array(
 				'name'    => esc_html__( 'Welcome', 'merlin-wp' ),
@@ -799,7 +829,7 @@ class Merlin {
 					$class_attr = 'done';
 					$show_link  = true;
 				}
-				
+
 				?>
 
 				<li class="<?php echo esc_attr( $class_attr ); ?>">
@@ -811,7 +841,7 @@ class Merlin {
 			<?php $i++; endforeach; ?>
 
 		</ul>
-		
+
 
 		<?php
 		//print_r($step);
@@ -941,27 +971,27 @@ class Merlin {
 			<h1><?php //echo esc_html( sprintf( $header2, $theme ) ); ?></h1>
 			<p><?php //echo esc_html( sprintf( $paragraph ) ); ?></p>
 
-			
+
 			<?php if ( ! $is_theme_registered ) : ?>
 				<div class="merlin__content--license-key">
-					
+
 					<div class="lqd-dsd-box lqd-dsd-box-solid lqd-dsd-register-box">
-						
+
 						<div class="lqd-dsd-box-head">
-							
+
 							<?php $register->messages(); ?>
-							<?php 
+							<?php
 								if ( 'valid' == get_option( 'hub_purchase_code_status', false ) ) {
 									wp_redirect(admin_url('admin.php?page=liquid-setup&step=plugins'));
 								}
 							?>
-							
+
 						</div><!-- /.lqd-dsd-box-head -->
-						
-						<?php $register->form(); ?>	
-						
+
+						<?php $register->form(); ?>
+
 					</div><!-- /.lqd-dsd-register-box -->
-					
+
 					<p id="license-text" style="display:none"><?php echo esc_html( sprintf( $paragraph, $theme ) ); ?></p>
 					<label for="license-key" style="display:none;"><?php echo esc_html( $label ); ?></label>
 
@@ -1249,7 +1279,7 @@ class Merlin {
 				<circle class="icon--checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon--checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
 			</svg>
 
-			
+
 
 			<?php if ( 1 < count( $this->import_files ) ) : ?>
 
@@ -1370,14 +1400,20 @@ class Merlin {
 
 			<p><?php wp_kses( printf( $paragraph, $author ), $allowed_html_array ); ?></p>
 
+			<?php
+			if ( function_exists( 'liquid_promote_card' ) ) {
+				echo liquid_promote_card( 'wizard' ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in the card.
+			}
+			?>
+
 		</div>
 
 		<footer class="merlin__content__footer merlin__content__footer--fullwidth <?php echo esc_attr( $links_class ); ?>">
 
-			<a href="<?php echo esc_url( $this->ready_big_button_url ); ?>" class="merlin__button merlin__button--blue merlin__button--fullwidth merlin__button--popin"><?php echo esc_html( $big_btn ); ?></a>
+			<a href="<?php echo esc_url( $this->ready_big_button_url ); ?>" class="merlin__button merlin__button--blue merlin__button--fullwidth merlin__button--popin" style="line-height: inherit;"><?php echo esc_html( $big_btn ); ?></a>
 
 			<?php if ( ! empty( $links ) ) : ?>
-				<a id="merlin__drawer-trigger" class="merlin__button merlin__button--knockout"><span><?php echo esc_html( $action ); ?></span><span class="chevron"></span></a>
+				<a id="merlin__drawer-trigger" class="merlin__button merlin__button--knockout" style="border-radius: 0;"><span><?php echo esc_html( $action ); ?></span><span class="chevron"></span></a>
 
 				<ul class="merlin__drawer merlin__drawer--extras">
 
@@ -1432,6 +1468,8 @@ class Merlin {
 	 * Generate the child theme via AJAX.
 	 */
 	public function generate_child() {
+
+		$this->verify_ajax_request();
 
 		// Strings passed in from the config file.
 		$strings = $this->strings;
@@ -1495,43 +1533,6 @@ class Merlin {
 				),
 			)
 		);
-	}
-
-	/**
-	 * Activate the theme (license key) via AJAX.
-	 */
-	public function _ajax_activate_license() {
-		return; // Disabled local-build endpoint.
-
-		if ( ! check_ajax_referer( 'merlin_nonce', 'wpnonce' ) ) {
-			wp_send_json(
-				array(
-					'success' => false,
-					'message' => esc_html__( 'Yikes! The theme activation failed. Please try again or contact support.', 'merlin-wp' ),
-				)
-			);
-		}
-
-		if ( empty( $_POST['license_key'] ) ) {
-			wp_send_json(
-				array(
-					'success' => false,
-					'message' => esc_html__( 'Please add your license key before attempting to activate one.', 'merlin-wp' ),
-				)
-			);
-		}
-
-		$license_key = sanitize_key( $_POST['license_key'] );
-
-		if ( ! has_filter( 'merlin_ajax_activate_license' ) ) {
-			$result = $this->edd_activate_license( $license_key );
-		} else {
-			$result = apply_filters( 'merlin_ajax_activate_license', $license_key );
-		}
-
-		$this->logger->debug( __( 'The license activation was performed with the following results', 'merlin-wp' ), $result );
-
-		wp_send_json( array_merge( array( 'done' => 1 ), $result ) );
 	}
 
 	/**
@@ -1784,6 +1785,8 @@ class Merlin {
 	 */
 	function _ajax_plugins() {
 
+		$this->verify_ajax_request();
+
 		if ( ! check_ajax_referer( 'merlin_nonce', 'wpnonce' ) || empty( $_POST['slug'] ) ) {
 			exit( 0 );
 		}
@@ -1877,6 +1880,8 @@ class Merlin {
 	 * @internal    Used as a callback.
 	 */
 	function _ajax_content() {
+		$this->verify_ajax_request();
+
 		static $content = null;
 
 		$selected_import = intval( $_POST['selected_index'] );
@@ -1968,6 +1973,8 @@ class Merlin {
 	 * AJAX call to retrieve total items (posts, pages, CPT, attachments) for the content import.
 	 */
 	public function _ajax_get_total_content_import_items() {
+		$this->verify_ajax_request();
+
 		if ( ! check_ajax_referer( 'merlin_nonce', 'wpnonce' ) && empty( $_POST['selected_index'] ) ) {
 			$this->logger->error( __( 'The content importer AJAX call for retrieving total content import items failed to start, because of incorrect data.', 'merlin-wp' ) );
 
@@ -2440,6 +2447,8 @@ class Merlin {
 	 * AJAX callback for the 'merlin_update_selected_import_data_info' action.
 	 */
 	public function update_selected_import_data_info() {
+		$this->verify_ajax_request();
+
 		$selected_index = ! isset( $_POST['selected_index'] ) ? false : intval( $_POST['selected_index'] );
 
 		if ( false === $selected_index ) {
@@ -2487,6 +2496,8 @@ class Merlin {
 	 * AJAX call for cleanup after the importing steps are done -> import finished.
 	 */
 	public function import_finished() {
+		$this->verify_ajax_request();
+
 		delete_transient( 'merlin_import_file_base_name' );
 		wp_send_json_success();
 	}
@@ -2508,12 +2519,16 @@ class Merlin {
 		if ( $kit_id = get_option( 'elementor_active_kit' ) ) {
 
 			$kit_data_array = get_post_meta( (int) $kit_id, '_elementor_page_settings', true );
-		
+
 			if ( isset( $kit_data_array['space_between_widgets'] ) ) {
 				$kit_data_array['space_between_widgets'] = array( 'column' => 0, 'row' => 0 );
 				update_post_meta( (int) $kit_id, '_elementor_page_settings', $kit_data_array );
 			}
-			
+
+			// Clear Elementor cache after updating the kit settings.
+			if ( defined( 'ELEMENTOR_VERSION' ) && is_callable( 'Elementor\Plugin::instance' ) ) {
+				\Elementor\Plugin::instance()->files_manager->clear_cache();
+			}
 		}
 	}
 

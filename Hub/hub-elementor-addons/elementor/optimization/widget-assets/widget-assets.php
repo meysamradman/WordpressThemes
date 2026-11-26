@@ -1237,6 +1237,7 @@ if (!class_exists('Liquid_Elementor_Widget_Assets')) :
                 $stories_slideshow,
                 $snickers_bar,
                 $social_icon,
+                $spline,
                 $split_text,
                 $tab,
                 $team_member,
@@ -1325,6 +1326,10 @@ if (!class_exists('Liquid_Elementor_Widget_Assets')) :
                 'lqdsep-js-lqd-animated-blob' => $js_uri . 'animated-blob/liquidAnimatedBlob.min.js',
             );
 
+            $lqd_spline_js = array(
+                'lqdsep-js-lqd-spline' => $js_uri . 'spline/liquid-spline.min.js',
+            );
+
             $masonry_js = array(
                 'lqdsep-js-isotope' => $js_uri . 'masonry/isotope.pkgd.min.js',
                 'lqdsep-js-isotope-packery' => $js_uri . 'masonry/packery-mode.pkgd.min.js',
@@ -1377,6 +1382,7 @@ if (!class_exists('Liquid_Elementor_Widget_Assets')) :
                 $lazyload_js,
                 $lqd_draw_shape_js,
                 $lqd_animated_blob_js,
+                $lqd_spline_js,
                 $masonry_js,
                 $modal_js,
                 $mouse_pos_js,

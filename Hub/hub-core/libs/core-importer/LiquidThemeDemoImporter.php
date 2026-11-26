@@ -196,18 +196,39 @@ class LiquidThemeDemoImporter extends LiquidImporter {
 
 	public function set_templates($demo) {
 		$templates = self::get_settings($demo, 'templates');
+		if ( empty( $templates ) || ! is_array( $templates ) ) {
+			return;
+		}
+		$opt_name = $this->theme_option_name;
+		if ( empty( $opt_name ) && function_exists( 'liquid' ) ) {
+			$opt_name = liquid()->get_option_name();
+		}
+		if ( empty( $opt_name ) ) {
+			$this->log->putContent( 'Failed to set templates: missing theme option name', true, true );
+			return;
+		}
+		$options = get_option( $opt_name, array() );
+		if ( ! is_array( $options ) ) {
+			$options = array();
+		}
+		$updated = array();
 		foreach ($templates as $option => $page) {
 			$type = preg_match('/([^\-]+)/i', $option, $matches);
-			if($matches) {
-				$_page = get_page_by_title( $page, OBJECT,  'liquid-'.$matches[0]);
-				if(class_exists('Liquid_Theme_Options')) {
-					$theme = new Liquid_Theme_Options;
-					$theme->get_redux()->set($option, $_page->ID);
-				}
-
+			if ( ! $type || empty( $matches[1] ) ) {
+				continue;
 			}
+			$post_type = 'liquid-' . strtolower( $matches[1] );
+			$_page = get_page_by_title( $page, OBJECT, $post_type );
+			if ( empty( $_page ) || empty( $_page->ID ) ) {
+				continue;
+			}
+			$options[ $option ] = (int) $_page->ID;
+			$updated[ $option ] = (int) $_page->ID;
 		}
-		wp_die();
+		if ( ! empty( $updated ) ) {
+			update_option( $opt_name, $options );
+			$this->log->putContent( 'Header/Footer templates have been set', true, true );
+		}
 	}
 
 	public function check_settings($demo = '') {
@@ -272,16 +293,42 @@ class LiquidThemeDemoImporter extends LiquidImporter {
 		$demo = esc_attr($_POST['demo']);
 		$page_title = $this->get_settings($demo, 'home_page_title');
 		$blog_page_title = $this->get_settings($demo, 'blog_page_title');
-		$page = get_page_by_title(esc_html( $page_title ));
-		$blog_page = get_page_by_title( $blog_page_title );
-		$is_home_page_updated = null;
-		$is_blog_page_updated  = null;
-		if($page->ID) {
+		$page = ! empty( $page_title ) ? get_page_by_title( $page_title ) : null;
+		$blog_page = ! empty( $blog_page_title ) ? get_page_by_title( $blog_page_title ) : null;
+		if( ! empty( $page ) && ! empty( $page->ID ) ) {
 			update_option( 'show_on_front', 'page', true);
 			update_option( 'page_on_front', $page->ID );
 		    $this->log->putContent('Home page has been set', true, true);
+
+			$home_page_templates = $this->get_settings($demo, 'home_page_templates');
+			if ( ! empty( $home_page_templates ) && is_array( $home_page_templates ) ) {
+				$page_id = (int) $page->ID;
+				$settings = get_post_meta( $page_id, '_elementor_page_settings', true );
+				if ( ! is_array( $settings ) ) {
+					$settings = array();
+				}
+				$meta_updated = false;
+				foreach ( $home_page_templates as $meta_key => $template_title ) {
+					if ( empty( $template_title ) ) {
+						continue;
+					}
+					$prefix = strtolower( explode( '_', $meta_key )[0] );
+					$post_type = 'liquid-' . $prefix;
+					$template = get_page_by_title( $template_title, OBJECT, $post_type );
+					if ( empty( $template ) || empty( $template->ID ) ) {
+						continue;
+					}
+					$settings[ $meta_key ] = (int) $template->ID;
+					$meta_updated = true;
+				}
+				if ( $meta_updated ) {
+					update_post_meta( $page_id, '_elementor_page_settings', $settings );
+					$this->log->putContent('Home page templates have been set', true, true);
+				}
+			}
+
 		}
-		if( $blog_page->ID ) {
+		if( ! empty( $blog_page ) && ! empty( $blog_page->ID ) ) {
 			update_option( 'show_on_front', 'page', true);
 			update_option( 'page_for_posts', $blog_page->ID );
 			$this->log->putContent('Blog page has been set', true, true);

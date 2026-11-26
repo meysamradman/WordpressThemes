@@ -177,7 +177,7 @@ class LD_Accordion extends Widget_Base {
 				'type' => Controls_Manager::SELECT,
 				'default' => '0',
 				'label_block' => true,
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'condition' => [
 					'content_type' => 'template'
@@ -1149,7 +1149,7 @@ class LD_Accordion extends Widget_Base {
 				<div id="<?php echo 'collapse-'.$id_int . $tab_count ?>" class="accordion-collapse collapse <?php echo $in ?>" data-bs-parent="#<?php echo $parent ?>" aria-labelledby="<?php echo 'heading-'.$id_int . $tab_count; ?>">
 
 				<div <?php echo $this->get_render_attribute_string( $tab_content_setting_key ); ?>>
-					<?php echo $item['content_type'] === 'template' ? \Elementor\Plugin::instance()->frontend->get_builder_content( $item[ 'template' ], true ) : $item['content']; ?>
+					<?php echo $item['content_type'] === 'template' ? \LiquidElementor\Template_Renderer::render( $item[ 'template' ] ) : $item['content']; ?>
 				</div>
 
 				</div>

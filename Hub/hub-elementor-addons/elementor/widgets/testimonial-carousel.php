@@ -398,8 +398,9 @@ class LD_Testimonial_Carousel extends Widget_Base {
 			[
 				'label' => __( 'Network', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
-				'default' => 'fa-amazon',
+				'default' => '',
 				'options' => [
+					'' => __('None', 'hub-elementor-addons'),
 					'fa-facebook' => __('Facebook', 'hub-elementor-addons'),
 					'fa-twitter' => __('Twitter', 'hub-elementor-addons'),
 					'fa-youtube' => __('Youtube', 'hub-elementor-addons'),

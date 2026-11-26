@@ -474,6 +474,27 @@ class LD_Fancy_Heading extends Widget_Base {
 		);
 
 		$this->add_control(
+			'txt_rotator_whitespace',
+			[
+				'label' => __( 'Text Rotator White Space', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => '',
+				'options' => [
+					'' => __( 'Default', 'hub-elementor-addons' ),
+					'normal' => __( 'Normal', 'hub-elementor-addons' ),
+					'nowrap' => __( 'Nowrap', 'hub-elementor-addons' ),
+				],
+				'selectors' => [
+					'{{WRAPPER}} .txt-rotate-keywords' => 'white-space: {{VALUE}}',
+				],
+				'render_type' => 'template',
+				'condition' => array(
+					'enable_txt_rotator' => 'yes',
+				),
+			]
+		);
+
+		$this->add_control(
 			'word_colors',
 			[
 				'label' => __( 'Words color', 'hub-elementor-addons' ),
@@ -1090,7 +1111,6 @@ class LD_Fancy_Heading extends Widget_Base {
 			const items = settings.advanced_text_content;
 			let content = '';
 
-			console.log(items)
 
 			if ( items.length >= 1 ){
         items.forEach(item => {
@@ -1103,8 +1123,12 @@ class LD_Fancy_Heading extends Widget_Base {
 								dimension: item.thumbnail_custom_dimension,
 								model: view.getEditModel()
 							};
-							const render_image_url = elementor.imagesManager.getImageUrl( render_image );
-							const img_html = `<figure class="lqd-adv-txt-fig pos-rel d-inline-flex"><img src="${render_image_url}" /></figure>`;
+							const is_svg = /\.svgz?(\?|#|$)/i.test( item.image.url );
+							// imagesManager resolves registered sizes, which SVGs don't have.
+							const render_image_url = is_svg ? item.image.url : elementor.imagesManager.getImageUrl( render_image );
+							// Tagged images are swapped for real inline <svg> by assets/js/lqd-editor-inline-svg.min.js.
+							const svg_attr = is_svg ? ` data-lqd-inline-svg="${item.image.url}"` : '';
+							const img_html = `<span class="lqd-adv-txt-fig pos-rel d-inline-flex"><img src="${render_image_url}"${svg_attr} /></span>`;
 							content = item.image_align === 'left' ? content + img_html + item.text : content + item.text + img_html;
             } else {
 							content += item.text;
@@ -1308,9 +1332,15 @@ class LD_Fancy_Heading extends Widget_Base {
 			$classnames_arr[] = $this->get_split_classname();
 		}
 
-		$title = $settings['advanced_text_enable'] === 'yes' ? ld_el_get_advanced_text( $this ) : $settings['content'];
+		$advanced_text = $settings['advanced_text_enable'] === 'yes';
+		$title = $advanced_text ? ld_el_get_advanced_text( $this ) : $settings['content'];
 		$title = preg_replace('/^<p[^>]*>(.*)<\/p[^>]*>/', '$1', $title);
-		$title = do_shortcode( wp_kses_post( $title ) ) . $this->get_title_words();
+		// Advanced text can contain inline SVG, which the default post allowlist strips.
+		$allowed_html = 'post';
+		if ( $advanced_text && function_exists( 'ld_el_advanced_text_allowed_html' ) ) {
+			$allowed_html = ld_el_advanced_text_allowed_html();
+		}
+		$title = do_shortcode( wp_kses( $title, $allowed_html ) ) . $this->get_title_words();
 		$tag_inherit = '';
 		if( $settings['use_inheritance'] === 'true' ){
 			$classnames_arr[] = $settings['tag_to_inherite'];

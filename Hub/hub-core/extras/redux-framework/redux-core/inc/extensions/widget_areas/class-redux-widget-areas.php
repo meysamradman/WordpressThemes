@@ -22,15 +22,15 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 		/**
 		 * Extension URI.
 		 *
-		 * @var string
+		 * @var null|string
 		 */
-		private $extension_url;
+		private ?string $extension_url;
 
 		/** Extension directory.
 		 *
 		 * @var string
 		 */
-		private $extension_dir;
+		private string $extension_dir;
 
 		/**
 		 * Array of enabled widget_areas
@@ -38,28 +38,28 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 		 * @since    1.0.0
 		 * @var      array
 		 */
-		protected $widget_areas = array();
+		protected array $widget_areas = array();
 
 		/**
 		 * Widget array.
 		 *
 		 * @var array
 		 */
-		protected $orig = array();
+		protected array $orig = array();
 
 		/**
 		 * ReduxFramework object.
 		 *
-		 * @var object
+		 * @var ReduxFramework
 		 */
-		private $parent;
+		private ReduxFramework $parent;
 
 		/**
 		 * Redux_Widget_Areas constructor.
 		 *
-		 * @param object $redux ReduxFramework pointer.
+		 * @param ReduxFramework $redux ReduxFramework pointer.
 		 */
-		public function __construct( $redux ) {
+		public function __construct( ReduxFramework $redux ) {
 			global $pagenow;
 
 			$this->parent = $redux;
@@ -72,7 +72,9 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 			add_action( 'init', array( &$this, 'register_custom_widget_areas' ), 1000 );
 
 			if ( 'widgets.php' === $pagenow ) {
-				add_action( 'admin_print_scripts', array( $this, 'add_new_widget_area_box' ) );
+				if ( true === $redux->args['widget_area'] ) {
+					add_action( 'admin_print_scripts', array( $this, 'add_new_widget_area_box' ) );
+				}
 				add_action( 'load-widgets.php', array( $this, 'add_widget_area_area' ), 100 );
 				add_action( 'load-widgets.php', array( $this, 'enqueue' ), 100 );
 			}
@@ -215,13 +217,12 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 
 			$options = apply_filters( 'redux_custom_widget_args', $options );
 
-			if ( is_array( $this->widget_areas ) ) {
-				foreach ( array_unique( $this->widget_areas ) as $widget_area ) {
-					$options['class'] = 'redux-custom';
-					$options['name']  = $widget_area;
-					$options['id']    = sanitize_key( $widget_area );
-					register_sidebar( $options );
-				}
+			foreach ( array_unique( $this->widget_areas ) as $widget_area ) {
+				$options['class'] = 'redux-custom';
+				$options['name']  = $widget_area;
+				$options['id']    = sanitize_key( $widget_area );
+
+				register_sidebar( $options );
 			}
 		}
 
@@ -252,6 +253,10 @@ if ( ! class_exists( 'Redux_Widget_Areas' ) ) {
 		 * Delete widget area.
 		 */
 		public function redux_delete_widget_area_area() {
+			if ( ! Redux_Helpers::current_user_can( $this->parent->args['page_permissions'] ) ) {
+				wp_die( esc_html__( 'You do not have permission to perform this action.', 'redux-framework' ) );
+			}
+
 			if ( isset( $_POST ) && isset( $_POST['_wpnonce'] ) && wp_verify_nonce( sanitize_key( wp_unslash( $_POST['_wpnonce'] ) ), 'delete-redux-widget_area-nonce' ) ) {
 				if ( isset( $_POST['name'] ) && ! empty( sanitize_text_field( wp_unslash( $_POST['name'] ) ) ) ) {
 					$name               = sanitize_text_field( wp_unslash( $_POST['name'] ) );

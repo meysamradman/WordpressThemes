@@ -1481,8 +1481,10 @@ body.loaded .merlin__content--welcome {
 }
 
 .merlin__button--next:hover,
-.merlin__button--next:active {
+.merlin__button--next:active,
+.merlin__button--next:focus {
 	color: #005d8a;
+	border-radius: 2em;
 }
 
 .merlin__button--skip {
@@ -2978,6 +2980,10 @@ body.exiting .merlin__content--content .merlin__content__footer {
 	margin: -2px 5px 0 -2px;
 }
 
-#qm-icon-container, #query-monitor-main {
+#qm-icon-container, #query-monitor-main, .bhub-sidebar, .bhub-mobile-menu {
 	display: none;
+}
+
+.lqd-dsd-demo-item figure{
+	display: flex;
 }

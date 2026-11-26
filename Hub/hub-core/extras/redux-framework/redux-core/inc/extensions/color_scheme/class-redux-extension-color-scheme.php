@@ -6,7 +6,9 @@
  * @author  Kevin Provance <kevin.provance@gmail.com>
  * @class   Redux_Extension_Color_Scheme
  *
- * @version 4.4.10
+ * @version 4.5.18
+ *
+ * @noinspection PhpIgnoredClassAliasDeclaration
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -24,14 +26,14 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 		 *
 		 * @var string
 		 */
-		public static $version = '4.4.10';
+		public static $version = '4.5.18';
 
 		/**
 		 * Extension friendly name.
 		 *
 		 * @var string
 		 */
-		public $extension_name = 'Color Schemes';
+		public string $extension_name = 'Color Schemes';
 
 		/**
 		 * Field ID.
@@ -45,14 +47,14 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 		 *
 		 * @var bool
 		 */
-		public $output_transparent = false;
+		public bool $output_transparent = false;
 
 		/**
 		 * Extension field name.
 		 *
 		 * @var string
 		 */
-		public $field_name = '';
+		public string $field_name = '';
 
 		/**
 		 * Class Constructor. Defines the args for the extensions class
@@ -74,7 +76,6 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 
 			// Ajax hooks.
 			add_action( 'wp_ajax_redux_color_schemes', array( $this, 'parse_ajax' ) );
-			add_action( 'wp_ajax_nopriv_redux_color_schemes', array( $this, 'parse_ajax' ) );
 
 			// Reset hooks.
 			add_action( 'redux/validate/' . $this->parent->args['opt_name'] . '/defaults', array( $this, 'reset_defaults' ), 0, 3 );
@@ -102,7 +103,7 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 
 			// Create uploads/redux_scheme_colors/ folder.
 			if ( ! is_dir( $upload_dir ) ) {
-				$redux->filesystem->execute( 'mkdir', $upload_dir );
+				Redux_Core::$filesystem->execute( 'mkdir', $upload_dir );
 			}
 		}
 
@@ -176,11 +177,11 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 		 *
 		 * @param       array $data Field data.
 		 *
-		 * @return      void
+		 * @return      array
 		 * @since       1.0.0
 		 * @access      public
 		 */
-		public function register_field( array $data ) {
+		public function register_field( array $data ): array {
 
 			// Include color_scheme helper.
 			include_once $this->extension_dir . 'color_scheme/inc/class-redux-color-scheme-functions.php';
@@ -200,6 +201,8 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 
 			// Set upload_dir cookie.
 			setcookie( 'redux_color_scheme_upload_dir', $upload_dir, 0, '/' );
+
+			return $data;
 		}
 
 		/**
@@ -425,32 +428,123 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 		 * @return      void
 		 */
 		public function parse_ajax() {
-			if ( isset( $_REQUEST['nonce'] ) && isset( $_REQUEST['opt_name'] ) && wp_verify_nonce( sanitize_key( wp_unslash( $_REQUEST['nonce'] ) ), 'redux_' . sanitize_text_field( wp_unslash( $_REQUEST['opt_name'] ) ) . '_color_schemes' ) ) {
-				$parent = $this->parent;
+			if ( ! Redux_Helpers::current_user_can( $this->parent->args['page_permissions'] ) ) {
+				wp_die( esc_html__( 'You do not have permission to perform this action.', 'redux-framework' ) );
+			}
 
-				// Do action.
-				if ( isset( $_REQUEST['type'] ) ) {
+			$opt_name = $this->parent->args['opt_name'];
+			$parent   = $this->parent;
 
-					// Save scheme.
-					if ( 'save' === $_REQUEST['type'] ) {
-						$this->save_scheme( $parent );
+			$nonce = isset( $_REQUEST['nonce'] ) ? sanitize_key( wp_unslash( $_REQUEST['nonce'] ) ) : '';
+			if ( ! wp_verify_nonce( $nonce, 'redux_' . $opt_name . '_color_schemes' ) ) {
+				wp_die( esc_html__( 'Invalid Security Credentials. Please reload the page and try again.', 'redux-framework' ) );
+			}
 
-						// Delete scheme.
-					} elseif ( 'delete' === $_REQUEST['type'] ) {
-						$this->delete_scheme( $parent );
+			$type = isset( $_REQUEST['type'] ) ? sanitize_key( wp_unslash( $_REQUEST['type'] ) ) : '';
+			if ( ! in_array( $type, array( 'save', 'delete', 'update', 'export', 'import' ), true ) ) {
+				wp_die( esc_html__( 'Invalid request.', 'redux-framework' ) );
+			}
 
-						// Scheme change.
-					} elseif ( 'update' === $_REQUEST['type'] ) {
-						$this->get_scheme_html( $parent );
+			if ( 'save' === $type ) {
+				$this->save_scheme( $parent );
+			} elseif ( 'delete' === $type ) {
+				$this->delete_scheme( $parent );
+			} elseif ( 'update' === $type ) {
+				$this->get_scheme_html( $parent );
+			} elseif ( 'export' === $type ) {
+				$this->download_schemes();
+			} elseif ( 'import' === $type ) {
+				$this->import_schemes();
+			}
+		}
 
-						// Export scheme file.
-					} elseif ( 'export' === $_REQUEST['type'] ) {
-						$this->download_schemes();
+		/**
+		 * Download Scheme File.
+		 *
+		 * @since       4.4.18
+		 * @access      private
+		 * @return      void
+		 */
+		private function import_schemes() {
+			if ( isset( $_REQUEST['content'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+				$opt_name = Redux_Color_Scheme_Functions::$parent->args['opt_name'];
+				if ( ! preg_match( '/^[a-zA-Z0-9_-]+$/', $opt_name ) ) {
+					$result = array(
+						'result' => false,
+						'data'   => esc_html__( 'Invalid opt_name', 'redux-framework' ),
+					);
+					echo wp_json_encode( $result );
+					die();
+				}
+
+				$field_id = Redux_Color_Scheme_Functions::$field_id;
+				if ( ! preg_match( '/^[a-zA-Z0-9_-]+$/', $field_id ) ) {
+					$result = array(
+						'result' => false,
+						'data'   => esc_html__( 'Invalid field_id', 'redux-framework' ),
+					);
+					echo wp_json_encode( $result );
+					die();
+				}
+
+				$content = wp_unslash( $_REQUEST['content'] ); // phpcs:ignore WordPress.Security.NonceVerification, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+				$content = is_array( $content ) ? array_map( 'stripslashes_deep', $content ) : stripslashes( $content );
+				$content = json_decode( $content, true );
+
+				if ( is_null( $content ) ) {
+					$result = array(
+						'result' => false,
+						'data'   => esc_html__( 'Import unsuccessful! Malformed JSON data detected.', 'redux-framework' ),
+					);
+
+					$result = wp_json_encode( $result );
+
+					echo $result; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+					die;
+				}
+
+				if ( isset( $content['Default']['color_scheme_name'] ) ) {
+					$content = wp_json_encode( $content );
+
+					$param_array = array(
+						'content'   => $content,
+						'overwrite' => true,
+						'chmod'     => FS_CHMOD_FILE,
+					);
+
+					$import_file = Redux_Color_Scheme_Functions::$upload_dir . sanitize_file_name( $opt_name ) . '_' . sanitize_file_name( $field_id ) . '.json';
+
+					if ( true === Redux_Core::$filesystem->execute( 'put_contents', $import_file, $param_array ) ) {
+						$result = array(
+							'result' => true,
+							// translators: %s = HTML content.
+							'data'   => sprintf( esc_html__( 'Import successful! Click %s to refresh.', 'redux-framework' ), '<strong>' . esc_html__( 'OK', 'redux-framework' ) . '</strong>' ),
+						);
+					} else {
+						$result = array(
+							'result' => false,
+							'data'   => esc_html__( 'Import unsuccessful! File permission error: Could not write import data to server.', 'redux-framework' ),
+						);
 					}
+				} else {
+					$result = array(
+						'result' => false,
+						'data'   => esc_html__( 'Import unsuccessful! The selected file is not a valid color scheme file.', 'redux-framework' ),
+					);
 				}
 			} else {
-				wp_die( esc_html__( 'Invalid Security Credentials.  Please reload the page and try again.', 'redux-framework' ) );
+				$result = array(
+					'result' => false,
+					'data'   => esc_html__( 'Import unsuccessful! No data detected in the import file.', 'redux-framework' ),
+				);
 			}
+
+			$result = wp_json_encode( $result );
+
+			echo $result; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+			die;
 		}
 
 		/**
@@ -461,17 +555,21 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 		 * @return      void
 		 */
 		private function download_schemes() {
+			if ( ! Redux_Rate_Limiter::check( 'color_schemes' ) ) {
+				wp_die( 'Rate limit exceeded. Please try again later.' );
+			}
+
 			Redux_Color_Scheme_Functions::$parent   = $this->parent;
 			Redux_Color_Scheme_Functions::$field_id = $this->field_id;
 
-			// Read contents of scheme file.
+			// Read the contents of the scheme file.
 			$content = Redux_Color_Scheme_Functions::read_scheme_file();
 			$content = wp_json_encode( $content );
 
 			// Set header info.
 			header( 'Content-Description: File Transfer' );
 			header( 'Content-type: application/txt' );
-			header( 'Content-Disposition: attachment; filename="redux_schemes_' . $this->parent->args['opt_name'] . '_' . $this->field_id . '_' . gmdate( 'm-d-Y' ) . '.json"' );
+			header( 'Content-Disposition: attachment; filename="redux_schemes_' . $this->parent->args['opt_name'] . '_' . $this->field_id . '_' . gmdate( 'm-d-Y-H-i' ) . '.json"' );
 			header( 'Content-Transfer-Encoding: binary' );
 			header( 'Expires: 0' );
 			header( 'Cache-Control: must-revalidate' );
@@ -487,13 +585,13 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 		/**
 		 * Save Scheme. Saved an individual scheme to JSON scheme file.
 		 *
-		 * @param       object $redux ReduxFramework object.
+		 * @param ReduxFramework $redux ReduxFramework object.
 		 *
+		 * @return      void
 		 * @since       1.0.0
 		 * @access      private
-		 * @return      void
 		 */
-		private function save_scheme( $redux ) {
+		private function save_scheme( ReduxFramework $redux ) {
 			Redux_Color_Scheme_Functions::$parent   = $redux;
 			Redux_Color_Scheme_Functions::$field_id = $this->field_id;
 
@@ -538,13 +636,13 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 		/**
 		 * Delete Scheme. Delete individual scheme from JSON scheme file.
 		 *
-		 * @param       object $redux ReduxFramework object.
+		 * @param ReduxFramework $redux ReduxFramework object.
 		 *
+		 * @return      void
 		 * @since       1.0.0
 		 * @access      private
-		 * @return      void
 		 */
-		private function delete_scheme( $redux ) {
+		private function delete_scheme( ReduxFramework $redux ) {
 
 			// Get deleted scheme ID.
 			if ( isset( $_REQUEST['scheme_id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
@@ -605,13 +703,13 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 		/**
 		 * Gets the new scheme based on selection.
 		 *
-		 * @param       object $redux ReduxFramework object.
+		 * @param ReduxFramework $redux ReduxFramework object.
 		 *
+		 * @return      void
 		 * @since       1.0.0
 		 * @access      private
-		 * @return      void
 		 */
-		private function get_scheme_html( $redux ) {
+		private function get_scheme_html( ReduxFramework $redux ) {
 			if ( isset( $_POST['scheme_id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 
 				// Get the selected scheme name.
@@ -654,6 +752,11 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 		 */
 		private function get_default_data(): array {
 			$def_opts = $this->parent->options_defaults[ $this->field_id ];
+
+			if ( isset( $def_opts['color_scheme_name'] ) ) {
+				return array();
+			}
+
 			$sections = $this->parent->sections;
 			$data     = array();
 
@@ -702,6 +805,6 @@ if ( ! class_exists( 'Redux_Extension_Color_Scheme' ) ) {
 			return $data;
 		}
 	}
-}
 
-class_alias( 'Redux_Extension_Color_Scheme', 'ReduxFramework_Extension_Color_Scheme' );
+	class_alias( Redux_Extension_Color_Scheme::class, 'ReduxFramework_Extension_Color_Scheme' );
+}

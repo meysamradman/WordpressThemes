@@ -98,7 +98,7 @@ class LD_Icon_Box extends Widget_Base {
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'icon', 'box' ];
+		return [ 'icon', 'box', 'iconbox' ];
 	}
 
 	/**
@@ -1101,6 +1101,32 @@ class LD_Icon_Box extends Widget_Base {
 						'background' => [
 							'default' => 'gradient',
 						],
+						'color' => [
+							'selectors' => [
+								'{{SELECTOR}}' => 'background-color: {{VALUE}};',
+								'{{WRAPPER}} .iconbox-icon-gradient' => '--lqd-ib-grad-a: {{VALUE}};',
+							],
+						],
+						'color_b' => [
+							'selectors' => [
+								'{{WRAPPER}} .iconbox-icon-gradient' => '--lqd-ib-grad-b: {{VALUE}};',
+							],
+						],
+						'gradient_type' => [
+							'render_type' => 'template',
+						],
+						'gradient_angle' => [
+							'render_type' => 'template',
+						],
+						'gradient_position' => [
+							'render_type' => 'template',
+						],
+						'color_stop' => [
+							'render_type' => 'template',
+						],
+						'color_b_stop' => [
+							'render_type' => 'template',
+						],
 					],
 					'condition' => array(
 						'enable_gradient_icon' => 'yes',
@@ -1208,6 +1234,15 @@ class LD_Icon_Box extends Widget_Base {
 			);
 
 			$this->add_control(
+				'enable_heading_gradient',
+				[
+					'label' => __( 'Gradient Heading?', 'hub-elementor-addons' ),
+					'type' => Controls_Manager::SWITCHER,
+					'separator' => 'before',
+				]
+			);
+
+			$this->add_control(
 				'h_color',
 				[
 					'label' => __( 'Heading Color', 'hub-elementor-addons' ),
@@ -1215,7 +1250,51 @@ class LD_Icon_Box extends Widget_Base {
 					'selectors' => [
 						'{{WRAPPER}} .lqd-iconbox-heading' => 'color: {{VALUE}}',
 					],
-					'separator' => 'before'
+					'condition' => [
+						'enable_heading_gradient!' => 'yes',
+					],
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'heading_gradient',
+					'label' => __( 'Heading Gradient', 'hub-elementor-addons' ),
+					'types' => [ 'gradient' ],
+					'selector' => '{{WRAPPER}} .lqd-iconbox-heading',
+					'fields_options' => [
+						'background' => [
+							'default' => 'gradient',
+						],
+					],
+					'condition' => [
+						'enable_heading_gradient' => 'yes',
+					],
+				]
+			);
+
+			$this->add_control(
+				'heading_gradient_clip',
+				[
+					'type' => Controls_Manager::HIDDEN,
+					'default' => 'yes',
+					'selectors' => [
+						'{{WRAPPER}} .lqd-iconbox-heading' => 'background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-fill-color: transparent;',
+						'{{WRAPPER}} .lqd-iconbox-heading svg' => '-webkit-text-fill-color: currentcolor; text-fill-color: currentcolor;',
+					],
+					'condition' => [
+						'enable_heading_gradient' => 'yes',
+					],
+				]
+			);
+
+			$this->add_control(
+				'enable_content_gradient',
+				[
+					'label' => __( 'Gradient Content?', 'hub-elementor-addons' ),
+					'type' => Controls_Manager::SWITCHER,
+					'separator' => 'before',
 				]
 			);
 
@@ -1226,6 +1305,41 @@ class LD_Icon_Box extends Widget_Base {
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .contents p' => 'color: {{VALUE}}',
+					],
+					'condition' => [
+						'enable_content_gradient!' => 'yes',
+					],
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'content_gradient',
+					'label' => __( 'Content Gradient', 'hub-elementor-addons' ),
+					'types' => [ 'gradient' ],
+					'selector' => '{{WRAPPER}} .contents p',
+					'fields_options' => [
+						'background' => [
+							'default' => 'gradient',
+						],
+					],
+					'condition' => [
+						'enable_content_gradient' => 'yes',
+					],
+				]
+			);
+
+			$this->add_control(
+				'content_gradient_clip',
+				[
+					'type' => Controls_Manager::HIDDEN,
+					'default' => 'yes',
+					'selectors' => [
+						'{{WRAPPER}} .contents p' => 'background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-fill-color: transparent;',
+					],
+					'condition' => [
+						'enable_content_gradient' => 'yes',
 					],
 				]
 			);
@@ -1311,6 +1425,32 @@ class LD_Icon_Box extends Widget_Base {
 						'background' => [
 							'default' => 'gradient',
 						],
+						'color' => [
+							'selectors' => [
+								'{{SELECTOR}}' => 'background-color: {{VALUE}};',
+								'{{WRAPPER}}:hover .iconbox-icon-gradient' => '--lqd-ib-grad-a: {{VALUE}};',
+							],
+						],
+						'color_b' => [
+							'selectors' => [
+								'{{WRAPPER}}:hover .iconbox-icon-gradient' => '--lqd-ib-grad-b: {{VALUE}};',
+							],
+						],
+						'gradient_type' => [
+							'render_type' => 'template',
+						],
+						'gradient_angle' => [
+							'render_type' => 'template',
+						],
+						'gradient_position' => [
+							'render_type' => 'template',
+						],
+						'color_stop' => [
+							'render_type' => 'template',
+						],
+						'color_b_stop' => [
+							'render_type' => 'template',
+						],
 					],
 					'condition' => array(
 						'enable_gradient_icon' => 'yes',
@@ -1391,13 +1531,66 @@ class LD_Icon_Box extends Widget_Base {
 			);
 
 			$this->add_control(
+				'enable_heading_gradient_hover',
+				[
+					'label' => __( 'Gradient Heading?', 'hub-elementor-addons' ),
+					'type' => Controls_Manager::SWITCHER,
+					'separator' => 'before',
+				]
+			);
+
+			$this->add_control(
 				'h_hcolor',
 				[
 					'label' => __( 'Heading Color', 'hub-elementor-addons' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}}:hover .lqd-iconbox-heading' => 'color: {{VALUE}}',
+						'{{WRAPPER}}:hover .lqd-iconbox-heading' => 'color: {{VALUE}}; -webkit-text-fill-color: currentcolor; text-fill-color: currentcolor; background-image: none;',
 					],
+					'condition' => [
+						'enable_heading_gradient_hover!' => 'yes',
+					],
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'heading_gradient_hover',
+					'label' => __( 'Heading Gradient', 'hub-elementor-addons' ),
+					'types' => [ 'gradient' ],
+					'selector' => '{{WRAPPER}}:hover .lqd-iconbox-heading',
+					'fields_options' => [
+						'background' => [
+							'default' => 'gradient',
+						],
+					],
+					'condition' => [
+						'enable_heading_gradient_hover' => 'yes',
+					],
+				]
+			);
+
+			$this->add_control(
+				'heading_gradient_hover_clip',
+				[
+					'type' => Controls_Manager::HIDDEN,
+					'default' => 'yes',
+					'selectors' => [
+						'{{WRAPPER}}:hover .lqd-iconbox-heading' => 'background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-fill-color: transparent;',
+						'{{WRAPPER}}:hover .lqd-iconbox-heading svg' => '-webkit-text-fill-color: currentcolor; text-fill-color: currentcolor;',
+					],
+					'condition' => [
+						'enable_heading_gradient_hover' => 'yes',
+					],
+				]
+			);
+
+			$this->add_control(
+				'enable_content_gradient_hover',
+				[
+					'label' => __( 'Gradient Content?', 'hub-elementor-addons' ),
+					'type' => Controls_Manager::SWITCHER,
 					'separator' => 'before',
 				]
 			);
@@ -1408,7 +1601,42 @@ class LD_Icon_Box extends Widget_Base {
 					'label' => __( 'Content Color', 'hub-elementor-addons' ),
 					'type' => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}}:hover .contents p' => 'color: {{VALUE}}',
+						'{{WRAPPER}}:hover .contents p' => 'color: {{VALUE}}; -webkit-text-fill-color: currentcolor; text-fill-color: currentcolor; background-image: none;',
+					],
+					'condition' => [
+						'enable_content_gradient_hover!' => 'yes',
+					],
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'content_gradient_hover',
+					'label' => __( 'Content Gradient', 'hub-elementor-addons' ),
+					'types' => [ 'gradient' ],
+					'selector' => '{{WRAPPER}}:hover .contents p',
+					'fields_options' => [
+						'background' => [
+							'default' => 'gradient',
+						],
+					],
+					'condition' => [
+						'enable_content_gradient_hover' => 'yes',
+					],
+				]
+			);
+
+			$this->add_control(
+				'content_gradient_hover_clip',
+				[
+					'type' => Controls_Manager::HIDDEN,
+					'default' => 'yes',
+					'selectors' => [
+						'{{WRAPPER}}:hover .contents p' => 'background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-fill-color: transparent;',
+					],
+					'condition' => [
+						'enable_content_gradient_hover' => 'yes',
 					],
 				]
 			);
@@ -1845,6 +2073,73 @@ class LD_Icon_Box extends Widget_Base {
 			return attr;
 		}
 
+		function getIconGradientSvg() {
+			if ( settings.enable_gradient_icon !== 'yes' ) {
+				return '';
+			}
+
+			var id = 'lqd-ib-grad-' + view.model.get('id');
+			var type = settings.i_color2_gradient_type === 'radial' ? 'radial' : 'linear';
+			var stopA = settings.i_color2_color_stop && settings.i_color2_color_stop.size != null ? parseFloat(settings.i_color2_color_stop.size) : 0;
+			var stopB = settings.i_color2_color_b_stop && settings.i_color2_color_b_stop.size != null ? parseFloat(settings.i_color2_color_b_stop.size) : 100;
+			var angle = settings.i_color2_gradient_angle && settings.i_color2_gradient_angle.size != null ? parseFloat(settings.i_color2_gradient_angle.size) : 180;
+			var unit = settings.i_color2_gradient_angle && settings.i_color2_gradient_angle.unit ? settings.i_color2_gradient_angle.unit : 'deg';
+			var stops = '<stop class="lqd-ib-grad-stop-a" offset="' + stopA + '%" stop-color="var(--lqd-ib-grad-a, var(--color-gradient-start, #007fff))" />'
+				+ '<stop class="lqd-ib-grad-stop-b" offset="' + stopB + '%" stop-color="var(--lqd-ib-grad-b, var(--color-gradient-stop, #ff4d54))" />';
+			var gradient;
+
+			if ( unit === 'rad' ) { angle = angle * (180 / Math.PI); }
+			else if ( unit === 'grad' ) { angle = angle * 0.9; }
+			else if ( unit === 'turn' ) { angle = angle * 360; }
+
+			if ( type === 'radial' ) {
+				var posMap = {
+					'center center': [0.5, 0.5],
+					'center left': [0, 0.5],
+					'center right': [1, 0.5],
+					'top center': [0.5, 0],
+					'top left': [0, 0],
+					'top right': [1, 0],
+					'bottom center': [0.5, 1],
+					'bottom left': [0, 1],
+					'bottom right': [1, 1]
+				};
+				var pos = posMap[settings.i_color2_gradient_position] || [0.5, 0.5];
+				gradient = '<radialGradient id="' + id + '" gradientUnits="objectBoundingBox" cx="' + pos[0] + '" cy="' + pos[1] + '" r="0.85">' + stops + '</radialGradient>';
+			} else {
+				var rad = angle * Math.PI / 180;
+				var x = Math.sin(rad);
+				var y = -Math.cos(rad);
+				gradient = '<linearGradient id="' + id + '" gradientUnits="objectBoundingBox" x1="' + (0.5 - x / 2).toFixed(4) + '" y1="' + (0.5 - y / 2).toFixed(4) + '" x2="' + (0.5 + x / 2).toFixed(4) + '" y2="' + (0.5 + y / 2).toFixed(4) + '">' + stops + '</linearGradient>';
+			}
+
+			return '<svg class="lqd-ib-grad-src pos-abs pos-tl" width="0" height="0" aria-hidden="true" focusable="false"><defs>' + gradient + '</defs></svg>';
+		}
+
+		function paintIconSvgRoot(html) {
+			if ( !html || html.indexOf('<svg') === -1 ) {
+				return html;
+			}
+
+			var url = 'url(#lqd-ib-grad-' + view.model.get('id') + ')';
+
+			return html.replace(/<svg\b([^>]*)>/i, function(match, attrs) {
+				var fillNone = /\bfill\s*=\s*(['"])none\1/i.test(attrs);
+				var strokeCurrent = /\bstroke\s*=\s*(['"])currentColor\1/i.test(attrs);
+				var decl = fillNone ? ('fill:none;stroke:' + url) : (strokeCurrent ? ('fill:' + url + ';stroke:' + url) : ('fill:' + url));
+
+				if ( /\bstyle\s*=/.test(attrs) ) {
+					attrs = attrs.replace(/\bstyle\s*=\s*(['"])(.*?)\1/i, function(styleMatch, quote, style) {
+						return 'style="' + style.replace(/;?\s*$/, ';') + decl + '"';
+					});
+				} else {
+					attrs += ' style="' + decl + '"';
+				}
+
+				return '<svg' + attrs + '>';
+			});
+		}
+
 		function get_the_icon() {
 
 			var icon_html = '';
@@ -1862,7 +2157,8 @@ class LD_Icon_Box extends Widget_Base {
 
 			var icon_wrap_classnames = [
 				'iconbox-icon-wrap',
-				settings.position === 'iconbox-side' && settings.i_linked === 'iconbox-icon-linked' && settings.items_alignment === 'align-items-center' ? 'd-flex align-items-center' : '',
+				(settings.position === 'iconbox-side' && settings.i_linked === 'iconbox-icon-linked' && settings.items_alignment === 'align-items-center') ||
+    			(settings.position === 'iconbox-inline' || ( settings.position === 'iconbox-side' && settings.items_alignment === 'align-items-center' )) ? 'd-flex align-items-center' : '',
 				settings.i_linked === 'iconbox-icon-linked' ? 'pos-rel' : '',
 			];
 
@@ -1883,12 +2179,14 @@ class LD_Icon_Box extends Widget_Base {
 
 			if( i_type ) {
 				if( 'image' === i_type) {
-					icon_html += '<img src="' + icon + '" class="lqd-image-icon" />';
+					if ( icon ) {
+						icon_html += '<img src="' + icon + '" class="lqd-image-icon" />';
+					}
 				} else {
 					if ( iconRender.value == undefined ){
 						icon_html += '<i class="' + icon + '" aria-hidden="true"></i>';
 					} else {
-						icon_html += iconRender.value;
+						icon_html += ( iconRender.value.indexOf('<svg') !== -1 ? getIconGradientSvg() + paintIconSvgRoot(iconRender.value) : iconRender.value );
 					}
 				}
 			}
@@ -2153,7 +2451,372 @@ class LD_Icon_Box extends Widget_Base {
 			return 'data-shape-border="' . $border . '"';
 		}
 
+	/**
+	 * Returns inline SVG markup for an attachment.
+	 *
+	 * Reads the file straight from disk whenever it belongs to this site. The previous
+	 * implementation always went through `wp_remote_get()`, which meant a blocking loopback
+	 * request on every render — and because WordPress serves its 404 template for missing
+	 * uploads, a deleted attachment ended up dumping a whole HTML document into the widget.
+	 *
+	 * @param string $url           Attachment URL as stored in the widget settings.
+	 * @param int    $attachment_id Attachment ID, when known. Preferred over the URL.
+	 *
+	 * @return string Inline SVG markup, or an empty string when it cannot be resolved.
+	 */
+	protected function get_inline_svg( $url, $attachment_id = 0 ) {
 
+		$path = $this->get_local_svg_path( $url, $attachment_id );
+
+		if ( ! empty( $path ) && is_readable( $path ) ) {
+			return $this->sanitize_svg( (string) @file_get_contents( $path ) );
+		}
+
+		// Nothing on disk and the URL points back at this site: the attachment is gone.
+		// Bail out instead of requesting (and printing) our own 404 page.
+		if ( $this->url_is_local( $url ) ) {
+			return '';
+		}
+
+		// Genuinely external (offloaded media / CDN): fetch once and cache.
+		return $this->get_remote_svg( $url );
+
+	}
+
+	/**
+	 * Maps an attachment to a readable path on the local filesystem.
+	 *
+	 * @param string $url           Attachment URL.
+	 * @param int    $attachment_id Attachment ID, when known.
+	 *
+	 * @return string Absolute path, or an empty string when the URL is not local.
+	 */
+	protected function get_local_svg_path( $url, $attachment_id = 0 ) {
+
+		if ( ! empty( $attachment_id ) ) {
+			$file = get_attached_file( $attachment_id );
+			if ( ! empty( $file ) ) {
+				return $file;
+			}
+		}
+
+		if ( empty( $url ) ) {
+			return '';
+		}
+
+		// Drop the query string / fragment and normalise the scheme so that http, https
+		// and protocol-relative URLs all match the configured base URLs.
+		$url = strtok( $url, '?#' );
+		$url = rawurldecode( $url );
+		$url = preg_replace( '#^https?://#i', '//', $url );
+
+		$maps    = array();
+		$uploads = wp_upload_dir();
+
+		if ( empty( $uploads['error'] ) ) {
+			$maps[ preg_replace( '#^https?://#i', '//', $uploads['baseurl'] ) ] = untrailingslashit( $uploads['basedir'] );
+		}
+
+		$maps[ preg_replace( '#^https?://#i', '//', content_url() ) ] = untrailingslashit( WP_CONTENT_DIR );
+		$maps[ preg_replace( '#^https?://#i', '//', site_url() ) ]    = untrailingslashit( ABSPATH );
+
+		foreach ( $maps as $base_url => $base_dir ) {
+
+			$base_url = untrailingslashit( $base_url );
+
+			if ( 0 !== strpos( $url, $base_url . '/' ) ) {
+				continue;
+			}
+
+			$path = realpath( $base_dir . substr( $url, strlen( $base_url ) ) );
+
+			// Guard against traversal out of the base directory. Both sides are resolved
+			// so that symlinked docroots / uploads dirs still match.
+			$real_base = realpath( $base_dir );
+
+			if ( ! empty( $path ) && ! empty( $real_base ) && 0 === strpos( $path, $real_base ) ) {
+				return $path;
+			}
+
+			return '';
+
+		}
+
+		return '';
+
+	}
+
+	/**
+	 * Whether a URL is served by this site.
+	 *
+	 * @param string $url URL to test.
+	 *
+	 * @return bool
+	 */
+	protected function url_is_local( $url ) {
+
+		$url_host = wp_parse_url( $url, PHP_URL_HOST );
+
+		if ( empty( $url_host ) ) {
+			return true; // Relative URL, so it is ours.
+		}
+
+		$site_host = wp_parse_url( home_url(), PHP_URL_HOST );
+
+		return strtolower( $url_host ) === strtolower( $site_host );
+
+	}
+
+	/**
+	 * Fetches an SVG hosted on another domain, caching both hits and misses.
+	 *
+	 * @param string $url Remote SVG URL.
+	 *
+	 * @return string Inline SVG markup, or an empty string on failure.
+	 */
+	protected function get_remote_svg( $url ) {
+
+		if ( empty( $url ) ) {
+			return '';
+		}
+
+		$cache_key = 'lqd_ib_svg_' . md5( $url );
+		$cached    = get_transient( $cache_key );
+
+		if ( false !== $cached ) {
+			return is_string( $cached ) ? $cached : '';
+		}
+
+		$response = wp_remote_get( $url, array( 'timeout' => 5 ) );
+
+		if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+			set_transient( $cache_key, '', HOUR_IN_SECONDS );
+
+			return '';
+		}
+
+		$svg = $this->sanitize_svg( wp_remote_retrieve_body( $response ) );
+
+		set_transient( $cache_key, $svg, DAY_IN_SECONDS );
+
+		return $svg;
+
+	}
+
+	/**
+	 * Makes sure the payload really is an SVG document before it is echoed.
+	 *
+	 * Anything that is not an SVG (a 404 page, an error document, a login screen) is
+	 * discarded rather than injected into the page.
+	 *
+	 * @param string $markup Raw file/response contents.
+	 *
+	 * @return string Sanitized SVG markup, or an empty string.
+	 */
+	protected function sanitize_svg( $markup ) {
+
+		$markup = trim( (string) $markup );
+
+		if ( '' === $markup ) {
+			return '';
+		}
+
+		// Strip the BOM, XML prolog, doctype and any leading comments so we can assert that
+		// what remains actually opens with <svg>.
+		$markup = preg_replace( '#^(?:\xEF\xBB\xBF|\s+|<\?xml\b[^>]*\?>|<!DOCTYPE\b[^>]*>|<!--.*?-->)+#is', '', $markup );
+
+		if ( 0 !== stripos( $markup, '<svg' ) ) {
+			return '';
+		}
+
+		$end = strripos( $markup, '</svg>' );
+
+		if ( false === $end ) {
+			return '';
+		}
+
+		$markup = substr( $markup, 0, $end + 6 );
+
+		$markup = preg_replace( '#<script(.*?)>(.*?)</script>#is', '', $markup );
+		$markup = preg_replace( '#\son\w+\s*=\s*("[^"]*"|\'[^\']*\'|[^\s>]+)#i', '', $markup );
+
+		return $markup;
+
+	}
+
+	/**
+	 * Renders the Icon Library control, applying an SVG paint-server gradient when needed.
+	 *
+	 * @return string Icon markup.
+	 */
+	protected function get_icon_library_html() {
+
+		$settings = $this->get_settings_for_display();
+		$icon     = isset( $settings['i_icon_fontawesome'] ) ? $settings['i_icon_fontawesome'] : array();
+
+		if ( method_exists( Icons_Manager::class, 'try_get_icon_html' ) ) {
+			$html = Icons_Manager::try_get_icon_html( $icon, array( 'aria-hidden' => 'true' ) );
+		} else {
+			ob_start();
+			Icons_Manager::render_icon( $icon, array( 'aria-hidden' => 'true' ) );
+			$html = ob_get_clean();
+		}
+
+		if ( 'yes' === ( $settings['enable_gradient_icon'] ?? '' ) && false !== stripos( $html, '<svg' ) ) {
+			return $this->get_icon_gradient_svg() . $this->paint_icon_svg_root( $html );
+		}
+
+		return $html;
+
+	}
+
+	/**
+	 * Points the root <svg> at this widget's gradient.
+	 *
+	 * Inline style, not an Elementor selector: {{ID}} inside a control's CSS value
+	 * is parsed as that control's value (the switcher returns "yes").
+	 * Child shapes keep whatever fill or stroke they already have.
+	 *
+	 * @param string $html Icon markup.
+	 * @return string
+	 */
+	protected function paint_icon_svg_root( $html ) {
+
+		$url = 'url(#' . $this->get_icon_gradient_id() . ')';
+
+		return preg_replace_callback( '/<svg\b([^>]*)>/i', function( $matches ) use ( $url ) {
+			$attrs = $matches[1];
+			$fill_none = (bool) preg_match( '/\bfill\s*=\s*([\'"])none\1/i', $attrs );
+			$stroke_current = (bool) preg_match( '/\bstroke\s*=\s*([\'"])currentColor\1/i', $attrs );
+
+			if ( $fill_none ) {
+				$decl = 'fill:none;stroke:' . $url;
+			} elseif ( $stroke_current ) {
+				$decl = 'fill:' . $url . ';stroke:' . $url;
+			} else {
+				$decl = 'fill:' . $url;
+			}
+
+			if ( preg_match( '/\bstyle\s*=\s*([\'"])(.*?)\1/i', $attrs, $style_match ) ) {
+				$style = rtrim( $style_match[2], "; \t" ) . ';' . $decl;
+				$attrs = preg_replace( '/\bstyle\s*=\s*([\'"]).*?\1/i', 'style="' . esc_attr( $style ) . '"', $attrs, 1 );
+			} else {
+				$attrs .= ' style="' . esc_attr( $decl ) . '"';
+			}
+
+			return '<svg' . $attrs . '>';
+		}, $html, 1 );
+
+	}
+
+	/**
+	 * Unique paint-server id for this widget instance.
+	 *
+	 * @return string
+	 */
+	protected function get_icon_gradient_id() {
+		return 'lqd-ib-grad-' . $this->get_id();
+	}
+
+	/**
+	 * Maps the Gradient Color group control to SVG gradient geometry.
+	 *
+	 * @param array $settings Widget settings.
+	 * @return array
+	 */
+	protected function get_icon_gradient_paint( $settings ) {
+
+		$type = ( isset( $settings['i_color2_gradient_type'] ) && 'radial' === $settings['i_color2_gradient_type'] ) ? 'radial' : 'linear';
+
+		$stop_a = isset( $settings['i_color2_color_stop']['size'] ) ? floatval( $settings['i_color2_color_stop']['size'] ) : 0;
+		$stop_b = isset( $settings['i_color2_color_b_stop']['size'] ) ? floatval( $settings['i_color2_color_b_stop']['size'] ) : 100;
+
+		$angle = isset( $settings['i_color2_gradient_angle']['size'] ) ? floatval( $settings['i_color2_gradient_angle']['size'] ) : 180;
+		$unit  = isset( $settings['i_color2_gradient_angle']['unit'] ) ? $settings['i_color2_gradient_angle']['unit'] : 'deg';
+
+		switch ( $unit ) {
+			case 'rad':
+				$angle = rad2deg( $angle );
+				break;
+			case 'grad':
+				$angle = $angle * 0.9;
+				break;
+			case 'turn':
+				$angle = $angle * 360;
+				break;
+		}
+
+		$rad = deg2rad( $angle );
+		$x   = sin( $rad );
+		$y   = - cos( $rad );
+
+		$position = isset( $settings['i_color2_gradient_position'] ) ? $settings['i_color2_gradient_position'] : 'center center';
+		$pos_map  = array(
+			'center center' => array( 0.5, 0.5 ),
+			'center left'   => array( 0, 0.5 ),
+			'center right'  => array( 1, 0.5 ),
+			'top center'    => array( 0.5, 0 ),
+			'top left'      => array( 0, 0 ),
+			'top right'     => array( 1, 0 ),
+			'bottom center' => array( 0.5, 1 ),
+			'bottom left'   => array( 0, 1 ),
+			'bottom right'  => array( 1, 1 ),
+		);
+		$xy = isset( $pos_map[ $position ] ) ? $pos_map[ $position ] : array( 0.5, 0.5 );
+
+		return array(
+			'type'   => $type,
+			'stop_a' => $stop_a,
+			'stop_b' => $stop_b,
+			'x1'     => round( 0.5 - $x / 2, 4 ),
+			'y1'     => round( 0.5 - $y / 2, 4 ),
+			'x2'     => round( 0.5 + $x / 2, 4 ),
+			'y2'     => round( 0.5 + $y / 2, 4 ),
+			'cx'     => $xy[0],
+			'cy'     => $xy[1],
+		);
+
+	}
+
+	/**
+	 * A zero-size SVG that only holds the gradient. The icon SVG next to it
+	 * references it with fill/stroke url(#id), the same way currentColor is
+	 * applied on the root <svg>. Child shapes with their own colors are left alone.
+	 *
+	 * @return string
+	 */
+	protected function get_icon_gradient_svg() {
+
+		$paint  = $this->get_icon_gradient_paint( $this->get_settings_for_display() );
+		$id     = esc_attr( $this->get_icon_gradient_id() );
+		$stop_a = esc_attr( (string) $paint['stop_a'] );
+		$stop_b = esc_attr( (string) $paint['stop_b'] );
+
+		if ( 'radial' === $paint['type'] ) {
+			$gradient = sprintf(
+				'<radialGradient id="%1$s" gradientUnits="objectBoundingBox" cx="%2$s" cy="%3$s" r="0.85"><stop class="lqd-ib-grad-stop-a" offset="%4$s%%" stop-color="var(--lqd-ib-grad-a, var(--color-gradient-start, #007fff))" /><stop class="lqd-ib-grad-stop-b" offset="%5$s%%" stop-color="var(--lqd-ib-grad-b, var(--color-gradient-stop, #ff4d54))" /></radialGradient>',
+				$id,
+				esc_attr( (string) $paint['cx'] ),
+				esc_attr( (string) $paint['cy'] ),
+				$stop_a,
+				$stop_b
+			);
+		} else {
+			$gradient = sprintf(
+				'<linearGradient id="%1$s" gradientUnits="objectBoundingBox" x1="%2$s" y1="%3$s" x2="%4$s" y2="%5$s"><stop class="lqd-ib-grad-stop-a" offset="%6$s%%" stop-color="var(--lqd-ib-grad-a, var(--color-gradient-start, #007fff))" /><stop class="lqd-ib-grad-stop-b" offset="%7$s%%" stop-color="var(--lqd-ib-grad-b, var(--color-gradient-stop, #ff4d54))" /></linearGradient>',
+				$id,
+				esc_attr( (string) $paint['x1'] ),
+				esc_attr( (string) $paint['y1'] ),
+				esc_attr( (string) $paint['x2'] ),
+				esc_attr( (string) $paint['y2'] ),
+				$stop_a,
+				$stop_b
+			);
+		}
+
+		return '<svg class="lqd-ib-grad-src pos-abs pos-tl" width="0" height="0" aria-hidden="true" focusable="false"><defs>' . $gradient . '</defs></svg>';
+
+	}
 
 	protected function get_the_icon() {
 
@@ -2161,6 +2824,9 @@ class LD_Icon_Box extends Widget_Base {
 
 		$i_type = $settings['i_type'];
 		$icon = isset($settings['i_icon_fontawesome']['value']) ? $settings['i_icon_fontawesome']['value'] : '';
+		$position  = $settings['position'];
+		$items_alignment  = $settings['items_alignment'];
+		$icon_id = '';
 
 		if ($settings['i_animated'] === 'yes'){
 			$i_type = 'animated';
@@ -2168,15 +2834,18 @@ class LD_Icon_Box extends Widget_Base {
 
 		if (isset($settings['i_icon_fontawesome']['value']['url'])){
 			$icon = $settings['i_icon_fontawesome']['value']['url'];
+			$icon_id = isset($settings['i_icon_fontawesome']['value']['id']) ? $settings['i_icon_fontawesome']['value']['id'] : '';
 		}
 
 		if ($i_type === 'image'){
-			$icon = $settings['i_icon_image']['url'];
+			$icon = isset($settings['i_icon_image']['url']) ? $settings['i_icon_image']['url'] : '';
+			$icon_id = isset($settings['i_icon_image']['id']) ? $settings['i_icon_image']['id'] : '';
 		}
 
 		$icon_wrap_classnames = array(
 			'iconbox-icon-wrap',
-			$settings['position'] === 'iconbox-side' && $settings['i_linked'] === 'iconbox-icon-linked' && $settings['items_alignment'] === 'align-items-center' ? 'd-flex align-items-center' : '',
+			($position === 'iconbox-side' && $settings['i_linked'] === 'iconbox-icon-linked' && $items_alignment === 'align-items-center') ||
+			($position === 'iconbox-inline' || ( $position === 'iconbox-side' && $items_alignment === 'align-items-center' )) ? 'd-flex align-items-center' : '',
 			$settings['i_linked'] === 'iconbox-icon-linked' ? 'pos-rel' : '',
 		);
 
@@ -2197,17 +2866,16 @@ class LD_Icon_Box extends Widget_Base {
 			if( 'image' === $i_type || 'animated' === $i_type ) {
 				$filetype = wp_check_filetype( $icon );
 				if( 'svg' === $filetype['ext']) {
-					$request  = wp_remote_get( $icon );
-					$response = wp_remote_retrieve_body( $request );
-					$svg_icon = $response;
+					// Animated icons are loaded and injected by the frontend script instead.
 					if( 'animated' !== $i_type ) {
-						echo $svg_icon;
+						echo $this->get_inline_svg( $icon, $icon_id );
 					}
 				}
-				else {
+				elseif ( ! empty( $icon ) ) {
 
 					if ( $settings['image_alt_text'] === 'yes' ) {
-						$alt_text = get_post_meta(attachment_url_to_postid($icon), '_wp_attachment_image_alt', true);
+						$alt_id = ! empty( $icon_id ) ? $icon_id : attachment_url_to_postid( $icon );
+						$alt_text = $alt_id ? get_post_meta( $alt_id, '_wp_attachment_image_alt', true ) : '';
 					} else {
 						$alt_text = $settings['title'];
 					}
@@ -2215,7 +2883,7 @@ class LD_Icon_Box extends Widget_Base {
 				}
 			}
 			else {
-				Icons_Manager::render_icon( $settings['i_icon_fontawesome'], [ 'aria-hidden' => 'true' ] );
+				echo $this->get_icon_library_html();
 			}
 		}
 
@@ -2236,19 +2904,22 @@ class LD_Icon_Box extends Widget_Base {
 		}
 
 		$src = wp_get_attachment_url( $bg_id );
+
+		if( empty( $src ) ) {
+			return '';
+		}
+
 		$filetype = wp_check_filetype( $src );
 
 		if( 'svg' === $filetype['ext'] ) {
-
-			$request  = wp_remote_get( $src );
-			$response = wp_remote_retrieve_body( $request );
-			$svg_icon = $response;
-
-			$out = $svg_icon;
-
+			$out = $this->get_inline_svg( $src, $bg_id );
 		}
 		else {
 			$out = sprintf( '<img src="%s" />', esc_url( $src ) );
+		}
+
+		if( empty( $out ) ) {
+			return '';
 		}
 
 		echo '<span class="icon-custom-bg">';

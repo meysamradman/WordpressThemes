@@ -1,11 +1,12 @@
 <?php
 /**
  * ReduxFramework Sample Config File
- * For full documentation, please visit: http://devs.redux.io/
+ * For full documentation, please visit: https://devs.redux.io/
  *
  * @package Redux Framework
  */
 
+// phpcs:disable
 defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Redux' ) ) {
@@ -34,7 +35,7 @@ if ( is_dir( $sample_patterns_path ) ) {
 
 	if ( $sample_patterns_dir ) {
 
-		// phpcs:ignore WordPress.CodeAnalysis.AssignmentInCondition
+		// phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition
 		while ( false !== ( $sample_patterns_file = readdir( $sample_patterns_dir ) ) ) {
 			if ( stristr( $sample_patterns_file, '.png' ) !== false || stristr( $sample_patterns_file, '.jpg' ) !== false ) {
 				$name              = explode( '.', $sample_patterns_file );
@@ -68,7 +69,7 @@ $kses_exceptions = array(
  */
 $theme = wp_get_theme(); // For use with some settings. Not necessary.
 
-// TYPICAL -> Change these values as you need/desire.
+// TYPICAL → Change these values as you need/desire.
 $args = array(
 	// This is where your data is stored in the database and also becomes your global variable name.
 	'opt_name'                  => $opt_name,
@@ -121,7 +122,7 @@ $args = array(
 	// Order where the menu appears in the admin area. If there is any conflict, something will not show. Warning.
 	'page_priority'             => 90,
 
-	// For a full list of options, visit: http://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters.
+	// For a full list of options, visit: https://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters.
 	'page_parent'               => 'themes.php',
 
 	// Permissions needed to access the options panel.
@@ -150,6 +151,9 @@ $args = array(
 
 	// Shows the Import/Export panel when not used as a field.
 	'show_import_export'        => true,
+
+	// Shows the Options Object for debugging purposes. Show be set to false before deploying.
+	'show_options_object'       => true,
 
 	// The time transients will expire when the 'database' arg is set.
 	'transient_time'            => 60 * MINUTE_IN_SECONDS,
@@ -208,15 +212,18 @@ $args = array(
 		),
 	),
 
-	// FUTURE -> Not in use yet, but reserved or partially implemented. Use at your own risk.
+	// FUTURE → Not in use yet, but reserved or partially implemented.
+	// Use at your own risk.
 	// Possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!
 	'database'                  => '',
 	'network_admin'             => true,
 	'search'                    => true,
+	'widget_area'               => true,
+	'custom_fonts'              => true,
 );
 
 
-// ADMIN BAR LINKS -> Setup custom links in the admin bar menu as external items.
+// ADMIN BAR LINKS → Set up custom links in the admin bar menu as external items.
 // PLEASE CHANGE THESE SETTINGS IN YOUR THEME BEFORE RELEASING YOUR PRODUCT!!
 // If these are left unchanged, they will not display in your panel!
 $args['admin_bar_links'][] = array(
@@ -231,31 +238,31 @@ $args['admin_bar_links'][] = array(
 	'title' => __( 'Support', 'your-textdomain-here' ),
 );
 
-// SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
+// SOCIAL ICONS → Set up custom links in the footer for quick links in your panel footer icons.
 // PLEASE CHANGE THESE SETTINGS IN YOUR THEME BEFORE RELEASING YOUR PRODUCT!!
 // If these are left unchanged, they will not display in your panel!
 $args['share_icons'][] = array(
 	'url'   => '//github.com/ReduxFramework/ReduxFramework',
-	'title' => 'Visit us on GitHub',
+	'title' => __( 'Visit us on GitHub', 'your-textdomain-here' ),
 	'icon'  => 'el el-github',
 );
 $args['share_icons'][] = array(
 	'url'   => '//www.facebook.com/pages/Redux-Framework/243141545850368',
-	'title' => 'Like us on Facebook',
+	'title' => __( 'Like us on Facebook', 'your-textdomain-here' ),
 	'icon'  => 'el el-facebook',
 );
 $args['share_icons'][] = array(
 	'url'   => '//twitter.com/reduxframework',
-	'title' => 'Follow us on Twitter',
+	'title' => __( 'Follow us on Twitter', 'your-textdomain-here' ),
 	'icon'  => 'el el-twitter',
 );
 $args['share_icons'][] = array(
 	'url'   => '//www.linkedin.com/company/redux-framework',
-	'title' => 'Find us on LinkedIn',
+	'title' => __( 'Find us on LinkedIn', 'your-textdomain-here' ),
 	'icon'  => 'el el-linkedin',
 );
 
-// Panel Intro text -> before the form.
+// Panel Intro text → before the form.
 if ( ! isset( $args['global_variable'] ) || false !== $args['global_variable'] ) {
 	if ( ! empty( $args['global_variable'] ) ) {
 		$v = $args['global_variable'];
@@ -401,6 +408,7 @@ Redux::set_section(
 );
 
 require_once Redux_Core::$dir . '../sample/sections/presentation-fields/divide.php';
+require_once Redux_Core::$dir . '../sample/sections/presentation-fields/content.php';
 require_once Redux_Core::$dir . '../sample/sections/presentation-fields/info.php';
 require_once Redux_Core::$dir . '../sample/sections/presentation-fields/section.php';
 
@@ -412,7 +420,7 @@ Redux::set_section(
 	)
 );
 
-// -> START Switch & Button Set.
+// → START Switch & Button Set.
 Redux::set_section(
 	$opt_name,
 	array(
@@ -522,7 +530,6 @@ require_once Redux_Core::$dir . '../sample/sections/extensions/google-maps.php';
 require_once Redux_Core::$dir . '../sample/sections/extensions/icon-select.php';
 require_once Redux_Core::$dir . '../sample/sections/extensions/js-button.php';
 require_once Redux_Core::$dir . '../sample/sections/extensions/repeater.php';
-require_once Redux_Core::$dir . '../sample/sections/extensions/search.php';
 require_once Redux_Core::$dir . '../sample/sections/extensions/shortcodes.php';
 require_once Redux_Core::$dir . '../sample/sections/extensions/social-profiles.php';
 require_once Redux_Core::$dir . '../sample/sections/extensions/tabbed.php';
@@ -610,11 +617,11 @@ Redux::set_section(
 if ( ! function_exists( 'compiler_action' ) ) {
 	/**
 	 * This is a test function that will let you see when the compiler hook occurs.
-	 * It only runs if a field's value has changed and compiler=>true is set.
+	 * It only runs if a field's value has changed and compiler => true is set.
 	 *
 	 * @param array  $options        Options values.
 	 * @param string $css            Compiler selector CSS values  compiler => array( CSS SELECTORS ).
-	 * @param array  $changed_values Any values changed since last save.
+	 * @param array  $changed_values Any values that have changed since last save.
 	 */
 	function compiler_action( array $options, string $css, array $changed_values ) {
 		echo '<h1>The compiler hook has run!</h1>';
@@ -754,3 +761,4 @@ if ( ! function_exists( 'redux_custom_sanitize' ) ) {
 		return $return;
 	}
 }
+// phpcs:enable

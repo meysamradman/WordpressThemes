@@ -1,5 +1,178 @@
 # Redux Changelog
 
+## 4.5.18
+* Fixed: Authenticated (Subscriber+) stored XSS via the 'color' field validation warning.
+* Modified: Export and download filenames now include the hour and minute.
+* Release date: November 09, 2026
+
+## 4.5.17
+* Fixed: Authenticated (Subscriber+) stored XSS via the 'multi_media' field array key.
+* Fixed: Authenticated (Custom+) stored XSS via CSS-emitting User-profile fields.
+* Fixed: Missing authorization to authenticated (Subscriber+) allowing sensitive information disclosure via edit-tags.php, term.php, post-new.php, post.php inline redux_<opt_name> JavaScript.
+* Fixed: Authenticated (Subscriber+) stored XSS via a color scheme name.
+* Fixed: Missing authorization to authenticated (Subscriber+) allowing sensitive information disclosure via the download_options AJAX action.
+* Modified: The `custom_fonts` field type is now only supported in the main options panel.
+* Modified: Customizer sections are now only visible to users with `page_permissions`.
+* Deprecated: `Redux_Metaboxes::filter_metaboxes()` no longer performs any action.
+* Deprecated: `Redux_Helpers::localize()`.
+* Deprecated: `Redux_Extension_Taxonomy::get_values`.
+* Deprecated: `Redux_Extension_Users::get_values()`.
+* Release date: October 30, 2026
+
+## 4.5.16
+* Fixed: Authenticated (Subscriber+) stored XSS via the 'multi_media' field and client-supplied checkuser_id.
+* Fixed: Missing authorization to authenticated (Subscriber+) allowing sensitive information disclosure via /wp-admin/profile.php inline redux_<opt_name> JavaScript.
+* Release date: October 12, 2026
+
+## 4.5.15
+* Fixed: Authenticated (Custom+) stored XSS via the 'user-mediaurl' media field.
+* Fixed: Missing authorization to authenticated (Subscriber+) allowing arbitrary attachment deletion via the 'attachment_id' parameter.
+* Release date: September 18, 2026
+
+## 4.5.14
+* Fixed: XSS vulnerabilities caused by lack of output escaping and validation.
+* Fixed: Position of save spinner
+* Fixed: #4108 - Fields hidden by `required` no longer validate.
+* Release date: September 09, 2026
+
+## 4.5.13
+* Fix: Reported privilege escalation vulnerability in `users` extension. Thanks, Jakub Herman.
+* Updated: "Modern" added to theme colors for WP 7.0.
+* Updated: Improved RTL.CSS. Thanks, @Mr-Alidoosti.
+* Release date: June 22, 2026
+
+## 4.5.11
+* Updated: Adjust to WordPress 7.0 Interface changes.
+* Release date: March 23, 2026
+
+## 4.5.10
+* Fixed: Tighten security in `import_export`, `custom_fonts`, `color_scheme`, and Google Font updating.
+* Fixed: #4085 - `box_shadow` slider not updating value in real-time.
+* Fixed: Missing translations. Thanks, @DAnn2012.
+* Release date: January 07, 2026
+
+## 4.5.9
+* Fix: #4080 - Deprecation warning in `get_wordpress_data()` function.
+* Modified: Compliance with new PCP criteria.
+* Improved: Tighter security for shortcode extension.
+* Updated: parsedown.php for PHP 8.5.
+* Release date: November 24, 2025
+
+## 4.5.8
+* Fix: Reported XSS vulnerability in the shortcode extension.
+* Fix: #4074 - Gallery field won't load on screen refresh.
+* Fix: Prevent fatal error for improperly coded CPTs with metaboxes.
+* Added: New global arg `custom_fonts` to enable or disable the extension.
+* Added: New global arg `widget_area` to enable or disable the extension.
+* Added: `social_profiles` now support an argument for FA 6 classnames.
+* Improved: Callback validation for data fetching. Thanks @afonsolpjr
+* Release date: October 01, 2025
+
+## 4.5.7
+* Fixed: Bullet-proofed some global args when omitted from the config.
+* Fixed: #4055 - PHP 8.4 deprecation notices.
+* Fixed: The Options constructor now filters out blank strings, causing fatal errors. Options must always be in an array.
+* Fixed: `gallery` field errors on failed demo imports not installing images into the WP gallery.
+* Release date: March 26, 2025
+
+## 4.5.6
+* Fixed: Setting CHMOD defaults in construct to avoid errors in certain use cases.
+* Fixed: Installed empty placeholder for old `search` extension as WP did not remove it from old versions to updates, thus causing errors.
+* Fixed: `raw` field in sample-config.php trigger WP filesystem error when `FS_METHOD` set to `FTP_EXT` and creds are not entered.
+* Fixed: #4047 - Sorter not saving in customizer.
+* Fixed: #4049 - `users` metabox not saving on some setups.
+* Fixed: Disable search bar on user profile and taxonomy metaboxes.
+* Updated: Font Awesome 6.7.2
+* Modified: #4052 - `custom_fonts` now enqueues local font CSS with a version resource of last modified file time and not current time.
+* Modified: Will pass mandatory PCP checks.
+* Release date: January 20, 2025
+
+## 4.5.4
+* Fixed: Filesystem class $creds not accepting bool value.
+* Fixed: #4045: Old `search` extension throwing `class not found` error.
+* Fixed: `accordion` extension throwing `Type of Redux_Extension_Accordion::$version must be string` error.
+* Fixed: `color_scheme` typed property must not be accessed before initialization.
+* Release date: December 16, 2024
+
+## 4.5.3
+* Removed: Deprecation notice for $filesystem. Too many people think it's an error.  We'll have to support old Redux 3 code for the foreseeable future.
+* Release date: December 5, 2024
+
+## 4.5.2
+* Fixed: New global filesystem access broke old methods used on old extensions. Deprecation notice added.
+* Release date: December 5, 2024
+
+## 4.5.1
+* Updated: Font Awesome 6.7.1
+* Fixed: Options Search bar rendering multiple time on customizer UI.
+* Fixed: Changed typesafe declarations to transient variables from `array` to `mixed` to prevent fatal errors.
+* Fixed: `color_scheme` and `social_profiles` giving `cannot assign null to array` errors when fields not in use.
+* Fixed: #4037 - JavaScript errors in regard to TinyMCE when not loaded via `editor` field. 
+* Fixed: #4037 - `repeater` "Add" button failing when no `editor` field was loaded.
+* Fixed: #4040 - WP 6.7 broke Redux menus in customizer.
+* Fixed: "Reset Section" resetting everything to blank or zero.
+* Fixed: #4043 - Float loses precision in `color_rgba` when `show_default` is set to true. Thanks @andrejarh
+* Fixed: #4042 - `multi_media` field not saving or retaining data in customizer.
+* Modified: Customizer HTML output to support WordPress installations prior to version 6.7.
+* Modified: Option panel search bar moved to core (previously an extension).
+* Modified: Allow `null` assignments to core variable to prevent fatal errors when devs disable Google Fonts.
+* Added `null` to multiple typesafe declarations.
+* Added: CSS output added to `slider` field.
+* Added: Minimum PHP 7.4 warning message to admin screen to prevent fatal errors. Some people are, apparently, still using outdated PHP.
+* Release date: December 4, 2024
+
+## 4.5.0
+* Changed: Minimum PHP version now 7.4.
+* Fixed: Datetime wasn't escaping some translations and domain was incorrect.
+* Fixed: `required` functionality in `taxonomy` and `users`.
+* Fixed: `repeater` not rendering inside `taxonomy` metaboxes.
+* Fixed: `repeater` not saving inside `users` metaboxes.
+* Fixed: Metaboxes `page_template` feature not showing/hiding properly under Gutenberg due to class name change.
+* Fixed: #4023 - `google_maps` instances bleeding over from previous issue.
+* Fixed: `google_maps` deprecation notice regarding map markers. 
+* Fixed: `repeater` in `taxonomy` and `user` metaboxes.
+* Fixed: Unnecessary loading of default data on load (unless `metaboxes` are in use).
+* Fixed: `editor` and `checkbox` fields not saving in `tabbed` field.
+* Fixed: `custom_fonts` not saving uploaded font on conversion failure.
+* Fixed: #4009 - Google Font update issue resolved.
+* Fixed: #4011 - `editor` in `repeater` field not saving.
+* Fixed: `editor` in added `repeater` fields not properly initializing.
+* Fixed: #4008 - Font conversion failure fallback.
+* Fixed: Replaced `validate_values` deprecation in `taxonomy` metabox.
+* Updated: Deprecated JavaScript in all the Metabox extensions.
+* Updated: JavaScript for jQuery 4.0 release.
+* Release date: October 28, 2024
+
+## 4.4.18
+* Fixed: #4006: XSS fix in 'color_scheme' import.
+* Updated: Font Awesome 6.6.0
+* Release date: July 19, 2024
+
+## 4.4.17
+* Fixed: `social_profiles` in customizer.
+* Fixed: Section divide returning `null`, which caused a PHP warning.
+* Fixed: Undefined index in `tabbed` when resetting settings.
+* Release date: May 23, 2024
+
+## 4.4.16
+* Modified: Temporarily disable `social_profiles` and `color_scheme` from customizer. They don't work.
+* Removed: Finished removing Redux Pro support.
+* Removed: Extendify plugin banner at first launch.
+* Updated: Font Awesome 6.5.2
+* Release date: April 27, 2024
+
+## 4.4.15
+* Fixed: `spacing`, `dimension`, and `border` fields not saving changed values.
+* Fixed: #3995 - `switch` and `button_set` not saving within `tabbed` interface.
+* Release date: March 22, 2024
+
+## 4.4.14
+* Fixed: #3993, #3992 - "No Field ID is set" message causing jumbled backend layout. 
+* New: Content Field [https://devs.redux.io/core-fields/content.html](https://devs.redux.io/core-fields/content.html)
+* Updated: Bring inputs up to W3C standards.
+* Updated: First round of PHP 8.3 compatibility.
+* Release date: March 14, 2024
+
 ## 4.4.13
 * Added: Filter to disable Google Font updates: `"redux/{opt_name}/field/typography/google_font_update"`. Return `false` to disable.
 * Fixed: `color_scheme` crashing WordPress with 'critical error' for users still using PHP 7.1.
@@ -64,7 +237,7 @@
 * Fixed: Continuing effort to combat old CDN code because some devs aren't updating their code.
 * Fixed: REDUX_PLUGIN_FILE failed with embedded installed.  WE NO LONGER SUPPORT EMBEDDED. IT'S FOR LEGACY INSTALLS ONLY.
 * Release date: September 13, 2023
-* 
+*
 ## 4.4.5
 * Fixed: Redux catches error when Google Fonts JSON cannot be read/written due to server misconfiguration.
 * Fixed: Output HTML in the admin panel now complies with W3C standards.
@@ -86,7 +259,7 @@
 * Fixed: Missing redux-banner-admin.min.js file.
 * Fixed: Added extra check for the existence of the function name with callbacks. Some themes are not doing it correctly and crashing WordPress.
 * Release date: July 02, 2023
- 
+
 ## 4.4.3
 * Fixed: Typo in JavaScript enqueue handle broke `typography` and `slider` fields.
 * Release date: June 29, 2023
@@ -128,7 +301,7 @@
 ## 4.3.25
 * Modified: Reworked directory enumeration for `custom_fonts` to avoid potential fatal errors.
 * Release date: January 27, 2023
- 
+
 ## 4.3.24
 * Additional work to make `custom_fonts` override old standalone extension version.
 * Release date: January 20, 2023
@@ -136,13 +309,13 @@
 ## 4.3.23
 * Tweaked Custom Fonts extension to avoid conflicts with older standalone extension.
 * Update: Extendify Library 1.2.4
-* Release date: January 20, 2023 
+* Release date: January 20, 2023
 
 ## 4.3.22
 * Added: Custom Fonts extension [https://devs.redux.io/core-extensions/google-maps.html](https://devs.redux.io/core-extension/custom-fonts.html)
 * Fixed: #3928 - Metaboxes `post_format` selections not responding to clicks when Gutenberg is active due to class name changes.
 * Fixed: Custom font data added via filter would trigger a warning if not an array.
-* Update: Extendify Library 1.2.3 
+* Update: Extendify Library 1.2.3
 * Release date: January 19, 2023
 
 ## 4.3.21
@@ -167,7 +340,7 @@
 * Fixed: Extendify menu item appearing when it should not.
 * Fixed: #3909 - Blank page template would cause fatal error.
 * Release date: September 30, 2022
- 
+
 ## 4.3.18
 * New: #3903 - Typography `weights` argument to override standard default weights.
 * Updated Extendify Library 0.10.2
@@ -207,7 +380,7 @@
 * New: `typography` field supports individual unit types for subfields that support them (font-size, line-height, etc.)  See: [https://devs.redux.io/core-fields/typography.html](https://devs.redux.io/core-fields/typography.html)
 * Fixed: Redux installed via TGMPA failing with "This plugin does not have a valid header."
 * Updated: Extendify Library.
-* Release date: May 19, 2022 
+* Release date: May 19, 2022
 
 ## 4.3.13
 * Fixed: Work for `required` functionality within the `repeater` field.
@@ -244,7 +417,7 @@
 * Modified: Connection banner now promotes Extendify plugin with download/activate option.
 * Updated: Extendify Library.
 * Release date: February 09, 2022
- 
+
 ## 4.3.9
 * Fixed: Extendify Library JavaScript error.
 * Release date: January 26, 2022
@@ -267,7 +440,7 @@
 * Fixed: `date` shortcode without attributes producing error.
 * Fixed: Various jQuery deprecation fixes.
 * Release date: January 11, 2022
-* 
+*
 ## 4.3.5
 * Added: Add former premium feature: Option panel Search Bar. See Sample demo or the [docs site](https://devs.redux.io/core-extensions).
 * Added: Add former premium feature: Shortcodes.  See Sample demo or the [docs site](https://devs.redux.io/core-extensions).
@@ -323,7 +496,7 @@
 * Fixed: Support URL button kicking back a JavaScript error.
 
 ## 4.2.10
-* Fixed: Output on the frontend triggering error. 
+* Fixed: Output on the frontend triggering error.
 * Fixed: Updated shims to support older extensions not authored by Redux.io
 
 ## 4.2.9
@@ -427,12 +600,12 @@
 * Fixed: WordPress 4.6 API warnings.
 * Fixed: WordPress 4.6 customizer issue where fields not displaying properly.
 * Fixed: Massive speed improvement to the library.
-* Fixed: Pro template count error if previously activated and Redux Pro not enabled. 
+* Fixed: Pro template count error if previously activated and Redux Pro not enabled.
 * Release date: Dec 12, 2020
 
 ## 4.1.23
 * Fixed: Massive speed improvement to the library.
-* Fixed: Pro template count error if previously activated and Redux Pro not enabled. 
+* Fixed: Pro template count error if previously activated and Redux Pro not enabled.
 * Release date: Oct 24, 2020
 
 ## 4.1.22
@@ -614,12 +787,12 @@
 ## 4.0.4
 * Fixed:    PHPCS, all.
 * Added:    Redux Templates.
-* Added:    Complete rewrite of the underlying code base is complete and complies with all WordPress coding standards. 
+* Added:    Complete rewrite of the underlying code base is complete and complies with all WordPress coding standards.
 
 ## 4.0.3
 * Fixed:    PHPCS findings.
-* Added:    New output_variables flags that dynamically add CSS variables to pages even on fields that do not support 
-            dynamic CSS output. Thanks, @andrejarh, for the idea!
+* Added:    New output_variables flags that dynamically add CSS variables to pages even on fields that do not support
+  dynamic CSS output. Thanks, @andrejarh, for the idea!
 
 ## 4.0.2
 * Fixed:    PHP backwards compatibility for extensions. Still have to work on JS, probably.
@@ -670,7 +843,7 @@
 
 ## 4.0.1.1
 * Fixed:      Section field not hiding with required calls.
-* Fixed:      Tour pointer not remembering closed state. 
+* Fixed:      Tour pointer not remembering closed state.
 
 ## 4.0.1
 * New:        Initial public beta release.
@@ -730,7 +903,7 @@
 
 ## 4.0.0.9
 * Fixed:    Import/Export feature not importing.  Damn typesafe decs got me again!!!  Thanks, WPCS.  ;-)
-* Modified: Replace wpFileSystemInit in sample-config.php with a more practical solution.  Thanks, @Torfindel 
+* Modified: Replace wpFileSystemInit in sample-config.php with a more practical solution.  Thanks, @Torfindel
 
 ## 4.0.0.8
 * Modified: Changed typography update localize handle.  Too generic.  Conflicted with something else.

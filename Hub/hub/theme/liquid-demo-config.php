@@ -6,427 +6,427 @@ $uri = get_template_directory_uri() . '/liquid/assets/img/demos/';
 
 $demos = array(
 	'original' => array(
-		'title'       => esc_html__( 'Original Hub', 'hub' ),	
+		'title'       => esc_html__( 'Original Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'originalhub.jpg',
 		'preview'     => 'https://originalhub.liquid-themes.com/',
 		'has_widgets' => true,
 	),
 	'darkapp' => array(
-		'title'       => esc_html__( 'Dark App', 'hub' ),	
+		'title'       => esc_html__( 'Dark App', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'darkapp.jpg',
 		'preview'     => 'https://darkapppro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'barber' => array(
-		'title'       => esc_html__( 'Barber', 'hub' ),	
+		'title'       => esc_html__( 'Barber', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'barber.jpg',
 		'preview'     => 'https://barberpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
 	'music' => array(
-		'title'       => esc_html__( 'Music', 'hub' ),	
+		'title'       => esc_html__( 'Music', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'music.jpg',
 		'preview'     => 'https://musicpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
 	'marketing' => array(
-		'title'       => esc_html__( 'Marketing', 'hub' ),	
+		'title'       => esc_html__( 'Marketing', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'marketing.jpg',
 		'preview'     => 'https://marketingpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
 	'verticalportfolio' => array(
-		'title'       => esc_html__( 'Vertical Portfolio', 'hub' ),	
+		'title'       => esc_html__( 'Vertical Portfolio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'verticalporfolio.jpg',
 		'preview'     => 'https://verticalportfoliopro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'company' => array(
-		'title'       => esc_html__( 'Company', 'hub' ),	
+		'title'       => esc_html__( 'Company', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'company.jpg',
 		'preview'     => 'https://company.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'lookbook' => array(
-		'title'       => esc_html__( 'Lookbook', 'hub' ),	
+		'title'       => esc_html__( 'Lookbook', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'lookbook.jpg',
 		'preview'     => 'https://lookbookpro.liquid-themes.com',
 		'has_widgets' => true,
 	),
     'appblocks' => array(
-		'title'       => esc_html__( 'App Blocks', 'hub' ),	
+		'title'       => esc_html__( 'App Blocks', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'appblocks.jpg',
 		'preview'     => 'https://appblockspro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'gridportfolio' => array(
-		'title'       => esc_html__( 'Grid Portfolio', 'hub' ),	
+		'title'       => esc_html__( 'Grid Portfolio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'gridportfolio.jpg',
 		'preview'     => 'https://gridportfoliopro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'stickyblog' => array(
-		'title'       => esc_html__( 'Sticky Blog', 'hub' ),	
+		'title'       => esc_html__( 'Sticky Blog', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'stickyblog.jpg',
 		'preview'     => 'https://stickyblogpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'newsletter' => array(
-		'title'       => esc_html__( 'Newsletter Hub', 'hub' ),	
+		'title'       => esc_html__( 'Newsletter Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'newsletterhub.jpg',
 		'preview'     => 'https://newsletterpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'split' => array(
-		'title'       => esc_html__( 'Split', 'hub' ),	
+		'title'       => esc_html__( 'Split', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'split.jpg',
 		'preview'     => 'https://splitpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'modernblocks' => array(
-		'title'       => esc_html__( 'Modern Blocks', 'hub' ),	
+		'title'       => esc_html__( 'Modern Blocks', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'modernblocks.jpg',
 		'preview'     => 'https://modernblockspro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'asymmetriccorporate' => array(
-		'title'       => esc_html__( 'Asymmetric Corporate', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Corporate', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetriccorporate.jpg',
 		'preview'     => 'https://asymmetric-corporatepro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'creativeatelier' => array(
-		'title'       => esc_html__( 'Creative Atelier', 'hub' ),	
+		'title'       => esc_html__( 'Creative Atelier', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'creativeatelier.jpg',
 		'preview'     => 'https://creativeatelierpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'classic' => array(
-		'title'       => esc_html__( 'Classic', 'hub' ),	
+		'title'       => esc_html__( 'Classic', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'classic.jpg',
 		'preview'     => 'https://classicpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'photography' => array(
-		'title'       => esc_html__( 'Photography', 'hub' ),	
+		'title'       => esc_html__( 'Photography', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'photography.jpg',
 		'preview'     => 'https://photographypro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'productshop' => array(
-		'title'       => esc_html__( 'Product Shop', 'hub' ),	
+		'title'       => esc_html__( 'Product Shop', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'productshop.jpg',
 		'preview'     => 'https://productshoppro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'darkportfolio' => array(
-		'title'       => esc_html__( 'Dark Portfolio', 'hub' ),	
+		'title'       => esc_html__( 'Dark Portfolio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'darkportfolio.jpg',
 		'preview'     => 'https://darkportfoliopro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'adaptivecolors' => array(
-		'title'       => esc_html__( 'Adaptive Colors', 'hub' ),	
+		'title'       => esc_html__( 'Adaptive Colors', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'adaptivecolors.jpg',
 		'preview'     => 'https://adaptivecolorspro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'corporate' => array(
-		'title'       => esc_html__( 'Corporate', 'hub' ),	
+		'title'       => esc_html__( 'Corporate', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'corporate.jpg',
 		'preview'     => 'https://corporatepro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'modernbusiness' => array(
-		'title'       => esc_html__( 'Modern Business', 'hub' ),	
+		'title'       => esc_html__( 'Modern Business', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'modernbusiness.jpg',
 		'preview'     => 'https://modernbusinesspro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'projectslider' => array(
-		'title'       => esc_html__( 'Project Slider', 'hub' ),	
+		'title'       => esc_html__( 'Project Slider', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'projectslider.jpg',
 		'preview'     => 'https://projectsliderpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'modernshop' => array(
-		'title'       => esc_html__( 'Modern Shop', 'hub' ),	
+		'title'       => esc_html__( 'Modern Shop', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'modernshop.jpg',
 		'preview'     => 'https://modernashop.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'softwarehub' => array(
-		'title'       => esc_html__( 'Software Hub', 'hub' ),	
+		'title'       => esc_html__( 'Software Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'softwarehub.jpg',
 		'preview'     => 'https://softwarepro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'modernagency' => array(
-		'title'       => esc_html__( 'Modern Agency', 'hub' ),	
+		'title'       => esc_html__( 'Modern Agency', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'modernagency.jpg',
 		'preview'     => 'https://modernagencypro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'classicsaas' => array(
-		'title'       => esc_html__( 'Classic SaaS', 'hub' ),	
+		'title'       => esc_html__( 'Classic SaaS', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'classicsaas.jpg',
 		'preview'     => 'https://classicsaaspro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'asymmetricportfolio' => array(
-		'title'       => esc_html__( 'Asymmetric Portfolio', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Portfolio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetricportfolio.jpg',
 		'preview'     => 'https://asymmetric-portfoliopro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'digitalstudio' => array(
-		'title'       => esc_html__( 'Digital Studio', 'hub' ),	
+		'title'       => esc_html__( 'Digital Studio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'digitalstudio.jpg',
 		'preview'     => 'https://digitalstudiopro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'portfoliohub' => array(
-		'title'       => esc_html__( 'Portfolio Hub', 'hub' ),	
+		'title'       => esc_html__( 'Portfolio Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'portfoliohub.jpg',
 		'preview'     => 'https://pfhubpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'imagetrail' => array(
-		'title'       => esc_html__( 'Image Trail', 'hub' ),	
+		'title'       => esc_html__( 'Image Trail', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'imagetrail.jpg',
 		'preview'     => 'https://imagetrailpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'portfolioboxes' => array(
-		'title'       => esc_html__( 'Portfolio Boxes', 'hub' ),	
+		'title'       => esc_html__( 'Portfolio Boxes', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'portfolioboxes.jpg',
 		'preview'     => 'https://portfolioboxespro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'grocery' => array(
-		'title'       => esc_html__( 'Grocery', 'hub' ),	
+		'title'       => esc_html__( 'Grocery', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'grocery.jpg',
 		'preview'     => 'https://grocerypro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'asymmetriclanding' => array(
-		'title'       => esc_html__( 'Asymmetric Landing', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Landing', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetriclanding.jpg',
 		'preview'     => 'https://asymmetric-landingpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'architecture' => array(
-		'title'       => esc_html__( 'Architecture Hub', 'hub' ),	
+		'title'       => esc_html__( 'Architecture Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'architecture.jpg',
 		'preview'     => 'https://architecturepro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'asymmetricbusiness' => array(
-		'title'       => esc_html__( 'Asymmetric Business', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Business', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetricbusiness.jpg',
 		'preview'     => 'https://asymmetric-businesspro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'seohub' => array(
-		'title'       => esc_html__( 'SEO Hub', 'hub' ),	
+		'title'       => esc_html__( 'SEO Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'seohub.jpg',
 		'preview'     => 'https://seopro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'businessstartup' => array(
-		'title'       => esc_html__( 'Business Startup', 'hub' ),	
+		'title'       => esc_html__( 'Business Startup', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'businessstartup.jpg',
 		'preview'     => 'https://businessstartuppro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'marketplace' => array(
-		'title'       => esc_html__( 'Marketplace', 'hub' ),	
+		'title'       => esc_html__( 'Marketplace', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'marketplace.jpg',
 		'preview'     => 'https://marketplacepro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'digitalhub' => array(
-		'title'       => esc_html__( 'Digital Hub', 'hub' ),	
+		'title'       => esc_html__( 'Digital Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'digitalhub.jpg',
 		'preview'     => 'https://digitalpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'businessblocks' => array(
-		'title'       => esc_html__( 'Business Blocks', 'hub' ),	
+		'title'       => esc_html__( 'Business Blocks', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'businessblocks.jpg',
 		'preview'     => 'https://businessblockspro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'startup' => array(
-		'title'       => esc_html__( 'Startup Hub', 'hub' ),	
+		'title'       => esc_html__( 'Startup Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'startup.jpg',
 		'preview'     => 'https://startup.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'designer' => array(
-		'title'       => esc_html__( 'Designer', 'hub' ),	
+		'title'       => esc_html__( 'Designer', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'designer.jpg',
 		'preview'     => 'https://designerpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'creativeservices' => array(
-		'title'       => esc_html__( 'Creative Services', 'hub' ),	
+		'title'       => esc_html__( 'Creative Services', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'creativeservices.jpg',
 		'preview'     => 'https://creativeservicespro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'modernmobile' => array(
-		'title'       => esc_html__( 'Modern Mobile', 'hub' ),	
+		'title'       => esc_html__( 'Modern Mobile', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'modernmobile.jpg',
 		'preview'     => 'https://mobilemodernpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'mobileapp' => array(
-		'title'       => esc_html__( 'Mobile App', 'hub' ),	
+		'title'       => esc_html__( 'Mobile App', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'mobileapp.jpg',
 		'preview'     => 'https://mobilepro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'retailshop' => array(
-		'title'       => esc_html__( 'Retail Shop', 'hub' ),	
+		'title'       => esc_html__( 'Retail Shop', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'retailshop.jpg',
 		'preview'     => 'https://retailpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'portfoliopanel' => array(
-		'title'       => esc_html__( 'Portfolio Panel', 'hub' ),	
+		'title'       => esc_html__( 'Portfolio Panel', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'portfoliopanel.jpg',
 		'preview'     => 'https://portfoliopanelpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'parallax' => array(
-		'title'       => esc_html__( 'Parallax', 'hub' ),	
+		'title'       => esc_html__( 'Parallax', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'parallax.jpg',
 		'preview'     => 'https://parallaxpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'sidefolio' => array(
-		'title'       => esc_html__( 'SideFolio', 'hub' ),	
+		'title'       => esc_html__( 'SideFolio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'sidefolio.jpg',
 		'preview'     => 'https://sidefoliopro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'saashub' => array(
-		'title'       => esc_html__( 'SaasHub', 'hub' ),	
+		'title'       => esc_html__( 'SaasHub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'saashub.jpg',
 		'preview'     => 'https://saaspro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'asymmetricfreelancer' => array(
-		'title'       => esc_html__( 'Asymmetric Freelancer', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Freelancer', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetricfreelancer.jpg',
 		'preview'     => 'https://asymmetric-freelancerpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'itbusiness' => array(
-		'title'       => esc_html__( 'IT Business', 'hub' ),	
+		'title'       => esc_html__( 'IT Business', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'itbusiness.jpg',
 		'preview'     => 'https://itbusinesspro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'fashionstore' => array(
-		'title'       => esc_html__( 'Fashion Store', 'hub' ),	
+		'title'       => esc_html__( 'Fashion Store', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'fashionstore.jpg',
 		'preview'     => 'https://fashionstorepro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'asymmetricagency' => array(
-		'title'       => esc_html__( 'Asymmetric Agency', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Agency', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetricagency.jpg',
 		'preview'     => 'https://asymmetric-agencypro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'shadow' => array(
-		'title'       => esc_html__( 'Shadow', 'hub' ),	
+		'title'       => esc_html__( 'Shadow', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'shadow.jpg',
 		'preview'     => 'https://shadowpro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'multiuse' => array(
-		'title'       => esc_html__( 'Multi Use', 'hub' ),	
+		'title'       => esc_html__( 'Multi Use', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'multiuse.jpg',
 		'preview'     => 'https://multiusepro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'customerstories' => array(
-		'title'       => esc_html__( 'Customer Stories', 'hub' ),	
+		'title'       => esc_html__( 'Customer Stories', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'customerstories.jpg',
 		'preview'     => 'https://customerstoriespro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'insurance' => array(
-		'title'       => esc_html__( 'Insurance', 'hub' ),	
+		'title'       => esc_html__( 'Insurance', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'insurance.jpg',
 		'preview'     => 'https://insurancepro.liquid-themes.com/',
 		'has_widgets' => true,
 	),
     'flexible' => array(
-		'title'       => esc_html__( 'Flexible', 'hub' ),	
+		'title'       => esc_html__( 'Flexible', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'flexible.jpg',
 		'preview'     => 'https://flexible.liquid-themes.com/',
@@ -469,7 +469,7 @@ $demos = array(
 	),
 	// Elementor Demos
 	'original_el' => array(
-		'title'       => esc_html__( 'Original Hub', 'hub' ),	
+		'title'       => esc_html__( 'Original Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'originalhub.jpg',
 		'preview'     => 'https://originalhub.liquid-themes.com/',
@@ -477,7 +477,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'asymmetricagency_el' => array(
-		'title'       => esc_html__( 'Asymmetric Agency', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Agency', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetricagency.jpg',
 		'preview'     => 'https://asymmetric-agencypro.liquid-themes.com/',
@@ -485,7 +485,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'company_el' => array(
-		'title'       => esc_html__( 'Company', 'hub' ),	
+		'title'       => esc_html__( 'Company', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'company.jpg',
 		'preview'     => 'https://company.liquid-themes.com/',
@@ -493,7 +493,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'appblocks_el' => array(
-		'title'       => esc_html__( 'App Blocks', 'hub' ),	
+		'title'       => esc_html__( 'App Blocks', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'appblocks.jpg',
 		'preview'     => 'https://appblockspro.liquid-themes.com/',
@@ -501,7 +501,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'darkapp_el' => array(
-		'title'       => esc_html__( 'Dark App', 'hub' ),	
+		'title'       => esc_html__( 'Dark App', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'darkapp.jpg',
 		'preview'     => 'https://darkapppro.liquid-themes.com/',
@@ -509,7 +509,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'digitalhub_el' => array(
-		'title'       => esc_html__( 'Digital Hub', 'hub' ),	
+		'title'       => esc_html__( 'Digital Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'digitalhub.jpg',
 		'preview'     => 'https://digitalpro.liquid-themes.com/',
@@ -517,7 +517,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'digitalstudio_el' => array(
-		'title'       => esc_html__( 'Digital Studio', 'hub' ),	
+		'title'       => esc_html__( 'Digital Studio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'digitalstudio.jpg',
 		'preview'     => 'https://digitalstudiopro.liquid-themes.com/',
@@ -533,7 +533,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'fashionstore_el' => array(
-		'title'       => esc_html__( 'Fashion Store', 'hub' ),	
+		'title'       => esc_html__( 'Fashion Store', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'fashionstore.jpg',
 		'preview'     => 'https://fashionstorepro.liquid-themes.com/',
@@ -541,7 +541,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'projectslider_el' => array(
-		'title'       => esc_html__( 'Project Slider', 'hub' ),	
+		'title'       => esc_html__( 'Project Slider', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'projectslider.jpg',
 		'preview'     => 'https://projectsliderpro.liquid-themes.com/',
@@ -549,7 +549,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'saashub_el' => array(
-		'title'       => esc_html__( 'SaasHub', 'hub' ),	
+		'title'       => esc_html__( 'SaasHub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'saashub.jpg',
 		'preview'     => 'https://saaspro.liquid-themes.com/',
@@ -565,7 +565,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'modernagency_el' => array(
-		'title'       => esc_html__( 'Modern Agency', 'hub' ),	
+		'title'       => esc_html__( 'Modern Agency', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'modernagency.jpg',
 		'preview'     => 'https://modernagencypro.liquid-themes.com/',
@@ -573,7 +573,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'modernbusiness_el' => array(
-		'title'       => esc_html__( 'Modern Business', 'hub' ),	
+		'title'       => esc_html__( 'Modern Business', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'modernbusiness.jpg',
 		'preview'     => 'https://modernbusinesspro.liquid-themes.com/',
@@ -581,7 +581,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'businessstartup_el' => array(
-		'title'       => esc_html__( 'Business Startup', 'hub' ),	
+		'title'       => esc_html__( 'Business Startup', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'businessstartup.jpg',
 		'preview'     => 'https://businessstartuppro.liquid-themes.com/',
@@ -589,7 +589,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'seohub_el' => array(
-		'title'       => esc_html__( 'SEO Hub', 'hub' ),	
+		'title'       => esc_html__( 'SEO Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'seohub.jpg',
 		'preview'     => 'https://seopro.liquid-themes.com/',
@@ -597,7 +597,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'productshop_el' => array(
-		'title'       => esc_html__( 'Product Shop', 'hub' ),	
+		'title'       => esc_html__( 'Product Shop', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'productshop.jpg',
 		'preview'     => 'https://productshoppro.liquid-themes.com/',
@@ -605,7 +605,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'asymmetricbusiness_el' => array(
-		'title'       => esc_html__( 'Asymmetric Business', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Business', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetricbusiness.jpg',
 		'preview'     => 'https://asymmetric-businesspro.liquid-themes.com/',
@@ -613,7 +613,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'marketing_el' => array(
-		'title'       => esc_html__( 'Marketing', 'hub' ),	
+		'title'       => esc_html__( 'Marketing', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'marketing.jpg',
 		'preview'     => 'https://marketingpro.liquid-themes.com/',
@@ -621,7 +621,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'adaptivecolors_el' => array(
-		'title'       => esc_html__( 'Adaptive Colors', 'hub' ),	
+		'title'       => esc_html__( 'Adaptive Colors', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'adaptivecolors.jpg',
 		'preview'     => 'https://adaptivecolorspro.liquid-themes.com/',
@@ -629,7 +629,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'classic_el' => array(
-		'title'       => esc_html__( 'Classic', 'hub' ),	
+		'title'       => esc_html__( 'Classic', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'classic.jpg',
 		'preview'     => 'https://classicpro.liquid-themes.com/',
@@ -637,7 +637,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'flexible_el' => array(
-		'title'       => esc_html__( 'Flexible', 'hub' ),	
+		'title'       => esc_html__( 'Flexible', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'flexible.jpg',
 		'preview'     => 'https://flexible.liquid-themes.com/',
@@ -645,7 +645,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'creativeatelier_el' => array(
-		'title'       => esc_html__( 'Creative Atelier', 'hub' ),	
+		'title'       => esc_html__( 'Creative Atelier', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'creativeatelier.jpg',
 		'preview'     => 'https://creativeatelierpro.liquid-themes.com/',
@@ -653,7 +653,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'customerstories_el' => array(
-		'title'       => esc_html__( 'Customer Stories', 'hub' ),	
+		'title'       => esc_html__( 'Customer Stories', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'customerstories.jpg',
 		'preview'     => 'https://customerstoriespro.liquid-themes.com/',
@@ -661,7 +661,7 @@ $demos = array(
 		'builder'     => 'elementor',
 	),
 	'creativeservices_el' => array(
-		'title'       => esc_html__( 'Creative Services', 'hub' ),	
+		'title'       => esc_html__( 'Creative Services', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'creativeservices.jpg',
 		'preview'     => 'https://creativeservicespro.liquid-themes.com/',
@@ -669,7 +669,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'music_el' => array(
-		'title'       => esc_html__( 'Music', 'hub' ),	
+		'title'       => esc_html__( 'Music', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'music.jpg',
 		'preview'     => 'https://musicpro.liquid-themes.com/',
@@ -677,7 +677,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'itbusiness_el' => array(
-		'title'       => esc_html__( 'IT Business', 'hub' ),	
+		'title'       => esc_html__( 'IT Business', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'itbusiness.jpg',
 		'preview'     => 'https://itbusinesspro.liquid-themes.com/',
@@ -685,7 +685,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'softwarehub_el' => array(
-		'title'       => esc_html__( 'Software Hub', 'hub' ),	
+		'title'       => esc_html__( 'Software Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'softwarehub.jpg',
 		'preview'     => 'https://softwarepro.liquid-themes.com/',
@@ -733,7 +733,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'corporate_el' => array(
-		'title'       => esc_html__( 'Corporate', 'hub' ),	
+		'title'       => esc_html__( 'Corporate', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'corporate.jpg',
 		'preview'     => 'https://corporatepro.liquid-themes.com/',
@@ -749,7 +749,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'barber_el' => array(
-		'title'       => esc_html__( 'Barber', 'hub' ),	
+		'title'       => esc_html__( 'Barber', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'barber.jpg',
 		'preview'     => 'https://barberpro.liquid-themes.com/',
@@ -757,7 +757,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'architecture_el' => array(
-		'title'       => esc_html__( 'Architecture Hub', 'hub' ),	
+		'title'       => esc_html__( 'Architecture Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'architecture.jpg',
 		'preview'     => 'https://architecturepro.liquid-themes.com/',
@@ -765,7 +765,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'modernblocks_el' => array(
-		'title'       => esc_html__( 'Modern Blocks', 'hub' ),	
+		'title'       => esc_html__( 'Modern Blocks', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'modernblocks.jpg',
 		'preview'     => 'https://modernblockspro.liquid-themes.com/',
@@ -773,7 +773,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'photography_el' => array(
-		'title'       => esc_html__( 'Photography', 'hub' ),	
+		'title'       => esc_html__( 'Photography', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'photography.jpg',
 		'preview'     => 'https://photographypro.liquid-themes.com/',
@@ -781,7 +781,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'asymmetriclanding_el' => array(
-		'title'       => esc_html__( 'Asymmetric Landing', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Landing', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetriclanding.jpg',
 		'preview'     => 'https://asymmetric-landingpro.liquid-themes.com/',
@@ -789,7 +789,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'businessblocks_el' => array(
-		'title'       => esc_html__( 'Business Blocks', 'hub' ),	
+		'title'       => esc_html__( 'Business Blocks', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'businessblocks.jpg',
 		'preview'     => 'https://businessblockspro.liquid-themes.com/',
@@ -797,7 +797,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'startup_el' => array(
-		'title'       => esc_html__( 'Startup Hub', 'hub' ),	
+		'title'       => esc_html__( 'Startup Hub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'startup.jpg',
 		'preview'     => 'https://startup.liquid-themes.com/',
@@ -813,7 +813,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'insurance_el' => array(
-		'title'       => esc_html__( 'Insurance', 'hub' ),	
+		'title'       => esc_html__( 'Insurance', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'insurance.jpg',
 		'preview'     => 'https://insurancepro.liquid-themes.com/',
@@ -837,7 +837,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'gridportfolio_el' => array(
-		'title'       => esc_html__( 'Grid Portfolio', 'hub' ),	
+		'title'       => esc_html__( 'Grid Portfolio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'gridportfolio.jpg',
 		'preview'     => 'https://gridportfoliopro.liquid-themes.com/',
@@ -845,7 +845,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'masonryshop_el' => array(
-		'title'       => esc_html__( 'Masonry Shop', 'hub' ),	
+		'title'       => esc_html__( 'Masonry Shop', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'masonryshop.jpg',
 		'preview'     => 'https://masonryshop.liquid-themes.com/',
@@ -853,7 +853,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub1_el' => array(
-		'title'       => esc_html__( 'StartHub', 'hub' ),	
+		'title'       => esc_html__( 'StartHub', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub1.jpg',
 		'preview'     => 'https://starthubone.liquid-themes.com/',
@@ -861,7 +861,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub2_el' => array(
-		'title'       => esc_html__( 'StartHub Two', 'hub' ),	
+		'title'       => esc_html__( 'StartHub Two', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub2.jpg',
 		'preview'     => 'https://starthubtwo.liquid-themes.com/',
@@ -869,7 +869,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub3_el' => array(
-		'title'       => esc_html__( 'StartHub Three', 'hub' ),	
+		'title'       => esc_html__( 'StartHub Three', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub3.jpg',
 		'preview'     => 'https://starthubthree.liquid-themes.com/',
@@ -877,7 +877,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub4_el' => array(
-		'title'       => esc_html__( 'StartHub Four', 'hub' ),	
+		'title'       => esc_html__( 'StartHub Four', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub4.jpeg',
 		'preview'     => 'https://starthub-4.liquid-themes.com/',
@@ -885,7 +885,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub5_el' => array(
-		'title'       => esc_html__( 'StartHub Five', 'hub' ),	
+		'title'       => esc_html__( 'StartHub Five', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub5.jpeg',
 		'preview'     => 'https://starthub-5.liquid-themes.com/',
@@ -893,7 +893,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub6_el' => array(
-		'title'       => esc_html__( 'StartHub Six', 'hub' ),	
+		'title'       => esc_html__( 'StartHub Six', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub6.jpeg',
 		'preview'     => 'https://starthub-6.liquid-themes.com/',
@@ -901,7 +901,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub7_el' => array(
-		'title'       => esc_html__( 'StartHub Seven', 'hub' ),	
+		'title'       => esc_html__( 'StartHub Seven', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub7.jpeg',
 		'preview'     => 'https://starthub-7.liquid-themes.com/',
@@ -909,7 +909,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub8_el' => array(
-		'title'       => esc_html__( 'StartHub Eight', 'hub' ),	
+		'title'       => esc_html__( 'StartHub Eight', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub8.jpg',
 		'preview'     => 'https://starthub-8.liquid-themes.com/',
@@ -917,7 +917,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthubx_el' => array(
-		'title'       => esc_html__( 'StartHub X', 'hub' ),	
+		'title'       => esc_html__( 'StartHub X', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthubx.jpg',
 		'preview'     => 'https://starthub-x.liquid-themes.com/',
@@ -925,7 +925,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub12_el' => array(
-		'title'       => esc_html__( 'StartHub Twelve', 'hub' ),	
+		'title'       => esc_html__( 'StartHub Twelve', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub12.jpg',
 		'preview'     => 'https://starthubtwelve.liquid-themes.com/',
@@ -933,7 +933,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub13_el' => array(
-		'title'       => esc_html__( 'Starthub Thirteen', 'hub' ),	
+		'title'       => esc_html__( 'Starthub Thirteen', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub13.jpg',
 		'preview'     => 'https://starthubthirteen.liquid-themes.com/',
@@ -941,7 +941,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'starthub14_el' => array(
-		'title'       => esc_html__( 'Starthub Fourteen', 'hub' ),	
+		'title'       => esc_html__( 'Starthub Fourteen', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'starthub14.jpg',
 		'preview'     => 'https://starthubfourteen.liquid-themes.com/',
@@ -949,7 +949,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'asymmetric8_el' => array(
-		'title'       => esc_html__( 'Asymmetric Eight', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Eight', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetric8.jpg',
 		'preview'     => 'https://asymmetriceightpro.liquid-themes.com/',
@@ -957,7 +957,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'asymmetric9_el' => array(
-		'title'       => esc_html__( 'Asymmetric Nine', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Nine', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetric9.jpg',
 		'preview'     => 'https://asymmetric-9.liquid-themes.com/',
@@ -965,7 +965,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'asymmetricportfolio_el' => array(
-		'title'       => esc_html__( 'Asymmetric Portfolio', 'hub' ),	
+		'title'       => esc_html__( 'Asymmetric Portfolio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'asymmetricportfolio.jpg',
 		'preview'     => 'https://asymmetric-portfoliopro.liquid-themes.com/',
@@ -973,7 +973,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'darkportfolio_el' => array(
-		'title'       => esc_html__( 'Dark Portfolio', 'hub' ),	
+		'title'       => esc_html__( 'Dark Portfolio', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'darkportfolio.jpg',
 		'preview'     => 'https://darkportfoliopro.liquid-themes.com/',
@@ -981,7 +981,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'shadow_el' => array(
-		'title'       => esc_html__( 'Shadow', 'hub' ),	
+		'title'       => esc_html__( 'Shadow', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'shadow.jpg',
 		'preview'     => 'https://shadowpro.liquid-themes.com/',
@@ -989,7 +989,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'yoga_el' => array(
-		'title'       => esc_html__( 'Yoga', 'hub' ),	
+		'title'       => esc_html__( 'Yoga', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'yoga.jpeg',
 		'preview'     => 'https://yogapro.liquid-themes.com/',
@@ -997,7 +997,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'magazine_viral_el' => array(
-		'title'       => esc_html__( 'Magazine Viral', 'hub' ),	
+		'title'       => esc_html__( 'Magazine Viral', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'magazine-viral.jpeg',
 		'preview'     => 'https://magazineviralpro.liquid-themes.com/',
@@ -1005,7 +1005,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'fashion_blog_el' => array(
-		'title'       => esc_html__( 'Fashion Blog', 'hub' ),	
+		'title'       => esc_html__( 'Fashion Blog', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'fashion-blog.jpeg',
 		'preview'     => 'https://fashionblogpro.liquid-themes.com/',
@@ -1013,7 +1013,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'seolanding_el' => array(
-		'title'       => esc_html__( 'SEO Landing', 'hub' ),	
+		'title'       => esc_html__( 'SEO Landing', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'seolanding.jpeg',
 		'preview'     => 'https://seolanding.liquid-themes.com/',
@@ -1021,7 +1021,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'sneakersshop_el' => array(
-		'title'       => esc_html__( 'Sneakers Shop', 'hub' ),	
+		'title'       => esc_html__( 'Sneakers Shop', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'sneakers-shop.jpg',
 		'preview'     => 'https://sneakers.liquid-themes.com/',
@@ -1029,7 +1029,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'darkai_el' => array(
-		'title'       => esc_html__( 'Dark AI', 'hub' ),	
+		'title'       => esc_html__( 'Dark AI', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'darkai.jpg',
 		'preview'     => 'https://dark-ai.liquid-themes.com/',
@@ -1037,7 +1037,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'beauty_el' => array(
-		'title'       => esc_html__( 'Beauty', 'hub' ),	
+		'title'       => esc_html__( 'Beauty', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'beauty.jpg',
 		'preview'     => 'https://beauty.liquid-themes.com/',
@@ -1045,7 +1045,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'hotel_el' => array(
-		'title'       => esc_html__( 'Hotel', 'hub' ),	
+		'title'       => esc_html__( 'Hotel', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'hotel.jpg',
 		'preview'     => 'https://hotel.liquid-themes.com/',
@@ -1053,7 +1053,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'charity_el' => array(
-		'title'       => esc_html__( 'Charity', 'hub' ),	
+		'title'       => esc_html__( 'Charity', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'charity.jpg',
 		'preview'     => 'https://charityhub.liquid-themes.com/',
@@ -1061,7 +1061,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'gym_el' => array(
-		'title'       => esc_html__( 'Gym', 'hub' ),	
+		'title'       => esc_html__( 'Gym', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'gym.jpg',
 		'preview'     => 'https://gymhub.liquid-themes.com/',
@@ -1069,7 +1069,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'education_el' => array(
-		'title'       => esc_html__( 'Education', 'hub' ),	
+		'title'       => esc_html__( 'Education', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'education.jpg',
 		'preview'     => 'https://educationhub.liquid-themes.com/',
@@ -1077,7 +1077,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'jewellery_el' => array(
-		'title'       => esc_html__( 'Jewellery', 'hub' ),	
+		'title'       => esc_html__( 'Jewellery', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'jewellery.jpg',
 		'preview'     => 'https://jewelleryhub.liquid-themes.com/',
@@ -1085,7 +1085,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'psychology_el' => array(
-		'title'       => esc_html__( 'Psychology', 'hub' ),	
+		'title'       => esc_html__( 'Psychology', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'psychology.jpg',
 		'preview'     => 'https://psychologyhub.liquid-themes.com/',
@@ -1093,7 +1093,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'lifecoach_el' => array(
-		'title'       => esc_html__( 'Life Coach', 'hub' ),	
+		'title'       => esc_html__( 'Life Coach', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'lifecoach.jpg',
 		'preview'     => 'https://lifecoach.liquid-themes.com/',
@@ -1101,7 +1101,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'travelagency_el' => array(
-		'title'       => esc_html__( 'Travel Agency', 'hub' ),	
+		'title'       => esc_html__( 'Travel Agency', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'travelagency.jpg',
 		'preview'     => 'https://travelagency.liquid-themes.com/',
@@ -1109,7 +1109,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'elegantbusiness_el' => array(
-		'title'       => esc_html__( 'Elegant Business', 'hub' ),	
+		'title'       => esc_html__( 'Elegant Business', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'elegantbusiness.jpg',
 		'preview'     => 'https://elegantbusiness.liquid-themes.com/',
@@ -1117,7 +1117,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'modernlandingapp_el' => array(
-		'title'       => esc_html__( 'Modern App Landing', 'hub' ),	
+		'title'       => esc_html__( 'Modern App Landing', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'modernlandingapp.jpg',
 		'preview'     => 'https://modernlandingapp.liquid-themes.com/',
@@ -1125,7 +1125,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'stackconcept_el' => array(
-		'title'       => esc_html__( 'Stack Concept', 'hub' ),	
+		'title'       => esc_html__( 'Stack Concept', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'stackconcept.jpg',
 		'preview'     => 'https://stackconcept.liquid-themes.com/',
@@ -1133,7 +1133,7 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'wedding_el' => array(
-		'title'       => esc_html__( 'Wedding', 'hub' ),	
+		'title'       => esc_html__( 'Wedding', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'wedding.jpg',
 		'preview'     => 'https://weddinghub.liquid-themes.com/',
@@ -1141,10 +1141,58 @@ $demos = array(
 		'builder'     => 'elementor'
 	),
 	'medical_el' => array(
-		'title'       => esc_html__( 'Medical', 'hub' ),	
+		'title'       => esc_html__( 'Medical', 'hub' ),
 		'description' => '',
 		'screenshot'  => $uri . 'medical.jpg',
 		'preview'     => 'https://medicalhub.liquid-themes.com/',
+		'has_widgets' => true,
+		'builder'     => 'elementor'
+	),
+	'vet_el' => array(
+		'title'       => esc_html__( 'Vet', 'hub' ),
+		'description' => '',
+		'screenshot'  => $uri . 'vet.jpg',
+		'preview'     => 'https://vet.liquid-themes.com/',
+		'has_widgets' => true,
+		'builder'     => 'elementor'
+	),
+	'beautysalon_el' => array(
+		'title'       => esc_html__( 'Beauty Salon', 'hub' ),
+		'description' => '',
+		'screenshot'  => $uri . 'beautysalon.jpg',
+		'preview'     => 'https://beautysalon.liquid-themes.com',
+		'has_widgets' => true,
+		'builder'     => 'elementor'
+	),
+	'airporttransfer_el' => array(
+		'title'       => esc_html__( 'Airport Transfer', 'hub' ),
+		'description' => '',
+		'screenshot'  => $uri . 'airporttransfer.jpg',
+		'preview'     => 'https://airporttransfer.liquid-themes.com',
+		'has_widgets' => true,
+		'builder'     => 'elementor'
+	),
+	'carrental_el' => array(
+		'title'       => esc_html__( 'Car Rental', 'hub' ),
+		'description' => '',
+		'screenshot'  => $uri . 'carrental.jpg',
+		'preview'     => 'https://carrental.liquid-themes.com',
+		'has_widgets' => true,
+		'builder'     => 'elementor'
+	),
+	'chauffeur_el' => array(
+		'title'       => esc_html__( 'Chauffeur', 'hub' ),
+		'description' => '',
+		'screenshot'  => $uri . 'chauffeur.jpg',
+		'preview'     => 'https://chauffeur.liquid-themes.com',
+		'has_widgets' => true,
+		'builder'     => 'elementor'
+	),
+	'cozyhotel_el' => array(
+		'title'       => esc_html__( 'Cozy Hotel', 'hub' ),
+		'description' => '',
+		'screenshot'  => $uri . 'cozyhotel.jpg',
+		'preview'     => 'https://cozyhotel.liquid-themes.com',
 		'has_widgets' => true,
 		'builder'     => 'elementor'
 	),

@@ -85,7 +85,7 @@ $counter_html = function ( $key ) use ( $term_counts ) {
 		<ul class="<?php echo join( ' ', $filter_classnames ); ?> hidden-xs hidden-sm" id="<?php echo esc_attr( $filter_id ); ?>">
 			<li class="<?php echo $active_term_id === 0 ? 'active' : ''; ?>" data-filter="*" data-id="0">
 				<?php if ( ! empty( $grid_filter_param ) ) : ?>
-					<a href="<?php echo $filter_url( 0 ); ?>"><span><?php echo esc_html( $filter_lbl_all ); ?><?php echo $counter_html( '*' ); ?></span></a>
+					<a href="<?php echo $filter_url( 0 ); ?>" data-e-disable-page-transition><span><?php echo esc_html( $filter_lbl_all ); ?><?php echo $counter_html( '*' ); ?></span></a>
 				<?php else : ?>
 					<span><?php echo esc_html( $filter_lbl_all ); ?><?php echo $counter_html( '*' ); ?></span>
 				<?php endif; ?>
@@ -96,7 +96,7 @@ $counter_html = function ( $key ) use ( $term_counts ) {
 				?>
 				<li class="<?php echo esc_attr( $is_active ); ?>" data-filter=".lqd-f-<?php echo esc_attr( $term->term_id ); ?>" data-id="<?php echo esc_attr( $term->term_id ); ?>">
 					<?php if ( ! empty( $grid_filter_param ) ) : ?>
-						<a href="<?php echo $filter_url( $term->term_id ); ?>"><span><?php echo esc_html( $term->name ); ?><?php echo $counter; ?></span></a>
+						<a href="<?php echo $filter_url( $term->term_id ); ?>" data-e-disable-page-transition><span><?php echo esc_html( $term->name ); ?><?php echo $counter; ?></span></a>
 					<?php else : ?>
 						<span><?php echo esc_html( $term->name ); ?><?php echo $counter; ?></span>
 					<?php endif; ?>

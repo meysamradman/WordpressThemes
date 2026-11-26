@@ -43,6 +43,7 @@ class Liquid_Elementor {
 		include LD_ELEMENTOR_PATH . 'elementor/hooks/icon-manager.php';
 		include LD_ELEMENTOR_PATH . 'elementor/hooks/section-controls.php';
 		include LD_ELEMENTOR_PATH . 'elementor/params/params.php';
+		include LD_ELEMENTOR_PATH . 'classes/template-renderer.php';
 		include LD_ELEMENTOR_PATH . 'classes/typekit.php';
 		include LD_ELEMENTOR_PATH . 'classes/admin-menu.php';
 		include LD_ELEMENTOR_PATH . 'elementor/hooks/hooks.php';
@@ -134,6 +135,7 @@ class Liquid_Elementor {
 		require __DIR__ . '/widgets/price-table.php';
 		require __DIR__ . '/widgets/slideshow-2.php';
 		require __DIR__ . '/widgets/slideshow.php';
+		require __DIR__ . '/widgets/spline.php';
 		require __DIR__ . '/widgets/stacked-sections.php';
 		require __DIR__ . '/widgets/stories-slideshow.php';
 		require __DIR__ . '/widgets/team-member.php';
@@ -165,6 +167,7 @@ class Liquid_Elementor {
 			require __DIR__ . '/widgets/woo-product-price.php';
 			require __DIR__ . '/widgets/woo-product-rating.php';
 			require __DIR__ . '/widgets/woo-product-related.php';
+			require __DIR__ . '/widgets/woo-product-reviews.php';
 			require __DIR__ . '/widgets/woo-product-sharing.php';
 			require __DIR__ . '/widgets/woo-product-tabs.php';
 			require __DIR__ . '/widgets/woo-product-title.php';

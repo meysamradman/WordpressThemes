@@ -281,7 +281,7 @@ class LD_Section_Flow extends Widget_Base {
 				'label' => __( 'Select Template', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '0',
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'condition' => [
 					'left_content' => 'template'
@@ -501,7 +501,7 @@ class LD_Section_Flow extends Widget_Base {
 				'label' => __( 'Select Template', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '0',
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'condition' => [
 					'right_content' => 'template'
@@ -793,7 +793,7 @@ class LD_Section_Flow extends Widget_Base {
 				printf( '<%1$s class="lqd-section-flow-subtitle">%2$s</%1$s>', $subtitle_tag, $item[ $col . '_subtitle' ] );
 			}
 		} else {
-			echo Plugin::instance()->frontend->get_builder_content( $item[ $col . '_template' ], true );
+			echo \LiquidElementor\Template_Renderer::render( $item[ $col . '_template' ] );
 		}
 
 	}

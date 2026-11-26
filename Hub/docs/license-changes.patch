@@ -1,16 +1,13 @@
 --- supplied/hub/functions.php
 +++ local/hub/functions.php
-@@ -12,8 +12,9 @@
-  * Text Domain: 'hub'
-  * Domain Path: /languages/
+@@ -14,4 +14,7 @@
   */
--update_option( 'hub_purchase_code', '**********' );
--update_option( 'hub_purchase_code_status', 'valid' );
--update_option( 'hub_register_email', 'noreply@gmail.com' );
-+// This local build has no theme activation or license gate.
+ 
  // Starting The Engine / Load the Liquid Framework ----------------
--include_once( get_template_directory() . '/liquid/liquid-init.php' );+include_once( get_template_directory() . '/liquid/liquid-init.php' );
-+// Keep vendor updates available without activation or domain locks.
+-include_once( get_template_directory() . '/liquid/liquid-init.php' );
+\ No newline at end of file
++include_once( get_template_directory() . '/liquid/liquid-init.php' );
++
 +require_once get_template_directory() . '/liquid/admin/updater/liquid-updater-class.php';
 +new Liquid_Updater();
 --- supplied/hub/style.css
@@ -19,20 +16,15 @@
  Author: Liquid Themes
  Author URI: https://themeforest.net/user/liquidthemes
  Description: Smart, Powerful and Unlimited Customizable WordPress Theme.
--Version: 6.0.3
-+Version: 6.0.3.2
+-Version: 7.0.1
++Version: 7.0.1.1
 +Update URI: https://api.liquid-themes.com/hub
  License: GNU General Public License
  License URI: license.txt
  Text Domain: hub
-@@ -179,4 +180,4 @@
- --------------------------------------------------------------*/
- .wp-block-pullquote blockquote {
- 	border: none;
--}+}
 --- supplied/hub/liquid/admin/updater/liquid-register-admin.php
 +++ local/hub/liquid/admin/updater/liquid-register-admin.php
-@@ -1,584 +1,16 @@
+@@ -1,714 +1,16 @@
  <?php
 -/**
 - * Liquid Themes Theme Framework
@@ -249,7 +241,7 @@
 -			<input type="hidden" name="envato_item_id" value="<?php echo esc_attr( $this->envato_item_id ); ?>" />
 -			<input type="hidden" name="theme" value="<?php echo esc_attr($this->theme_slug) ?>" />
 -			<input type="hidden" name="domain" value="<?php echo site_url(); ?>" />
--			<input type="hidden" name="return_url" value="<?php echo admin_url( 'admin.php' . $url ); ?>" />
+-			<input type="hidden" name="return_url" value="<?php echo esc_url( add_query_arg( 'liquid_license_state', $this->callback_state(), admin_url( 'admin.php' . $url ) ) ); ?>" />
 -			<div class="lqd-dsd-register-radio">
 -				<p>Choose license type: </p>
 -				<div>
@@ -281,7 +273,7 @@
 -				<input type="hidden" name="domain" value="<?php echo site_url(); ?>" />
 -				<input type="hidden" name="domain_key" value="<?php echo esc_attr( $domain_key ); ?>" />
 -				<input type="hidden" name="license_code" value="<?php echo esc_attr( $license ); ?>" />
--				<input type="hidden" name="return_url" value="<?php echo admin_url( 'admin.php' . $url ); ?>" />
+-				<input type="hidden" name="return_url" value="<?php echo esc_url( add_query_arg( 'liquid_license_state', $this->callback_state(), admin_url( 'admin.php' . $url ) ) ); ?>" />
 -				<button type="submit" style="background-color: #dc2626;">
 -					<?php esc_html_e( 'Revoke License', 'hub' ) ?>
 -				</button>
@@ -344,7 +336,7 @@
 -		// Call the custom API.
 -		$response = wp_remote_get(
 -			add_query_arg( $api_params, $this->remote_api_url ),
--			array( 'timeout' => 15, 'sslverify' => false )
+-			array( 'timeout' => 15 )
 -		);
 -
 -		// Make sure the response came back okay.
@@ -390,6 +382,53 @@
 -     }
 -
 -	/**
+-	 * One-time value that ties a Liquid Portal answer to an activation started
+-	 * from this site by the current administrator. It travels in the return address.
+-	 *
+-	 * @return string
+-	 */
+-	protected function callback_state() {
+-		$user_id = get_current_user_id();
+-		$key     = $this->theme_slug . '_license_state';
+-		$saved   = get_user_meta( $user_id, $key, true );
+-
+-		// Reuse the open value while it has more than half of its day left, so every form on the page carries the same one.
+-		if ( is_array( $saved ) && ! empty( $saved['token'] ) && ! empty( $saved['expires'] ) && $saved['expires'] > time() + 12 * HOUR_IN_SECONDS ) {
+-			return $saved['token'];
+-		}
+-
+-		$token = wp_generate_password( 32, false );
+-		update_user_meta( $user_id, $key, array( 'token' => $token, 'expires' => time() + DAY_IN_SECONDS ) );
+-
+-		return $token;
+-	}
+-
+-	/**
+-	 * Checks the one-time value of a Liquid Portal answer and uses it up.
+-	 *
+-	 * @return bool
+-	 */
+-	protected function consume_callback_state() {
+-		$user_id = get_current_user_id();
+-		$key     = $this->theme_slug . '_license_state';
+-		$saved   = $user_id ? get_user_meta( $user_id, $key, true ) : false;
+-		$given   = ( isset( $_GET['liquid_license_state'] ) && is_string( $_GET['liquid_license_state'] ) ) ? wp_unslash( $_GET['liquid_license_state'] ) : '';
+-
+-		if (
+-			'' === $given ||
+-			! is_array( $saved ) || empty( $saved['token'] ) || empty( $saved['expires'] ) ||
+-			$saved['expires'] <= time() ||
+-			! hash_equals( (string) $saved['token'], $given )
+-		) {
+-			return false;
+-		}
+-
+-		delete_user_meta( $user_id, $key );
+-
+-		return true;
+-	}
+-
+-	/**
 -	 * Checks if license is valid and gets expire date.
 -	 *
 -	 * @since 1.0.0
@@ -407,19 +446,53 @@
 -			return;
 -		}
 -
--		if ( $_GET['itemId'] != $this->envato_item_id  ) {
+-		if ( ! isset( $_GET['itemId'] ) || $_GET['itemId'] != $this->envato_item_id  ) {
 -			return;
 -		}
+-
+-		// A revoke answer carries no activation; check_revoke() handles it.
+-		if ( isset( $_GET['liquid_license_revoke'] ) ) {
+-			return;
+-		}
+-
+-		// Only an administrator may apply a Liquid Portal answer, and only one that
+-		// belongs to an activation this administrator started from this site.
+-		if ( ! is_admin() || ! current_user_can( 'manage_options' ) ) {
+-			return;
+-		}
+-
+-		// The dashboard and the setup wizard build this class again: handle the answer once per request.
+-		static $handled = false;
+-		if ( $handled ) {
+-			return;
+-		}
+-		$handled = true;
+-
+-		if ( ! $this->consume_callback_state() ) {
+-			$message = '<div class="lqd-dsd-confirmation fail">
+-							<h4>' . esc_html__( 'Activation could not be completed.', 'default' ) . '</h4>
+-							<p>' . esc_html__( 'This activation link has expired or was not started from this page. Please press the activation button below again.', 'default' ) . '</p>
+-						</div><!-- /.lqd-dsd-confirmation fail -->';
+-			set_transient( $this->theme_slug . '_license_message', $message, ( 60 * 60 * 24 ) );
+-			$on_wizard = isset( $_GET['page'], $_GET['step'] ) && 'liquid-setup' === $_GET['page'] && 'license' === $_GET['step'];
+-			wp_safe_redirect( admin_url( $on_wizard ? 'admin.php?page=liquid-setup&step=license' : 'admin.php?page=liquid' ) );
+-			exit;
+-		}
+-
+-		$status     = isset( $_GET['liquid_license_status'] ) ? sanitize_text_field( wp_unslash( $_GET['liquid_license_status'] ) ) : '';
+-		$key        = isset( $_GET['liquid_license_key'] ) ? sanitize_text_field( wp_unslash( $_GET['liquid_license_key'] ) ) : '';
+-		$domain_key = isset( $_GET['liquid_license_domain_key'] ) ? sanitize_text_field( wp_unslash( $_GET['liquid_license_domain_key'] ) ) : '';
+-		$env        = isset( $_GET['liquid_license_env'] ) ? sanitize_key( wp_unslash( $_GET['liquid_license_env'] ) ) : '';
 -
 -		global $wp;
 -		$url = add_query_arg( $_GET, $wp->request );
 -
--		if ( $_GET['liquid_license_status'] === 'valid' ) {
--			update_option( $this->theme_slug . '_purchase_code_status', $_GET['liquid_license_status'] );
--			update_option( $this->theme_slug . '_purchase_code', $_GET['liquid_license_key'] );
--			update_option( $this->theme_slug . '_purchase_code_domain_key', $_GET['liquid_license_domain_key'] );
+-		if ( $status === 'valid' ) {
+-			update_option( $this->theme_slug . '_purchase_code_status', $status );
+-			update_option( $this->theme_slug . '_purchase_code', $key );
+-			update_option( $this->theme_slug . '_purchase_code_domain_key', $domain_key );
 -			update_option( $this->theme_slug . '_purchase_code_domain', $this->site_url );
--			update_option( $this->theme_slug . '_purchase_code_env', $_GET['liquid_license_env'] );
+-			update_option( $this->theme_slug . '_purchase_code_env', $env );
 -			delete_option( $this->theme_slug . '_purchase_code_domain_revoke' );
 -			delete_option( $this->theme_slug . '_purchase_code_domain_migrated' );
 -
@@ -434,7 +507,7 @@
 -						</div><!-- /.lqd-dsd-confirmation success -->';
 -		} else {
 -			if ( isset($_GET['liquid_license_message']) && ! empty( $_GET['liquid_license_message'] ) ) {
--				$message_text = $_GET['liquid_license_message'];
+-				$message_text = esc_html( sanitize_text_field( wp_unslash( $_GET['liquid_license_message'] ) ) );
 -			} else {
 -				$message_text = 'Something went wrong! Contact to support.';
 -			}
@@ -458,6 +531,7 @@
 -		} else {
 -			wp_redirect(admin_url('admin.php?page=liquid'));
 -		}
+-		exit;
 -	}
 -
 -	/**
@@ -469,7 +543,15 @@
 -	 */
 -	function check_domain() {
 -		if ( !defined( 'WP_HOME' ) || !defined( 'WP_SITEURL' ) ) {
--			if ( !get_option( $this->theme_slug . '_purchase_code_domain' ) ){
+-			// A hosting preview address is this site seen at a temporary address, not a move to a new domain:
+-			// never record it as the license's domain and never remove the license because of it.
+-			if ( $this->is_preview_domain( $this->site_url ) ) {
+-				return;
+-			}
+-			$this->clear_preview_revoke();
+-			$domain = get_option( $this->theme_slug . '_purchase_code_domain' );
+-			if ( !$domain || $this->is_preview_domain( $domain ) ){
+-				// No domain yet, or a preview address an earlier build recorded: this site's real address replaces it.
 -				update_option( $this->theme_slug . '_purchase_code_domain', $this->site_url );
 -			} else {
 -				if (
@@ -497,6 +579,39 @@
 -					update_option( $this->theme_slug . '_purchase_code_domain_migrated', $this->site_url );
 -				}
 -			}
+-		}
+-	}
+-
+-	/**
+-	 * Hosting preview addresses. Hostinger's "Preview website" serves example.com at example-com.preview-domain.com
+-	 * and points WordPress's home and site URLs there for those requests, so get_clean_site_url() returns the
+-	 * preview address although the site hasn't moved.
+-	 *
+-	 * @param string $host A site's host, as get_clean_site_url() gives it.
+-	 * @return bool
+-	 */
+-	function is_preview_domain( $host ) {
+-		$host = strtolower( trim( (string) $host ) );
+-		foreach ( array( '.preview-domain.com' ) as $suffix ) {
+-			if ( strlen( $host ) > strlen( $suffix ) && substr( $host, -strlen( $suffix ) ) === $suffix ) {
+-				return true;
+-			}
+-		}
+-		return false;
+-	}
+-
+-	/**
+-	 * Removes the "new domain" notice an earlier build showed after taking a preview address for a move. The
+-	 * license options it removed can't be restored, so the site still asks to be activated again, but the notice
+-	 * telling the admin to revoke the license on their "previous domain" was wrong.
+-	 *
+-	 * @return void
+-	 */
+-	function clear_preview_revoke() {
+-		$migrated = get_option( $this->theme_slug . '_purchase_code_domain_migrated' );
+-		if ( $migrated && $this->is_preview_domain( $migrated ) ) {
+-			delete_option( $this->theme_slug . '_purchase_code_domain_revoke' );
+-			delete_option( $this->theme_slug . '_purchase_code_domain_migrated' );
 -		}
 -	}
 -
@@ -529,10 +644,17 @@
 -	 * @return void
 -	 */
 -	function check_revoke() {
+-		// Only an administrator may apply a Liquid Portal answer. The answer must name the stored license code.
+-		if ( ! is_admin() || ! current_user_can( 'manage_options' ) ) {
+-			return;
+-		}
+-
+-		$stored_code = trim( (string) get_option( $this->theme_slug . '_purchase_code' ) );
+-
 -		if (
 -			( isset( $_GET['liquid_license_revoke'] ) && ! empty( $_GET['liquid_license_revoke'] ) ) &&
 -			( isset( $_GET['itemId'] ) && $_GET['itemId'] == $this->envato_item_id ) &&
--			( isset( $_GET['license_code'] ) && $_GET['license_code'] == trim( get_option( $this->theme_slug . '_purchase_code' ) ) )
+-			( '' !== $stored_code && isset( $_GET['license_code'] ) && is_string( $_GET['license_code'] ) && hash_equals( $stored_code, wp_unslash( $_GET['license_code'] ) ) )
 -		) {
 -			$message = call_user_func( 'sanitize_text_field', wp_unslash( $_GET['liquid_license_revoke'] ) );
 -			delete_option( $this->theme_slug . '_purchase_code_status' );
@@ -626,7 +748,9 @@
 -
 -}
 -
--new Liquid_Register;--- supplied/hub/liquid/admin/liquid-admin-dashboard.php
+-new Liquid_Register;
+\ No newline at end of file
+--- supplied/hub/liquid/admin/liquid-admin-dashboard.php
 +++ local/hub/liquid/admin/liquid-admin-dashboard.php
 @@ -16,7 +16,7 @@
  	public function __construct() {
@@ -685,25 +809,63 @@
 +
  	</div>
  
- </main>--- supplied/hub/liquid/libs/merlin/class-merlin.php
+ </main>
+\ No newline at end of file
+--- supplied/hub/liquid/libs/merlin/class-merlin.php
 +++ local/hub/liquid/libs/merlin/class-merlin.php
-@@ -312,7 +312,7 @@
+@@ -312,7 +312,6 @@
  		add_action( 'wp_ajax_merlin_get_total_content_import_items', array( $this, '_ajax_get_total_content_import_items' ), 10, 0 );
  		add_action( 'wp_ajax_merlin_plugins', array( $this, '_ajax_plugins' ), 10, 0 );
  		add_action( 'wp_ajax_merlin_child_theme', array( $this, 'generate_child' ), 10, 0 );
 -		add_action( 'wp_ajax_merlin_activate_license', array( $this, '_ajax_activate_license' ), 10, 0 );
-+		// Theme activation AJAX is not registered in the local build.
  		add_action( 'wp_ajax_merlin_update_selected_import_data_info', array( $this, 'update_selected_import_data_info' ), 10, 0 );
  		add_action( 'wp_ajax_merlin_import_finished', array( $this, 'import_finished' ), 10, 0 );
  		add_filter( 'pt-importer/new_ajax_request_response_data', array( $this, 'pt_importer_new_ajax_request_response_data' ) );
-@@ -1501,6 +1501,7 @@
- 	 * Activate the theme (license key) via AJAX.
- 	 */
- 	public function _ajax_activate_license() {
-+		return; // Disabled local-build endpoint.
+@@ -1537,44 +1536,6 @@
+ 	}
  
- 		if ( ! check_ajax_referer( 'merlin_nonce', 'wpnonce' ) ) {
- 			wp_send_json(
+ 	/**
+-	 * Activate the theme (license key) via AJAX.
+-	 */
+-	public function _ajax_activate_license() {
+-
+-		$this->verify_ajax_request();
+-
+-		if ( ! check_ajax_referer( 'merlin_nonce', 'wpnonce' ) ) {
+-			wp_send_json(
+-				array(
+-					'success' => false,
+-					'message' => esc_html__( 'Yikes! The theme activation failed. Please try again or contact support.', 'merlin-wp' ),
+-				)
+-			);
+-		}
+-
+-		if ( empty( $_POST['license_key'] ) ) {
+-			wp_send_json(
+-				array(
+-					'success' => false,
+-					'message' => esc_html__( 'Please add your license key before attempting to activate one.', 'merlin-wp' ),
+-				)
+-			);
+-		}
+-
+-		$license_key = sanitize_key( $_POST['license_key'] );
+-
+-		if ( ! has_filter( 'merlin_ajax_activate_license' ) ) {
+-			$result = $this->edd_activate_license( $license_key );
+-		} else {
+-			$result = apply_filters( 'merlin_ajax_activate_license', $license_key );
+-		}
+-
+-		$this->logger->debug( __( 'The license activation was performed with the following results', 'merlin-wp' ), $result );
+-
+-		wp_send_json( array_merge( array( 'done' => 1 ), $result ) );
+-	}
+-
+-	/**
+ 	 * Activate the EDD license.
+ 	 *
+ 	 * This code was taken from the EDD licensing addon theme example code
 --- supplied/hub/liquid/libs/merlin/merlin-config.php
 +++ local/hub/liquid/libs/merlin/merlin-config.php
 @@ -26,8 +26,8 @@
@@ -719,20 +881,20 @@
  		'edd_item_name'        => '', // EDD_Theme_Updater_Admin item_name.
 --- supplied/hub-elementor-addons/elementor/template-library/template-library.php
 +++ local/hub-elementor-addons/elementor/template-library/template-library.php
-@@ -321,9 +321,7 @@
+@@ -320,10 +320,6 @@
+ 	 */
  	public static function get_template_content( $template_id ) {
  		$url = self::$api_url . '/' . $template_id;
- 
+-
 -		if ( 'valid' != get_option( 'hub_purchase_code_status', false ) ) {
 -			return new \WP_Error( 'no_license', esc_html__( 'Please Active The Hub Theme') );
 -		}
-+		// Local build: retain the original collection API without a license gate.
  
  		$args = [
  			'body' => [
 --- supplied/hub/liquid/admin/updater/liquid-updater-class.php
 +++ local/hub/liquid/admin/updater/liquid-updater-class.php
-@@ -1,258 +1,90 @@
+@@ -1,297 +1,90 @@
  <?php
 -/**
 - * Liquid Themes Theme Framework
@@ -746,7 +908,7 @@
 -if( !defined( 'ABSPATH' ) ) 
 -	exit; // Exit if accessed directly
 +class Liquid_Updater {
-+	const UPSTREAM_VERSION = '6.0.3';
++	const UPSTREAM_VERSION = '7.0.1';
 +	const CRON_HOOK = 'hub_check_theme_updates';
 +	private $theme_slug;
 +	private $version;
@@ -797,7 +959,11 @@
 -		add_action( 'load-themes.php', array( &$this, 'load_themes_screen' ) );
 -
 -		add_action( 'admin_head', array( &$this, 'update_notice' ) );
+-		add_action( 'core_upgrade_preamble', array( &$this, 'updates_screen_card' ) );
 -		add_action( 'wp_ajax_lqd_update_notice_response', function() {
+-			if ( ! current_user_can( 'update_themes' ) || ! check_ajax_referer( 'lqd_update_notice_response', 'security', false ) ) {
+-				wp_send_json_error( 'Not allowed.', 403 );
+-			}
 -			set_transient( 'lqd_update_notice_response', [], 2 * WEEK_IN_SECONDS );
 -			wp_send_json_success('LIQUID - Update popup will appear after 2 weeks!');
 -		} );
@@ -835,15 +1001,22 @@
 -			printf(
 -				wp_kses_post( __( '<strong>%1$s %2$s</strong> is available. <a href="%3$s" class="thickbox" title="%4s">Check out what\'s new</a> or <a href="%5$s"%6$s>update now</a>.', 'hub' ) ),
 -				$theme->get( 'Name' ),
--				$api_response->new_version,
+-				esc_html( $api_response->new_version ),
 -				'#TB_inline?width=640&amp;inlineId=' . $this->theme_slug . '_changelog',
 -				$theme->get( 'Name' ),
 -				$update_url,
 -				$update_onclick
 -			);
 -			echo '</div>';
+-			if ( function_exists( 'liquid_promote_card' ) && current_user_can( 'update_themes' ) ) {
+-				echo '<div class="lqd-aa-updates" style="max-width:720px;">';
+-				echo liquid_promote_card( 'update' ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in the card.
+-				echo '</div>';
+-			}
 -			echo '<div id="' . $this->theme_slug . '_' . 'changelog" style="display:none;">';
--			echo wpautop( $api_response->sections['changelog'] );
+-			$sections  = isset( $api_response->sections ) ? (array) $api_response->sections : array();
+-			$changelog = ( isset( $sections['changelog'] ) && is_scalar( $sections['changelog'] ) ) ? (string) $sections['changelog'] : '';
+-			echo wp_kses_post( wpautop( $changelog ) );
 -			echo '</div>';
 +	public function schedule() {
 +		if ( ! wp_next_scheduled( self::CRON_HOOK ) ) {
@@ -851,51 +1024,30 @@
  		}
  	}
  
+-	/**
+-	 * Dashboard > Updates: the All-Access card under the list when this theme has an update waiting.
+-	 */
+-	function updates_screen_card() {
+-		if ( ! function_exists( 'liquid_promote_card' ) || ! current_user_can( 'update_themes' ) ) {
+-			return;
+-		}
+-		$api_response = get_transient( $this->response_key );
+-		if ( ! is_object( $api_response ) || empty( $api_response->new_version ) || ! version_compare( $this->version, (string) $api_response->new_version, '<' ) ) {
+-			return;
+-		}
+-		echo '<div class="lqd-aa-updates" style="max-width:720px;margin-top:24px;">';
+-		echo liquid_promote_card( 'update' ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in the card.
+-		echo '</div>';
+-	}
+-
 -	function theme_update_transient( $value ) {
 -		$update_data = $this->check_for_update();
 -		if ( $update_data ) {
-+	public function updates_screen() {
-+		if ( ! current_user_can( 'update_themes' ) ) {
-+			return;
-+		}
-+		$force = isset( $_GET['force-check'], $_GET['_wpnonce'] ) &&
-+			wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'upgrade-core' );
-+		$this->refresh( (bool) $force );
-+	}
- 
+-
 -			if ( ! is_object( $value ) ) {
 -				$value = new stdClass;
 -			}
-+	/** Only cron and the dedicated Updates screen call this method. */
-+	public function refresh( $force = false ) {
-+		if ( ! $force && false !== get_transient( $this->attempt_key ) ) {
-+			return;
-+		}
-+		// Back off failures without erasing the last successful response.
-+		set_transient( $this->attempt_key, 1, 30 * MINUTE_IN_SECONDS );
-+		$url = add_query_arg( array(
-+			'action' => 'get_version', 'license' => '',
-+			'slug' => $this->theme_slug, 'author' => 'Liquid Themes',
-+		), $this->remote_api_url );
-+		$response = wp_remote_get( $url, array( 'timeout' => 5, 'limit_response_size' => 262144 ) );
-+		if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
-+			return;
-+		}
-+		$data = json_decode( wp_remote_retrieve_body( $response ), true );
-+		if ( ! is_array( $data ) || empty( $data['new_version'] ) || ! is_string( $data['new_version'] ) ||
-+			! preg_match( '/^\d+(?:\.\d+){1,3}(?:[-+][a-zA-Z0-9.-]+)?$/', $data['new_version'] ) ) {
-+			return;
-+		}
-+		$update = array(
-+			'theme' => $this->theme_slug,
-+			'new_version' => $data['new_version'],
-+			'url' => isset( $data['url'] ) && is_string( $data['url'] ) ? esc_url_raw( $data['url'] ) : '',
-+			'package' => isset( $data['package'] ) && is_string( $data['package'] ) ? esc_url_raw( $data['package'] ) : '',
-+		);
-+		set_transient( $this->response_key, $update, 7 * DAY_IN_SECONDS );
-+		set_transient( $this->attempt_key, 1, 12 * HOUR_IN_SECONDS );
-+	}
- 
+-
 -			$update_data['theme'] = $this->theme_slug;
 -
 -			if ( version_compare( $this->version, $update_data['new_version'], '<' ) ) {
@@ -903,25 +1055,10 @@
 -			} else {
 -				$value->no_update[ $this->theme_slug ] = $update_data;
 -			}
-+	/** Reading badges never performs HTTP, including on frontend pages. */
-+	public function theme_update_transient( $value ) {
-+		$data = get_transient( $this->response_key );
-+		if ( ! is_array( $data ) || empty( $data['new_version'] ) ) {
-+			return $value;
- 		}
+-		}
 -
-+		if ( ! is_object( $value ) ) {
-+			$value = new stdClass();
-+		}
-+		if ( version_compare( $this->version, $data['new_version'], '<' ) ) {
-+			$value->response[ $this->theme_slug ] = $data;
-+			unset( $value->no_update[ $this->theme_slug ] );
-+		} else {
-+			$value->no_update[ $this->theme_slug ] = $data;
-+			unset( $value->response[ $this->theme_slug ] );
-+		}
- 		return $value;
- 	}
+-		return $value;
+-	}
 -
 -	function delete_theme_update_transient() {
 -		delete_transient( $this->response_key );
@@ -964,7 +1101,9 @@
 -
 -			// If the status is 'ok', return the update arguments
 -			if ( ! $failed ) {
--				$update_data->sections = maybe_unserialize( $update_data->sections );
+-				if ( is_string( $update_data->sections ) && is_serialized( $update_data->sections ) ) {
+-					$update_data->sections = @unserialize( trim( $update_data->sections ), array( 'allowed_classes' => false ) );
+-				}
 -				set_transient( $this->response_key, $update_data, strtotime( '+12 hours' ) );
 -			}
 -		}
@@ -985,11 +1124,48 @@
 -			return;
 -		}
 -
+-		// Only people who can update the theme see the popup.
++	public function updates_screen() {
+ 		if ( ! current_user_can( 'update_themes' ) ) {
+ 			return;
+ 		}
++		$force = isset( $_GET['force-check'], $_GET['_wpnonce'] ) &&
++			wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'upgrade-core' );
++		$this->refresh( (bool) $force );
++	}
+ 
 -		// limit request
 -		if ( get_transient( 'lqd_update_notice_response_cache' ) === 'cached' ) {
--			return;
--		}
--
++	/** Only cron and the dedicated Updates screen call this method. */
++	public function refresh( $force = false ) {
++		if ( ! $force && false !== get_transient( $this->attempt_key ) ) {
+ 			return;
+ 		}
++		// Back off failures without erasing the last successful response.
++		set_transient( $this->attempt_key, 1, 30 * MINUTE_IN_SECONDS );
++		$url = add_query_arg( array(
++			'action' => 'get_version', 'license' => '',
++			'slug' => $this->theme_slug, 'author' => 'Liquid Themes',
++		), $this->remote_api_url );
++		$response = wp_remote_get( $url, array( 'timeout' => 5, 'limit_response_size' => 262144 ) );
++		if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
++			return;
++		}
++		$data = json_decode( wp_remote_retrieve_body( $response ), true );
++		if ( ! is_array( $data ) || empty( $data['new_version'] ) || ! is_string( $data['new_version'] ) ||
++			! preg_match( '/^\d+(?:\.\d+){1,3}(?:[-+][a-zA-Z0-9.-]+)?$/', $data['new_version'] ) ) {
++			return;
++		}
++		$update = array(
++			'theme' => $this->theme_slug,
++			'new_version' => $data['new_version'],
++			'url' => isset( $data['url'] ) && is_string( $data['url'] ) ? esc_url_raw( $data['url'] ) : '',
++			'package' => isset( $data['package'] ) && is_string( $data['package'] ) ? esc_url_raw( $data['package'] ) : '',
++		);
++		set_transient( $this->response_key, $update, 7 * DAY_IN_SECONDS );
++		set_transient( $this->attempt_key, 1, 12 * HOUR_IN_SECONDS );
++	}
+ 
 -		$check = get_transient( 'lqd_update_notice_response' );
 -
 -		if ( false === $check ) {
@@ -1014,55 +1190,151 @@
 -				$update_data = json_decode( wp_remote_retrieve_body( $response ) );
 -				set_transient( 'lqd_update_notice_response_cache', 'cached', 30 * MINUTE_IN_SECONDS );
 -
--				if ( version_compare( $this->version, $update_data->stable_version, '<' ) ) {
+-				if ( is_object( $update_data ) && isset( $update_data->stable_version ) && is_scalar( $update_data->stable_version ) && version_compare( $this->version, (string) $update_data->stable_version, '<' ) ) {
 -
--					$title = sprintf( 
--						'<span class="dashicons dashicons-update-alt"></span> %s', 
--						__( 'Theme update available!', 'hub' )
+-					$features = ( isset( $update_data->features ) && is_scalar( $update_data->features ) ) ? (string) $update_data->features : '';
+-
+-					// Text from the update server is escaped for HTML, then handed to the script as JSON.
+-					$popup = array(
+-						'title'    => sprintf(
+-							'<span class="dashicons dashicons-update-alt"></span> %s',
+-							esc_html__( 'Theme update available!', 'hub' )
+-						),
+-						'content'  => sprintf(
+-							'<p>Hub v%s %s</p><p>%s</p>',
+-							esc_html( (string) $update_data->stable_version ),
+-							esc_html__( 'is available!', 'hub' ),
+-							wp_kses_post( $features )
+-						) . ( function_exists( 'liquid_promote_card' ) ? liquid_promote_card( 'update' ) : '' ),
+-						'redirect' => esc_url_raw( admin_url( 'themes.php' ) ),
+-						'nonce'    => wp_create_nonce( 'lqd_update_notice_response' ),
 -					);
 -
--					$content = sprintf(
--						'<p>Hub v%s %s</p><p>%s</p>',
--						$update_data->stable_version,
--						__( 'is available!', 'hub' ),
--						$update_data->features,
--					);
--
--					$redirect_url = admin_url( 'themes.php' );
--
--					wp_add_inline_script( 'liquid-admin', "
+-					wp_add_inline_script( 'liquid-admin', '
 -						jQuery( document ).ready(function() {
+-							var lqdUpdatePopup = ' . wp_json_encode( $popup ) . ';
 -							jQuery.confirm({
--								columnClass: 'lqd-update',
--								type: 'orange',
--								title: '$title',
--								content: '$content',
+-								columnClass: "lqd-update",
+-								type: "orange",
+-								title: lqdUpdatePopup.title,
+-								content: lqdUpdatePopup.content,
 -								buttons: {
 -									new: {
--										text: 'Later',
+-										text: "Later",
 -										action: function() {
--											jQuery.post(ajaxurl, { 'action': 'lqd_update_notice_response' }, function (response) {
+-											jQuery.post(ajaxurl, { "action": "lqd_update_notice_response", "security": lqdUpdatePopup.nonce }, function (response) {
 -												console.log(response.data);
 -											});
 -										}
 -									},
 -									confirm: {
--										text: 'Update now',
+-										text: "Update now",
 -										action: function() {
--											window.location.href = '$redirect_url';
+-											window.location.href = lqdUpdatePopup.redirect;
 -										}
 -									},
 -								}
 -							});
 -						});
--					" );
+-					' );
 -
 -				}
 -
 -			}
 -
--		}
++	/** Reading badges never performs HTTP, including on frontend pages. */
++	public function theme_update_transient( $value ) {
++		$data = get_transient( $this->response_key );
++		if ( ! is_array( $data ) || empty( $data['new_version'] ) ) {
++			return $value;
+ 		}
 -
--	}
++		if ( ! is_object( $value ) ) {
++			$value = new stdClass();
++		}
++		if ( version_compare( $this->version, $data['new_version'], '<' ) ) {
++			$value->response[ $this->theme_slug ] = $data;
++			unset( $value->no_update[ $this->theme_slug ] );
++		} else {
++			$value->no_update[ $this->theme_slug ] = $data;
++			unset( $value->response[ $this->theme_slug ] );
++		}
++		return $value;
+ 	}
 -	
--}+}
+-}
+\ No newline at end of file
++}
+--- supplied/hub/liquid/admin/views/liquid-features.php
++++ local/hub/liquid/admin/views/liquid-features.php
+@@ -1,28 +1,4 @@
+ <?php
+ if ( function_exists( 'liquid_promote_card' ) ) {
+-	echo liquid_promote_card( liquid_promote_registered() ? 'registered' : 'activation' ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in the card.
++	echo liquid_promote_card( 'registered' ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in the card.
+ }
+-?>
+-<div class="lqd-dsd-box lqd-dsd-activation-tut-box">
+-
+-	<h4><?php esc_html_e( 'How can I activate my Theme', 'hub' ); ?></h4>
+-	<p><?php esc_html_e( 'Here is a video tutorial to assist you:', 'hub' ); ?></p>
+-
+-	<div class="lqd-dsd-vid">
+-		<button class="lqd-dsd-vid-trigger" data-lqd-dsd-lightbox="#lqd-dsd-activation-tut-vid">
+-			<img src="<?php echo get_template_directory_uri() . '/liquid/assets/img/dashboard/theme-activation.jpg' ?>" alt="<?php esc_attr_e( 'Theme activation', 'hub' ); ?>">
+-		</button>
+-	</div>
+-
+-	<p style="text-align: center;"><a href="https://docs.liquid-themes.com/" target="_blank">Go to Help Center</a></p>
+-
+-	<dialog class="lqd-dsd-dialog" id="lqd-dsd-activation-tut-vid">
+-		<form method="dialog" class="lqd-dsd-dialog-backdrop">
+-			<button></button>
+-		</form>
+-		<div class="lqd-dsd-dialog-content">
+-			<iframe width="1200" height="800" data-src="https://www.youtube.com/embed/1xla8KAEiCE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-		</div>
+-	</dialog>
+-
+-</div>
+--- supplied/hub/liquid/admin/views/liquid-promote.php
++++ local/hub/liquid/admin/views/liquid-promote.php
+@@ -28,19 +28,6 @@
+ 			'slug' => 'hub',
+ 			'name' => 'Hub',
+ 		);
+-	}
+-
+-	/**
+-	 * Whether the theme is registered, by the dashboard's own check (Liquid_Admin_Register::form()): a valid status,
+-	 * a purchase code and the Liquid Portal domain key. A valid status without the Portal sync still says
+-	 * "Action Required!", so it counts as activation.
+-	 */
+-	function liquid_promote_registered() {
+-		$theme = liquid_promote_theme();
+-		$slug  = $theme['slug'];
+-		return 'valid' === get_option( $slug . '_purchase_code_status', false )
+-			&& '' !== trim( (string) get_option( $slug . '_purchase_code', '' ) )
+-			&& '' !== trim( (string) get_option( $slug . '_purchase_code_domain_key', '' ) );
+ 	}
+ 
+ 	/** Who sees the promotion anywhere: site admins. */
+@@ -543,15 +530,12 @@
+ 
+ 	/**
+ 	 * Whether this site ran the theme before any version was recorded, read from data only an earlier build leaves
+-	 * behind (a fresh install has none of it on its first wp-admin page): the theme's registration options, the
+-	 * setup wizard's done-or-skipped flag, saved Liquid theme options, or theme mods other than the ones WordPress
++	 * behind (a fresh install has none of it on its first wp-admin page): the setup wizard's done-or-skipped flag,
++	 * saved Liquid theme options, or theme mods other than the ones WordPress
+ 	 * writes itself on a theme switch.
+ 	 */
+ 	function liquid_promote_had_theme() {
+-		$theme = liquid_promote_theme();
+-		$keys  = array(
+-			$theme['slug'] . '_purchase_code',
+-			$theme['slug'] . '_purchase_code_status',
++		$keys = array(
+ 			'merlin_' . strtolower( preg_replace( '#[^a-zA-Z]#', '', get_template() ) ) . '_completed',
+ 		);
+ 		if ( function_exists( 'liquid' ) && is_object( liquid() ) && method_exists( liquid(), 'get_option_name' ) && liquid()->get_option_name() ) {

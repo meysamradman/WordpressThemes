@@ -71,7 +71,7 @@ class Liquid_Admin_Page extends Liquid_Base {
 				$this->capability,
 				$this->id,
 				array( $this, 'display' ),
-				apply_filters( 'liquid_admin_menu_icon', get_template_directory_uri() . '/liquid/assets/img/liquid-menu-logo.png' ),
+				apply_filters( 'liquid_admin_menu_icon', get_template_directory_uri() . '/liquid/assets/img/liquid-menu-logo.svg' ),
 				$this->position
 			);
 		}

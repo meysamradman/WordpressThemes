@@ -6,6 +6,14 @@ defined( 'ABSPATH' ) || exit;
 add_action( 'init', function(){
     if( function_exists('liquid_helper') && liquid_helper()->get_theme_option( 'enable_optimized_files' ) == 'on' ) {
         if ( function_exists('liquid_helper') && ! liquid_helper()->get_assets_cache(liquid_helper()->get_page_id_by_url()) ) {
+
+            // Elementor's element cache prints sections/columns/containers from saved HTML,
+            // so `elementor/frontend/before_render` never fires for them and their assets
+            // would be missing from the merged file. Disable it just for the build request.
+            add_filter( 'pre_option_elementor_element_cache_ttl', function() {
+                return 'disable';
+            } );
+
             include LD_ELEMENTOR_PATH . 'elementor/optimization/widget-assets/widget-assets.php';
         }
     }
@@ -181,6 +189,15 @@ add_action( 'elementor/preview/enqueue_styles', function() {
         LD_ELEMENTOR_VERSION,
         true
     );
+
+    // Renders advanced-text SVGs inline in the preview, matching the PHP output.
+    wp_enqueue_script(
+        'lqd-editor-inline-svg',
+        LD_ELEMENTOR_URL . 'assets/js/lqd-editor-inline-svg.min.js',
+        ['elementor-frontend'],
+        LD_ELEMENTOR_VERSION,
+        true
+    );
 } );
 
 // Elementor Template Editor - Add new template / ajax
@@ -310,7 +327,8 @@ add_filter( 'elementor/fonts/additional_fonts', function( $additional_fonts ){
     $fonts = array(
         // font name => font file (system / googlefonts / earlyaccess / local)
         'Outfit' => 'googlefonts',
-        'Golos Text' => 'googlefonts'
+        'Golos Text' => 'googlefonts',
+        'Funnel Display' => 'googlefonts'
     );
     $fonts = array_merge( $fonts, $additional_fonts );
     return $fonts;

@@ -12,9 +12,14 @@
 						</figure>
 		
 						<span class="lqd-pf-overlay-bg lqd-overlay d-flex align-items-center justify-content-center">
-							<?php 
-								if ( is_array( $custom_arrow_icon ) ) {
-									$custom_arrow_icon = sprintf( '<i class="%s"></i>', esc_attr( $custom_arrow_icon['value'] ) );
+							<?php
+								if ( ! isset( $custom_arrow_icon ) || '' === $custom_arrow_icon ) {
+									$custom_arrow_icon = '<i class="lqd-pf-overlay-icon lqd-icn-ess icon-md-arrow-forward"></i>';
+								} elseif ( is_array( $custom_arrow_icon ) ) {
+									$icon_value = isset( $custom_arrow_icon['value'] ) && is_string( $custom_arrow_icon['value'] ) ? $custom_arrow_icon['value'] : '';
+									$custom_arrow_icon = '' !== $icon_value
+										? sprintf( '<i class="lqd-pf-overlay-icon %s"></i>', esc_attr( $icon_value ) )
+										: '<i class="lqd-pf-overlay-icon lqd-icn-ess icon-md-arrow-forward"></i>';
 								}
 								echo $custom_arrow_icon;
 							?>

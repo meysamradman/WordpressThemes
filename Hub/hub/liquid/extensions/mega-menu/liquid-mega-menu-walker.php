@@ -7,6 +7,8 @@
 if( ! defined( 'ABSPATH' ) )
 	exit; // Exit if accessed directly
 
+require_once get_template_directory() . '/liquid/extensions/svg-sanitizer/liquid-svg-sanitizer.php';
+
 class Liquid_Mega_Menu_Walker extends Walker_Nav_Menu {
 
 	/**
@@ -82,9 +84,7 @@ class Liquid_Mega_Menu_Walker extends Walker_Nav_Menu {
 			$icon_src = wp_get_attachment_url( $item->thumbnail_id );
 			$filetype = wp_check_filetype( $icon_src );
 			if( 'svg' === $filetype['ext'] ) {
-				add_filter( 'https_ssl_verify', '__return_false' );
-				$request  = wp_remote_get( $icon_src );
-				$response = wp_remote_retrieve_body( $request );
+				$response = Liquid_SVG_Sanitizer::inline( $icon_src );
 				$custom_icon = $response;
 			} else {
 				$custom_icon = wp_get_attachment_image( $item->thumbnail_id, 'full', false, array( 'class' => 'liquid-custom-image-icon' ) );

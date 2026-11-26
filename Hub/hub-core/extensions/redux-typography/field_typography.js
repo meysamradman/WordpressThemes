@@ -157,7 +157,7 @@
                                 }
 
                                 // If user fonts, pull from localize and push into array
-                                if ( isUserFonts == 1 ) {
+                                if ( isUserFonts == 1 && redux.typography && redux.typography[thisID] ) {
                                     var fontKids = [];
 
                                     // <option>
@@ -187,7 +187,7 @@
                                 }
 
                                 // If googfonts on and had data, push into array
-                                if ( usingGoogleFonts == 1 || usingGoogleFonts === true && redux.googlefonts !== undefined ) {
+                                if ( ( usingGoogleFonts == 1 || usingGoogleFonts === true ) && redux.googlefonts !== undefined ) {
                                     buildData.push( redux.googlefonts );
                                 }
 

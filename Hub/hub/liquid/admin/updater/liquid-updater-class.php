@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Liquid_Updater {
-	const UPSTREAM_VERSION = '6.0.3';
+	const UPSTREAM_VERSION = '7.0.1';
 	const CRON_HOOK = 'hub_check_theme_updates';
 	private $theme_slug;
 	private $version;

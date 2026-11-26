@@ -35,10 +35,45 @@ if (!class_exists('Liquid_Optimization')) :
 		{
 			$theme_option = get_option('liquid_one_opt');
 
+			// The cached markup is built from the theme options that were active when it was
+			// written, so it has to be dropped whenever those options change. Registered
+			// outside the check below so that turning optimization off also clears the
+			// content it left behind. Deferred to `init` because this class is constructed
+			// on `after_setup_theme` priority 2, before the theme sets its option name.
+			$this->add_action('init', 'register_purge_hooks');
+
 			if (isset($theme_option['enable-hub-optimization']) && $theme_option['enable-hub-optimization'] === 'on') {
 				$this->tags = [];
 				$this->init_hooks();
 			}
+		}
+
+		/**
+		 * Register the theme-options purge hooks
+		 *
+		 * @method register_purge_hooks
+		 */
+		public function register_purge_hooks()
+		{
+			$opt_name = liquid()->get_option_name();
+
+			if ($opt_name) {
+				$this->add_action('redux/options/' . $opt_name . '/saved', 'options_changed');
+				$this->add_action('redux/options/' . $opt_name . '/reset', 'options_changed');
+				$this->add_action('redux/options/' . $opt_name . '/section/reset', 'options_changed');
+			}
+
+			$this->add_action('customize_save_after', 'options_changed');
+		}
+
+		/**
+		 * Drop the cached markup after a theme options change
+		 *
+		 * @method options_changed
+		 */
+		public function options_changed()
+		{
+			self::purge_cache();
 		}
 
 		/**
@@ -90,7 +125,27 @@ if (!class_exists('Liquid_Optimization')) :
 				return $shortcodes;
 			}
 
-			$used_shortcodes = get_post_meta($post->ID, '_used_shortcodes', true);
+			$stored = get_post_meta($post->ID, '_used_shortcodes', true);
+			$stored = is_array($stored) ? $stored : [];
+
+			// Nothing recorded yet, so load everything. The list is written once this render
+			// finishes and narrowing takes over from the next request. Narrowing before there
+			// is a list to narrow by would drop the header and footer elements, which never
+			// appear in the viewed post's own content.
+			if (empty($stored)) {
+				return $shortcodes;
+			}
+
+			// This filter decides which shortcodes get registered at all, and the stored list
+			// is built from the shortcodes that managed to run. A shortcode missing from the
+			// list is therefore never registered, never runs, and never gets added back, so
+			// it renders as raw `[ld_...]` text for good. Reading the tags off the content
+			// about to be rendered breaks that loop and repairs an incomplete list.
+			$used_shortcodes = array_unique(array_merge(
+				$stored,
+				$this->scan_shortcode_tags($post->post_content),
+				$this->scan_layout_shortcode_tags()
+			));
 
 			$tag_names = ['misc'];
 
@@ -98,14 +153,7 @@ if (!class_exists('Liquid_Optimization')) :
 
 				foreach ($used_shortcodes as $shortcode) {
 
-					$shortcode = str_replace('ld_button', 'ld_1button', $shortcode);
-					$shortcode = str_replace('ld_cf7', 'ld_contact-form', $shortcode);
-					$shortcode = str_replace('ld_', '', $shortcode);
-					$shortcode = str_replace('vc_', '', $shortcode);
-					$shortcode = str_replace('_', '-', $shortcode);
-					$shortcode = str_replace('imgage', 'image', $shortcode);
-					$shortcode = str_replace('single-portfolio', 'pf-single', $shortcode);
-					$shortcode = str_replace('imgtxt-slider', 'image-text-slider', $shortcode);
+					$shortcode = $this->map_shortcode_to_group($shortcode);
 
 					if (array_search($shortcode, $shortcodes) !== false) {
 						$tag_names[] = $shortcode;
@@ -127,6 +175,93 @@ if (!class_exists('Liquid_Optimization')) :
 		}
 
 		/**
+		 * Read the shortcode tags that appear in a piece of content
+		 *
+		 * Works off the raw text, so it does not care whether a shortcode is registered.
+		 * Closing tags are skipped: `[/tag]` has the slash where the tag name would start.
+		 *
+		 * @param string $content
+		 *
+		 * @return string[]
+		 *
+		 * @method scan_shortcode_tags
+		 */
+		public function scan_shortcode_tags($content)
+		{
+			if (!is_string($content) || false === strpos($content, '[')) {
+				return [];
+			}
+
+			if (!preg_match_all('/\[([a-zA-Z0-9_-]+)[\s\]\/]/', $content, $matches)) {
+				return [];
+			}
+
+			return array_values(array_unique($matches[1]));
+		}
+
+		/**
+		 * Read the shortcode tags used by the header and footer templates
+		 *
+		 * Both are separate posts, so their tags never appear in the content of the post
+		 * being viewed. Without them the narrowing above leaves the header and footer
+		 * elements unregistered and they render as raw text.
+		 *
+		 * @return string[]
+		 *
+		 * @method scan_layout_shortcode_tags
+		 */
+		public function scan_layout_shortcode_tags()
+		{
+			$tags = [];
+
+			foreach (['liquid_get_custom_header_id', 'liquid_get_custom_footer_id'] as $resolver) {
+
+				if (!function_exists($resolver)) {
+					continue;
+				}
+
+				$layout_id = $resolver();
+
+				if (empty($layout_id)) {
+					continue;
+				}
+
+				$layout = get_post($layout_id);
+
+				if (!is_a($layout, 'WP_Post')) {
+					continue;
+				}
+
+				$tags = array_merge($tags, $this->scan_shortcode_tags($layout->post_content));
+			}
+
+			return array_values(array_unique($tags));
+		}
+
+		/**
+		 * Turn a shortcode tag into the name of the asset group it belongs to
+		 *
+		 * @param string $shortcode
+		 *
+		 * @return string
+		 *
+		 * @method map_shortcode_to_group
+		 */
+		public function map_shortcode_to_group($shortcode)
+		{
+			$shortcode = str_replace('ld_button', 'ld_1button', $shortcode);
+			$shortcode = str_replace('ld_cf7', 'ld_contact-form', $shortcode);
+			$shortcode = str_replace('ld_', '', $shortcode);
+			$shortcode = str_replace('vc_', '', $shortcode);
+			$shortcode = str_replace('_', '-', $shortcode);
+			$shortcode = str_replace('imgage', 'image', $shortcode);
+			$shortcode = str_replace('single-portfolio', 'pf-single', $shortcode);
+			$shortcode = str_replace('imgtxt-slider', 'image-text-slider', $shortcode);
+
+			return $shortcode;
+		}
+
+		/**
 		 * Add Shortcode name to global array
 		 * @param $output
 		 * @param $tag
@@ -144,8 +279,63 @@ if (!class_exists('Liquid_Optimization')) :
 		 */
 		public function shutdown()
 		{
-			if (empty(get_post_meta($this->page_id, '_used_shortcodes', true))) {
-				update_post_meta($this->page_id, '_used_shortcodes', array_unique($this->tags));
+			// Never store an empty list: `load_shortcodes()` reads a stored empty value as
+			// "unknown" and falls back to loading every asset group, so writing one only
+			// costs a query on each request.
+			if (empty($this->tags)) {
+				return;
+			}
+
+			// The shortcodes seen here are the ones that ran on the front end, which is only
+			// part of the picture once the content is served from cache. Merge rather than
+			// replace so the list keeps growing towards the full set.
+			$this->merge_used_shortcodes($this->page_id, $this->tags);
+		}
+
+		/**
+		 * Store the shortcodes a post uses, read from its raw content
+		 *
+		 * @param int      $post_ID
+		 * @param string   $content         Raw post content
+		 * @param string[] $registered_tags All currently registered shortcode tags
+		 *
+		 * @method save_used_shortcodes
+		 */
+		public function save_used_shortcodes($post_ID, $content, $registered_tags)
+		{
+			$used = array_intersect($this->scan_shortcode_tags($content), $registered_tags);
+
+			$this->merge_used_shortcodes($post_ID, $used);
+		}
+
+		/**
+		 * Add shortcode tags to the list stored for a post
+		 *
+		 * Always merges. `load_shortcodes()` drops the asset group of any shortcode missing
+		 * from the list, so a list that shrinks strips assets off elements that still need
+		 * them. Growing it only ever loads a little more than necessary, and the admin bar
+		 * "Hub Purge Cache" action resets it.
+		 *
+		 * @param int      $post_ID
+		 * @param string[] $tags
+		 *
+		 * @method merge_used_shortcodes
+		 */
+		public function merge_used_shortcodes($post_ID, $tags)
+		{
+			if (empty($post_ID) || empty($tags)) {
+				return;
+			}
+
+			$stored = get_post_meta($post_ID, '_used_shortcodes', true);
+			$stored = is_array($stored) ? $stored : [];
+
+			$merged = array_values(array_unique(array_merge($stored, $tags)));
+
+			// Only write when something new turned up, otherwise this costs a query on
+			// every request.
+			if (count($merged) !== count($stored)) {
+				update_post_meta($post_ID, '_used_shortcodes', $merged);
 			}
 		}
 
@@ -169,6 +359,7 @@ if (!class_exists('Liquid_Optimization')) :
 
 					var data = {
 						'action': 'hub_cache_purge',
+						'security': '<?php echo esc_js( wp_create_nonce( 'lqd_cache_purge' ) ); ?>',
 					};
 
 					jQuery.post(ajaxurl, data, function(response) {
@@ -184,6 +375,10 @@ if (!class_exists('Liquid_Optimization')) :
 					 */
 					public function hub_cache_purge_callback()
 					{
+						if ( ! current_user_can( 'edit_posts' ) || ! check_ajax_referer( 'lqd_cache_purge', 'security', false ) ) {
+							wp_send_json_error( null, 403 );
+						}
+
 						self::purge_cache();
 						wp_send_json_success('Cache Purged Success');
 					}
@@ -301,7 +496,12 @@ if (!class_exists('Liquid_Optimization')) :
 							WPBMap::addAllMappedShortcodes();
 						}
 
-						add_filter('wp_get_attachment_image_attributes', 'liquid_filter_gallery_img_atts', 10, 2);
+						// Only bake lazy load placeholders into the cached markup when lazy load is
+						// actually enabled, otherwise the images keep an SVG placeholder in `src`
+						// while the script that swaps `data-src` back in is never enqueued.
+						if ('on' === liquid_helper()->get_theme_option('enable-lazy-load')) {
+							add_filter('wp_get_attachment_image_attributes', 'liquid_filter_gallery_img_atts', 10, 2);
+						}
 
 						global $shortcode_tags;
 
@@ -438,6 +638,13 @@ if (!class_exists('Liquid_Optimization')) :
 							'ld_tooltiped_image',
 							'ld_typewriter',
 						];
+
+						// Record every shortcode present in the raw content before the pre-render
+						// below turns most of them into plain HTML. Collecting this on the front
+						// end instead would only ever see the shortcodes that were *not* cached,
+						// which leaves `load_shortcodes()` stripping the assets of the ones that
+						// were.
+						$this->save_used_shortcodes($post_ID, $content, array_keys($shortcode_tags));
 
 						foreach ($shortcode_tags as $tag => $shortcode) {
 

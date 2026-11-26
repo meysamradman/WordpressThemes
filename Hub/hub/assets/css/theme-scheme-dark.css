@@ -24,12 +24,18 @@
   color: inherit;
 }
 
-body.page-scheme-dark h1, body.page-scheme-dark .h1,
-body.page-scheme-dark h2, body.page-scheme-dark .h2,
-body.page-scheme-dark h3, body.page-scheme-dark .h3,
-body.page-scheme-dark h4, body.page-scheme-dark .h4,
-body.page-scheme-dark h5, body.page-scheme-dark .h5,
-body.page-scheme-dark h6, body.page-scheme-dark .h6 {
+body.page-scheme-dark h1,
+body.page-scheme-dark .h1,
+body.page-scheme-dark h2,
+body.page-scheme-dark .h2,
+body.page-scheme-dark h3,
+body.page-scheme-dark .h3,
+body.page-scheme-dark h4,
+body.page-scheme-dark .h4,
+body.page-scheme-dark h5,
+body.page-scheme-dark .h5,
+body.page-scheme-dark h6,
+body.page-scheme-dark .h6 {
   color: #fff;
 }
 
@@ -173,11 +179,10 @@ a:hover {
 
 @media screen and (max-width: 479px) {
   .lqd-blog-post-style-4 .lqd-post-header .entry-meta:last-child > div,
-.lqd-blog-post-style-5 .lqd-post-header .entry-meta:last-child > div,
-.lqd-blog-post-style-6 .lqd-post-header .entry-meta:last-child > div,
-.lqd-blog-post-style-7 .lqd-post-header .entry-meta:last-child > div {
+  .lqd-blog-post-style-5 .lqd-post-header .entry-meta:last-child > div,
+  .lqd-blog-post-style-6 .lqd-post-header .entry-meta:last-child > div,
+  .lqd-blog-post-style-7 .lqd-post-header .entry-meta:last-child > div {
     background-color: #1d1b1b;
   }
 }
-
 /*# sourceMappingURL=theme-scheme-dark.css.map */

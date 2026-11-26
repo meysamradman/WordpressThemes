@@ -169,7 +169,7 @@ class LD_Curtain extends Widget_Base {
 				'label' => esc_html__( 'Template', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'default' => '0',
 				'condition' => [
@@ -835,7 +835,7 @@ class LD_Curtain extends Widget_Base {
 		$template_id = $item['item_template'];
 
 		if ( '0' !== $template_id ) {
-			echo \Elementor\Plugin::instance()->frontend->get_builder_content( $template_id, true );
+			echo \LiquidElementor\Template_Renderer::render( $template_id );
 		}
 
 	}

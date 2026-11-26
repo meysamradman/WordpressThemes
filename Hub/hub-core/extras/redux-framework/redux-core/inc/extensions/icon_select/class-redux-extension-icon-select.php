@@ -5,7 +5,9 @@
  * @package Redux Extentions
  * @author  Dovy Paukstys <dovy@reduxframework.com> & Kevin Provance <kevin.provance@gmail.com>
  * @class   Redux_Extension_Icon_Select
- * @version 4.4.2
+ * @version 4.5.18
+ *
+ * @noinspection PhpIgnoredClassAliasDeclaration
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -26,14 +28,14 @@ if ( ! class_exists( 'Redux_Extension_Icon_Select' ) ) {
 		 *
 		 * @var string
 		 */
-		public static $version = '4.4.2';
+		public static $version = '4.5.18';
 
 		/**
 		 * Extension friendly name.
 		 *
 		 * @var string
 		 */
-		public $ext_name = 'Icon Select';
+		public string $extension_name = 'Icon Select';
 
 		/**
 		 * ReduxFramework_Extension_Icon_Select constructor.
@@ -54,6 +56,10 @@ if ( ! class_exists( 'Redux_Extension_Icon_Select' ) ) {
 		 * @return void
 		 */
 		public function get_icons() {
+			if ( ! Redux_Helpers::current_user_can( $this->parent->args['page_permissions'] ) ) {
+				wp_send_json_error( array( 'error' => esc_html__( 'Error: You do not have permission to perform this action.', 'redux-framework' ) ) );
+			}
+
 			$nonce       = ( ! empty( $_POST['nonce'] ) ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
 			$icon_set    = ( ! empty( $_POST['icon_set'] ) ) ? sanitize_text_field( wp_unslash( $_POST['icon_set'] ) ) : '';
 			$select_text = ( ! empty( $_POST['select_text'] ) ) ? sanitize_text_field( wp_unslash( $_POST['select_text'] ) ) : '';
@@ -123,6 +129,6 @@ if ( ! class_exists( 'Redux_Extension_Icon_Select' ) ) {
 			wp_send_json_success( array( 'content' => $content ) );
 		}
 	}
-}
 
-class_alias( 'Redux_Extension_Icon_Select', 'ReduxFramework_extension_icon_select' );
+	class_alias( Redux_Extension_Icon_Select::class, 'ReduxFramework_extension_icon_select' );
+}

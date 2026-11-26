@@ -2241,6 +2241,7 @@ class LD_Woo_Products_List extends Widget_Base {
 								'orderby'  => $atts['orderby'],
 								'show'     => $atts['show'],
 								'template' => $atts['template'],
+								'columns'  => $columns,
 							)
 						),
 					);

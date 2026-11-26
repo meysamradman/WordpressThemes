@@ -3,7 +3,7 @@
  * Plugin Name: Hub Elementor Addons
  * Description: Hub Theme exclusively Elementor addons.
  * Plugin URI: https://hub.liquid-themes.com/
- * Version: 6.0.3
+ * Version: 7.0.1
  * Author: Liquid Themes
  * Author URI: https://themeforest.net/user/liquidthemes
  * Text Domain: hub-elementor-addons
@@ -42,7 +42,7 @@ final class Liquid_Elementor_Addons {
 	 *
 	 * @var string The plugin version.
 	 */
-	const VERSION = '6.0.3';
+	const VERSION = '7.0.1';
 
 	/**
 	 * Minimum Elementor Version

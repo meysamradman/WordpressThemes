@@ -21,6 +21,7 @@ function liquid_get_header_layout() {
 
 	// which one
 	$id = liquid_get_custom_header_id();
+	$id = function_exists('pll_get_post') ? pll_get_post($id, pll_current_language()) : $id;
 	$header = get_post( $id );
 
 	if ( !class_exists( 'Liquid_Elementor_Addons' ) || ( !is_search() && class_exists( 'Liquid_Elementor_Addons') ) ) {
@@ -194,6 +195,7 @@ function liquid_get_footer_layout() {
 
 	// which one
 	$id = liquid_get_custom_footer_id();
+	$id = function_exists('pll_get_post') ? pll_get_post($id, pll_current_language()) : $id;
 	$footer = get_post( $id );
 
 	// Styles
@@ -257,6 +259,7 @@ function liquid_get_footer_layout() {
  function liquid_header_mobile_section() {
 
 	$id = liquid_get_custom_header_id();
+	$id = function_exists('pll_get_post') ? pll_get_post($id, pll_current_language()) : $id;
 	$src = $retina_src = $retina_logo = $logo = $scrset = '';
 
 	if ( class_exists( 'Liquid_Elementor_Addons' ) && defined('ELEMENTOR_VERSION') ){
@@ -317,6 +320,8 @@ function liquid_get_footer_layout() {
 	if( empty ( $menu_id ) ) {
 		$menu_id = liquid_helper()->get_theme_option( 'header-mobile-menu' );
 	}
+
+	$menu_id = apply_filters( 'liquid_header_mobile_menu_id', $menu_id, $id );
 
 	$output = '<div class="lqd-mobile-sec pos-rel">
 		<div class="lqd-mobile-sec-inner navbar-header d-flex align-items-stretch w-100">
@@ -415,6 +420,7 @@ add_action( 'liquid_after_header_tag', 'liquid_header_mobile_section' );
 function liquid_get_mobile_nav_ajax() {
 
 	$id = liquid_get_custom_header_id();
+	$id = function_exists('pll_get_post') ? pll_get_post($id, pll_current_language()) : $id;
 
 	if ( class_exists( 'Liquid_Elementor_Addons' ) && defined('ELEMENTOR_VERSION') ){
 		$page_settings_manager = \Elementor\Core\Settings\Manager::get_settings_managers( 'page' );
@@ -428,6 +434,8 @@ function liquid_get_mobile_nav_ajax() {
 	if( empty ( $menu_id ) ) {
 		$menu_id = liquid_helper()->get_theme_option( 'header-mobile-menu' );
 	}
+
+	$menu_id = apply_filters( 'liquid_header_mobile_menu_id', $menu_id, $id );
 
 	if( is_nav_menu( $menu_id ) ) :
 		$output	 .=	wp_nav_menu( array(
@@ -1849,6 +1857,14 @@ function liquid_ajax_search() {
 		default:
 			$pt = 'product';
 			break;
+	}
+
+	// Only post types that are public and part of the site search can be searched here.
+	if ( 'custom' === $post_type ) {
+		$searchable = get_post_types( array( 'public' => true, 'exclude_from_search' => false ) );
+		if ( ! is_string( $pt ) || ! in_array( $pt, $searchable, true ) ) {
+			$pt = 'product';
+		}
 	}
 
 	$products = new WP_Query(

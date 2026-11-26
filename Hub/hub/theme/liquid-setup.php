@@ -51,6 +51,7 @@ add_theme_support( 'liquid-theme-options', array(
 	'portfolio',
 	'woocommerce',
 	'page-search',
+    'features',
     'optimization',
 	'apikeys',
     'ai',

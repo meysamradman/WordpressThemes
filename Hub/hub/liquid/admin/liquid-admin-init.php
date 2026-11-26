@@ -167,6 +167,7 @@ class Liquid_Admin extends Liquid_Base
 		));
 		wp_localize_script('liquid-admin', 'liquidAdmin', array(
 			'nonce' => wp_create_nonce( 'liquid-nonce' ),
+			'cachePurgeNonce' => wp_create_nonce( 'lqd_cache_purge' ),
 		));
 
 		// Icons

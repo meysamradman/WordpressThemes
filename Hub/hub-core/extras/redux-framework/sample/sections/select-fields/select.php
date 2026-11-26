@@ -1,11 +1,12 @@
 <?php
 /**
  * Redux Framework select config.
- * For full documentation, please visit: http://devs.redux.io/
+ * For full documentation, please visit: https://devs.redux.io/
  *
  * @package Redux Framework
  */
 
+// phpcs:disable
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
@@ -282,3 +283,4 @@ function redux_select_callback(): array {
 
 	return $options;
 }
+// phpcs:enable

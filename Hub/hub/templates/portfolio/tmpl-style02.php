@@ -9,9 +9,14 @@
 					<?php $this->entry_thumbnail(); ?>
 				</figure>
 				<span class="lqd-pf-overlay-bg lqd-overlay d-flex align-items-center justify-content-center">
-					<?php 
-						if ( is_array( $custom_arrow_icon ) ) {
-							$custom_arrow_icon = sprintf( '<i class="%s"></i>', esc_attr( $custom_arrow_icon['value'] ) );
+					<?php
+						if ( ! isset( $custom_arrow_icon ) || '' === $custom_arrow_icon ) {
+							$custom_arrow_icon = '<i class="lqd-pf-overlay-icon lqd-icn-ess icon-md-arrow-forward"></i>';
+						} elseif ( is_array( $custom_arrow_icon ) ) {
+							$icon_value = isset( $custom_arrow_icon['value'] ) && is_string( $custom_arrow_icon['value'] ) ? $custom_arrow_icon['value'] : '';
+							$custom_arrow_icon = '' !== $icon_value
+								? sprintf( '<i class="lqd-pf-overlay-icon %s"></i>', esc_attr( $icon_value ) )
+								: '<i class="lqd-pf-overlay-icon lqd-icn-ess icon-md-arrow-forward"></i>';
 						}
 						echo $custom_arrow_icon;
 					?>
@@ -19,8 +24,8 @@
 			</div>
 
 			<div class="lqd-pf-details">
-				<?php 
-					$title_tag = isset( $title_tag ) ? $title_tag : 'h2'; 
+				<?php
+					$title_tag = isset( $title_tag ) ? $title_tag : 'h2';
 					$tag_to_inherite = isset( $tag_to_inherite ) ? $tag_to_inherite : 'h5';
 				?>
 				<?php the_title( sprintf( '<%1$s class="lqd-pf-title mt-0 mb-1 %2$s">', $title_tag, $tag_to_inherite ), sprintf( '</%s>', $title_tag ) );?>

@@ -266,30 +266,7 @@ class LD_Global_Controls extends Module {
 			'header_sticky_color',
 			[
 				'label' => __( 'Sticky Header Color', 'hub-elementor-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > p,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .ld-fancy-heading .ld-fh-element,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element .nav-trigger,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element .lqd-scrl-indc,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .lqd-custom-menu,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .btn-naked,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .btn-underlined,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .social-icon li a,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .lqd-custom-menu > ul > li > a,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .module-primary-nav > .navbar-collapse .main-nav > li > a,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element .ld-module-trigger .ld-module-trigger-txt,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element .lqd-module-badge-outline .ld-module-trigger-count,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element .ld-module-trigger-icon,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .lqd-custom-menu .lqd-custom-menu-dropdown-btn' => 'color: {{VALUE}};',
-
-					'.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .ld-fancy-heading .ld-fh-element span' => 'color: {{VALUE}} !important;',
-
-					'.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element .nav-trigger.bordered .bars:before' => 'border-color: {{VALUE}};',
-
-					'.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element .nav-trigger .bar,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element .lqd-scrl-indc .lqd-scrl-indc-line' => 'background: {{VALUE}};',
-				],
+				'type' => Controls_Manager::HIDDEN,
 				'condition' => [
 					'header_sticky' => 'yes',
 					'header_sticky_dynamic_color!' => 'yes',
@@ -302,19 +279,7 @@ class LD_Global_Controls extends Module {
 			'header_sticky_hover_color',
 			[
 				'label' => __( 'Sticky Header Hover Color', 'hub-elementor-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .btn-naked:hover,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .btn-underlined:hover,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .social-icon li a:hover,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .lqd-custom-menu > ul > li > a:hover,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .module-primary-nav > .navbar-collapse .main-nav > li > a:hover,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .module-primary-nav > .navbar-collapse .main-nav > li:hover > a,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .module-primary-nav > .navbar-collapse .main-nav > li.is-active > a,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .module-primary-nav > .navbar-collapse .main-nav > li.current-menu-ancestor > a,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .module-primary-nav > .navbar-collapse .main-nav > li.current_page_item > a,
-					.is-stuck > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .module-primary-nav > .navbar-collapse .main-nav > li.current-menu-item > a' => 'color: {{VALUE}}',
-				],
+				'type' => Controls_Manager::HIDDEN,
 				'condition' => [
 					'header_sticky' => 'yes',
 					'header_sticky_dynamic_color!' => 'yes',
@@ -323,50 +288,26 @@ class LD_Global_Controls extends Module {
 			]
 		);
 
-		$element->start_controls_tabs(
-			'sticky_colors_tabs'
-		);
+		// $element->start_controls_tabs(
+		// 	'sticky_colors_tabs'
+		// );
 
-			$element->start_controls_tab(
-				'sticky_normal_colors_tabs',
-				[
-					'label' => __( 'Normal', 'hub-elementor-addons' ),
-					'condition' => [
-						'header_sticky_dynamic_color' => 'yes',
-						'header_layout!' => [ 'side', 'side-3' ]
-					]
-				]
-			);
+		// 	$element->start_controls_tab(
+		// 		'sticky_normal_colors_tabs',
+		// 		[
+		// 			'label' => __( 'Normal', 'hub-elementor-addons' ),
+		// 			'condition' => [
+		// 				'header_sticky_dynamic_color' => 'yes',
+		// 				'header_layout!' => [ 'side', 'side-3' ]
+		// 			]
+		// 		]
+		// 	);
 
 			$element->add_control(
 				'header_sticky_dynamic_light_color',
 				[
 					'label' => __( 'Colors on light backgrounds', 'hub-elementor-addons' ),
-					'type' => Controls_Manager::COLOR,
-					'selectors' => [
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light .nav-trigger.bordered .bars:before' => 'border-color: {{VALUE}}',
-
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light .nav-trigger .bar' => 'background: {{VALUE}}',
-
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .lqd-custom-menu,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .lqd-custom-menu > ul > li > a,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .lqd-custom-menu .lqd-custom-menu-dropdown-btn,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > p,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .btn-naked,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .btn-underlined,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .ld-fancy-heading .ld-fh-element,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .social-icon li a,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .iconbox h3,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .iconbox .iconbox-icon-container,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light .nav-trigger,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light .lqd-scrl-indc
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light .main-nav > li > a,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light .ld-module-trigger .ld-module-trigger-txt,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light .ld-module-trigger .ld-module-trigger-count,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light .ld-module-trigger-icon' => 'color: {{VALUE}}',
-
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .ld-fancy-heading .ld-fh-element span' => 'color: {{VALUE}} !important'
-					],
+					'type' => Controls_Manager::HIDDEN,
 					'condition' => [
 						'header_sticky_dynamic_color' => 'yes',
 						'header_layout!' => [ 'side', 'side-3' ]
@@ -378,31 +319,7 @@ class LD_Global_Controls extends Module {
 				'header_sticky_dynamic_dark_color',
 				[
 					'label' => __( 'Colors on dark backgrounds', 'hub-elementor-addons' ),
-					'type' => Controls_Manager::COLOR,
-					'selectors' => [
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark .nav-trigger.bordered .bars:before' => 'border-color: {{VALUE}}',
-
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark .nav-trigger .bar' => 'background: {{VALUE}}',
-
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .lqd-custom-menu,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .lqd-custom-menu > ul > li > a,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .lqd-custom-menu .lqd-custom-menu-dropdown-btn,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > p,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .btn-naked,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .btn-underlined,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .ld-fancy-heading .ld-fh-element,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .social-icon li a,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .iconbox h3,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .iconbox .iconbox-icon-container,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark .nav-trigger,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark .lqd-scrl-indc
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark .main-nav > li > a,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark .ld-module-trigger .ld-module-trigger-txt,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark .ld-module-trigger .ld-module-trigger-count,
-						.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark .ld-module-trigger-icon' => 'color: {{VALUE}}',
-
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .ld-fancy-heading .ld-fh-element span' => 'color: {{VALUE}} !important'
-					],
+					'type' => Controls_Manager::HIDDEN,
 					'condition' => [
 						'header_sticky_dynamic_color' => 'yes',
 						'header_layout!' => [ 'side', 'side-3' ]
@@ -411,27 +328,24 @@ class LD_Global_Controls extends Module {
 			);
 
 
-			$element->end_controls_tab();
+			// $element->end_controls_tab();
 
-			$element->start_controls_tab(
-				'sticky_hover_colors_tabs',
-				[
-					'label' => __( 'Hover', 'hub-elementor-addons' ),
-					'condition' => [
-						'header_sticky_dynamic_color' => 'yes',
-						'header_layout!' => [ 'side', 'side-3' ]
-					]
-				]
-			);
+			// $element->start_controls_tab(
+			// 	'sticky_hover_colors_tabs',
+			// 	[
+			// 		'label' => __( 'Hover', 'hub-elementor-addons' ),
+			// 		'condition' => [
+			// 			'header_sticky_dynamic_color' => 'yes',
+			// 			'header_layout!' => [ 'side', 'side-3' ]
+			// 		]
+			// 	]
+			// );
 
 			$element->add_control(
 				'header_sticky_dynamic_light_hcolor',
 				[
 					'label' => __( 'Colors on light', 'hub-elementor-addons' ),
-					'type' => Controls_Manager::COLOR,
-					'selectors' => [
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .lqd-custom-menu > ul > li > a:hover, .main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light .main-nav > li > a:hover, .main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-light > .elementor-widget-container > .social-icon li a:hover' => 'color: {{VALUE}}',
-					],
+					'type' => Controls_Manager::HIDDEN,
 					'condition' => [
 						'header_sticky_dynamic_color' => 'yes',
 						'header_layout!' => [ 'side', 'side-3' ]
@@ -443,10 +357,7 @@ class LD_Global_Controls extends Module {
 				'header_sticky_dynamic_dark_hcolor',
 				[
 					'label' => __( 'Colors on dark', 'hub-elementor-addons' ),
-					'type' => Controls_Manager::COLOR,
-					'selectors' => [
-						'.main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .lqd-custom-menu > ul > li > a:hover, .main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark .main-nav > li > a:hover, .main-header > .elementor ' . $this->get_the_selectors() . ' > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element.lqd-active-row-dark > .elementor-widget-container > .social-icon li a:hover' => 'color: {{VALUE}}',
-					],
+					'type' => Controls_Manager::HIDDEN,
 					'condition' => [
 						'header_sticky_dynamic_color' => 'yes',
 						'header_layout!' => [ 'side', 'side-3' ]
@@ -454,9 +365,9 @@ class LD_Global_Controls extends Module {
 				]
 			);
 
-			$element->end_controls_tab();
+		// 	$element->end_controls_tab();
 
-		$element->end_controls_tabs();
+		// $element->end_controls_tabs();
 
 		$element->add_control(
 			'header_sticky_dynamic_light_bg',

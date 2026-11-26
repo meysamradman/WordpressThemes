@@ -5,7 +5,7 @@
  * @package Redux
  * @author  Dovy Paukstys
  * @class   Redux_Extension_Taxonomy
- * @version 4.4.6
+ * @version 4.5.18
  * @noinspection PhpIgnoredClassAliasDeclaration
  */
 
@@ -26,147 +26,119 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 		 *
 		 * @var string
 		 */
-		public static $version = '4.4.6';
+		public static $version = '4.5.18';
 
 		/**
 		 * Extension friendly name.
 		 *
 		 * @var string
 		 */
-		public $extension_name = 'Taxonomy';
+		public string $extension_name = 'Taxonomy';
 
 		/**
 		 * Terms array.
 		 *
 		 * @var array
 		 */
-		public $terms = array();
+		public array $terms = array();
 
 		/**
 		 * Taxonomy types array.
 		 *
 		 * @var array
 		 */
-		public $taxonomy_types = array();
+		public array $taxonomy_types = array();
 
 		/**
 		 * Taxonomy type.
 		 *
 		 * @var string
 		 */
-		public $taxonomy_type = '';
+		public string $taxonomy_type = '';
 
 		/**
 		 * Sections array.
 		 *
 		 * @var array
 		 */
-		public $sections = array();
+		public array $sections = array();
 
 		/**
 		 * Original args array.
 		 *
 		 * @var array
 		 */
-		public $orig_args = array();
+		public array $orig_args = array();
 
 		/**
 		 * Output array.
 		 *
 		 * @var array
 		 */
-		public $output = array();
-
-		/**
-		 * Options array.
-		 *
-		 * @var array
-		 */
-		public $options = array();
+		public array $output = array();
 
 		/**
 		 * Parent options.
 		 *
 		 * @var array
 		 */
-		public $parent_options = array();
+		public array $parent_options = array();
 
 		/**
 		 * Parent defaults.
 		 *
 		 * @var array
 		 */
-		public $parent_defaults = array();
+		public array $parent_defaults = array();
 
 		/**
 		 * Taxonomy field types array.
 		 *
 		 * @var array
 		 */
-		public $taxonomy_type_fields = array();
-
-		/**
-		 * WP Links array.
-		 *
-		 * @var array
-		 */
-		public $wp_links = array();
+		public array $taxonomy_type_fields = array();
 
 		/**
 		 * Option defaults.
 		 *
 		 * @var array
 		 */
-		public $options_defaults = array();
-
-		/**
-		 * Localized data array.
-		 *
-		 * @var array
-		 */
-		public $localize_data = array();
+		public array $options_defaults = array();
 
 		/**
 		 * To replace array.
 		 *
 		 * @var array
 		 */
-		public $to_replace = array();
+		public array $to_replace = array();
 
 		/**
 		 * Meta array.
 		 *
 		 * @var array
 		 */
-		public $meta = array();
+		public array $meta = array();
 
 		/**
 		 * Tag ID.
 		 *
 		 * @var int
 		 */
-		public $tag_id = 0;
+		public int $tag_id = 0;
 
 		/**
-		 * Base URL.
-		 *
-		 * @var string
-		 */
-		public $base_url = '';
-
-		/**
-		 * Accepted WordPress screens.
+		 * Accepted WordPress pages.
 		 *
 		 * @var array
 		 */
-		private $pagenows;
+		private array $pagenows = array( 'edit-tags.php', 'term.php' );
 
 		/**
 		 * Notices array.
 		 *
 		 * @var array
 		 */
-		public $notices;
+		public array $notices;
 
 		/**
 		 * Redux_Extension_Taxonomy constructor.
@@ -183,14 +155,15 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 			$this->add_field( 'taxonomy' );
 			$this->parent->extensions['taxonomy'] = $this;
 
-			$this->pagenows = array( 'edit-tags.php', 'term.php' );
-
 			include_once __DIR__ . '/redux-taxonomy-helpers.php';
 
 			add_action( 'admin_notices', array( $this, 'meta_terms_show_errors' ), 0 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ), 20 );
 
-			if ( is_admin() && in_array( $pagenow, $this->pagenows, true ) ) {
+			if ( in_array( $pagenow, $this->pagenows, true ) ) {
+				// phpcs:ignore WordPress.NamingConventions.ValidHookName
+				add_filter( "redux/{$this->parent->args['opt_name']}/localize", array( $this, 'localize_options' ) );
+
 				$this->init();
 
 				// phpcs:ignore WordPress.Security.NonceVerification
@@ -245,18 +218,18 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 
 			$this->parent->transients['run_compiler'] = false;
 
-			// phpcs:ignore WordPress.NamingConventions.ValidHookName
-			$this->terms = apply_filters( 'redux/taxonomy/' . $this->parent->args['opt_name'] . '/terms', $this->terms, $this->parent->args['opt_name'] );
-
-			if ( empty( $this->terms ) && class_exists( 'Redux_Taxonomy' ) ) {
+			if ( class_exists( 'Redux_Taxonomy' ) ) {
 				$this->terms = Redux_Taxonomy::construct_terms( $this->parent->args['opt_name'] );
 			}
+
+			// phpcs:ignore WordPress.NamingConventions.ValidHookName
+			$filtered = apply_filters( 'redux/taxonomy/' . $this->parent->args['opt_name'] . '/terms', $this->terms, $this->parent->args['opt_name'] );
+
+			$this->terms = is_array( $filtered ) ? $filtered : $this->terms;
 
 			if ( empty( $this->terms ) || ! is_array( $this->terms ) ) {
 				return;
 			}
-
-			$this->base_url = ( is_ssl() ? 'https://' : 'http://' ) . Redux_Core::$server['HTTP_HOST'] . Redux_Core::$server['REQUEST_URI'];
 
 			// phpcs:disable WordPress.Security.NonceVerification
 			if ( ! isset( $_GET['tag_ID'] ) ) {
@@ -301,24 +274,6 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 					if ( $add_field || ( ( is_admin() && in_array( $pagenow, $this->pagenows, true ) ) || ( ! is_admin() ) ) ) {
 						$run_hooks = true;
 
-						$term_id = 'redux-' . $this->parent->args['opt_name'] . '-metaterm-' . $term['id'];
-
-						if ( isset( $term['page_template'] ) && 'page' === $this->taxonomy_type ) {
-							if ( ! is_array( $term['page_template'] ) ) {
-								$term['page_template'] = array( $term['page_template'] );
-							}
-
-							$this->wp_links[ $term_id ]['page_template'] = isset( $this->wp_links[ $term_id ]['page_template'] ) ? wp_parse_args( $this->wp_links[ $term_id ]['page_template'], $term['page_template'] ) : $term['page_template'];
-						}
-
-						if ( isset( $term['post_format'] ) && ( in_array( $this->taxonomy_type, $this->taxonomy_types, true ) || '' === $this->taxonomy_type ) ) {
-							if ( ! is_array( $term['post_format'] ) ) {
-								$term['post_format'] = array( $term['post_format'] );
-							}
-
-							$this->wp_links[ $term_id ]['post_format'] = isset( $this->wp_links[ $term_id ]['post_format'] ) ? wp_parse_args( $this->wp_links[ $term_id ]['post_format'], $term['post_format'] ) : $term['post_format'];
-						}
-
 						$this->meta[ $this->tag_id ] = Redux_Taxonomy::get_term_meta( array( 'taxonomy' => $this->tag_id ) );
 						$this->parent->options       = array_merge( $this->parent->options, $this->meta[ $this->tag_id ] );
 
@@ -332,13 +287,6 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 									}
 
 									$this->parent->required_class->check_dependencies( $field );
-
-									/**  phpcs:ignore
-									/ phpcs:ignore Generic.CodeAnalysis.EmptyStatement
-									/ if ( stripos( $field['class'], 'redux-field-init' ) === 0 ) {
-									/ $field['class'] = trim( $field['class'] . ' redux-field-init' );
-									/}
-									*/
 
 									if ( $add_field || ( ( is_admin() && in_array( $pagenow, $this->pagenows, true ) ) || ( ! is_admin() ) ) ) {
 										if ( empty( $field['id'] ) ) {
@@ -393,7 +341,7 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 			}
 
 			if ( isset( $run_hooks ) && true === $run_hooks ) {
-				$this->parent_options = '';
+				$this->parent_options = array();
 
 				if ( ! empty( $this->to_replace ) ) {
 					foreach ( $this->to_replace as $id => $field ) {
@@ -472,12 +420,22 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 			$this->parent->options_class->default_values();
 			$this->parent_defaults = $this->parent->options_defaults;
 
-			$meta = $this->get_meta( $this->tag_id );
+			$fields = $this->collect_declared_fields( $this->terms, false );
+
+			if ( empty( $this->meta[ $this->tag_id ] ) ) {
+				$this->meta[ $this->tag_id ] = Redux_Taxonomy::get_term_meta( array( 'taxonomy' => $this->tag_id ) );
+			}
+
+			$meta = $this->meta[ $this->tag_id ];
 			$data = wp_parse_args( $meta, $this->options_defaults );
 
-			foreach ( $data as $key => $value ) {
+			foreach ( $data as $key => $_value ) {
+				if ( ! isset( $fields['allowed'][ $key ] ) ) {
+					unset( $data[ $key ] );
+					continue;
+				}
+
 				if ( isset( $meta[ $key ] ) && '' !== $meta[ $key ] ) {
-					$data[ $key ] = $meta[ $key ];
 					continue;
 				}
 
@@ -565,9 +523,6 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 						self::$version,
 						true
 					);
-
-					// Values used by the javascript.
-					wp_localize_script( 'redux-extension-taxonomy', 'reduxTaxonomy', $this->wp_links );
 				}
 			}
 		}
@@ -609,7 +564,19 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 									$this->terms[ $key ]['sections'][ $sk ]['fields'][ $k ] = $field;
 								}
 
+								if ( ! isset( $this->parent->options_defaults_class ) ) {
+									$this->parent->options_defaults_class = new Redux_Options_Defaults();
+								}
+
 								$this->parent->options_defaults_class->field_default_values( $this->parent->args['opt_name'], $field );
+
+								if ( 'repeater' === $field['type'] ) {
+									foreach ( $field['fields'] as $f ) {
+										$this->parent->options_defaults_class->field_default_values( $this->parent->args['opt_name'], $f, null, true );
+									}
+								}
+
+								$this->parent->options_defaults = $this->parent->options_defaults_class->options_defaults;
 							}
 						}
 					}
@@ -617,7 +584,7 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 			}
 
 			if ( empty( $this->meta[ $this->tag_id ] ) ) {
-				$this->meta[ $this->tag_id ] = $this->get_meta( $this->tag_id );
+				$this->meta[ $this->tag_id ] = Redux_Taxonomy::get_term_meta( array( 'taxonomy' => $this->tag_id ) );
 			}
 		}
 
@@ -641,50 +608,51 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 				);
 
 				$term = wp_parse_args( $term, $defaults );
-				if ( ! empty( $term['taxonomy_types'] ) && isset( $_GET['taxonomy'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
-					foreach ( $term['taxonomy_types'] as $termtype ) {
-						if ( $_GET['taxonomy'] !== $termtype ) { // phpcs:ignore WordPress.Security.NonceVerification
-							continue;
-						}
 
-						// Override the parent args on a metaterm level.
-						if ( empty( $this->orig_args ) ) {
-							$this->orig_args = $this->parent->args;
-						}
+				if ( empty( $term['taxonomy_types'] ) || ! is_array( $term['taxonomy_types'] ) ) {
+					return;
+				}
 
-						if ( isset( $term['args'] ) ) {
-							$this->parent->args = wp_parse_args( $term['args'], $this->orig_args );
-						} elseif ( $this->parent->args !== $this->orig_args ) {
-							$this->parent->args = $this->orig_args;
-						}
+				if ( ! isset( $_GET['taxonomy'] ) || ! in_array( $_GET['taxonomy'], $term['taxonomy_types'], true ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+					return;
+				}
 
-						if ( ! isset( $term['class'] ) ) {
-							$term['class'] = array();
-						}
+				// Override the parent args on a metaterm level.
+				if ( empty( $this->orig_args ) ) {
+					$this->orig_args = $this->parent->args;
+				}
 
-						if ( ! empty( $term['class'] ) ) {
-							if ( ! is_array( $term['class'] ) ) {
-								$term['class'] = array( $term['class'] );
-							}
-						}
+				if ( isset( $term['args'] ) ) {
+					$this->parent->args = wp_parse_args( $term['args'], $this->orig_args );
+				} elseif ( $this->parent->args !== $this->orig_args ) {
+					$this->parent->args = $this->orig_args;
+				}
 
-						$term['class'] = $this->add_term_classes( $term['class'] );
+				if ( ! isset( $term['class'] ) ) {
+					$term['class'] = array();
+				}
 
-						if ( isset( $term['post_format'] ) ) {
-							$term['class'] = $this->add_term_hide_class( $term['class'] );
-						}
-
-						global $pagenow;
-						if ( strpos( $pagenow, 'edit-' ) !== false ) {
-
-							$term['style']   = 'wp';
-							$term['class'][] = ' edit-page';
-							$term['class'][] = ' redux-wp-style';
-						}
-
-						$this->generate_terms( array( 'args' => $term ) );
+				if ( ! empty( $term['class'] ) ) {
+					if ( ! is_array( $term['class'] ) ) {
+						$term['class'] = array( $term['class'] );
 					}
 				}
+
+				$term['class'] = $this->add_term_classes( $term['class'] );
+
+				if ( isset( $term['post_format'] ) ) {
+					$term['class'] = $this->add_term_hide_class( $term['class'] );
+				}
+
+				global $pagenow;
+				if ( strpos( $pagenow, 'edit-' ) !== false ) {
+
+					$term['style']   = 'wp';
+					$term['class'][] = ' edit-page';
+					$term['class'][] = ' redux-wp-style';
+				}
+
+				$this->generate_terms( array( 'args' => $term ) );
 			}
 		}
 
@@ -701,10 +669,12 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 			}
 
 			if ( ! isset( $this->parent->options ) || empty( $this->parent->options ) ) {
+				if ( ! isset( $this->parent->options_class ) ) {
+					$this->parent->options_class = new Redux_Options_Constructor( $this->parent );
+				}
+
 				$this->parent->options_class->get();
 			}
-
-			$this->options = $this->parent->options;
 
 			if ( isset( $this->parent->options[ $field_id['id'] ] ) && isset( $this->parent->options_defaults[ $field_id['id'] ] ) && $this->parent->options[ $field_id['id'] ] !== $this->parent->options_defaults[ $field_id['id'] ] ) {
 				return $this->parent->options[ $field_id['id'] ];
@@ -727,90 +697,18 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 		}
 
 		/**
-		 * Function to get and cache the post-meta.
-		 *
-		 * @param string $id ID.
-		 *
-		 * @return array
-		 */
-		private function get_meta( string $id ): array {
-			if ( ! isset( $this->meta[ $id ] ) ) {
-				$this->meta[ $id ] = array();
-				$o_data            = get_post_meta( $id );
-
-				// phpcs:ignore WordPress.NamingConventions.ValidHookName
-				$o_data = apply_filters( "redux/taxonomy/{$this->parent->args['opt_name']}/get_meta", $o_data );
-
-				if ( ! empty( $o_data ) ) {
-					foreach ( $o_data as $key => $value ) {
-						if ( count( $value ) === 1 ) {
-							$this->meta[ $id ][ $key ] = maybe_unserialize( $value[0] );
-						} else {
-							$new_value = array_map( 'maybe_unserialize', $value );
-
-							$this->meta[ $id ][ $key ] = $new_value[0];
-						}
-					}
-				}
-
-				if ( isset( $this->meta[ $id ][ $this->parent->args['opt_name'] ] ) ) {
-					$data = maybe_unserialize( $this->meta[ $id ][ $this->parent->args['opt_name'] ] );
-
-					foreach ( $data as $key => $value ) {
-						$this->meta[ $id ][ $key ] = $value;
-						update_post_meta( $id, $key, $value );
-					}
-
-					unset( $this->meta[ $id ][ $this->parent->args['opt_name'] ] );
-
-					delete_post_meta( $id, $this->parent->args['opt_name'] );
-				}
-			}
-
-			return $this->meta[ $id ];
-		}
-
-		/**
 		 * Get values.
 		 *
-		 * @param object $the_post WP_Post.
+		 * @param mixed  $the_post WP_Post.
 		 * @param string $meta_key Meta key.
 		 * @param string $def_val  Default value.
 		 *
-		 * @return mixed|string
+		 * @return string
+		 *
+		 * @deprecated 4.5.17
 		 */
-		public function get_values( $the_post, string $meta_key = '', string $def_val = '' ) {
-
-			// Override these values if they differ from the admin panel defaults.
-			if ( isset( $the_post->taxonomy_type ) && in_array( $the_post->taxonomy_type, $this->taxonomy_types, true ) ) {
-				if ( isset( $this->taxonomy_type_values[ $the_post->taxonomy_type ] ) ) {
-					$meta = $this->taxonomy_type_fields[ $the_post->taxonomy_type ];
-				} else {
-					$defaults = array();
-					if ( ! empty( $this->taxonomy_type_fields[ $the_post->taxonomy_type ] ) ) {
-						foreach ( $this->taxonomy_type_fields[ $the_post->taxonomy_type ] as $key => $null ) {
-							if ( isset( $this->options_defaults[ $key ] ) ) {
-								$defaults[ $key ] = $this->options_defaults[ $key ];
-							}
-						}
-					}
-
-					$meta = wp_parse_args( $this->get_meta( $the_post->ID ), $defaults );
-
-					$this->taxonomy_type_fields[ $the_post->taxonomy_type ] = $meta;
-				}
-
-				if ( ! empty( $meta_key ) ) {
-					if ( ! isset( $meta[ $meta_key ] ) ) {
-						$meta[ $meta_key ] = $def_val;
-					}
-
-					return $meta[ $meta_key ];
-				} else {
-					return $meta;
-				}
-			}
-
+		public function get_values( $the_post, string $meta_key = '', string $def_val = '' ): string {
+			_deprecated_function( __METHOD__, 'Redux 4.5.17' );
 			return $def_val;
 		}
 
@@ -818,26 +716,31 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 		 * Check edit visibility.
 		 *
 		 * @param array $params Array.
+		 * @param bool  $subscan Flag to perform scan for fields of fields.
 		 *
 		 * @return bool
 		 */
-		private function check_edit_visibility( array $params = array() ): bool {
+		private function check_edit_visibility( array $params = array(), bool $subscan = true ): bool {
 			global $pagenow;
 
 			// Edit page visibility.
 			if ( strpos( $pagenow, 'edit-' ) !== false ) {
-				if ( isset( $params['fields'] ) ) {
-					foreach ( $params['fields'] as $field ) {
-						if ( in_array( $field['id'], $this->parent->fields_hidden, true ) ) { // phpcs:ignore Generic.CodeAnalysis.EmptyStatement
-							// Not visible.
-						} elseif ( isset( $field['add_visibility'] ) && $field['add_visibility'] ) {
-								return true;
-						}
-					}
+				if ( true === $subscan ) {
+					if ( isset( $params['fields'] ) ) {
 
-					return false;
+						foreach ( $params['fields'] as $field ) {
+							if ( in_array( $field['id'], Redux_Core::$fields_hidden, true ) ) { // phpcs:ignore Generic.CodeAnalysis.EmptyStatement
+								// Not visible.
+							} elseif ( isset( $field['add_visibility'] ) && $field['add_visibility'] ) {
+								return true;
+							}
+						}
+
+						return false;
+					}
 				}
-				if ( isset( $params['add_visibility'] ) && $params['add_visibility'] ) {
+
+				if ( isset( $params['add_visibility'] ) && true === $params['add_visibility'] ) {
 					return true;
 				}
 
@@ -929,9 +832,11 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 						if ( ! $this->check_edit_visibility( $section ) ) {
 							continue;
 						}
+
 						if ( ! empty( $section['permissions'] ) && ! Redux_Helpers::current_user_can( $section['permissions'] ) ) {
 							continue;
 						}
+
 						if ( ! empty( $section['fields'] ) ) {
 							if ( isset( $section['args'] ) ) {
 								$this->parent->args = wp_parse_args( $section['args'], $this->orig_args );
@@ -956,7 +861,7 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 							echo '<table class="form-table"><tbody>';
 
 							foreach ( $section['fields'] as $field ) {
-								if ( ! $this->check_edit_visibility( $field ) ) {
+								if ( ! $this->check_edit_visibility( $field, false ) ) {
 									continue;
 								}
 
@@ -1024,6 +929,26 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 		}
 
 		/**
+		 * Populate the localized options and defaults for the term fields,
+		 * mirroring the permission checks that generate_terms() applies.
+		 *
+		 * @param array $localize_data Existing localized data.
+		 *
+		 * @return array
+		 */
+		public function localize_options( array $localize_data ): array {
+			$fields = $this->collect_declared_fields(
+				$this->terms, true,
+				fn( $id ) => isset( $this->meta[ $this->tag_id ][ $id ] ) ? $this->meta[ $this->tag_id ][ $id ] : ( $this->options_defaults[ $id ] ?? '' )
+			);
+
+			$localize_data['options'] = $fields['options'];
+			$localize_data['defaults'] = $fields['defaults'];
+
+			return $localize_data;
+		}
+
+		/**
 		 * Save meta terms
 		 * Runs when a post is saved and does an action which to write panel save scripts can hook into.
 		 *
@@ -1052,46 +977,26 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 			$to_compare = array();
 			$to_delete  = array();
 
-			$field_args = Redux_Taxonomy::$fields[ $this->parent->args['opt_name'] ];
+			$fields = $this->collect_declared_fields( $this->terms );
 
-			foreach ( $_POST[ $this->parent->args['opt_name'] ] as $key => $value ) { // phpcs:ignore WordPress.Security
-				$key = sanitize_text_field( wp_unslash( $key ) );
-
+			foreach ( Redux_Helpers::sanitize_array( wp_unslash( $_POST[ $this->parent->args['opt_name'] ] ) ) as $key => $value ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- Sanitized with `Redux_Helpers::sanitize_array`.
 				// Do not save anything the user doesn't have permissions for.
-				if ( ! empty( $field_args[ $key ]['permissions'] ) ) {
-					foreach ( (array) $field_args[ $key ]['permissions'] as $pv ) {
-
-						// Do not save anything the user doesn't have permissions for.
-						if ( isset( $field_args[ $key ] ) ) {
-							if ( user_can( get_current_user_id(), $pv ) ) {
-								break;
-							}
-						}
-					}
+				if ( ! isset( $fields['allowed'][ $key ] ) ) {
+					continue;
 				}
 
-				// Have to remove the escaping for array comparison.
-				if ( is_array( $value ) ) {
-					foreach ( $value as $k => $v ) {
-						if ( ! is_array( $v ) ) {
-							$value[ $k ] = stripslashes( $v );
-						}
-					}
-				}
-
-				// parent_options.
-				if ( isset( $this->options_defaults[ $key ] ) && $value === $this->options_defaults[ $key ] ) {
+				if ( isset( $this->parent_options[ $key ] ) && $this->parent_options[ $key ] !== $value ) {
 					$to_delete[ $key ] = $value;
-				} elseif ( isset( $this->options_defaults[ $key ] ) ) {
+				} else {
 					$to_save[ $key ]    = $value;
-					$to_compare[ $key ] = $meta[ $key ] ?? '';
+					$to_compare[ $key ] = $this->parent->options[ $key ] ?? '';
 				}
 			}
 
 			// phpcs:ignore WordPress.NamingConventions.ValidHookName
 			$to_save = apply_filters( 'redux/taxonomy/save/before_validate', $to_save, $to_compare, $this->sections );
 
-			$validate = $this->parent->_validate_values( $to_save, $to_compare, $this->sections );
+			$validate = $this->parent->validate_class->validate( $to_save, $to_compare, $this->sections );
 
 			// Validate fields (if needed).
 			foreach ( $to_save as $key => $value ) {
@@ -1123,44 +1028,17 @@ if ( ! class_exists( 'Redux_Extension_Taxonomy' ) ) {
 				}
 			}
 
-			$post_tax = isset( $_POST['taxonomy'] ) ? sanitize_text_field( wp_unslash( $_POST['taxonomy'] ) ) : '';
-
-			$check = $this->taxonomy_type_fields[ $post_tax ] ?? array();
-
 			// phpcs:ignore WordPress.NamingConventions.ValidHookName
 			$to_save = apply_filters( 'redux/taxonomy/save', $to_save, $to_compare, $this->sections );
 
 			foreach ( $to_save as $key => $value ) {
-				if ( is_array( $value ) ) {
-					$still_update = false;
-					foreach ( $value as $vv ) {
-						if ( ! empty( $vv ) ) {
-							$still_update = true;
-						}
-					}
-					if ( ! $still_update ) {
-						continue;
-					}
-				}
 				$prev_value = $this->meta[ $tag_id ][ $key ] ?? '';
-				if ( isset( $check[ $key ] ) ) {
-					unset( $check[ $key ] );
-				}
 				update_term_meta( $tag_id, $key, $value, $prev_value );
 			}
 
 			foreach ( $to_delete as $key => $value ) {
-				if ( isset( $check[ $key ] ) ) {
-					unset( $check[ $key ] );
-				}
-
 				$prev_value = $this->meta[ $tag_id ][ $key ] ?? '';
 				delete_term_meta( $tag_id, $key, $prev_value );
-			}
-			if ( ! empty( $check ) ) {
-				foreach ( $check as $key => $value ) {
-					delete_term_meta( $tag_id, $key );
-				}
 			}
 
 			return true;

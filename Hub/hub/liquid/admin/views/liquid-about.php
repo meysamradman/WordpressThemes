@@ -263,6 +263,7 @@
 		const link = e.target;
 		var data = {
 			'action': 'lqd_about_update_escape',
+			'security': '<?php echo esc_js( wp_create_nonce( 'lqd_about_update_escape' ) ); ?>',
 		};
 
 		jQuery(".lqd-about-update-escape").text('Redirecting...');

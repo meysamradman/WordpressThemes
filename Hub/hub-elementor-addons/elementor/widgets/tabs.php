@@ -162,7 +162,7 @@ class LD_Tabs extends Widget_Base {
 				'label' => __( 'Select template', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'default' => '0',
 				'condition' => [
@@ -405,7 +405,7 @@ class LD_Tabs extends Widget_Base {
 				'return_value' => 'yes',
 				'default' => '',
 				'condition' => [
-					'style' => [ 'style01', 'style02', 'style05', 'style06', 'style08', 'style09', 'style09b', 'style09c', 'style11', 'style12', 'style13' ],
+					'style' => [ 'style01', 'style02', 'style03', 'style05', 'style06', 'style08', 'style09', 'style09b', 'style09c', 'style11', 'style12', 'style13' ],
 				],
 			]
 		);
@@ -1159,7 +1159,7 @@ class LD_Tabs extends Widget_Base {
 		$hash = array(
 			'style01'  => 'lqd-tabs lqd-tabs-style-1 lqd-tabs-nav-iconbox d-flex',
 			'style02'  => 'lqd-tabs lqd-tabs-style-2 lqd-tabs-nav-iconbox d-flex',
-			'style03'  => 'lqd-tabs lqd-tabs-style-3 lqd-tabs-nav-iconbox',
+			'style03'  => 'lqd-tabs lqd-tabs-style-3 lqd-tabs-nav-iconbox d-flex',
 			'style04'  => 'lqd-tabs lqd-tabs-style-4 lqd-tabs-nav-iconbox',
 			'style05'  => 'lqd-tabs lqd-tabs-style-5 lqd-tabs-nav-iconbox d-flex flex-wrap',
 			'style06'  => 'lqd-tabs lqd-tabs-style-6 lqd-tabs-nav-iconbox lqd-tabs-nav-icon-inline d-flex flex-wrap',
@@ -1198,7 +1198,7 @@ class LD_Tabs extends Widget_Base {
 		$style = $settings['style'];
 		$reverse = $settings['reverse_direction'];
 		$isInRow = 'style05' === $style || 'style06' === $style || 'style08' === $style || 'style13' === $style;
-		$isInColumn = 'style01' === $style || 'style02' === $style || 'style09' === $style || 'style09b' === $style || 'style09c' === $style || 'style11' === $style || 'style12' === $style || 'style14' === $style;
+		$isInColumn = 'style01' === $style || 'style02' === $style || 'style03' === $style || 'style09' === $style || 'style09b' === $style || 'style09c' === $style || 'style11' === $style || 'style12' === $style || 'style14' === $style;
 
 		if ( ! $isInRow && ! $isInColumn ) {
 			return;
@@ -1276,6 +1276,7 @@ class LD_Tabs extends Widget_Base {
 		if ( $settings['reverse_direction'] ) {
 
 			if (
+				$style === 'style03' ||
 				$style === 'style07' ||
 				$style === 'style09' ||
 				$style === 'style09b' ||
@@ -1286,6 +1287,10 @@ class LD_Tabs extends Widget_Base {
 			}
 
 			switch ($style) {
+
+				case 'style03':
+					$classname_arr[] = 'mt-5';
+					break;
 
 				case 'style07':
 				case 'style09':
@@ -1569,7 +1574,7 @@ class LD_Tabs extends Widget_Base {
 					$tab_ids = $tab['item_custom_id'];
 				}
 
-				$out .= sprintf( '<div id="%1$s" role="tabpanel" class="lqd-tabs-pane fade%3$s">%2$s %4$s</div>', $tab_ids, ($tab['content_type'] === 'tinymce' ? $tab[ 'item_content' ] : \Elementor\Plugin::instance()->frontend->get_builder_content( $tab[ 'templates' ], true )), ( $this->get_active_tab( $tab_count ) ? ' active in' : '' ), ($tab['content_type'] === 'tinymce' ? '' : $this->edit_btn($tab[ 'templates' ])) );
+				$out .= sprintf( '<div id="%1$s" role="tabpanel" class="lqd-tabs-pane fade%3$s">%2$s %4$s</div>', $tab_ids, ($tab['content_type'] === 'tinymce' ? $tab[ 'item_content' ] : \LiquidElementor\Template_Renderer::render( $tab[ 'templates' ] )), ( $this->get_active_tab( $tab_count ) ? ' active in' : '' ), ($tab['content_type'] === 'tinymce' ? '' : $this->edit_btn($tab[ 'templates' ])) );
 
 			}
 		} else {
@@ -1690,7 +1695,7 @@ class LD_Tabs extends Widget_Base {
 			const hash = []
 			hash['style01'] = 'lqd-tabs lqd-tabs-style-1 lqd-tabs-nav-iconbox d-flex';
 			hash['style02'] = 'lqd-tabs lqd-tabs-style-2 lqd-tabs-nav-iconbox d-flex';
-			hash['style03'] = 'lqd-tabs lqd-tabs-style-3 lqd-tabs-nav-iconbox';
+			hash['style03'] = 'lqd-tabs lqd-tabs-style-3 lqd-tabs-nav-iconbox d-flex';
 			hash['style04'] = 'lqd-tabs lqd-tabs-style-4 lqd-tabs-nav-iconbox';
 			hash['style05'] = 'lqd-tabs lqd-tabs-style-5 lqd-tabs-nav-iconbox d-flex flex-wrap';
 			hash['style06'] = 'lqd-tabs lqd-tabs-style-6 lqd-tabs-nav-iconbox lqd-tabs-nav-icon-inline d-flex flex-wrap';
@@ -1713,7 +1718,7 @@ class LD_Tabs extends Widget_Base {
 			var style = settings.style,
 				reverse = settings.reverse_direction,
 				isInRow = 'style05' === style || 'style06' === style || 'style08' === style || 'style13' === style,
-				isInColumn = 'style01' === style || 'style02' === style || 'style09' === style || 'style09b' === style || 'style09c' === style || 'style11' === style || 'style12' === style || 'style14' === style;
+				isInColumn = 'style01' === style || 'style02' === style || 'style03' === style || 'style09' === style || 'style09b' === style || 'style09c' === style || 'style11' === style || 'style12' === style || 'style14' === style;
 
 			if ( !isInRow && !isInColumn ) { return ''; }
 
@@ -1785,7 +1790,8 @@ class LD_Tabs extends Widget_Base {
 			if ( settings.reverse_direction ) {
 
 				if (
-					style === 'style07'
+					style === 'style03'
+					|| style === 'style07'
 					|| style === 'style09'
 					|| style === 'style09b'
 					|| style === 'style09c'
@@ -1795,6 +1801,10 @@ class LD_Tabs extends Widget_Base {
 				}
 
 				switch (style) {
+
+					case 'style03':
+						classname_arr.push('mt-5');
+						break;
 
 					case 'style07':
 					case 'style09':

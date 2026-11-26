@@ -686,6 +686,43 @@ function liquid_get_preloader()
 
 add_action('liquid_before', 'liquid_get_preloader');
 
+/**
+ * Outputs the optional preloader image (theme option `preloader-image`).
+ * Used by the curtain, fade and sliding preloader templates.
+ *
+ * @method liquid_preloader_image
+ * @return void
+ */
+function liquid_preloader_image()
+{
+
+	$image = liquid_helper()->get_option('preloader-image');
+
+	if (!is_array($image) || empty($image['url'])) {
+		return;
+	}
+
+	// Fades out before/along with the preloader elements. See LiquidPreloader::hidePreloader in theme.js
+	$animations = array(
+		'opacity'  => 0,
+		'scale'    => 0.9,
+		'duration' => 0.45,
+		'ease'     => 'power2.out',
+	);
+
+	$img = !empty($image['id']) ? wp_get_attachment_image($image['id'], 'full') : '';
+
+	if (empty($img)) {
+		$img = sprintf('<img src="%s" alt="" />', esc_url($image['url']));
+	}
+
+	printf(
+		'<div class="lqd-preloader-img" data-animations=\'%s\'>%s</div>',
+		esc_attr(wp_json_encode($animations)),
+		$img
+	);
+}
+
 
 /**
  * [liquid_get_header_view description]
@@ -1244,10 +1281,106 @@ function liquid_enable_lazy_load()
 		return;
 	}
 
-	if ('on' === liquid_helper()->get_option('enable-lazy-load') && !is_admin()) {
+	if (is_admin()) {
+		return;
+	}
+
+	if ('on' === liquid_helper()->get_option('enable-lazy-load')) {
 		add_filter('wp_get_attachment_image_attributes', 'liquid_filter_gallery_img_atts', 10, 2);
 		add_filter('wp_lazy_loading_enabled', '__return_false'); // romove loading attr
+	} else {
+		add_filter('the_content', 'liquid_restore_lazyload_src', 99);
 	}
+}
+
+/**
+ * Put the real image source back into markup that was cached while lazy load was on
+ *
+ * The optimization extension pre-renders post content into the `_post_content` post meta.
+ * Markup cached while lazy load was enabled keeps an SVG placeholder in `src` and the real
+ * URL in `data-src`, but with lazy load off the script that swaps them is no longer
+ * enqueued, so those images would never load. Purging the cache regenerates the markup;
+ * this is the safety net for caches written before the option was changed.
+ *
+ * @method liquid_restore_lazyload_src
+ * @param  string $content
+ * @return string
+ */
+function liquid_restore_lazyload_src($content)
+{
+
+	if (!is_string($content) || false === strpos($content, 'ld-lazyload')) {
+		return $content;
+	}
+
+	if ('on' === liquid_helper()->get_option('enable-lazy-load')) {
+		return $content;
+	}
+
+	return preg_replace_callback('/<img\b[^>]*>/i', 'liquid_restore_lazyload_src_tag', $content);
+}
+
+/**
+ * Rewrite a single lazy loaded <img> tag back to its eager form
+ *
+ * @method liquid_restore_lazyload_src_tag
+ * @param  array $matches
+ * @return string
+ */
+function liquid_restore_lazyload_src_tag($matches)
+{
+
+	$tag = $matches[0];
+
+	if (false === strpos($tag, 'ld-lazyload')) {
+		return $tag;
+	}
+
+	foreach (array('src', 'srcset', 'sizes') as $attribute) {
+
+		if (!preg_match('/\sdata-' . $attribute . '=(["\'])(.*?)\1/is', $tag, $found)) {
+			continue;
+		}
+
+		// Escaped because it goes into a preg_replace() replacement string.
+		$value = addcslashes($found[2], '\\$');
+
+		$tag = preg_replace('/\sdata-' . $attribute . '=(["\']).*?\1/is', '', $tag, 1);
+
+		if (preg_match('/\s' . $attribute . '=(["\']).*?\1/is', $tag)) {
+			$tag = preg_replace('/\s' . $attribute . '=(["\']).*?\1/is', ' ' . $attribute . '="' . $value . '"', $tag, 1);
+		} else {
+			$tag = preg_replace('/<img\b/i', '<img ' . $attribute . '="' . $value . '"', $tag, 1);
+		}
+	}
+
+	$tag = preg_replace('/\sdata-aspect=(["\']).*?\1/is', '', $tag, 1);
+	$tag = preg_replace('/\bld-lazyload\b/', '', $tag);
+
+	// Tidy the whitespace the class removal leaves behind, and drop the attribute
+	// entirely when nothing else was in it.
+	$tag = preg_replace_callback('/\sclass=(["\'])(.*?)\1/is', 'liquid_restore_lazyload_src_class', $tag, 1);
+
+	return $tag;
+}
+
+/**
+ * Normalise a class attribute after the lazy load class has been stripped from it
+ *
+ * @method liquid_restore_lazyload_src_class
+ * @param  array $matches
+ * @return string
+ */
+function liquid_restore_lazyload_src_class($matches)
+{
+
+	$classes = trim(preg_replace('/\s+/', ' ', $matches[2]));
+
+	if ('' === $classes) {
+		return '';
+	}
+
+	return ' class=' . $matches[1] . $classes . $matches[1];
 }
 
 /**

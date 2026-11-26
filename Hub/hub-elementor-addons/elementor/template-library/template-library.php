@@ -79,7 +79,7 @@ class Hub_Templates_Lib {
 	public static function enqueue_editor_scripts() {
 		wp_enqueue_script(
 			'hub-templates-lib',
-			LD_ELEMENTOR_URL . 'assets/js/hub-templates-lib.js',
+			LD_ELEMENTOR_URL . 'assets/js/hub-templates-lib.min.js',
 			[
 				'jquery',
 				'backbone-marionette',
@@ -320,8 +320,6 @@ class Hub_Templates_Lib {
 	 */
 	public static function get_template_content( $template_id ) {
 		$url = self::$api_url . '/' . $template_id;
-
-		// Local build: retain the original collection API without a license gate.
 
 		$args = [
 			'body' => [

@@ -582,6 +582,74 @@ class Liquid_Theme_Assets extends Liquid_Base
 		$lazy_load_offset = liquid_helper()->get_theme_option('enable-lazy-load') === 'on' ? 'lazyLoadOffset: ' . liquid_helper()->get_theme_option('lazy_load_offset') . ',' : '';
 		$elementor_enabled = defined('ELEMENTOR_VERSION') ? 'true' : 'false';
 		$cc_active_color_bg = liquid_helper()->get_theme_option('cc-active-circle-color-bg') || 'null';
+		$parallax_v2_params = '';
+		$text_reveal_v2_params = '';
+
+		if (class_exists('Liquid_Elementor_Addons') && defined('ELEMENTOR_VERSION') && liquid_helper()->get_theme_option('enable_parallax_v2') === 'on') {
+			$apply_breakpoints = liquid_helper()->get_theme_option('parallax_apply_breakpoints');
+
+			// get_theme_option() returns '' when a key has never been stored.
+			// An explicit empty selection is stored as an array, including [].
+			if (!is_array($apply_breakpoints)) {
+				if (is_string($apply_breakpoints) && $apply_breakpoints !== '') {
+					$decoded_breakpoints = json_decode($apply_breakpoints, true);
+					$apply_breakpoints = is_array($decoded_breakpoints) ? $decoded_breakpoints : explode(',', $apply_breakpoints);
+				} else {
+					$disabled_breakpoints = liquid_helper()->get_theme_option('parallax_disabled_breakpoints');
+
+					// Old denylist: an explicit [] applied parallax on every choice.
+					if (($apply_breakpoints === '' || $apply_breakpoints === null) && is_array($disabled_breakpoints) && function_exists('liquid_parallax_v2_breakpoint_choices')) {
+						if (function_exists('liquid_normalize_parallax_breakpoint_keys')) {
+							$disabled_breakpoints = liquid_normalize_parallax_breakpoint_keys($disabled_breakpoints);
+						}
+
+						$apply_breakpoints = array_values(array_diff(array_keys(liquid_parallax_v2_breakpoint_choices()), $disabled_breakpoints));
+					} elseif (function_exists('liquid_parallax_v2_apply_breakpoints_default')) {
+						$apply_breakpoints = liquid_parallax_v2_apply_breakpoints_default();
+					} else {
+						$apply_breakpoints = array('desktop');
+					}
+				}
+			}
+
+			if (function_exists('liquid_normalize_parallax_breakpoint_keys')) {
+				$apply_breakpoints = liquid_normalize_parallax_breakpoint_keys($apply_breakpoints);
+			} else {
+				$breakpoint_keys = array();
+				foreach ((array) $apply_breakpoints as $breakpoint_key) {
+					if (is_array($breakpoint_key) || is_object($breakpoint_key)) {
+						continue;
+					}
+					$breakpoint_key = sanitize_key((string) $breakpoint_key);
+					if ($breakpoint_key === '') {
+						continue;
+					}
+					$breakpoint_keys[$breakpoint_key] = $breakpoint_key;
+				}
+				$apply_breakpoints = array_values($breakpoint_keys);
+			}
+
+			$apply_breakpoints_json = wp_json_encode(array_values($apply_breakpoints));
+			if (!is_string($apply_breakpoints_json)) {
+				$apply_breakpoints_json = '[]';
+			}
+
+			$parallax_v2_params = 'parallaxV2: true,' . "\n\t\t\t\t\t" . 'parallaxApplyBreakpoints: ' . $apply_breakpoints_json . ',';
+		}
+
+		if (class_exists('Liquid_Elementor_Addons') && defined('ELEMENTOR_VERSION') && liquid_helper()->get_theme_option('enable_text_reveal_v2') === 'on') {
+			$reveal_breakpoints = liquid_helper()->get_theme_option('text_reveal_apply_breakpoints');
+			if (function_exists('liquid_stored_apply_breakpoints')) {
+				$reveal_breakpoints = liquid_stored_apply_breakpoints($reveal_breakpoints);
+			} elseif (!is_array($reveal_breakpoints)) {
+				$reveal_breakpoints = array('desktop');
+			}
+			$reveal_breakpoints_json = wp_json_encode(array_values($reveal_breakpoints));
+			if (!is_string($reveal_breakpoints_json)) {
+				$reveal_breakpoints_json = '[]';
+			}
+			$text_reveal_v2_params = 'textRevealV2: true,' . "\n\t\t\t\t\t" . 'textRevealApplyBreakpoints: ' . $reveal_breakpoints_json . ',';
+		}
 
 		echo '<script type="text/javascript">
 				window.liquidParams = {
@@ -590,6 +658,8 @@ class Liquid_Theme_Assets extends Liquid_Base
 					ccOuterSize: ' . (int)liquid_helper()->get_option('cc-outer-size') . ',
 					ccActiveCircleBg: ' . $cc_active_color_bg . ',
 					ccActiveCircleBc: ' . $cc_active_color_bg . ',
+					' . $parallax_v2_params . '
+					' . $text_reveal_v2_params . '
 				};
 				window.liquidIsElementor = ' . $elementor_enabled . ';
 			</script>';

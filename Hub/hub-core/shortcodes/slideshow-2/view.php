@@ -15,11 +15,13 @@ $classes = array(
 
 $this->generate_css();
 
+$handler = ! empty( $handler ) ? $handler : 'click';
+
 ?>
 
 <div id="<?php echo $this->get_id() ?>" class="<?php echo ld_helper()->sanitize_html_classes( $classes ); ?>">
 
-	<div class="lqd-slsh-alt-scrn overflow-hidden" data-lqd-slideshow="true" data-inview="true">
+	<div class="lqd-slsh-alt-scrn overflow-hidden" data-lqd-slideshow="true" data-inview="true" data-slideshow-options="<?php echo esc_attr( wp_json_encode( array( 'handler' => $handler ) ) ); ?>">
 
 		<span class="lqd-slsh-alt-loader d-inline-flex pos-abs z-index-3">
 			<span class="d-inline-flex circle"></span>

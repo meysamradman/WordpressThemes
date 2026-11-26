@@ -28,6 +28,7 @@ if ( $element_name === 'ld_tabs' ) {
             (
                 $element_template === 'style01' ||
                 $element_template === 'style02' ||
+                $element_template === 'style03' ||
                 $element_template === 'style09' ||
                 $element_template === 'style09b' ||
                 $element_template === 'style09c' ||
@@ -43,6 +44,7 @@ if ( $element_name === 'ld_tabs' ) {
                 (
                     $element_template === 'style01' ||
                     $element_template === 'style02' ||
+                    $element_template === 'style03' ||
                     $element_template === 'style09' ||
                     $element_template === 'style09b' ||
                     $element_template === 'style09c' ||
@@ -199,6 +201,7 @@ if ( $element_name === 'ld_tabs' ) {
             (
                 $element_template === 'style01' ||
                 $element_template === 'style02' ||
+                $element_template === 'style03' ||
                 $element_template === 'style11'
             )
     );

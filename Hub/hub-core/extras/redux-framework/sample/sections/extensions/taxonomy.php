@@ -1,11 +1,12 @@
 <?php
 /**
  * Redux Taxonomy Meta config.
- * For full documentation, please visit: http://devs.redux.io/
+ * For full documentation, please visit: https://devs.redux.io/
  *
  * @package Redux
  */
 
+// phpcs:disable
 defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Redux_Taxonomy' ) ) {
@@ -88,7 +89,7 @@ Redux_Taxonomy::set_term(
 						'compiler' => 'true',
 						'desc'     => esc_html__( 'Basic media uploader with disabled URL input field.', 'your-textdomain-here' ),
 						'subtitle' => esc_html__( 'Upload any media using the WordPress native uploader', 'your-textdomain-here' ),
-						'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+						'default'  => array( 'url' => 'https://s.wordpress.org/style/images/codeispoetry.png' ),
 					),
 					array(
 						'id'     => 'tax-section-media-end',
@@ -153,8 +154,8 @@ Redux_Taxonomy::set_term(
 						'title'    => esc_html__( 'Switch - Nested Children, Enable to show', 'your-textdomain-here' ),
 						'subtitle' => esc_html__( 'Look, it\'s on! Also hidden child elements!', 'your-textdomain-here' ),
 						'default'  => 0,
-						'on'       => 'Enabled',
-						'off'      => 'Disabled',
+						'on'       => esc_html__( 'Enabled', 'your-textdomain-here' ),
+						'off'      => esc_html__( 'Disabled', 'your-textdomain-here' ),
 					),
 					array(
 						'id'       => 'tax-switch-child',
@@ -224,3 +225,4 @@ Redux_Taxonomy::set_term(
 		),
 	)
 );
+// phpcs:enable

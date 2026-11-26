@@ -1,1 +1,1 @@
-@media (min-width:992px){.lqd-hotspot-t .lqd-hotspot-content{bottom:100%;margin-bottom:1em;transform:translate(-50%,-10%)}.lqd-hotspot-t .lqd-hotspot-content:before{bottom:-1em}}
+@media (width>=992px){.lqd-hotspot-t .lqd-hotspot-content{margin-bottom:1em;bottom:100%;transform:translate(-50%,-10%)}.lqd-hotspot-t .lqd-hotspot-content:before{bottom:-1em}}

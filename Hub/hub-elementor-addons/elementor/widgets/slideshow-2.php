@@ -223,7 +223,7 @@ class LD_Slideshow_2 extends Widget_Base {
 				'label' => __( 'Templates', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'default' => '0',
 				'condition' => [
@@ -275,12 +275,24 @@ class LD_Slideshow_2 extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'trigger_inset',
+			[
+				'label' => __( 'Trigger container inset', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors' => [
+					'{{WRAPPER}} .lqd-vslider-menu' => 'inset: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; width: auto; height: auto;',
+				],
+			]
+		);
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'content_typography',
-				'label' => __( 'Typography', 'hub-elementor-addons' ),
-				'selector' => '{{WRAPPER}} li',
+				'label' => __( 'Triggers Typography', 'hub-elementor-addons' ),
+				'selector' => '{{WRAPPER}} .lqd-vslider-menu li',
 			]
 		);
 
@@ -376,7 +388,7 @@ class LD_Slideshow_2 extends Widget_Base {
 								if ( $item['content_type'] === 'tinymce' ){
 									echo $item['list_content'];
 								}else{
-									echo \Elementor\Plugin::instance()->frontend->get_builder_content( $item['templates'], true );
+									echo \LiquidElementor\Template_Renderer::render( $item['templates'] );
 								}
 								?>
 								</li>

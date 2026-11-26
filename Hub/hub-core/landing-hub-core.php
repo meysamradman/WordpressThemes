@@ -3,7 +3,8 @@
 Plugin Name: Hub Core
 Plugin URI: https://hub.liquid-themes.com/
 Description: Intelligent and Powerful Elements Plugin, exclusively for Hub WordPress Theme.
-Version: 6.0.3
+Version: 7.0.1
+Requires PHP: 7.4
 Author: Liquid Themes
 Author URI: https://themeforest.net/user/liquidthemes
 Text Domain: landinghub-core

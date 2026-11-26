@@ -1096,7 +1096,9 @@ class Liquid_Helper {
 
 		libxml_use_internal_errors( true ); // Hide errors for HTML5
 		$doc = new DOMDocument();
-		$fix_chartset = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
+		// Encode non-ASCII characters as numeric entities so DOMDocument doesn't mangle them.
+		// mb_convert_encoding( ..., 'HTML-ENTITIES' ) is deprecated since PHP 8.2.
+		$fix_chartset = mb_encode_numericentity( $content, array( 0x80, 0x10FFFF, 0, 0x1FFFFF ), 'UTF-8' );
 		@$doc->loadHTML($fix_chartset);
 
 		$xpath = new DOMXPath( $doc ); // Create a new xpath object
@@ -1105,18 +1107,25 @@ class Liquid_Helper {
 		foreach( $ids as $id => $html ) {
 			$element = $xpath->query('//div[@data-id="' . $id . '"]')->item(0);
 			if ($element) {
-				// Find the inner div element to append to
-				// TODO: Check .e-con-inner reason.
-				$innerElement = $xpath->query('.//div[@class="e-con-inner"]', $element)->item(0);
-				if (!$innerElement) {
-					// If there is no inner div with class "e-con-inner", use the outer div
-					$innerElement = $element;
-				}
-				// Create a new document fragment for the HTML to be added
+				// Create a new document fragment for the HTML to be added.
+				// appendXML() parses namespace-aware XML, while $doc was built with loadHTML()
+				// (no namespaces). Keeping the SVG xmlns makes libxml reconcile namespaces on
+				// insertBefore() and invent the prefix "default", emitting <default:svg> /
+				// xmlns:default="..." which HTML parsers treat as unknown elements, so the
+				// cutout never renders. Dropping the declaration is safe: an HTML parser puts
+				// <svg> and its descendants in the SVG namespace on its own.
+				$html = str_replace( ' xmlns="http://www.w3.org/2000/svg"', '', $html );
 				$newElement = $doc->createDocumentFragment();
 				$newElement->appendXML($html);
-				// Insert the new element before the first child of the inner div element
-				$innerElement->insertBefore($newElement, $innerElement->firstChild);
+				// Insert as the element's own first child, which is where the editor
+				// preview puts it: the print_template filter prepends the cutout before
+				// Elementor's template opens `.e-con-inner`.
+				// Do NOT target `.e-con-inner`. On a boxed container that div is the
+				// flex/grid parent of the widgets, so the cutout would become a flex item
+				// (adding a gap) or take up a grid cell, and it is capped to
+				// `max-width: var(--content-width)`. `.e-con` itself is `gap: initial` for
+				// boxed containers, so an extra zero-height child there is inert.
+				$element->insertBefore($newElement, $element->firstChild);
 			}
 		}
 

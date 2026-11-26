@@ -21,24 +21,24 @@ if ( ! class_exists( 'Redux_Social_Profiles' ) ) {
 		/**
 		 * Field ID.
 		 *
-		 * @var mixed|string
+		 * @var null|string
 		 */
-		public $field_id = '';
+		public ?string $field_id;
 
 		/**
 		 * Panel opt_name.
 		 *
-		 * @var string
+		 * @var null|string
 		 */
-		public $opt_name = '';
+		public ?string $opt_name;
 
 		/**
 		 * Defaults array.
 		 *
-		 * @var array
+		 * @var null|array
 		 */
 
-		private $defaults = array();
+		private ?array $defaults = array();
 
 		/**
 		 * Set defaults.
@@ -67,6 +67,11 @@ if ( ! class_exists( 'Redux_Social_Profiles' ) ) {
 				$default_id = $arr['id'];
 
 				foreach ( $settings as $a ) {
+					if ( isset( $a['data'] ) ) {
+						$a['data'] = rawurldecode( $a['data'] );
+						$a         = (array) json_decode( $a['data'] );
+					}
+
 					if ( $default_id === $a['id'] ) {
 						$search_default    = false;
 						$fixed_arr[ $key ] = $a;
@@ -150,13 +155,14 @@ if ( ! class_exists( 'Redux_Social_Profiles' ) ) {
 
 				$icon    = ( $social_provider_option && array_key_exists( 'icon', $social_provider_option ) && $social_provider_option['icon'] ) ? $social_provider_option['icon'] : $social_provider_default['icon'];
 				$name    = ( $social_provider_option && array_key_exists( 'name', $social_provider_option ) && $social_provider_option['name'] ) ? $social_provider_option['name'] : $social_provider_default['name'];
+				$class   = ( $social_provider_option && array_key_exists( 'class', $social_provider_option ) && $social_provider_option['class'] ) ? $social_provider_option['class'] : $social_provider_default['class'];
 				$order   = ( $social_provider_option && array_key_exists( 'order', $social_provider_option ) ) ? $social_provider_option['order'] : $key;
 				$order   = intval( $order );
 				$enabled = ( $social_provider_option && array_key_exists( 'enabled', $social_provider_option ) && $social_provider_option['enabled'] ) ? $social_provider_option['enabled'] : $social_provider_default['enabled'];
 				$display = ( $enabled ) ? 'enabled' : '';
 
 				echo '<li class="redux-social-profiles-item-enable ' . esc_attr( $display ) . '" id="redux-social-profiles-item-enable-' . esc_attr( $key ) . '" data-key="' . esc_attr( $key ) . '" data-order="' . esc_attr( $order ) . '">';
-				Redux_Social_Profiles_Functions::render_icon( $icon, '', '', $name );
+				Redux_Social_Profiles_Functions::render_icon( $class, $icon, '', '', $name );
 				echo '</li>';
 			}
 
@@ -172,6 +178,7 @@ if ( ! class_exists( 'Redux_Social_Profiles' ) ) {
 				$social_provider_option = ( $settings && is_array( $settings ) && array_key_exists( $key, $settings ) ) ? $settings[ $key ] : null;
 				$icon                   = ( $social_provider_option && array_key_exists( 'icon', $social_provider_option ) && $social_provider_option['icon'] ) ? $social_provider_option['icon'] : $social_provider_default['icon'];
 				$id                     = ( $social_provider_option && array_key_exists( 'id', $social_provider_option ) && $social_provider_option['id'] ) ? $social_provider_option['id'] : $social_provider_default['id'];
+				$class                  = ( $social_provider_option && array_key_exists( 'class', $social_provider_option ) && $social_provider_option['class'] ) ? $social_provider_option['class'] : $social_provider_default['class'];
 				$enabled                = ( $social_provider_option && array_key_exists( 'enabled', $social_provider_option ) && $social_provider_option['enabled'] ) ? $social_provider_option['enabled'] : $social_provider_default['enabled'];
 				$name                   = ( $social_provider_option && array_key_exists( 'name', $social_provider_option ) && $social_provider_option['name'] ) ? $social_provider_option['name'] : $social_provider_default['name'];
 
@@ -191,6 +198,7 @@ if ( ! class_exists( 'Redux_Social_Profiles' ) ) {
 
 				$profile_data = array(
 					'id'         => $id,
+					'class'      => $class,
 					'icon'       => $icon,
 					'enabled'    => $enabled,
 					'url'        => $url,
@@ -211,7 +219,7 @@ if ( ! class_exists( 'Redux_Social_Profiles' ) ) {
 	                    value="' . $profile_data . '" />'; // phpcs:ignore WordPress.Security.EscapeOutput
 
 				echo '<div class="redux-icon-preview">';
-				Redux_Social_Profiles_Functions::render_icon( $icon, $color, $background, $name );
+				Redux_Social_Profiles_Functions::render_icon( $class, $icon, $color, $background, $name );
 				echo '&nbsp;</div>';
 
 				echo '<div class="redux-social-profiles-item-name">';
@@ -220,7 +228,7 @@ if ( ! class_exists( 'Redux_Social_Profiles' ) ) {
 
 				echo '<div class="redux-social-profiles-item-enabled">';
 				$checked = ( $enabled ) ? 'checked' : '';
-				echo '<input type="checkbox" class="checkbox-' . esc_attr( $key ) . '" data-key="' . esc_attr( $key ) . '" value="1" ' . esc_attr( $checked ) . '/>';
+				echo '<input type="checkbox" id="' . esc_attr( $this->field['id'] ) . '-checkbox-' . esc_attr( $key ) . '" class="checkbox-' . esc_attr( $key ) . '" data-key="' . esc_attr( $key ) . '" value="1" ' . esc_attr( $checked ) . '/>';
 				esc_html_e( 'Enabled', 'redux-framework' );
 				echo '</div>';
 
@@ -268,6 +276,7 @@ if ( ! class_exists( 'Redux_Social_Profiles' ) ) {
 
 				echo '<div class="redux-social-profiles-item-order">';
 				echo '<input
+				        id="' . esc_attr( $this->field['id'] ) . '-item-order-' . esc_attr( $key ) . '"
                         type="hidden"
                         value="' . esc_attr( $order ) . '"
                     />';
@@ -300,6 +309,13 @@ if ( ! class_exists( 'Redux_Social_Profiles' ) ) {
 		public function output( $style = '' ) {
 			if ( ! empty( $this->value ) ) {
 				foreach ( $this->value as $arr ) {
+
+					// For customizer.
+					if ( isset( $arr['data'] ) ) {
+						$arr = rawurldecode( $arr['data'] );
+						$arr = (array) json_decode( $arr );
+					}
+
 					if ( $arr['enabled'] ) { // phpcs:ignore Generic.CodeAnalysis.EmptyStatement
 						Redux_Functions_Ex::enqueue_font_awesome();
 					}

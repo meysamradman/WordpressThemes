@@ -1,0 +1,33 @@
+<?php
+if ( empty( $args ) ) {
+	$args = array();
+}
+?>
+<div class="lqd-lp-img pos-rel mb-4 overflow-hidden">
+	<?php liquid_ajax_posts_entry_thumbnail( 'liquid-thumbnail', '', $args ); ?>
+	<footer class="lqd-lp-footer d-flex align-items-end justify-content-end pos-abs w-100 h-100">
+
+		<a href="<?php the_permalink(); ?>" class="btn btn-solid border-none btn-xsm">
+			<span class="btn-txt"><?php esc_html_e( 'read', 'hub' ); ?></span>
+			<span class="btn-icon">
+				<i class="lqd-icn-ess icon-ion-ios-add"></i>
+			</span>
+		</a>
+
+	</footer>
+
+</div>
+
+<div class="lqd-lp-meta d-flex align-items-center p-0 mb-2">
+	
+	<?php liquid_ajax_posts_entry_tags( 'reset-ul inline-ul pos-rel z-index-3 text-uppercase ltr-sp-1', $args ); ?>
+
+</div>
+
+<header class="lqd-lp-header mb-3">
+	<h2 class="lqd-lp-title h5 m-0 pos-rel z-index-2">
+		<a href="<?php the_permalink(); ?>" data-split-text="true" data-split-options='{"type": "lines", "disableOnMobile": true}'><?php the_title(); ?></a>
+	</h2>
+</header>
+
+<?php liquid_ajax_posts_overlay_link(); ?>

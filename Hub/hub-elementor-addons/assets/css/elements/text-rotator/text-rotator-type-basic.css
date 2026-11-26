@@ -1,1 +1,1 @@
-.txt-rotator-basic .txt-rotate-keyword{display:none;position:relative;top:auto;left:auto;opacity:1}.txt-rotator-basic .txt-rotate-keyword.active{display:inline-block}
+.txt-rotator-basic .txt-rotate-keywords{display:inline-grid}.txt-rotator-basic .txt-rotate-keyword{visibility:hidden;opacity:1;grid-area:1/1/1/1;position:relative;top:auto;left:auto}.txt-rotator-basic .txt-rotate-keyword.active{visibility:visible}

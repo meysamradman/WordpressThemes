@@ -1,0 +1,1 @@
+.menu-items-has-border>ul.inline-ul>li{margin-inline:0}.menu-items-has-border>ul.inline-ul>li:not(:last-child){border-inline-end:1px solid #e8e8e8}.menu-items-has-border>ul.inline-ul>li:not(:last-child)>a{border:none}@media screen and (width<=479px){.menu-items-has-border>ul>li>a{padding-top:.75em;padding-bottom:.75em}}

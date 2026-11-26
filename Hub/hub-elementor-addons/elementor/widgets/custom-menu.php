@@ -13,6 +13,7 @@ use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Css_Filter;
 use Elementor\Repeater;
 use Elementor\Icons_Manager;
 
@@ -1031,6 +1032,26 @@ class LD_Custom_Menu extends Widget_Base {
 				],
 			]
 		);
+
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'container_backdrop_filter',
+				'selector' => '{{WRAPPER}} .lqd-fancy-menu',
+				'label' => esc_html__( 'CSS Backdrop Filters', 'hub-elementor-addons' ),
+				'fields_options' => [
+					'css_filter' => [
+						'separator' => 'before',
+					],
+					'blur' => [
+						'selectors' => [
+							'{{SELECTOR}}' => '-webkit-backdrop-filter: brightness( {{brightness.SIZE}}% ) contrast( {{contrast.SIZE}}% ) saturate( {{saturate.SIZE}}% ) blur( {{blur.SIZE}}px ) hue-rotate( {{hue.SIZE}}deg );backdrop-filter: brightness( {{brightness.SIZE}}% ) contrast( {{contrast.SIZE}}% ) saturate( {{saturate.SIZE}}% ) blur( {{blur.SIZE}}px ) hue-rotate( {{hue.SIZE}}deg )',
+						],
+					]
+				],
+			]
+		);
+
 		$this->end_controls_section();
 
 		// Menu Items Styling

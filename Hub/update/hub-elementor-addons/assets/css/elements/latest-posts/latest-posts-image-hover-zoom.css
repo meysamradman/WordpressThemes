@@ -1,0 +1,1 @@
+.lqd-lp-hover-img-zoom .lqd-lp-img figure{transition:transform 1s cubic-bezier(.23,1,.32,1);transform:scale(1)}.lqd-lp-hover-img-zoom:hover .lqd-lp-img figure{transition-duration:10s;transform:scale(1.15)}

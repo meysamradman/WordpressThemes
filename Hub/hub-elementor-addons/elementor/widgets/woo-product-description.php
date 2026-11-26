@@ -120,6 +120,19 @@ class LD_Woo_Product_Description extends Widget_Base {
 		);
 
 		$this->add_control(
+			'wc_desc_type',
+			[
+				'label' => esc_html__( 'Description Type', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'short',
+				'options' => [
+					'short' => esc_html__( 'Short Description', 'hub-elementor-addons' ),
+					'full' => esc_html__( 'Product Description', 'hub-elementor-addons' ),
+				],
+			]
+		);
+
+		$this->add_control(
 			'wc_desc_short_description_heading',
 			[
 				'label' => esc_html__( 'Short Description', 'hub-elementor-addons' ),
@@ -170,14 +183,21 @@ class LD_Woo_Product_Description extends Widget_Base {
 		global $product;
 		$product = wc_get_product();
 
+		$settings = $this->get_settings_for_display();
+		$desc_type = ! empty( $settings['wc_desc_type'] ) ? $settings['wc_desc_type'] : 'short';
+
 		?>
 		<div class="product product-layout-component lqd-product-description">
-			<?php 
+			<?php
 			if ( \Elementor\Plugin::instance()->editor->is_edit_mode() ){
 				?><p>This is a simple product.</p><?php
 			} else {
 				if ( empty( $product ) ) { return; }
-				woocommerce_template_single_excerpt(); 
+				if ( 'full' === $desc_type ) {
+					echo wpautop( do_shortcode( $product->get_description() ) );
+				} else {
+					woocommerce_template_single_excerpt();
+				}
 			}
 			?>
 		</div>

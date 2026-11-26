@@ -192,7 +192,7 @@ class LD_Carousel_Stack extends Widget_Base {
 				'label' => __( 'Templates', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'default' => '0',
 				'condition' => [
@@ -326,7 +326,7 @@ class LD_Carousel_Stack extends Widget_Base {
 					if ( $settings['list'] ) {
 						foreach (  $settings['list'] as $item ) {
 							printf( '<div class="carousel-item w-100 elementor-repeater-item-%1$s"><span class="lqd-carousel-handle"></span>%2$s</div>', $item['_id'],
-							$item['content_type'] === 'tinymce' ? $item['list_content'] : \Elementor\Plugin::instance()->frontend->get_builder_content( $item['templates'], true ) );
+							$item['content_type'] === 'tinymce' ? $item['list_content'] : \LiquidElementor\Template_Renderer::render( $item['templates'] ) );
 
 						}
 					}

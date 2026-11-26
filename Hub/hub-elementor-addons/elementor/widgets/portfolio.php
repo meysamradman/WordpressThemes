@@ -1375,15 +1375,7 @@ class LD_Portfolio extends Widget_Base {
 		$title_tag = $settings['title_tag'];
 		$use_inheritance = $settings['use_inheritance'];
 		$tag_to_inherite = $use_inheritance === 'true' ? $settings['title_tag_to_inherite'] : 'h5';
-		$custom_arrow_icon = '<i class="lqd-pf-overlay-icon lqd-icn-ess icon-md-arrow-forward"></i>';
-
-		if ( $atts['custom_arrow_icon'] && $atts['custom_arrow_icon']['value'] ) {
-			if ( 'svg' === $atts['custom_arrow_icon']['library'] ) {
-				$custom_arrow_icon = \Elementor\Icons_Manager::render_uploaded_svg_icon( $atts['custom_arrow_icon']['value'], ['class' => 'lqd-pf-overlay-icon'] );
-			} else {
-				$custom_arrow_icon = \Elementor\Icons_Manager::render_font_icon( $atts['custom_arrow_icon'], ['class' => 'lqd-pf-overlay-icon'] );
-			}
-		}
+		$custom_arrow_icon = $this->get_overlay_arrow_icon();
 
 		if (
 			!empty($settings['layout_mode']) &&
@@ -1582,8 +1574,27 @@ class LD_Portfolio extends Widget_Base {
 
 			$show_filter        = 'yes' === $settings['show_filter'];
 			$active_term_id     = $show_filter ? $this->get_active_filter_term_id() : 0;
-			$grid_filter_param  = $show_filter ? 'lqd_filter_' . $filter_id : '';
-			$use_grid_filter    = $show_filter; // marker only emitted when filters are on
+
+			// When the full result set is already rendered, filtering can run entirely
+			// client-side via Isotope (plugin.liquidMasonry.js) with no AJAX round-trips.
+			// AJAX is only needed when matching items exist beyond what's in the DOM
+			// (more than the posts_per_page cap). Requires no active term, so the initial
+			// markup contains every item rather than a pre-narrowed subset.
+			$posts_per_page     = isset( $settings['posts_per_page'] ) ? (int) $settings['posts_per_page'] : 0;
+			$all_items_present  = false;
+			if ( $show_filter && 0 === $active_term_id ) {
+				if ( (int) $the_query->found_posts > 0 ) {
+					// Accurate total (paginated modes compute found rows).
+					$all_items_present = ( (int) $the_query->max_num_pages ) <= 1;
+				} else {
+					// no_found_rows path (pagination "none"): conservative fallback.
+					$effective_ppp     = $posts_per_page < 1 ? 1000 : $posts_per_page;
+					$all_items_present = ( (int) $the_query->post_count ) < $effective_ppp;
+				}
+			}
+
+			$grid_filter_param  = ( $show_filter && ! $all_items_present ) ? 'lqd_filter_' . $filter_id : '';
+			$use_grid_filter    = $show_filter && ! $all_items_present; // AJAX marker; omitted when all items already rendered (client-side Isotope filtering)
 			$term_counts        = array();
 			$filter_term_ids    = array();
 
@@ -1905,6 +1916,41 @@ class LD_Portfolio extends Widget_Base {
 	}
 
 	/**
+	 * Overlay arrow markup for style02/style03 item templates.
+	 * Those templates are included from render() and from loop(), so the
+	 * HTML has to be built in the scope that includes the template.
+	 *
+	 * @return string
+	 */
+	protected function get_overlay_arrow_icon() {
+		$default = '<i class="lqd-pf-overlay-icon lqd-icn-ess icon-md-arrow-forward"></i>';
+		$icon    = $this->get_settings_for_display( 'custom_arrow_icon' );
+
+		if ( ! is_array( $icon ) || empty( $icon['library'] ) || empty( $icon['value'] ) ) {
+			return $default;
+		}
+
+		if ( 'svg' === $icon['library'] ) {
+			$svg = \Elementor\Icons_Manager::render_uploaded_svg_icon( $icon['value'] );
+			if ( ! is_string( $svg ) || '' === $svg ) {
+				return $default;
+			}
+			if ( false === strpos( $svg, 'lqd-pf-overlay-icon' ) ) {
+				if ( false !== strpos( $svg, 'class="' ) ) {
+					$svg = preg_replace( '/class="/', 'class="lqd-pf-overlay-icon ', $svg, 1 );
+				} else {
+					$svg = preg_replace( '/<svg\b/', '<svg class="lqd-pf-overlay-icon"', $svg, 1 );
+				}
+			}
+			return $svg;
+		}
+
+		$html = \Elementor\Icons_Manager::render_font_icon( $icon, array( 'class' => 'lqd-pf-overlay-icon' ) );
+
+		return is_string( $html ) && '' !== $html ? $html : $default;
+	}
+
+	/**
 	 * Public items loop. Used by render() (paged grid styles) and render_ajax_items().
 	 * Assumes $GLOBALS['wp_query'] is set to the items query.
 	 */
@@ -1916,6 +1962,8 @@ class LD_Portfolio extends Widget_Base {
 		if ( ! $located ) {
 			return;
 		}
+
+		$custom_arrow_icon = $this->get_overlay_arrow_icon();
 
 		$this->add_excerpt_hooks();
 

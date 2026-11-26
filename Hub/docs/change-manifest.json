@@ -1,21 +1,23 @@
 {
-  "theme_version": "6.0.3.2",
-  "addon_api_version": "6.0.3",
-  "scope": "license removal; vendor update discovery preserved with cache; original library retained",
+  "theme_version": "7.0.1.1",
+  "upstream_version": "7.0.1",
+  "addon_api_version": "7.0.1",
+  "core_version": "7.0.1",
+  "scope": "license removal with vendor updates and original Collections retained",
   "files": [
     {
       "file": "hub/functions.php",
-      "supplied_sha256": "23e7d438ccb6af5cae19f2661f324337d8612e0d83979a0e79dbd055be03f5a3",
-      "local_sha256": "b90f50e8de219ed88f5ea26d56ef013276a58afc7cab30333a44511cf1b4959a"
+      "supplied_sha256": "36b3c5c9c5bb3529ed6e5d3f8823f0b3d9e2419ef937689dc13512f758f56845",
+      "local_sha256": "dd9df1e36d0f04e32d6dd0eb71e59a5390111bface6f334c97f5e27e53774064"
     },
     {
       "file": "hub/style.css",
-      "supplied_sha256": "a3d175c5edeb6dea48ee3a26cc7d6eb66e48fbbcfb79f07a6588724efe28e912",
-      "local_sha256": "d66eb181f925adbca3e923896210ad518adcc5c515c29311e911b2e199788208"
+      "supplied_sha256": "a2736e719a271f18ae6c8c13ee76fed4cd250d7ce8916ddb6ba3bea391353956",
+      "local_sha256": "a209f1a9a894cf7c6dbe9d3ca9a2efa879ab24969d1e6a776186c37883552bb0"
     },
     {
       "file": "hub/liquid/admin/updater/liquid-register-admin.php",
-      "supplied_sha256": "7619041e5359bcc1eced1e70d593b585a5e686ac42a8fed651ddd028a87077c8",
+      "supplied_sha256": "91a9847aabd564a8191e51b11e615f8b1db3d7b30e89c6da450414749ec1faed",
       "local_sha256": "555eeaa78be16a98d39b8b70d6238153350d316cbf0d3276c5704d75498f7815"
     },
     {
@@ -35,8 +37,8 @@
     },
     {
       "file": "hub/liquid/libs/merlin/class-merlin.php",
-      "supplied_sha256": "d0d02b0be7a82068ed1f658616072dae1cbe12e99670cae8d918e356d23345cb",
-      "local_sha256": "b6bc5929fc825a24473510fa6b176f0decbca5f90689802300308636f3adf716"
+      "supplied_sha256": "2a29ec4b16fce38cbf2628c519f978f437e7956ff1e7a48a4bc52f98e908dc53",
+      "local_sha256": "7092703219565f0474a1166ed2f92253873a973a74a731a8e8e32d43e45d6150"
     },
     {
       "file": "hub/liquid/libs/merlin/merlin-config.php",
@@ -45,13 +47,23 @@
     },
     {
       "file": "hub-elementor-addons/elementor/template-library/template-library.php",
-      "supplied_sha256": "132abf2fccc14893ba6dd1d49398530ec6734b7cd496e49e3982777dff85fee5",
-      "local_sha256": "62a34194eee59a603fda45adac10bac34c8746e42a2518a5fbfa45f0f0e1bedf"
+      "supplied_sha256": "473ff4b2337e83d05becd383965744066d519bb2efa979ccfb737d358bdfd808",
+      "local_sha256": "7e4634e4e2a2cee67d8381b8e40b5f5878af64ed1f062828ba26e702dfab6f49"
     },
     {
       "file": "hub/liquid/admin/updater/liquid-updater-class.php",
-      "supplied_sha256": "20b1ef165536a845f2d3872e5350d2898fbf0c72ed6cb60e4591182d8de4779e",
-      "local_sha256": "1b3a078cda280c06d20c99cb6341e554e80ae734e4707febbea4fb2287dbb7d5"
+      "supplied_sha256": "e883bc5fd532a77a7e9abde47b438e91bc47f7691b20c98bf3e203d8e92dbc82",
+      "local_sha256": "1012795d764ff968127950fbf5b107b09afd3810b92784258ef6bdc570073cdc"
+    },
+    {
+      "file": "hub/liquid/admin/views/liquid-features.php",
+      "supplied_sha256": "651a8a0c1ef30f8f6d2ae886bc1a3b5f08c9662d0ee31f84bd589917532257ba",
+      "local_sha256": "e3d7acb9384c42e3fe25c4807b17db7e016b9f48e6aa8bca64625533e4c8e912"
+    },
+    {
+      "file": "hub/liquid/admin/views/liquid-promote.php",
+      "supplied_sha256": "c293c9d42281a7a80ade2d33e1fbd51104ccfe14f79d01572f77e0490721bbfb",
+      "local_sha256": "b43c3e1ba454ca48530ee00b7b83783d43240674a0359490f33c3f6d798019bd"
     }
   ]
 }

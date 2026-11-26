@@ -55,7 +55,7 @@ class LD_Slideshow_2 extends LD_Shortcode {
 	public function get_params() {
 
 		$this->params = array(
-			
+
 			array(
 				'type'        => 'checkbox',
 				'param_name'  => 'use_custom_fonts_title',
@@ -142,6 +142,25 @@ class LD_Slideshow_2 extends LD_Shortcode {
 			),
 			*/
 			array(
+				'type'        => 'textfield',
+				'param_name'  => 'height',
+				'heading'     => esc_html__( 'Height', 'landinghub-core' ),
+				'description' => esc_html__( 'Add height with px, for ex. 45px', 'landinghub-core' ),
+			),
+
+			array(
+				'type'        => 'dropdown',
+				'param_name'  => 'handler',
+				'heading'     => esc_html__( 'Trigger', 'landinghub-core' ),
+				'description' => esc_html__( 'Select how the slides are triggered.', 'landinghub-core' ),
+				'std'         => 'click',
+				'value'       => array(
+					esc_html__( 'Click', 'landinghub-core' )       => 'click',
+					esc_html__( 'Mouse hover', 'landinghub-core' ) => 'mouseenter',
+				),
+			),
+
+			array(
 				'type'        => 'liquid_colorpicker',
 				'param_name'  => 'overlay_bg',
 				'heading'     => esc_html__( 'Overlay Background', 'landinghub-core' ),
@@ -161,13 +180,7 @@ class LD_Slideshow_2 extends LD_Shortcode {
 				'group'       => esc_html__( 'Design Options', 'landinghub-core' ),
 				'edit_field_class' => 'vc_col-sm-6',
 			),
-			array(
-				'type'        => 'textfield',
-				'param_name'  => 'height',
-				'heading'     => esc_html__( 'Height', 'landinghub-core' ),
-				'description' => esc_html__( 'Add height with px, for ex. 45px', 'landinghub-core' ),
-			),
-			
+
 		);
 
 		$this->add_extras();
@@ -199,13 +212,13 @@ class LD_Slideshow_2 extends LD_Shortcode {
 
 		echo $out;
 	}
-	
+
 	protected function get_images() {
 
 		$out = ''; $first = true;
 
 			foreach( $this->atts['items'] as $item ) {
-												
+
 				$alt    = get_post_meta( $item['image'], '_wp_attachment_image_alt', true );
 				$image  = '<img class="pos-abs pos-tl w-100 h-100" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="' . wp_get_attachment_image_url( $item['image'], 'full', false  ) . '" alt="' . esc_attr( $alt ) . '" />';
 
@@ -218,7 +231,7 @@ class LD_Slideshow_2 extends LD_Shortcode {
 
 		echo $out;
 	}
-	
+
 	protected function get_nav() {
 
 		$out = ''; $first = true;
@@ -238,7 +251,7 @@ class LD_Slideshow_2 extends LD_Shortcode {
 	}
 
 	protected function generate_css() {
-		
+
 		$settings = get_option( 'wpb_js_google_fonts_subsets' );
 		if ( is_array( $settings ) && ! empty( $settings ) ) {
 			$subsets = '&subset=' . implode( ',', $settings );
@@ -271,7 +284,7 @@ class LD_Slideshow_2 extends LD_Shortcode {
 		$elements[ liquid_implode( '%1$s li' ) ]['line-height'] = !empty( $lh ) ? $lh : '';
 		$elements[ liquid_implode( '%1$s li' ) ]['font-weight'] = !empty( $fw ) ? $fw . ' !important' : '';
 		$elements[ liquid_implode( '%1$s li' ) ]['letter-spacing'] = !empty( $ls ) ? $ls : '';
-		
+
 		if( !empty( $overlay_bg ) && isset( $overlay_bg ) ) {
 			$elements[ liquid_implode( '%1$s .lqd-slsh-alt-scrn:after' ) ]['background'] = $overlay_bg;
 		}

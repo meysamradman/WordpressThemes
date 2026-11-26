@@ -1,11 +1,12 @@
 <?php
 /**
  * Redux Framework text config.
- * For full documentation, please visit: http://devs.redux.io/
+ * For full documentation, please visit: https://devs.redux.io/
  *
  * @package Redux Framework
  */
 
+// phpcs:disable
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
@@ -55,3 +56,4 @@ Redux::set_section(
 		),
 	)
 );
+// phpcs:enable

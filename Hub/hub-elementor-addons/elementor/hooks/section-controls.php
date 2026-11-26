@@ -335,7 +335,8 @@ class Hub_Elementor_Custom_Controls {
 						'type' => Controls_Manager::SELECT,
 						'options' => [
 							'' => esc_html__( 'None', 'hub-elementor-addons' ),
-							'style-1' => esc_html__( 'Style 1', 'hub-elementor-addons' ),
+							'style-1' => esc_html__( 'Style 1 (Corner)', 'hub-elementor-addons' ),
+							'style-2' => esc_html__( 'Style 2 (Notch)', 'hub-elementor-addons' ),
 						],
 						'default' => '',
 						'render_type' => 'template'
@@ -356,6 +357,24 @@ class Hub_Elementor_Custom_Controls {
 						'default' => 'br',
 						'condition' => [
 							'lqd_shape_cutout_style' => 'style-1'
+						],
+						'render_type' => 'template'
+					]
+				);
+
+				$element->add_control(
+					'lqd_shape_cutout_placement_2',
+					[
+						'label' => esc_html__( 'Placement', 'hub-elementor-addons' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => [
+							't' => esc_html__( 'Top', 'hub-elementor-addons' ),
+							'b' => esc_html__( 'Bottom', 'hub-elementor-addons' ),
+							'tb' => esc_html__( 'Top & Bottom', 'hub-elementor-addons' ),
+						],
+						'default' => 'b',
+						'condition' => [
+							'lqd_shape_cutout_style' => 'style-2'
 						],
 						'render_type' => 'template'
 					]
@@ -382,7 +401,7 @@ class Hub_Elementor_Custom_Controls {
 							'.lqd-cutout.lqd-cutout-{{ID}}' => '--shape-w: {{SIZE}}{{UNIT}};',
 						],
 						'condition' => [
-							'lqd_shape_cutout_style' => 'style-1'
+							'lqd_shape_cutout_style!' => ''
 						]
 					]
 				);
@@ -408,7 +427,7 @@ class Hub_Elementor_Custom_Controls {
 							'.lqd-cutout.lqd-cutout-{{ID}}' => '--shape-h: {{SIZE}}{{UNIT}};',
 						],
 						'condition' => [
-							'lqd_shape_cutout_style' => 'style-1'
+							'lqd_shape_cutout_style!' => ''
 						]
 					]
 				);
@@ -434,7 +453,34 @@ class Hub_Elementor_Custom_Controls {
 							'.lqd-cutout.lqd-cutout-{{ID}}' => '--shape-roundness: {{SIZE}}{{UNIT}};',
 						],
 						'condition' => [
-							'lqd_shape_cutout_style' => 'style-1'
+							'lqd_shape_cutout_style!' => ''
+						]
+					]
+				);
+
+				$element->add_responsive_control(
+					'lqd_shape_cutout_roundness_outer',
+					[
+						'label' => esc_html__( 'Shoulder Roundness', 'hub-elementor-addons' ),
+						'description' => esc_html__( 'Roundness where the notch meets the edge. Defaults to Roundness. Capped so Roundness + Shoulder never exceeds Height.', 'hub-elementor-addons' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+						'range' => [
+							'px' => [
+								'min' => 0,
+								'max' => 500,
+								'step' => 1,
+							],
+							'%' => [
+								'min' => 0,
+								'max' => 100,
+							],
+						],
+						'selectors' => [
+							'.lqd-cutout.lqd-cutout-{{ID}}' => '--shape-roundness-outer: {{SIZE}}{{UNIT}};',
+						],
+						'condition' => [
+							'lqd_shape_cutout_style' => 'style-2'
 						]
 					]
 				);
@@ -457,6 +503,54 @@ class Hub_Elementor_Custom_Controls {
 						],
 						'condition' => [
 							'lqd_shape_cutout_style' => 'style-1'
+						]
+					]
+				);
+
+				$element->add_responsive_control(
+					'lqd_shape_cutout_skew_2',
+					[
+						'label' => esc_html__( 'Skew', 'hub-elementor-addons' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px' ],
+						'range' => [
+							'px' => [
+								'min' => 0,
+								'max' => 45,
+								'step' => 1,
+							],
+						],
+						'selectors' => [
+							'.lqd-cutout.lqd-cutout-{{ID}}' => '--shape-skew: {{SIZE}}deg;',
+						],
+						'condition' => [
+							'lqd_shape_cutout_style' => 'style-2'
+						]
+					]
+				);
+
+				$element->add_responsive_control(
+					'lqd_shape_cutout_offset',
+					[
+						'label' => esc_html__( 'Horizontal Offset', 'hub-elementor-addons' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+						'range' => [
+							'px' => [
+								'min' => -1000,
+								'max' => 1000,
+								'step' => 5,
+							],
+							'%' => [
+								'min' => -50,
+								'max' => 50,
+							],
+						],
+						'selectors' => [
+							'.lqd-cutout.lqd-cutout-{{ID}}' => '--shape-x: {{SIZE}}{{UNIT}};',
+						],
+						'condition' => [
+							'lqd_shape_cutout_style' => 'style-2'
 						]
 					]
 				);
@@ -736,6 +830,14 @@ class Hub_Elementor_Custom_Controls {
 
         if ( $is_container || $is_section ) {
 
+            // Controls are registered once per element type per request. On the frontend
+            // get_the_ID() is the page, not the header template embedded in it, so gating
+            // on it there would leave header-only controls unregistered and get_settings()
+            // would never receive their defaults (e.g. stickybar_placement). Only narrow
+            // the panel inside the editor; on the frontend register both groups.
+            $is_header = 'liquid-header' === get_post_type( get_the_ID() );
+            $in_editor = \Elementor\Plugin::$instance->editor->is_edit_mode();
+
             $element->start_controls_section(
                 'liquid_custom_row_heading',
                 [
@@ -744,7 +846,7 @@ class Hub_Elementor_Custom_Controls {
                 ]
             );
 
-            if ( get_post_type( get_the_ID()) !== 'liquid-header' ) {
+            if ( ! $in_editor || ! $is_header ) {
 
                 $page_settings_manager = \Elementor\Core\Settings\Manager::get_settings_managers( 'page' );
 			    $page_settings_model = $page_settings_manager->get_model( get_the_ID() );
@@ -898,7 +1000,7 @@ class Hub_Elementor_Custom_Controls {
             }
 
             // Header section controls
-            if ( get_post_type( get_the_ID()) === 'liquid-header' ) {
+            if ( ! $in_editor || $is_header ) {
 
                 $element->add_control(
                     'hide_on_sticky',
@@ -1238,8 +1340,9 @@ class Hub_Elementor_Custom_Controls {
 
         // Parallax
         if ( $element->get_settings( 'lqd_parallax' ) ) {
-
-            $perspective = $element->get_settings( 'lqd_parallax_settings_perspective' );
+            if ( function_exists( 'ld_parallax_v2_enabled' ) && ld_parallax_v2_enabled() ) {
+                ld_el_parallax_render_v2( $element );
+            } else {
 
             $from_x = $element->get_settings( 'lqd_parallax_from_x' );
             $from_y = $element->get_settings( 'lqd_parallax_from_y' );
@@ -1283,7 +1386,11 @@ class Hub_Elementor_Custom_Controls {
 
             $wrapper_attributes = $parallax_data = $parallax_data_from = $parallax_data_to = $parallax_opts = array();
 
-            if ( !empty( $perspective ) && !empty( $perspective['size'] ) ) { $parallax_data_from['transformPerspective'] = $perspective['size'].$perspective['unit']; }
+            $perspective_value = function_exists( 'ld_parallax_perspective_value' ) ? ld_parallax_perspective_value( $element->get_settings() ) : null;
+            if ( null !== $perspective_value ) {
+                $parallax_data_from['transformPerspective'] = $perspective_value;
+                $parallax_data_to['transformPerspective'] = $perspective_value;
+            }
 
             if ( !empty( $from_x ) && !empty( $to_x ) && $from_x != $to_x ) {
                 $parallax_data_from['x'] = $from_x['size'].$from_x['unit'];
@@ -1374,6 +1481,7 @@ class Hub_Elementor_Custom_Controls {
                 'data-parallax-to' => wp_json_encode( $parallax_data['to'] ),
             ] );
 
+            }
         }
 
          // Animation
@@ -1396,14 +1504,16 @@ class Hub_Elementor_Custom_Controls {
             switch ( $element->get_name() ){
                 case 'container':
                     if ( $element->get_settings('lqd_ca_targets') === 'contents' ) {
-                        array_push($animation_targets, ':scope ' . $container_inner_selector . ' > .elementor-element:not(.lqd-exclude-parent-ca) > .elementor-widget-container');
+                        array_push($animation_targets, ':scope ' . $container_inner_selector . ' > .elementor-element:has(> .elementor-widget-container):not(.lqd-exclude-parent-ca) > .elementor-widget-container');
+                        array_push($animation_targets, ':scope ' . $container_inner_selector . ' > .elementor-element:not(:has(> .elementor-widget-container)):not(.lqd-exclude-parent-ca)');
                         array_push($animation_targets, ':scope ' . $container_inner_selector . ' > .elementor-widget-hub_fancy_heading .lqd-split-lines .lqd-lines .split-inner');
                         array_push($animation_targets, ':scope ' . $container_inner_selector . ' > .elementor-widget-hub_fancy_heading .lqd-split-words .lqd-words .split-inner');
                         array_push($animation_targets, ':scope ' . $container_inner_selector . ' > .elementor-widget-hub_fancy_heading .lqd-split-chars .lqd-chars .split-inner');
                         array_push($animation_targets, ':scope ' . $container_inner_selector . ' > .elementor-widget-hub_fancy_heading .lqd-adv-txt-fig');
                         array_push($animation_targets, ':scope ' . $container_inner_selector . ' > .elementor-widget-ld_custom_menu .lqd-fancy-menu > ul > li');
                         if ( $element->get_settings('lqd_ca_include_inner_content') === 'yes' ) {
-                            array_push($animation_targets, ':scope .' . $container_selector . ':not([data-parallax]) .elementor-element > .elementor-widget-container');
+                            array_push($animation_targets, ':scope .' . $container_selector . ':not([data-parallax]) .elementor-element:has(> .elementor-widget-container) > .elementor-widget-container');
+                            array_push($animation_targets, ':scope .' . $container_selector . ':not([data-parallax]) .elementor-element:not(:has(> .elementor-widget-container)) > .elementor-widget-container');
                             array_push($animation_targets, ':scope .' . $container_selector . ':not([data-parallax]) .elementor-widget-hub_fancy_heading .lqd-split-lines .lqd-lines .split-inner');
                             array_push($animation_targets, ':scope .' . $container_selector . ':not([data-parallax]) .elementor-widget-hub_fancy_heading .lqd-split-words .lqd-words .split-inner');
                             array_push($animation_targets, ':scope .' . $container_selector . ':not([data-parallax]) .elementor-widget-hub_fancy_heading .lqd-split-chars .lqd-chars .split-inner');

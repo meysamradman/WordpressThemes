@@ -22,6 +22,9 @@ class Liquid_Admin_About extends Liquid_Admin_Page {
 		$this->position = '60';
 
 		add_action( 'wp_ajax_lqd_about_update_escape', function(){
+			if ( ! current_user_can( 'manage_options' ) || ! check_ajax_referer( 'lqd_about_update_escape', 'security', false ) ) {
+				wp_send_json_error( null, 403 );
+			}
 			set_transient( 'lqd_about_update_escape', [], 12 * HOUR_IN_SECONDS );
 			wp_send_json_success('done');
 		} );

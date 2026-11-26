@@ -242,7 +242,7 @@ class LD_Modal_Window extends Widget_Base {
 				'label' => __( 'Select Modal', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '0',
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'condition' => [
                     'content_type' => 'el_template',
@@ -346,15 +346,40 @@ class LD_Modal_Window extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_typography',
+				'label' => __( 'Title Typography', 'hub-elementor-addons' ),
+				'selector' => '{{WRAPPER}} .lqd-modal-head .lqd-modal-head-title',
+			]
+		);
+
 		$this->add_responsive_control(
 			'modal_padding',
 			[
-				'label' => __( 'Modal padding', 'hub-elementor-addons' ),
+				'label' => __( 'Padding', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
+				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .lqd-modal' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'modal_border_radius',
+			[
+				'label' => __( 'Border Radius', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .lqd-lity-container' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition' => [
+                    'modal_type!' => 'fullscreen',
+                ],
 			]
 		);
 
@@ -796,7 +821,7 @@ class LD_Modal_Window extends Widget_Base {
 	protected function get_content_type_el_template() {
 		$settings = $this->get_settings_for_display();
 
-		echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $settings['modal'], false );
+		echo \LiquidElementor\Template_Renderer::render( $settings['modal'], false, true );
 	}
 
 	protected function get_content_type_tinymce() {
@@ -862,7 +887,7 @@ class LD_Modal_Window extends Widget_Base {
 
 					<?php if ( !empty($title) ) : ?>
 						<div class="lqd-modal-head">
-							<h2><?php echo esc_html( $title );?></h2>
+							<h4 class="lqd-modal-head-title"><?php echo esc_html( $title );?></h4>
 						</div>
 					<?php endif; ?>
 					<div class="lqd-modal-content">

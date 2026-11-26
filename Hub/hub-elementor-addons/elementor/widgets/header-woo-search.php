@@ -106,7 +106,7 @@ class LD_Header_Woo_Search extends Widget_Base {
 		parent::__construct($data, $args);
 
 		wp_enqueue_script( 'ld-header-woo-search',
-			LD_ELEMENTOR_URL . 'assets/js/widgets/header-woo-search.js',
+			LD_ELEMENTOR_URL . 'assets/js/widgets/header-woo-search.min.js',
 			[ 'jquery' ],
 			LD_ELEMENTOR_VERSION,
 			true

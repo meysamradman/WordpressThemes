@@ -19,10 +19,16 @@ switch ( $element_name ) {
             'lqdsep-header-stickybar-base' => array(
                 'conditions' => $element->get_settings( 'sticky_bar' ) === 'yes'
             ),
+            // Empty placement falls back to left, same as before_section_render().
             'lqdsep-header-stickybar-left' => array(
                 'conditions' =>
                     $element->get_settings( 'sticky_bar' ) === 'yes' &&
-                    $element->get_settings( 'stickybar_placement' ) === 'lqd-stickybar-left'
+                    in_array( $element->get_settings( 'stickybar_placement' ), array( 'lqd-stickybar-left', '', null ), true )
+            ),
+            'lqdsep-header-stickybar-right' => array(
+                'conditions' =>
+                    $element->get_settings( 'sticky_bar' ) === 'yes' &&
+                    $element->get_settings( 'stickybar_placement' ) === 'lqd-stickybar-right'
             ),
             'lqdsep-header-sticky-hide-onstuck' => array(
                 'conditions' =>
@@ -34,16 +40,14 @@ switch ( $element_name ) {
                     $element->get_settings( 'show_on_sticky' ) === 'lqd-show-onstuck' &&
                     empty( $element->get_settings( 'hide_on_sticky' ) )
             ),
-            'lqdsep-header-stickybar-right' => array(
-                'conditions' =>
-                    $element->get_settings( 'sticky_bar' ) === 'yes' &&
-                    $element->get_settings( 'stickybar_placement' ) === 'lqd-stickybar-right'
-            ),
             'lqdsep-shape-cutout-base' => array(
                 'conditions' => $element->get_settings( 'lqd_shape_cutout_style' ) !== ''
             ),
             'lqdsep-shape-cutout-style-1' => array(
                 'conditions' => $element->get_settings( 'lqd_shape_cutout_style' ) === 'style-1'
+            ),
+            'lqdsep-shape-cutout-style-2' => array(
+                'conditions' => $element->get_settings( 'lqd_shape_cutout_style' ) === 'style-2'
             ),
             'lqdsep-js-fastdom-base' => array(
                 'type' => 'js',
@@ -299,6 +303,12 @@ switch ( $element_name ) {
         $widget_options = array(
             'lqdsep-js-fastdom-base' => array( 'type' => 'js' ),
             'lqdsep-js-lqd-animated-blob' => array( 'type' => 'js' ),
+        );
+        break;
+    case 'ld_spline':
+        $widget_options = array(
+            'lqdsep-spline-base' => array(),
+            'lqdsep-js-lqd-spline' => array( 'type' => 'js' ),
         );
         break;
     case 'ld_animated_frame':
@@ -928,6 +938,21 @@ switch ( $element_name ) {
             'lqdsep-counter-solid' => array(
                 'conditions' =>
                     $element->get_settings('template') === 'solid'
+            ),
+            'lqdsep-counter-outline-base' => array(
+                'conditions' =>
+                    $element->get_settings('counter_outline') === 'lqd-counter-outline' &&
+                    $element->get_settings('counter_outline_appearance') !== ''
+            ),
+            'lqdsep-counter-outline-default' => array(
+                'conditions' =>
+                    $element->get_settings('counter_outline') === 'lqd-counter-outline' &&
+                    $element->get_settings('counter_outline_appearance') === 'lqd-counter-outline-static'
+            ),
+            'lqdsep-counter-outline-onhover' => array(
+                'conditions' =>
+                    $element->get_settings('counter_outline') === 'lqd-counter-outline' &&
+                    $element->get_settings('counter_outline_appearance') === 'lqd-counter-outline-hover'
             ),
             'lqdsep-js-gsap-base' => array( 'type' => 'js' ),
         );

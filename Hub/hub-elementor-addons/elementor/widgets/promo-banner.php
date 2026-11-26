@@ -47,7 +47,7 @@ class LD_Promo_Banner extends Widget_Base {
 				'label'       => __( 'Template', 'hub-elementor-addons' ),
 				'type'        => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options'     => liquid_helper()->get_elementor_templates(),
+				'options'     => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'default'     => '0',
 			]
@@ -363,7 +363,7 @@ class LD_Promo_Banner extends Widget_Base {
 			data-lqd-pb-args="<?php echo esc_attr( wp_json_encode( $args ) ); ?>"
 			style="display: none;"
 		>
-			<?php echo Plugin::instance()->frontend->get_builder_content( $template, true ); ?>
+			<?php echo \LiquidElementor\Template_Renderer::render( $template ); ?>
 		</div>
 		<?php
 	}

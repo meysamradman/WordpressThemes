@@ -1,1 +1,1 @@
-.lqd-bullet-list .inline-ul li+li{margin-inline-start:2.5em}@media screen and (max-width:767px){.lqd-bullet-list .inline-ul{display:flex;flex-flow:row wrap;align-items:center}.lqd-bullet-list .inline-ul li{margin-inline-start:0!important;width:50%}}
+.lqd-bullet-list .inline-ul li+li{margin-inline-start:2.5em}@media screen and (width<=767px){.lqd-bullet-list .inline-ul{flex-flow:wrap;align-items:center;display:flex}.lqd-bullet-list .inline-ul li{width:50%;margin-inline-start:0!important}}

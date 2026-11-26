@@ -2,18 +2,19 @@
 /**
  * Redux Color Scheme Sample config.
  *
- * For full documentation, please visit: http:https://devs.redux.io/
+ * For full documentation, please visit: https://devs.redux.io
  *
  * @package Redux
  */
 
+// phpcs:disable
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
 	$opt_name,
 	array(
 		'title'      => esc_html__( 'Color Schemes', 'your-textdomain-here' ),
-		'desc'       => esc_html__( 'For full documentation on this field, visit: ', 'your-textdomain-here' ) . '<a href="https://devs.redux.io/premium/color-schemes.html" target="_blank">https://devs.redux.io/premium/color-schemes.html</a>',
+		'desc'       => esc_html__( 'For full documentation on this field, visit: ', 'your-textdomain-here' ) . '<a href="https://devs.redux.io/core-extensions/color-schemes.html" target="_blank">https://devs.redux.io/core-extensions/color-schemes.html</a>',
 		'subsection' => true,
 		'fields'     => array(
 			array(
@@ -220,3 +221,4 @@ Redux::set_section(
 		),
 	)
 );
+// phpcs:enable

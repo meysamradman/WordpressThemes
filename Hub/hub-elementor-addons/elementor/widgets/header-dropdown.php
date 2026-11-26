@@ -394,6 +394,135 @@ class LD_Header_Dropdown extends Widget_Base {
 
 
 		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'sticky_color_section',
+			[
+				'label' => __( 'Sticky Color', 'hub-elementor-addons' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'sticky_trigger_color',
+			[
+				'label' => __( 'Label Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'.is-stuck {{WRAPPER}} .ld-module-trigger-txt' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'sticky_color',
+			[
+				'label' => __( 'Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'.is-stuck {{WRAPPER}} .ld-dropdown-menu li > a' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'sticky_hcolor',
+			[
+				'label' => __( 'Hover Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'.is-stuck {{WRAPPER}} .ld-dropdown-menu li > a:hover' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'sticky_light_section',
+			[
+				'label' => __( 'Colors Over Light Rows', 'hub-elementor-addons' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'sticky_light_trigger_color',
+			[
+				'label' => __( 'Label Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}}.lqd-active-row-light .ld-module-trigger-txt' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'sticky_light_color',
+			[
+				'label' => __( 'Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}}.lqd-active-row-light .ld-dropdown-menu li > a' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'sticky_light_hcolor',
+			[
+				'label' => __( 'Hover Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}}.lqd-active-row-light .ld-dropdown-menu li > a:hover' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'sticky_dark_section',
+			[
+				'label' => __( 'Colors Over Dark Rows', 'hub-elementor-addons' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'sticky_dark_trigger_color',
+			[
+				'label' => __( 'Label Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}}.lqd-active-row-dark .ld-module-trigger-txt' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'sticky_dark_color',
+			[
+				'label' => __( 'Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}}.lqd-active-row-dark .ld-dropdown-menu li > a' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'sticky_dark_hcolor',
+			[
+				'label' => __( 'Hover Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}}.lqd-active-row-dark .ld-dropdown-menu li > a:hover' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
 	}
 
 	/**

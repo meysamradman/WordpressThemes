@@ -166,9 +166,9 @@ class LD_Counter extends Widget_Base {
 		$this->add_control(
 			'label',
 			[
-				'label' => __( 'Label', 'hub-elementor-addons' ),
+				'label' => __( 'Label', 'hub-elementor-addons' ) . apply_filters( 'hub/elementor/widget/ai_button', 'elementor-input' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Title', 'hub-elementor-addons' ) . apply_filters( 'hub/elementor/widget/ai_button', 'elementor-input' ),
+				'default' => __( 'Title', 'hub-elementor-addons' ),
 				'placeholder' => __( 'Type your title here', 'hub-elementor-addons' ),
 			]
 		);
@@ -275,6 +275,77 @@ class LD_Counter extends Widget_Base {
 				],
 			]
 		);
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'outline_section',
+			[
+				'label' => __( 'Outline', 'hub-elementor-addons' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'counter_outline',
+			[
+				'label' => __( 'Outline Text', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'On', 'hub-elementor-addons' ),
+				'label_off' => __( 'Off', 'hub-elementor-addons' ),
+				'return_value' => 'lqd-counter-outline',
+				'default' => '',
+			]
+		);
+
+		$this->add_control(
+			'counter_outline_appearance',
+			[
+				'label' => __( 'Appearance', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'lqd-counter-outline-static',
+				'options' => [
+					'' => __( 'None', 'hub-elementor-addons' ),
+					'lqd-counter-outline-static' => __( 'Default', 'hub-elementor-addons' ),
+					'lqd-counter-outline-hover' => __( 'On Hover', 'hub-elementor-addons' ),
+				],
+				'condition' => [
+					'counter_outline' => 'lqd-counter-outline',
+				],
+			]
+		);
+
+		$this->add_control(
+			'counter_outline_color',
+			[
+				'label' => __( 'Color', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .lqd-counter-nums-outline' => '-webkit-text-stroke-color: {{VALUE}};',
+				],
+				'condition' => [
+					'counter_outline' => 'lqd-counter-outline',
+				],
+			]
+		);
+
+		$this->add_control(
+			'counter_outline_width',
+			[
+				'label' => __( 'Width', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::TEXT,
+				'label_block' => true,
+				'default' => '2px',
+				'placeholder' => __( 'Set outline width in px. for ex. 5px', 'hub-elementor-addons' ),
+				'selectors' => [
+					'{{WRAPPER}} .lqd-counter-nums-outline' => '-webkit-text-stroke-width: {{VALUE}};',
+					'{{WRAPPER}}' => '--lqd-counter-outline-width: {{VALUE}};',
+				],
+				'condition' => [
+					'counter_outline' => 'lqd-counter-outline',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -658,6 +729,12 @@ class LD_Counter extends Widget_Base {
 			$settings['content_align'],
 		);
 
+		$outline_appearance = '';
+		if ( 'lqd-counter-outline' === $settings['counter_outline'] && ! empty( $settings['counter_outline_appearance'] ) ) {
+			$outline_appearance = $settings['counter_outline_appearance'];
+			array_push( $classes, 'lqd-counter-outline', $outline_appearance );
+		}
+
 		if ( 'solid' === $template ){
 			array_push( $classes, 'lqd-counter-solid', 'p-4', 'border-radius-6' );
 		} elseif ( 'bordered' === $template ){
@@ -695,9 +772,14 @@ class LD_Counter extends Widget_Base {
 
 			<div <?php $this->print_render_attribute_string( 'inner' ); ?>>
 				<?php
-					// Counter
+					// Counter. The outline span is a second nums wrap so liquidCounter()
+					// rebuilds and animates both layers together.
 					if ( ! empty( $counter ) ) {
 						printf( '<span class="lqd-counter-nums-wrap d-block pos-rel">%s</span>', esc_html( $counter ) );
+
+						if ( $outline_appearance ) {
+							printf( '<span class="lqd-counter-nums-wrap lqd-counter-nums-outline d-block" aria-hidden="true">%s</span>', esc_html( $counter ) );
+						}
 					}
 				?>
 			</div>

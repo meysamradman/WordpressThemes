@@ -125,7 +125,7 @@ class LD_Fullscreen_Nav extends Widget_Base {
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
 				'default' => '0',
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 			]
 		);
@@ -255,7 +255,7 @@ class LD_Fullscreen_Nav extends Widget_Base {
 			<div class="header-modules-container d-flex flex-column flex-grow-1">
 				<div class="container d-flex flex-column p-0 flex-grow-1">
 
-					<?php echo \Elementor\Plugin::instance()->frontend->get_builder_content( $settings['modal'], true ); ?>
+					<?php echo \LiquidElementor\Template_Renderer::render( $settings['modal'] ); ?>
 					
 				</div>
 			</div>

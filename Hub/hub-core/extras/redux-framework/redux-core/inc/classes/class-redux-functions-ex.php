@@ -38,14 +38,14 @@ if ( ! class_exists( 'Redux_Functions_Ex', false ) ) {
 				'font-awesome',
 				Redux_Core::$url . 'assets/font-awesome/css/all' . Redux_Functions::is_min() . '.css',
 				array(),
-				'6.5.1'
+				'6.5.2'
 			);
 
 			wp_enqueue_style(
 				'font-awesome-4-shims',
 				Redux_Core::$url . 'assets/font-awesome/css/v4-shims' . Redux_Functions::is_min() . '.css',
 				array(),
-				'6.5.1'
+				'6.5.2'
 			);
 		}
 
@@ -60,42 +60,6 @@ if ( ! class_exists( 'Redux_Functions_Ex', false ) ) {
 				Redux_Core::$url . 'assets/css/vendor/elusive-icons' . Redux_Functions::is_min() . '.css',
 				array(),
 				'2.0.0'
-			);
-		}
-
-		/**
-		 * Shim to load Extendify for backward compatibility.
-		 *
-		 * @return void
-		 */
-		public static function load_extendify_css() {
-			add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'block_editor_styles' ), 99 );
-			add_action( 'wp_enqueue_scripts', array( __CLASS__, 'frontend_init' ), 10 );
-		}
-
-		/**
-		 * Shim to enqueue Extendify CSS in the block editor.
-		 *
-		 * @return void
-		 */
-		public static function block_editor_styles() {
-			wp_enqueue_style(
-				'redux-editor-styles',
-				Redux_Core::$url . 'assets/css/extendify-utilities.css',
-				array(),
-				Redux_Core::$version
-			);
-		}
-
-		/**
-		 * Scripts to enqueue on the frontend
-		 */
-		public static function frontend_init() {
-			wp_enqueue_style(
-				'redux-extendify-styles',
-				Redux_Core::$url . 'assets/css/extendify-utilities.css',
-				array(),
-				Redux_Core::$version
 			);
 		}
 
@@ -422,67 +386,6 @@ if ( ! class_exists( 'Redux_Functions_Ex', false ) ) {
 		}
 
 		/**
-		 * Used to fix 3.x and 4 compatibility for extensions
-		 *
-		 * @param object $extension      The extension parent object.
-		 * @param string $path           - Path of the file.
-		 * @param string $ext_class      - Extension class name.
-		 * @param string $new_class_name - New dynamic class name.
-		 * @param string $name           extension name.
-		 *
-		 * @return object - Extended field class.
-		 */
-		public static function extension_compatibility( $extension, string $path, string $ext_class, string $new_class_name, string $name ) {
-			if ( empty( $new_class_name ) ) {
-				return null;
-			}
-
-			$upload_dir = ReduxFramework::$_upload_dir . '/extension_compatibility/';
-
-			if ( ! file_exists( $upload_dir . $ext_class . '.php' ) ) {
-				if ( ! is_dir( $upload_dir ) ) {
-					$extension->filesystem->mkdir( $upload_dir );
-					$extension->filesystem->put_contents( $upload_dir . 'index.php', '<?php // Silence is golden.' );
-				}
-				if ( ! class_exists( $ext_class ) ) {
-					require_once $path;
-				}
-				if ( ! file_exists( $upload_dir . $new_class_name . '.php' ) ) {
-					$class_file = '<?php' . PHP_EOL . PHP_EOL .
-								'class {{ext_class}} extends Redux_Extension_Abstract {' . PHP_EOL .
-								'    private $c;' . PHP_EOL .
-								'    public function __construct( $parent, $path, $ext_class ) {' . PHP_EOL .
-								'        $this->c = $parent->extensions[\'' . $name . '\'];' . PHP_EOL .
-								'        // Add all the params of the Abstract to this instance.' . PHP_EOL .
-								'        foreach( get_object_vars( $this->c ) as $key => $value ) {' . PHP_EOL .
-								'            $this->$key = $value;' . PHP_EOL .
-								'        }' . PHP_EOL .
-								'        parent::__construct( $parent, $path );' . PHP_EOL .
-								'    }' . PHP_EOL .
-								'    // fake "extends Redux_Extension_Abstract\" using magic function' . PHP_EOL .
-								'    public function __call( $method, $args ) {' . PHP_EOL .
-								'        return call_user_func_array( array( $this->c, $method ), $args );' . PHP_EOL .
-								'    }' . PHP_EOL .
-								'}' . PHP_EOL;
-					$template   = str_replace( '{{ext_class}}', $new_class_name, $class_file );
-					// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
-					// $parent->filesystem->put_contents( $upload_dir . $new_class_name . '.php', $template );
-				}
-
-				if ( file_exists( $upload_dir . $new_class_name . '.php' ) ) {
-					if ( ! class_exists( $new_class_name ) ) {
-						require_once $upload_dir . $new_class_name . '.php';
-					}
-					if ( class_exists( $new_class_name ) ) {
-						return new $new_class_name( $extension, $path, $ext_class );
-					}
-				}
-			}
-
-			return null;
-		}
-
-		/**
 		 * Used to merge two deep arrays.
 		 *
 		 * @param array $a First array to deeply merge.
@@ -567,27 +470,6 @@ if ( ! class_exists( 'Redux_Functions_Ex', false ) ) {
 		}
 
 		/**
-		 * Determine if Extendify plugin is installed.
-		 *
-		 * @param string $name Plugin name.
-		 *
-		 * @return bool
-		 */
-		public static function is_plugin_installed( string $name ): bool {
-			if ( ! function_exists( 'get_plugins' ) ) {
-				include_once ABSPATH . 'wp-admin/includes/plugin.php';
-			}
-
-			foreach ( get_plugins() as $plugin => $data ) {
-				if ( $data['TextDomain'] === $name ) {
-					return $plugin;
-				}
-			}
-
-			return false;
-		}
-
-		/**
 		 * Is plugin active.
 		 *
 		 * @param string $name Plugin name.
@@ -595,6 +477,7 @@ if ( ! class_exists( 'Redux_Functions_Ex', false ) ) {
 		 * @return bool
 		 */
 		public static function is_plugin_active( string $name ): bool {
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals -- active_plugins is a WP hook.
 			if ( in_array( $name . '/' . $name . '.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
 				return true;
 			}

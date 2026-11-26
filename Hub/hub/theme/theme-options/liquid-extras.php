@@ -8,22 +8,30 @@ $this->sections[] = array(
 	'icon'   => 'el el-plus-sign'
 );
 
+// Scroll Smoother Fields
+$this->sections[] = array(
+	'title'  => esc_html__( 'Scroll Smoother', 'hub' ),
+	'subsection' => true,
+	'fields' => array(
+    	array(
+    		'id'       => 'enable-scroll-smoother',
+    		'type'     => 'button_set',
+    		'title'    => esc_html__( 'Enable Scroll Smoother?', 'hub' ),
+    		'subtitle' => esc_html__( 'Enables the smooth scroll experience.', 'hub' ),
+    		'options'  => array(
+    			'on'  => esc_html__( 'On', 'hub' ),
+    			'off' => esc_html__( 'Off', 'hub' ),
+    		),
+    		'default' => 'off'
+    	),
+	)
+);
+
 // Custom Cursor Fields
 $this->sections[] = array(
 	'title'  => esc_html__( 'Custom Cursor', 'hub' ),
 	'subsection' => true,
 	'fields' => array(
-		array(
-			'id'       => 'enable-scroll-smoother',
-			'type'     => 'button_set',
-			'title'    => esc_html__( 'Enable Scroll Smoother?', 'hub' ),
-			'subtitle' => esc_html__( 'Enables the smooth scroll experience.', 'hub' ),
-			'options'  => array(
-				'on'  => esc_html__( 'On', 'hub' ),
-				'off' => esc_html__( 'Off', 'hub' ),
-			),
-			'default' => 'off'
-		),
 		array(
 			'id'       => 'enable-custom-cursor',
 			'type'	   => 'button_set',
@@ -247,6 +255,32 @@ $this->sections[] = array(
 			),
 		),
 		array(
+			'id'       => 'preloader-image',
+			'type'     => 'media',
+			'url'      => true,
+			'title'    => esc_html__( 'Preloader Image', 'hub' ),
+			'subtitle' => esc_html__( 'Upload an image or logo to display while the preloader is showing.', 'hub' ),
+			'required' => array(
+				'preloader-style',
+				'=',
+				array( 'curtain', 'fade', 'sliding', 'dissolve' )
+			),
+		),
+		array(
+			'id'       => 'preloader-image-width',
+			'type'     => 'slider',
+			'title'    => esc_html__( 'Preloader Image Width', 'hub' ),
+			'subtitle' => esc_html__( 'Set the width of the preloader image. Value is in px.', 'hub' ),
+			'default'  => 150,
+			'min'      => 20,
+			'max'      => 800,
+			'required' => array(
+				'preloader-style',
+				'=',
+				array( 'curtain', 'fade', 'sliding', 'dissolve' )
+			),
+		),
+		array(
 			'id'         => 'preloader-color',
 			'type'       => 'liquid_colorpicker',
 			'title'      => esc_html__( 'Preloader Background Color', 'hub' ),
@@ -424,7 +458,7 @@ if ( !class_exists( 'Liquid_Elementor_Addons' ) && !defined( 'ELEMENTOR_VERSION'
 			),
 		)
 	);
-	
+
 }
 
 if ( !class_exists( 'Liquid_Elementor_Addons' ) ){
@@ -459,7 +493,7 @@ if ( !class_exists( 'Liquid_Elementor_Addons' ) ){
 				'sortable' => false,
 				'group_values' => false,
 							'fields' => array(
-					
+
 					array(
 						'id' => 'custom_icon_font_title',
 						'type' => 'text',
@@ -468,12 +502,12 @@ if ( !class_exists( 'Liquid_Elementor_Addons' ) ){
 					),
 					array(
 						'id'    => 'custom_icon_font_css',
-						'type'  => 'text',	
+						'type'  => 'text',
 						'title' => esc_html__( 'Icon Css file', 'hub' ),
 					),
 					array(
 						'id'    => 'custom_icons_classnames',
-						'type'  => 'textarea',	
+						'type'  => 'textarea',
 						'title' => esc_html__( 'Icons classnames', 'hub' ),
 						'desc'  => esc_html__( 'Icon classnames should be separated by comma,for ex: icon-classname, icon-2-classname', 'hub' ),
 					),
@@ -485,10 +519,9 @@ if ( !class_exists( 'Liquid_Elementor_Addons' ) ){
 						'subtitle'    => esc_html__( 'Add a prefix for the icon, will add as classname for all icons.', 'hub' ),
 					),
 				)
-			),		
+			),
 
 		)
 	);
 }
 include_once( get_template_directory() . '/theme/theme-options/liquid-page-404.php' );
-

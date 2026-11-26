@@ -19,7 +19,7 @@ class Redux_Full_Package implements themecheck {
 	 *
 	 * @var array $error Error storage.
 	 */
-	protected $error = array();
+	protected array $error = array();
 
 	/**
 	 * Check files.
@@ -81,4 +81,5 @@ class Redux_Full_Package implements themecheck {
 	}
 }
 
+// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals -- WordPress global. Cannot be changed.
 $themechecks[] = new Redux_Full_Package();

@@ -1,11 +1,12 @@
 <?php
 /**
  * Redux Framework switch config.
- * For full documentation, please visit: http://devs.redux.io/
+ * For full documentation, please visit: https://devs.redux.io/
  *
  * @package Redux Framework
  */
 
+// phpcs:disable
 defined( 'ABSPATH' ) || exit;
 
 Redux::set_section(
@@ -36,8 +37,8 @@ Redux::set_section(
 				'title'    => esc_html__( 'Switch - Nested Children, Enable to show', 'your-textdomain-here' ),
 				'subtitle' => esc_html__( 'Look, it\'s on! Also hidden child elements!', 'your-textdomain-here' ),
 				'default'  => false,
-				'on'       => 'Enabled',
-				'off'      => 'Disabled',
+				'on'       => esc_html__( 'Enabled', 'your-textdomain-here' ),
+				'off'      => esc_html__( 'Disabled', 'your-textdomain-here' ),
 			),
 			array(
 				'id'       => 'switch-child1',
@@ -60,3 +61,4 @@ Redux::set_section(
 		),
 	)
 );
+// phpcs:enable

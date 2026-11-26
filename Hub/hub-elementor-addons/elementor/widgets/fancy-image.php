@@ -118,7 +118,7 @@ class LD_Fancy_Image extends Widget_Base {
 		} else {
 			return [''];
 		}
-		
+
 	}
 
 	/**
@@ -175,7 +175,7 @@ class LD_Fancy_Image extends Widget_Base {
 			Group_Control_Image_Size::get_type(),
 			[
 				'name' => 'thumbnail', // // Usage: `{name}_size` and `{name}_custom_dimension`, in this case `thumbnail_size` and `thumbnail_custom_dimension`.
-				'exclude' => [ 
+				'exclude' => [
 					'liquid-style1-lb',
 					'liquid-style3-lb',
 					'liquid-style4-lb',
@@ -392,7 +392,7 @@ class LD_Fancy_Image extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		
+
 		// Opacity
 		$this->start_controls_section(
 			'opacity_section',
@@ -442,7 +442,7 @@ class LD_Fancy_Image extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		
+
 		// Lightbox
 		$this->start_controls_section(
 			'lightbox_section',
@@ -477,7 +477,7 @@ class LD_Fancy_Image extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		
+
 		// Roundness
 		$this->start_controls_section(
 			'roundness_section',
@@ -517,7 +517,7 @@ class LD_Fancy_Image extends Widget_Base {
 					'enable_roudness' => 'yes'
 				],
 				'selectors' => [
-					'{{WRAPPER}} figure, {{WRAPPER}} figure img' => 'border-radius: {{VALUE}};',
+					'{{WRAPPER}} figure, {{WRAPPER}} figure img, {{WRAPPER}} .lqd-imggrp-overlay-bg' => 'border-radius: {{VALUE}};',
 				],
 			]
 		);
@@ -531,7 +531,7 @@ class LD_Fancy_Image extends Widget_Base {
 					'image_roudness' => 'custom'
 				],
 				'selectors' => [
-					'{{WRAPPER}} figure, {{WRAPPER}} figure img' => 'border-radius: {{VALUE}};',
+					'{{WRAPPER}} figure, {{WRAPPER}} figure img, {{WRAPPER}} .lqd-imggrp-overlay-bg' => 'border-radius: {{VALUE}};',
 				],
 			]
 		);
@@ -689,7 +689,7 @@ class LD_Fancy_Image extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		
+
 		// Floating effect
 		$this->start_controls_section(
 			'floating_section',
@@ -797,7 +797,7 @@ class LD_Fancy_Image extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		
+
 		// Hover 3D
 		$this->start_controls_section(
 			'hover3d_section',
@@ -937,7 +937,7 @@ class LD_Fancy_Image extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 
 		$this->add_control(
 			'label',
@@ -1027,7 +1027,7 @@ class LD_Fancy_Image extends Widget_Base {
 				]
 			]
 		);
-		
+
 		$this->add_control(
 			'label_color',
 			[
@@ -1065,7 +1065,7 @@ class LD_Fancy_Image extends Widget_Base {
 	protected function get_data_options() {
 
 		$settings = $this->get_settings_for_display();
-		
+
 		$shadow = $this->get_settings_for_display('enable_image_shadow');
 		$shadow_style = $this->get_settings_for_display('shadow_style');
 		$shadow_delay = $this->get_settings_for_display('shadow_delay');
@@ -1083,21 +1083,21 @@ class LD_Fancy_Image extends Widget_Base {
 			}
 			$this->add_render_attribute( 'wrapper', 'data-animate-shadow', 'true' );
 		}
-		
+
 		if ( $hover3d ) {
 			$this->add_render_attribute( 'wrapper', 'data-hover3d', 'true' );
 		}
-		
+
 	}
 
 	protected function get_data_float_effect() {
-		
+
 		$enable_float_effect = $this->get_settings_for_display('enable_float_effect');
 		$float_easing = $this->get_settings_for_display('float_easing');
 		$float_custom_ease = $this->get_settings_for_display('float_custom_ease');
-		
+
 		$easing = $float_easing;
-		
+
 		if( $float_easing === 'custom_ease' && ! empty($float_custom_ease) ) {
 			$easing = $float_custom_ease;
 		}
@@ -1105,22 +1105,22 @@ class LD_Fancy_Image extends Widget_Base {
 		if ( $enable_float_effect ) {
 			$this->add_render_attribute( 'wrapper', 'data-float', $easing );
 		}
-		
+
 	}
 
 	protected function get_data_stacking_factor() {
-		
+
 		$hover3d = $this->get_settings_for_display('enable_hover3d');
 		$hover3d_stacking_factor = $this->get_settings_for_display('hover3d_stacking_factor');
-		
+
 		if( $hover3d === 'yes' ) {
 			$this->add_render_attribute( 'figure', 'data-stacking-factor', $hover3d_stacking_factor );
 		}
-		
+
 	}
 
 	protected function get_reveal_data() {
-		
+
 		$reveal = $this->get_settings_for_display('enable_reveal');
 
 		if( $reveal ) {
@@ -1128,7 +1128,7 @@ class LD_Fancy_Image extends Widget_Base {
 			$reveal_opts = array( 'direction' => $this->get_settings_for_display('reveal_direction') );
 
 			$reveal_delay = $this->get_settings_for_display('reveal_delay');
-			
+
 			if ( isset( $reveal_delay ) && ! empty( $reveal_delay ) ) {
 				$reveal_opts['delay'] = $reveal_delay;
 			}
@@ -1141,7 +1141,7 @@ class LD_Fancy_Image extends Widget_Base {
 	}
 
 	protected function get_label($pos) {
-		
+
 		$settings = $this->get_settings_for_display();
 
 		if (
@@ -1156,29 +1156,29 @@ class LD_Fancy_Image extends Widget_Base {
 		) {
 			return;
 		}
-		
+
 		$label = $settings['label'];
 		$side = $settings['label_side'];
 		$side_overlay = 'lqd-imggrp-content-fixed ' . $settings['enable_side_label_overlay'];
 		if( empty( $label ) ) {
 			return;
 		}
-		
-		printf( '<div class="lqd-imggrp-content %s %s"><div class="lqd-imggrp-content-inner"><p class="m-0">%s</p></div></div>', esc_attr( $side ), $side_overlay, wp_kses_post( $label ) );		
+
+		printf( '<div class="lqd-imggrp-content %s %s"><div class="lqd-imggrp-content-inner"><p class="m-0">%s</p></div></div>', esc_attr( $side ), $side_overlay, wp_kses_post( $label ) );
 
 	}
-	
+
 	protected function get_lines() {
 		$settings = $this->get_settings_for_display();
-		
+
 		if( !$settings['enable_lines'] ) {
 			return '';
 		}
-		
+
 		$out = '';
-		
+
 		$lines = $settings['lines_count'];
-		
+
 		$out = '<div class="lqd-v-lines lqd-overlay d-flex justify-content-center">';
 		$out .= '<div class="lqd-v-line d-inline-flex justify-content-start flex-grow-1 invisible"><div class="h-100"></div></div>';
 		for( $i = 1; $i <= $lines; $i++ ) {
@@ -1187,18 +1187,18 @@ class LD_Fancy_Image extends Widget_Base {
 		$out .= '</div>';
 
 		echo $out;
-		
+
 	}
 
 	protected function get_overlay_bg() {
 		$settings = $this->get_settings_for_display();
-		
+
 		if( !$settings['enable_overlay_bg'] ) {
 			return '';
 		}
 
 		echo '<span class="lqd-overlay lqd-imggrp-overlay-bg"></span>';
-		
+
 	}
 
 	protected function get_overlay_link() {
@@ -1210,12 +1210,12 @@ class LD_Fancy_Image extends Widget_Base {
 				<a <?php echo $this->get_render_attribute_string( 'overlay_link' ); ?> class="lqd-overlay lqd-fi-overlay-link lqd-cc-label-trigger"></a>
 			<?php
 		}
-		
+
 	}
 
 	protected function get_lightbox_link() {
 		$settings = $this->get_settings_for_display();
-		
+
 		$link['href'] =  $settings['img_link']['url'];
 
 		if ( ! empty($settings['enable_lightbox']) && empty( $link['href'] ) ) {
@@ -1234,13 +1234,13 @@ class LD_Fancy_Image extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-		
+
 		$settings = $this->get_settings_for_display();
 
 		// wrapper
 		$this->add_render_attribute(
 			'wrapper', [
-				'class' => [ 
+				'class' => [
 					'lqd-imggrp-single',
 					'd-block',
 					'pos-rel',
@@ -1254,7 +1254,7 @@ class LD_Fancy_Image extends Widget_Base {
 		// inner_wrapper
 		$this->add_render_attribute(
 			'inner_wrapper', [
-				'class' => [ 
+				'class' => [
 					'lqd-imggrp-img-container',
 					'd-inline-flex',
 					'pos-rel',
@@ -1264,14 +1264,14 @@ class LD_Fancy_Image extends Widget_Base {
 				 ],
 			]
 		);
-	
+
 		// figure
 		$this->add_render_attribute(
 			'figure', [
 				'class' => [ 'w-100', 'pos-rel' ],
 			]
 		);
-		$this->get_data_stacking_factor(); 
+		$this->get_data_stacking_factor();
 		$this->get_reveal_data();
 
 		?>
@@ -1296,12 +1296,12 @@ class LD_Fancy_Image extends Widget_Base {
 
 	protected function content_template() {
 		?>
-		<# 
+		<#
 
 		function get_data_options() {
-			
+
 			var opts = [];
-			
+
 			var shadow = settings.enable_image_shadow;
 			var shadow_style = settings.shadow_style;
 			var shadow_delay = settings.shadow_delay;
@@ -1309,30 +1309,30 @@ class LD_Fancy_Image extends Widget_Base {
 			var enable_animated_shadow = settings.enable_animated_shadow;
 
 			if( settings.enable_image_shadow ) { opts.push('data-shadow-style="' + shadow_style + '"');}
-	
+
 			if( enable_animated_shadow ) {
 				opts.push('data-inview="true"');
 				if( shadow_delay !== '' ) {
 					opts.push(`data-inview-options='${JSON.stringify( {"delayTime": shadow_delay} )}'`);
 				}
-				opts.push('data-animate-shadow="true"');	
+				opts.push('data-animate-shadow="true"');
 			}
-		
+
 			if( hover3d ) { opts.push('data-hover3d="true"');}
 			if( !opts ) { return '';}
-			
-			return opts.join(' ');	
-			
+
+			return opts.join(' ');
+
 		}
 
 		function get_data_float_effect() {
-			
+
 			var enable_float_effect = settings.enable_float_effect;
 			var float_easing = settings.float_easing;
 			var float_custom_ease = settings.float_custom_ease;
-			
+
 			var easing = float_easing;
-			
+
 			if( float_easing === 'custom_ease' && float_custom_ease !== '' ) {
 				easing = float_custom_ease;
 			}
@@ -1340,18 +1340,18 @@ class LD_Fancy_Image extends Widget_Base {
 			if ( enable_float_effect ) {
 				return 'data-float="' + easing + '"';
 			}
-			
+
 		}
 
 		function get_data_stacking_factor() {
-			
+
 			var hover3d = settings.enable_hover3d;
 			var hover3d_stacking_factor = settings.hover3d_stacking_factor;
-			
+
 			if( hover3d === 'yes' ) {
 				return 'data-stacking-factor="' + hover3d_stacking_factor + '"';
 			}
-			
+
 		}
 
 		function get_reveal_data() {
@@ -1392,7 +1392,7 @@ class LD_Fancy_Image extends Widget_Base {
 			) {
 				return;
 			}
-			
+
 			var label = settings.label;
 			var side = settings.label_side;
 			var side_overlay = `lqd-imggrp-content-fixed ${settings.enable_side_label_overlay}`;
@@ -1400,17 +1400,17 @@ class LD_Fancy_Image extends Widget_Base {
 				return '';
 			}
 
-			return `<div class="lqd-imggrp-content ${side} ${side_overlay}"><div class="lqd-imggrp-content-inner"><p class="m-0">${label}</p></div></div>`;	
+			return `<div class="lqd-imggrp-content ${side} ${side_overlay}"><div class="lqd-imggrp-content-inner"><p class="m-0">${label}</p></div></div>`;
 
 		}
 
 		function get_lines() {
-			
+
 			if( !settings.enable_lines ) { return ''; }
-			
+
 			var out = '';
 			var lines = settings.lines_count;
-			
+
 			out = '<div class="lqd-v-lines lqd-overlay d-flex justify-content-center">';
 			out += '<div class="lqd-v-line d-inline-flex justify-content-start flex-grow-1 invisible"><div class="h-100"></div></div>';
 			for( let i = 1; i <= lines; i++ ) {
@@ -1419,15 +1419,15 @@ class LD_Fancy_Image extends Widget_Base {
 			out += '</div>';
 
 			return out;
-			
+
 		}
 
 		function get_overlay_bg() {
-			
+
 			if( !settings.enable_overlay_bg ) { return ''; }
 
 			return '<span class="lqd-overlay lqd-imggrp-overlay-bg"></span>';
-			
+
 		}
 
 		function get_overlay_link() {

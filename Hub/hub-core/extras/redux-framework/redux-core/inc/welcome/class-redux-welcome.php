@@ -23,21 +23,21 @@ if ( ! class_exists( 'Redux_Welcome', false ) ) {
 		 *
 		 * @var string The capability users should have to view the page
 		 */
-		public $minimum_capability = 'manage_options';
+		public string $minimum_capability = 'manage_options';
 
 		/**
 		 * Display version.
 		 *
 		 * @var string
 		 */
-		public $display_version = '';
+		public string $display_version = '';
 
 		/**
 		 * Is loaded.
 		 *
 		 * @var bool
 		 */
-		public $redux_loaded = false;
+		public bool $redux_loaded = false;
 
 		/**
 		 * Get things started
@@ -58,7 +58,7 @@ if ( ! class_exists( 'Redux_Welcome', false ) ) {
 			}
 
 			$this->redux_loaded = true;
-			//add_action( 'admin_menu', array( $this, 'admin_menus' ) );
+			// add_action( 'admin_menu', array( $this, 'admin_menus' ) );
 
 			if ( isset( $_GET['page'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 				if ( 'redux-' === substr( sanitize_text_field( wp_unslash( $_GET['page'] ) ), 0, 6 ) ) { // phpcs:ignore WordPress.Security.NonceVerification
@@ -176,17 +176,17 @@ if ( ! class_exists( 'Redux_Welcome', false ) ) {
 		public function actions() {
 			?>
 			<p class="redux-actions">
-				<a href="http://devs.redux.io/" class="docs button button-primary">Docs</a>
+				<a href="https://devs.redux.io/" class="docs button button-primary"><?php echo esc_html__( 'Docs', 'redux-framework' ); ?></a>
 				<a
 					href="https://wordpress.org/support/view/plugin-reviews/redux-framework?filter=5#postform"
 					class="review-us button button-primary"
-					target="_blank">Review Us</a>
+					target="_blank"><?php echo esc_html__( 'Review Us', 'redux-framework' ); ?></a>
 				<a
 					href="https://twitter.com/share"
 					class="twitter-share-button"
 					data-url="https://redux.io"
 					data-text="Supercharge your WordPress experience with Redux.io, the world's most powerful and widely used WordPress interface builder."
-					data-via="ReduxFramework" data-size="large" data-hashtags="Redux">Tweet</a>
+					data-via="ReduxFramework" data-size="large" data-hashtags="Redux"><?php echo esc_html__( 'Tweet', 'redux-framework' ); ?></a>
 				<?php
 
 				$options = Redux_Helpers::get_plugin_options();
@@ -215,8 +215,10 @@ if ( ! class_exists( 'Redux_Welcome', false ) ) {
 				?>
 				<script>
 					!function( d, s, id ) {
-						var js, fjs = d.getElementsByTagName( s )[0],
-							p = /^http:/.test( d.location ) ? 'http' : 'https';
+						let js;
+						const fjs = d.getElementsByTagName( s )[0],
+
+						p = /^http:/.test( d.location ) ? 'http' : 'https';
 						if ( !d.getElementById( id ) ) {
 							js = d.createElement( s );
 							js.id = id;

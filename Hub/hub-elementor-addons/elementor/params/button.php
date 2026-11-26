@@ -11,6 +11,7 @@ use Elementor\Control_Media;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
+use Elementor\Group_Control_Css_Filter;
 use Elementor\Group_Control_Background;
 use Elementor\Repeater;
 use Elementor\Icons_Manager;
@@ -421,6 +422,22 @@ function ld_el_btn($pf, $pf2, $condition = ''){
 		);
 
 		$pf->add_control(
+			$pf2.'fit_to_size',
+			[
+				'label' => esc_html__( 'Fit to Size', 'elementor' ),
+				'type' => Controls_Manager::SWITCHER,
+				'description' => 'Avoid gaps around icons when width and height aren\'t equal',
+				'condition' => [
+    				$pf2.'i_add_icon' => 'true',
+					$pf2.'icon[library]' => 'svg',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .btn-icon svg' => 'height: auto;',
+				],
+			]
+		);
+
+		$pf->add_control(
 			$pf2.'i_position',
 			[
 				'label' => __( 'Icon Position', 'hub-elementor-addons' ),
@@ -480,11 +497,29 @@ function ld_el_btn($pf, $pf2, $condition = ''){
 					'btn-icon-semi-round' => __( 'Semi Round', 'hub-elementor-addons' ),
 					'btn-icon-round' => __( 'Round', 'hub-elementor-addons' ),
 					'btn-icon-circle' => __( 'Circle', 'hub-elementor-addons' ),
+					'btn-icon-rounded-custom' => __( 'Custom', 'hub-elementor-addons' ),
 				],
 				'condition' => array(
 					$pf2.'i_add_icon' => 'true',
 					$pf2.'i_shape_style!' => '',
 				),
+			]
+		);
+
+		$pf->add_responsive_control(
+			$pf2.'i_shape_custom',
+			[
+				'label' => __( 'Icon Custom Roundness', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .btn .btn-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition' => [
+    				$pf2.'i_add_icon' => 'true',
+    				$pf2.'i_shape_style!' => '',
+    				$pf2.'i_shape' => 'btn-icon-rounded-custom',
+				],
 			]
 		);
 
@@ -550,6 +585,47 @@ function ld_el_btn($pf, $pf2, $condition = ''){
 					$pf2.'i_shape!' => '',
 					$pf2.'i_shape_style!' => '',
 					$pf2.'i_shape_size' => 'btn-icon-custom-size',
+				],
+			]
+		);
+
+		$pf->add_control(
+			$pf2.'i_shape_sync_size',
+			[
+				'label' => __( 'Sync width and height?', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::SWITCHER,
+				'default' => 'yes',
+				'condition' => [
+					$pf2.'i_add_icon' => 'true',
+					$pf2.'i_shape!' => '',
+					$pf2.'i_shape_style!' => '',
+					$pf2.'i_shape_size' => 'btn-icon-custom-size',
+				],
+			]
+		);
+
+		$pf->add_control(
+			$pf2.'i_shape_custom_height',
+			[
+				'label' => __( 'Icon Shape Height', 'hub-elementor-addons' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 200,
+						'step' => 1,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .btn .btn-icon' => 'height: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					$pf2.'i_add_icon' => 'true',
+					$pf2.'i_shape!' => '',
+					$pf2.'i_shape_style!' => '',
+					$pf2.'i_shape_size' => 'btn-icon-custom-size',
+					$pf2.'i_shape_sync_size!' => 'yes',
 				],
 			]
 		);
@@ -812,6 +888,42 @@ function ld_el_btn($pf, $pf2, $condition = ''){
 			);
 
 			$pf->add_group_control(
+				Group_Control_Box_Shadow::get_type(),
+				[
+					'name' => $pf2.'i_box_shadow',
+					'label' => __( 'Icon Box Shadow', 'hub-elementor-addons' ),
+					'selector' => '{{WRAPPER}} .btn-icon',
+					'separator' => 'before',
+					'condition' => array(
+						$pf2.'i_add_icon' => 'true',
+						$pf2.'i_shape!' => '',
+						$pf2.'i_shape_style!' => '',
+					),
+				]
+			);
+
+			$pf->add_group_control(
+				Group_Control_Css_Filter::get_type(),
+				[
+					'name' => $pf2.'i_backdrop_filter',
+					'label' => __( 'Icon Backdrop Filters', 'hub-elementor-addons' ),
+					'selector' => '{{WRAPPER}} .btn-icon',
+					'fields_options' => [
+						'blur' => [
+							'selectors' => [
+								'{{SELECTOR}}' => '-webkit-backdrop-filter: brightness( {{brightness.SIZE}}% ) contrast( {{contrast.SIZE}}% ) saturate( {{saturate.SIZE}}% ) blur( {{blur.SIZE}}px ) hue-rotate( {{hue.SIZE}}deg );backdrop-filter: brightness( {{brightness.SIZE}}% ) contrast( {{contrast.SIZE}}% ) saturate( {{saturate.SIZE}}% ) blur( {{blur.SIZE}}px ) hue-rotate( {{hue.SIZE}}deg )',
+							],
+						]
+					],
+					'condition' => array(
+						$pf2.'i_add_icon' => 'true',
+						$pf2.'i_shape!' => '',
+						$pf2.'i_shape_style!' => '',
+					),
+				]
+			);
+
+			$pf->add_group_control(
 				Group_Control_Border::get_type(),
 				[
 					'name' => $pf2.'border',
@@ -962,6 +1074,42 @@ function ld_el_btn($pf, $pf2, $condition = ''){
 					'condition' => array(
 						$pf2.'i_shape!' => '',
 						$pf2.'i_add_icon' => 'true',
+					),
+				]
+			);
+
+			$pf->add_group_control(
+				Group_Control_Box_Shadow::get_type(),
+				[
+					'name' => $pf2.'i_h_box_shadow',
+					'label' => __( 'Icon Box Shadow Hover', 'hub-elementor-addons' ),
+					'selector' => '{{WRAPPER}} .btn:hover .btn-icon, {{WRAPPER}} .btn:focus .btn-icon',
+					'separator' => 'before',
+					'condition' => array(
+						$pf2.'i_add_icon' => 'true',
+						$pf2.'i_shape!' => '',
+						$pf2.'i_shape_style!' => '',
+					),
+				]
+			);
+
+			$pf->add_group_control(
+				Group_Control_Css_Filter::get_type(),
+				[
+					'name' => $pf2.'i_h_backdrop_filter',
+					'label' => __( 'Icon Backdrop Filters Hover', 'hub-elementor-addons' ),
+					'selector' => '{{WRAPPER}} .btn:hover .btn-icon, {{WRAPPER}} .btn:focus .btn-icon',
+					'fields_options' => [
+						'blur' => [
+							'selectors' => [
+								'{{SELECTOR}}' => '-webkit-backdrop-filter: brightness( {{brightness.SIZE}}% ) contrast( {{contrast.SIZE}}% ) saturate( {{saturate.SIZE}}% ) blur( {{blur.SIZE}}px ) hue-rotate( {{hue.SIZE}}deg );backdrop-filter: brightness( {{brightness.SIZE}}% ) contrast( {{contrast.SIZE}}% ) saturate( {{saturate.SIZE}}% ) blur( {{blur.SIZE}}px ) hue-rotate( {{hue.SIZE}}deg )',
+							],
+						]
+					],
+					'condition' => array(
+						$pf2.'i_add_icon' => 'true',
+						$pf2.'i_shape!' => '',
+						$pf2.'i_shape_style!' => '',
 					),
 				]
 			);

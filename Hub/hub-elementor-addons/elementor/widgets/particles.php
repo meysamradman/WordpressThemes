@@ -117,7 +117,7 @@ class LD_Particles extends Widget_Base {
 		} else {
 			return [''];
 		}
-		
+
 	}
 
 	/**
@@ -358,7 +358,7 @@ class LD_Particles extends Widget_Base {
 				]
 			]
 		);
-	
+
 		$this->add_control(
 			'image_height',
 			[
@@ -402,7 +402,7 @@ class LD_Particles extends Widget_Base {
 				'default' => '',
 			]
 		);
-		
+
 		$this->add_control(
 			'enable_anim_opacity',
 			[
@@ -530,7 +530,7 @@ class LD_Particles extends Widget_Base {
 				]
 			]
 		);
-		
+
 		$this->add_control(
 			'enable_anim_size_sync',
 			[
@@ -753,7 +753,7 @@ class LD_Particles extends Widget_Base {
 				]
 			]
 		);
-		
+
 		$this->add_control(
 			'move_attract_rotatey',
 			[
@@ -906,7 +906,7 @@ class LD_Particles extends Widget_Base {
 				'placeholder' => __( 'for ex 40', 'hub-elementor-addons' ),
 			]
 		);
-		
+
 		$this->add_control(
 			'modes_bubble_duration',
 			[
@@ -952,7 +952,7 @@ class LD_Particles extends Widget_Base {
 			]
 		);
 		$this->end_controls_section();
-		
+
 		// Retina Section
 		$this->start_controls_section(
 			'retina_section',
@@ -985,7 +985,7 @@ class LD_Particles extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-		
+
 		$settings = $this->get_settings_for_display();
 
 		$this->add_render_attribute(
@@ -1005,20 +1005,20 @@ class LD_Particles extends Widget_Base {
 	?>
 
 		<div <?php $this->print_render_attribute_string( 'wrapper' ); ?>>
-			<?php $this->get_particle_items() ?>	
+			<?php $this->get_particle_items() ?>
 		</div>
 
 	<?php
-	
+
 	}
 
 	protected function get_particle_items() {
-		
+
 		extract( $this->get_settings_for_display() );
-		
+
 		$out = '';
 		$opts = $this->get_options();
-		
+
 		$the_ID = isset( $particle_id ) ? $particle_id : '';
 
 		printf( '<div class="ld-particles-inner lqd-overlay pointer-events-none" id="%s" data-particles="true" %s></div>', $the_ID, $opts  );
@@ -1032,7 +1032,7 @@ class LD_Particles extends Widget_Base {
 		if( ! $settings['as_bg'] ) {
 			return;
 		}
-		
+
 		return 'lqd-particles-as-bg lqd-overlay';
 
 	}
@@ -1040,23 +1040,96 @@ class LD_Particles extends Widget_Base {
 	public function get_visible_on_hover() {
 
 		$settings = $this->get_settings_for_display();
-		
+
 		if( ! $settings['visible_on_hover'] ) {
 			return;
 		}
-		
+
 		return 'visible-on-column-hover';
-		
+
+	}
+
+	/**
+	 * Resolve a color control value, falling back to the Global Color it points at.
+	 *
+	 * When a Global Color is picked, Elementor leaves the control value empty and
+	 * stores the reference in `__globals__`. Canvas based libraries such as
+	 * particles.js need a real color, not a CSS variable, so the global is
+	 * resolved to its raw value here.
+	 *
+	 * @param string $value        Raw control value.
+	 * @param string $control_name Control name to look up in `__globals__`.
+	 * @param array  $settings     Settings holding the `__globals__` map. Defaults to the widget settings.
+	 *
+	 * @return string
+	 */
+	protected function get_color_value( $value, $control_name, $settings = null ) {
+
+		if ( ! empty( $value ) ) {
+			return $value;
+		}
+
+		if ( null === $settings ) {
+			$settings = $this->get_settings_for_display();
+		}
+
+		if ( empty( $settings['__globals__'][ $control_name ] ) ) {
+			return $value;
+		}
+
+		return $this->get_global_color( $settings['__globals__'][ $control_name ] );
+
+	}
+
+	/**
+	 * Get the raw color of a global reference, eg. `globals/colors?id=primary`.
+	 *
+	 * @param string $global_key Global reference.
+	 *
+	 * @return string
+	 */
+	protected function get_global_color( $global_key ) {
+
+		static $colors = null;
+
+		if ( empty( $global_key ) || false === strpos( $global_key, '?id=' ) ) {
+			return '';
+		}
+
+		if ( null === $colors ) {
+
+			$colors = array();
+			$kit = \Elementor\Plugin::$instance->kits_manager->get_active_kit_for_frontend();
+
+			if ( $kit ) {
+				$items = array_merge(
+					(array) $kit->get_settings_for_display( 'system_colors' ),
+					(array) $kit->get_settings_for_display( 'custom_colors' )
+				);
+				foreach ( $items as $item ) {
+					if ( ! empty( $item['_id'] ) ) {
+						$colors[ $item['_id'] ] = isset( $item['color'] ) ? $item['color'] : '';
+					}
+				}
+			}
+
+		}
+
+		$parts = explode( '?id=', $global_key );
+		$id = end( $parts );
+
+		return isset( $colors[ $id ] ) ? $colors[ $id ] : '';
+
 	}
 
 	protected function get_options() {
-		
+
 		extract( $this->get_settings_for_display() );
-		
+
 		$data = '';
 		$options = $particle_opts = $interactivity_opts = $number_opts = $shape_opts = $stroke_opts = $image_opts = $opacity_opts = $opacity_anim_opts = $size_opts = $size_anim_opts = $line_linked_opts = $move_opts = $move_attract_opts = $onohver_opts = $events_opts = $onclick_opts = $modes_opts = $bubble_opts = $repulse_opts = $density_opts = array();
-		
-		
+
+
 		if( !empty( $number ) ) {
 			$number_opts['value'] = (int)$number;
 		}
@@ -1075,6 +1148,7 @@ class LD_Particles extends Widget_Base {
 		}
 		//Background Color
 		if( 'single_color' === $color_type ) {
+			$color = $this->get_color_value( $color, 'color' );
 			if( !empty( $color ) ) {
 				$particle_opts['color'] = array( 'value' => $color );
 			}
@@ -1085,26 +1159,32 @@ class LD_Particles extends Widget_Base {
 			//$color_arr = liquid_normalize_group_atts($multi_color_values);
 			//$color_arr = liquid_param_group_parse_atts( $multi_color_values );
 			foreach ( $color_arr as $color ) {
-				$colors[] = $color['scolor'];
+				$scolor = $this->get_color_value( isset( $color['scolor'] ) ? $color['scolor'] : '', 'scolor', $color );
+				if( !empty( $scolor ) ) {
+					$colors[] = $scolor;
+				}
 			}
-			$particle_opts['color'] = array( 'value' => $colors );
+			if( !empty( $colors ) ) {
+				$particle_opts['color'] = array( 'value' => $colors );
+			}
 		}
 		else {
-			$particle_opts['color'] = array( 'value' => 'random' );	
+			$particle_opts['color'] = array( 'value' => 'random' );
 		}
-		
+
 		//Shape options
 
 		if( !empty( $shape_type ) ) {
 			$shape_arr = $shape_type;
 			$shape_opts['type'] = $shape_arr;
 		}
-		
+
 		if( !empty( $stroke_width ) ) {
-			$stroke_opts['width'] = (int)$stroke_width;	
+			$stroke_opts['width'] = (int)$stroke_width;
 		}
+		$stroke_color = $this->get_color_value( $stroke_color, 'stroke_color' );
 		if( !empty( $stroke_color ) ) {
-			$stroke_opts['color'] = $stroke_color;	
+			$stroke_opts['color'] = $stroke_color;
 		}
 		if( !empty( $stroke_opts ) ) {
 			$shape_opts['stroke'] = $stroke_opts;
@@ -1128,7 +1208,7 @@ class LD_Particles extends Widget_Base {
 		if( !empty( $shape_opts ) ) {
 			$particle_opts['shape'] = $shape_opts;
 		}
-		
+
 		//Opacity values
 		if( '1' !== $opacity ) {
 			$opacity_opts['value'] = (float)$opacity;
@@ -1152,7 +1232,7 @@ class LD_Particles extends Widget_Base {
 		if( !empty( $opacity_opts ) ) {
 			$particle_opts['opacity'] = $opacity_opts;
 		}
-		
+
 		//Size values
 		if( !empty( $size ) ) {
 			$size_opts['value'] = (int)$size;
@@ -1176,7 +1256,7 @@ class LD_Particles extends Widget_Base {
 		if( !empty( $size_opts ) ) {
 			$particle_opts['size'] = $size_opts;
 		}
-		
+
 		//Linked line
 		if( $enable_line_linked ) {
 			$line_linked_opts['enable'] = true;
@@ -1185,17 +1265,18 @@ class LD_Particles extends Widget_Base {
 		if( !empty( $line_distance ) ) {
 			$line_linked_opts['distance'] = (int)$line_distance;
 		}
+		$line_color = $this->get_color_value( $line_color, 'line_color' );
 		if( !empty( $line_color ) ) {
 			$line_linked_opts['color'] = $line_color;
 		}
 		if( !empty( $line_width ) ) {
 			$line_linked_opts['width'] = (int)$line_width;
 		}
-		
+
 		if( !empty( $line_linked_opts ) ) {
 			$particle_opts['line_linked'] = $line_linked_opts;
 		}
-		
+
 		//Move values
 		if( $enable_move ) {
 			$move_opts['enable'] = true;
@@ -1211,7 +1292,7 @@ class LD_Particles extends Widget_Base {
 			$move_opts['straight'] = true;
 		}
 		if( isset( $move_out_mode ) ) {
-			$move_opts['out_mode'] = $move_out_mode;	
+			$move_opts['out_mode'] = $move_out_mode;
 		}
 		if( $enable_bounce_move ) {
 			$move_opts['bounce'] = true;
@@ -1228,18 +1309,18 @@ class LD_Particles extends Widget_Base {
 		if( !empty( $move_attract_opts ) ) {
 			$move_opts['attract'] = $move_attract_opts;
 		}
-		
-		
+
+
 		if( !empty( $move_opts ) ) {
 			$particle_opts['move'] = $move_opts;
 		}
 
 		$options['particles']     = $particle_opts;
-		
+
 		if( !empty( $detect_on ) ) {
 			$interactivity_opts['detect_on'] = $detect_on;
 		}
-		
+
 		if( $enable_onhover ) {
 			$onhover_arr = explode( ',', $onhover_mode );
 			$events_opts['onhover'] = array( 'enable' => true, 'mode' => $onhover_arr );
@@ -1248,19 +1329,19 @@ class LD_Particles extends Widget_Base {
 			$onclick_arr = explode( ',', $onclick_mode );
 			$events_opts['onclick'] = array( 'enable' => true, 'mode' => $onclick_arr );
 		}
-		
+
 		if( $enable_inter_resize ) {
 			$events_opts['resize'] = true;
 		}
 		if( !empty( $events_opts ) ) {
 			$interactivity_opts['events'] = $events_opts;
 		}
-		
-		
+
+
 		if( !empty( $modes_grab_distance ) ) {
 			$modes_opts['grab'] = array( 'distance' => (int)$modes_grab_distance, 'line_linked' => array( 'opacity' => $modes_grab_opacity ) );
 		}
-		
+
 		if( !empty( $modes_bubble_distance ) ) {
 			$bubble_opts['distance'] = (int)$modes_bubble_distance;
 		}
@@ -1276,7 +1357,7 @@ class LD_Particles extends Widget_Base {
 
 
 		if( !empty( $modes_repulse_distance ) ) {
-			$repulse_opts['distance'] = (int)$modes_repulse_distance;	
+			$repulse_opts['distance'] = (int)$modes_repulse_distance;
 		}
 		if( !empty( $modes_repulse_duration ) ) {
 			$repulse_opts['duration'] = (float)$modes_repulse_duration;
@@ -1286,7 +1367,7 @@ class LD_Particles extends Widget_Base {
 		}
 
 
-		
+
 		if( !empty( $modes_push_particles_nb ) ) {
 			$modes_opts['push'] = array( 'particles_nb' => (int)$modes_push_particles_nb );
 		}
@@ -1297,30 +1378,30 @@ class LD_Particles extends Widget_Base {
 			$interactivity_opts['modes'] = $modes_opts;
 			//array_push($interactivity_opts, ['modes' => $modes_opts]);
 		}
-		
+
 		//array_push($options, ['interactivity' => $interactivity_opts]);
 		$options['interactivity'] = $interactivity_opts;
-		
-		
+
+
 		if( $retina_detect ) {
 			//array_push($options, ['retina_detect' => true]);
 			$options['retina_detect'] = true;
 		}
 
-		
+
 		if( $as_bg ) {
 			$options['asBG'] = true;
 			//array_push($options, ['asBG' => true]);
 		}
-		
-		
+
+
 		if( !empty( $options ) ) {
-			$data = 'data-particles-options=\'' . wp_json_encode( $options ) .'\'';	
+			$data = 'data-particles-options=\'' . wp_json_encode( $options ) .'\'';
 		}
-		
-		
+
+
 		return $data;
-		
+
 	}
 
 }

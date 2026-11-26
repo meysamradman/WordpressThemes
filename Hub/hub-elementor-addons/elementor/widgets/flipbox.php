@@ -204,7 +204,7 @@ class LD_Flipbox extends Widget_Base {
 				'label' => __( 'Select Template', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'default' => '0',
 				'condition' => [
@@ -334,7 +334,7 @@ class LD_Flipbox extends Widget_Base {
 				'label' => __( 'Select Template', 'hub-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => liquid_helper()->get_elementor_templates(),
+				'options' => \LiquidElementor\Template_Renderer::get_template_options(),
 				'description' => liquid_helper()->get_elementor_templates_edit(),
 				'default' => '0',
 				'condition' => [
@@ -477,7 +477,7 @@ class LD_Flipbox extends Widget_Base {
 						<span class="ld-flipbox-overlay lqd-overlay">
 						</span><div class="ld-flipbox-inner w-100 flex-grow-1 align-items-center justify-content-center backface-hidden">%2$s</div></div>',
 						'front-' . $this->get_id(),
-						($front_content_type === 'front_tinymce' ? $front_content : \Elementor\Plugin::instance()->frontend->get_builder_content( $front_templates, true ))
+						($front_content_type === 'front_tinymce' ? $front_content : \LiquidElementor\Template_Renderer::render( $front_templates ))
 					);
 
 					printf(
@@ -485,7 +485,7 @@ class LD_Flipbox extends Widget_Base {
 						<span class="ld-flipbox-overlay lqd-overlay">
 						</span><div class="ld-flipbox-inner d-flex flex-column flex-grow-1 align-items-center justify-content-center w-100 backface-hidden">%2$s</div></div>',
 						'back-' . $this->get_id(),
-						($back_content_type === 'back_tinymce' ? $back_content : \Elementor\Plugin::instance()->frontend->get_builder_content( $back_templates, true ))
+						($back_content_type === 'back_tinymce' ? $back_content : \LiquidElementor\Template_Renderer::render( $back_templates ))
 					);
 
 				?>
