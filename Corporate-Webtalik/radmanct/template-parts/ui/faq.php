@@ -23,7 +23,7 @@ $heading=$group.'-ttl';
      <span><?php echo esc_html($item[0]); ?></span>
      <span class="rdc-faq__ico" aria-hidden="true"></span>
     </summary>
-    <p><?php echo esc_html($item[1]); ?></p>
+    <p><?php echo wp_kses($item[1],['a'=>['href'=>true]]); ?></p>
    </details>
   <?php endforeach; ?>
  </div>

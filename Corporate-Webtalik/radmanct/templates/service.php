@@ -14,10 +14,9 @@
     <?php get_template_part('template-parts/sections/service/sticky-rows'); ?>
     <?php $summary=\RadmanCT\Service\portfolio_summary(); ?>
     <?php get_template_part('template-parts/sections/service/portfolio-summary',null,['summary'=>$summary]); ?>
-    <?php get_template_part('template-parts/sections/service/project-list',null,['projects'=>array_slice($summary['projects'],0,5)]); ?>
+    <?php get_template_part('template-parts/sections/service/process'); ?>
     <?php get_template_part('template-parts/sections/service/image-strip'); ?>
     <?php get_template_part('template-parts/sections/service/case-study',null,['case_study'=>\RadmanCT\Service\case_study($summary['projects'])]); ?>
-    <?php get_template_part('template-parts/sections/service/process'); ?>
    <?php endif; ?>
    <?php get_template_part('template-parts/ui/faq',null,array('items'=>apply_filters('radmanct/services/faq',array()))); ?>
   <?php endif; ?>
