@@ -9,8 +9,8 @@ add_filter('radmanct/service/intro',static function(array $data):array {
   'cta'=>'درباره پروژه گفت‌وگو کنیم',
   'link'=>home_url('/contact-us/'),
   'cards'=>[
-   ['title'=>'طراحی با هویت شما','desc'=>'ساختار صفحه‌ها، تایپوگرافی و جزئیات رابط را با توجه به مخاطب و هویت برند شما طراحی می‌کنیم.','image'=>\RadmanCT\media_id('service-intro-design'),'alt'=>'دو نفر در حال بررسی ترکیب کاغذهای رنگی'],
-   ['title'=>'توسعه برای استفادهٔ واقعی','desc'=>'از عملکرد در موبایل تا مدیریت محتوا، سایت را با ساختاری می‌سازیم که تیم شما بتواند از آن استفاده کند و آن را توسعه دهد.','image'=>\RadmanCT\media_id('service-intro-experience'),'alt'=>'پرترهٔ سیاه‌وسفید در فضای استودیو'],
+   ['title'=>'طراحی با هویت شما','desc'=>'ساختار صفحه‌ها، تایپوگرافی و جزئیات رابط را با توجه به مخاطب و هویت برند شما طراحی می‌کنیم.','image'=>\RadmanCT\media_id('service-intro-brand-identity')?:\RadmanCT\media_id('service-intro-design')],
+   ['title'=>'توسعه برای استفادهٔ واقعی','desc'=>'از عملکرد در موبایل تا مدیریت محتوا، سایت را با ساختاری می‌سازیم که تیم شما بتواند از آن استفاده کند و آن را توسعه دهد.','image'=>\RadmanCT\media_id('service-intro-responsive-testing')?:\RadmanCT\media_id('service-intro-experience')],
   ],
  ];
 });

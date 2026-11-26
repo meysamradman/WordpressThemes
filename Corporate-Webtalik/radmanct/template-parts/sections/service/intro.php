@@ -19,7 +19,7 @@ if(empty($data['title'])||empty($data['cards']))return;
   <?php foreach($data['cards'] as $card):
    $id=(int)$card['image'];
    $image=\RadmanCT\PageTitle\attachment_allowed($id)?wp_get_attachment_image($id,'full',false,[
-    'alt'=>$card['alt'],'loading'=>'lazy','decoding'=>'async','sizes'=>'(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw','data-rdc-scr-spd'=>'.8',
+    'loading'=>'lazy','decoding'=>'async','sizes'=>'(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw','data-rdc-scr-spd'=>'.8',
    ]):'';
   ?>
    <article class="rdc-svc-intro__card">
