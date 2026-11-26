@@ -46,7 +46,7 @@ try {
     hub_check(count($catalog['templates']) === 1 && $catalog['templates'][0]['template_id'] === 42, 'Original collection catalog must parse');
     $data = $source->get_data(array('template_id' => 42, 'editor_post_id' => $template_id));
     hub_check(!is_wp_error($data) && !empty($data['content']), 'Hub collection insert must work with invalid/missing license');
-    hub_check(count($calls) === 2 && $calls[1]['args']['body']['api_version'] === '6.0.3', 'Original collection API URL/version contract must be preserved');
+    hub_check(count($calls) === 2 && $calls[1]['args']['body']['api_version'] === LD_ELEMENTOR_VERSION, 'Original collection API URL/version contract must be preserved');
 } finally {
     remove_filter('pre_http_request', $mock, 1);
     if ($previous_library === null) { delete_option(Hub_Templates_Lib::LIBRARY_OPTION_KEY); } else { update_option(Hub_Templates_Lib::LIBRARY_OPTION_KEY, $previous_library); }

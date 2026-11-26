@@ -3,7 +3,6 @@
 define('ABSPATH', __DIR__);
 define('MINUTE_IN_SECONDS',60); define('HOUR_IN_SECONDS',3600); define('DAY_IN_SECONDS',86400);
 $cache=[]; $ttl=[]; $hooks=[]; $calls=0; $events=[]; $checks=0; $allowed=true;
-$reply=['new_version'=>'6.0.4','url'=>'https://hub.liquid-themes.com/changelog/','package'=>'https://api.liquid-themes.com/updates/hub.zip'];
 function sanitize_key($s){return $s;}
 function add_action($hook,$callback){$GLOBALS['hooks'][$hook][]=$callback;}
 function add_filter($hook,$callback){add_action($hook,$callback);}
@@ -23,6 +22,8 @@ function sanitize_text_field($s){return $s;}
 function wp_unslash($s){return $s;}
 function check($yes,$why){if(!$yes){throw new Exception($why);} $GLOBALS['checks']++;}
 require dirname(__DIR__).'/hub/liquid/admin/updater/liquid-updater-class.php';
+$nextVersion=Liquid_Updater::UPSTREAM_VERSION.'.999';
+$reply=['new_version'=>$nextVersion,'url'=>'https://hub.liquid-themes.com/changelog/','package'=>'https://api.liquid-themes.com/updates/hub.zip'];
 $updater=new Liquid_Updater();
 check($calls===0,'Bootstrap must not request updates');
 $initial=(object)['response'=>['other'=>['new_version'=>'2.0']]];
@@ -35,15 +36,15 @@ check($calls===1 && $query['license']==='' && $query['action']==='get_version','
 check($last_args['timeout']===5,'Bound request duration');
 check($ttl['hub-update-last-attempt']===12*HOUR_IN_SECONDS,'Successful checks cached for 12 hours');
 $offer=$updater->theme_update_transient($initial);
-check($offer->response['hub']['new_version']==='6.0.4' && isset($offer->response['other']),'Expose update and preserve other offers');
+check($offer->response['hub']['new_version']===$nextVersion && isset($offer->response['other']),'Expose update and preserve other offers');
 $updater->refresh(); $updater->theme_update_transient($offer);
 check($calls===1,'Cached admin/front reads must not repeat requests');
 $reply=false; $updater->refresh(true);
 check($ttl['hub-update-last-attempt']===30*MINUTE_IN_SECONDS,'Back off failed checks');
-check($updater->theme_update_transient($offer)->response['hub']['new_version']==='6.0.4','Failure retains last good update');
+check($updater->theme_update_transient($offer)->response['hub']['new_version']===$nextVersion,'Failure retains last good update');
 $reply=['new_version'=>['bad']];$updater->refresh(true);
-check($cache['hub-update-response']['new_version']==='6.0.4','Malformed response cannot erase valid update');
-$reply=['new_version'=>'6.0.3'];$updater->refresh(true);
+check($cache['hub-update-response']['new_version']===$nextVersion,'Malformed response cannot erase valid update');
+$reply=['new_version'=>Liquid_Updater::UPSTREAM_VERSION];$updater->refresh(true);
 $offer=$updater->theme_update_transient($offer);
 check(!isset($offer->response['hub']) && isset($offer->no_update['hub']),'Current upstream version is not a false update');
 $allowed=false;$before=$calls;$updater->updates_screen();
