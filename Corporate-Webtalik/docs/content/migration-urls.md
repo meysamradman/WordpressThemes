@@ -22,6 +22,8 @@
 
 مسیر نمونهٔ نوشته‌ها و پروژه‌های مشاهده‌شده در [سند وبلاگ](blog.md) و [سند نمونه‌کارها](portfolio.md) ثبت شده‌اند. بعد از تأیید فهرست و مقصد هر مورد، به نقشهٔ اجرایی اضافه می‌شوند.
 
+مسیرهای مشاهده‌شدهٔ سه لندینگ و الگوهای URL پیشنهادی کنار هم در [شناسنامهٔ محصولات](products/README.md) ثبت شده‌اند. `/products/` یک هاب دارد. برای پنل فروشگاه پیوند درون‌صفحه‌ای پیشنهاد شده است. مسیرهای تاریخی `/product/` از جمله دوره‌ها و قالب‌ها جداگانه ارزیابی شوند و انتقال گروهی به هاب انجام نشود. [سیاست URL محصولات](products/reference-v1.2/06-links-and-url-policy.md) · [نقشهٔ تعارض نسخه‌ها](products/reference-v1.2/11-version-migration-and-conflicts.md)
+
 ## ستون‌های فهرست اجرایی پس از دریافت داده
 
 `old_url_exact`، `old_type`، `old_intent`، `clicks`، `impressions`، `backlinks`، `decision` (KEEP/301/308/404/410/REVIEW)، `new_url`، `new_page_status`، `reason`، `owner_approved`، `redirect_test`، `canonical_test`، `last_checked`.
