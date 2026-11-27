@@ -42,7 +42,7 @@ add_action('wp_enqueue_scripts',static function():void{
  if(is_page('services')){style('pages/services',array('rdc-site'));script('pages/services');}
  elseif(\RadmanCT\Services\is_detail()){
   style('pages/service',array('rdc-site'));script('pages/service');
-  if(\RadmanCT\Services\has_portfolio_summary()&&!post_password_required())style('pages/service-portfolio-summary',array('rdc-pages-service'));
+  if(!post_password_required())style('pages/service-portfolio-summary',array('rdc-pages-service'));
  }
  elseif(is_front_page()){style('pages/home',array('rdc-site'));script('pages/home');}
  elseif(is_home()||is_category()||is_tag()||is_date()||is_author()||is_search()||is_singular('post')){style('pages/blog',array('rdc-site'));style(is_singular('post')?'pages/blog/single':'pages/blog/archive',array('rdc-pages-blog'));if(!is_singular())script('pages/archive');}

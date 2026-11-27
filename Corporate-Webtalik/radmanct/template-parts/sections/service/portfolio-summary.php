@@ -20,7 +20,7 @@ $topics=apply_filters('radmanct/service/topic-links',array());
   <div class="rdc-work-summary__row">
    <?php \RadmanCT\UI\text_marquee(array_keys($topics),static function(string $label)use($topics):void { ?>
     <a class="rdc-work-summary__link" href="<?php echo esc_url($topics[$label]); ?>"><?php echo esc_html($label); ?></a>
-   <?php },'موضوعات طراحی سایت'); ?>
+   <?php },apply_filters('radmanct/service/topic-label','موضوعات طراحی سایت')); ?>
   </div>
  <?php endif; ?>
 </section>

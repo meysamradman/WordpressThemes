@@ -1,8 +1,23 @@
 <?php
 namespace RadmanCT\Client;
 defined('ABSPATH')||exit;
+function service_copy():array {
+ static $copy=array();
+ $page=get_queried_object();
+ if(!$page instanceof \WP_Post||$page->post_type!=='page')return array();
+ $slug=$page->post_name;
+ if(isset($copy[$slug]))return $copy[$slug];
+ $file=match($slug){
+  'specialized-wordpress-design-development'=>'wordpress',
+  'admin-panel-web-systems'=>'web-systems',
+  'mobile-app-design-development'=>'mobile-app',
+  default=>'',
+ };
+ return $copy[$slug]=$file?require __DIR__.'/client/services/'.$file.'.php':array();
+}
+
 add_filter('radmanct/service/intro',static function(array $data):array {
- return [
+ $intro=[
   'label'=>'رویکرد ما',
   'title'=>'طراحی سایت اختصاصی را با شناخت کسب‌وکارتان آغاز می‌کنیم و با طراحی هدفمند و توسعه حرفه‌ای به نتیجه می‌رسانیم.',
   'lead'=>'از شناخت نیازها و اهداف کسب‌وکار تا طراحی و راه‌اندازی وب‌سایت، هر مرحله را متناسب با هویت برند، مخاطبان و نیازهای پروژه پیش می‌بریم.',
@@ -13,9 +28,10 @@ add_filter('radmanct/service/intro',static function(array $data):array {
    ['title'=>'توسعه برای استفادهٔ واقعی','desc'=>'از عملکرد در موبایل تا مدیریت محتوا، سایت را با ساختاری می‌سازیم که تیم شما بتواند از آن استفاده کند و آن را توسعه دهد.','image'=>\RadmanCT\media_id('service-intro-responsive-testing')?:\RadmanCT\media_id('service-intro-experience')],
   ],
  ];
+ return array_replace_recursive($intro,service_copy()['intro']??array());
 });
 add_filter('radmanct/service/process',static function():array {
- return [
+ $process=[
   'label'=>'مسیر اجرای پروژه',
   'title'=>'مراحل طراحی و توسعه وب‌سایت اختصاصی',
   'desc'=>'هر پروژه با بررسی نیازهای کسب‌وکار آغاز می‌شود و در مسیری مشخص از برنامه‌ریزی، طراحی و توسعه تا آزمایش و راه‌اندازی پیش می‌رود. جزئیات هر مرحله متناسب با گستردگی و الزامات فنی پروژه تعیین می‌شود.',
@@ -27,50 +43,27 @@ add_filter('radmanct/service/process',static function():array {
    ['title'=>'راه‌اندازی، تحویل و پشتیبانی','desc'=>'پس از بررسی‌های نهایی، وب‌سایت در محیط اصلی راه‌اندازی می‌شود. دسترسی‌ها و مستندات موردتوافق تحویل داده می‌شوند و آموزش مدیریت محتوا و خدمات پشتیبانی مطابق قرارداد انجام می‌گیرد.','result'=>'وب‌سایت راه‌اندازی‌شده و تحویل پروژه','image'=>\RadmanCT\media_id('service-process-launch')?:\RadmanCT\media_id('services-apps')],
   ],
  ];
+ return array_replace_recursive($process,service_copy()['process']??array());
 });
 add_filter('radmanct/service/mosaic',static function(array $data):array {
- $url=home_url('/contact-us/');
- $copy=array(
-  array(array('طراحی با هویت','برند شما'),'از ساختار صفحه‌ها تا جزئیات رابط کاربری؛ تجربه‌ای روشن و منسجم، متناسب با مخاطب و شخصیت کسب‌وکارتان.',\RadmanCT\media_id('services-marquee-1'),0),
-  array(array('توسعهٔ اختصاصی','و منعطف'),'سایت بر اساس نیاز واقعی شما ساخته می‌شود؛ با ساختاری قابل نگهداری و فضایی برای توسعهٔ قابلیت‌های آینده.',\RadmanCT\media_id('services-marquee-2'),0),
-  array(array('تجربهٔ واقعی','در اجرا'),'نمونه‌ای از اجرای یک تجربهٔ دیجیتال؛ از ایده و طراحی تا محصولی که روی دستگاه‌های مختلف قابل استفاده است.',23,92),
-  array(array('جزئیاتی برای','یک تجربهٔ بهتر'),'خوانایی، دسترسی‌پذیری و نمایش درست در موبایل، بخشی از طراحی و اجرای هر صفحه‌اند.',\RadmanCT\media_id('services-marquee-3'),0),
+ $media=array(
+  [\RadmanCT\media_id('service-mosaic-ui-design')?:\RadmanCT\media_id('services-marquee-1'),0],
+  [\RadmanCT\media_id('service-mosaic-modular-development')?:\RadmanCT\media_id('services-marquee-2'),0],
+  [23,92],
+  [\RadmanCT\media_id('service-mosaic-content-management')?:\RadmanCT\media_id('services-marquee-3'),0],
  );
- $title='وب‌سایتی که برای کسب‌وکار شما ساخته می‌شود';
- $description='از شناخت نیاز و طراحی تجربهٔ کاربری تا توسعه و راه‌اندازی؛ هر بخش بر اساس هویت برند و هدف کسب‌وکار شما شکل می‌گیرد.';
- $display_heading=is_page('custom-website-design-development');
- $details=array(
-  'custom-website-design-development'=>array('وب‌سایتی اختصاصی، متناسب با نیاز کسب‌وکار شما','سایت شرکتی باید کسب‌وکار را روشن معرفی کند، سایت خدماتی مسیر ثبت درخواست را ساده کند و سایت کاتالوگی پیدا کردن محصولات را آسان کند. ساختار صفحه‌ها و امکانات را بر اساس کاری که مخاطب باید در سایت انجام دهد، طراحی می‌کنیم.',array(
-   array(array('رابط کاربری','اختصاصی و هدفمند'),'منو، ترتیب محتوا و دکمه‌ها را بر اساس کارهای اصلی مخاطب طراحی می‌کنیم تا بتواند خدمت مناسب را پیدا کند، جزئیات را بخواند و درخواستش را ثبت کند.','service-mosaic-ui-design'),
-   array(array('امکانات سفارشی','و توسعه‌پذیر'),'بسته به پروژه، امکاناتی مثل فرم چندمرحله‌ای، فیلتر محصولات یا پنل مدیریت درخواست‌ها را پیاده‌سازی می‌کنیم. اجزا را جدا می‌سازیم تا افزودن قابلیت‌های بعدی ساده‌تر باشد.','service-mosaic-modular-development'),
+ $website=array('وب‌سایتی اختصاصی، متناسب با نیاز کسب‌وکار شما','سایت شرکتی باید کسب‌وکار را روشن معرفی کند، سایت خدماتی مسیر ثبت درخواست را ساده کند و سایت کاتالوگی پیدا کردن محصولات را آسان کند. ساختار صفحه‌ها و امکانات را بر اساس کاری که مخاطب باید در سایت انجام دهد، طراحی می‌کنیم.',array(
+   array(array('رابط کاربری','اختصاصی و هدفمند'),'منو، ترتیب محتوا و دکمه‌ها را بر اساس کارهای اصلی مخاطب طراحی می‌کنیم تا بتواند خدمت مناسب را پیدا کند، جزئیات را بخواند و درخواستش را ثبت کند.'),
+   array(array('امکانات سفارشی','و توسعه‌پذیر'),'بسته به پروژه، امکاناتی مثل فرم چندمرحله‌ای، فیلتر محصولات یا پنل مدیریت درخواست‌ها را پیاده‌سازی می‌کنیم. اجزا را جدا می‌سازیم تا افزودن قابلیت‌های بعدی ساده‌تر باشد.'),
    array(array('تجربه کاربری','در همه دستگاه‌ها'),'خوانایی متن، دسترسی به منو و تکمیل فرم‌ها را در موبایل، تبلت و دسکتاپ بررسی می‌کنیم. کنترل‌های اصلی برای استفاده با لمس و صفحه‌کلید طراحی می‌شوند.'),
-   array(array('مدیریت آسان','و ساختار بهینه'),'بخش‌هایی مثل معرفی خدمات و جزئیات محصولات را برای ویرایش تیم شما آماده می‌کنیم. ساختار نشانی صفحات، عنوان‌ها و بارگذاری تصاویر را هم در اجرای فنی در نظر می‌گیریم.','service-mosaic-content-management'))),
-  'specialized-wordpress-design-development'=>array('وردپرسی متناسب با نیاز کسب‌وکار شما','طراحی، توسعه و بهینه‌سازی وردپرس با ساختاری قابل نگهداری؛ از تجربهٔ کاربری تا مدیریت محتوای روزمره.',array(
-   array(array('طراحی با هویت','برند شما'),'صفحه‌ها و رابط کاربری با توجه به مخاطب، محتوا و شخصیت برند شما طراحی می‌شوند.'),
-   array(array('توسعهٔ قابلیت‌های','اختصاصی'),'امکانات موردنیاز پروژه با ساختاری روشن و قابل توسعه در وردپرس پیاده‌سازی می‌شوند.'),
-   array(array('مدیریت','محتوای ساده'),'بخش‌های محتوایی به‌گونه‌ای آماده می‌شوند که ویرایش و انتشار مطالب برای تیم شما آسان باشد.'),
-   array(array('بهینه‌سازی','و نگهداری'),'نمایش موبایل، بارگذاری رسانه و ساختار کد در کنار نیازهای نگهداری آینده بررسی می‌شوند.'))),
-  'admin-panel-web-systems'=>array('سامانه‌ای متناسب با جریان کار شما','از شناخت فرایندها تا طراحی پنل و اتصال بخش‌های مختلف؛ راهکاری برای مدیریت روشن‌تر کارهای روزانه.',array(
-   array(array('شناخت','فرایندهای کاری'),'نیاز کاربران، گردش اطلاعات و مراحل انجام کار مبنای طراحی سامانه قرار می‌گیرند.'),
-   array(array('معماری','قابل توسعه'),'بخش‌های سامانه و ارتباط میان آن‌ها با توجه به نیاز فعلی و مسیر رشد پروژه طراحی می‌شوند.'),
-   array(array('تجربهٔ کاربردی','در اجرا'),'فرم‌ها، گزارش‌ها و ابزارهای مدیریتی برای انجام روشن و سادهٔ وظایف کاربران آماده می‌شوند.'),
-   array(array('دسترسی','و عملکرد'),'سطوح دسترسی و رفتار بخش‌های مختلف متناسب با نقش کاربران و نیاز عملیاتی پروژه پیاده‌سازی می‌شوند.'))),
-  'mobile-app-design-development'=>array('اپلیکیشنی برای تجربه‌ای روان و کاربردی','از طراحی مسیرهای کاربر تا توسعه و اتصال به سرویس‌ها؛ تجربه‌ای موبایلی متناسب با محصول و مخاطبان شما.',array(
-   array(array('طراحی برای','کاربر موبایل'),'مسیرها و رابط کاربری با توجه به اندازهٔ نمایشگر، تعامل لمسی و نیاز مخاطبان طراحی می‌شوند.'),
-   array(array('توسعه و اتصال','سرویس‌ها'),'قابلیت‌های اپلیکیشن و ارتباط با سامانه‌های موردنیاز بر اساس دامنهٔ پروژه پیاده‌سازی می‌شوند.'),
-   array(array('تجربهٔ واقعی','محصول'),'سناریوهای اصلی استفاده در طراحی و اجرای محصول در نظر گرفته می‌شوند تا مسیرهای کاربر منسجم باشند.'),
-   array(array('جزئیات یک','تجربهٔ بهتر'),'خوانایی، بازخورد تعامل‌ها و مدیریت بارگذاری اطلاعات بخشی از اجرای اپلیکیشن هستند.'))),
- );
- foreach($details as $slug=>$detail)if(is_page($slug)){
-  $title=$detail[0];$description=$detail[1];
-  foreach($detail[2] as $index=>$text){
-   $copy[$index][0]=$text[0];$copy[$index][1]=$text[1];
-   if(isset($text[2]))$copy[$index][2]=\RadmanCT\media_id($text[2])?:$copy[$index][2];
-  }
-  break;
+   array(array('مدیریت آسان','و ساختار بهینه'),'بخش‌هایی مثل معرفی خدمات و جزئیات محصولات را برای ویرایش تیم شما آماده می‌کنیم. ساختار نشانی صفحات، عنوان‌ها و بارگذاری تصاویر را هم در اجرای فنی در نظر می‌گیریم.')));
+ [$title,$description,$cards]=service_copy()['mosaic']??$website;
+ $items=array();
+ foreach($cards as $index=>[$lines,$text]){
+  [$image,$video]=$media[$index];
+  $items[]=array('title'=>implode(' ',$lines),'title_lines'=>$lines,'desc'=>$text,'image'=>$image,'video'=>$video);
  }
- $items=array();foreach($copy as $row)$items[]=array('title'=>implode(' ',$row[0]),'title_lines'=>$row[0],'desc'=>$row[1],'image'=>$row[2],'video'=>$row[3],'link'=>'دربارهٔ پروژه‌ات بگو','url'=>$display_heading?'':$url);
- return array('label'=>'از ایده تا اجرا','title'=>$title,'desc'=>$description,'items'=>$items,'display_heading'=>$display_heading);
+ return array('label'=>'از ایده تا اجرا','title'=>$title,'desc'=>$description,'items'=>$items,'display_heading'=>true);
 });
 add_filter('radmanct/seo/description',static function(string $description):string {
  if(\RadmanCT\SEO\plain($description)!=='')return $description;
@@ -84,7 +77,7 @@ add_filter('radmanct/contact/data',static function(array $data):array {
  return $data;
 });
 add_filter('radmanct/service/sticky-rows',static function():array {
-    return array(
+    $rows=array(
         'label'=>'فناوری‌های توسعه',
         'title'=>'فناوری‌هایی برای توسعه وب‌سایت اختصاصی شما',
         'desc'=>'انتخاب فناوری به نوع محتوا، امکانات سایت و نحوهٔ نگهداری آن بستگی دارد. در وبتالیک از ابتدا مشخص می‌کنیم کدام بخش به رابط تعاملی، پردازش سمت سرور یا ارتباط با نرم‌افزارهای دیگر نیاز دارد.',
@@ -94,9 +87,12 @@ add_filter('radmanct/service/sticky-rows',static function():array {
             array('title'=>'API و یکپارچه‌سازی سیستم‌ها','features'=>['اتصال به نرم‌افزار مدیریت مشتریان','خواندن اطلاعات از سامانهٔ موجود','همگام‌سازی داده‌ بین سرویس‌ها','کنترل مجوزهای تبادل داده','مدیریت خطا و محدودیت درخواست‌ها'],'image'=>\RadmanCT\media_id('service-tech-api'),'subtitle'=>'اتصال سایت به نرم‌افزارهای دیگر','desc'=>'با API می‌توان درخواست‌های سایت را به نرم‌افزار مدیریت مشتریان فرستاد یا اطلاعات محصول را از سامانهٔ موجود خواند. پیش از اجرا، داده‌های قابل تبادل، مجوزهای دسترسی و محدودیت‌های هر سرویس را بررسی می‌کنیم.'),
         ),
     );
+    return array_replace_recursive($rows,service_copy()['technology']??array());
 });
 
 add_filter('radmanct/service/topic-links',static function():array {
+ $topics=service_copy()['topics']??null;
+ if($topics)return array_map(static fn(string $url):string=>str_starts_with($url,'#')?$url:home_url($url),$topics);
  return array(
   'طراحی رابط کاربری سایت'=>'#rdc-svc-intro',
   'توسعه وب‌سایت با React و Next.js'=>'#rdc-svc-technologies',
@@ -105,8 +101,17 @@ add_filter('radmanct/service/topic-links',static function():array {
   'طراحی پنل مدیریت و سامانه‌های تحت وب'=>home_url('/admin-panel-web-systems/'),
  );
 });
+add_filter('radmanct/service/topic-label',static function(string $label):string {
+ return service_copy()['topic_label']??$label;
+});
+
+add_filter('radmanct/service/case-copy',static function(array $copy):array {
+ return service_copy()['case']??$copy;
+});
 
 add_filter('radmanct/services/faq',static function():array {
+ $faq=service_copy()['faq']??null;
+ if($faq)return $faq;
  if(is_page('custom-website-design-development')){
   $wordpress='<a href="'.esc_url(home_url('/specialized-wordpress-design-development/')).'">طراحی و توسعهٔ تخصصی وردپرس</a>';
   return array(
@@ -232,6 +237,13 @@ add_filter('radmanct/page-title/data',static function(array $data):array {
   $data['label']=__('Let us talk','radmanct');
   $description=__('Let’s talk about your next project.','radmanct');
   $data['button']=array('label'=>__('Explore our services','radmanct'),'url'=>home_url('/services/'));
+ }
+ $hero=service_copy()['hero']??null;
+ if($hero){
+  $data['subheading']=$hero['subheading'];
+  $data['desc']=$hero['desc'];
+  $data['button']['label']=$hero['cta'];
+  $data['link']=array('label'=>'مشاهده نمونه‌کارها','url'=>get_post_type_archive_link('project')?:'','variant'=>'outline');
  }
  if($data['desc']==='')$data['desc']=$description;
  return $data;

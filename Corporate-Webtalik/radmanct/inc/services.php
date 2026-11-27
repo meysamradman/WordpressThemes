@@ -5,9 +5,6 @@ function is_detail():bool {
     $slugs=array_column(apply_filters('radmanct/services/specs',array()),'slug');
     return $slugs&&is_page($slugs);
 }
-function has_portfolio_summary():bool {
-    return is_page('custom-website-design-development');
-}
 add_filter('template_include',static function(string $template):string {
     return is_detail()?get_template_directory().'/templates/service.php':$template;
 });
