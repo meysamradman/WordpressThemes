@@ -6,14 +6,18 @@
 @import '../ui/section-stack.css';
 @import './service-technology.css';
 
+main.rdc-inv { --rdc-svc-section-gap:clamp(2.25rem,4vw,4.5rem); }
 main.rdc-inv h2 { font-family:var(--rdc-font-dsp); font-weight:var(--rdc-wt-dsp); }
 main.rdc-inv .rdc-heading__ttl {
  --rdc-sz-section:clamp(1.875rem,2.9vw,3.5rem);
  max-inline-size:none;
 }
 
-.rdc-work-summary { padding-block:clamp(3.5rem,8vw,8rem) clamp(3rem,6vw,6rem); }
-.rdc-work-summary__hdg { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.rdc-work-summary + .rdc-svc-process { padding-block-start:var(--rdc-svc-section-gap); }
+.rdc-work-summary__hdg {
+ grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+ margin-block-end:clamp(1.5rem,2.5vw,2.5rem);
+}
 .rdc-work-summary__stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(6rem,1fr)); gap:1.25rem; margin:0; }
 .rdc-work-summary__stats > div { display:flex; flex-direction:column-reverse; gap:.25rem; }
 .rdc-work-summary__stats dt { color:var(--rdc-mut); font-size:var(--rdc-sz-sm); }

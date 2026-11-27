@@ -96,6 +96,16 @@ add_filter('radmanct/service/sticky-rows',static function():array {
     );
 });
 
+add_filter('radmanct/service/topic-links',static function():array {
+ return array(
+  'طراحی رابط کاربری سایت'=>'#rdc-svc-intro',
+  'توسعه وب‌سایت با React و Next.js'=>'#rdc-svc-technologies',
+  'مراحل طراحی سایت اختصاصی'=>'#rdc-svc-process',
+  'طراحی و توسعه تخصصی وردپرس'=>home_url('/specialized-wordpress-design-development/'),
+  'طراحی پنل مدیریت و سامانه‌های تحت وب'=>home_url('/admin-panel-web-systems/'),
+ );
+});
+
 add_filter('radmanct/services/faq',static function():array {
  if(is_page('custom-website-design-development')){
   $wordpress='<a href="'.esc_url(home_url('/specialized-wordpress-design-development/')).'">طراحی و توسعهٔ تخصصی وردپرس</a>';
