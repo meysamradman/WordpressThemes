@@ -21,6 +21,7 @@
 .rdc-stk-rows__cnt p { max-inline-size:44ch; color:var(--rdc-mut); }
 .rdc-stk-rows__cnt .rdc-stk-rows__sub { color:var(--rdc-ink); font-weight:var(--rdc-wt-hdg); }
 .rdc-stk-rows__im {
+ position:relative;
  display:grid;
  place-items:center;
  overflow:hidden;
@@ -28,7 +29,14 @@
  border-radius:var(--rdc-rad);
  background:var(--rdc-srf);
 }
-.rdc-stk-rows__im::before {
+.rdc-stk-rows__im img {
+ position:absolute;
+ inset:0;
+ inline-size:100%;
+ block-size:100%;
+ object-fit:cover;
+}
+.rdc-stk-rows__im:empty::before {
  content:'';
  inline-size:40%;
  aspect-ratio:1.2;

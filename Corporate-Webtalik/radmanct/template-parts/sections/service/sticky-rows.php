@@ -13,14 +13,19 @@ $title_id=wp_unique_id('rdc-stk-rows-ttl-');
         <?php if(!empty($process['desc'])): ?><p class="rdc-heading__desc"><?php echo esc_html($process['desc']); ?></p><?php endif; ?>
     </header>
     <div class="rdc-stk-rows__list">
-        <?php foreach($process['items'] as $item): ?>
+        <?php foreach($process['items'] as $item):
+            $image_id=(int)($item['image']??0);
+            $image=\RadmanCT\PageTitle\attachment_allowed($image_id)?wp_get_attachment_image($image_id,'full',false,[
+                'alt'=>'','loading'=>'lazy','decoding'=>'async','sizes'=>'(max-width: 767px) 100vw, 50vw',
+            ]):'';
+        ?>
         <article class="rdc-stk-rows__itm">
             <div class="rdc-stk-rows__cnt">
                 <h3><?php echo esc_html($item['title']); ?></h3>
                 <?php if(!empty($item['subtitle'])): ?><p class="rdc-stk-rows__sub"><?php echo esc_html($item['subtitle']); ?></p><?php endif; ?>
                 <p><?php echo esc_html($item['desc']); ?></p>
             </div>
-            <div class="rdc-stk-rows__im" aria-hidden="true"></div>
+            <div class="rdc-stk-rows__im" aria-hidden="true"><?php echo $image; ?></div>
         </article>
         <?php endforeach; ?>
     </div>
