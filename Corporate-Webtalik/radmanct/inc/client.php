@@ -135,7 +135,8 @@ add_filter('radmanct/services/marquee',static function():array {
  return array('title'=>array('دربارهٔ پروژه‌ات','گفت‌وگو کنیم'),'url'=>\RadmanCT\Footer\data()['contact'],'images'=>$images);
 });
 add_filter('radmanct/services/strip',static function():array {
- return array_map(static fn(int $number):int=>\RadmanCT\media_id('services-strip-'.$number),[48,45,46,47,49]);
+ $image=\RadmanCT\media_id('portfolio-archive-preview-a');
+ return array_fill(0,5,$image);
 });
 // Current customer's editorial data. Replace this file for the next project;
 // shared renderers, assets and animation code remain independent of this content.
