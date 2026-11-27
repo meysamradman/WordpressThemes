@@ -11,6 +11,8 @@ $rdct_preview = $rdct_preview_id ? array( 'html' => $rdct_cover, 'control' => ''
 $rdct_terms = $rdct_allowed ? get_the_terms( $rdct_id, 'project_category' ) : array();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'rdc-card-pre-own rdc-prj' ); ?>>
+	<?php if ( $rdct_archive ) : ?><span class="rdc-rim" aria-hidden="true"></span><?php endif; ?>
+	<?php if ( ! empty( $args['logo_id'] ) ) : ?><span class="rdc-prj__logo" aria-hidden="true"><?php echo \RadmanCT\brand_logo( (int) $args['logo_id'], false ); ?></span><?php endif; ?>
 	<a data-rdc-cur-lbl="<?php esc_attr_e('View details','radmanct'); ?>" class="rdc-prj__md<?php if($rdct_preview_id)echo ' rdc-prj__md--pv'; ?>" <?php if ( ! $rdct_preview_id && has_post_thumbnail() ) { echo 'data-rdc-prj-mot'; } ?> href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 		<?php if ( $rdct_preview['html'] ) : ?><span class="rdc-prj__px"><span class="rdc-prj__zoom"><?php echo $rdct_preview['html']; ?></span></span><?php else : ?><span class="rdc-im-ph" aria-hidden="true"></span><?php endif; ?>
 	</a>

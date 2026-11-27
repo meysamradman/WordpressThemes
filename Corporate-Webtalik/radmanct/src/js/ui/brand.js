@@ -1,27 +1,39 @@
 export function initializeBrandMotion(doc=document){
  const view=doc.defaultView,preference=view.matchMedia('(prefers-reduced-motion:reduce)');
- const logos=[...doc.querySelectorAll('[data-rdc-logo]')],visible=new Set();
+ const logos=[...doc.querySelectorAll('[data-rdc-logo]')],played=new Set();
  let observer,alive=true;
- const stop=()=>{observer?.disconnect();observer=undefined;visible.clear();for(const logo of logos)logo.removeAttribute('data-rdc-logo-act');};
+ const stop=()=>{observer?.disconnect();observer=undefined;};
  const start=()=>{
-  if(!alive||doc.hidden||preference.matches||observer||doc.querySelector('#rdc-pre.is-in')||!view.IntersectionObserver||!logos.length)return;
+  if(!alive||doc.hidden||preference.matches||observer||doc.querySelector('#rdc-pre.is-in')||!view.IntersectionObserver)return;
+  const waiting=logos.filter(logo=>!played.has(logo));
+  if(!waiting.length)return;
   observer=new view.IntersectionObserver(entries=>{
    for(const entry of entries){
-    const shown=entry.isIntersecting&&entry.intersectionRatio>=.65;
-    if(shown)visible.add(entry.target);else visible.delete(entry.target);
-    entry.target.toggleAttribute('data-rdc-logo-act',shown);
+    if(!entry.isIntersecting||entry.intersectionRatio<.65||played.has(entry.target))continue;
+    played.add(entry.target);
+    entry.target.toggleAttribute('data-rdc-logo-act',true);
+    observer.unobserve(entry.target);
    }
   },{threshold:.65});
-  for(const logo of logos)observer.observe(logo);
+  for(const logo of waiting)observer.observe(logo);
  };
- const replay=()=>{
+ const changed=()=>{
+  stop();
+  if(preference.matches)for(const logo of played)logo.removeAttribute('data-rdc-logo-act');
   start();
-  if(!alive||preference.matches||doc.querySelector('#rdc-pre.is-in'))return;
-  for(const logo of visible)for(const animation of logo.getAnimations?.({subtree:true})||[]){animation.currentTime=0;animation.play();}
  };
- const changed=()=>{stop();start();};
  doc.addEventListener('rdc:pre-done',start,{once:true});
  doc.addEventListener('visibilitychange',changed);
- view.addEventListener('pageshow',replay);preference.addEventListener('change',changed);start();
- return()=>{alive=false;stop();doc.removeEventListener('visibilitychange',changed);view.removeEventListener('pageshow',replay);doc.removeEventListener('rdc:pre-done',start);preference.removeEventListener('change',changed);};
+ view.addEventListener('pageshow',start);
+ preference.addEventListener('change',changed);
+ start();
+ return()=>{
+  alive=false;
+  stop();
+  for(const logo of logos)logo.removeAttribute('data-rdc-logo-act');
+  doc.removeEventListener('visibilitychange',changed);
+  view.removeEventListener('pageshow',start);
+  doc.removeEventListener('rdc:pre-done',start);
+  preference.removeEventListener('change',changed);
+ };
 }

@@ -1,0 +1,21 @@
+.rdc-rim {
+ position:absolute;
+ inset:var(--rdc-rim-inset,0);
+ z-index:1;
+ padding:1px;
+ border-radius:inherit;
+ overflow:hidden;
+ pointer-events:none;
+ background:var(--rdc-ln);
+ mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ mask-composite:exclude;
+}
+.rdc-rim::before {
+ content:'';
+ position:absolute;
+ inset:var(--rdc-rim-spread,-50%);
+ background:var(--rdc-rim-light,conic-gradient(from 0deg,transparent 0deg 245deg,color-mix(in srgb,var(--rdc-acc) 16%,transparent) 275deg,var(--rdc-acc) 315deg,var(--rdc-clr-art-orb-lt) 332deg,transparent 345deg));
+ animation:rdc-rim var(--rdc-rim-dur,12s) linear var(--rdc-rim-delay,0s) infinite paused;
+}
+@keyframes rdc-rim { to { transform:rotate(1turn); } }
+@media (prefers-reduced-motion:reduce) { .rdc-rim::before { animation:none; } }

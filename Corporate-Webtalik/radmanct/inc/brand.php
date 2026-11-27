@@ -1,7 +1,7 @@
 <?php
 namespace RadmanCT;
 defined('ABSPATH')||exit;
-function brand_svg(string $source):string {
+function brand_svg(string $source,bool $motion=true):string {
  if(strlen($source)>32768||preg_match('/<!DOCTYPE|<!ENTITY/i',$source))return '';
  $xml=new \DOMDocument();$previous=libxml_use_internal_errors(true);
  try{$valid=$xml->loadXML($source,LIBXML_NONET);}finally{libxml_clear_errors();libxml_use_internal_errors($previous);}
@@ -37,7 +37,7 @@ function brand_svg(string $source):string {
    elseif(in_array($attribute->nodeName,array('href','fill','stroke','mask','clip-path'),true))$attribute->nodeValue=strtr($attribute->nodeValue,array_combine(array_map(static fn($id)=>'#'.$id,array_keys($ids)),array_map(static fn($id)=>'#'.$id,array_values($ids))));
   }
  }
- $root=$xml->documentElement;$root->setAttribute('class','rdc-logo');$root->setAttribute('data-rdc-logo','');$root->setAttribute('aria-hidden','true');$root->setAttribute('focusable','false');
+ $root=$xml->documentElement;$root->setAttribute('class','rdc-logo');if($motion)$root->setAttribute('data-rdc-logo','');$root->setAttribute('aria-hidden','true');$root->setAttribute('focusable','false');
  foreach($root->childNodes as $node){
   if(!$node instanceof \DOMElement)continue;
   if($root->getAttribute('data-rdc-logo-kind')==='personal')continue;
@@ -46,10 +46,10 @@ function brand_svg(string $source):string {
  }
  return $xml->saveXML($root);
 }
-function brand_logo(int $id):string {
+function brand_logo(int $id,bool $motion=true):string {
  $file=get_attached_file($id);$uploads=wp_upload_dir(null,false);$path=$file?realpath($file):false;$base=realpath($uploads['basedir']);
  if($path&&$base&&str_starts_with(wp_normalize_path($path),trailingslashit(wp_normalize_path($base)))&&get_post_mime_type($id)==='image/svg+xml'&&is_readable($path)&&filesize($path)<=32768){
-  $svg=brand_svg(file_get_contents($path));if($svg)return $svg;
+  $svg=brand_svg(file_get_contents($path),$motion);if($svg)return $svg;
  }
  return wp_get_attachment_image($id,'medium',false,array('alt'=>get_bloginfo('name'),'decoding'=>'async'));
 }

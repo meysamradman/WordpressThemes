@@ -2,28 +2,28 @@
 .rdc-logo [data-rdc-logo-rbn] { transform-box:view-box; transform-origin:125px 72px; }
 .rdc-logo [data-rdc-logo-dmnd] { transform-box:fill-box; transform-origin:center; }
 @media (prefers-reduced-motion:no-preference) {
- .rdc-logo[data-rdc-logo-act] [data-rdc-logo-rbn],.rdc-logo[data-rdc-logo-act] [data-rdc-logo-dmnd] { animation-duration:12s; animation-timing-function:cubic-bezier(.22,.61,.36,1); animation-iteration-count:infinite; }
+ .rdc-logo[data-rdc-logo-act] [data-rdc-logo-rbn],.rdc-logo[data-rdc-logo-act] [data-rdc-logo-dmnd] { animation-duration:12s; animation-timing-function:cubic-bezier(.22,.61,.36,1); animation-iteration-count:1; }
  .rdc-logo[data-rdc-logo-act] [data-rdc-logo-rbn=left] { animation-name:rdc-logo-left; }
  .rdc-logo[data-rdc-logo-act] [data-rdc-logo-rbn=right] { animation-name:rdc-logo-right; }
  .rdc-logo[data-rdc-logo-act] [data-rdc-logo-dmnd] { animation-name:rdc-logo-lock; }
 }
 @keyframes rdc-logo-left {
  0% { transform:none; opacity:1; }
- 5% { transform:translate(-18px,4px) rotate(-5deg); opacity:.8; }
- 13% { transform:translate(2px,0) rotate(1deg); opacity:1; }
+ 5% { transform:translate(calc(-18px * var(--rdc-logo-amp,1)),calc(4px * var(--rdc-logo-amp,1))) rotate(calc(-5deg * var(--rdc-logo-amp,1))); opacity:calc(1 - .2 * var(--rdc-logo-amp,1)); }
+ 13% { transform:translateX(calc(2px * var(--rdc-logo-amp,1))) rotate(calc(1deg * var(--rdc-logo-amp,1))); opacity:1; }
  19%,100% { transform:none; opacity:1; }
 }
 @keyframes rdc-logo-right {
  0% { transform:none; opacity:1; }
- 6% { transform:translate(18px,-4px) rotate(5deg); opacity:.8; }
- 16% { transform:translate(-2px,0) rotate(-1deg); opacity:1; }
+ 6% { transform:translate(calc(18px * var(--rdc-logo-amp,1)),calc(-4px * var(--rdc-logo-amp,1))) rotate(calc(5deg * var(--rdc-logo-amp,1))); opacity:calc(1 - .2 * var(--rdc-logo-amp,1)); }
+ 16% { transform:translateX(calc(-2px * var(--rdc-logo-amp,1))) rotate(calc(-1deg * var(--rdc-logo-amp,1))); opacity:1; }
  22%,100% { transform:none; opacity:1; }
 }
 @keyframes rdc-logo-lock {
  0% { transform:none; opacity:1; }
- 7% { transform:translate(0,-15px) rotate(-28deg) scale(.85); opacity:.65; }
- 16% { transform:translate(0,-8px) rotate(-15deg); opacity:1; }
- 21% { transform:translate(0,2px) rotate(6deg); opacity:1; }
+ 7% { transform:translateY(calc(-15px * var(--rdc-logo-amp,1))) rotate(calc(-28deg * var(--rdc-logo-amp,1))) scale(calc(1 - .15 * var(--rdc-logo-amp,1))); opacity:calc(1 - .35 * var(--rdc-logo-amp,1)); }
+ 16% { transform:translateY(calc(-8px * var(--rdc-logo-amp,1))) rotate(calc(-15deg * var(--rdc-logo-amp,1))); opacity:1; }
+ 21% { transform:translateY(calc(2px * var(--rdc-logo-amp,1))) rotate(calc(6deg * var(--rdc-logo-amp,1))); opacity:1; }
  25%,100% { transform:none; opacity:1; }
 }
 

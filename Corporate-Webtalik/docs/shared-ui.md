@@ -14,6 +14,7 @@
 | آیکون‌ها | `inc/icons.php`، `inc/icons/catalog.php`، `src/css/ui/icon.css` | SVG محلی از catalog، اندازه/ضخامت پایه از tokens؛ فقط نماد جهت‌دار در RTL معکوس شود. |
 | متن و پیش‌نمایش کارت | `src/css/ui/card-text.css`، `src/css/ui/card-preview.css`، `src/js/ui/card-preview.js` | متن کامل حفظ شود؛ clamp و رفتار رسانه دوباره نوشته نشوند. برای پخش و منابع، media.md را رعایت کنید. |
 | قاب رسانهٔ محتوایی | `src/css/ui/media-frame.css` | `rdc-md-frm` روی قاب، گردی `--rdc-rad`، برش لبه و `cover` را مشترک می‌کند. نسبت و نقطهٔ تمرکز را مصرف‌کننده تعیین می‌کند. برای قاب گوشه‌تیز `--rdc-md-rad:0` و برای نمایش کامل `--rdc-md-fit:contain` را روی همان قاب تنظیم کنید. هیرو مالک هندسهٔ خودش است. |
+| حاشیهٔ نورانی کارت | `src/css/ui/rim.css` | شبکهٔ خدمات با ورود به دید حرکت می‌کند. در آرشیو نمونه‌کارها هر کارت با هاور خودش حرکت می‌کند. در حالت کاهش حرکت حاشیه ثابت است. |
 | Input جست‌وجوی نوشته | `searchform.php` و استایل `.rdc-srch` در `src/css/ui/sidebar.css` | label، فوکوس کیبورد، فرم GET بومی و escape خروجی در همان مسیر بررسی شوند. [قرارداد مشترک Input](../../WEB-DEVELOPMENT-STANDARDS/shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md#ui-input) |
 | سؤال‌های متداول | `template-parts/ui/faq.php`، `src/css/ui/faq.css` | یک renderer با items/title/label/desc مستقل در هر مصرف؛ details/summary بومی و گروه یکتا حفظ شوند. |
 | نوار متن متحرک | `inc/ui/text-marquee.php`، `src/css/ui/text-marquee.css`، `src/js/ui/text-marquee.js` | الگوی `text-marquee` از Radman Design Library. مصرف‌کننده مالک متن و لینک است. حرکت پیوسته، بدون فلش، با مکث دستی، توقف بیرون دید، پشتیبانی RTL/LTR و reduced-motion. |
@@ -22,7 +23,7 @@
 | ادامهٔ جزئیات | `inc/content/continuation.php`، `template-parts/layout/continuation.php` | داده و نمایش مشترک نوشته/نمونه‌کار؛ قواعد نوع محتوا و fallback فعلی حفظ شوند. |
 | هدر، منو و فوتر | `template-parts/layout/`، `src/css/layout/`، `src/js/ui/header.js`، `src/js/ui/menu-panel.js`، `src/js/ui/footer.js` | مالک‌های مستقل فعلی؛ برای تغییر یک صفحه، نسخهٔ دیگری از هدر/فوتر یا کنترل منو نسازید. |
 | تماس شناور و cursor | `inc/ui/contact.php`، `src/css/ui/contact.css`، `src/js/ui/contact.js`، `src/css/ui/cursor.css`، `src/js/ui/cursor.js` | رفتار، دسترس‌پذیری، tooltip و cleanup از مالک موجود؛ دادهٔ مشتری در inc/client.php. |
-| لوگو و حرکت برند | `inc/brand.php`، `src/css/ui/brand.css`، `src/js/ui/brand.js` | sanitizer، شناسه‌های یکتای SVG و کنترل visibility/reduced-motion مشترک؛ شکل و ترتیب حرکت W و نشان شخصی مستقل بمانند. |
+| لوگو و حرکت برند | `inc/brand.php`، `src/css/ui/brand.css`، `src/js/ui/brand.js` | نشان هدر و فوتر در اولین ورود به دید، یک‌بار در هر بار بارگذاری سند حرکت می‌کنند. اسکرول دوباره یا برگشت به تب، حرکت را بازنشانی نمی‌کند. رفرش و ورود به صفحهٔ دیگر اجرای تازه دارند. هاور نشان کارت‌ها مستقل است. sanitizer، شناسه‌های یکتای SVG و reduced-motion حفظ شوند. |
 | ورود متن و ابزارهای اسکرول | `src/js/ui/text-motion.js`، `src/js/runtime/` | lifecycle، scroll-state، refresh، observers و sticky موجود؛ موتور، RAF یا observer موازی برای همان مسئولیت نسازید. |
 | تزئین هیرو و رسانه | `template-parts/ui/title-art.php`، `src/js/runtime/art-orbit.js`، `inc/content/media.php` | اندازهٔ مشترک نقطه‌ها از tokens؛ مسیر حرکت مطابق تصویر خودش. رسانه از attachment ID و با قرارداد media.md مصرف شود. |
 
