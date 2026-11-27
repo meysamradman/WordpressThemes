@@ -11,7 +11,7 @@
    <?php if(trim(get_the_content())): ?><article class="rdc-ctr rdc-main rdc-cnt"><?php the_content();wp_link_pages(); ?></article><?php endif; ?>
    <?php get_template_part('template-parts/sections/service/mosaic'); ?>
    <?php if(\RadmanCT\Services\has_portfolio_summary()): ?>
-    <?php get_template_part('template-parts/sections/service/sticky-rows'); ?>
+    <?php get_template_part('template-parts/sections/service/technology'); ?>
     <?php $summary=\RadmanCT\Service\portfolio_summary(); ?>
     <?php get_template_part('template-parts/sections/service/portfolio-summary',null,['summary'=>$summary]); ?>
     <?php get_template_part('template-parts/sections/service/process'); ?>

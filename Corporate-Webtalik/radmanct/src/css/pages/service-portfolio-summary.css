@@ -2,7 +2,9 @@
 @import '../ui/service-image-strip.css';
 @import '../ui/service-intro.css';
 @import '../ui/service-process.css';
-@import './service-sticky-rows.css';
+@import '../ui/text-motion.css';
+@import '../ui/section-stack.css';
+@import './service-technology.css';
 
 main.rdc-inv h2 { font-family:var(--rdc-font-dsp); font-weight:var(--rdc-wt-dsp); }
 main.rdc-inv .rdc-heading__ttl { max-inline-size:none; text-wrap:wrap; }

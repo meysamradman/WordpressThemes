@@ -1,0 +1,3 @@
+.rdc-ss{position:relative;min-inline-size:0;container:rdc-svcs/inline-size;display:grid;gap:3rem;inline-size:100%}
+.rdc-ss__itm{position:relative;min-inline-size:0}
+.rdc-ss__inr{position:relative;min-inline-size:0;transform-origin:center center;border-radius:var(--rdc-rad)}

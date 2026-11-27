@@ -1,5 +1,23 @@
 import {createStickyScene,getStickyItems} from './scene.js';
 import {initializeEntrance,addTextFill} from '../../ui/text-motion.js';
+import {loadAnimation} from '../../motion.js';
+import {reportRuntimeError} from '../../runtime/lifecycle.js';
+
+export function initializeServices(root,load=loadAnimation){
+ const media=root.ownerDocument.defaultView.matchMedia('(min-width:1024px) and (prefers-reduced-motion:no-preference)');
+ let alive=true,pending=false,release;
+ const start=async()=>{
+  if(!alive||pending||release||!media.matches)return;
+  pending=true;
+  try{
+   const vendor=await load();
+   if(alive&&root.isConnected&&media.matches)release=mount(root,vendor);
+  }catch(error){if(alive)reportRuntimeError('services',error);}
+  finally{pending=false;}
+ };
+ media.addEventListener('change',start);start();
+ return()=>{alive=false;media.removeEventListener('change',start);release?.();};
+}
 
 export function mount(root,{gsap,ScrollTrigger}) {
   const items=getStickyItems(root);
@@ -14,10 +32,14 @@ export function mount(root,{gsap,ScrollTrigger}) {
   const releaseScene=createStickyScene(root,gsap,ScrollTrigger,({inners,top,available})=>{
     if(items.some(item=>item.classList.contains('is-tall')))return false;
     const minimum=Math.max(.8,Math.min(.98,Number(root.dataset.minScale) || .9));
-    gsap.set(inners,{minHeight:available});
-    gsap.set(root,{height:available,overflow:'clip'});
+    const compact=root.dataset.transition==='slide-stack';
+    const height=compact?Math.max(...inners.map(inner=>inner.offsetHeight)):available;
+    const incoming=compact?{y:available}:{yPercent:105};
+    const entered=compact?{y:0}:{yPercent:0};
+    gsap.set(inners,{minHeight:height});
+    gsap.set(root,{height,overflow:'clip'});
     gsap.set(items,{position:'absolute',inset:0});
-    gsap.set(items.slice(1),{yPercent:105});
+    gsap.set(items.slice(1),incoming);
     const releases=[];
     const firstRead=.35,transition=1,between=.2;
     const span=firstRead+(items.length-1)*transition+Math.max(0,items.length-2)*between;
@@ -42,10 +64,10 @@ export function mount(root,{gsap,ScrollTrigger}) {
       timeline.set(layers,{willChange:'transform,opacity'},at-.15);
       timeline.set(layers,{willChange:'auto'},at+transition);
       // Explicit endpoints survive invalidation while the page is mid-scroll.
-      timeline.fromTo(inners[index],{scale:1,autoAlpha:1},{scale:minimum,autoAlpha:.45,duration:transition,ease:'none',immediateRender:false},at);
-      timeline.fromTo(item,{yPercent:105},{yPercent:0,duration:transition,ease:'none',immediateRender:false},at);
-      timeline.set(items[index],{opacity:0,visibility:'hidden'},at+transition);
-      if(visual)timeline.fromTo(visual,{yPercent:12,scale:1.06},{yPercent:0,scale:1,duration:.7,ease:'power2.out',immediateRender:false},at+.2);
+      timeline.fromTo(inners[index],{scale:1,autoAlpha:1},{scale:minimum,autoAlpha:compact?1:.45,duration:transition,ease:'none',immediateRender:false},at);
+      timeline.fromTo(item,incoming,{...entered,duration:transition,ease:'none',immediateRender:false},at);
+      if(!compact)timeline.set(items[index],{opacity:0,visibility:'hidden'},at+transition);
+      if(visual&&!compact)timeline.fromTo(visual,{yPercent:12,scale:1.06},{yPercent:0,scale:1,duration:.7,ease:'power2.out',immediateRender:false},at+.2);
       content(item,at+.65);
     });
     return()=>releases.forEach(release=>release());
