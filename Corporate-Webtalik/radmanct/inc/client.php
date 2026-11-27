@@ -302,7 +302,13 @@ add_filter('radmanct/footer/data',static function(array $data):array {
 });
 
 add_filter('radmanct/compact-title/data',static function(array $data):array {
- if(is_post_type_archive('project')){$data['label']='آرشیو نمونه‌کارها';$data['title']='نمونه‌کارهای';$data['accent']='منتخب';$data['desc']='مجموعه‌ای از پروژه‌های منتخب طراحی و توسعهٔ وب‌سایت، اپلیکیشن و سامانه‌های اختصاصی.';$data['button']=['label'=>'مشاهدهٔ همهٔ پروژه‌ها','url'=>'#rdc-projects'];}
+ if(is_post_type_archive('project')){
+  $data['label']='';
+  $data['title']='نمونه‌کارها';
+  $data['accent']='';
+  $data['desc']='مجموعه‌ای از پروژه‌های منتخب طراحی و توسعهٔ وب‌سایت، اپلیکیشن و سامانه‌های اختصاصی.';
+  $data['button']=[];
+ }
  elseif(is_home()){$data['label']='یادداشت‌ها و دیدگاه‌ها';$data['desc']='دربارهٔ طراحی، توسعه و ساخت تجربه‌های بهتر در وب.';}
  elseif(is_search()){$data['label']='جستجو در وبتالیک';}
  return $data;
