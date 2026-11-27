@@ -4,3 +4,6 @@
 
 @media(hover:hover){[data-rdc-menu]:has(>.rdc-menu>li:not(.menu-item-has-children)>a:hover):not(:has(>.rdc-menu>li:not(.menu-item-has-children)>a:focus-visible)) .rdc-menu>li>a:not(:hover)::before{transform:scale(0)}}
 [data-rdc-menu]:has(>.rdc-menu>li:not(.menu-item-has-children)>a:focus-visible) .rdc-menu>li>a:not(:focus-visible)::before{transform:scale(0)}
+
+.rdc-menu > :is(.current-menu-item,.current-menu-ancestor) > a,
+.rdc-menu .sub-menu > :is(.current-menu-item,.current-menu-ancestor) > a { color:var(--rdc-acc); }
