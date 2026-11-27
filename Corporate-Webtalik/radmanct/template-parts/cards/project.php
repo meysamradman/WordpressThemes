@@ -2,11 +2,16 @@
 defined( 'ABSPATH' ) || exit;
 $rdct_id = (int) get_the_ID();
 $rdct_allowed = ! post_password_required( $rdct_id );
-$rdct_preview = \RadmanCT\Media\frame( $rdct_id, has_post_thumbnail() ? get_the_post_thumbnail( $rdct_id, 'large', array( 'alt' => '', 'sizes' => '(min-width: 960px) 50vw, 100vw' ) ) : '' );
+$rdct_archive = ! empty( $args['archive'] );
+$rdct_preview_id = $rdct_allowed ? (int) ( $args['preview_id'] ?? 0 ) : 0;
+$rdct_sizes = $rdct_archive ? '(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw' : '(min-width: 960px) 50vw, 100vw';
+$rdct_image = array( 'alt' => '', 'sizes' => $rdct_sizes );
+$rdct_cover = $rdct_preview_id ? wp_get_attachment_image( $rdct_preview_id, 'large', false, $rdct_image ) : get_the_post_thumbnail( $rdct_id, 'large', $rdct_image );
+$rdct_preview = $rdct_preview_id ? array( 'html' => $rdct_cover, 'control' => '' ) : \RadmanCT\Media\frame( $rdct_id, $rdct_cover );
 $rdct_terms = $rdct_allowed ? get_the_terms( $rdct_id, 'project_category' ) : array();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'rdc-card-pre-own rdc-prj' ); ?>>
-	<a data-rdc-cur-lbl="<?php esc_attr_e('View details','radmanct'); ?>" class="rdc-prj__md" <?php if ( has_post_thumbnail() ) { echo 'data-rdc-prj-mot'; } ?> href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+	<a data-rdc-cur-lbl="<?php esc_attr_e('View details','radmanct'); ?>" class="rdc-prj__md<?php if($rdct_preview_id)echo ' rdc-prj__md--pv'; ?>" <?php if ( ! $rdct_preview_id && has_post_thumbnail() ) { echo 'data-rdc-prj-mot'; } ?> href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 		<?php if ( $rdct_preview['html'] ) : ?><span class="rdc-prj__px"><span class="rdc-prj__zoom"><?php echo $rdct_preview['html']; ?></span></span><?php else : ?><span class="rdc-im-ph" aria-hidden="true"></span><?php endif; ?>
 	</a>
 	<div class="rdc-prj__body">

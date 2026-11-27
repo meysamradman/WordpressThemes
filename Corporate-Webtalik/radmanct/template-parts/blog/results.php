@@ -6,4 +6,4 @@
 <?php endif; ?>
 <section class="rdc-jrn"><h2 class="rdc-jrn__ttl"><?php esc_html_e('Latest from the journal','radmanct'); ?></h2><div class="rdc-jrn__list">
 <?php while(have_posts()):the_post();get_template_part('template-parts/blog/journal');endwhile; ?></div></section>
-<?php the_posts_pagination();endif; ?>
+<?php get_template_part('template-parts/ui/pagination');endif; ?>

@@ -18,7 +18,7 @@
 | سؤال‌های متداول | `template-parts/ui/faq.php`، `src/css/ui/faq.css` | یک renderer با items/title/label/desc مستقل در هر مصرف؛ details/summary بومی و گروه یکتا حفظ شوند. |
 | نوار متن متحرک | `inc/ui/text-marquee.php`، `src/css/ui/text-marquee.css`، `src/js/ui/text-marquee.js` | الگوی `text-marquee` از Radman Design Library. مصرف‌کننده مالک متن و لینک است. حرکت پیوسته، بدون فلش، با مکث دستی، توقف بیرون دید، پشتیبانی RTL/LTR و reduced-motion. |
 | دسته‌بندی و سایدبار | `inc/ui/category-tree.php`، `src/css/ui/category-tree.css`، `src/css/ui/sidebar.css` | مالک موجود و لینک‌های واقعی استفاده شوند؛ منطق جدا برای هر آرشیو نسازید. |
-| جستجو و صفحه‌بندی آرشیو | `src/js/pages/archive.js` | رفتار موجود با لینک بومی، history و پاسخ هم‌مبدأ؛ query اصلی، حفاظت محتوا و lifecycle حفظ شوند. |
+| جستجو و صفحه‌بندی آرشیو | `template-parts/ui/pagination.php`، `src/js/pages/archive.js` | حالت پیش‌فرض شماره‌دار برای وبلاگ. حالت `more` با `data-rdc-arc-items` دستهٔ بعدی نمونه‌کارها را هنگام اسکرول یا کلیک اضافه می‌کند. پیوندهای بومی و URL مستقل هر صفحه حفظ می‌شوند. |
 | ادامهٔ جزئیات | `inc/content/continuation.php`، `template-parts/layout/continuation.php` | داده و نمایش مشترک نوشته/نمونه‌کار؛ قواعد نوع محتوا و fallback فعلی حفظ شوند. |
 | هدر، منو و فوتر | `template-parts/layout/`، `src/css/layout/`، `src/js/ui/header.js`، `src/js/ui/menu-panel.js`، `src/js/ui/footer.js` | مالک‌های مستقل فعلی؛ برای تغییر یک صفحه، نسخهٔ دیگری از هدر/فوتر یا کنترل منو نسازید. |
 | تماس شناور و cursor | `inc/ui/contact.php`، `src/css/ui/contact.css`، `src/js/ui/contact.js`، `src/css/ui/cursor.css`، `src/js/ui/cursor.js` | رفتار، دسترس‌پذیری، tooltip و cleanup از مالک موجود؛ دادهٔ مشتری در inc/client.php. |

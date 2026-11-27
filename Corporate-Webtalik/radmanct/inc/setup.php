@@ -14,6 +14,6 @@ add_action( 'after_setup_theme', static function (): void {
 add_action('pre_get_posts',static function(\WP_Query $query):void{
  if(is_admin()||!$query->is_main_query()||$query->is_feed())return;
  if($query->is_search())$query->set('post_type','post');
- if($query->is_post_type_archive('project')||$query->is_tax('project_category'))$query->set('posts_per_page',8);
+ if($query->is_post_type_archive('project')||$query->is_tax('project_category'))$query->set('posts_per_page',4);
 });
 
