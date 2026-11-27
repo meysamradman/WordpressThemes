@@ -18,7 +18,7 @@ function data():array {
  $terms=wp_get_object_terms($current->ID,$taxonomy,array('fields'=>'ids'));
  $query=array(
   'post_type'=>$current->post_type,'post_status'=>'publish','has_password'=>false,
-  'post__not_in'=>array($current->ID),'posts_per_page'=>3,'no_found_rows'=>true,'ignore_sticky_posts'=>true,
+  'post__not_in'=>array($current->ID),'posts_per_page'=>$current->post_type==='project'?4:3,'no_found_rows'=>true,'ignore_sticky_posts'=>true,
   'orderby'=>array('date'=>'DESC','ID'=>'DESC'),
  );
  $matched=!is_wp_error($terms)&&!empty($terms);

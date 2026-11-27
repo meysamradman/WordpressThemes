@@ -138,9 +138,6 @@ add_filter('radmanct/services/strip',static function():array {
  $keys=['portfolio-archive-preview-a','portfolio-grammig-preview','portfolio-barsam-preview','portfolio-archive-preview-a','portfolio-grammig-preview'];
  return array_map(static fn(string $key):int=>\RadmanCT\media_id($key),$keys);
 });
-add_filter('radmanct/project/archive-preview',static function(int $image,int $post_id):int {
- return str_starts_with(get_post_field('post_name',$post_id),'demo-')?(\RadmanCT\media_id('portfolio-archive-preview-a')?:$image):$image;
-},10,2);
 // Current customer's editorial data. Replace this file for the next project;
 // shared renderers, assets and animation code remain independent of this content.
 add_filter('body_class',static function(array $classes):array {
@@ -276,9 +273,9 @@ add_filter('radmanct/services/specs',static function(array $items):array {
 });
 add_filter('radmanct/home/selected-work',static function(array $items):array {
  return array(
-  array('image'=>25,'title'=>__('Skills learning website','radmanct'),'description'=>__('A WordPress website for educational content and courses.','radmanct'),'categories'=>array(__('Educational website','radmanct'))),
-  array('image'=>24,'title'=>__('Sepehr real estate website','radmanct'),'description'=>__('A real estate website for services and property listings.','radmanct'),'categories'=>array(__('Real estate website','radmanct'))),
-  array('image'=>23,'title'=>__('Afagh corporate website','radmanct'),'description'=>__('A corporate website with clear content and services.','radmanct'),'categories'=>array(__('Corporate website','radmanct'))),
+  array('image'=>\RadmanCT\media_id('portfolio-neoline-preview'),'title'=>'وب‌سایت آژانس تبلیغاتی نئولاین','description'=>'معرفی خدمات تبلیغاتی، پروژه‌ها و خبرهای آژانس.','categories'=>array('وب‌سایت شرکتی')),
+  array('image'=>\RadmanCT\media_id('portfolio-grammig-preview'),'title'=>'وب‌سایت Grammig Advisory','description'=>'معرفی مجموعه، خدمات مشاوره و اعضای تیم.','categories'=>array('وب‌سایت شرکتی')),
+  array('image'=>\RadmanCT\media_id('portfolio-archive-preview-a'),'title'=>'وب‌سایت جواهرات انیماه','description'=>'معرفی برند و نمایش مجموعه‌های جواهرات.','categories'=>array('فروشگاه اینترنتی')),
  );
 });
 add_filter('radmanct/home/offerings',static function(array $items):array {

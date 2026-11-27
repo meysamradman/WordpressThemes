@@ -1,6 +1,6 @@
 <?php defined('ABSPATH')||exit;get_header(); ?>
 <main id="main-content" tabindex="-1"><?php get_template_part('template-parts/layout/page-title'); ?>
-<div class="rdc-ctr rdc-main"><?php while(have_posts()):the_post(); ?><article <?php post_class(); ?>><?php get_template_part('template-parts/ui/content-heading'); ?><?php if(post_password_required()){echo get_the_password_form();}else{ ?>
+<div class="rdc-ctr rdc-ctr--full rdc-main"><?php while(have_posts()):the_post(); ?><article <?php post_class(); ?>><?php get_template_part('template-parts/ui/content-heading'); ?><?php if(post_password_required()){echo get_the_password_form();}else{ ?>
 <a href="<?php echo esc_url(get_post_type_archive_link('project')); ?>"><?php esc_html_e('Back to projects','radmanct'); ?></a>
 <?php the_terms(get_the_ID(),'project_category','<div class="rdc-tags">',' ','</div>');if(has_excerpt())the_excerpt();the_post_thumbnail('full',array('class'=>'rdc-prj-cvr','fetchpriority'=>'high','loading'=>'eager','sizes'=>'100vw')); ?>
 <?php $project=get_post_meta(get_the_ID(),'_webtalik_project',true);if(is_array($project)): ?>
