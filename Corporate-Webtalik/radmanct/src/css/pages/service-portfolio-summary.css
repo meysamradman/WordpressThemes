@@ -7,7 +7,10 @@
 @import './service-technology.css';
 
 main.rdc-inv h2 { font-family:var(--rdc-font-dsp); font-weight:var(--rdc-wt-dsp); }
-main.rdc-inv .rdc-heading__ttl { max-inline-size:none; text-wrap:wrap; }
+main.rdc-inv .rdc-heading__ttl {
+ --rdc-sz-section:clamp(1.875rem,2.9vw,3.5rem);
+ max-inline-size:none;
+}
 
 .rdc-work-summary { padding-block:clamp(3.5rem,8vw,8rem) clamp(3rem,6vw,6rem); }
 .rdc-work-summary__hdg { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
@@ -36,12 +39,9 @@ main.rdc-inv .rdc-heading__ttl { max-inline-size:none; text-wrap:wrap; }
  background:var(--rdc-acc);
 }
 .rdc-svc-case__im {
- overflow:clip;
  aspect-ratio:7 / 5;
- border-radius:var(--rdc-rad);
  background:var(--rdc-srf);
 }
-.rdc-svc-case__im img { display:block; inline-size:100%; block-size:100%; object-fit:cover; }
 .rdc-svc-case__cnt {
  align-self:end;
  border-block-start:1px solid var(--rdc-ln);

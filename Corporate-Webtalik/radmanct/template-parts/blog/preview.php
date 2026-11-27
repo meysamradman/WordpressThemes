@@ -14,7 +14,7 @@ $rdct_preview = \RadmanCT\Media\frame( (int) $rdct_post_id, $rdct_image );
 <article <?php if ( ! $rdct_compact ) { echo 'id="rdc-' . esc_attr( $rdct_variant ) . '-post-' . (int) $rdct_post_id . '" '; } ?><?php post_class( 'rdc-card-pre-own rdc-blog-pv rdc-blog-pv--' . $rdct_variant, $rdct_post_id ); ?>>
 	<a data-rdc-cur-lbl="<?php esc_attr_e('Read article','radmanct'); ?>" href="<?php echo esc_url( get_permalink( $rdct_post_id ) ); ?>">
 		<?php if ( $rdct_preview['html'] ) : ?>
-			<div class="rdc-blog-pv__md rdc-blog-md-frm">
+			<div class="rdc-blog-pv__md rdc-blog-md-frm rdc-md-frm">
 				<?php echo $rdct_preview['html']; ?>
 				<?php \RadmanCT\Media\badge( $rdct_post_id ); ?>
 			</div>

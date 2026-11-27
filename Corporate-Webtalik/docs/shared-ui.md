@@ -13,6 +13,7 @@
 | دکمه و آیکون CTA | `inc/ui/button.php`، `src/css/ui/button.css` | renderer موجود با گزینه‌های خودش؛ رفتار hover و markup جدا در هر صفحه نسازید. |
 | آیکون‌ها | `inc/icons.php`، `inc/icons/catalog.php`، `src/css/ui/icon.css` | SVG محلی از catalog، اندازه/ضخامت پایه از tokens؛ فقط نماد جهت‌دار در RTL معکوس شود. |
 | متن و پیش‌نمایش کارت | `src/css/ui/card-text.css`، `src/css/ui/card-preview.css`، `src/js/ui/card-preview.js` | متن کامل حفظ شود؛ clamp و رفتار رسانه دوباره نوشته نشوند. برای پخش و منابع، media.md را رعایت کنید. |
+| قاب رسانهٔ محتوایی | `src/css/ui/media-frame.css` | `rdc-md-frm` روی قاب، گردی `--rdc-rad`، برش لبه و `cover` را مشترک می‌کند. نسبت و نقطهٔ تمرکز را مصرف‌کننده تعیین می‌کند. برای قاب گوشه‌تیز `--rdc-md-rad:0` و برای نمایش کامل `--rdc-md-fit:contain` را روی همان قاب تنظیم کنید. هیرو مالک هندسهٔ خودش است. |
 | Input جست‌وجوی نوشته | `searchform.php` و استایل `.rdc-srch` در `src/css/ui/sidebar.css` | label، فوکوس کیبورد، فرم GET بومی و escape خروجی در همان مسیر بررسی شوند. [قرارداد مشترک Input](../../WEB-DEVELOPMENT-STANDARDS/shared/16-DESIGN-SYSTEM-COMPONENTS-v1.0.md#ui-input) |
 | سؤال‌های متداول | `template-parts/ui/faq.php`، `src/css/ui/faq.css` | یک renderer با items/title/label/desc مستقل در هر مصرف؛ details/summary بومی و گروه یکتا حفظ شوند. |
 | نوار متن متحرک | `inc/ui/text-marquee.php`، `src/css/ui/text-marquee.css`، `src/js/ui/text-marquee.js` | الگوی `text-marquee` از Radman Design Library. مصرف‌کننده مالک متن و لینک است. حرکت پیوسته، بدون فلش، با مکث دستی، توقف بیرون دید، پشتیبانی RTL/LTR و reduced-motion. |

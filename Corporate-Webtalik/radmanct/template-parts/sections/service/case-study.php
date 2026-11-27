@@ -18,7 +18,7 @@ if(!$image)return;
   </div>
   <p class="rdc-heading__desc"><?php esc_html_e('طراحی سایت با شناخت نیاز مخاطب شروع می‌شود. از ساختار صفحه‌ها تا مسیر دسترسی به محتوا، هر تصمیم کمک می‌کند کاربر سریع‌تر به چیزی برسد که دنبال آن است.','radmanct'); ?></p>
  </header>
- <div class="rdc-svc-case__im"><?php echo $image; ?></div>
+ <div class="rdc-svc-case__im rdc-md-frm"><?php echo $image; ?></div>
  <div class="rdc-svc-case__cnt">
   <h3 class="rdc-svc-case__ttl"><?php echo esc_html(get_the_title($project)); ?></h3>
   <p><?php echo esc_html($study['excerpt']); ?></p>

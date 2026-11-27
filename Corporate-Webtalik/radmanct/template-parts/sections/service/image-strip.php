@@ -14,6 +14,6 @@ if(!$images)return;
 ?>
 <section class="rdc-svc-strip" id="rdc-svc-strip" tabindex="0" aria-label="<?php esc_attr_e('Gallery','radmanct'); ?>" data-rdc-svc-strip>
  <ul class="rdc-svc-strip__inr">
-  <?php foreach($images as $image): ?><li><?php echo $image; ?></li><?php endforeach; ?>
+  <?php foreach($images as $image): ?><li class="rdc-md-frm"><?php echo $image; ?></li><?php endforeach; ?>
  </ul>
 </section>

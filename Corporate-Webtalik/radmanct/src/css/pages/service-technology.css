@@ -1,3 +1,12 @@
+@font-face {
+ font-family:'Instrument Sans';
+ src:url('/InstrumentSans-SemiBold-Latin.woff2') format('woff2');
+ font-style:normal;
+ font-weight:600;
+ font-display:swap;
+ unicode-range:U+0023,U+002B,U+002D-002E,U+0030-0039,U+0041-005A,U+0061-007A;
+}
+
 .rdc-svc-tech { padding-block:clamp(3rem,6vw,7rem); }
 .rdc-svc-tech__itm {
  display:grid;
@@ -9,17 +18,26 @@
  border-radius:0;
  background:var(--rdc-bg);
 }
-.rdc-svc-tech__copy { display:grid; gap:clamp(.75rem,1.2vw,1.25rem); min-inline-size:0; }
+.rdc-svc-tech__copy { display:grid; gap:clamp(.75rem,1vw,1.125rem); min-inline-size:0; }
 .rdc-svc-tech__ttl {
  margin:0;
  color:var(--rdc-ink);
- font-size:clamp(1.75rem,3.5vw,4.1rem);
+ font-family:'Instrument Sans',var(--rdc-font-body);
+ font-size:clamp(1.625rem,2.9vw,3.5rem);
  line-height:1.12;
  overflow-wrap:anywhere;
 }
 .rdc-svc-tech__copy p { margin:0; }
-.rdc-svc-tech__sub { color:var(--rdc-ink); font-weight:var(--rdc-wt-hdg); }
-.rdc-svc-tech__desc { max-inline-size:68ch; color:var(--rdc-mut); }
+.rdc-svc-tech__sub {
+ color:var(--rdc-ink);
+ font-size:clamp(1.0625rem,1.1vw,1.25rem);
+ font-weight:var(--rdc-wt-hdg);
+}
+.rdc-svc-tech__desc {
+ max-inline-size:68ch;
+ color:color-mix(in srgb,var(--rdc-ink) 28%,var(--rdc-mut));
+ font-size:clamp(1rem,1.05vw,1.125rem);
+}
 .rdc-svc-tech__fts {
  inline-size:min(100%,27rem);
  margin:clamp(.5rem,1.5vw,1.5rem) 0 0;
@@ -27,17 +45,15 @@
  list-style:none;
 }
 .rdc-svc-tech__fts li {
- padding-block:.65rem;
+ padding-block:.55rem;
  border-block-end:1px solid var(--rdc-ln);
- font-size:var(--rdc-sz-sm);
+ font-size:clamp(1rem,1vw,1.0625rem);
 }
 .rdc-svc-tech__im {
  margin:0;
  aspect-ratio:4 / 3;
- overflow:clip;
  background:var(--rdc-srf);
 }
-.rdc-svc-tech__im img { display:block; inline-size:100%; block-size:100%; object-fit:cover; }
 @media (max-width:1023px) {
  .rdc-svc-tech__itm { grid-template-columns:minmax(0,1fr); gap:1.5rem; }
 }

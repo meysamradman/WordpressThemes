@@ -19,7 +19,7 @@ if(empty($data['title'])||empty($data['steps']))return;
    ]):'';
   ?>
    <li class="rdc-svc-process__itm">
-    <?php if($media): ?><div class="rdc-svc-process__im"><?php echo $media; ?></div><?php endif; ?>
+    <?php if($media): ?><div class="rdc-svc-process__im rdc-md-frm"><?php echo $media; ?></div><?php endif; ?>
     <div class="rdc-svc-process__copy">
      <span class="rdc-svc-process__num" aria-hidden="true"><?php printf('%02d',$index+1); ?></span>
      <h3><?php echo esc_html($step['title']); ?></h3>

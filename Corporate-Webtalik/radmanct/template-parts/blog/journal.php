@@ -6,7 +6,7 @@ $rdct_categories = \RadmanCT\Blog\categories( get_the_ID() );
 <?php $rdct_preview = \RadmanCT\Media\frame( (int) get_the_ID(), has_post_thumbnail() ? get_the_post_thumbnail( get_the_ID(), 'medium_large', array( 'alt' => '', 'loading' => 'lazy', 'decoding' => 'async', 'sizes' => '(max-width: 767px) 100vw, 35vw' ) ) : '' ); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'rdc-card-pre-own rdc-jrn-card' ); ?>>
 	<?php if ( $rdct_preview['html'] ) : ?>
-		<a data-rdc-cur-lbl="<?php esc_attr_e('Read article','radmanct'); ?>" class="rdc-post-card__im rdc-jrn-card__im rdc-blog-md-frm" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true"><?php echo $rdct_preview['html']; \RadmanCT\Media\badge( get_the_ID() ); ?></a>
+		<a data-rdc-cur-lbl="<?php esc_attr_e('Read article','radmanct'); ?>" class="rdc-jrn-card__im rdc-blog-md-frm rdc-md-frm" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true"><?php echo $rdct_preview['html']; \RadmanCT\Media\badge( get_the_ID() ); ?></a>
 	<?php endif; ?>
 	<div class="rdc-jrn-card__body">
 		<?php if ( $rdct_categories ) : ?><div class="rdc-post-cats"><?php echo $rdct_categories; ?></div><?php endif; ?>

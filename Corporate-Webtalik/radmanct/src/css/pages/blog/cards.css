@@ -1,7 +1,6 @@
 .rdc-blog-pv { min-inline-size:0; }
 .rdc-blog-pv > a { display:grid; gap:.75rem; color:var(--rdc-ink); text-decoration:none; }
-.rdc-blog-pv__md { position:relative; aspect-ratio:3 / 2; overflow:hidden; background:var(--rdc-srf); }
-.rdc-blog-pv__md img { display:block; inline-size:100%; block-size:100%; object-fit:cover; }
+.rdc-blog-pv__md { aspect-ratio:3 / 2; background:var(--rdc-srf); }
 .rdc-blog-pv__body { min-inline-size:0; }
 .rdc-blog-pv h3 { margin:0; font-size:1rem; line-height:1.5; font-weight:600; }
 .rdc-blog-pv__cat, .rdc-blog-pv time { color:var(--rdc-mut); font-size:.8125rem; }
@@ -10,6 +9,7 @@
 .rdc-blog-pv > a:is(:hover,:focus-visible) h3 { color:var(--rdc-acc); }
 .rdc-blog-pv--feature { border:1px solid var(--rdc-ln); }
 .rdc-blog-pv--feature > a { grid-template-columns:minmax(0,2fr) minmax(0,1fr); align-items:center; gap:0; }
+.rdc-blog-pv--feature .rdc-blog-pv__md { --rdc-md-rad:0; }
 .rdc-blog-pv--feature .rdc-blog-pv__body { padding:clamp(1rem,2.5vw,2rem); }
 .rdc-blog-pv--feature h3 { font-size:clamp(1.125rem,1.5vw,1.5rem); }
 .rdc-blog-pv--feature .rdc-blog-pv__body:only-child { grid-column:1 / -1; }

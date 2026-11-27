@@ -4,7 +4,7 @@
 .rdc-jrn__list { display:grid; gap:2rem; }
 .rdc-jrn-card { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1fr); gap:clamp(1rem,2.5vw,2rem); min-inline-size:0; }
 .rdc-jrn-card + .rdc-jrn-card { padding-block-start:2rem; border-block-start:1px solid var(--rdc-ln); }
-.rdc-jrn-card__im { border-radius:calc(var(--rdc-rad) / 2); aspect-ratio:3 / 2; }
+.rdc-jrn-card__im { aspect-ratio:3 / 2; }
 .rdc-jrn-card__body { min-inline-size:0; }
 .rdc-jrn-card__body:only-child { grid-column:1 / -1; }
 .rdc-jrn-card h3 { margin:.65rem 0; font-size:1.25rem; line-height:1.5; }

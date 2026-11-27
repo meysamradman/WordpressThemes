@@ -32,7 +32,7 @@ if(empty($data['title'])||empty($data['items']))return;
        </ul>
       <?php endif; ?>
      </div>
-     <?php if($image): ?><figure class="rdc-svc-tech__im"><?php echo $image; ?></figure><?php endif; ?>
+     <?php if($image): ?><figure class="rdc-svc-tech__im rdc-md-frm"><?php echo $image; ?></figure><?php endif; ?>
     </article>
    </div>
   <?php endforeach; ?>

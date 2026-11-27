@@ -23,7 +23,7 @@ if(empty($data['title'])||empty($data['cards']))return;
    ]):'';
   ?>
    <article class="rdc-svc-intro__card">
-    <?php if($image): ?><div class="rdc-svc-intro__frame" data-rdc-intro-media><div class="rdc-svc-intro__zoom"><?php echo $image; ?></div></div><?php endif; ?>
+    <?php if($image): ?><div class="rdc-svc-intro__frame rdc-md-frm" data-rdc-intro-media><div class="rdc-svc-intro__zoom"><?php echo $image; ?></div></div><?php endif; ?>
     <div class="rdc-svc-intro__copy" data-rdc-intro-copy>
      <h3 data-rdc-en><?php echo esc_html($card['title']); ?></h3>
      <p data-rdc-en><?php echo esc_html($card['desc']); ?></p>

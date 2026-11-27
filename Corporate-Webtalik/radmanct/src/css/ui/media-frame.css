@@ -1,0 +1,10 @@
+.rdc-md-frm {
+ overflow:clip;
+ border-radius:var(--rdc-md-rad,var(--rdc-rad));
+}
+.rdc-md-frm :where(img,video) {
+ display:block;
+ inline-size:100%;
+ block-size:100%;
+ object-fit:var(--rdc-md-fit,cover);
+}

@@ -24,7 +24,7 @@ $heading=wp_unique_id('rdc-mosaic-ttl-');
        <?php if(!empty($item['url']))echo \RadmanCT\button($item['link'],$item['url'],array('variant'=>'ghost')); ?>
       </div>
      </div>
-     <div class="rdc-mosaic__md">
+     <div class="rdc-mosaic__md rdc-md-frm">
       <span class="rdc-mosaic__rim" aria-hidden="true"></span>
       <?php if($video&&\RadmanCT\Service\allowed($video)&&in_array(get_post_mime_type($video),array('video/mp4','video/webm'),true)):
        $url=wp_get_attachment_url($video);$uploads=wp_upload_dir();$meta=wp_get_attachment_metadata($video);

@@ -11,8 +11,7 @@
 .rdc-svc-process__itm:has(.rdc-svc-process__im) {
  grid-template-columns:clamp(7rem,12vw,12rem) minmax(0,1fr) minmax(8rem,.45fr);
 }
-.rdc-svc-process__im { overflow:clip; aspect-ratio:4 / 3; border-radius:var(--rdc-rad); background:var(--rdc-srf); }
-.rdc-svc-process__im img { display:block; inline-size:100%; block-size:100%; object-fit:cover; }
+.rdc-svc-process__im { aspect-ratio:4 / 3; background:var(--rdc-srf); }
 .rdc-svc-process__num { display:block; margin-block-end:.2rem; font-size:var(--rdc-sz-sm); color:var(--rdc-acc); }
 .rdc-svc-process__copy h3 { margin-block-end:.45rem; font-size:clamp(1.2rem,1.65vw,1.8rem); }
 .rdc-svc-process__copy p { max-inline-size:56ch; color:var(--rdc-mut); }
