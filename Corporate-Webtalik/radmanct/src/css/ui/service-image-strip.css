@@ -6,4 +6,4 @@
 .rdc-svc-strip.is-enh { overflow:clip; touch-action:pan-y pinch-zoom; cursor:grab; }
 .rdc-svc-strip.is-enh:active { cursor:grabbing; }
 .rdc-svc-strip:focus-visible { outline-offset:-3px; }
-@media (min-width:992px) { .rdc-svc-strip__inr > li { flex-basis:calc((100% - 30px) / 2); } }
+@media (min-width:992px) { .rdc-svc-strip__inr > li { flex-basis:calc((100% - 60px) / 3); } }

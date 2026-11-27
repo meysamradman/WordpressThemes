@@ -60,8 +60,9 @@
 .rdc-prjs .rdc-prj__md--pv { --rdc-md-fit:cover; aspect-ratio:1122 / 1096; }
 .rdc-prj__md--pv img { object-position:center top; }
 .rdc-prjs .rdc-prj__md .rdc-prj__zoom { transition:none; transform:none; }
-.rdc-prjs .rdc-prj__body { gap:.75rem; padding:clamp(1rem,1.5vw,1.5rem); }
-.rdc-prjs .rdc-prj__body h3 { font-size:clamp(1.125rem,1.4vw,1.5rem); }
+.rdc-prjs .rdc-prj__body { gap:.5rem; padding:clamp(1rem,1.3vw,1.25rem); }
+.rdc-prjs .rdc-prj__body h3 { --rdc-card-min-lines:1; font-family:var(--rdc-font-dsp); font-weight:var(--rdc-wt-dsp); font-size:clamp(1.25rem,1.35vw,1.5rem); line-height:1.5; }
+.rdc-prjs .rdc-prj__exc { --rdc-card-lines:1; }
 
 @media (min-width:640px) { .rdc-prjs { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (min-width:1280px) { .rdc-prjs { grid-template-columns:repeat(4,minmax(0,1fr)); } }

@@ -135,9 +135,12 @@ add_filter('radmanct/services/marquee',static function():array {
  return array('title'=>array('دربارهٔ پروژه‌ات','گفت‌وگو کنیم'),'url'=>\RadmanCT\Footer\data()['contact'],'images'=>$images);
 });
 add_filter('radmanct/services/strip',static function():array {
- $image=\RadmanCT\media_id('portfolio-archive-preview-a');
- return array_fill(0,5,$image);
+ $keys=['portfolio-archive-preview-a','portfolio-grammig-preview','portfolio-barsam-preview','portfolio-archive-preview-a','portfolio-grammig-preview'];
+ return array_map(static fn(string $key):int=>\RadmanCT\media_id($key),$keys);
 });
+add_filter('radmanct/project/archive-preview',static function(int $image,int $post_id):int {
+ return str_starts_with(get_post_field('post_name',$post_id),'demo-')?(\RadmanCT\media_id('portfolio-archive-preview-a')?:$image):$image;
+},10,2);
 // Current customer's editorial data. Replace this file for the next project;
 // shared renderers, assets and animation code remain independent of this content.
 add_filter('body_class',static function(array $classes):array {

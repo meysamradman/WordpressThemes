@@ -1,12 +1,12 @@
 .rdc-card-tx {
   display:-webkit-box;
   -webkit-box-orient:vertical;
-  -webkit-line-clamp:2;
-  line-clamp:2;
+  -webkit-line-clamp:var(--rdc-card-lines,2);
+  line-clamp:var(--rdc-card-lines,2);
   inline-size:100%;
   min-inline-size:0;
-  min-block-size:2lh;
-  max-block-size:2lh;
+  min-block-size:calc(var(--rdc-card-min-lines,var(--rdc-card-lines,2)) * 1lh);
+  max-block-size:calc(var(--rdc-card-lines,2) * 1lh);
   overflow:hidden;
   overflow-wrap:anywhere;
 }
