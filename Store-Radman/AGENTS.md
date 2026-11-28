@@ -1,6 +1,8 @@
 # Store Radman
 Independent custom classic PHP WooCommerce theme: radmanstore, namespace RadmanStore, prefix rds-. Scope: blog and shop; no portfolio, Elementor, child theme or copied client data.
 Read .agents/skills/store-work/SKILL.md, README.md, docs/architecture.md and docs/frontend-standard.md. Shared rules: ../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.3.md, custom route.
+Read docs/wordpress.md for route ownership, the shared native product renderer, conditional Woo assets, local admin fonts, remote-service boundaries, SEO/Analytics and the ZarinPal test contract. Preserve the current cart/checkout Blocks until a different presentation path is explicitly selected. Do not disable gateway/network/session assets to claim a performance gain.
+SnappPay is installed inactive: read its TLS, activation telemetry, Blocks and manual-update exceptions in docs/wordpress.md before activation. Never auto-activate it in bootstrap or treat installation as transaction readiness.
 Only Store-Radman source and dedicated store-radman Docker project may be changed here. No sibling databases/volumes. Do not copy Corporate-Music or Webtalik database or wholesale theme source.
 Native WooCommerce owns products, variations, stock, cart, checkout, customer accounts and orders. Use Woo CRUD for orders; preserve HPOS compatibility. Yoast owns SEO metadata; no second SEO plugin or duplicate schema engine. All-in-One WP Migration owns backup/migration.
 No final archive/product/account redesign authorized yet. Prefer hooks before vendor template copies. Keep assets scoped and runtime local. Never patch plugin vendor code or suppress update notices.

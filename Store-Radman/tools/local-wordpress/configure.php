@@ -25,6 +25,10 @@ if (!get_option('store_radman_configured')) {
     update_option('woocommerce_default_country','IR');
     update_option('woocommerce_currency','IRR');
     update_option('woocommerce_allow_tracking','no');
+    update_option('woocommerce_show_marketplace_suggestions','no');
+    update_option('show_avatars',0);
+    $gateway=get_option('woocommerce_WC_ZPal_settings',[]);
+    if(empty($gateway['merchantcode'])) { $gateway['enabled']='no';$gateway['sandbox']='yes';update_option('woocommerce_WC_ZPal_settings',$gateway); }
     update_option('woocommerce_coming_soon','no');
     update_option('woocommerce_store_pages_only','no');
     update_option('woocommerce_onboarding_profile',['completed'=>true,'skipped'=>true]);
