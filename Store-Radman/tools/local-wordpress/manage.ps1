@@ -33,7 +33,7 @@ try {
  switch($Action){
   'Start' {
    Invoke-StoreCompose @('up','-d','--pull','never','--wait','--wait-timeout','60')
-   foreach($script in @('install.php','plugins.php','configure.php')){
+   foreach($script in @('install.php','plugins.php','configure.php','pages.php')){
     Invoke-StoreCompose @('exec','-T','--user','www-data','wordpress','php',"/opt/store-radman/$script")
    }
    Write-Host "Ready: http://127.0.0.1:8100/ Login details: $accessFile"

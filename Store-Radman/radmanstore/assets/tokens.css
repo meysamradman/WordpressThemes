@@ -1,0 +1,2 @@
+@font-face{font-family:Peyda;src:url('./fonts/PeydaWebVF.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+:root{--rds-font:Peyda,Tahoma,sans-serif;--rds-bg:#fafafa;--rds-fg:#202020;--rds-muted:#5d625f;--rds-line:#dedede;--rds-accent:#215a50;--rds-gap:clamp(1rem,3vw,3rem);--rds-radius:.75rem}

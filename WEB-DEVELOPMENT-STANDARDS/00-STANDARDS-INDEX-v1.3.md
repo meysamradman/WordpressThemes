@@ -10,6 +10,7 @@
 |---|---|
 | ویبتالیک | قالب سفارشی. [پروفایل و مالک‌های فرانت‌اند](../Corporate-Webtalik/docs/frontend-standard.md) |
 | علی اسدی | قالب سفارشی. [پروفایل و مالک‌های فرانت‌اند](../Corporate-Music/docs/frontend-standard.md) |
+| Store Radman | فروشگاه سفارشی PHP + WooCommerce و وبلاگ، MySQL مستقل. [پروفایل و مالک‌های فرانت‌اند](../Store-Radman/docs/frontend-standard.md) و [Skill پروژه](../Store-Radman/.agents/skills/store-work/SKILL.md) |
 | Corporate-Elementor-Catalog | Elementor. [پروفایل نسخه‌ها](../Corporate-Elementor-Catalog/radman-doc/product/profile.md) و [فهرست قراردادها](../Corporate-Elementor-Catalog/radman-doc/README.md) |
 
 اسناد Hub و Radman-Design-Library طبق قواعد پروژه‌های خودشان مصرف می‌شوند. این فهرست استانداردهای بالا را خودکار به آن پروژه‌ها اعمال نمی‌کند.

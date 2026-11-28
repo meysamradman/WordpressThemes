@@ -1,9 +1,15 @@
-:root{--rds-bg:#fafafa;--rds-fg:#202020;--rds-line:#dedede;--rds-accent:#215a50;--rds-gap:clamp(1rem,3vw,3rem)}
+@import url('./tokens.css');
 *{box-sizing:border-box}
-body{margin:0;background:var(--rds-bg);color:var(--rds-fg);font-family:Tahoma,Arial,sans-serif;font-size:1rem;line-height:1.9}
+body{margin:0;background:var(--rds-bg);color:var(--rds-fg);font-family:var(--rds-font);font-feature-settings:"ss02","ss03";font-size:1rem;line-height:1.9}
 a{color:var(--rds-accent);text-underline-offset:.25em}
 img{max-inline-size:100%;block-size:auto}
-button,input,select,textarea{font:inherit}
+button,input,select,textarea{font:inherit;font-feature-settings:inherit}
+h1,h2,h3,h4,h5,h6{font-family:var(--rds-font);line-height:1.6;overflow-wrap:break-word}
+h1{font-size:clamp(1.75rem,3vw,2.75rem)}
+.rds-media{display:block;margin:0;overflow:hidden;border-radius:var(--rds-radius)}
+.rds-media img{display:block;inline-size:100%;block-size:auto}
+.rds-blog-card .rds-media{aspect-ratio:16/10;border-radius:0}
+.rds-blog-card .rds-media img{block-size:100%;object-fit:cover}
 .rds-header,.rds-footer,.rds-main{padding:var(--rds-gap);max-inline-size:1440px;margin-inline:auto}
 .rds-header{display:flex;gap:1rem;align-items:center;justify-content:space-between;border-block-end:1px solid var(--rds-line);flex-wrap:wrap}
 .rds-header ul{display:flex;flex-wrap:wrap;gap:1.25rem;padding:0;margin:0;list-style:none}
