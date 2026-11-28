@@ -1,0 +1,63 @@
+name: store-radman
+services:
+  db:
+    image: mysql:8.4@sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: store_radman_local
+      MYSQL_USER: radmanstore
+      MYSQL_PASSWORD: ${STORE_DB_PASSWORD:?Run WordPress-Start.cmd}
+      MYSQL_ROOT_PASSWORD: ${STORE_DB_ROOT_PASSWORD:?Run WordPress-Start.cmd}
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD-SHELL, 'MYSQL_PWD="$$MYSQL_PASSWORD" mysql --protocol=TCP -h 127.0.0.1 -u "$$MYSQL_USER" -D "$$MYSQL_DATABASE" -Nse "SELECT 1" >/dev/null 2>&1']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  wordpress:
+    image: wordpress:php8.4-apache@sha256:309307430abf80009378a63a79df73554a6449b700fac59a991b4959e6dda8ca
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:8100:80'
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: store_radman_local
+      WORDPRESS_DB_USER: radmanstore
+      WORDPRESS_DB_PASSWORD: ${STORE_DB_PASSWORD}
+      WORDPRESS_TABLE_PREFIX: rds_
+      STORE_LOCAL: '1'
+      STORE_ADMIN_PASSWORD: ${STORE_ADMIN_PASSWORD:?Run WordPress-Start.cmd}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://127.0.0.1:8100');
+        define('WP_SITEURL', 'http://127.0.0.1:8100');
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        define('WP_DEBUG_LOG', '/tmp/store-radman-debug.log');
+        define('WP_MEMORY_LIMIT', '256M');
+        define('WP_MAX_MEMORY_LIMIT', '512M');
+        define('DISALLOW_FILE_EDIT', true);
+        define('AUTOMATIC_UPDATER_DISABLED', true);
+        define('WP_AUTO_UPDATE_CORE', false);
+        define('WP_HTTP_BLOCK_EXTERNAL', true);
+        define('WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,downloads.wordpress.org,translations.wordpress.org');
+    volumes:
+      - wordpress:/var/www/html
+      - ../../radmanstore:/var/www/html/wp-content/themes/radmanstore:ro
+      - ./local.php:/var/www/html/wp-content/mu-plugins/store-radman-local.php:ro
+      - ./php.ini:/usr/local/etc/php/conf.d/store-radman.ini:ro
+      - ./:/opt/store-radman:ro
+    healthcheck:
+      test: [CMD, php, '-r', "exit(@fsockopen('127.0.0.1', 80) ? 0 : 1);"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  database:
+    name: store-radman-database
+  wordpress:
+    name: store-radman-wordpress
