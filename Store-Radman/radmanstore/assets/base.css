@@ -1,7 +1,9 @@
-@import url('./tokens.css');
 *{box-sizing:border-box}
 body{margin:0;background:var(--rds-bg);color:var(--rds-fg);font-family:var(--rds-font);font-feature-settings:"ss02","ss03";font-size:1rem;line-height:1.9}
-a{color:var(--rds-accent);text-underline-offset:.25em}
+a{color:var(--rds-accent);text-decoration:none}
+a:hover{color:var(--rds-accent-hover)}
+.rds-main :is(a,button,input):is(.button,.button.alt,.wp-element-button),.rds-main form :is(button,input[type=submit]){background-color:var(--rds-accent);border-color:var(--rds-accent);color:var(--rds-on-accent)}
+.rds-main :is(a,button,input):is(.button,.button.alt,.wp-element-button):hover,.rds-main form :is(button,input[type=submit]):hover{background-color:var(--rds-accent-hover);border-color:var(--rds-accent-hover);color:var(--rds-on-accent)}
 img{max-inline-size:100%;block-size:auto}
 button,input,select,textarea{font:inherit;font-feature-settings:inherit}
 h1,h2,h3,h4,h5,h6{font-family:var(--rds-font);line-height:1.6;overflow-wrap:break-word}

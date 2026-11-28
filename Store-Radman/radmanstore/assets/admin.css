@@ -1,0 +1,3 @@
+body,body .woocommerce-layout{font-family:var(--rds-font);font-feature-settings:"ss02","ss03"}
+body :is(button,input,select,textarea){font-family:var(--rds-font);font-feature-settings:inherit}
+#wpwrap :is(h1,h2,h3,h4,h5,h6){font-family:var(--rds-font)}

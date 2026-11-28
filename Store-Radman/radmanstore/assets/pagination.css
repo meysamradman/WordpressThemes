@@ -1,5 +1,5 @@
 .rds-pagination{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.5rem;margin-block:2rem}
 .rds-pagination :is(a,.current){padding:.5rem 1rem;border:1px solid var(--rds-line);border-radius:.5rem;text-decoration:none}
-.rds-pagination .current{background:var(--rds-accent);color:#fff}
+.rds-pagination .current{background:var(--rds-accent);color:var(--rds-on-accent)}
 .rds-pagination p{flex-basis:100%;text-align:center}
 .rds-pagination[aria-busy=true]{opacity:.65}

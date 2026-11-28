@@ -5,6 +5,7 @@
 
 ## مالک‌های مشترک داخل قالب
 - assets/tokens.css: فونت Peyda محلی، رنگ، فاصله، شعاع؛ assets/base.css: تایپوگرافی پایه و کانتینرهای ریسپانسیو RTL/LTR.
+- رنگ اصلی این پروژه آبی `#2563eb` است؛ لینک‌ها، دکمه‌های اصلی و حالت فعال صفحه‌بندی از همان توکن مصرف می‌کنند. لینک‌ها در base بدون زیرخط‌اند و فوکوس صفحه‌کلید حفظ می‌شود؛ قاعدهٔ مشترک در استاندارد CSS، «ظاهر پیش‌فرض لینک‌ها» است.
 - header.php / footer.php: layout بومی با wp_head، wp_body_open و wp_footer؛ یک H1 در هر صفحه.
 - template-parts/blog/card.php: کارت مقالات؛ home.php، archive.php، search.php از blog.php مشترک استفاده می‌کنند. single.php جزئیات با محافظت رمز، کاور responsive و دیدگاه بومی است.
 - inc/pagination.php، assets/pagination.css و assets/pagination.js: یک renderer برای عددی و نمایش بیشتر؛ وبلاگ عددی، آرشیو محصول اسکرول/کلیک. fallback بومی، URL واقعی صفحه، جلوگیری از درخواست موازی، اعلام loading/error و retry حفظ شوند.
