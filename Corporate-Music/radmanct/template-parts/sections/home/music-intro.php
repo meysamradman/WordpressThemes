@@ -24,7 +24,7 @@ $multiple=count($tracks)>1;
      <div class="rdc-feature__actions">
       <?php
       if($audio)echo \RadmanCT\button('پخش آنلاین','#',['class'=>'rdc-feature__play','icon'=>'music','audio'=>\RadmanCT\Music\playback($track->ID,$audio,$meta)]);
-      if($download)echo \RadmanCT\button('دانلود',$download['url'],['class'=>'rdc-feature__secondary','variant'=>'outline','icon'=>'download','download'=>$download['filename']]);
+      if($download)echo \RadmanCT\button('دانلود',$download['url'],['variant'=>'outline','icon'=>'download','download'=>$download['filename']]);
       echo \RadmanCT\button('شناسنامه',$details,['class'=>$audio?'rdc-feature__secondary':'','variant'=>'outline','icon'=>'sliders']);
       ?>
      </div>

@@ -6,7 +6,7 @@
  inline-size:min(96vw,52rem);block-size:min(97dvh,72rem);max-block-size:none;
  padding:.4rem .65rem;overflow:hidden
 }
-.rdc-lb[open] {display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:.25rem}
+.rdc-lb[open] {display:grid;grid-template-rows:auto minmax(0,1fr);gap:.25rem}
 .rdc-lb__toolbar {display:flex;justify-content:space-between;align-items:center;gap:.5rem}
 .rdc-lb__toolbar .rdc-lb__close {position:static;margin-inline-start:auto}
 .rdc-lb__stage {min-block-size:0;min-inline-size:0}
