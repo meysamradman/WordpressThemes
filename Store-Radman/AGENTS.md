@@ -6,3 +6,4 @@ Native WooCommerce owns products, variations, stock, cart, checkout, customer ac
 No final archive/product/account redesign authorized yet. Prefer hooks before vendor template copies. Keep assets scoped and runtime local. Never patch plugin vendor code or suppress update notices.
 Use short focused checks. No checkout/payment/order/email integration is configured or verified by base setup.
 Credentials, local backups and runtime files stay ignored. Start/Stop preserve volumes. No reset, deployment, commit or push without explicit request.
+Every installable theme must include screenshot.png in its theme root. Use the approved Radman artwork, preserve its provenance, and verify WordPress Appearance resolves it; never leave the theme preview blank or substitute an arbitrary browser capture. Shared owner: standard 17, Theme preview artwork.
