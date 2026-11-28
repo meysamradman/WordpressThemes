@@ -42,8 +42,8 @@
       "_refresh-BqO6rLFb.min.js"
     ]
   },
-  "_video-player-BPbQf5_s.min.js": {
-    "file": "js/video-player-BPbQf5_s.min.js",
+  "_video-player-BFpsDQ3C.min.js": {
+    "file": "js/video-player-BFpsDQ3C.min.js",
     "name": "video-player"
   },
   "src/css/admin/gallery.css": {
@@ -128,7 +128,7 @@
     "isEntry": true
   },
   "src/css/pages/music-home.css": {
-    "file": "css/music-home-CDrpV-vY.min.css",
+    "file": "css/music-home-BfWPoT1B.min.css",
     "name": "css-music-home",
     "names": [
       "css-music-home.css"
@@ -164,7 +164,7 @@
     "isEntry": true
   },
   "src/css/pages/video-detail.css": {
-    "file": "css/video-detail--WyJ23vs.min.css",
+    "file": "css/video-detail-BQvwwmDf.min.css",
     "name": "css-video-detail",
     "names": [
       "css-video-detail.css"
@@ -173,7 +173,7 @@
     "isEntry": true
   },
   "src/css/pages/videos.css": {
-    "file": "css/videos-oigkFu8t.min.css",
+    "file": "css/videos-jJTljQDz.min.css",
     "name": "css-videos",
     "names": [
       "css-videos.css"
@@ -264,13 +264,13 @@
     ]
   },
   "src/js/pages/music-home.js": {
-    "file": "js/music-home-RWtJnp6Z.min.js",
+    "file": "js/music-home-BrvGjtbX.min.js",
     "name": "music-home",
     "src": "src/js/pages/music-home.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_video-player-BPbQf5_s.min.js",
+      "_video-player-BFpsDQ3C.min.js",
       "_audio-controls-UesPtTzb.min.js"
     ]
   },
@@ -319,13 +319,13 @@
     ]
   },
   "src/js/pages/videos.js": {
-    "file": "js/videos-BO1yMbyo.min.js",
+    "file": "js/videos-vlIGEPKW.min.js",
     "name": "videos",
     "src": "src/js/pages/videos.js",
     "isEntry": true,
     "imports": [
       "_lifecycle-CEUUFq-m.min.js",
-      "_video-player-BPbQf5_s.min.js"
+      "_video-player-BFpsDQ3C.min.js"
     ]
   },
   "src/js/runtime/art-orbit.js": {

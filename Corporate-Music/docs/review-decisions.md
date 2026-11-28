@@ -4,7 +4,7 @@
 | موضوع | شاهد داخل اسناد | پیشنهاد/وضعیت |
 |---|---|---|
 | تصویر برگه | frontend-standard و architecture: artwork ثابت و covers در attachment جدا | قرارداد عمومی تکمیل شد؛ آزمون صفحه با/بدون thumbnail لازم |
-| آپارات خانه | media/scenarios: viewport 25%؛ hosting و release ثبت قدیمی click-only؛ architecture دو بیان داشت | روایت جاری مطابق media مشخص شد؛ پیشنهاد click-only برای کاهش درخواست با توجه به احتمال نیاز دو کلیک. انتخاب UX/TBD؛ Network خانه قبل اسکرول، ورود کارت، click، archive/detail |
+| آپارات خانه | media/scenarios: viewport 25%؛ hosting و release ثبت قدیمی click-only؛ architecture دو بیان داشت | انتخاب کاربر: پخش یک‌کلیکی خانه و آرشیو با آماده‌سازی viewport مشترک؛ click-only که نخست iframe می‌سازد رد شد. کارت‌های اسکرول نیز همین قرارداد را دارند؛ جزئیات پلیر بومی آپارات را حفظ می‌کند. |
 | Entrance/curtain | release هم‌زمانی عمدی را ثبت کرده؛ 05/06 شروع با مجوز نمایش | هم‌زمانی فقط readiness state مشخص و بدون از دست رفتن افکت/تاخیر LCP؛ آزمون مستقیم/Reload/Back/scroll سریع؛ تایمر مستقل راه‌حل نیست |
 | carousel | scenarios: autoplay 8s و حذف کنترل توقف به درخواست مشتری | autoplay دستی یا کنترل pause/start پیشنهاد؛ تا تصمیم و تست، WCAG PASS ثبت نشود |
 | canonical گالری | wordpress/release: canonical پایه برای عکس‌های صفحه‌بندی‌شده | اگر هر URL تصاویر متفاوت دارد، self-canonical و لینک crawlable توصیه گوگل؛ تصمیم مصوب پس از بررسی GSC/HTML؛ مسیر و داده تغییر نکرده |

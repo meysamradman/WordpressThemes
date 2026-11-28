@@ -31,7 +31,6 @@ export function initializeExclusiveVideos(root){
     cover.after(player);
    }
   },{threshold:0.25});
-   observeCovers();
  }
  const sync=video=>{const button=video.closest('.rdc-video-card__media')?.querySelector('[data-rdc-video-toggle]');if(button)button.hidden=!video.paused&&!video.ended;};
  const play=event=>{
