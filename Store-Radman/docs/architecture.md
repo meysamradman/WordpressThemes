@@ -5,7 +5,7 @@
 - قالب مالک نمایش است؛ با hookهای بومی و کمترین override. فایل‌های افزونه دستکاری نشوند. نصب Node یا build روی هاست لازم نیست.
 - Yoast SEO مالک عنوان، canonical، robots، sitemap و schema سئو است. قالب title-tag و wp_head/wp_footer را حفظ می‌کند. All-in-One WP Migration افزونهٔ بکاپ/مهاجرت است؛ افزونهٔ SEO دوم نیست.
 - سازگاری اولیه یعنی نصب/فعال‌سازی و مسیرهای بومی؛ تنظیم نهایی سئوی محصول، Product schema، پرداخت، حمل‌ونقل، مالیات، ایمیل و مهاجرت واقعی نیاز به سناریو و کنترل جدا دارد.
-- محیط local فقط روی 127.0.0.1:8100؛ دیتابیس store_radman_local، شبکهٔ store-radman و volumeهای store-radman-database / store-radman-wordpress مستقل.
+- محیط local فقط روی loopback: HTTPS اصلی 127.0.0.1:8143 و HTTP قدیمی 8100 با redirect؛ دیتابیس store_radman_local، شبکهٔ store-radman و volumeهای store-radman-database / store-radman-wordpress مستقل. گواهی/اجرای TLS فقط ابزار لوکال است؛ قرارداد در [local-https.md](local-https.md).
 - local noindex و ایمیل واقعی غیرفعال است. نصب، افزودن و به‌روزرسانی دستی افزونه‌ها و درخواست‌های بومی HTTP باز هستند؛ افزونه‌ها در volume قابل‌نوشتن قرار دارند. فقط به‌روزرسانی خودکار غیرفعال است. Cron بومی برای صف ووکامرس حفظ می‌شود. محدودیت local هرگز به هاست منتقل نشود.
 - قواعد مشترک امنیت، رسانه، query، SEO، تحویل و refactor از فهرست استاندارد ریشه مصرف شوند؛ کپی کامل قواعد و کد پروژه‌های دیگر لازم نیست.
 

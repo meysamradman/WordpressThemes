@@ -4,8 +4,9 @@
 - شروع: WordPress-Start.cmd
 - توقف با حفظ داده‌ها: WordPress-Stop.cmd
 - وضعیت: WordPress-Status.cmd
-- سایت: http://127.0.0.1:8100/
-- مدیریت: http://127.0.0.1:8100/wp-admin/
+- سایت: https://127.0.0.1:8143/ (آدرس HTTP قدیمی به HTTPS هدایت می‌شود).
+- مدیریت: https://127.0.0.1:8143/wp-admin/
+- راه‌اندازی/تمدید گواهی محلی: tools/local-wordpress/tls.ps1؛ راهنما: docs/local-https.md. کلیدهای .cache/local-tls را حذف یا روی هاست منتشر نکنید.
 - نام کاربری و رمز اولیه: artifacts/local-wordpress-access.txt (خصوصی، خارج از Git).
 - اطلاعات ورود در .env.local-wordpress با STORE_ADMIN_URL، STORE_ADMIN_USER و STORE_ADMIN_PASSWORD ثبت شده است. این مقادیر با رمز دیتابیس فرق دارند. پس از تغییر دستی رمز در وردپرس، نسخهٔ خصوصی اطلاعات ورود را نیز به‌روز کنید؛ Start رمز موجود را بازنشانی نمی‌کند.
 - نصب نخست افزونه‌ها اینترنت می‌خواهد؛ اجراهای بعدی محتوا، رمز و تنظیمات را بازنشانی نمی‌کنند.

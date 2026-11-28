@@ -4,7 +4,7 @@ description: Build and maintain Store Radman, the independent custom PHP WooComm
 ---
 Read project AGENTS.md, docs/architecture.md and docs/frontend-standard.md; then select only the relevant owner in ../WEB-DEVELOPMENT-STANDARDS/00-STANDARDS-INDEX-v1.3.md. These paths are relative to the project root.
 Read docs/wordpress.md before commerce, routes, asset-loading, SEO, analytics or gateway changes. It owns the current native product renderer, cart/checkout Blocks, request exceptions and ZarinPal sandbox preparation. Appearance still follows the user's supplied design.
-- Use only store-radman / MySQL store_radman_local / localhost:8100. Start/Stop preserve volumes; never use sibling databases, credentials or customer media.
+- Use only store-radman / MySQL store_radman_local / https://127.0.0.1:8143 (HTTP 8100 redirects). Start/Stop preserve volumes; never use sibling databases, credentials or customer media. Read docs/local-https.md for TLS; preserve private .cache/local-tls and never disable certificate verification.
 - Native WooCommerce owns commerce and orders. Prefer hooks and Woo CRUD; preserve checkout/account hooks, notices, variation stock handling and HPOS compatibility. Do not copy vendor templates before a concrete layout requires it.
 - Blog is native post/category/tag. No project/track/video/gallery CPT, portfolio UI, Elementor or child theme.
 - Shared standards are reused by reference. Within this theme tokens, base typography, blog cards, pagination renderer and pagination JS each have one owner. Reuse actual repeated behavior; do not import another theme's whole runtime.
