@@ -1,6 +1,7 @@
 @import '../ui/download-button.css';
 @import '../ui/media-archive.css';
 @import '../ui/aparat.css';
+@import '../ui/media-copy.css';
 
 .rdc-collection--video-detail{padding-block-start:3rem}
 .rdc-clip-player{aspect-ratio:16/9;overflow:hidden;background:var(--rdc-clr-blk)}

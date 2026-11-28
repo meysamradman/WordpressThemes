@@ -1,4 +1,5 @@
 @import './download-button.css';
+@import './media-copy.css';
 .rdc-trk-single{padding-block:3rem}
 .rdc-trk-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:end;gap:1.75rem;margin-block-end:2rem}
 .rdc-trk-hero__cover{aspect-ratio:1;overflow:hidden;border:2px solid var(--rdc-acc);border-radius:var(--rdc-rad-xl)}
@@ -9,5 +10,5 @@
 .rdc-trk-intro{margin-block-start:2rem;color:var(--rdc-mut)}
 .rdc-trk-lyrics{margin-block-start:2rem}
 .rdc-trk-lyrics h2{font-size:1.65rem;color:var(--rdc-acc);margin-block-end:1rem}
-.rdc-trk-lyrics p{color:var(--rdc-mut);font-size:clamp(1.05rem,1.8vw,1.4rem);line-height:1.9;max-inline-size:40rem}
+.rdc-trk-lyrics p{color:var(--rdc-mut);max-inline-size:40rem}
 @media(max-width:650px){.rdc-trk-single{padding-block:1.5rem}.rdc-trk-hero{grid-template-columns:1fr;gap:1.5rem}.rdc-trk-hero__cover{inline-size:min(100%,30rem);justify-self:center}.rdc-trk-hero__copy{inline-size:100%}.rdc-trk-hero__copy h1{font-size:2rem}.rdc-trk-download{--rdc-download-ht:3.75rem;--rdc-download-sz:1.45rem}.rdc-trk-lyrics{margin-block-start:1.5rem}}

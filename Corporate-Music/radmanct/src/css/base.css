@@ -1,7 +1,7 @@
 *,*::before,*::after { box-sizing:border-box; }
 html { overflow-x:clip; scrollbar-gutter:stable; }
 :where(h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dt,dd,figure,blockquote) { margin:0; padding:0; }
-body { margin:0; padding:0; background:var(--rdc-bg); color:var(--rdc-tx); font-family:var(--rdc-font-body); font-size:var(--rdc-sz-body); font-weight:var(--rdc-wt-body); line-height:var(--rdc-ln-ht-body); }
+body { margin:0; padding:0; background:var(--rdc-bg); color:var(--rdc-tx); font-family:var(--rdc-font-body); font-feature-settings:"ss02","ss03"; font-size:var(--rdc-sz-body); font-weight:var(--rdc-wt-body); line-height:var(--rdc-ln-ht-body); }
 a { color:inherit; text-decoration:none; }
 a:hover { color:var(--rdc-acc); }
 :focus-visible { outline:2px solid var(--rdc-acc); outline-offset:4px; }
@@ -9,7 +9,7 @@ a:hover { color:var(--rdc-acc); }
  outline-style:none;
 }
 img,video { max-inline-size:100%; block-size:auto; }
-button,input,select,textarea { font:inherit; }
+button,input,select,textarea { font:inherit; font-feature-settings:inherit; }
 button { cursor:pointer; }
 @media (any-pointer:coarse) {
  :where(a[href],button,summary,[role="button"],input[type="button"],input[type="submit"],input[type="reset"]) {

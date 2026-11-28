@@ -11,8 +11,9 @@ Standalone Radman CT Music, copied from Corporate-Webtalik as a source baseline.
 | `radmanct/template-parts/sections/home/{music-intro,latest-tracks,latest-videos}.php` | Named home composition; shared track/blog card renderers |
 | `radmanct/inc/client.php` | Current customer copy, footer links and selected fixed dark sections; no settings framework |
 | `radmanct/inc/assets.php` | Conditional entry loading and shared static/dynamic module graph |
-| `radmanct/src/css/tokens.css`, `base.css` | Single palette/font/radius definitions and tag typography; Peyda for all headings and body |
+| `radmanct/src/css/tokens.css`, `base.css` | Single palette/font/radius definitions and tag typography; Peyda for all headings and body; shared inherited `ss02`/`ss03` for Persian display of Latin/Arabic digits, including form controls |
 | `radmanct/src/css/ui/music.css` | Shared archive/single/home music UI |
+| `radmanct/src/css/ui/media-copy.css` | One responsive font size and line height for track introduction/excerpt/body, lyrics and video-detail body; preserves the approved lyrics size and is imported only by the two detail entries |
 | `radmanct/src/css/ui/text-entrance.css` | Shared entrance for the selected titles and full introductions on home, biography and contact. `src/js/ui/text-entrance.js` starts offscreen targets once as they reach the viewport. Titles preserve Persian word boundaries and the selected introductions animate as complete blocks. |
 | `radmanct/src/css/pages/music{,-home}.css` | Small page entries selecting needed UI; home reuses shared track cards, video cards and the button renderer |
 | `radmanct/src/js/admin/music-editor.js` | Native media picker, only on track editor; frontend audio uses the native audio engine with a progressive custom control bar on detail pages |

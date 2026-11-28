@@ -1,0 +1,4 @@
+.rdc-trk-intro,.rdc-trk-lyrics p,.rdc-clip-content {
+ font-size:clamp(1.05rem,1.8vw,1.4rem);
+ line-height:1.9;
+}

@@ -108,7 +108,7 @@ add_action('wp_enqueue_scripts',static function():void{
  elseif(is_home()||is_category()||is_tag()||is_date()||is_author()||is_search()||is_singular('post')){style('pages/blog',array('rdc-site'));style(is_singular('post')?'pages/blog/single':'pages/blog/archive',array('rdc-pages-blog'));if(!is_singular())script('pages/archive');}
 });
 add_filter( 'wp_preload_resources', static function ( array $resources ): array {
-    if ( is_readable( get_template_directory() . '/fonts/PeydaWebVF.woff2' ) ) { $resources[] = array( 'href' => get_template_directory_uri() . '/fonts/PeydaWebVF.woff2', 'as' => 'font', 'type' => 'font/woff2', 'crossorigin' => 'anonymous' ); }
+    if ( is_readable( get_template_directory() . '/fonts/PeydaWebVF.woff2' ) ) { $resources[] = array( 'href' => get_template_directory_uri() . '/fonts/PeydaWebVF.woff2?digits=1', 'as' => 'font', 'type' => 'font/woff2', 'crossorigin' => 'anonymous' ); }
     return $resources;
 } );
 
