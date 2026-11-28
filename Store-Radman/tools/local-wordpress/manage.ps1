@@ -25,7 +25,7 @@ try {
   $storeDbPassword=New-StoreSecret
   $storeRootPassword=New-StoreSecret
   $storeAdminPassword=New-StoreSecret
-  $config="STORE_DB_PASSWORD=$storeDbPassword`r`nSTORE_DB_ROOT_PASSWORD=$storeRootPassword`r`nSTORE_ADMIN_PASSWORD=$storeAdminPassword`r`n"
+  $config="STORE_SITE_URL=http://127.0.0.1:8100`r`nSTORE_ADMIN_URL=http://127.0.0.1:8100/wp-admin/`r`nSTORE_ADMIN_USER=radman`r`nSTORE_DB_PASSWORD=$storeDbPassword`r`nSTORE_DB_ROOT_PASSWORD=$storeRootPassword`r`nSTORE_ADMIN_PASSWORD=$storeAdminPassword`r`n"
   [IO.File]::WriteAllText($envFile,$config,[Text.Encoding]::ASCII)
   New-Item -ItemType Directory -Path (Split-Path $accessFile) -Force | Out-Null
   [IO.File]::WriteAllText($accessFile,"Store Radman local`r`nURL: http://127.0.0.1:8100/`r`nAdmin: http://127.0.0.1:8100/wp-admin/`r`nUsername: radman`r`nInitial password: $storeAdminPassword`r`n",[Text.Encoding]::UTF8)

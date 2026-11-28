@@ -5,7 +5,7 @@ require_once ABSPATH.'wp-admin/includes/plugin.php';
 require_once ABSPATH.'wp-admin/includes/file.php';
 if (DB_NAME !== 'store_radman_local' || !get_option('store_radman_local_owner')) { throw new RuntimeException('Wrong environment.'); }
 if (!class_exists('WooCommerce')) { throw new RuntimeException('WooCommerce missing.'); }
-wp_set_current_user(get_user_by('login', 'radman')->ID);
+wp_set_current_user(get_user_by('login', getenv('STORE_ADMIN_USER') ?: 'radman')->ID);
 if (!get_option('store_radman_configured')) {
     switch_theme('radmanstore');
     WC_Install::create_pages();

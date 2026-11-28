@@ -31,6 +31,7 @@ services:
       WORDPRESS_TABLE_PREFIX: rds_
       WORDPRESS_DEBUG: '1'
       STORE_LOCAL: '1'
+      STORE_ADMIN_USER: ${STORE_ADMIN_USER:-radman}
       STORE_ADMIN_PASSWORD: ${STORE_ADMIN_PASSWORD:?Run WordPress-Start.cmd}
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_HOME', 'http://127.0.0.1:8100');

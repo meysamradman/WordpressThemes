@@ -18,7 +18,7 @@ $password = getenv('STORE_ADMIN_PASSWORD');
 if (!is_string($password) || strlen($password) < 24) {
     throw new RuntimeException('Missing local credentials.');
 }
-$result = wp_install('فروشگاه رادمان', 'radman', 'radman@localhost.invalid', false, '', $password, 'fa_IR');
+$result = wp_install('فروشگاه رادمان', getenv('STORE_ADMIN_USER') ?: 'radman', 'radman@localhost.invalid', false, '', $password, 'fa_IR');
 if (empty($result['user_id'])) {
     throw new RuntimeException('Installation failed.');
 }

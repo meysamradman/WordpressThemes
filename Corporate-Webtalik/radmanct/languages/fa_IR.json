@@ -183,5 +183,10 @@
   "Yes. We review your requirements and recommend an approach for your custom website, web application, or mobile app.": "بله. نیازهای پروژه را بررسی می‌کنیم و برای وب‌سایت اختصاصی، سامانهٔ تحت وب یا اپلیکیشن موبایل راهکار پیشنهاد می‌دهیم.",
   "Phone call": "تماس تلفنی",
   "FAQ": "پرسش و پاسخ",
-  "Answers about our process, services and working together.": "پاسخ پرسش‌های شما دربارهٔ خدمات، مراحل اجرا و نحوهٔ همکاری با ما."
+  "Answers about our process, services and working together.": "پاسخ پرسش‌های شما دربارهٔ خدمات، مراحل اجرا و نحوهٔ همکاری با ما.",
+  "Project information": "اطلاعات نمونه‌کار",
+  "Website / client name": "نام وب‌سایت / کارفرما",
+  "Website URL": "لینک وب‌سایت",
+  "Year built": "سال ساخت",
+  "Use the title above for the project name, the main editor for full details, and the excerpt for the short card description. The year accepts Persian or Latin digits; fields are optional.": "نام نمونه‌کار را در عنوان بالای ویرایشگر، توضیحات کامل را در متن اصلی و توضیح کوتاه کارت را در چکیده وارد کنید. سال ساخت با اعداد فارسی یا انگلیسی پذیرفته می‌شود؛ این فیلدها اختیاری‌اند."
 }
