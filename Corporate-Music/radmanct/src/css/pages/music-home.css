@@ -88,8 +88,7 @@
  .rdc-feature__art{position:static}
  .rdc-feature__art img{block-size:auto;object-fit:contain}
  .rdc-feature__copy{
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
-  gap:.55rem .9rem;max-inline-size:none;padding:.85rem 1rem 0;
+  display:grid;gap:.7rem;max-inline-size:none;padding:.85rem 1rem 0;
  }
  .rdc-feature__copy h2{font-size:1.45rem;margin:0}
  .rdc-feature__copy :is(.rdc-feature__badge,.rdc-feature__desc,.rdc-feature__secondary){display:none}
