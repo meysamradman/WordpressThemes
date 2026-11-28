@@ -1,6 +1,5 @@
 export function initializeExclusiveVideos(root){
  const buttons=()=>root.querySelectorAll('[data-rdc-video-toggle]');
- const visibleCovers=root.querySelectorAll('[data-rdc-aparat-visible]');
  const visiblePlayers=new Map();
  let observer;
  const createPlayer=cover=>{
@@ -10,11 +9,14 @@ export function initializeExclusiveVideos(root){
   frame.loading='eager';
   return {player,frame};
  };
- // On home the real provider control must be in the viewport before it can receive a click.
- if(visibleCovers.length&&window.IntersectionObserver){
+ const observeCovers=()=>{
+  if(!observer)return;
+  for(const cover of root.querySelectorAll('[data-rdc-aparat-visible]'))if(!visiblePlayers.has(cover))observer.observe(cover);
+ };
+ if(window.IntersectionObserver){
   observer=new IntersectionObserver(entries=>{
    for(const {target:cover,isIntersecting,intersectionRatio} of entries){
-    if(!isIntersecting||intersectionRatio<0.25)continue;
+    if(!isIntersecting||intersectionRatio<0.25||visiblePlayers.has(cover))continue;
     observer.unobserve(cover);
     const embed=createPlayer(cover);
     if(!embed)continue;
@@ -29,44 +31,23 @@ export function initializeExclusiveVideos(root){
     cover.after(player);
    }
   },{threshold:0.25});
-  for(const cover of visibleCovers)observer.observe(cover);
+   observeCovers();
  }
- const closeEmbed=()=>{
-  const player=root.querySelector('[data-rdc-aparat-player]');
-  if(!player)return;
-  const cover=player.parentElement.querySelector('[data-rdc-aparat-open]');
-  if(cover)cover.hidden=false;
-  player.remove();
- };
  const sync=video=>{const button=video.closest('.rdc-video-card__media')?.querySelector('[data-rdc-video-toggle]');if(button)button.hidden=!video.paused&&!video.ended;};
  const play=event=>{
   if(event.target.tagName!=='VIDEO')return;
-  closeEmbed();
   for(const video of root.querySelectorAll('video'))if(video!==event.target)video.pause();
   sync(event.target);
  };
  const pause=event=>{if(event.target.tagName==='VIDEO')sync(event.target);};
  const click=event=>{
-  const cover=event.target.closest('[data-rdc-aparat-open]');
-  if(cover&&root.contains(cover)&&!event.defaultPrevented&&event.button===0&&!event.metaKey&&!event.ctrlKey&&!event.shiftKey&&!event.altKey){
-   const embed=createPlayer(cover);
-   if(!embed)return;
-   const {player,frame}=embed;
-   event.preventDefault();
-   closeEmbed();
-   for(const video of root.querySelectorAll('video'))video.pause();
-   player.setAttribute('data-rdc-aparat-player','');
-   cover.hidden=true;
-   cover.after(player);
-   frame.focus({preventScroll:true});
-   return;
-  }
   const button=event.target.closest('[data-rdc-video-toggle]');
   if(!button||!root.contains(button))return;
   const video=button.parentElement.querySelector('video');
   if(video)Promise.resolve(video.play()).catch(()=>sync(video));
  };
  const syncButtons=()=>{
+  observeCovers();
   for(const button of buttons()){const video=button.parentElement.querySelector('video');if(video)sync(video);}
  };
  syncButtons();
@@ -81,7 +62,6 @@ export function initializeExclusiveVideos(root){
   root.removeEventListener('ended',pause,true);
   root.removeEventListener('click',click);
   root.removeEventListener('rdc:arc-upd',syncButtons);
-  closeEmbed();
   observer?.disconnect();
   for(const [cover,player] of visiblePlayers){player.remove();cover.hidden=false;}
   visiblePlayers.clear();

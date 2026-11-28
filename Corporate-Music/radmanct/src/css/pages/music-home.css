@@ -15,7 +15,6 @@
 .rdc-music-rail .rdc-video-card__copy:has(.rdc-video-card__download--compact){grid-template-columns:minmax(0,1fr) auto;align-items:start}
 .rdc-music-rail .rdc-video-card__copy h3{grid-column:1/-1}
 .rdc-music-rail .rdc-video-card__copy p{min-inline-size:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.rdc-music-rail [data-rdc-aparat-pending]{position:absolute;inset:0;visibility:hidden}
 .rdc-music-rail .rdc-trk-card__meta{align-items:start}
 .rdc-home-promo{margin-block:clamp(1rem,2vw,1.65rem) 0}
 .rdc-home-promo img{display:block;inline-size:100%;block-size:auto}

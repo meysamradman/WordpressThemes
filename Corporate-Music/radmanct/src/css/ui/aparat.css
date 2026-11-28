@@ -1,1 +1,2 @@
 .rdc-aparat{position:relative;aspect-ratio:16/9;inline-size:100%;background:var(--rdc-clr-blk)}.rdc-aparat iframe{position:absolute;inset:0;inline-size:100%;block-size:100%;border:0}
+.rdc-aparat[data-rdc-aparat-pending]{position:absolute;inset:0;visibility:hidden}
