@@ -18,11 +18,13 @@ services:
   wordpress:
     image: wordpress:php8.4-apache@sha256:309307430abf80009378a63a79df73554a6449b700fac59a991b4959e6dda8ca
     restart: unless-stopped
+    command: [sh, -c, 'a2enmod ssl >/dev/null && update-ca-certificates >/dev/null && exec apache2-foreground']
     depends_on:
       db:
         condition: service_healthy
     ports:
       - '127.0.0.1:8100:80'
+      - '127.0.0.1:8143:8143'
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: store_radman_local
@@ -31,11 +33,13 @@ services:
       WORDPRESS_TABLE_PREFIX: rds_
       WORDPRESS_DEBUG: '1'
       STORE_LOCAL: '1'
+      STORE_SITE_URL: ${STORE_SITE_URL:-https://127.0.0.1:8143}
       STORE_ADMIN_USER: ${STORE_ADMIN_USER:-radman}
       STORE_ADMIN_PASSWORD: ${STORE_ADMIN_PASSWORD:?Run WordPress-Start.cmd}
       WORDPRESS_CONFIG_EXTRA: |
-        define('WP_HOME', 'http://127.0.0.1:8100');
-        define('WP_SITEURL', 'http://127.0.0.1:8100');
+        define('WP_HOME', getenv('STORE_SITE_URL'));
+        define('WP_SITEURL', getenv('STORE_SITE_URL'));
+        define('FORCE_SSL_ADMIN', true);
         define('WP_ENVIRONMENT_TYPE', 'local');
         define('WP_DEBUG_DISPLAY', false);
         define('WP_DEBUG_LOG', '/tmp/store-radman-debug.log');
@@ -49,9 +53,12 @@ services:
       - ../../radmanstore:/var/www/html/wp-content/themes/radmanstore:ro
       - ./local.php:/var/www/html/wp-content/mu-plugins/store-radman-local.php:ro
       - ./php.ini:/usr/local/etc/php/conf.d/store-radman.ini:ro
+      - ./apache.conf:/etc/apache2/sites-enabled/000-default.conf:ro
+      - ../../.cache/local-tls/server:/etc/store-radman/tls:ro
+      - ../../.cache/local-tls/ca/rootCA.pem:/usr/local/share/ca-certificates/store-radman-local.crt:ro
       - ./:/opt/store-radman:ro
     healthcheck:
-      test: [CMD, php, '-r', "exit(@fsockopen('127.0.0.1', 80) ? 0 : 1);"]
+      test: [CMD, php, '-r', "exit(@fsockopen('127.0.0.1', 8143) ? 0 : 1);"]
       interval: 3s
       timeout: 3s
       retries: 20
