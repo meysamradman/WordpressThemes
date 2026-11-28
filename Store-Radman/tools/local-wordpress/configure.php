@@ -2,6 +2,7 @@
 if ('1' !== getenv('STORE_LOCAL') || 'cli' !== PHP_SAPI) { exit(1); }
 require '/var/www/html/wp-load.php';
 require_once ABSPATH.'wp-admin/includes/plugin.php';
+require_once ABSPATH.'wp-admin/includes/file.php';
 if (DB_NAME !== 'store_radman_local' || !get_option('store_radman_local_owner')) { throw new RuntimeException('Wrong environment.'); }
 if (!class_exists('WooCommerce')) { throw new RuntimeException('WooCommerce missing.'); }
 wp_set_current_user(get_user_by('login', 'radman')->ID);
@@ -27,9 +28,10 @@ if (!get_option('store_radman_configured')) {
     update_option('woocommerce_coming_soon','no');
     update_option('woocommerce_store_pages_only','no');
     update_option('woocommerce_onboarding_profile',['completed'=>true,'skipped'=>true]);
-    $menu=wp_create_nav_menu('فهرست اصلی');
+    $existing_menu=wp_get_nav_menu_object('فهرست اصلی');
+    $menu=$existing_menu?$existing_menu->term_id:wp_create_nav_menu('فهرست اصلی');
     if (is_wp_error($menu)) { throw new RuntimeException($menu->get_error_message()); }
-    foreach ([$pages['home'],get_option('woocommerce_shop_page_id'),$pages['blog'],get_option('woocommerce_myaccount_page_id'),get_option('woocommerce_cart_page_id')] as $id) {
+    foreach (wp_get_nav_menu_items($menu)?[]:[$pages['home'],get_option('woocommerce_shop_page_id'),$pages['blog'],get_option('woocommerce_myaccount_page_id'),get_option('woocommerce_cart_page_id')] as $id) {
         wp_update_nav_menu_item($menu,0,['menu-item-object-id'=>$id,'menu-item-object'=>'page','menu-item-type'=>'post_type','menu-item-status'=>'publish']);
     }
     set_theme_mod('nav_menu_locations',['primary'=>$menu]);
