@@ -1,6 +1,7 @@
 <?php
 if ('1' !== getenv('STORE_LOCAL') || 'cli' !== PHP_SAPI) { exit(1); }
 require '/var/www/html/wp-load.php';
+require_once ABSPATH.'wp-admin/includes/plugin.php';
 if (DB_NAME !== 'store_radman_local' || !get_option('store_radman_local_owner')) { throw new RuntimeException('Wrong environment.'); }
 if (!class_exists('WooCommerce')) { throw new RuntimeException('WooCommerce missing.'); }
 wp_set_current_user(get_user_by('login', 'radman')->ID);
@@ -33,10 +34,10 @@ if (!get_option('store_radman_configured')) {
     }
     set_theme_mod('nav_menu_locations',['primary'=>$menu]);
     flush_rewrite_rules(true);
+    require_once ABSPATH.'wp-admin/includes/translation-install.php';
+    wp_download_language_pack('fa_IR');
     update_option('store_radman_configured',1,false);
 }
-require_once ABSPATH.'wp-admin/includes/translation-install.php';
-wp_download_language_pack('fa_IR');
 $plugins=get_plugins();$versions=[];
 foreach (get_option('active_plugins',[]) as $file) { $versions[$file]=$plugins[$file]['Version']??''; }
 echo wp_json_encode(['wordpress'=>get_bloginfo('version'),'php'=>PHP_VERSION,'plugins'=>$versions,'theme'=>get_stylesheet(),'shop'=>get_permalink(wc_get_page_id('shop')),'cart'=>get_permalink(wc_get_page_id('cart')),'checkout'=>get_permalink(wc_get_page_id('checkout')),'account'=>get_permalink(wc_get_page_id('myaccount')),'public'=>get_option('blog_public'),'portfolio'=>post_type_exists('project')],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);

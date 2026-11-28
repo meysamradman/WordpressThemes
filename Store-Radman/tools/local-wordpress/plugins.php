@@ -7,6 +7,7 @@ require_once ABSPATH.'wp-admin/includes/plugin-install.php';
 require_once ABSPATH.'wp-admin/includes/class-wp-upgrader.php';
 wp_set_current_user(get_user_by('login', 'radman')->ID);
 foreach (['woocommerce'=>'woocommerce/woocommerce.php', 'wordpress-seo'=>'wordpress-seo/wp-seo.php', 'all-in-one-wp-migration'=>'all-in-one-wp-migration/all-in-one-wp-migration.php'] as $slug=>$file) {
+    if (is_plugin_active($file)) { echo $slug." already active\n"; continue; }
     if (!file_exists(WP_PLUGIN_DIR.'/'.$file)) {
         $info = plugins_api('plugin_information', ['slug'=>$slug, 'fields'=>['sections'=>false]]);
         if (is_wp_error($info)) { throw new RuntimeException($info->get_error_message()); }
