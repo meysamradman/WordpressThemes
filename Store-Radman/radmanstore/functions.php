@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace RadmanStore;
 defined('ABSPATH') || exit;
 require_once __DIR__.'/inc/pagination.php';
+add_filter('loop_shop_per_page', static fn() => 8);
 add_action('after_setup_theme', static function (): void {
     load_theme_textdomain('radmanstore', get_template_directory().'/languages');
     add_theme_support('title-tag');
