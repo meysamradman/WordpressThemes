@@ -20,8 +20,9 @@ function download(int $track,array $data,array $audio):array {
  $file=$data['download']&&$data['download']!==$data['audio']?file($data['download']):$audio;
  if(!$file)return [];
  $extension=pathinfo((string)wp_parse_url($file['url'],PHP_URL_PATH),PATHINFO_EXTENSION);
- $title=sanitize_file_name(html_entity_decode(get_the_title($track),ENT_QUOTES,'UTF-8'));
- $file['filename']=$title!==''&&$extension!==''?$title.'.'.$extension:true;
+ $metadata=wp_get_attachment_metadata($data['download']?:$data['audio']);
+ $title=is_string($metadata['title']??null)?sanitize_file_name(html_entity_decode($metadata['title'],ENT_QUOTES,'UTF-8')):'';
+ $file['filename']=$title!==''&&$extension!==''?$title.'.'.$extension:wp_basename((string)wp_parse_url($file['url'],PHP_URL_PATH));
  return $file;
 }
 function playback(int $id,array $audio,array $data):array {
